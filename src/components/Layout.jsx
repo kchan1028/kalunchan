@@ -101,6 +101,12 @@ function Colophon() {
                 <a href={person.yippify} rel="noopener" target="_blank">Yippify</a>
                 <span className="colophon__note">For a team to deliver your software</span>
               </li>
+              {person.products.map((p) => (
+                <li key={p.url}>
+                  <a href={p.url} rel="noopener" target="_blank">{p.name}</a>
+                  {p.note && <span className="colophon__note">{p.note}</span>}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

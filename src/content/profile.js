@@ -11,6 +11,11 @@ export const person = {
   linkedin: 'https://www.linkedin.com/in/kchan1288/',
   github: 'https://github.com/kchan1028',
   yippify: 'https://yippify.com',
+  products: [
+    { name: 'VeloWise', url: 'https://getvelowise.com', note: 'Delivery analytics for engineering leaders' },
+    { name: 'SurgeIQ', url: 'https://getsurgeiq.com', note: 'Free cycling stats, power zones and workouts' },
+    { name: 'Useful Little Tools', url: 'https://usefullittletools.com', note: 'Free calculators for everyday decisions' },
+  ],
   // Public email is undecided; set a string here to render a mail link.
   email: null,
   openTo: [
