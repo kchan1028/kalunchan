@@ -1,0 +1,341 @@
+/* Engineering Practice — tokens and base.
+   One visual language: offset paper, ink, hairline rules, carrier-blue fields. */
+
+:root {
+  --paper: #f4f5f2;
+  --paper-sunk: #e9ebe6;
+  --ink: #14171a;
+  --ink-2: #454c54;
+  --ink-3: #5f6770;
+  --rule: #14171a;
+  --rule-soft: #c7ccd1;
+  --blue: #1d4fd8;
+  --blue-deep: #173fb0;
+  --on-blue: #ffffff;
+  --on-blue-2: #cdd9ff;
+  --on-blue-rule: rgb(255 255 255 / 0.32);
+
+  --sans: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --mono: 'Martian Mono Variable', 'Martian Mono', ui-monospace, monospace;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 72px;
+  --s9: 112px;
+  --s10: 160px;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --col-gap: clamp(16px, 2vw, 28px);
+  --max: 1440px;
+  --header-h: 56px;
+
+  --t-display: clamp(3rem, 1.2rem + 6.4vw, 6rem);
+  --t-h1: clamp(2.5rem, 1.4rem + 4vw, 4.75rem);
+  --t-h2: clamp(1.875rem, 1.2rem + 2.2vw, 3.125rem);
+  --t-h3: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --t-lead: clamp(1.1875rem, 1rem + 0.6vw, 1.5rem);
+  --t-body: 1.0625rem;
+  --t-small: 0.9375rem;
+  --t-mono: 0.75rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + var(--s5));
+  scrollbar-color: var(--ink-3) var(--paper-sunk);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  font-stretch: 100%;
+  font-weight: 400;
+  font-feature-settings: 'kern', 'liga';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  font-weight: 700;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--rule-soft);
+  transition: text-decoration-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.on-blue :focus-visible {
+  outline-color: var(--on-blue);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 50;
+  padding: var(--s2) var(--s4);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: var(--s2);
+}
+
+/* Measurement type: years, coordinates, section numbers. Never prose. */
+.mono {
+  font-family: var(--mono);
+  font-size: var(--t-mono);
+  font-stretch: 87.5%;
+  font-weight: 450;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+/* Field labels: small semi-condensed Archivo, for words that name a field. */
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-stretch: 86%;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+
+.on-blue .label {
+  color: var(--on-blue-2);
+}
+
+.sheet {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+}
+
+/* Blue field: one per page, the region that matters now. */
+.on-blue {
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+.on-blue a {
+  text-decoration-color: var(--on-blue-rule);
+}
+
+.on-blue ::selection {
+  background: var(--on-blue);
+  color: var(--blue);
+}
+
+.display {
+  font-stretch: 68%;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 0.94;
+}
+
+.h2 {
+  font-size: var(--t-h2);
+  font-stretch: 72%;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.h3 {
+  font-size: var(--t-h3);
+  font-stretch: 88%;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.45;
+  font-stretch: 96%;
+  max-width: 38ch;
+}
+
+.body-copy {
+  max-width: 66ch;
+  color: var(--ink-2);
+}
+
+/* Actions */
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s3);
+  min-height: 48px;
+  padding: 0 var(--s5);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-stretch: 92%;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background 180ms var(--ease-out), color 180ms var(--ease-out);
+}
+
+.action:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.action svg {
+  transition: transform 220ms var(--ease-out);
+}
+
+.action:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.on-blue .action {
+  background: var(--on-blue);
+  color: var(--blue);
+  border-color: var(--on-blue);
+}
+
+.on-blue .action:hover {
+  background: transparent;
+  color: var(--on-blue);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-weight: 600;
+  font-stretch: 92%;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.link-arrow svg {
+  transition: transform 220ms var(--ease-out);
+}
+
+.link-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+.link-arrow span {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--rule-soft);
+}
+
+.link-arrow:hover span {
+  text-decoration-color: currentColor;
+}
+
+/* Scroll reveal (useReveal): visible by default, hidden only once JS has opted in. */
+[data-motion='on'] [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms var(--ease-out), transform 800ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+[data-motion='on'] [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

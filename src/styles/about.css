@@ -1,0 +1,74 @@
+/* The career story uses the existing editorial grid and one blue field.
+   Design dials: variance 6, motion 2, density 4. Motion is limited to link feedback. */
+.about-opening { padding-block: var(--s7) var(--s7); }
+.about-opening h1 { font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: .98; max-width: 23ch; }
+.about-opening__intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s8); margin-top: var(--s6); max-width: 70rem; }
+.about-opening__lead { font-size: var(--t-lead); line-height: 1.45; }
+.about-opening__contact { margin-top: var(--s5); }
+.about-chapters ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
+.about-chapters li + li { border-left: 1px solid var(--rule-soft); }
+.about-chapters a { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s5); text-decoration: none; font-weight: 600; line-height: 1.35; min-height: 104px; }
+.about-chapters .mono { color: var(--ink-3); }
+.about-chapters a:hover, .about-chapters a:hover .mono { color: var(--blue); }
+.about-chapter { margin-top: var(--s9); }
+.about-chapter__number { grid-column: 1 / 3; padding-top: var(--s3); border-top: 1px solid var(--rule); align-self: start; color: var(--ink-3); }
+.about-chapter__body { grid-column: 3 / -1; min-width: 0; }
+.about-chapter h2 { max-width: 26ch; }
+.about-prose { color: var(--ink-2); max-width: 66ch; }
+.about-prose p + p, .about-prose .link-arrow { margin-top: var(--s5); }
+.about-prose h3 { color: var(--ink); margin-bottom: var(--s5); }
+.about-chapter__body > .about-prose { margin-top: var(--s6); }
+.about-founder__story { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--s8); margin-top: var(--s6); }
+.about-founder__evidence { padding-left: var(--s6); border-left: 1px solid var(--rule-soft); }
+.about-founder__evidence > div + div { margin-top: var(--s6); }
+.about-founder__evidence dt { font-size: var(--t-small); color: var(--ink-3); }
+.about-founder__evidence dd { font-size: clamp(2.25rem, 4vw, 4rem); font-stretch: 70%; font-weight: 750; line-height: 1.1; margin-top: var(--s2); }
+.about-independence { margin-top: var(--s9); padding-block: var(--s8); }
+.about-independence .grid { row-gap: var(--s7); align-items: start; }
+.about-independence__thesis { grid-column: 1 / 6; }
+.about-independence__thesis h2 { max-width: 18ch; }
+.about-independence__thesis p { margin-top: var(--s5); max-width: 40ch; color: var(--on-blue-2); }
+.about-independence__thesis .about-independence__conviction { font-size: var(--t-lead); color: var(--on-blue); font-weight: 600; }
+.about-independence__flow { grid-column: 7 / -1; padding-left: var(--s6); border-left: 1px solid var(--on-blue-rule); }
+.about-independence__flow li { position: relative; padding-bottom: var(--s6); }
+.about-independence__flow li:last-child { padding-bottom: 0; }
+.about-independence__flow li::before { content: ''; position: absolute; width: 9px; height: 9px; left: calc(-1 * var(--s6) - 5px); top: .45em; background: var(--on-blue); }
+.about-independence__flow h3 { font-size: var(--t-small); font-weight: 500; color: var(--on-blue-2); }
+.about-independence__flow p { max-width: 47ch; }
+.about-independence__flow .about-independence__principle { font-size: clamp(1.4rem, 2.3vw, 2.2rem); font-weight: 650; font-stretch: 82%; line-height: 1.15; margin-block: var(--s2) var(--s3); }
+.about-mentoring { margin-top: var(--s9); row-gap: var(--s6); }
+.about-mentoring__intro { grid-column: 1 / 6; }
+.about-mentoring__intro .about-prose { margin-top: var(--s6); }
+.about-mentoring__progression { grid-column: 7 / -1; }
+.about-mentoring__progression li { display: grid; grid-template-columns: auto 1fr; gap: var(--s4); border-top: 1px solid var(--rule-soft); padding-block: var(--s5); }
+.about-mentoring__progression li:first-child { padding-top: var(--s5); }
+.about-mentoring__progression .mono { color: var(--ink-3); padding-top: 4px; }
+.about-mentoring__progression p { color: var(--ink-2); margin-top: var(--s3); }
+.about-judgment { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s8); margin-top: var(--s7); }
+.about-judgment__execution { padding-top: var(--s5); border-top: 3px solid var(--rule); }
+.about-community__story { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); margin-top: var(--s6); align-items: start; }
+.about-community figure { min-width: 0; }
+.about-community img { width: 100%; height: auto; display: block; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% center; }
+.about-community figcaption { color: var(--ink-3); margin-top: var(--s3); }
+.about-community__closing { font-size: var(--t-lead); max-width: 55ch; padding-top: var(--s6); border-top: 1px solid var(--rule-soft); margin-top: var(--s7); }
+.about-context-links { font-size: var(--t-small); color: var(--ink-2); margin-top: var(--s5); max-width: 65ch; }
+.colophon__story { grid-column: 1 / 8; }
+.colophon__story .colophon__ask { max-width: 20ch; }
+.colophon__story > p { color: var(--colophon-muted, #b6bcc2); max-width: 57ch; margin-top: var(--s6); }
+.colophon__next { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s6); margin-top: var(--s5); }
+.colophon__next a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+@media (max-width: 899px) {
+  .about-opening__intro, .about-founder__story, .about-judgment, .about-community__story { grid-template-columns: 1fr; gap: var(--s6); }
+  .about-chapters ol { grid-template-columns: 1fr; }
+  .about-chapters li + li { border-left: 0; border-top: 1px solid var(--rule-soft); }
+  .about-chapters a { flex-direction: row; align-items: baseline; min-height: 48px; padding: var(--s3) 0; gap: var(--s5); }
+  .about-chapter__number { display: none; }
+  .about-chapter__body, .about-independence__thesis, .about-independence__flow, .about-mentoring__intro, .about-mentoring__progression, .colophon__story { grid-column: 1 / -1; }
+  .about-chapter, .about-independence, .about-mentoring { margin-top: var(--s8); }
+  .about-independence { padding-block: var(--s7); }
+  .about-founder__evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); padding: var(--s5) 0 0; border-left: 0; border-top: 1px solid var(--rule-soft); }
+  .about-founder__evidence > div + div { margin-top: 0; }
+  .about-founder__evidence dt { font-size: .8125rem; }
+  .about-founder__evidence dd { font-size: clamp(1.75rem, 5vw, 2.75rem); }
+  .about-community img { aspect-ratio: 3 / 2; }
+}

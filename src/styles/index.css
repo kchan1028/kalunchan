@@ -1,0 +1,12 @@
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource-variable/martian-mono/wdth.css';
+@import './base.css';
+@import './chrome.css';
+@import './home.css';
+@import './pages.css';
+@import './diagram.css';
+
+@import './community.css';
+@import './about.css';
+@import './mentorship.css';
+@import './contact.css';

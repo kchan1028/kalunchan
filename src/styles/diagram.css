@@ -1,0 +1,132 @@
+/* Schematic diagrams: white linework on the carrier-blue field. */
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+}
+
+.diagram__caption {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s2) var(--s4);
+  align-items: baseline;
+  font-size: var(--t-small);
+  font-weight: 600;
+  font-stretch: 92%;
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--on-blue-rule);
+}
+
+.diagram__caption .mono {
+  color: var(--on-blue-2);
+  font-weight: 450;
+}
+
+@media (max-width: 599px) {
+  .diagram__caption {
+    grid-template-columns: auto 1fr;
+  }
+
+  .diagram__key {
+    grid-column: 1 / -1;
+  }
+}
+
+.diagram__key {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.diagram__key-mark {
+  width: 22px;
+  height: 3px;
+  background: var(--on-blue);
+}
+
+.dg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--sans);
+}
+
+.dg--v {
+  display: none;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+@media (max-width: 759px) {
+  .dg--h {
+    display: none;
+  }
+
+  .dg--v {
+    display: block;
+  }
+}
+
+.dg-tier {
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: 86%;
+  fill: var(--on-blue-2);
+}
+
+.dg-tier-rule {
+  stroke: var(--on-blue-rule);
+  stroke-width: 1;
+}
+
+.dg-edge {
+  fill: none;
+  stroke: var(--on-blue);
+  stroke-width: 1.25;
+  opacity: 0.7;
+}
+
+.dg-edge.is-accent {
+  stroke-width: 3;
+  opacity: 1;
+}
+
+.dg-arrow {
+  fill: var(--on-blue);
+}
+
+.dg-edge-label {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--on-blue-2);
+}
+
+.dg-node rect {
+  fill: var(--blue);
+  stroke: var(--on-blue);
+  stroke-width: 1.25;
+}
+
+.dg-node.is-accent rect {
+  fill: var(--on-blue);
+}
+
+.dg-label {
+  fill: var(--on-blue);
+  font-weight: 700;
+  font-stretch: 86%;
+}
+
+.dg-sub {
+  fill: var(--on-blue-2);
+  font-weight: 450;
+}
+
+.dg-node.is-accent .dg-label {
+  fill: var(--blue-deep);
+}
+
+.dg-node.is-accent .dg-sub {
+  fill: var(--blue);
+}

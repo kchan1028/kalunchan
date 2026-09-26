@@ -1,0 +1,53 @@
+{
+  "title": "Choose the visual world for kalunchan.dev",
+  "question": "The roll assigned the Bell System Practices manual. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Engineering Practice Manual",
+      "kicker": "THE ROLL",
+      "lineage": "Bell System Practices, the numbered carrier-network standards KC's career started in (COVAD, Talkfree VoIP)",
+      "thesis": "The portfolio as a leader's own practice manual: numbered sections, issue stamps, and schematic signal-flow drawings. It refuses the hero → cards → CTA template.",
+      "palette": ["#f4f5f2", "#14171a", "#1d4fd8", "#c9d1dc"],
+      "materials": ["cool offset paper", "hairline schematic ink", "carrier-blue fields", "section numbering"],
+      "viewport": "A title block that fills the first screen. At left, set very large: 'I build teams, systems, and products that deliver.' At right, a schematic draws the seven capabilities as one signal path from business problem to shipped outcome. Issue and revision stamp at the top edge; LinkedIn contact sits in the title block.",
+      "risk": "Can tip into cosplay if section numbers and stamps outnumber the content. The numbering has to carry navigation, not decoration.",
+      "raised": [
+        {"from": "challenger-jacquard", "raise": "Traceability: every outcome on the page links back to the decision that produced it."},
+        {"from": "challenger-glazier", "raise": "Blue fields are reserved for one 'what matters now' region per page, never scattered as accents."},
+        {"from": "challenger-steprow", "raise": "The career is one unbroken ruled line from 1998 to now, with a marker showing where 'now' is."},
+        {"from": "challenger-cathode", "raise": "Key decisions show every option considered as a ghosted row, with the chosen one struck forward."},
+        {"from": "challenger-broadcast", "raise": "A persistent section coordinate is locked to one corner, so you always know where you are in the manual."},
+        {"from": "challenger-fletcher", "raise": "Every section leads with one plain claim so clear the detail can stay quiet."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Architecture Decision Record",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "RFCs and ADRs (Context / Decision / Consequences)",
+      "thesis": "Every page is a decision record with a status stamp and its consequences.",
+      "palette": ["#ffffff", "#111111", "#0a7d4f"],
+      "materials": ["document type", "status badges", "monospace metadata"],
+      "viewport": "An ADR-style header: status Accepted, then the one-line thesis as the Decision.",
+      "risk": "Familiar: this is where most engineer-portfolio redesigns land."
+    },
+    {"id": "challenger-jacquard", "label": "Jacquard punched brocade", "verdict": "declined", "lineage": "Jacquard loom card chains", "palette": ["#101a3a", "#c9a23a", "#efe6cf"], "materials": ["silk", "punch cards"], "case": "Fuses poorly: hiring executives don't recognise themselves in a loom.", "kept": "Traceability from outcome down to each individual decision.", "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade-hero.webp"},
+    {"id": "challenger-glazier", "label": "Glazier color-field partition", "verdict": "declined", "lineage": "steel-and-glass workshop partitions", "palette": ["#111111", "#e9eef0", "#1f47b8", "#d98a1c"], "materials": ["glazing bars", "seeded glass"], "case": "Clear one-statement panes, but no link to the engineering world.", "kept": "Colour reserved for what matters now; hierarchy by field size.", "hero": "https://impeccable.style/worlds/cards/craft-making-glazier-colorfield-partition-hero.webp"},
+    {"id": "challenger-steprow", "label": "Drum machine step row", "verdict": "declined", "lineage": "early-80s rhythm machines", "palette": ["#222222", "#e2382b", "#f39a1e", "#f3d22b"], "materials": ["step keys", "LEDs"], "case": "Playful, and wrong in register for executive hiring.", "kept": "One unbroken line with a live 'now' marker.", "hero": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row-hero.webp"},
+    {"id": "challenger-cathode", "label": "Cathode numeral gauze", "verdict": "declined", "lineage": "Nixie tube stacks", "palette": ["#0b1020", "#ff7a1a"], "materials": ["wire gauze", "glow"], "case": "Near-black with a glow is the portfolio cliché the brief bans.", "kept": "Alternatives shown as ghosts, with the chosen one struck forward.", "hero": "https://impeccable.style/worlds/cards/operate-b-struck-cathode-gauze-hero.webp"},
+    {"id": "challenger-broadcast", "label": "Broadcast signal degradation", "verdict": "declined", "lineage": "test cards and emergency crawls", "palette": ["#000000", "#ffffff", "#ffd400", "#00a0e0"], "materials": ["tape noise", "timecode"], "case": "Degradation undercuts a reliability story.", "kept": "A persistent coordinate locked to a corner.", "hero": "https://impeccable.style/worlds/cards/digital-design-canon-emergency-signal-degradation-hero.webp"},
+    {"id": "challenger-fletcher", "label": "Fletcher wit poster", "verdict": "declined", "lineage": "Alan Fletcher / Pentagram posters", "palette": ["#ffffff", "#1f47b8", "#2e9b46", "#e63b2e"], "materials": ["cut paper", "crayon"], "case": "Wit reads as unserious for VP-level evaluation.", "kept": "One idea per section, stated so plainly the craft can relax.", "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-fletcher-wit-poster-hero.webp"}
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The polished leader portfolio: big name, role line, logo row, case-study cards.",
+    "palette": ["#ffffff", "#111827", "#2563eb"],
+    "materials": ["clean grid", "headshot", "cards"],
+    "viewport": "Name and title hero, a logos strip, then three case-study cards.",
+    "risk": "Indistinguishable from every other leader portfolio by design."
+  },
+  "steer": true
+}

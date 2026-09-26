@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T00:00:00Z",
+  "title": "Design System: Ka Lun Chan, Engineering Practice",
+  "extensions": {
+    "colorMeta": {
+      "carrier-blue": {
+        "role": "primary",
+        "displayName": "Carrier Blue",
+        "canonical": "#1d4fd8",
+        "tonalRamp": [
+          "#0b1b4d",
+          "#112a78",
+          "#173fb0",
+          "#1d4fd8",
+          "#4a72e3",
+          "#7e9bec",
+          "#b3c5f5",
+          "#e3eafc"
+        ]
+      },
+      "carrier-blue-deep": {
+        "role": "primary",
+        "displayName": "Carrier Blue Deep",
+        "canonical": "#173fb0",
+        "tonalRamp": [
+          "#0b1b4d",
+          "#112a78",
+          "#173fb0",
+          "#1d4fd8",
+          "#4a72e3",
+          "#7e9bec",
+          "#b3c5f5",
+          "#e3eafc"
+        ]
+      },
+      "on-blue": {
+        "role": "neutral",
+        "displayName": "On Blue",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b1b4d",
+          "#112a78",
+          "#173fb0",
+          "#1d4fd8",
+          "#4a72e3",
+          "#7e9bec",
+          "#b3c5f5",
+          "#e3eafc"
+        ]
+      },
+      "on-blue-soft": {
+        "role": "neutral",
+        "displayName": "On Blue Soft",
+        "canonical": "#cdd9ff",
+        "tonalRamp": [
+          "#0b1b4d",
+          "#112a78",
+          "#173fb0",
+          "#1d4fd8",
+          "#4a72e3",
+          "#7e9bec",
+          "#b3c5f5",
+          "#e3eafc"
+        ]
+      },
+      "offset-paper": {
+        "role": "neutral",
+        "displayName": "Offset Paper",
+        "canonical": "#f4f5f2",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "paper-sunk": {
+        "role": "neutral",
+        "displayName": "Paper Sunk",
+        "canonical": "#e9ebe6",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#14171a",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#454c54",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Ink Tertiary",
+        "canonical": "#5f6770",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Rule Soft",
+        "canonical": "#c7ccd1",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      },
+      "colophon-muted": {
+        "role": "neutral",
+        "displayName": "Colophon Muted",
+        "canonical": "#b6bcc2",
+        "tonalRamp": [
+          "#14171a",
+          "#2b3036",
+          "#454c54",
+          "#5f6770",
+          "#8a929a",
+          "#c7ccd1",
+          "#e9ebe6",
+          "#f4f5f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home thesis only; condensed heavy Archivo."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page title inside the ruled title block."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Band and section heads, the colophon ask."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Row and item titles."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Opening paragraph under a display or claim, max 38ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy, max 66ch, ink secondary."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Archivo words that name a field; sentence case, never uppercase."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Martian Mono for section numbers, years, figure numbers and the header coordinate only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions (160-240ms): link underline, action fill, arrow nudge, schematic focus."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transition/animation 0.01ms",
+        "purpose": "Under prefers-reduced-motion everything is static, including the signal path draw."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "coordinate-short",
+        "value": "600px",
+        "purpose": "Below: coordinate shows number only; captions stack."
+      },
+      {
+        "name": "diagram-horizontal",
+        "value": "760px",
+        "purpose": "At and above: schematics lay out horizontally; below: vertical."
+      },
+      {
+        "name": "desktop",
+        "value": "900px",
+        "purpose": "Below: single column, Contents toggle, title block wraps, margin rail hidden."
+      },
+      {
+        "name": "wide",
+        "value": "1100px",
+        "purpose": "900-1099px: coordinate label shortened to 16ch."
+      },
+      {
+        "name": "sheet-max",
+        "value": "1440px",
+        "purpose": "Sheet maximum width."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Action",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "Primary instruction: ink fill, square, turns blue on hover.",
+      "html": "<a class=\"ds-action\" href=\"#\">Contact on LinkedIn <svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M3 9L9 3M4 3h5v5\"/></svg></a>",
+      "css": ".ds-action{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 24px;background:var(--ink,#14171a);color:var(--paper,#f4f5f2);border:1px solid var(--ink,#14171a);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;font-weight:600;font-stretch:92%;text-decoration:none;transition:background 180ms cubic-bezier(0.16,1,0.3,1)}.ds-action svg{transition:transform 220ms cubic-bezier(0.16,1,0.3,1)}.ds-action:hover{background:var(--blue,#1d4fd8);border-color:var(--blue,#1d4fd8)}.ds-action:hover svg{transform:translate(2px,-2px)}.ds-action:focus-visible{outline:2px solid var(--blue,#1d4fd8);outline-offset:3px}"
+    },
+    {
+      "name": "Action on Blue",
+      "kind": "button",
+      "refersTo": "action-on-blue",
+      "description": "The action inside the blue field: white fill, blue text.",
+      "html": "<div class=\"ds-field\"><a class=\"ds-action-blue\" href=\"#\">Message me</a></div>",
+      "css": ".ds-field{background:#1d4fd8;padding:24px}.ds-action-blue{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:#fff;color:#1d4fd8;border:1px solid #fff;border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;font-weight:600;font-stretch:92%;text-decoration:none;transition:background 180ms,color 180ms}.ds-action-blue:hover{background:transparent;color:#fff}.ds-action-blue:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "Secondary text action with a sliding arrow.",
+      "html": "<a class=\"ds-link-arrow\" href=\"#\"><span>Read the case studies</span> &rarr;</a>",
+      "css": ".ds-link-arrow{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#14171a;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;font-weight:600;font-stretch:92%;text-decoration:none}.ds-link-arrow span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:#c7ccd1}.ds-link-arrow:hover span{text-decoration-color:currentColor}.ds-link-arrow:focus-visible{outline:2px solid #1d4fd8;outline-offset:3px}"
+    },
+    {
+      "name": "Header Nav with Coordinate",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky ruled header: wordmark, blue-square coordinate, numbered section links; current number in a blue chip.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-wordmark\">Ka Lun Chan</span><span class=\"ds-coord\"><i></i>300-2 &middot; Architecture</span><nav><a class=\"ds-nav\" href=\"#\"><span class=\"ds-no\">100</span>Leadership</a><a class=\"ds-nav\" href=\"#\" aria-current=\"page\"><span class=\"ds-no\">300</span>Work</a></nav></header>",
+      "css": ".ds-header{display:flex;align-items:center;gap:24px;height:56px;padding:0 24px;background:#f4f5f2;border-bottom:1px solid #14171a;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;color:#14171a}.ds-wordmark{font-weight:800;font-stretch:75%;font-size:1.25rem}.ds-coord{display:flex;align-items:center;gap:8px;margin-right:auto;padding-left:12px;border-left:1px solid #c7ccd1;color:#454c54;font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;font-stretch:87.5%}.ds-coord i{width:7px;height:7px;background:#1d4fd8}.ds-header nav{display:flex;gap:4px}.ds-nav{position:relative;display:inline-flex;align-items:center;gap:8px;height:56px;padding:0 12px;font-weight:600;font-stretch:90%;font-size:.9375rem;text-decoration:none;color:inherit}.ds-no{font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;color:#5f6770;padding:2px 5px;transition:color 160ms}.ds-nav:hover .ds-no{color:#14171a}.ds-nav[aria-current=page] .ds-no{background:#1d4fd8;color:#fff}.ds-nav[aria-current=page]::after{content:'';position:absolute;left:12px;right:12px;bottom:-1px;height:3px;background:#14171a}.ds-nav:focus-visible{outline:2px solid #1d4fd8;outline-offset:-2px}"
+    },
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "title-block",
+      "description": "Ruled page head: 3px ink head rule, cells split by ink hairlines, label over value.",
+      "html": "<div class=\"ds-tb\"><div class=\"ds-tb-c\"><span class=\"ds-label\">Section</span><b class=\"ds-tb-no\">300</b></div><div class=\"ds-tb-c ds-tb-t\"><h1>Work</h1></div><div class=\"ds-tb-c\"><span class=\"ds-label\">Issue</span><span>26.09</span></div></div>",
+      "css": ".ds-tb{display:grid;grid-template-columns:auto 1fr auto;border-top:3px solid #14171a;border-bottom:1px solid #14171a;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;color:#14171a;background:#f4f5f2}.ds-tb-c{display:flex;flex-direction:column;justify-content:space-between;gap:8px;padding:12px 24px 16px;border-left:1px solid #14171a}.ds-tb-c:first-child{border-left:0;padding-left:0}.ds-tb-no{font-size:2.25rem;font-weight:800;font-stretch:68%;line-height:1}.ds-tb-t h1{margin:auto 0 0;font-size:3.5rem;font-weight:800;font-stretch:68%;line-height:.95;letter-spacing:-.015em}.ds-label{font-size:.8125rem;font-weight:600;font-stretch:86%;letter-spacing:.01em;color:#5f6770}"
+    },
+    {
+      "name": "Blue Field Schematic",
+      "kind": "custom",
+      "refersTo": "blue-field",
+      "description": "The one carrier-blue field per page: figure caption and white orthogonal linework; accent node filled white.",
+      "html": "<figure class=\"ds-bf\"><figcaption><span class=\"ds-fig\">Fig. 000-1</span> From problem to outcome</figcaption><svg viewBox=\"0 0 320 60\" width=\"100%\"><rect x=\"1\" y=\"15\" width=\"110\" height=\"30\" fill=\"#1d4fd8\" stroke=\"#fff\" stroke-width=\"1.25\"/><text x=\"12\" y=\"35\" fill=\"#fff\" font-size=\"12\" font-weight=\"700\">Gateway</text><line x1=\"111\" y1=\"30\" x2=\"208\" y2=\"30\" stroke=\"#fff\" stroke-width=\"3\"/><rect x=\"208\" y=\"15\" width=\"110\" height=\"30\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"1.25\"/><text x=\"219\" y=\"35\" fill=\"#173fb0\" font-size=\"12\" font-weight=\"700\">New service</text></svg></figure>",
+      "css": ".ds-bf{margin:0;padding:24px;background:#1d4fd8;color:#fff;font-family:'Archivo Variable','Archivo',system-ui,sans-serif}.ds-bf figcaption{display:flex;gap:16px;align-items:baseline;padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid rgb(255 255 255 / .32);font-size:.9375rem;font-weight:600;font-stretch:92%}.ds-fig{font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;font-weight:450;color:#cdd9ff}"
+    },
+    {
+      "name": "Decision Options",
+      "kind": "custom",
+      "refersTo": "decision-chosen",
+      "description": "Rejected options ghosted; the chosen one struck forward between ink hairlines.",
+      "html": "<ul class=\"ds-dec\"><li class=\"rej\"><span>Rejected</span><b>Big-bang rewrite</b></li><li class=\"cho\"><span>Chosen</span><b>Strangler gateway</b></li></ul>",
+      "css": ".ds-dec{list-style:none;margin:0;padding:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;color:#14171a}.ds-dec li{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:16px 0;border-top:1px solid #c7ccd1}.ds-dec li:last-child{border-bottom:1px solid #c7ccd1}.ds-dec b{font-weight:700;font-stretch:88%;font-size:1.125rem}.ds-dec .rej{color:#5f6770}.ds-dec .rej b{font-weight:500}.ds-dec .cho{border-top:1px solid #14171a;border-bottom:1px solid #14171a;background:#e9ebe6;padding-inline:12px;margin-inline:-12px}.ds-dec .cho span{color:#1d4fd8;font-weight:700}"
+    },
+    {
+      "name": "Contents Row",
+      "kind": "custom",
+      "refersTo": "contents-list",
+      "description": "Manual contents entry with dotted leader and mono number; hover turns blue.",
+      "html": "<a class=\"ds-toc\" href=\"#\"><span>Make architecture decisions in writing</span><i></i><span class=\"n\">102</span></a>",
+      "css": ".ds-toc{display:flex;align-items:baseline;gap:12px;min-height:48px;padding:12px 0;border-top:1px solid #c7ccd1;border-bottom:1px solid #c7ccd1;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;font-weight:600;font-stretch:90%;color:#14171a;text-decoration:none}.ds-toc i{flex:1;min-width:24px;border-bottom:1px dotted #5f6770;transform:translateY(-.3em)}.ds-toc .n{font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;color:#5f6770}.ds-toc:hover,.ds-toc:hover .n{color:#1d4fd8}.ds-toc:focus-visible{outline:2px solid #1d4fd8;outline-offset:3px}"
+    },
+    {
+      "name": "Colophon",
+      "kind": "custom",
+      "refersTo": "colophon",
+      "description": "The dark ink close on every page: ask, paper action, ruled routes.",
+      "html": "<footer class=\"ds-col\"><h2>Need a system shipped? Let&rsquo;s talk.</h2><a class=\"ds-col-a\" href=\"#\">Message me on LinkedIn</a></footer>",
+      "css": ".ds-col{background:#14171a;color:#f4f5f2;padding:56px 24px;font-family:'Archivo Variable','Archivo',system-ui,sans-serif}.ds-col h2{margin:0 0 32px;font-size:2.75rem;font-weight:750;font-stretch:72%;line-height:.98;max-width:16ch}.ds-col-a{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:#f4f5f2;color:#14171a;border:1px solid #f4f5f2;font-weight:600;font-stretch:92%;text-decoration:none;transition:background 180ms,color 180ms}.ds-col-a:hover{background:#1d4fd8;border-color:#1d4fd8;color:#fff}.ds-col-a:focus-visible{outline:2px solid #f4f5f2;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Practice Manual",
+    "overview": "**Creative North Star: \"The Engineering Practice Manual\"**\n\nThe site is set as a Bell System Practices document: every page is a numbered section of one manual (000 Overview, 100 Leadership, 200 Experience, 300 Work, 400 Expertise), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.\n\nDensity is that of a technical manual, not a brochure: generous vertical bands (112–160px between them) holding tight, ruled content inside. Structure is carried by lines and type, never by boxes, shadows or rounded containers. Display type is condensed and heavy Archivo, set close; body copy is normal-width Archivo at a readable measure. The page ends in a dark ink colophon that turns the manual over to contact.",
+    "keyCharacteristics": [
+      "One carrier-blue field per page, on the region that matters now.",
+      "Ruled title blocks and hairline rules as the only structure.",
+      "Condensed heavy Archivo display over normal-width Archivo body.",
+      "Martian Mono for numbers only: section numbers, years, figure numbers, the header coordinate.",
+      "Orthogonal schematics in white on blue, horizontal on wide screens and vertical on narrow ones.",
+      "Square corners, no shadows, no cards.",
+      "A dark ink colophon closes every page."
+    ],
+    "rules": [
+      {
+        "name": "The One Field Rule",
+        "body": "Each page carries exactly one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Ground Rule",
+        "body": "No gradients, tints or translucent panels on paper. Colour arrives as a solid field or not at all.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measuring Type Rule",
+        "body": "Martian Mono sets only numbers, years, figure numbers (\"Fig. 000-1\") and the header coordinate. Words that name a field are set as Archivo labels. Prose, headings and buttons are never mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. No uppercase tracking anywhere.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ruled Not Raised Rule",
+        "body": "If something needs separating, draw a line. Never a shadow, never a floating card.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do give each page exactly one carrier-blue field, on the region that matters now.",
+      "Do separate content with rules: 3px ink for heads, 1px ink for structure, 1px soft for rows.",
+      "Do set section numbers, years, figure numbers and the coordinate in Martian Mono (0.75rem, tabular).",
+      "Do set field-label words as Archivo labels (0.8125rem, 600, 86% width, sentence case).",
+      "Do set display and headings in condensed heavy Archivo (68–72% width, 750–800 weight, tight leading).",
+      "Do give every new section a coordinate so the header can report it.",
+      "Do draw every new schematic from one spec that lays out horizontally at 760px and above and vertically below.",
+      "Do end every page on the ink colophon."
+    ],
+    "donts": [
+      "Don't use rounded corners, shadows or cards.",
+      "Don't put eyebrows or kickers above headings, or use uppercase tracked labels.",
+      "Don't set words, prose, headings or buttons in mono.",
+      "Don't use blue as a tint, gradient or second field on the same page.",
+      "Don't use hero-then-card-grid-then-CTA composition, logo walls or dark neon.",
+      "Don't introduce a second dark surface besides the colophon."
+    ]
+  }
+}
