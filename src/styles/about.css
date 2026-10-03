@@ -1,10 +1,31 @@
 /* The career story uses the existing editorial grid and one blue field.
    Design dials: variance 6, motion 2, density 4. Motion is limited to link feedback. */
 .about-opening { padding-block: var(--s7) var(--s7); }
-.about-opening h1 { font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: .98; max-width: 23ch; }
+.about-opening h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: .98; max-width: 22ch; }
+.about-updated { margin-top: var(--s4); }
 .about-opening__intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s8); margin-top: var(--s6); max-width: 70rem; }
 .about-opening__lead { font-size: var(--t-lead); line-height: 1.45; }
 .about-opening__contact { margin-top: var(--s5); }
+.about-takeaways h2 { margin-bottom: var(--s3); }
+.about-takeaways li { color: var(--ink-2); }
+/* Profile Q&A: question left, answer right, ruled like the chapter numbers. */
+.about-qa { margin-top: var(--s7); row-gap: var(--s4); }
+.about-qa__q { grid-column: 1 / 6; align-self: start; padding-top: var(--s4); border-top: 1px solid var(--rule); font-size: clamp(1.375rem, 1.1rem + .9vw, 1.875rem); font-stretch: 78%; font-weight: 750; line-height: 1.1; text-wrap: balance; }
+.about-qa__a { grid-column: 6 / -1; min-width: 0; padding-top: var(--s4); border-top: 1px solid var(--rule-soft); color: var(--ink-2); }
+.about-qa__a > * + * { margin-top: var(--s5); }
+.about-qa__a p, .about-qa__a li { max-width: 66ch; }
+.about-qa__a strong { color: var(--ink); font-weight: 650; }
+.about-qa__a .about-qa__highlight { margin-top: var(--s6); padding-left: var(--s5); border-left: 3px solid var(--blue); font-size: var(--t-lead); line-height: 1.4; font-weight: 600; font-stretch: 92%; color: var(--ink); max-width: 46ch; }
+.about-roles { width: 100%; border-collapse: collapse; font-size: var(--t-small); }
+.about-roles th, .about-roles td { text-align: left; vertical-align: top; padding: var(--s3) var(--s4) var(--s3) 0; border-top: 1px solid var(--rule-soft); }
+.about-roles thead th { border-top: 0; border-bottom: 1px solid var(--rule); padding-top: 0; }
+.about-roles tbody th { color: var(--ink); font-weight: 700; font-stretch: 88%; }
+.about-faq > div + div { margin-top: var(--s6); }
+.about-faq h3 { color: var(--ink); }
+.about-faq p { margin-top: var(--s2); }
+.about-words { margin-top: var(--s9); padding-bottom: var(--s7); }
+.about-words h2 { font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: .98; max-width: 23ch; }
+.about-words .about-opening__lead { margin-top: var(--s6); max-width: 52ch; }
 .about-chapters ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
 .about-chapters li + li { border-left: 1px solid var(--rule-soft); }
 .about-chapters a { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s5); text-decoration: none; font-weight: 600; line-height: 1.35; min-height: 104px; }
@@ -18,11 +39,6 @@
 .about-prose p + p, .about-prose .link-arrow { margin-top: var(--s5); }
 .about-prose h3 { color: var(--ink); margin-bottom: var(--s5); }
 .about-chapter__body > .about-prose { margin-top: var(--s6); }
-.about-founder__story { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--s8); margin-top: var(--s6); }
-.about-founder__evidence { padding-left: var(--s6); border-left: 1px solid var(--rule-soft); }
-.about-founder__evidence > div + div { margin-top: var(--s6); }
-.about-founder__evidence dt { font-size: var(--t-small); color: var(--ink-3); }
-.about-founder__evidence dd { font-size: clamp(2.25rem, 4vw, 4rem); font-stretch: 70%; font-weight: 750; line-height: 1.1; margin-top: var(--s2); }
 .about-independence { margin-top: var(--s9); padding-block: var(--s8); }
 .about-independence .grid { row-gap: var(--s7); align-items: start; }
 .about-independence__thesis { grid-column: 1 / 6; }
@@ -51,24 +67,27 @@
 .about-community img { width: 100%; height: auto; display: block; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% center; }
 .about-community figcaption { color: var(--ink-3); margin-top: var(--s3); }
 .about-community__closing { font-size: var(--t-lead); max-width: 55ch; padding-top: var(--s6); border-top: 1px solid var(--rule-soft); margin-top: var(--s7); }
-.about-context-links { font-size: var(--t-small); color: var(--ink-2); margin-top: var(--s5); max-width: 65ch; }
 .colophon__story { grid-column: 1 / 8; }
 .colophon__story .colophon__ask { max-width: 20ch; }
 .colophon__story > p { color: var(--colophon-muted, #b6bcc2); max-width: 57ch; margin-top: var(--s6); }
 .colophon__next { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s6); margin-top: var(--s5); }
 .colophon__next a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
 @media (max-width: 899px) {
-  .about-opening__intro, .about-founder__story, .about-judgment, .about-community__story { grid-template-columns: 1fr; gap: var(--s6); }
+  .about-opening__intro, .about-judgment, .about-community__story { grid-template-columns: 1fr; gap: var(--s6); }
   .about-chapters ol { grid-template-columns: 1fr; }
   .about-chapters li + li { border-left: 0; border-top: 1px solid var(--rule-soft); }
   .about-chapters a { flex-direction: row; align-items: baseline; min-height: 48px; padding: var(--s3) 0; gap: var(--s5); }
   .about-chapter__number { display: none; }
-  .about-chapter__body, .about-independence__thesis, .about-independence__flow, .about-mentoring__intro, .about-mentoring__progression, .colophon__story { grid-column: 1 / -1; }
-  .about-chapter, .about-independence, .about-mentoring { margin-top: var(--s8); }
+  .about-qa__q, .about-qa__a, .about-chapter__body, .about-independence__thesis, .about-independence__flow, .about-mentoring__intro, .about-mentoring__progression, .colophon__story { grid-column: 1 / -1; }
+  .about-chapter, .about-independence, .about-mentoring, .about-words { margin-top: var(--s8); }
+  .about-qa__a { border-top: 0; padding-top: 0; }
   .about-independence { padding-block: var(--s7); }
-  .about-founder__evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); padding: var(--s5) 0 0; border-left: 0; border-top: 1px solid var(--rule-soft); }
-  .about-founder__evidence > div + div { margin-top: 0; }
-  .about-founder__evidence dt { font-size: .8125rem; }
-  .about-founder__evidence dd { font-size: clamp(1.75rem, 5vw, 2.75rem); }
   .about-community img { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 599px) {
+  .about-roles thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .about-roles tr, .about-roles th, .about-roles td { display: block; }
+  .about-roles tbody tr { border-top: 1px solid var(--rule-soft); padding-block: var(--s3); }
+  .about-roles tbody th, .about-roles td { border-top: 0; padding: var(--s1) 0; }
+  .about-roles td::before { content: attr(data-label); display: block; font-size: .8125rem; font-weight: 600; font-stretch: 86%; color: var(--ink-3); }
 }

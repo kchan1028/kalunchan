@@ -12,19 +12,33 @@ export const person = {
   github: 'https://github.com/kchan1028',
   yippify: 'https://yippify.com',
   products: [
+    { name: 'FedPath', url: 'https://gofedpath.com', note: 'Find and evaluate federal contracts for small business' },
     { name: 'VeloWise', url: 'https://getvelowise.com', note: 'Delivery analytics for engineering leaders' },
     { name: 'SurgeIQ', url: 'https://getsurgeiq.com', note: 'Free cycling stats, power zones and workouts' },
-    { name: 'Useful Little Tools', url: 'https://usefullittletools.com', note: 'Free calculators for everyday decisions' },
+    { name: 'Useful Little Tools', url: 'https://usefullittletools.app', note: 'Free calculators for everyday decisions' },
   ],
   // Public email is undecided; set a string here to render a mail link.
   email: null,
-  openTo: [
-    'Director of Engineering',
-    'Head of Engineering',
-    'VP Engineering',
-    'Engineering Manager',
-    'Staff / Principal leadership',
-  ],
+};
+
+// Entity summary, headline numbers and call to action (POSITIONING.md).
+// Values still set to a REPLACE_WITH_ placeholder are left out of the site until filled in.
+export const isPlaceholder = (value) => typeof value === 'string' && value.includes('REPLACE_WITH_');
+
+export const entity =
+  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 23+ years across every layer of a business, from helpdesk and network operations to product, marketing and architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition. He now leads government technology work through Yippify.';
+
+export const headlineNumbers = [
+  { figure: '23+', text: 'years in software' },
+  { figure: '400,000+', text: 'users scaled as co-founder and CTO' },
+  { figure: 'Acquired', text: 'with users across 3 continents' },
+];
+
+export const updated = '[REPLACE_WITH_MONTH YEAR]';
+
+export const availability = {
+  ask: 'Need an engineering leader who has done the work?',
+  text: `From helpdesk calls and data center cabling to product, SEO and an acquisition, I’ve worked every layer of a company. Tell me what you’re building.${isPlaceholder(updated) ? '' : ` Updated ${updated}.`}`,
 };
 
 // One row per tenure, newest first. Five-part impact story:

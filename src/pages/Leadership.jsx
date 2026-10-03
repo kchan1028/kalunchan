@@ -1,7 +1,8 @@
+import { Link } from 'react-router';
 import { person } from '../content/profile';
 import { practices, counterparts } from '../content/practice';
 import TitleBlock from '../components/TitleBlock';
-import { ArrowOut } from '../components/Icons';
+import { ArrowOut, ArrowRight } from '../components/Icons';
 
 export default function Leadership() {
   return (
@@ -13,16 +14,10 @@ export default function Leadership() {
         </p>
       </div>
 
-      <aside className="open-to on-blue" aria-labelledby="open-h" data-coord="100 · Open to">
+      <aside className="open-to on-blue" aria-label="Current work" data-coord="100 · Current work">
         <div className="sheet grid">
-          <h2 id="open-h" className="open-to__h label">Currently open to</h2>
-          <ul className="open-to__roles">
-            {person.openTo.map((r) => (
-              <li key={r}>{r}</li>
-            ))}
-          </ul>
+          <p className="open-to__roles">Working with teams through Yippify on engineering leadership, architecture and delivery.</p>
           <div className="open-to__side">
-            <p className="open-to__note">And technical consulting through Yippify.</p>
             <a className="action" href={person.linkedin} rel="me noopener" target="_blank">
               Start a conversation <ArrowOut />
             </a>
@@ -58,6 +53,11 @@ export default function Leadership() {
                   <li key={s}>{s}</li>
                 ))}
               </ul>
+              {p.read && (
+                <p className="practice__read">
+                  <Link to={p.read.to} className="link-arrow"><span>{p.read.label}</span> <ArrowRight /></Link>
+                </p>
+              )}
             </div>
           </article>
         ))}

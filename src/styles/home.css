@@ -71,6 +71,48 @@
   max-width: 11ch;
 }
 
+.opening__entity {
+  margin-top: var(--s6);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.5;
+  max-width: 56ch;
+}
+
+/* Headline numbers: ruled cells, like the stamp above. */
+.opening__facts {
+  margin-top: var(--s6);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-soft);
+  max-width: 44rem;
+}
+
+.opening__facts li {
+  padding: var(--s3) var(--s4);
+  border-left: 1px solid var(--rule-soft);
+  font-size: var(--t-small);
+  font-stretch: 92%;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.opening__facts li:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.opening__facts strong {
+  display: block;
+  margin-bottom: var(--s1);
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
 .opening__level {
   margin-top: var(--s6);
   font-size: var(--t-lead);
@@ -379,6 +421,19 @@
 
   .opening__thesis {
     font-size: clamp(2.75rem, 13.4vw, 4rem);
+  }
+
+  .opening__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .opening__facts li {
+    border-left: 0;
+    padding-inline: 0;
+  }
+
+  .opening__facts li + li {
+    border-top: 1px solid var(--rule-soft);
   }
 
   .opening__open {
@@ -734,4 +789,18 @@
   .home-practice .contents-list {
     grid-column: 1 / -1;
   }
+}
+
+.opening__shipped {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s4);
+  margin-top: var(--s4);
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.opening__shipped .label {
+  flex-basis: 100%;
 }

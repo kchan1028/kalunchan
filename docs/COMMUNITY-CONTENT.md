@@ -14,6 +14,15 @@ Preserve the site's privacy policy: no employer names, years, date ranges, spons
 
 Do not expand this into claims about leading sponsorships, building the website, managing registration, running race-day technology, or personally achieving participation/fundraising outcomes without confirmation.
 
+## Confirmed later by the owner
+
+- KC built the new berkeleyomnium.com and works on event promotion and partnerships (project page `/projects/berkeley-omnium/`).
+- KC is actively seeking sponsors for the 2027 Berkeley Omnium; sponsorship page `https://berkeleyomnium.com/sponsor/`.
+- The KaiVelo Foundation is the event's 501(c)(3) nonprofit partner (no link published).
+- The post `/writing/berkeley-omnium-new-website-next-generation/` is the owner's own text, lightly edited. It is the only place event years appear; `scripts/audit-seo.py` allows them there and on `/writing/`.
+
+Still unpublished: fundraising totals, prize amounts, founding year, sponsor names.
+
 ## Public source record
 
 These research URLs are not visitor-facing backlinks. All prose is rewritten for this portfolio.

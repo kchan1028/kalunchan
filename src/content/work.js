@@ -287,6 +287,7 @@ export const cases = [
       'Exactly-once is a property you design with idempotency, not a setting you buy.',
       'Keep synchronous calls for where a person is waiting. Everything else can be an event.',
     ],
+    related: { to: '/writing/should-it-be-a-microservice/', label: 'How I decide whether a microservice should actually be a microservice' },
     verify: true,
   },
   {

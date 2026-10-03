@@ -22,6 +22,7 @@ export default function Community() {
     <section className="sheet community-organizer" aria-labelledby="organizer-title" data-coord="500 · My involvement">
       <h2 id="organizer-title" className="h3">Why I help organize it</h2>
       <p className="body-copy">I help organize Berkeley Omnium because it helps grow the next generation of cyclists. All proceeds go to six East Bay NICA teams. What I enjoy most is working with a fantastic team of people and volunteers who make the weekend happen.</p>
+      <p className="body-copy">I also built the event’s new website. Read <Link to="/writing/berkeley-omnium-new-website-next-generation/">why the new site tells the story behind the races</Link>, or see <Link to="/projects/berkeley-omnium/">how it was built</Link>.</p>
     </section>
 
     <nav className="sheet community-contents" aria-label="In this community guide">

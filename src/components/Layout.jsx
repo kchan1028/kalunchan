@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
-import { person } from '../content/profile';
+import { availability, person } from '../content/profile';
 import { headFor } from '../site';
 import { ArrowOut } from './Icons';
 import Coordinate from './Coordinate';
@@ -13,6 +13,7 @@ export const nav = [
   { to: '/expertise/', no: '400', label: 'Expertise' },
   { to: '/community/', no: '500', label: 'Community' },
   { to: '/mentorship/', no: '600', label: 'Mentorship' },
+  { to: '/writing/', no: '650', label: 'Writing' },
   { to: '/contact/', no: '700', label: 'Contact' },
 ];
 
@@ -65,6 +66,7 @@ function Header() {
 function Colophon() {
   const { pathname } = useLocation();
   const isAbout = pathname.replace(/\/$/, '') === '/about';
+  const isHome = pathname === '/';
   return (
     <footer id="contact" className="colophon" data-coord="Contact">
       <div className="sheet">
@@ -80,10 +82,11 @@ function Colophon() {
             </div>
           ) : (
             <h2 className="colophon__ask h2">
-              Hiring an engineering leader, or need a system shipped? Let’s talk.
+              Have a system to ship or a team to lead? Let’s talk.
             </h2>
           )}
           <div className="colophon__routes">
+            {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
             <a className="action" href={person.linkedin} rel="me noopener" target="_blank">
               {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />
             </a>
@@ -125,7 +128,7 @@ function useDocumentTitle() {
   useEffect(() => {
     const head = new DOMParser().parseFromString(headFor(pathname), 'text/html').head;
     document.head.querySelectorAll(
-      'title, meta[name="description"], meta[name="robots"], link[rel="canonical"], meta[property^="og:"], meta[name="twitter:card"], script[type="application/ld+json"]'
+      'title, meta[name="description"], meta[name="robots"], link[rel="canonical"], meta[property^="og:"], meta[property^="article:"], meta[name^="twitter:"], script[type="application/ld+json"]'
     ).forEach((element) => element.remove());
     document.head.append(...Array.from(head.children));
   }, [pathname]);

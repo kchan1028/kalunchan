@@ -174,7 +174,7 @@ export default function Diagram({ spec, id, no }) {
         <span className="mono">Fig. {no}</span>
         <span>{spec.label}</span>
         <span className="diagram__key label">
-          <span className="diagram__key-mark" aria-hidden="true" /> Critical path
+          <span className="diagram__key-mark" aria-hidden="true" /> {spec.key || 'Critical path'}
         </span>
       </figcaption>
       <Drawing L={layoutH(spec)} spec={spec} id={`${id}-h`} className="dg--h" />

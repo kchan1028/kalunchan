@@ -23,8 +23,6 @@ export const strengths = [
   'Technical strategy', 'Engineering leadership', 'Developing engineers',
 ];
 
-export const roles = ['Director of Engineering', 'Head of Engineering', 'VP Engineering', 'Senior Engineering Manager'];
-
 export const operating = [
   { says: 'I ask why.', means: 'Before choosing technology.' },
   { says: 'I stay technical.', means: 'Leadership shouldn’t cost technical credibility.' },

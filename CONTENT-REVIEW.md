@@ -13,6 +13,18 @@ The 2026 redesign drafted some content from the brief rather than from the previ
 | 305 Event-driven microservices | `verify` | Organization and years are unknown ("SaaS platform", "Various"). The outbox and Kafka design is drafted. |
 | 306 Carrier capacity planning | Mostly confirmed | The "plan from measured utilization" decision is inferred. |
 
+## Shipped projects (`src/content/projects.js`)
+
+Features, audiences and outcomes come from the live sites and the owner's brief. No metrics are claimed. Each project is flagged `verify` because the decision rationale (rejected options and notes) is drafted.
+
+| Project | What to check |
+|---|---|
+| 311 FedPath | Role ("Product, design & engineering") and "Independent product". Rejected options: AI scoring, search-only product, gated search. |
+| 312 Berkeley Omnium | Role ("Organizing team · website, promotion & partnerships"). Rejected options: one site per race, text-and-gallery site. |
+| 313 Union City Smog Check | Rejected options: stock imagery, online booking, site-builder/CMS. "Static prerendered React" per the owner's brief. |
+
+Screenshots in `public/images/projects/` were captured from the live sites; re-capture them when a site changes. The Union City desktop screenshot shows the live "Closed now" hours badge from the time of capture.
+
 ## Experience (`src/content/profile.js`)
 
 - Yippify start year: shown as **2018 – now**.

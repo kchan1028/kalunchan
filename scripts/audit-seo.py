@@ -7,6 +7,8 @@ from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1] / 'build'
+EVENT_YEAR_ROUTES = {'/writing/', '/writing/berkeley-omnium-new-website-next-generation/'}
+OMNIUM_URLS = {'https://berkeleyomnium.com/', 'https://berkeleyomnium.com/sponsor/'}
 ORIGIN = 'https://kalunchan.dev'
 
 class Page(HTMLParser):
@@ -80,7 +82,11 @@ for path, page in pages.items():
         expected = '/projects/' if route == '/work/' else route
         assert page.canonical == [ORIGIN + expected], (path, page.canonical)
         assert page.meta.get('og:url') == ORIGIN + expected, path
-    assert not re.search(r'\b(?:19|20)\d{2}\b|\bpresent\b', ' '.join(page.text), re.I), path
+    # Event years (e.g. "2027 Berkeley Omnium") are owner-approved on these routes only; career dates stay private.
+    text = ' '.join(page.text)
+    if route in EVENT_YEAR_ROUTES:
+        text = re.sub(r'\b20[2-9]\d\b', '', text)
+    assert not re.search(r'\b(?:19|20)\d{2}\b|\bpresent\b', text, re.I), path
     for img in page.images:
         assert img.get('alt') and img.get('width') and img.get('height'), (path, img)
         assert (ROOT / img['src'].lstrip('/')).is_file(), (path, img)
@@ -90,7 +96,7 @@ for path, page in pages.items():
         url = urlsplit(href)
         assert not re.search(r'\.pdf|résumé|resume', href, re.I), (path, href)
         if 'berkeleyomnium' in url.netloc:
-            assert href == 'https://berkeleyomnium.com/', (path, href)
+            assert href in OMNIUM_URLS, (path, href)
             assert not any(v in a.get('rel', '') for v in ('nofollow', 'sponsored')), (path, a)
             counts['omnium'] += 1
         if 'berkeleybikeclub' in url.netloc:

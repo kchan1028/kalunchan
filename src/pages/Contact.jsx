@@ -5,7 +5,7 @@ import BandHead from '../components/BandHead';
 import useReveal from '../components/useReveal';
 import { ArrowDown, ArrowOut, ArrowRight } from '../components/Icons';
 import { person } from '../content/profile';
-import { branches, problems, strengths, roles, operating, becomes, impression } from '../content/contact';
+import { branches, problems, strengths, operating, becomes, impression } from '../content/contact';
 
 // Engineering leadership drawn as one system: three branches joined by a hands-on bus, converging on the outcome.
 function Stack() {
@@ -75,7 +75,7 @@ export default function Contact() {
         <div className="sheet grid">
           <header className="stack__head">
             <p className="mono stack__fig">Fig. 700-1</p>
-            <h2 id="stack-title" className="h2">Looking for an engineering leader who can still go deep?</h2>
+            <h2 id="stack-title" className="h2">Need an engineering leader who can still go deep?</h2>
           </header>
           <div className="stack__copy">
             <p>I don’t see engineering management, architecture, delivery and people development as separate jobs. They influence each other.</p>
@@ -104,7 +104,7 @@ export default function Contact() {
         <ul className="fit__run" aria-label="Where I’m most relevant">
           {strengths.map((s) => <li key={s}>{s}</li>)}
         </ul>
-        <p className="fit__roles">The title varies: {roles.slice(0, -1).join(', ')}, {roles.at(-1)}, or a hands-on technical leadership role. The work is what matters.</p>
+        <p className="fit__roles">I work with companies through Yippify, on scoped projects or ongoing engineering leadership. The work is what matters.</p>
       </section>
 
       <section className="sheet contact-band operate" aria-labelledby="operate-title" data-coord="704 · What you get">

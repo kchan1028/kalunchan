@@ -1,21 +1,122 @@
 import { Link } from 'react-router';
 import TitleBlock from '../components/TitleBlock';
 import { ArrowRight } from '../components/Icons';
-import { person } from '../content/profile';
+import { withTodos } from '../components/Todo';
+import { entity, isPlaceholder, person, updated } from '../content/profile';
 import { cycling } from '../content/community';
-import { careerChapters, independence, mentoringProgression } from '../content/about';
+import {
+  careerChapters, independence, mentoringProgression,
+  keyTakeaways, currentWork, delivered, valueFit, leadershipPractices, problems, publishedFaq, sources,
+} from '../content/about';
+
+const workUrl = Object.fromEntries([['Yippify', person.yippify], ...person.products.map((p) => [p.name, p.url])]);
+
+// One question-and-answer block of the profile: question on the left, answer on the right.
+function Qa({ id, coord, q, children }) {
+  return <section id={id} className="sheet grid about-qa" aria-labelledby={`${id}-title`} data-coord={`050 · ${coord}`}>
+    <h2 id={`${id}-title`} className="about-qa__q">{q}</h2>
+    <div className="about-qa__a">{children}</div>
+  </section>;
+}
 
 export default function About() {
   return <article className="about-story" aria-labelledby="about-title">
     <TitleBlock section="050" title="About" as="p" />
 
-    <header className="sheet about-opening" data-coord="050 · Career story">
-      <h1 id="about-title" className="display">Engineering depth.<br />Leadership that scales.</h1>
+    <header className="sheet about-opening" data-coord="050 · Profile">
+      <h1 id="about-title" className="display">Ka Lun Chan (KC): Engineering Leader, San Francisco Bay Area</h1>
+      {!isPlaceholder(updated) && <p className="about-updated label">Updated {updated}</p>}
       <div className="about-opening__intro">
-        <p className="about-opening__lead">I’m KC. I’ve spent 23+ years building software, taking a SaaS business from inception through acquisition, and leading engineering teams.</p>
-        <p className="body-copy">I’ve owned the code, the production problem, the product decision, and the business consequences. That experience shapes how I lead: stay close enough to understand the work, and build a team that can take it further.</p>
+        <p className="about-opening__lead">{entity}</p>
+        <div className="about-takeaways">
+          <h2 className="label">Key takeaways</h2>
+          <ul className="spec-list">{keyTakeaways.map((t) => <li key={t}>{t}</li>)}</ul>
+        </div>
       </div>
       <a href="#contact" className="link-arrow about-opening__contact">Start a conversation <ArrowRight /></a>
+    </header>
+
+    <Qa id="generalist" coord="Generalist" q="What kind of engineering leader is Ka Lun Chan?">
+      <p>KC is a generalist: an engineering leader who has done most of the jobs on his teams, and many of the jobs around them. That range came from building a startup from the ground up to an acquisition, where every problem was his to solve.</p>
+      <p>He learned how a business runs before he learned software. At his family’s florist he handled everything from the accounting to buying flowers, arranging them and selling them. At the family restaurant he ran everything from marketing to food delivery. Both taught him that software has to fit the way a business actually works.</p>
+      <p>His technical path started on the front line, on an IT helpdesk and in technical support for DSL providers. From there he kept a nationwide carrier network running, from DS1 circuits to OC links, working with routers, switches, Unix systems and fault management tools. He automated that work with scripts before anyone called it DevOps, and forecast network capacity with programs he wrote in R and Excel, using Cacti stats pulled into Excel.</p>
+      <p>As a co-founder and CTO, he did whatever the company needed that week: product management, marketing and SEO, racking and cabling servers in the data center, building the web application and building the voice network. Since then he has restructured a startup’s mobile app, network and open-source voice platform, advised many startups, worked in media publishing, and now builds government technology through Yippify.</p>
+      <p className="about-qa__highlight">That background lets him talk to the executive team, product, marketing, finance, sales, operations and engineering in their own terms, and see how a technical decision will play out across the whole business.</p>
+    </Qa>
+
+    <Qa id="who" coord="Who is KC" q="Who is Ka Lun Chan?">
+      <p>Ka Lun Chan, known as KC, is a software engineering leader based in the San Francisco Bay Area. His career covers founding, scaling and running engineering at SaaS and communications companies.</p>
+      <p>He has worked as an engineer, SaaS co-founder, engineering manager and CTO. He describes his focus as combining hands-on technical depth, product judgment, strong execution and developing people.</p>
+    </Qa>
+
+    <Qa id="now" coord="Working on now" q="What is he working on now?">
+      <p>KC consults through Yippify and builds his own products. His Yippify clients include government, startup and entrepreneur teams, for whom he delivers mobile and web applications.</p>
+      <ul className="spec-list">{currentWork.map((w) => <li key={w.name}>
+        <strong><a href={workUrl[w.name]}>{w.name}</a>:</strong> {w.text}
+      </li>)}</ul>
+    </Qa>
+
+    <Qa id="delivered" coord="Delivered" q="What has Ka Lun Chan delivered?">
+      <p>His record includes scaling a product to 400,000+ users and an acquisition, and infrastructure work across 2,000+ carrier sites.</p>
+      <ul className="spec-list">{delivered.map((d) => <li key={d.term}><strong>{d.term}</strong> {d.text}</li>)}</ul>
+      <p>{withTodos('[Add company names and years for each role where you’re allowed to. Delete this note.]')}</p>
+    </Qa>
+
+    <Qa id="value" coord="Where he adds value" q="Where does Ka Lun Chan add the most value?">
+      <p>KC is most useful where a company needs someone who can set technical direction and still do the work: taking a product from idea to launch, scaling past a first platform, or fixing slow and unpredictable delivery.</p>
+      <table className="about-roles">
+        <caption className="visually-hidden">Situations where KC adds value, what he does, and relevant experience</caption>
+        <thead>
+          <tr><th scope="col" className="label">Situation</th><th scope="col" className="label">What he does</th><th scope="col" className="label">Relevant experience</th></tr>
+        </thead>
+        <tbody>{valueFit.map((r) => <tr key={r.situation}>
+          <th scope="row">{r.situation}</th>
+          <td data-label="What he does">{r.does}</td>
+          <td data-label="Relevant experience">{r.experience}</td>
+        </tr>)}</tbody>
+      </table>
+    </Qa>
+
+    <Qa id="founder-cto" coord="Founder-CTO" q="How does a founder-CTO background differ from a career engineering manager’s?">
+      <p>A founder-CTO has owned every layer at once: product, architecture, hiring, operations and business outcomes. A career manager has usually worked within an established organization and processes. KC has done both: he built from inception as a co-founder and ran established functions as CTO and VP of Operations. That combination suits companies that need structure without losing speed.</p>
+    </Qa>
+
+    <Qa id="approach" coord="How he leads" q="How does he lead engineering teams?">
+      <p>KC’s guiding principle is to remove single points of failure. That covers systems, knowledge and decision-makers. In practice:</p>
+      <ul className="spec-list">{leadershipPractices.map((l) => <li key={l.term}><strong>{l.term}</strong> {l.text}</li>)}</ul>
+    </Qa>
+
+    <Qa id="problems" coord="Problems he solves" q="What problems is he brought in to solve?">
+      <p>Teams bring KC in when delivery is slow or unpredictable, when the architecture no longer fits the product, or when too much depends on one person or system. Typical situations:</p>
+      <ul className="spec-list">{problems.map((p) => <li key={p}>{p}</li>)}</ul>
+    </Qa>
+
+    <Qa id="technology" coord="Technology" q="What technologies does he work with?">
+      <p>His core stack is Python, Django, Rails, React, Next.js and PostgreSQL, running on AWS. His experience also covers distributed systems, cloud infrastructure, and product and data engineering.</p>
+    </Qa>
+
+    <Qa id="ai" coord="AI & data" q="What AI and data work has he done?">
+      <p>KC lists AI and machine-learning products and data work among his areas of expertise. VeloWise, his delivery analytics product, turns engineering delivery data into insight for leaders.</p>
+      <p>{withTodos('[Add one specific AI or ML project: what it did, the model or approach, and one result. Delete this note.]')}</p>
+    </Qa>
+
+    <Qa id="engagements" coord="Engagements" q="How do engagements work?">
+      <p>KC works with companies through Yippify, on scoped projects or ongoing engineering leadership. Each engagement starts by agreeing on the problem, the constraints and what a useful outcome looks like, then moves in small steps with working software early.</p>
+      <p>For market context, GoFractional reports a median fractional CTO rate of $200 an hour, with the middle 50% between $175 and $250. That figure is from September 2026 and comes from a small sample: 14 job posts and 787 candidate profiles over 90 days.</p>
+    </Qa>
+
+    <Qa id="based" coord="Location" q="Where is he based?">
+      <p>KC is based in the San Francisco Bay Area and works with teams across the US, remotely and in person in the Bay Area.</p>
+      <p>He is also active in the local cycling community. He founded and organizes the Berkeley Omnium, rides with the Berkeley Bicycle Club and leads a Bay Area cycling team.</p>
+    </Qa>
+
+    <Qa id="work-with" coord="Contact" q="How can you work with Ka Lun Chan?">
+      <p>The fastest way to reach KC is a LinkedIn message at <a href={person.linkedin}>linkedin.com/in/kchan1288</a>. For consulting projects, contact <a href={person.yippify}>Yippify</a>. His code is on GitHub at <a href={person.github}>github.com/kchan1028</a>.</p>
+    </Qa>
+
+    <header className="sheet about-words" data-coord="050 · Career story">
+      <h2 className="display">Engineering depth.<br />Leadership that scales.</h2>
+      <p className="about-opening__lead">I’ve owned the code, the production problem, the product decision, and the business consequences. That experience shapes how I lead: stay close enough to understand the work, and build a team that can take it further.</p>
     </header>
 
     <nav className="sheet about-chapters" aria-label="Career story chapters">
@@ -30,7 +131,6 @@ export default function About() {
         <h2 id="engineering-title" className="h2">The work doesn’t end when the code ships.</h2>
         <div className="about-prose">
           <p>Engineering and operating production systems taught me to care about what happens after launch. Building products added another question: does this actually solve the problem for the person using it?</p>
-          <p>My work grew across software and product engineering, architecture, cloud infrastructure, and distributed systems. I learned to connect implementation choices with reliability, delivery, and the team that would have to maintain the result.</p>
         </div>
       </div>
     </section>
@@ -39,18 +139,11 @@ export default function About() {
       <span className="about-chapter__number mono" aria-hidden="true">02</span>
       <div className="about-chapter__body">
         <h2 id="founder-title" className="h2">Building a company changed how I build software.</h2>
-        <div className="about-founder__story">
-          <div className="about-prose">
-            <p>I co-founded a SaaS company, built the product from inception, and led engineering through acquisition. Responsibility for both the product and the business made the consequences of technical decisions much clearer.</p>
-            <p>Architecture affects cost. Technical debt affects delivery. Reliability affects customers. Complexity affects who we can hire and how quickly they can contribute. Infrastructure choices show up in the margins.</p>
-            <p>I still bring that perspective to a design review: what does this decision make possible for the business, and what does it ask the team to carry?</p>
-            <Link to="/work/three-continent-platform/" className="link-arrow">Inside the platform’s growth <ArrowRight /></Link>
-          </div>
-          <dl className="about-founder__evidence" aria-label="Scale of the SaaS platform">
-            <div><dt>Users served</dt><dd>400k+</dd></div>
-            <div><dt>Continents supported</dt><dd>3</dd></div>
-            <div><dt>Company outcome</dt><dd>Acquired</dd></div>
-          </dl>
+        <div className="about-prose">
+          <p>Responsibility for both the product and the business made the consequences of technical decisions much clearer.</p>
+          <p>Architecture affects cost. Technical debt affects delivery. Reliability affects customers. Complexity affects who we can hire and how quickly they can contribute. Infrastructure choices show up in the margins.</p>
+          <p>I still bring that perspective to a design review: what does this decision make possible for the business, and what does it ask the team to carry?</p>
+          <Link to="/work/three-continent-platform/" className="link-arrow">Inside the platform’s growth <ArrowRight /></Link>
         </div>
       </div>
     </section>
@@ -134,14 +227,24 @@ export default function About() {
           </figure>
           <div className="about-prose">
             <p>I put substantial time into cycling through <a href={cycling.club}>Berkeley Bicycle Club</a>, junior development, volunteering, and race organization. Mentoring young cyclists comes from the same place as mentoring engineers: offer guidance and real opportunities, let people gain experience, and give them room to become more capable.</p>
-            <p>I help organize <a href={cycling.omnium}>Berkeley Omnium</a>, bringing together the Berkeley Hills Road Race and Berkeley Streets Criterium. All proceeds go to six East Bay NICA teams, helping support the next generation of cyclists.</p>
+            <p><a href={cycling.omnium}>Berkeley Omnium</a> brings together the Berkeley Hills Road Race and Berkeley Streets Criterium. All proceeds go to six East Bay NICA teams, helping support the next generation of cyclists.</p>
             <p>A race is much more than race day. Volunteers, racers, juniors, collegiate athletes, sponsors, officials, and organizers all contribute. I enjoy working with that team. We make something possible together that none of us could deliver alone.</p>
             <Link to="/community/" className="link-arrow">The racing and the community behind it <ArrowRight /></Link>
           </div>
         </div>
         <p className="about-community__closing">The common thread is simple: leave the system, team, or community stronger, with more people ready to carry it forward.</p>
-        <p className="about-context-links">For the full career history, <a href={person.linkedin}>find me on LinkedIn</a>. Consulting engagements are available through <a href={person.yippify}>Yippify</a>.</p>
       </div>
     </section>
+
+    <Qa id="faq" coord="FAQ" q="FAQ">
+      <div className="about-faq">{publishedFaq.map((item) => <div key={item.q}>
+        <h3 className="h3">{item.q}</h3>
+        <p>{item.a}</p>
+      </div>)}</div>
+    </Qa>
+
+    <Qa id="sources" coord="Sources" q="Sources">
+      <ul className="spec-list">{sources.map((s) => <li key={s.url}><a href={s.url}>{s.label}</a></li>)}</ul>
+    </Qa>
   </article>;
 }

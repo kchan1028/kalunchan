@@ -67,3 +67,5 @@
 .community-organizer { display: grid; grid-template-columns: 1fr 2fr; gap: var(--s6); padding-block: var(--s5) var(--s7); }
 .community-organizer p { max-width: 65ch; }
 @media (max-width: 899px) { .community-organizer { grid-template-columns: 1fr; gap: var(--s4); } }
+.community-organizer p + p { grid-column: 2; margin-top: calc(-1 * var(--s4)); }
+@media (max-width: 899px) { .community-organizer p + p { grid-column: auto; margin-top: 0; } }

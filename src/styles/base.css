@@ -145,6 +145,13 @@ svg {
   white-space: nowrap;
 }
 
+/* Unreplaced [BRACKETED] placeholder copy: deliberately obvious until filled in. */
+.todo {
+  outline: 1px dashed currentColor;
+  outline-offset: 1px;
+  padding-inline: 0.15em;
+}
+
 .skip {
   position: absolute;
   left: var(--gutter);

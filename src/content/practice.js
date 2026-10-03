@@ -157,6 +157,7 @@ export const practices = [
     body:
       'Walking skeletons end to end before features, real data before demos, and security and accessibility as release gates rather than launch-week audits.',
     signals: ['Nothing new is learned on launch day', 'Estimates tighten as work progresses'],
+    read: { to: '/writing/what-sprint-carryover-is-telling-you/', label: 'What sprint carryover is telling you' },
   },
   {
     no: '106',
@@ -184,6 +185,7 @@ export const practices = [
     body:
       'Product gets honest options with costs attached. QA is in planning, not only at the end. Executives get risk in plain language, early.',
     signals: ['Roadmap changes cost negotiation, not surprise', 'Quality is planned, not inspected in'],
+    read: { to: '/writing/when-everything-is-a-priority/', label: 'How I handle changing priorities' },
   },
 ];
 

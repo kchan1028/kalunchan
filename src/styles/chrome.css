@@ -473,6 +473,16 @@ p.title-block__heading {
   align-self: end;
 }
 
+.colophon__availability {
+  color: #b6bcc2;
+  max-width: 44ch;
+}
+
+.colophon__availability strong {
+  color: var(--paper);
+  font-weight: 650;
+}
+
 .colophon .action {
   background: var(--paper);
   color: var(--ink);

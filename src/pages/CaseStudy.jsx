@@ -120,6 +120,12 @@ export default function CaseStudy() {
             <li key={l}>{l}</li>
           ))}
         </ul>
+        {c.related && (
+          <p className="case__related">
+            <span className="label">Related writing</span>
+            <Link to={c.related.to} className="link-arrow"><span>{c.related.label}</span> <ArrowRight /></Link>
+          </p>
+        )}
       </section>
 
       <nav className="sheet case__next" aria-label="Next case study">
