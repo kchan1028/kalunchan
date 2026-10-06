@@ -34,7 +34,7 @@ export default function Body() {
         <p>A good engineering organization needs to be able to respond to all of that.</p>
         <p className="post__answer">The problem isn’t changing priorities. The problem is changing priorities without acknowledging what the change costs.</p>
         <p>Across more than two decades in software, as an engineer, a co-founder and CTO, and an engineering leader, I’ve seen teams fall into the same cycle. Something is the top priority on Monday. Something else replaces it on Wednesday. By Friday, everyone is asking why the first thing isn’t finished.</p>
-        <p>At that point, the problem isn’t engineering velocity. It’s the system around the team.</p>
+        <p>At that point the problem is the system around the team. Engineering velocity is just where it shows up.</p>
       </section>
 
       <section id="cost" aria-labelledby="cost-h">
@@ -50,7 +50,7 @@ export default function Body() {
           <li>Where the risks are.</li>
         </ul>
         <p>Move them to something else and some of that disappears. When they return three weeks later, they don’t simply continue where they stopped. They have to reconstruct the problem first.</p>
-        <p>That cost is real. And when it happens repeatedly across an entire team, it becomes significant.</p>
+        <p>Repeat that across a whole team every few weeks and the cost gets large.</p>
       </section>
 
       <section id="starting" aria-labelledby="starting-h">
@@ -60,7 +60,6 @@ export default function Body() {
         <p>This is why I pay so much attention to work in progress. Ten projects at 80% complete don’t provide the same value as eight finished ones. Partially finished work can’t reach customers, can’t earn revenue and can’t teach you anything.</p>
         <p>So sometimes the right response to a new priority isn’t “Start this immediately.” It’s this:</p>
         <p className="post__pull">If this is now the most important thing, what are we going to stop?</p>
-        <p>That second question changes the conversation.</p>
       </section>
 
       <section id="tradeoff" aria-labelledby="tradeoff-h">
@@ -155,7 +154,7 @@ export default function Body() {
           <li>Friday: AI.</li>
           <li>Next Monday: cost reduction.</li>
         </ul>
-        <p>That isn’t agility. It’s a lack of direction.</p>
+        <p>No team can be agile around that, because there’s no direction left to adapt toward.</p>
       </section>
 
       <section id="carryover" aria-labelledby="carryover-h">
@@ -179,8 +178,7 @@ export default function Body() {
         <h2 id="finish-h" className="post__h2">Finish more. Start less.</h2>
         <p>One of the simplest ways to improve delivery is also one of the hardest: stop starting things.</p>
         <p>When something new becomes important, first ask whether the team can finish something already close to done. Waiting two days to finish the current work is often much cheaper than abandoning it immediately. Emergencies are different, of course. But most business requests aren’t emergencies.</p>
-        <p>Reducing work in progress creates the thing organizations need most: finished work. Finished work can reach customers. It can generate revenue. It can produce feedback.</p>
-        <p>Half-finished work mostly produces status meetings.</p>
+        <p>Reducing work in progress creates the thing organizations need most: finished work. Finished work can reach customers, earn revenue and produce feedback. Half-finished work mostly produces status meetings.</p>
         <p>It’s the same logic behind how I <Link to="/leadership/#execution">improve execution with small, safe changes</Link>. Smaller pieces of work finish sooner, and work that finishes sooner is cheaper to pause or redirect when priorities do change.</p>
       </section>
 
@@ -209,7 +207,6 @@ export default function Body() {
           <li><strong>What happens to work already in progress?</strong> Finish it, pause it intentionally, reduce its scope, or cancel it.</li>
           <li><strong>Which expectations need to change?</strong> Dates, scope, capacity or commitments need to reflect the new decision.</li>
         </ol>
-        <p>That doesn’t stop priorities from changing. It makes the cost visible.</p>
       </section>
 
       <section id="agility" aria-labelledby="agility-h">
@@ -227,7 +224,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The question I keep coming back to</h2>
       <div className="post__close-copy">
-        <p className="lead">There will always be another customer request, another production problem, another executive idea, and another technology everyone suddenly wants to explore. The goal isn’t to prevent change. It’s to build an organization that can respond to change without losing its ability to finish things.</p>
+        <p className="lead">There will always be another customer request, another production problem, another executive idea, and another technology everyone suddenly wants to explore. The goal is an organization that can respond to all of it without losing its ability to finish things.</p>
         <p>So when a new priority arrives, the most useful question often isn’t “How quickly can we start?”</p>
         <p className="post__close-principle">It’s “What are we willing to stop?”</p>
         <div className="post__close-actions">

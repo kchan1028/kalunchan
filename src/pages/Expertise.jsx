@@ -11,7 +11,7 @@ export default function Expertise() {
       <TitleBlock section="400" title="Expertise" cells={[{ k: 'Areas', v: `${capabilities.length} capabilities` }, { k: 'Evidence', v: '5 roles' }]} />
       <div className="sheet grid page-lead">
         <p className="page-lead__claim">
-          Technology supports the story. The matrix shows where each capability was earned, and the tools come last.
+          Each capability is mapped to the roles where I actually used it. Tools are listed last because they changed the most.
         </p>
       </div>
 
@@ -78,6 +78,18 @@ export default function Expertise() {
                 <div>
                   <h3 className="capability__subh label">Tools</h3>
                   <p className="capability__stack">{c.stack.join(', ')}</p>
+                </div>
+              )}
+              {c.evidence && (
+                <div className="capability__evidence">
+                  <h3 className="capability__subh label">See it applied</h3>
+                  <ul>
+                    {c.evidence.map((e) => (
+                      <li key={e.to}>
+                        <Link to={e.to} className="link-arrow"><span>{e.label}</span> <ArrowRight /></Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>

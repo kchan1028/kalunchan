@@ -123,7 +123,9 @@ export default function CaseStudy() {
         {c.related && (
           <p className="case__related">
             <span className="label">Related writing</span>
-            <Link to={c.related.to} className="link-arrow"><span>{c.related.label}</span> <ArrowRight /></Link>
+            {[].concat(c.related).map((r) => (
+              <Link key={r.to} to={r.to} className="link-arrow"><span>{r.label}</span> <ArrowRight /></Link>
+            ))}
           </p>
         )}
       </section>

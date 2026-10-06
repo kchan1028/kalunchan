@@ -14,7 +14,7 @@ export default function Community() {
         <a href={cycling.omnium} className="action">Explore Berkeley Omnium <ArrowOut /></a>
       </div>
       <figure className="community-intro__photo">
-        <img src="/images/community/berkeley-hills-road-race-1280.webp" srcSet="/images/community/berkeley-hills-road-race-640.webp 640w, /images/community/berkeley-hills-road-race-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1920" height="1080" fetchPriority="high" alt="A line of cyclists follows a tree-lined road at the Berkeley Hills Road Race" />
+        <img src="/images/community/berkeley-hills-road-race-1280.webp" srcSet="/images/community/berkeley-hills-road-race-640.webp 640w, /images/community/berkeley-hills-road-race-960.webp 960w, /images/community/berkeley-hills-road-race-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1920" height="1080" fetchPriority="high" alt="A line of cyclists follows a tree-lined road at the Berkeley Hills Road Race" />
         <figcaption className="label">The hills bring the field together. The racing tests it.</figcaption>
       </figure>
     </header>
@@ -58,7 +58,7 @@ export default function Community() {
 
     <section id="legacy" className="sheet grid community-legacy" aria-labelledby="legacy-title" data-coord="502 · Racing heritage">
       <figure>
-        <img src="/images/community/berkeley-streets-criterium-1280.webp" srcSet="/images/community/berkeley-streets-criterium-640.webp 640w, /images/community/berkeley-streets-criterium-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1600" height="1066" loading="lazy" decoding="async" alt="Spectators cheer as riders round a corner at the Berkeley Streets Criterium" />
+        <img src="/images/community/berkeley-streets-criterium-1280.webp" srcSet="/images/community/berkeley-streets-criterium-640.webp 640w, /images/community/berkeley-streets-criterium-960.webp 960w, /images/community/berkeley-streets-criterium-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1600" height="1066" loading="lazy" decoding="async" alt="Spectators cheer as riders round a corner at the Berkeley Streets Criterium" />
         <figcaption className="label">Street racing makes the competition visible, lap after lap.</figcaption>
       </figure>
       <div>
@@ -80,7 +80,7 @@ export default function Community() {
           <p className="body-copy">{item.body}</p>
         </section>)}</div>
         <figure>
-          <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="4898" height="3265" loading="lazy" decoding="async" alt="Three junior cyclists ride together on a wooded road" />
+          <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-960.webp 960w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="4898" height="3265" loading="lazy" decoding="async" alt="Three junior cyclists ride together on a wooded road" />
           <figcaption className="label">Confidence grows through practice and riding with others.</figcaption>
         </figure>
       </div>

@@ -63,6 +63,14 @@
   line-height: 1.2;
 }
 
+.post__prose * + .post__h3 {
+  margin-top: var(--s6);
+}
+
+.post__prose .post__h2 + .post__h3 {
+  margin-top: 0;
+}
+
 .post__prose .post__answer {
   font-size: var(--t-lead);
   line-height: 1.45;
@@ -384,4 +392,665 @@
 
 .post__close-actions .link-arrow span {
   text-decoration-color: var(--on-blue-rule);
+}
+
+/* ---------- Founder story (656): callouts, timeline, phases, paths ---------- */
+/* Callout: a ruled spec row, label in the margin, no box. */
+.post__note {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--s1) var(--s5);
+  margin-block: var(--s6);
+  padding-block: var(--s4);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-soft);
+  max-width: 66ch;
+}
+
+.post__prose .post__note > p {
+  margin: 0;
+}
+
+.post__prose .post__note > p:last-child {
+  color: var(--ink);
+  font-weight: 560;
+  font-stretch: 94%;
+  line-height: 1.5;
+}
+
+.post__prose .post__note .label {
+  padding-top: 0.2em;
+  color: var(--ink-3);
+}
+
+/* Multi-column ruled list for short terms. */
+.post__many {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  column-gap: var(--s5);
+  margin-top: var(--s5);
+  max-width: 66ch;
+  border-top: 1px solid var(--rule);
+}
+
+.post__many li {
+  padding-block: var(--s2);
+  border-bottom: 1px solid var(--rule-soft);
+  font-weight: 600;
+  font-stretch: 90%;
+}
+
+/* Two-row contrast: the old way above, the new way below. */
+.post__contrast {
+  margin-block: var(--s6);
+  max-width: 66ch;
+  border-top: 3px solid var(--rule);
+}
+
+.post__contrast div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: var(--s4);
+  align-items: baseline;
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.post__contrast dd {
+  font-size: var(--t-h3);
+  font-weight: 700;
+  font-stretch: 88%;
+  line-height: 1.25;
+}
+
+.post__contrast .is-before dd {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.post__tenets {
+  margin-top: var(--s5);
+  max-width: 66ch;
+  border-top: 3px solid var(--rule);
+  counter-reset: tenet;
+}
+
+.post__tenets li {
+  counter-increment: tenet;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  align-items: baseline;
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: clamp(1.25rem, 1rem + 0.9vw, 1.75rem);
+  font-weight: 750;
+  font-stretch: 76%;
+  line-height: 1.15;
+}
+
+.post__tenets li::before {
+  content: counter(tenet, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: var(--t-mono);
+  font-weight: 450;
+  font-stretch: 87.5%;
+  color: var(--ink-3);
+}
+
+/* Shared figure caption for the founder-story figures. */
+.journey,
+.phases,
+.paths {
+  margin-block: var(--s7);
+}
+
+.journey__cap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s2);
+  padding-bottom: var(--s3);
+  border-bottom: 3px solid var(--rule);
+  font-weight: 600;
+  font-stretch: 90%;
+}
+
+.journey__cap .mono {
+  color: var(--ink-3);
+}
+
+.journey__key {
+  flex-basis: 100%;
+  color: var(--ink-3);
+}
+
+/* Fig. 656-1: vertical stage line. */
+.journey__stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem 20px minmax(0, 1fr);
+  column-gap: var(--s3);
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.journey__stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: calc(2.25rem + var(--s3) + 9.5px);
+  width: 1px;
+  background: var(--rule);
+}
+
+.journey__stage:first-child::before {
+  top: calc(var(--s4) + 0.75em);
+}
+
+.journey__stage:last-child::before {
+  bottom: auto;
+  height: calc(var(--s4) + 0.75em);
+}
+
+.journey__no {
+  padding-top: 0.45em;
+  color: var(--ink-3);
+}
+
+.journey__node {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.55em;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+}
+
+.is-dated .journey__node {
+  background: var(--ink);
+}
+
+.is-accent .journey__node {
+  width: 14px;
+  height: 14px;
+  margin-top: 0.42em;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.post__prose .journey__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--s3);
+  font-size: var(--t-h3);
+  font-weight: 750;
+  font-stretch: 80%;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.journey__year,
+.journey__tag {
+  font-size: var(--t-mono);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.journey__tag {
+  color: var(--ink-3);
+}
+
+.post__prose .journey__text {
+  margin-top: var(--s1);
+  font-size: var(--t-small);
+  max-width: 56ch;
+}
+
+.post__prose .journey__loop {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s2);
+  color: var(--ink-3);
+}
+
+/* Fig. 656-2: phase tabs, after the mentorship ladder. */
+.phases__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s5);
+}
+
+.phases__tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding: var(--s4) var(--s3) var(--s4) 0;
+  background: none;
+  border: 0;
+  border-top: 3px solid var(--rule-soft);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms var(--ease-out);
+}
+
+.phases__tab:hover {
+  border-top-color: var(--rule);
+}
+
+.phases__tab[aria-selected='true'] {
+  border-top-color: var(--blue);
+}
+
+.phases__no {
+  color: var(--ink-3);
+}
+
+.phases__name {
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+  font-weight: 800;
+  font-stretch: 70%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transition: color 180ms var(--ease-out);
+}
+
+.phases__tab[aria-selected='true'] .phases__name,
+.phases__tab:hover .phases__name {
+  color: var(--blue);
+}
+
+.phases__title {
+  margin-top: var(--s1);
+  font-weight: 700;
+  font-stretch: 88%;
+}
+
+.phases__job {
+  font-size: var(--t-small);
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.phases__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--s6);
+  row-gap: var(--s5);
+  margin-top: var(--s5);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--rule);
+}
+
+.phases__panel[hidden] {
+  display: none;
+}
+
+.phases__panel .label {
+  color: var(--ink-3);
+}
+
+.post__prose .phases__panel .label + * {
+  margin-top: var(--s2);
+}
+
+.post__prose .phases__panel p + .label {
+  margin-top: var(--s5);
+}
+
+.phases__focus li {
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.post__prose .phases__question {
+  font-size: var(--t-h3);
+  font-weight: 700;
+  font-stretch: 86%;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* Fig. 656-4: outside vs inside. */
+.paths__row {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: var(--s2) var(--s5);
+  padding-block: var(--s5);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.paths__row .label {
+  padding-top: 0.3em;
+  color: var(--ink-3);
+}
+
+.paths__seq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) 0;
+  font-weight: 650;
+  font-stretch: 88%;
+  line-height: 1.3;
+}
+
+.paths__seq li:not(:last-child)::after {
+  content: '→';
+  margin-inline: var(--s2);
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+.paths__seq--outside {
+  font-size: var(--t-h3);
+  font-weight: 800;
+  font-stretch: 72%;
+}
+
+.paths__seq li:last-child {
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.25em;
+}
+
+.paths__seq--outside li:last-child {
+  text-decoration: none;
+}
+
+@media (max-width: 899px) {
+  .phases__tabs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .phases__tab {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    column-gap: var(--s3);
+    row-gap: var(--s1);
+    padding-block: var(--s3);
+    border-top-width: 1px;
+    border-top-color: var(--rule-soft);
+  }
+
+  .phases__tab[aria-selected='true'] {
+    border-top-width: 3px;
+  }
+
+  .phases__no {
+    grid-row: span 3;
+    padding-top: 0.6em;
+  }
+
+  .phases__panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  .post__note,
+  .paths__row {
+    grid-template-columns: 1fr;
+  }
+
+  .post__contrast div {
+    grid-template-columns: 1fr;
+    gap: var(--s1);
+  }
+}
+
+/* Founder story photos: a ruled three-step strip and a single narrow plate. */
+.post__photos,
+.post__photo {
+  margin-block: var(--s7);
+}
+
+.post__photo {
+  max-width: 26rem;
+}
+
+.post__photos ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s3);
+  padding-top: var(--s3);
+  border-top: 3px solid var(--rule);
+}
+
+.post__photos img,
+.post__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--paper-sunk);
+}
+
+.post__photos li .label {
+  display: block;
+  margin-top: var(--s2);
+}
+
+.post__photos figcaption,
+.post__photo figcaption {
+  margin-top: var(--s3);
+  max-width: 60ch;
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.post__photos figcaption .mono,
+.post__photo figcaption .mono,
+.post__photos li .mono {
+  color: var(--ink-3);
+  margin-right: var(--s1);
+}
+
+@media (max-width: 599px) {
+  .post__photos ol {
+    grid-template-columns: 1fr;
+  }
+
+  .post__photos img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+/* ---------- Writing index: topic filter ---------- */
+.writing-topics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--s5);
+  padding-block: var(--s2);
+}
+
+.writing-topics .label {
+  margin-right: var(--s2);
+}
+
+.writing-topics button {
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-weight: 600;
+  font-stretch: 90%;
+  cursor: pointer;
+  transition: color 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.writing-topics button:hover {
+  color: var(--ink);
+}
+
+.writing-topics button[aria-pressed='true'] {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+.writing-topics + .case-index {
+  margin-top: var(--s5);
+}
+
+/* ---------- Strava MCP guide (657): commands, prompts, chat, flow ---------- */
+.post__code {
+  margin-block: var(--s5);
+  max-width: 66ch;
+  border-top: 3px solid var(--rule);
+  background: var(--paper-sunk);
+}
+
+.post__code-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s1) var(--s1) var(--s1) var(--s4);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.post__copy {
+  min-height: 36px;
+  padding: 0 var(--s3);
+  background: var(--paper);
+  border: 1px solid var(--rule-soft);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-stretch: 86%;
+  cursor: pointer;
+}
+
+.post__copy:hover {
+  border-color: var(--rule);
+  color: var(--ink);
+}
+
+/* Wrap long commands instead of scrolling sideways on phones; Copy keeps them exact. */
+.post__code pre {
+  margin: 0;
+  padding: var(--s4);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-stretch: 87.5%;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.post__prose .post__code code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
+.post__prompts {
+  margin-top: var(--s5);
+  max-width: 66ch;
+  border-top: 1px solid var(--rule);
+}
+
+.post__prompts li {
+  padding-block: var(--s3);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.post__prose .post__prompt {
+  color: var(--ink);
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.post__prose .post__why {
+  margin-top: var(--s1);
+  font-size: var(--t-small);
+}
+
+.post__chat {
+  margin-block: var(--s6);
+  max-width: 66ch;
+  border-top: 3px solid var(--rule);
+}
+
+.post__chat div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: var(--s4);
+  align-items: baseline;
+  padding-block: var(--s4);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.post__chat dd {
+  color: var(--ink-2);
+}
+
+.post__chat .is-me dd {
+  color: var(--ink);
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.flow__picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-block: var(--s4) var(--s2);
+}
+
+.flow__pick {
+  min-height: 44px;
+  padding: 0 var(--s4);
+  background: none;
+  border: 1px solid var(--rule-soft);
+  color: var(--ink-2);
+  font: inherit;
+  font-weight: 600;
+  font-stretch: 90%;
+  cursor: pointer;
+  transition: color 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.flow__pick:hover {
+  border-color: var(--rule);
+  color: var(--ink);
+}
+
+.flow__pick[aria-pressed='true'] {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.post__prose .flow__note {
+  margin-top: var(--s3);
+  font-size: var(--t-small);
+  color: var(--ink-3);
+}
+
+@media (max-width: 599px) {
+  .post__chat div {
+    grid-template-columns: 1fr;
+    gap: var(--s1);
+  }
+}
+
+.post__tok,
+.post__prose code.post__tok {
+  white-space: nowrap;
+  overflow-wrap: normal;
 }

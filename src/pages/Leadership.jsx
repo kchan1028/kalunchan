@@ -78,7 +78,7 @@ export default function Leadership() {
       <section className="sheet grid off-clock" aria-labelledby="off-h" data-coord="110 · Off the clock">
         <h2 id="off-h" className="off-clock__h label">Off the clock</h2>
         <p className="off-clock__text">
-          I lead a Bay Area co-ed amateur cycling team: racing, recruitment rides, and volunteering at local events. Same job, different peloton. Set the pace, bring new riders in, and make sure nobody gets dropped.
+          I lead a Bay Area co-ed amateur cycling team: racing, recruitment rides, and volunteering at local events. Some of it overlaps with leading engineers more than I expected: setting a pace people can hold, bringing new riders in, and making sure nobody gets dropped.
         </p>
       </section>
     </>

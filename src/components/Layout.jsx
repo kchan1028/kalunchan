@@ -76,8 +76,8 @@ function Colophon() {
               <h2 className="colophon__ask h2">Let’s build something that can outgrow us.</h2>
               <p>I’m interested in organizations scaling teams, modernizing platforms, improving engineering execution, or building new products. If your next challenge needs technical depth, product thinking, and people who can grow with the work, I’d like to talk.</p>
               <nav className="colophon__next" aria-label="Explore my engineering work">
-                <Link to="/experience/">View My Experience</Link>
-                <Link to="/projects/">See What I’ve Built</Link>
+                <Link to="/experience/">See my engineering experience</Link>
+                <Link to="/projects/">See what I’ve built</Link>
               </nav>
             </div>
           ) : (

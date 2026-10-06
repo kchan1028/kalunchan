@@ -5,7 +5,7 @@ export const person = {
   name: 'Ka Lun Chan',
   short: 'KC',
   role: 'Engineering leader',
-  thesis: 'I build teams, systems, and products that deliver.',
+  thesis: 'I build products and the teams that scale them.',
   level:
     'Engineering leader across carrier networks, SaaS, media platforms and government technology. I co-founded a SaaS company and ran engineering through its acquisition. Today I lead architecture and delivery for public-sector and startup clients.',
   linkedin: 'https://www.linkedin.com/in/kchan1288/',
@@ -94,7 +94,7 @@ export const roles = [
     era: 'SaaS, founder',
     scale: '400k+ users · 3 continents · acquired',
     problem:
-      'Build a service from nothing, then keep it fast for users spread across North America, Europe and Asia.',
+      'Build a service from nothing, then keep it fast for users spread across South America, Asia and Africa.',
     responsibility:
       'Co-founded the company. Built the network and the multi-tier web and mobile application, and led engineering from first line of code to acquisition.',
     decisions: [
@@ -106,6 +106,7 @@ export const roles = [
     outcome:
       '400k+ users, multimillion-dollar growth, and a successful acquisition.',
     cases: ['three-continent-platform'],
+    story: { to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder journey: from 0→1 to acquisition' },
   },
   {
     id: 'voice',

@@ -15,22 +15,26 @@ const base = [
   },
   {
     "path": "/about/",
+    name: "About",
     "title": "Ka Lun Chan | Engineering Leader & SaaS Founder",
     "description": "Meet KC: an engineering leader and SaaS founder combining hands-on technical depth, product judgment, strong execution, and developing people."
   },
   {
     "path": "/leadership/",
-    "title": "Engineering Leadership \u2014 Ka Lun Chan",
-    "description": "How I lead engineering teams through architecture decisions, delivery, ownership, and technical growth."
+    name: "Leadership",
+    "title": "How I Lead Engineering Teams \u2014 Ka Lun Chan",
+    "description": "My engineering leadership operating manual: eight practices for architecture decisions, technical debt, delivery and growing engineers, and the signals I watch."
   },
   {
     "path": "/experience/",
-    "title": "Experience \u2014 Ka Lun Chan",
-    "description": "Engineering impact across carrier networks, communications platforms, media publishing, and public services."
+    name: "Experience",
+    "title": "Engineering Leadership Experience \u2014 Ka Lun Chan",
+    "description": "Co-founder and CTO through an acquisition, media CTO, VP of Operations and carrier network engineering: the problems, decisions and results behind each role."
   },
   {
     "path": "/projects/",
-    "title": "Projects \u2014 Ka Lun Chan",
+    name: "Projects",
+    "title": "Projects & Case Studies \u2014 Ka Lun Chan",
     "description": "Products and sites I’ve shipped, including FedPath, Berkeley Omnium and Union City Smog Check, plus case studies in cloud, platforms and AI.",
     image: { path: '/images/projects/fedpath-og.jpg', width: 1200, height: 630, alt: 'FedPath home page, one of the products on Ka Lun Chan’s projects page' }
   },
@@ -42,27 +46,32 @@ const base = [
   },
   {
     "path": "/expertise/",
-    "title": "Technical Expertise \u2014 Ka Lun Chan",
-    "description": "Explore my approach to product engineering, architecture, infrastructure, public services, and AI."
+    name: "Expertise",
+    "title": "Technical Expertise: Architecture, Cloud & AI \u2014 Ka Lun Chan",
+    "description": "Seven capabilities, from engineering leadership and software architecture to AWS, government technology and AI, mapped to the roles where each was earned."
   },
   {
     "path": "/community/",
+    name: "Community",
     "title": "Berkeley Omnium: Racing & Community | Ka Lun Chan",
     "description": "Why I help organize Berkeley Omnium: road and criterium racing, junior and collegiate cycling, and support for six East Bay NICA teams.",
     image: { path: '/images/community/berkeley-hills-road-race.jpg', width: 1920, height: 1080, alt: 'Cyclists on a tree-lined road at the Berkeley Hills Road Race' }
   },
   {
     "path": "/mentorship/",
-    "title": "Mentorship \u2014 Ka Lun Chan",
+    name: "Mentorship",
+    "title": "How I Mentor Engineers Until They Can Replace Me \u2014 Ka Lun Chan",
     "description": "Why I mentor engineers until they can replace me, and how the same principle shapes my work in junior cycling and Berkeley Omnium."
   },
   {
     path: '/writing/',
-    title: 'Writing — Ka Lun Chan',
-    description: 'Notes from two decades in software engineering and engineering leadership: how I learn, debug, make tradeoffs and decide what to build.',
+    name: 'Writing',
+    title: 'Writing on Cycling, AI, Software and Learning — Ka Lun Chan',
+    description: 'What I’m learning, building, riding and testing: cycling and training, AI experiments, tools I use, and essays from two decades of building software.',
   },
   {
     "path": "/contact/",
+    name: "Contact",
     "title": "Contact Ka Lun Chan \u2014 Engineering Leader",
     "description": "Talk with Ka Lun Chan, a hands-on engineering leader, about scaling teams, software architecture, platform modernization, and engineering delivery."
   }
@@ -80,9 +89,10 @@ export const routes = [
   })),
   ...cases.map((c) => ({
     path: `/work/${c.slug}/`,
-    title: `${c.title} — Case Study, Ka Lun Chan`,
-    description: c.summary,
+    title: `${c.seoTitle || c.title} — Ka Lun Chan`,
+    description: c.description || c.summary,
     type: 'article',
+    case: c,
   })),
   ...posts.map((p) => ({
     path: `/writing/${p.slug}/`,
@@ -104,6 +114,12 @@ export const NOT_FOUND = {
 // Sitewide Person (PROFILE.md section 4). Page schemas reference it by @id.
 // knowsAbout also keeps the terms from the site's earlier ProfilePage Person.
 const PERSON_ID = `${ORIGIN}/#person`;
+const WEBSITE_ID = `${ORIGIN}/#website`;
+// Section pages without a more specific schema of their own.
+const sectionPageTypes = {
+  '/leadership/': 'WebPage', '/experience/': 'WebPage', '/expertise/': 'WebPage',
+  '/mentorship/': 'WebPage', '/contact/': 'ContactPage',
+};
 const personLd = {
   '@type': 'Person',
   '@id': PERSON_ID,
@@ -184,6 +200,58 @@ export function headFor(path) {
   }
   // One JSON-LD graph per page: the sitewide Person plus any page-specific nodes.
   const graph = [personLd];
+  if (m.path === '/') {
+    graph.push({
+      '@type': 'WebSite', '@id': WEBSITE_ID, url,
+      name: 'Ka Lun Chan', alternateName: 'KC', inLanguage: 'en-US',
+      publisher: { '@id': PERSON_ID },
+    });
+  }
+  // Top-level sections: Home › Section. /community/ builds its own trail below.
+  if (m.name && m.path !== '/community/') {
+    graph.push({
+      '@type': 'BreadcrumbList', '@id': `${url}#breadcrumbs`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: ORIGIN + '/' },
+        { '@type': 'ListItem', position: 2, name: m.name, item: url },
+      ],
+    });
+  }
+  if (sectionPageTypes[m.path]) {
+    graph.push({
+      '@type': sectionPageTypes[m.path], '@id': `${url}#webpage`, url,
+      name: m.title, description: m.description, inLanguage: 'en-US',
+      isPartOf: { '@id': WEBSITE_ID },
+      author: { '@id': PERSON_ID },
+      breadcrumb: { '@id': `${url}#breadcrumbs` },
+    });
+  }
+  if (m.case) {
+    const c = m.case;
+    graph.push(
+      {
+        '@type': 'Article', '@id': `${url}#article`, url,
+        mainEntityOfPage: url,
+        headline: c.title,
+        description: c.summary,
+        inLanguage: 'en-US',
+        keywords: c.domain.join(', '),
+        articleSection: 'Case study',
+        author: { '@id': PERSON_ID },
+        publisher: { '@id': PERSON_ID },
+        isPartOf: { '@id': `${ORIGIN}/projects/#webpage` },
+        breadcrumb: { '@id': `${url}#breadcrumbs` },
+      },
+      {
+        '@type': 'BreadcrumbList', '@id': `${url}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: ORIGIN + '/' },
+          { '@type': 'ListItem', position: 2, name: 'Projects', item: `${ORIGIN}/projects/` },
+          { '@type': 'ListItem', position: 3, name: c.title, item: url },
+        ],
+      },
+    );
+  }
   if (m.path === '/' || m.path === '/about/') {
     graph.push({
       '@type': 'ProfilePage',
@@ -254,6 +322,7 @@ export function headFor(path) {
       '@type': 'CollectionPage', '@id': `${url}#webpage`, url,
       name: m.title, description: m.description, inLanguage: 'en-US',
       author: { '@id': PERSON_ID },
+      breadcrumb: { '@id': `${url}#breadcrumbs` },
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: [
@@ -329,6 +398,9 @@ export function headFor(path) {
         inLanguage: 'en-US',
         keywords: p.keywords.join(', '),
         articleSection: 'Writing',
+        ...(p.about && { about: p.about }),
+        ...(p.mentions && { mentions: p.mentions }),
+        ...(p.sources && { citation: p.sources.map((s) => s.url) }),
         timeRequired: `PT${p.minutes}M`,
         author: { '@id': PERSON_ID },
         publisher: { '@id': PERSON_ID },

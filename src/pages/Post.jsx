@@ -5,6 +5,8 @@ import * as berkeleyOmnium from '../content/posts/berkeley-omnium-new-website-ne
 import * as microservice from '../content/posts/should-it-be-a-microservice';
 import * as priorities from '../content/posts/when-everything-is-a-priority';
 import * as carryover from '../content/posts/what-sprint-carryover-is-telling-you';
+import * as founderStory from '../content/posts/building-a-startup-from-idea-to-acquisition';
+import * as stravaMcp from '../content/posts/connect-strava-to-claude-mcp';
 import TitleBlock from '../components/TitleBlock';
 import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight } from '../components/Icons';
@@ -15,7 +17,16 @@ const bodies = {
   'should-it-be-a-microservice': microservice,
   'when-everything-is-a-priority': priorities,
   'what-sprint-carryover-is-telling-you': carryover,
+  'building-a-startup-from-idea-to-acquisition': founderStory,
+  'connect-strava-to-claude-mcp': stravaMcp,
 };
+
+// Used when a post doesn't list its own related reading in writing.js.
+const defaultRelated = [
+  { to: '/leadership/', label: 'How I lead engineering teams' },
+  { to: '/mentorship/', label: 'Mentoring engineers until they can replace me' },
+  { to: '/projects/', label: 'Projects and case studies' },
+];
 
 export default function Post() {
   const { slug } = useParams();
@@ -86,9 +97,9 @@ export default function Post() {
       <nav className="sheet post__more" aria-label="Keep reading">
         <p className="label">Keep reading</p>
         <ul>
-          <li><Link to="/leadership/" className="link-arrow"><span>How I lead engineering teams</span> <ArrowRight /></Link></li>
-          <li><Link to="/mentorship/" className="link-arrow"><span>Mentoring engineers until they can replace me</span> <ArrowRight /></Link></li>
-          <li><Link to="/projects/" className="link-arrow"><span>Projects and case studies</span> <ArrowRight /></Link></li>
+          {(post.related || defaultRelated).map((r) => (
+            <li key={r.to}><Link to={r.to} className="link-arrow"><span>{r.label}</span> <ArrowRight /></Link></li>
+          ))}
           <li><Link to="/writing/" className="link-arrow"><span>All writing</span> <ArrowRight /></Link></li>
         </ul>
       </nav>

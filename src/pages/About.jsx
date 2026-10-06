@@ -79,6 +79,7 @@ export default function About() {
 
     <Qa id="founder-cto" coord="Founder-CTO" q="How does a founder-CTO background differ from a career engineering manager’s?">
       <p>A founder-CTO has owned every layer at once: product, architecture, hiring, operations and business outcomes. A career manager has usually worked within an established organization and processes. KC has done both: he built from inception as a co-founder and ran established functions as CTO and VP of Operations. That combination suits companies that need structure without losing speed.</p>
+      <p>He tells the longer version, from the first line of code through 1→10 and the acquisition, in <Link to="/writing/building-a-startup-from-idea-to-acquisition/">From an Idea to an Acquisition: What Building a Startup Taught Me</Link>.</p>
     </Qa>
 
     <Qa id="approach" coord="How he leads" q="How does he lead engineering teams?">
@@ -115,7 +116,7 @@ export default function About() {
     </Qa>
 
     <header className="sheet about-words" data-coord="050 · Career story">
-      <h2 className="display">Engineering depth.<br />Leadership that scales.</h2>
+      <h2 className="display">From writing the code to leading the people who write it.</h2>
       <p className="about-opening__lead">I’ve owned the code, the production problem, the product decision, and the business consequences. That experience shapes how I lead: stay close enough to understand the work, and build a team that can take it further.</p>
     </header>
 
@@ -141,8 +142,9 @@ export default function About() {
         <h2 id="founder-title" className="h2">Building a company changed how I build software.</h2>
         <div className="about-prose">
           <p>Responsibility for both the product and the business made the consequences of technical decisions much clearer.</p>
-          <p>Architecture affects cost. Technical debt affects delivery. Reliability affects customers. Complexity affects who we can hire and how quickly they can contribute. Infrastructure choices show up in the margins.</p>
+          <p>Architecture shows up in cost, technical debt in delivery dates, and reliability in what customers say about you. Complexity decides who we can hire and how quickly they can contribute. Infrastructure choices show up in the margins.</p>
           <p>I still bring that perspective to a design review: what does this decision make possible for the business, and what does it ask the team to carry?</p>
+          <Link to="/writing/building-a-startup-from-idea-to-acquisition/" className="link-arrow">Read the founder story, from idea to acquisition <ArrowRight /></Link>
           <Link to="/work/three-continent-platform/" className="link-arrow">Inside the platform’s growth <ArrowRight /></Link>
         </div>
       </div>
@@ -181,7 +183,7 @@ export default function About() {
         <h2 id="mentoring-title" className="h2">From asking for answers to owning decisions.</h2>
         <div className="about-prose">
           <p>I’ve mentored engineers at different career stages and across distributed teams. The useful work goes beyond syntax: breaking down ambiguity, investigating a problem, understanding business context, communicating tradeoffs, and recovering from mistakes.</p>
-          <p>I want people to challenge my thinking and become better engineers and leaders than me. Their growth creates room for them, for me, and for the organization. I consider a capable successor a leadership success.</p>
+          <p>I want people to challenge my thinking and become better engineers and leaders than me. I consider a capable successor a leadership success.</p>
           <Link to="/mentorship/" className="link-arrow">More on mentoring engineers <ArrowRight /></Link>
         </div>
       </div>
@@ -200,8 +202,8 @@ export default function About() {
         <div className="about-judgment">
           <div className="about-prose">
             <h3 className="h3">Make the tradeoffs explicit.</h3>
-            <p>I’ve worked across SaaS, customer-facing platforms, legacy modernization, government technology, and AI/ML products. Government work in particular demands speed alongside security, compliance, accessibility, reliability, and complex business rules. Process has to help us deliver.</p>
-            <p>Whether the work involves Python and Django, Rails, React and Next.js, cloud architecture, or an LLM system, technology is a tool. The outcome is the goal.</p>
+            <p>I’ve worked across SaaS, customer-facing platforms, legacy modernization, government technology, and AI/ML products. Government work in particular demands speed alongside security, compliance, accessibility, reliability, and complex business rules, so process has to earn its place by helping us ship.</p>
+            <p>The stack changes from job to job: Python and Django, Rails, React and Next.js, cloud infrastructure, LLM systems. The questions I ask before choosing any of it stay the same.</p>
             <p>What problem are we solving? Which constraints matter? What is the simplest architecture that can reliably support the outcome? And what will the decision cost the people maintaining it later?</p>
             <Link to="/expertise/" className="link-arrow">Explore my technical approach <ArrowRight /></Link>
           </div>
@@ -209,7 +211,7 @@ export default function About() {
             <h3 className="h3">Leadership shouldn’t be surprised by engineering.</h3>
             <p>I look for clear requirements, real ownership, and work small enough to review and release safely. Architecture, technical debt, quality, and operational risk belong in delivery planning.</p>
             <p>Leadership needs to know what is progressing, what is blocked, why a timeline changed, and which decisions need attention. That should be a clear conversation, not an exercise in decoding a backlog.</p>
-            <p>Engineering works as a whole: people, decisions, delivery, and production feedback. When those parts connect, teams can act earlier and executives can make informed choices.</p>
+            <p>When people, decisions, delivery and production feedback are connected, teams spot problems earlier and executives hear about them while there’s still time to choose.</p>
             <Link to="/leadership/" className="link-arrow">How I run engineering <ArrowRight /></Link>
           </div>
         </div>
@@ -222,17 +224,17 @@ export default function About() {
         <h2 id="community-title" className="h2">Create opportunities. Make room for the next person.</h2>
         <div className="about-community__story">
           <figure>
-            <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 40vw, 560px" width="1280" height="853" loading="lazy" decoding="async" alt="Three junior cyclists gain riding experience together on a wooded road" />
+            <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-960.webp 960w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 40vw, 560px" width="1280" height="853" loading="lazy" decoding="async" alt="Three junior cyclists gain riding experience together on a wooded road" />
             <figcaption className="label">Experience grows through practice, support, and opportunities to take the lead.</figcaption>
           </figure>
           <div className="about-prose">
             <p>I put substantial time into cycling through <a href={cycling.club}>Berkeley Bicycle Club</a>, junior development, volunteering, and race organization. Mentoring young cyclists comes from the same place as mentoring engineers: offer guidance and real opportunities, let people gain experience, and give them room to become more capable.</p>
             <p><a href={cycling.omnium}>Berkeley Omnium</a> brings together the Berkeley Hills Road Race and Berkeley Streets Criterium. All proceeds go to six East Bay NICA teams, helping support the next generation of cyclists.</p>
-            <p>A race is much more than race day. Volunteers, racers, juniors, collegiate athletes, sponsors, officials, and organizers all contribute. I enjoy working with that team. We make something possible together that none of us could deliver alone.</p>
+            <p>Race day is the visible part. Volunteers, racers, juniors, collegiate athletes, sponsors, officials and organizers all put in work long before it, and I enjoy being part of that team.</p>
             <Link to="/community/" className="link-arrow">The racing and the community behind it <ArrowRight /></Link>
           </div>
         </div>
-        <p className="about-community__closing">The common thread is simple: leave the system, team, or community stronger, with more people ready to carry it forward.</p>
+        <p className="about-community__closing">Systems, teams and race weekends get the same treatment from me: leave them stronger, with more people ready to carry them forward.</p>
       </div>
     </section>
 

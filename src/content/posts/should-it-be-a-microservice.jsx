@@ -163,7 +163,7 @@ export default function Body() {
         <p>I’ve spent more than two decades building and running production software: first in network operations, later as a co-founder and CTO, and now leading engineering teams and helping companies with architecture. Over that time, one conversation keeps coming back. Someone proposes pulling a piece of the system out into its own service. Sometimes it’s the right call. Often, nobody in the room can say what problem it solves.</p>
         <p>The reasons tend to sound like this. “It’ll be cleaner.” “That’s how bigger companies do it.” “We’ll need it eventually.” “The monolith is getting too big.” None of those are wrong, exactly. They just aren’t reasons on their own.</p>
         <p>Here’s where I’ve landed. A microservice should solve a real problem: an organizational one, a scaling one, a deployment one, a reliability one, or a domain-boundary one. It shouldn’t exist because microservices sound like what a serious engineering team is supposed to have.</p>
-        <p>This isn’t another microservices-versus-monolith tutorial. It’s how I actually think through the decision, including the parts that only show up after a service has been running for a few years.</p>
+        <p>What follows is how I actually think through the decision, including the parts that only show up after a service has been running for a few years.</p>
       </section>
 
       <section id="when-to-use" aria-labelledby="when-to-use-h">
@@ -294,7 +294,7 @@ export default function Body() {
           <li><strong>Cross-module side effects go through in-process events</strong> where it makes sense, so the code is already shaped like something that could be split.</li>
           <li><strong>Every module has a named owner,</strong> even when one team owns several.</li>
         </ol>
-        <p>Scale alone isn’t a reason to split, either. When I was <Link to="/work/three-continent-platform/">co-founder and CTO of a platform that grew past 400,000 users</Link> across North America, Europe and Asia, the answer wasn’t to break the application up. We kept one architecture and ran the full application tier in three regions, routing users to the nearest one. The hard problem was distance, and splitting the code wouldn’t have fixed it.</p>
+        <p>Scale alone isn’t a reason to split, either. When I was <Link to="/work/three-continent-platform/">co-founder and CTO of a platform that grew past 400,000 users</Link> across South America, Asia and Africa, the answer wasn’t to break the application up. We kept one architecture and ran the full application tier in three regions, routing users to the nearest one. The hard problem was distance, and splitting the code wouldn’t have fixed it.</p>
       </section>
 
       <section id="extract-later" aria-labelledby="extract-later-h">

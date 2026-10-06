@@ -22,19 +22,28 @@ export const capabilities = [
       'Cross-functional work with product, QA and executives',
     ],
     stack: [],
+    evidence: [
+      { to: '/leadership/', label: 'My engineering leadership operating manual' },
+      { to: '/writing/when-everything-is-a-priority/', label: 'Leading engineering through changing priorities' },
+      { to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story: from first line of code to acquisition' },
+    ],
     depth: { carrier: 1, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'product',
     no: '402',
     name: 'Product engineering',
-    claim: 'Product work: web and mobile applications people actually use, built to keep changing.',
+    claim: 'Web and mobile applications people actually use, built so they can keep changing.',
     practice: [
       'Web and mobile product delivery',
       'Front-end architecture and performance',
       'Accessible, testable interfaces',
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Python', 'Django', 'Ruby on Rails'],
+    evidence: [
+      { to: '/projects/fedpath/', label: 'FedPath: a federal contracting product' },
+      { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: a small-business site' },
+    ],
     depth: { carrier: 0, voice: 1, communications: 2, publishing: 2, yippify: 2 },
   },
   {
@@ -49,6 +58,10 @@ export const capabilities = [
       'Incremental migration of legacy systems',
     ],
     stack: ['REST APIs', 'Microservices', 'Kafka', 'PostgreSQL', 'Redis'],
+    evidence: [
+      { to: '/writing/should-it-be-a-microservice/', label: 'When something should actually be a microservice' },
+      { to: '/work/event-driven-platform/', label: 'Case study: event-driven microservices with Kafka' },
+    ],
     depth: { carrier: 1, voice: 1, communications: 2, publishing: 2, yippify: 2 },
   },
   {
@@ -63,19 +76,27 @@ export const capabilities = [
       'CI/CD and environment automation',
     ],
     stack: ['AWS', 'ECS', 'Lambda', 'S3', 'CloudFront', 'Docker', 'Terraform', 'CI/CD'],
+    evidence: [
+      { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
+      { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
+    ],
     depth: { carrier: 2, voice: 2, communications: 2, publishing: 1, yippify: 2 },
   },
   {
     id: 'gov',
     no: '405',
     name: 'Government technology',
-    claim: 'Public services where accessibility, security and hand-over are requirements, not extras.',
+    claim: 'Public services where accessibility, security and a clean hand-over to the agency are part of the scope from day one.',
     practice: [
       'Incremental modernization of services the public relies on',
       'Accessibility (WCAG) and security as release gates',
       'Procurement-aware delivery and agency hand-over',
     ],
     stack: ['Python', 'Django', 'React', 'AWS', 'Terraform'],
+    evidence: [
+      { to: '/work/public-service-modernization/', label: 'Case study: public-sector modernization without a rewrite' },
+      { to: '/projects/fedpath/', label: 'FedPath: SAM.gov opportunities for small businesses' },
+    ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 0, yippify: 2 },
     verify: true,
   },
@@ -91,6 +112,10 @@ export const capabilities = [
       'Workflow automation',
     ],
     stack: ['LLM APIs', 'RAG', 'Vector search', 'Python'],
+    evidence: [
+      { to: '/work/document-intelligence/', label: 'Case study: LLM document processing with a human in the loop' },
+      { to: '/writing/building-a-startup-from-idea-to-acquisition/#still-build', label: 'Why I stay hands-on with LLMs, RAG, agents and MCP' },
+    ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 1, yippify: 2 },
     verify: true,
   },
@@ -105,6 +130,10 @@ export const capabilities = [
       'Debugging production across the stack',
     ],
     stack: ['Python', 'TypeScript', 'SQL', 'Docker'],
+    evidence: [
+      { to: '/projects/', label: 'Products and sites I’ve shipped' },
+      { to: '/writing/you-dont-need-to-remember-everything/', label: 'Why I still look things up after two decades' },
+    ],
     depth: { carrier: 2, voice: 1, communications: 2, publishing: 1, yippify: 2 },
     verify: true,
   },
@@ -139,6 +168,7 @@ export const practices = [
     body:
       'I budget capacity for paying down debt every cycle and spend it where debt slows the roadmap: hot paths, flaky tests, risky deploys. Cosmetic debt waits.',
     signals: ['Lead time and change-failure rate trend down', 'Debt items are tied to the roadmap they block'],
+    read: { to: '/writing/building-a-startup-from-idea-to-acquisition/#technical-debt', label: 'How a startup taught me to treat debt as an investment' },
   },
   {
     no: '104',
@@ -167,6 +197,7 @@ export const practices = [
     body:
       'I choose conventional stacks that can be hired for, draw service boundaries along business lines, and treat runbooks and docs as part of done.',
     signals: ['On-call is quiet', 'Hand-overs take days, not months'],
+    read: { to: '/writing/should-it-be-a-microservice/#five-years', label: 'What it costs to own a service for five years' },
   },
   {
     no: '107',
@@ -176,6 +207,7 @@ export const practices = [
     body:
       'I delegate real ownership with context, review for judgement as well as syntax, and create room for engineers to lead a decision end to end.',
     signals: ['Engineers run their own design reviews', 'Promotions come from inside the team'],
+    read: { to: '/writing/building-a-startup-from-idea-to-acquisition/#delegation', label: 'Learning to delegate as a technical founder' },
   },
   {
     no: '108',

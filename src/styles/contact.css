@@ -95,6 +95,51 @@
 .talk__impression { grid-column: 8 / -1; }
 .talk__impression li { padding-block: var(--s3); border-top: 1px solid var(--rule-soft); font-size: var(--t-h3); font-weight: 700; font-stretch: 84%; line-height: 1.25; color: var(--ink-2); }
 .talk__impression li:last-child { color: var(--ink); border-bottom: 3px solid var(--rule); }
+.talk--form .talk__direct { margin-top: var(--s5); }
+
+/* Contact form: hairline fields on the sheet, the same square edges as every other action. */
+.cform { --cform-error: #b42318; max-width: 42rem; margin-top: var(--s7); padding-top: var(--s5); border-top: 3px solid var(--rule); }
+.cform__title { font-size: var(--t-h3); font-stretch: 88%; line-height: 1.2; }
+.cform__title:focus { outline: none; }
+.cform__lead { margin-top: var(--s3); color: var(--ink-2); }
+.cform__fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--s5) var(--s4); margin-top: var(--s5); }
+.cform__field--wide { grid-column: 1 / -1; }
+.cform label { display: block; font-weight: 600; font-stretch: 92%; line-height: 1.3; }
+.cform__optional { font-weight: 400; color: var(--ink-3); }
+.cform input, .cform select, .cform textarea {
+  display: block; width: 100%; min-height: 48px; margin-top: var(--s2); padding: var(--s3);
+  font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--ink-3); border-radius: 0;
+  transition: border-color 160ms var(--ease-out);
+}
+.cform input:hover, .cform select:hover, .cform textarea:hover { border-color: var(--ink); }
+.cform select {
+  appearance: none; padding-right: var(--s7); cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 20px center, right 14px center; background-size: 6px 6px; background-repeat: no-repeat;
+}
+.cform textarea { min-height: 11rem; resize: vertical; line-height: 1.5; }
+.cform [aria-invalid='true'] { border-color: var(--cform-error); box-shadow: inset 0 0 0 1px var(--cform-error); }
+.cform__hint { margin-top: var(--s2); font-size: var(--t-small); color: var(--ink-3); }
+.cform__error { margin-top: var(--s2); font-size: var(--t-small); font-weight: 600; color: var(--cform-error); }
+.cform__error-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.cform__summary, .cform__failure, .cform__notice { margin-top: var(--s5); padding: var(--s3) var(--s4); background: var(--paper-sunk); border-left: 3px solid var(--blue); }
+.cform__summary, .cform__failure, .cform__notice--error { border-left-color: var(--cform-error); }
+.cform__summary h4 { font-size: var(--t-body); font-weight: 700; }
+.cform__summary ul { margin-top: var(--s2); font-size: var(--t-small); }
+.cform__summary li + li { margin-top: var(--s1); }
+.cform__notice { display: none; }
+.cform__notice:target { display: block; }
+.cform__submit { margin-top: var(--s6); font-family: inherit; font-size: inherit; line-height: inherit; cursor: pointer; }
+.cform__submit:disabled { cursor: progress; opacity: 0.72; }
+.cform__again { margin-top: var(--s4); padding: 0; font: inherit; font-weight: 600; font-stretch: 92%; color: inherit; background: none; border: 0; cursor: pointer; }
+/* Honeypot: off screen for people, still in the markup for bots. */
+.cform__hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (min-width: 900px) {
+  /* The impression list stays beside the form while it's filled in. */
+  .talk--form { align-items: start; }
+  .talk--form .talk__impression { position: sticky; top: calc(var(--header-h) + var(--s6)); margin-top: var(--s9); }
+}
 
 /* Mobile sticky action between hero and form. */
 .contact-bar { display: none; }

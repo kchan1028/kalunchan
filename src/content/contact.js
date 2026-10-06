@@ -28,8 +28,8 @@ export const operating = [
   { says: 'I stay technical.', means: 'Leadership shouldn’t cost technical credibility.' },
   { says: 'I make engineering visible.', means: 'Leadership shouldn’t be surprised by engineering.' },
   { says: 'I develop people.', means: 'The goal is engineers who make good decisions without me.' },
-  { says: 'I think in tradeoffs.', means: 'Architecture, delivery, cost, reliability, people and business outcomes are connected.' },
-  { says: 'I build for what comes next.', means: 'Not just what closes today’s ticket.' },
+  { says: 'I think in tradeoffs.', means: 'An architecture choice is also a choice about cost, delivery dates, reliability and who can maintain it.' },
+  { says: 'I build for what comes next.', means: 'Today’s ticket gets closed in a way the team can still live with next year.' },
 ];
 
 export const becomes = ['Cost', 'Hiring', 'Product', 'Customer', 'Business'];

@@ -13,7 +13,13 @@
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir .ssr && node scripts/prerender.mjs",
     "preview": "vite preview --outDir build",
-    "audit:seo": "python3 scripts/audit-seo.py"
+    "audit:seo": "python3 scripts/audit-seo.py",
+    "validate": "BUILD_DIR=.validate npm run build && BUILD_DIR=.validate npm run audit:seo",
+    "deploy": "bash scripts/deploy.sh",
+    "contact:dev": "node scripts/contact-dev-server.mjs",
+    "contact:email-dns": "node scripts/contact-email-dns.mjs",
+    "contact:deploy": "bash serverless/contact/deploy.sh",
+    "test:contact": "node --test tests/contact.test.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.2.0",

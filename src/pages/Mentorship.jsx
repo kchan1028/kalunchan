@@ -123,7 +123,7 @@ export default function Mentorship() {
       <header className="sheet grid mentor-hero" data-coord="600 · Mentorship">
         <h1 id="mentor-title" className="mentor-hero__title display">Mentor people until they can replace you.</h1>
         <div className="mentor-hero__copy">
-          <p className="mentor-hero__lead">That isn’t losing your value as a leader. It’s creating more of it.</p>
+          <p className="mentor-hero__lead">Done well, that makes you more valuable as a leader, because the team can do more without you.</p>
           <p className="body-copy">I believe leadership should increase the capability of the people around you. If everything depends on me, I haven’t built a strong team. I’ve built a dependency. A good leader becomes less necessary to the decisions they once had to make.</p>
         </div>
         <ul className="mentor-hero__four" aria-label="What I build">
@@ -205,7 +205,7 @@ export default function Mentorship() {
 
       <section className="sheet mentor-band arc" aria-labelledby="arc-title" data-coord="605 · Engineer to mentor">
         <BandHead no="605" id="arc-title" title="The definition of impact kept changing.">
-          <Link className="link-arrow" to="/about/"><span>The longer story</span> <ArrowRight /></Link>
+          <Link className="link-arrow" to="/writing/building-a-startup-from-idea-to-acquisition/#delegation"><span>The longer story: founder to engineering leader</span> <ArrowRight /></Link>
         </BandHead>
         <ol className="arc__path" aria-label="Career path">
           {career.map((c, i) => <li key={c}><span className="mono">{String(i + 1).padStart(2, '0')}</span>{c}</li>)}
@@ -230,7 +230,7 @@ export default function Mentorship() {
           <p className="mentor-turn__copy lead">Mentorship isn’t something I only care about at work. I genuinely enjoy helping people develop, and it’s a big part of why I’m involved with junior cycling and the cycling community.</p>
         </div>
         <figure className="sheet mentor-turn__photo">
-          <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 1440px) 92vw, 1330px" width="4898" height="3265" loading="lazy" decoding="async" alt="Three junior cyclists ride together on a wooded road" />
+          <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-960.webp 960w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 1440px) 92vw, 1330px" width="4898" height="3265" loading="lazy" decoding="async" alt="Three junior cyclists ride together on a wooded road" />
           <figcaption className="label">Confidence grows through practice and riding with others.</figcaption>
         </figure>
       </section>
@@ -238,7 +238,7 @@ export default function Mentorship() {
       <section className="sheet grid mentor-band juniors" aria-labelledby="juniors-title" data-coord="607 · Junior cycling">
         <div className="juniors__copy">
           <h2 id="juniors-title" className="h2">Faster is the smallest part of it.</h2>
-          <p className="body-copy">I’m involved with junior cycling because I enjoy watching young athletes develop. The goal isn’t only to ride faster. It’s helping young riders build the things that last well beyond a race result.</p>
+          <p className="body-copy">I’m involved with junior cycling because I enjoy watching young athletes develop, and most of what they build lasts well beyond a race result.</p>
         </div>
         <ul className="juniors__qualities" aria-label="What young riders develop">
           {riderQualities.map((q, i) => <li key={q} style={{ '--i': i }} data-reveal>{q}</li>)}
@@ -253,7 +253,7 @@ export default function Mentorship() {
 
       <section className="sheet grid mentor-band omnium" aria-labelledby="omnium-title" data-coord="608 · Berkeley Omnium">
         <figure className="omnium__photo">
-          <img src="/images/community/berkeley-streets-criterium-1280.webp" srcSet="/images/community/berkeley-streets-criterium-640.webp 640w, /images/community/berkeley-streets-criterium-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1600" height="1066" loading="lazy" decoding="async" alt="Spectators cheer as riders round a corner at the Berkeley Streets Criterium" />
+          <img src="/images/community/berkeley-streets-criterium-1280.webp" srcSet="/images/community/berkeley-streets-criterium-640.webp 640w, /images/community/berkeley-streets-criterium-960.webp 960w, /images/community/berkeley-streets-criterium-1280.webp 1280w" sizes="(max-width: 899px) 92vw, (max-width: 1440px) 46vw, 650px" width="1600" height="1066" loading="lazy" decoding="async" alt="Spectators cheer as riders round a corner at the Berkeley Streets Criterium" />
           <figcaption className="label">The Berkeley Streets Criterium.</figcaption>
         </figure>
         <div className="omnium__copy">
@@ -323,7 +323,7 @@ export default function Mentorship() {
         <ul className="not__list" data-reveal>
           {isNot.map((n, i) => <li key={n} style={{ '--i': i }}><span>{n}</span></li>)}
         </ul>
-        <p className="not__end">The objective is independence, not dependency.</p>
+        <p className="not__end">What I’m after is people who don’t need me for the next decision.</p>
       </section>
 
       <section className="sheet grid mentor-band close" aria-labelledby="close-title" data-coord="613 · Leave people stronger">

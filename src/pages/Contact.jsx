@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import TitleBlock from '../components/TitleBlock';
 import BandHead from '../components/BandHead';
+import ContactForm, { contactEndpoint } from '../components/ContactForm';
 import useReveal from '../components/useReveal';
 import { ArrowDown, ArrowOut, ArrowRight } from '../components/Icons';
 import { person } from '../content/profile';
@@ -55,7 +56,7 @@ export default function Contact() {
       <header ref={heroRef} className="sheet grid contact-hero" data-coord="700 · Contact">
         <h1 id="contact-title" className="contact-hero__title display">Let’s talk about what you’re trying to build.</h1>
         <div className="contact-hero__copy">
-          <p className="contact-hero__lead">Whether you’re scaling an engineering organization, modernizing a complex platform, improving delivery, building a new product, or looking for experienced technical leadership, I’m always interested in a good engineering problem.</p>
+          <p className="contact-hero__lead">I’m always interested in a good engineering problem: scaling an engineering organization, modernizing a complex platform, fixing slow delivery, building a new product, or bringing in experienced technical leadership.</p>
           <div className="contact-hero__actions">
             <a className="action" href="#start">Start a conversation <ArrowDown /></a>
             <Link className="link-arrow" to="/experience/"><span>View my experience</span> <ArrowRight /></Link>
@@ -104,7 +105,7 @@ export default function Contact() {
         <ul className="fit__run" aria-label="Where I’m most relevant">
           {strengths.map((s) => <li key={s}>{s}</li>)}
         </ul>
-        <p className="fit__roles">I work with companies through Yippify, on scoped projects or ongoing engineering leadership. The work is what matters.</p>
+        <p className="fit__roles">I work with companies through Yippify, on scoped projects or ongoing engineering leadership.</p>
       </section>
 
       <section className="sheet contact-band operate" aria-labelledby="operate-title" data-coord="704 · What you get">
@@ -118,7 +119,7 @@ export default function Contact() {
           ))}
         </dl>
         <aside className="operate__mentor" aria-label="Mentorship">
-          <p>My goal isn’t to make a team dependent on me. I want to develop engineers who can challenge me, make decisions, lead others, and eventually replace parts of what I do.</p>
+          <p>I want engineers who can challenge me, make decisions, lead others, and eventually take over parts of my job. A team that needs me for every call is a team I’ve built badly.</p>
           <Link className="link-arrow" to="/mentorship/"><span>Read how I think about mentorship</span> <ArrowRight /></Link>
         </aside>
       </section>
@@ -126,9 +127,9 @@ export default function Contact() {
       <section className="sheet grid contact-band founder" aria-labelledby="founder-title" data-coord="705 · Founder perspective">
         <div className="founder__copy">
           <h2 id="founder-title" className="h2">I’ve sat on both sides of the engineering conversation.</h2>
-          <p className="body-copy">As an engineer and engineering leader, I think about architecture and execution. As a founder, I learned that technical decisions don’t stay technical for long. That perspective shapes how I lead engineering organizations.</p>
+          <p className="body-copy">As a co-founder and CTO, I watched technical decisions turn into cost, hiring, product and customer decisions, usually sooner than anyone expected. I still lead with that in mind.</p>
           <div className="founder__links">
-            <Link className="link-arrow" to="/about/"><span>The founder story</span> <ArrowRight /></Link>
+            <Link className="link-arrow" to="/writing/building-a-startup-from-idea-to-acquisition/"><span>Read the founder story</span> <ArrowRight /></Link>
             <Link className="link-arrow" to="/experience/"><span>Experience</span> <ArrowRight /></Link>
           </div>
         </div>
@@ -140,13 +141,16 @@ export default function Contact() {
         </div>
       </section>
 
-      <section id="start" ref={talkRef} className="sheet grid contact-band talk" aria-labelledby="talk-title" data-coord="706 · Start a conversation">
+      <section id="start" ref={talkRef} className={`sheet grid contact-band talk${contactEndpoint ? ' talk--form' : ''}`} aria-labelledby="talk-title" data-coord="706 · Start a conversation">
         <div className="talk__intro">
           <h2 id="talk-title" className="talk__title display">Let’s talk.</h2>
-          <p className="talk__lead">You don’t have to decide from a website whether I’m the right person. The next step is simply a conversation.</p>
+          <p className="talk__lead">You don’t have to decide from a website whether I’m the right person. That’s what a conversation is for.</p>
           <p className="body-copy">You don’t need a polished pitch. If there’s an interesting engineering, product or organizational problem worth discussing, send me a note.</p>
+          {contactEndpoint && <ContactForm />}
           <div className="talk__direct">
-            <a className="action" href={person.linkedin} target="_blank" rel="me noopener">Contact me on LinkedIn <ArrowOut /></a>
+            {contactEndpoint
+              ? <a className="link-arrow" href={person.linkedin} target="_blank" rel="me noopener"><span>Prefer LinkedIn? Message me there</span> <ArrowOut /></a>
+              : <a className="action" href={person.linkedin} target="_blank" rel="me noopener">Contact me on LinkedIn <ArrowOut /></a>}
             {person.email && <a className="link-arrow" href={`mailto:${person.email}`}><span>{person.email}</span></a>}
           </div>
         </div>

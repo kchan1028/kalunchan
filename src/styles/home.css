@@ -113,8 +113,12 @@
   color: var(--ink);
 }
 
+.opening__story {
+  margin-top: var(--s2);
+}
+
 .opening__level {
-  margin-top: var(--s6);
+  margin-top: var(--s5);
   font-size: var(--t-lead);
   line-height: 1.45;
   max-width: 44ch;

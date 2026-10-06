@@ -1,13 +1,18 @@
 """Audit prerendered SEO, link integrity, and the site's privacy constraints."""
 import json
+import os
 import re
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree
 
-ROOT = Path(__file__).resolve().parents[1] / 'build'
+ROOT = Path(__file__).resolve().parents[1] / os.environ.get('BUILD_DIR', 'build')
 EVENT_YEAR_ROUTES = {'/writing/', '/writing/berkeley-omnium-new-website-next-generation/'}
+# Owner-approved dated phrases (POSITIONING.md), allowed only verbatim on their page.
+APPROVED_DATED_TEXT = {'/about/': ['That figure is from September 2026']}
+# Owner-approved career years, shown only on the founder story; other pages stay undated.
+APPROVED_YEARS = {'/writing/building-a-startup-from-idea-to-acquisition/': r'\b(?:2007|2013|2024)\b'}
 OMNIUM_URLS = {'https://berkeleyomnium.com/', 'https://berkeleyomnium.com/sponsor/'}
 ORIGIN = 'https://kalunchan.dev'
 
@@ -86,6 +91,10 @@ for path, page in pages.items():
     text = ' '.join(page.text)
     if route in EVENT_YEAR_ROUTES:
         text = re.sub(r'\b20[2-9]\d\b', '', text)
+    for phrase in APPROVED_DATED_TEXT.get(route, []):
+        text = text.replace(phrase, '')
+    if route in APPROVED_YEARS:
+        text = re.sub(APPROVED_YEARS[route], '', text)
     assert not re.search(r'\b(?:19|20)\d{2}\b|\bpresent\b', text, re.I), path
     for img in page.images:
         assert img.get('alt') and img.get('width') and img.get('height'), (path, img)
@@ -124,6 +133,32 @@ sitemap = ElementTree.parse(ROOT / 'sitemap.xml')
 urls = {el.text for el in sitemap.findall('.//{*}loc')}
 expected_urls = {p.canonical[0] for p in pages.values() if p.canonical}
 assert urls == expected_urls, (urls, expected_urls)
+for lastmod in sitemap.findall('.//{*}lastmod'):
+    assert re.fullmatch(r'\d{4}-\d{2}-\d{2}', lastmod.text), lastmod.text
+
+# Structured data: breadcrumb items are real pages, and every {"@id": ...} reference
+# points at a node defined on this page or another page of the site.
+def nodes(v):
+    if isinstance(v, dict):
+        yield v
+        for x in v.values():
+            yield from nodes(x)
+    elif isinstance(v, list):
+        for x in v:
+            yield from nodes(x)
+
+defined, referenced = set(), set()
+for path, page in pages.items():
+    for block in page.structured:
+        for n in nodes(block):
+            if '@id' in n and len(n) > 1:
+                defined.add(n['@id'])
+            elif set(n) == {'@id'}:
+                referenced.add((path, n['@id']))
+            if n.get('@type') == 'ListItem' and 'item' in n:
+                assert n['item'] in urls, (path, n['item'])
+missing = {(str(p), i) for p, i in referenced if i not in defined}
+assert not missing, missing
 community = pages[ROOT / 'community/index.html']
 graph = community.structured[0]['@graph']
 assert {'WebPage', 'Thing', 'SportsOrganization', 'BreadcrumbList'} <= {v['@type'] for v in graph}

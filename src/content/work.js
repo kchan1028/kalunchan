@@ -11,6 +11,7 @@ export const cases = [
     slug: 'three-continent-platform',
     no: '301',
     title: 'From one data center to three continents',
+    seoTitle: 'One Data Center to Three Continents: Case Study',
     org: 'Global communications platform',
     role: 'Co-Founder & CTO',
     domain: ['Cloud & infrastructure', 'Software architecture', 'Engineering leadership'],
@@ -19,7 +20,7 @@ export const cases = [
     summary:
       'Taking a founder-built platform from a single data center to cloud regions in North America, Europe and Asia, with traffic routed by geography.',
     problem:
-      'The platform started in one data center. As the user base grew past 400,000 across North America, Europe and Asia, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
+      'The platform started in one data center. As the user base grew past 400,000 across South America, Asia and Africa, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
     constraints: [
       'A small engineering team that also owned operations',
       'No downtime window: users were active in every time zone',
@@ -31,12 +32,12 @@ export const cases = [
     diagram: {
       label: 'Geo-routed regional deployment',
       tiers: [
-        { name: 'Users', nodes: [{ id: 'na', label: 'North America' }, { id: 'eu', label: 'Europe' }, { id: 'as', label: 'Asia' }] },
+        { name: 'Users', nodes: [{ id: 'sa', label: 'South America' }, { id: 'af', label: 'Africa' }, { id: 'as', label: 'Asia' }] },
         { name: 'Edge', nodes: [{ id: 'geo', label: 'Geo-location routing', sub: 'nearest healthy region' }] },
         { name: 'Regions', nodes: [{ id: 'rna', label: 'Region NA', sub: 'web · app tier' }, { id: 'reu', label: 'Region EU', sub: 'web · app tier' }, { id: 'ras', label: 'Region APAC', sub: 'web · app tier' }] },
         { name: 'Data', nodes: [{ id: 'db', label: 'Primary data', sub: 'replicated' }] },
       ],
-      edges: [['na', 'geo'], ['eu', 'geo'], ['as', 'geo'], ['geo', 'rna', null, true], ['geo', 'reu'], ['geo', 'ras'], ['rna', 'db', null, true], ['reu', 'db'], ['ras', 'db']],
+      edges: [['sa', 'geo'], ['af', 'geo'], ['as', 'geo'], ['geo', 'rna', null, true], ['geo', 'reu'], ['geo', 'ras'], ['rna', 'db', null, true], ['reu', 'db'], ['ras', 'db']],
     },
     decisions: [
       {
@@ -57,7 +58,7 @@ export const cases = [
     ],
     technology: ['Multi-tier web & mobile application', 'Data center design', 'Cloud regions (NA / EU / Asia)', 'Geo-location DNS routing', 'Data replication'],
     outcome: [
-      '400k+ users served across North America, Europe and Asia',
+      '400k+ users served across South America, Asia and Africa',
       'Lower network latency and better quality for distant users',
       'Multimillion-dollar growth and a successful acquisition',
     ],
@@ -65,11 +66,16 @@ export const cases = [
       'Latency is a product feature. Users feel geography before they notice any new feature.',
       'Designing the first data center carefully made leaving it easier. Clean tiers moved as units.',
     ],
+    related: [
+      { to: '/writing/building-a-startup-from-idea-to-acquisition/#business', label: 'The founder story behind this platform, from 0→1 to acquisition' },
+      { to: '/writing/should-it-be-a-microservice/#modular-monolith', label: 'Why scale alone isn’t a reason to split a monolith' },
+    ],
   },
   {
     slug: 'publishing-distribution',
     no: '302',
     title: 'Making a publishing platform compete on distribution',
+    seoTitle: 'Publishing Platform SEO & Distribution Case Study',
     org: 'Media publishing platform',
     role: 'CTO',
     domain: ['Product engineering', 'Software architecture', 'Engineering leadership'],
@@ -121,6 +127,7 @@ export const cases = [
     slug: 'public-service-modernization',
     no: '303',
     title: 'Modernizing a public-sector service without a big-bang rewrite',
+    seoTitle: 'Public-Sector Modernization Without a Rewrite',
     org: 'Yippify client engagement',
     role: 'Architecture & delivery lead',
     domain: ['Government technology', 'Software architecture', 'Cloud & infrastructure'],
@@ -175,12 +182,16 @@ export const cases = [
       'In government, hand-over is the product. Design for the team that inherits it.',
       'A facade turns one terrifying migration into a series of boring releases.',
     ],
+    related: { to: '/writing/should-it-be-a-microservice/#extract-later', label: 'Why extracting a service later is often cheaper than splitting early' },
     verify: true,
   },
   {
     slug: 'document-intelligence',
     no: '304',
     title: 'LLM document processing with a human in the loop',
+    seoTitle: 'LLM Document Processing With a Human in the Loop',
+    description:
+      'An LLM pipeline that classifies documents, grounds answers in the client’s policy through retrieval, and sends low-confidence results to a person.',
     org: 'Yippify client engagement',
     role: 'Architect & hands-on engineer',
     domain: ['AI & data', 'Software architecture', 'Hands-on engineering'],
@@ -241,6 +252,7 @@ export const cases = [
     slug: 'event-driven-platform',
     no: '305',
     title: 'Event-driven microservices that stay consistent',
+    seoTitle: 'Event-Driven Microservices With Kafka: Case Study',
     org: 'SaaS platform',
     role: 'Architect & engineering lead',
     domain: ['Software architecture', 'Hands-on engineering', 'Engineering leadership'],
@@ -294,6 +306,7 @@ export const cases = [
     slug: 'carrier-capacity',
     no: '306',
     title: 'Capacity planning across 2,000+ collocations',
+    seoTitle: 'Carrier Network Capacity Planning Case Study',
     org: 'National broadband network',
     role: 'Member of Technical Staff',
     domain: ['Cloud & infrastructure', 'Reliability', 'Security'],

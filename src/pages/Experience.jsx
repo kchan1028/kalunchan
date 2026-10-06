@@ -59,6 +59,17 @@ function Role({ r, index }) {
               </dd>
             </div>
           )}
+          {r.story && (
+            <div className="tenure__part tenure__part--cases">
+              <dt className="label">Founder story</dt>
+              <dd>
+                <Link to={r.story.to} className="link-arrow">
+                  <span>{r.story.label}</span>
+                  <ArrowRight />
+                </Link>
+              </dd>
+            </div>
+          )}
         </dl>
       </div>
     </article>

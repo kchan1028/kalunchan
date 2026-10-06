@@ -4,10 +4,15 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const out = path.join(root, 'build');
+// BUILD_DIR lets validation render into a scratch directory instead of build/.
+const out = path.resolve(root, process.env.BUILD_DIR || 'build');
 const { render, routes, headFor } = await import(pathToFileURL(path.join(root, '.ssr/entry-server.js')).href);
 
-const template = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
+// Inline the single stylesheet: one fewer render-blocking request before first paint.
+const template = fs.readFileSync(path.join(out, 'index.html'), 'utf8').replace(
+  /<link rel="stylesheet"[^>]*href="\/assets\/([^"]+\.css)"[^>]*>/,
+  (_, file) => `<style>${fs.readFileSync(path.join(out, 'assets', file), 'utf8')}</style>`
+);
 const assets = fs.readdirSync(path.join(out, 'assets'));
 const preload = assets
   .filter((f) => /^archivo-latin-wdth-normal.*\.woff2$/.test(f))
@@ -30,7 +35,8 @@ fs.writeFileSync(
   path.join(out, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes
     .filter((r) => !r.canonical)
-    .map((r) => `  <url><loc>https://kalunchan.dev${r.path}</loc></url>`)
+    // lastmod only where the date is real (posts); other pages have no reliable date.
+    .map((r) => `  <url><loc>https://kalunchan.dev${r.path}</loc>${r.post ? `<lastmod>${r.post.modified}</lastmod>` : ''}</url>`)
     .join('\n')}\n</urlset>\n`
 );
 fs.rmSync(path.join(root, '.ssr'), { recursive: true, force: true });

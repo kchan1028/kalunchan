@@ -125,7 +125,7 @@ export default function Body() {
 
       <section id="something-looks-wrong" aria-labelledby="something-looks-wrong-h">
         <h2 id="something-looks-wrong-h" className="post__h2">Knowing when something doesn’t look right</h2>
-        <p>One of the most useful skills I’ve built isn’t knowing the answer. It’s the feeling that something is off before I can fully explain why.</p>
+        <p>One of the most useful skills I’ve built is noticing that something is off before I can fully explain why.</p>
         <p>In code review, it usually looks like one of these:</p>
         <ul className="post__list">
           <li>A migration that rewrites or locks a large table, scheduled to run at peak traffic.</li>
@@ -136,7 +136,7 @@ export default function Body() {
           <li>An endpoint that checks whether you’re logged in, but not whether you’re allowed to see that record.</li>
           <li>A response that comes back suspiciously fast, which sometimes means it never did the work.</li>
         </ul>
-        <p>None of these take memorized syntax to spot. They come from seeing systems fail, reading other people’s postmortems, and fixing my own mistakes. You don’t get that from a cheat sheet. You get it from building things, running them, and paying attention when they break.</p>
+        <p>None of these take memorized syntax to spot. They come from seeing systems fail, reading other people’s postmortems, and fixing my own mistakes. You get it from building things, running them, and paying attention when they break.</p>
       </section>
 
       <section id="senior-engineers" aria-labelledby="senior-engineers-h">
@@ -172,7 +172,7 @@ export default function Body() {
           <li><strong>Decide whether it fits the system.</strong> Code that works in isolation can still be wrong for your architecture, your team or your security model.</li>
         </ul>
         <p>I’ve seen generated code that looked clean and would pass a quick review: a Django view that ran one query per row once real data showed up, a JWT check that never validated the audience claim, a Kafka consumer that committed offsets before the work was done. Each one would have worked in a demo. Each one is the kind of thing you only catch if you already understand how the system behaves.</p>
-        <p className="post__pull">So I don’t think AI makes understanding less important. It does the opposite. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
+        <p className="post__pull">So I think AI makes understanding more important. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
       </section>
 
       <section id="small-tools" aria-labelledby="small-tools-h">
@@ -206,7 +206,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What I’d tell a newer engineer</h2>
       <div className="post__close-copy">
-        <p className="lead">Being a strong engineer isn’t about remembering everything. It’s about:</p>
+        <p className="lead">What makes a strong engineer is mostly this:</p>
         <ol className="post__close-list">
           <li>Understanding the fundamentals.</li>
           <li>Knowing how to find what you need.</li>

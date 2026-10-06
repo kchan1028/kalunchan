@@ -241,7 +241,8 @@ export const projectBySlug = Object.fromEntries(projects.map((p) => [p.slug, p])
 
 export const shotSrc = (p) => ({
   desktop: `/images/projects/${p.shot}-desktop-1280.webp`,
-  desktopSet: `/images/projects/${p.shot}-desktop-640.webp 640w, /images/projects/${p.shot}-desktop-1280.webp 1280w`,
+  desktopSet: `/images/projects/${p.shot}-desktop-640.webp 640w, /images/projects/${p.shot}-desktop-960.webp 960w, /images/projects/${p.shot}-desktop-1280.webp 1280w`,
   mobile: `/images/projects/${p.shot}-mobile-520.webp`,
+  mobileSet: `/images/projects/${p.shot}-mobile-260.webp 260w, /images/projects/${p.shot}-mobile-520.webp 520w`,
   og: `/images/projects/${p.shot}-og.jpg`,
 });

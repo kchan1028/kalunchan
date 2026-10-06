@@ -20,7 +20,7 @@ export default function Work() {
       />
       <div className="sheet grid page-lead">
         <p className="page-lead__claim">
-          I don’t stop at features. I find the problem, build the product, and stay with it until it works in the real world.
+          I find the problem, build the product, and stay with it until it works for the people using it.
         </p>
         <p className="page-lead__aside body-copy">
           That work crosses engineering, product and operations: a product for small businesses chasing federal contracts, the digital home of a community race weekend, and a family-owned local business brought up to date. Below those are six systems from my engineering leadership work.

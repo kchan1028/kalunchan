@@ -15,7 +15,7 @@ const JR = 3.5; // junction dot radius
 const BW = 112;
 
 const stages = [
-  { id: 'leadership', y: 104, label: 'Engineering leadership', evidence: 'Co-founded Global communications platform and led engineering to acquisition. CTO at Media publishing platform. VP Operations at Voice services.', to: '/leadership/' },
+  { id: 'leadership', y: 104, label: 'Engineering leadership', evidence: 'Co-founded a global communications platform and led its engineering from the first line of code to acquisition. Later CTO of a media publishing platform; earlier VP of Operations for a voice service.', to: '/leadership/' },
   { id: 'product', y: 196, label: 'Product engineering', evidence: 'Web and mobile products for 400k+ users. Publishing platforms that grew organic and social traffic 50%.', to: '/work/publishing-distribution/' },
   { id: 'architecture', y: 288, label: 'Software architecture', evidence: 'Multi-tier platforms, event-driven microservices, and incremental migrations that keep legacy systems in service.', to: '/work/event-driven-platform/' },
   { id: 'cloud', y: 380, label: 'Cloud & infrastructure', evidence: 'From one data center to cloud regions on three continents with geo-routing. Earlier: 2,000+ carrier collocations.', to: '/work/three-continent-platform/' },

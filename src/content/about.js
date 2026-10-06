@@ -38,7 +38,7 @@ export const currentWork = [
   { name: 'Yippify', text: 'software engineering and product development consulting.' },
   { name: 'VeloWise', text: 'delivery analytics for engineering leaders.' },
   { name: 'SurgeIQ', text: 'cycling training insights.' },
-  { name: 'Useful Little Tools', text: 'focused browser tools.' },
+  { name: 'Useful Little Tools', text: 'free calculators for everyday decisions, and my playground for trying new tools and techniques on real users.' },
 ];
 
 export const delivered = [

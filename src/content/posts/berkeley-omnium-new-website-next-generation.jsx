@@ -23,7 +23,6 @@ export default function Body() {
         <p>As we start building toward the 2027 Berkeley Omnium, we’re launching a completely new website: <a href={cycling.omnium}>berkeleyomnium.com</a>.</p>
         <p className="post__answer">I wanted the new site to do more than say when and where the races happen. It tells the story behind them: the history, the racers, the volunteers, the sponsors, the kids, and the cycling community that keeps all of it going.</p>
         <p>I built it the way I’d build any product: start with who needs it and what they need to do. Racers need race details and registration. Sponsors need to see where their support goes. Someone who has never watched a bike race needs a reason to care. You can read how the site came together in the <Link to="/projects/berkeley-omnium/">Berkeley Omnium project write-up</Link>.</p>
-        <p>And we’re just getting started.</p>
       </section>
 
       <section id="two-races" aria-labelledby="two-races-h">
@@ -53,7 +52,7 @@ export default function Body() {
           <li>You learn that improvement takes time.</li>
           <li>You learn that your individual result isn’t always the most important result for the team.</li>
         </ul>
-        <p>Those lessons go far beyond cycling. It’s why I’m especially passionate about getting more juniors and young riders involved.</p>
+        <p>Those lessons go well beyond cycling, and they’re why I care so much about getting more juniors and young riders involved.</p>
         <p>I want young cyclists to have a place where they can race, challenge themselves, make friends, learn teamwork, build confidence, and discover what they’re capable of.</p>
         <p className="post__pull">Some may become great racers. Most won’t become professional cyclists, and that’s not the point. What they learn along the way matters much more.</p>
       </section>
@@ -100,7 +99,7 @@ export default function Body() {
           <li>You help others step up.</li>
         </ol>
         <p>Eventually, you want the next group to be capable of doing even more than you did. It’s the same idea behind how I <Link to="/mentorship/">mentor engineers</Link>, and I think cycling works the same way.</p>
-        <p>The goal isn’t simply to organize another successful race. It’s to make sure there are kids discovering cycling today who will still be riding, racing, volunteering, mentoring, organizing and giving back 10 or 20 years from now.</p>
+        <p>The goal is to make sure there are kids discovering cycling today who will still be riding, racing, volunteering, mentoring, organizing and giving back 10 or 20 years from now.</p>
         <p>That’s the impact I want Berkeley Omnium to have. It’s also why I wanted to build a better website: to give the history, people, sponsors, volunteers and next generation behind these races a place to tell their story.</p>
       </section>
     </>
