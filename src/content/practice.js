@@ -150,6 +150,7 @@ export const practices = [
     body:
       'I start from the business outcome, name the unknowns, and break the work into slices that each prove something. The first slice is the riskiest assumption, not the easiest screen.',
     signals: ['Every engineer can say why their current task matters', 'Unknowns have owners and dates'],
+    read: { to: '/writing/engineering-work-nobody-needed/', label: 'How I decide what deserves to be built' },
   },
   {
     no: '102',

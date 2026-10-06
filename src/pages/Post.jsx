@@ -7,6 +7,7 @@ import * as priorities from '../content/posts/when-everything-is-a-priority';
 import * as carryover from '../content/posts/what-sprint-carryover-is-telling-you';
 import * as founderStory from '../content/posts/building-a-startup-from-idea-to-acquisition';
 import * as stravaMcp from '../content/posts/connect-strava-to-claude-mcp';
+import * as nobodyNeeded from '../content/posts/engineering-work-nobody-needed';
 import TitleBlock from '../components/TitleBlock';
 import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight } from '../components/Icons';
@@ -19,6 +20,7 @@ const bodies = {
   'what-sprint-carryover-is-telling-you': carryover,
   'building-a-startup-from-idea-to-acquisition': founderStory,
   'connect-strava-to-claude-mcp': stravaMcp,
+  'engineering-work-nobody-needed': nobodyNeeded,
 };
 
 // Used when a post doesn't list its own related reading in writing.js.
