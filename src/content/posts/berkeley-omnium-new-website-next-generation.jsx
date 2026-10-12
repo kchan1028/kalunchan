@@ -54,7 +54,7 @@ export default function Body() {
         </ul>
         <p>Those lessons go well beyond cycling, and they’re why I care so much about getting more juniors and young riders involved.</p>
         <p>I want young cyclists to have a place where they can race, challenge themselves, make friends, learn teamwork, build confidence, and discover what they’re capable of.</p>
-        <p className="post__pull">Some may become great racers. Most won’t become professional cyclists, and that’s not the point. What they learn along the way matters much more.</p>
+        <p className="post__pull">Some may become great racers. Most won’t become professional cyclists. What they learn along the way matters much more than that.</p>
       </section>
 
       <section id="takes-a-community" aria-labelledby="takes-a-community-h">
@@ -74,7 +74,7 @@ export default function Body() {
 
       <section id="sponsors" aria-labelledby="sponsors-h">
         <h2 id="sponsors-h" className="post__h2">We’re looking for 2027 Berkeley Omnium sponsors</h2>
-        <p className="post__answer">As we prepare for the 2027 Berkeley Omnium, I’m looking for companies and individuals who want to be part of what we’re building. This isn’t about putting a logo on a banner. I want to work with sponsors who see value in supporting a community, creating opportunities for young athletes, and keeping grassroots bike racing alive.</p>
+        <p className="post__answer">As we prepare for the 2027 Berkeley Omnium, I’m looking for companies and individuals who want to be part of what we’re building. I want to work with sponsors who want more than a logo on a banner: people who see value in supporting a community, creating opportunities for young athletes, and keeping grassroots bike racing alive.</p>
         <p>There are opportunities to support:</p>
         <ul className="post__list">
           <li>The Berkeley Hills Road Race</li>

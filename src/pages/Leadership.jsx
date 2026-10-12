@@ -1,8 +1,53 @@
 import { Link } from 'react-router';
 import { person } from '../content/profile';
 import { practices, counterparts } from '../content/practice';
+import { leadershipFlow } from '../content/home';
 import TitleBlock from '../components/TitleBlock';
 import { ArrowOut, ArrowRight } from '../components/Icons';
+
+// Fig. 100-1: the six-step loop from the homepage, with each practice placed
+// on the step where it does its work. Links go to the practices below.
+const onLoop = {
+  'Business goals': ['101', '109'],
+  'Technical strategy': ['102', '106'],
+  'Team alignment': ['108'],
+  'Execution': ['104'],
+  'Measurement': ['105', '103'],
+  'Continuous improvement': ['107'],
+};
+
+function PracticeLoop() {
+  const byNo = Object.fromEntries(practices.map((p) => [p.no, p]));
+  return (
+    <figure className="sheet flow flow--page" aria-labelledby="loop-cap" data-coord="100-0 · The loop">
+      <figcaption id="loop-cap" className="prog__cap">
+        <span className="mono">Fig. 100-1</span>
+        <span>Where each practice does its work</span>
+        <span className="prog__key label">Business goals in, measured outcomes out, and the measurement feeds the next round.</span>
+      </figcaption>
+      <ol className="flow__steps">
+        {leadershipFlow.map((s, i) => (
+          <li key={s.name} className="flow__step">
+            <span className="flow__no mono" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span className="flow__name flow__name--static">{s.name}</span>
+            <ul className="flow__practices">
+              {(onLoop[s.name] || []).map((no) => (
+                <li key={no}><a href={`#${byNo[no].id}`}><span className="mono">{no}</span> {byNo[no].title}</a></li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+      <p className="flow__loop">
+        <svg className="flow__arrow" viewBox="0 0 120 28" aria-hidden="true" focusable="false">
+          <path d="M116 4 C 116 22, 8 22, 8 12" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M3 14 L 8 8 L 13 14" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+        <span>What the measurement shows goes back into the goals. The practices below are the loop, written down.</span>
+      </p>
+    </figure>
+  );
+}
 
 export default function Leadership() {
   return (
@@ -24,6 +69,8 @@ export default function Leadership() {
           </div>
         </div>
       </aside>
+
+      <PracticeLoop />
 
       <nav className="sheet grid practice-index" aria-label="Practices">
         <ol>
@@ -80,6 +127,7 @@ export default function Leadership() {
         <p className="off-clock__text">
           I lead a Bay Area co-ed amateur cycling team: racing, recruitment rides, and volunteering at local events. Some of it overlaps with leading engineers more than I expected: setting a pace people can hold, bringing new riders in, and making sure nobody gets dropped.
         </p>
+        <Link to="/writing/what-cycling-taught-me-about-engineering-leadership/" className="link-arrow off-clock__read"><span>What cycling taught me about engineering leadership</span> <ArrowRight /></Link>
       </section>
     </>
   );

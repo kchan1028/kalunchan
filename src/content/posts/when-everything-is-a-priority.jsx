@@ -32,7 +32,7 @@ export default function Body() {
         <h2 id="not-the-problem-h" className="post__h2">Changing priorities isn’t the problem</h2>
         <p>Priorities change. That’s normal. Customers change their minds. A major deal suddenly needs something. Production breaks. Leadership learns something new. A competitor moves. An assumption we made three months ago turns out to be wrong.</p>
         <p>A good engineering organization needs to be able to respond to all of that.</p>
-        <p className="post__answer">The problem isn’t changing priorities. The problem is changing priorities without acknowledging what the change costs.</p>
+        <p className="post__answer">Changing priorities becomes a problem when nobody acknowledges what the change costs.</p>
         <p>Across more than two decades in software, as an engineer, a co-founder and CTO, and an engineering leader, I’ve seen teams fall into the same cycle. Something is the top priority on Monday. Something else replaces it on Wednesday. By Friday, everyone is asking why the first thing isn’t finished.</p>
         <p>At that point the problem is the system around the team. Engineering velocity is just where it shows up.</p>
       </section>
@@ -50,7 +50,7 @@ export default function Body() {
           <li>Where the risks are.</li>
         </ul>
         <p>Move them to something else and some of that disappears. When they return three weeks later, they don’t simply continue where they stopped. They have to reconstruct the problem first.</p>
-        <p>Repeat that across a whole team every few weeks and the cost gets large.</p>
+        <p>Repeat that across a whole team every few weeks and the cost gets large. And the half-finished features left behind at each switch are the most expensive kind of waste, <Link to="/writing/engineering-work-nobody-needed/">work nobody ended up needing</Link>.</p>
       </section>
 
       <section id="starting" aria-labelledby="starting-h">
@@ -58,7 +58,7 @@ export default function Body() {
         <p>When priorities keep changing, teams often respond by starting more things. Feature A is paused, so start Feature B. Something happens with a customer, so pause B and start C. A week later, A is important again.</p>
         <p>Now the organization has three partially completed initiatives and very little delivered value.</p>
         <p>This is why I pay so much attention to work in progress. Ten projects at 80% complete don’t provide the same value as eight finished ones. Partially finished work can’t reach customers, can’t earn revenue and can’t teach you anything.</p>
-        <p>So sometimes the right response to a new priority isn’t “Start this immediately.” It’s this:</p>
+        <p>So sometimes the right response to a new priority is a question:</p>
         <p className="post__pull">If this is now the most important thing, what are we going to stop?</p>
       </section>
 
@@ -96,7 +96,7 @@ export default function Body() {
             </tbody>
           </table>
         </figure>
-        <p>Before changing direction, I want to understand what actually changed:</p>
+        <p>Before changing direction, I want to understand what changed:</p>
         <ul className="post__list">
           <li>Did we receive new information?</li>
           <li>Is revenue at risk?</li>
@@ -106,7 +106,7 @@ export default function Body() {
           <li>Did a previous assumption turn out to be wrong?</li>
           <li>Or did something simply become more interesting than what we’re doing now?</li>
         </ul>
-        <p>The answer matters. Changing priorities because the business learned something important is healthy. Changing priorities because the organization can’t maintain focus is not.</p>
+        <p>Changing priorities because the business learned something important is healthy. Changing priorities because the organization can’t maintain focus is not.</p>
       </section>
 
       <section id="context" aria-labelledby="context-h">
@@ -114,7 +114,7 @@ export default function Body() {
         <p>I’ve never liked the idea that engineering leadership should shield engineers from everything happening in the company. Engineers should understand why priorities change, because context helps people make better decisions.</p>
         <p>If we suddenly need to move something because a customer launch depends on it, tell the team. If revenue is involved, tell them. If we’re testing an assumption, explain the assumption. People handle change much better when they understand why it matters.</p>
         <p>Context is also how engineers grow. You can’t hand someone real ownership while holding back the reasons behind the work, which is a big part of why I <Link to="/mentorship/">mentor engineers until they can replace me</Link>.</p>
-        <p>What I want to protect the team from isn’t business context. It’s organizational noise. There’s a difference.</p>
+        <p>What I want to protect the team from is organizational noise, which is different from business context.</p>
       </section>
 
       <section id="interruptions" aria-labelledby="interruptions-h">
@@ -130,8 +130,8 @@ export default function Body() {
           <div><dt>Exploratory work</dt><dd>Spikes and experiments to learn something before committing.</dd></div>
         </dl>
         <p>Pretending all of that can be perfectly planned two weeks in advance creates frustration.</p>
-        <p className="post__answer">If a team historically spends 20% of its capacity on unplanned work, planning every sprint at 100% feature capacity isn’t ambitious. It’s unrealistic. Plan around the interruptions the team actually gets.</p>
-        <p>Understanding the team’s real operating pattern makes planning much more useful, and it stops urgent work from quietly eating the roadmap.</p>
+        <p className="post__answer">If a team historically spends 20% of its capacity on unplanned work, planning every sprint at 100% feature capacity isn’t ambitious. It’s unrealistic. Plan around the interruptions the team gets.</p>
+        <p>Understanding the team’s real operating pattern makes planning much more useful, and it stops urgent work from eating the roadmap.</p>
       </section>
 
       <section id="urgent" aria-labelledby="urgent-h">
@@ -139,7 +139,7 @@ export default function Body() {
         <p>One of the responsibilities of engineering and product leadership is helping the organization tell the difference between something that is loud and something that is strategically important.</p>
         <p>The newest request naturally gets attention. The customer who emailed this morning feels more immediate than an architectural problem we’ve known about for six months. But urgency shouldn’t automatically decide where we invest.</p>
         <p>Sometimes fixing an underlying platform problem will eliminate dozens of future urgent requests. Sometimes the customer request really does need to win.</p>
-        <p>The job isn’t to eliminate those decisions. The job is to make them deliberately.</p>
+        <p>Those decisions won’t go away, so the job is to make them deliberately.</p>
       </section>
 
       <section id="stable-goal" aria-labelledby="stable-goal-h">
@@ -170,7 +170,7 @@ export default function Body() {
         </ul>
         <p>Those are very different problems, with very different fixes.</p>
         <p className="post__answer">If priority changes are responsible for a meaningful share of unfinished work, better estimation won’t fix delivery. The organization needs to improve how it makes decisions.</p>
-        <p>I go through each of those causes, and what actually fixes it, in <Link to="/writing/what-sprint-carryover-is-telling-you/">what sprint carryover is actually telling an engineering team</Link>.</p>
+        <p>I go through each of those causes, and what fixes it, in <Link to="/writing/what-sprint-carryover-is-telling-you/">what sprint carryover is actually telling an engineering team</Link>.</p>
         <p>Slow or unpredictable delivery is one of the problems I help companies with through <a href={person.yippify}>Yippify</a>, and the reasons work doesn’t finish are where I start, before anyone talks about estimates or velocity.</p>
       </section>
 
@@ -193,7 +193,7 @@ export default function Body() {
           <li>A customer conversation needs to happen.</li>
           <li>A commitment needs to be renegotiated.</li>
         </ul>
-        <p>That isn’t engineering pushing back on the business. It’s engineering giving the business enough information to make a real decision.</p>
+        <p>None of that is engineering pushing back. It gives the business enough information to make a real decision.</p>
       </section>
 
       <section id="five-things" aria-labelledby="five-things-h">

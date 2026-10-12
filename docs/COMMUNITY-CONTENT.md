@@ -21,7 +21,10 @@ Do not expand this into claims about leading sponsorships, building the website,
 - The KaiVelo Foundation is the event's 501(c)(3) nonprofit partner (no link published).
 - The post `/writing/berkeley-omnium-new-website-next-generation/` is the owner's own text, lightly edited. It is the only place event years appear; `scripts/audit-seo.py` allows them there and on `/writing/`.
 
-Still unpublished: fundraising totals, prize amounts, founding year, sponsor names.
+- KC helps organize Berkeley Omnium; he did not found it (owner correction). Use "help organize", never "founded".
+- Fundraising totals, attributed to the whole team: $21,000 for NICA teams in 2025 and $28,610 for six NICA teams in 2026. Published only on `/writing/organizing-berkeley-omnium-leadership-lessons/`, whose years are allowed in `scripts/audit-seo.py`.
+
+Still unpublished: prize amounts, founding year, sponsor names.
 
 ## Public source record
 
@@ -51,7 +54,7 @@ Alt text describes visible content without naming riders or asserting a specific
 
 ## Intentionally unclaimed
 
-No dates, race distances, prize amounts, past champions, attendance totals, fundraising totals, precise volunteer vacancies, or current registration availability. The official event website owns operational race information.
+No dates, race distances, prize amounts, past champions, attendance totals, fundraising totals (except the two confirmed above), precise volunteer vacancies, or current registration availability. The official event website owns operational race information.
 
 No further confirmation is needed for the general guide. Specific personal responsibilities and measurable outcomes remain unspecified, so they are not published.
 

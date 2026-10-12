@@ -117,6 +117,7 @@ function Colophon() {
           <span>Ka Lun Chan · Engineering practice</span>
           <span>San Francisco Bay Area</span>
           <span>© Ka Lun Chan</span>
+          <Link to="/privacy/">Privacy</Link>
         </div>
       </div>
     </footer>

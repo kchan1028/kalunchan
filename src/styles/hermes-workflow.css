@@ -1,0 +1,140 @@
+.post__prose .hermes-flow {
+  margin: var(--s6) 0;
+  border-block: 1px solid var(--ink);
+  font-size: var(--t-body);
+  line-height: 1.5;
+}
+
+.hermes-flow__heading {
+  padding-block: 1.5rem;
+}
+
+.post__prose .hermes-flow h3 {
+  margin: 0;
+  font-size: var(--t-h2);
+  line-height: 1.08;
+  font-weight: 800;
+  font-stretch: 75%;
+  text-wrap: balance;
+}
+
+.post__prose .hermes-flow p {
+  margin: 0.5rem 0 0;
+  font-size: var(--t-body);
+  color: var(--ink-2);
+}
+
+.hermes-flow__trigger {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--paper-sunk);
+}
+
+.hermes-flow__trigger span {
+  color: var(--ink-2);
+}
+
+.post__prose .hermes-flow__stages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post__prose .hermes-flow__stages > li {
+  margin: 0;
+  padding: 1.25rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  min-width: 0;
+}
+
+.hermes-flow__stages > li:nth-child(odd) {
+  border-right: 1px solid var(--rule);
+}
+
+.hermes-flow__stage-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--ink-3);
+  font-size: var(--t-small);
+}
+
+.hermes-flow__number {
+  font-size: 1.5rem;
+}
+
+.post__prose .hermes-flow h4 {
+  margin: 0;
+  font-size: var(--t-h3);
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+.hermes-flow__review {
+  padding: 1.5rem 1rem;
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+.post__prose .hermes-flow__review p {
+  color: var(--on-blue-2);
+}
+
+.post__prose .hermes-flow__review ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-left: 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.post__prose .hermes-flow__review li {
+  margin: 0;
+}
+
+.hermes-flow__foundation {
+  padding-block: 1.5rem;
+}
+
+.post__prose .hermes-flow__foundation ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  gap: 0;
+}
+
+.post__prose .hermes-flow__foundation li {
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hermes-flow figcaption {
+  padding-block: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-3);
+  font-size: var(--t-small);
+}
+
+.hermes-flow figcaption .mono {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 599px) {
+  .post__prose .hermes-flow__stages,
+  .post__prose .hermes-flow__foundation ul {
+    grid-template-columns: 1fr;
+  }
+
+  .hermes-flow__stages > li:nth-child(odd) {
+    border-right: 0;
+  }
+}

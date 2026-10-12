@@ -10,9 +10,25 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parents[1] / os.environ.get('BUILD_DIR', 'build')
 EVENT_YEAR_ROUTES = {'/writing/', '/writing/berkeley-omnium-new-website-next-generation/'}
 # Owner-approved dated phrases (POSITIONING.md), allowed only verbatim on their page.
-APPROVED_DATED_TEXT = {'/about/': ['That figure is from September 2026']}
+APPROVED_DATED_TEXT = {
+    '/about/': ['That figure is from September 2026'],
+    # The privacy notice's effective date (src/pages/Privacy.jsx PRIVACY_EFFECTIVE, shown twice).
+    '/privacy/': ['Effective 12 October 2026', '12 October 2026'],
+    # Token prices change; the pricing table must say when they were checked.
+    '/writing/hidden-cost-of-ai-coding/': ['as of October 2026'],
+}
 # Owner-approved career years, shown only on the founder story; other pages stay undated.
-APPROVED_YEARS = {'/writing/building-a-startup-from-idea-to-acquisition/': r'\b(?:2007|2013|2024)\b'}
+APPROVED_YEARS = {
+    '/writing/building-a-startup-from-idea-to-acquisition/': r'\b(?:2007|2013|2024)\b',
+    # Owner-approved era and historical dates (Nokia, Symbian, iPhone) on the Nokia VoIP story.
+    '/writing/voip-apps-for-nokia-phones-before-the-iphone/': r'\b(?:2003|2005|2006|2007|2008|2009|2010)\b',
+    # NetScreen's founding and Juniper acquisition years (public record), not career dates.
+    '/writing/network-security-before-devsecops/': r'\b(?:1997|2004)\b',
+    # AdSense per-impression change (2024) and FTC Endorsement Guides update (2023): public record, not career dates.
+    '/writing/digital-publishing-seo-adsense-affiliate-ai-search/': r'\b(?:2023|2024)\b',
+    # Owner-confirmed fundraising totals by event year.
+    '/writing/organizing-berkeley-omnium-leadership-lessons/': r'\b(?:2025|2026)\b',
+}
 OMNIUM_URLS = {'https://berkeleyomnium.com/', 'https://berkeleyomnium.com/sponsor/'}
 ORIGIN = 'https://kalunchan.dev'
 

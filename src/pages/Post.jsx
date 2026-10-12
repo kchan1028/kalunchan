@@ -1,40 +1,23 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { postBySlug } from '../content/writing';
-import * as rememberEverything from '../content/posts/you-dont-need-to-remember-everything';
-import * as berkeleyOmnium from '../content/posts/berkeley-omnium-new-website-next-generation';
-import * as microservice from '../content/posts/should-it-be-a-microservice';
-import * as priorities from '../content/posts/when-everything-is-a-priority';
-import * as carryover from '../content/posts/what-sprint-carryover-is-telling-you';
-import * as founderStory from '../content/posts/building-a-startup-from-idea-to-acquisition';
-import * as stravaMcp from '../content/posts/connect-strava-to-claude-mcp';
-import * as nobodyNeeded from '../content/posts/engineering-work-nobody-needed';
+import { postBySlug, journeyFor } from '../content/writing';
+import { getBody, loadBody } from '../content/postBodies';
 import TitleBlock from '../components/TitleBlock';
 import NotFound from './NotFound';
-import { ArrowLeft, ArrowRight } from '../components/Icons';
-
-const bodies = {
-  'you-dont-need-to-remember-everything': rememberEverything,
-  'berkeley-omnium-new-website-next-generation': berkeleyOmnium,
-  'should-it-be-a-microservice': microservice,
-  'when-everything-is-a-priority': priorities,
-  'what-sprint-carryover-is-telling-you': carryover,
-  'building-a-startup-from-idea-to-acquisition': founderStory,
-  'connect-strava-to-claude-mcp': stravaMcp,
-  'engineering-work-nobody-needed': nobodyNeeded,
-};
-
-// Used when a post doesn't list its own related reading in writing.js.
-const defaultRelated = [
-  { to: '/leadership/', label: 'How I lead engineering teams' },
-  { to: '/mentorship/', label: 'Mentoring engineers until they can replace me' },
-  { to: '/projects/', label: 'Projects and case studies' },
-];
+import { ArrowLeft } from '../components/Icons';
+import { ContinueReading, JourneyNav } from '../components/ReadNext';
 
 export default function Post() {
   const { slug } = useParams();
   const post = postBySlug[slug];
+  const [, setLoaded] = useState(null);
+  // On client-side navigation the body chunk may not be loaded yet; render once it arrives.
+  useEffect(() => {
+    if (!getBody(slug)) loadBody(slug).then(setLoaded);
+  }, [slug]);
   if (!post) return <NotFound />;
-  const { default: Body, Closing, toc } = bodies[slug];
+  const { default: Body, Closing, toc = [] } = getBody(slug) || {};
+  const journey = journeyFor(slug);
   const contents = post.faq ? [...toc, ['short-answers', 'Short answers']] : toc;
 
   return (
@@ -57,7 +40,16 @@ export default function Post() {
         </nav>
         <h1 id="post-title" className="post__title display">{post.title}</h1>
         <p className="case__claim">{post.dek}</p>
-        <p className="case__domains label">By <Link to="/about/">Ka Lun Chan</Link> · {post.topics.join(' / ')}</p>
+        <p className="case__domains label">
+          By <Link to="/about/">Ka Lun Chan</Link>
+          {journey && (
+            <>
+              {' · '}
+              <Link to={`/writing/?path=${journey.id}`} className="post__topic">{journey.title}</Link>
+            </>
+          )}
+          {' · '}{post.topics.join(' / ')}
+        </p>
       </header>
 
       <div className="sheet grid post__body" data-coord={`${post.no} · Article`}>
@@ -71,7 +63,7 @@ export default function Post() {
           </ol>
         </nav>
         <div className="post__prose">
-          <Body />
+          {Body && <Body />}
           {post.faq && (
             <section id="short-answers" aria-labelledby="short-answers-h">
               <h2 id="short-answers-h" className="post__h2">Short answers</h2>
@@ -96,15 +88,8 @@ export default function Post() {
         </section>
       )}
 
-      <nav className="sheet post__more" aria-label="Keep reading">
-        <p className="label">Keep reading</p>
-        <ul>
-          {(post.related || defaultRelated).map((r) => (
-            <li key={r.to}><Link to={r.to} className="link-arrow"><span>{r.label}</span> <ArrowRight /></Link></li>
-          ))}
-          <li><Link to="/writing/" className="link-arrow"><span>All writing</span> <ArrowRight /></Link></li>
-        </ul>
-      </nav>
+      <JourneyNav slug={slug} />
+      <ContinueReading slug={slug} />
     </article>
   );
 }

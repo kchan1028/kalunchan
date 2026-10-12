@@ -808,3 +808,638 @@
 .opening__shipped .label {
   flex-basis: 100%;
 }
+
+/* Proof points under the positioning line: small, linked, verified numbers. */
+.opening__proof {
+  margin-top: var(--s4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s4);
+  max-width: 44rem;
+  list-style: none;
+  padding: 0;
+}
+
+.opening__proof li a {
+  font-size: var(--t-small);
+  font-stretch: 92%;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.opening__proof li a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.opening__proof strong {
+  font-weight: 800;
+  font-stretch: 80%;
+  color: var(--ink);
+  margin-right: 2px;
+}
+
+/* Fig. 000-1: the experience map. Six layer tabs stacked business-to-wire; one panel below. */
+.emap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  height: 100%;
+  padding: var(--s5) var(--s6);
+}
+
+.emap__caption {
+  display: flex;
+  gap: var(--s3);
+  align-items: baseline;
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--on-blue-rule);
+  font-size: var(--t-small);
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.emap__caption .mono {
+  color: var(--on-blue-2);
+  font-weight: 450;
+}
+
+.emap__layers {
+  display: grid;
+  gap: 3px;
+}
+
+.emap__layer {
+  appearance: none;
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid var(--on-blue-rule);
+  color: var(--on-blue);
+  text-align: left;
+  padding: var(--s2) var(--s4);
+  font: inherit;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--s1) var(--s3);
+  align-items: baseline;
+}
+
+.emap__layer:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.emap__layer[aria-selected='true'] {
+  background: var(--on-blue);
+  border-color: var(--on-blue);
+  color: var(--blue-deep);
+}
+
+.emap__name {
+  font-weight: 650;
+  font-stretch: 92%;
+}
+
+.emap__sub {
+  font-size: 0.75rem;
+  /* --on-blue-2 is under 4.5:1 on the tinted tab (and its hover); size alone sets it apart. */
+  color: var(--on-blue);
+  font-stretch: 92%;
+  text-align: right;
+}
+
+.emap__layer[aria-selected='true'] .emap__sub {
+  color: var(--blue);
+}
+
+.emap__panel {
+  border-top: 1px solid var(--on-blue-rule);
+  padding-top: var(--s3);
+}
+
+.emap__panel[hidden] {
+  display: none;
+}
+
+.emap__claim {
+  font-weight: 600;
+  font-stretch: 92%;
+  margin: 0 0 var(--s2);
+}
+
+.emap__examples {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s2);
+}
+
+.emap__examples li a {
+  color: var(--on-blue);
+  text-decoration: none;
+  font-size: var(--t-small);
+  line-height: 1.45;
+  display: inline;
+  border-bottom: 1px solid var(--on-blue-rule);
+}
+
+.emap__examples li a:hover {
+  border-bottom-color: var(--on-blue);
+}
+
+.emap__examples svg {
+  width: 0.9em;
+  height: 0.9em;
+  vertical-align: -0.1em;
+}
+
+.emap__foot {
+  margin-top: auto;
+  color: var(--on-blue-2);
+}
+
+@media (max-width: 1099px) {
+  .emap {
+    height: auto;
+    padding: var(--s5) var(--gutter);
+  }
+}
+
+@media (max-width: 599px) {
+  .emap__layer {
+    grid-template-columns: 1fr;
+  }
+  .emap__sub {
+    text-align: left;
+  }
+}
+
+/* ---------- Hero actions ---------- */
+.opening__actions {
+  margin-top: var(--s5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+@media (max-width: 599px) {
+  /* primary action spans the row so it's the first tap target on a phone */
+  .opening__actions .action:first-child {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}
+
+.action--quiet {
+  background: none;
+  color: var(--ink);
+}
+
+.action--quiet:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* ---------- Home sections below the hero ---------- */
+.home-section {
+  margin-top: var(--s8);
+  padding-top: var(--s6);
+  border-top: 1px solid var(--rule);
+}
+
+.home-section__head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s4) var(--s7);
+  align-items: end;
+  margin-bottom: var(--s6);
+}
+
+.home-section__head h2 {
+  max-width: 22ch;
+}
+
+.home-section__head p {
+  color: var(--ink-2);
+  max-width: 48ch;
+}
+
+/* 001 · Impact: a ruled grid of verified figures, each a link to its evidence. */
+.impact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 3px solid var(--rule);
+}
+
+.impact li {
+  border-bottom: 1px solid var(--rule-soft);
+  border-left: 1px solid var(--rule-soft);
+}
+
+.impact li:nth-child(3n + 1) {
+  border-left: 0;
+}
+
+.impact a {
+  display: grid;
+  gap: var(--s2);
+  padding: var(--s5) var(--s4) var(--s5) var(--s4);
+  min-height: 100%;
+  text-decoration: none;
+  color: var(--ink-2);
+  font-size: var(--t-small);
+  line-height: 1.45;
+}
+
+.impact li:nth-child(3n + 1) a {
+  padding-left: 0;
+}
+
+.impact a:hover {
+  color: var(--ink);
+  background: var(--paper-sunk);
+}
+
+.impact strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* 002 · Career timeline: seven tabs across, one panel. */
+.tl__tabs {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  column-gap: var(--s3);
+  border-top: 3px solid var(--rule);
+}
+
+.tl__tab {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--rule-soft);
+  padding: var(--s3) 0;
+  font: inherit;
+  text-align: left;
+  color: var(--ink-2);
+  cursor: pointer;
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  position: relative;
+}
+
+.tl__tab + .tl__tab::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--s3) / 2 - 4px);
+  top: calc(var(--s3) + 0.45em);
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid var(--ink-3);
+  border-right: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+}
+
+.tl__tab[aria-selected='true'] {
+  color: var(--ink);
+  box-shadow: inset 0 -3px 0 var(--blue);
+}
+
+.tl__no {
+  color: var(--ink-3);
+}
+
+.tl__name {
+  font-weight: 650;
+  font-stretch: 92%;
+  line-height: 1.2;
+}
+
+.tl__panel {
+  padding-top: var(--s5);
+}
+
+.tl__panel[hidden] {
+  display: none;
+}
+
+.tl__role {
+  font-size: var(--t-lead);
+  font-weight: 600;
+  font-stretch: 92%;
+  color: var(--ink);
+  max-width: 40ch;
+  margin-bottom: var(--s4);
+}
+
+.tl__cells {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s5);
+}
+
+.tl__cells .label {
+  margin-bottom: var(--s1);
+}
+
+.tl__cells p:not(.label) {
+  color: var(--ink-2);
+  font-size: var(--t-small);
+  line-height: 1.5;
+}
+
+.tl__cells .tl__lesson {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.tl__cells .link-arrow {
+  display: inline-flex;
+  margin-top: var(--s3);
+  font-size: var(--t-small);
+}
+
+/* 003 · Case-study previews: expandable rows with a five-step flow. */
+.cs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 3px solid var(--rule);
+}
+
+.cs__item {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.cs__head {
+  appearance: none;
+  background: none;
+  border: 0;
+  width: 100%;
+  padding: var(--s4) 0;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 3fr) minmax(0, 2fr) auto;
+  gap: var(--s3);
+  align-items: baseline;
+}
+
+.cs__head:hover .cs__name {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-soft);
+  text-underline-offset: 0.2em;
+}
+
+.cs__no,
+.cs__toggle {
+  color: var(--ink-3);
+}
+
+.cs__name {
+  font-weight: 650;
+  font-stretch: 92%;
+}
+
+.cs__where {
+  color: var(--ink-3);
+  font-size: var(--t-small);
+}
+
+.cs__body {
+  padding: 0 0 var(--s5) 2.75rem;
+}
+
+.cs__body[hidden] {
+  display: none;
+}
+
+.cs__flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: var(--s4);
+}
+
+.cs__flow li {
+  position: relative;
+  display: grid;
+  gap: var(--s1);
+  align-content: start;
+  padding-top: var(--s2);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.cs__flow li + li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--s4) / 2 - 4px);
+  top: calc(var(--s2) + 0.3em);
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid var(--ink-3);
+  border-right: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+}
+
+.cs__flow li:last-child {
+  border-top-color: var(--blue);
+}
+
+.cs__step {
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.cs__flow li:last-child .cs__step {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.cs__link {
+  display: inline-flex;
+  margin-top: var(--s4);
+}
+
+/* 004 · Leadership flow: six linked steps and a return arrow. */
+.flow__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: var(--s4);
+  border-top: 3px solid var(--rule);
+}
+
+.flow__step {
+  position: relative;
+  padding: var(--s3) 0 var(--s4);
+  display: grid;
+  gap: var(--s1);
+  align-content: start;
+  min-width: 0;
+}
+
+.flow__step + .flow__step::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--s4) / 2 - 4px);
+  top: calc(var(--s3) + 0.45em);
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid var(--ink-3);
+  border-right: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+}
+
+.flow__no {
+  color: var(--ink-3);
+}
+
+.flow__name {
+  font-weight: 650;
+  font-stretch: 92%;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+  justify-self: start;
+}
+
+.flow__name:hover {
+  border-bottom-color: var(--ink);
+}
+
+.flow__text {
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-top: var(--s1);
+}
+
+.flow__loop {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--s3);
+  align-items: center;
+  padding-top: var(--s3);
+  border-top: 1px solid var(--rule-soft);
+  font-size: var(--t-small);
+  color: var(--ink-2);
+}
+
+.flow__arrow {
+  width: 120px;
+  height: 28px;
+  color: var(--blue);
+}
+
+@media (max-width: 899px) {
+  .home-section__head {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+  .impact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .impact li:nth-child(3n + 1) {
+    border-left: 1px solid var(--rule-soft);
+  }
+  .impact li:nth-child(odd) {
+    border-left: 0;
+  }
+  .impact li:nth-child(3n + 1) a {
+    padding-left: var(--s4);
+  }
+  .impact li:nth-child(odd) a {
+    padding-left: 0;
+  }
+  .tl__tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .tl__tab:nth-child(5)::before {
+    display: none;
+  }
+  .tl__cells {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+  .cs__head {
+    grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+  }
+  .cs__where {
+    grid-column: 2;
+  }
+  .cs__flow {
+    grid-template-columns: 1fr;
+    row-gap: var(--s3);
+  }
+  .cs__flow li + li::before {
+    left: 0;
+    top: calc(-1 * var(--s3) / 2 - 4px);
+    transform: rotate(135deg);
+  }
+  .cs__flow li + li {
+    padding-left: var(--s4);
+  }
+  .flow__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .flow__step:nth-child(4)::before {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .impact {
+    grid-template-columns: 1fr;
+  }
+  .impact li,
+  .impact li:nth-child(odd) {
+    border-left: 0;
+  }
+  .impact a,
+  .impact li:nth-child(3n + 1) a {
+    padding-left: 0;
+  }
+  .tl__tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tl__tab:nth-child(5)::before {
+    display: block;
+  }
+  .tl__tab:nth-child(3)::before,
+  .tl__tab:nth-child(7)::before {
+    display: none;
+  }
+  .cs__body {
+    padding-left: 0;
+  }
+  .flow__steps {
+    grid-template-columns: 1fr;
+  }
+  .flow__step + .flow__step::before {
+    display: none;
+  }
+  .flow__step + .flow__step {
+    border-top: 1px solid var(--rule-soft);
+  }
+  .flow__loop {
+    grid-template-columns: 1fr;
+  }
+}

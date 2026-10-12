@@ -33,7 +33,7 @@ export const capabilities = [
     id: 'product',
     no: '402',
     name: 'Product engineering',
-    claim: 'Web and mobile applications people actually use, built so they can keep changing.',
+    claim: 'Web and mobile applications people use, built so they can keep changing.',
     practice: [
       'Web and mobile product delivery',
       'Front-end architecture and performance',
@@ -43,8 +43,9 @@ export const capabilities = [
     evidence: [
       { to: '/projects/fedpath/', label: 'FedPath: a federal contracting product' },
       { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: a small-business site' },
+      { to: '/writing/building-startups-technical-leadership/', label: 'Six startups: mobile, fitness, VoIP, real estate and virtual tours' },
     ],
-    depth: { carrier: 0, voice: 1, communications: 2, publishing: 2, yippify: 2 },
+    depth: { carrier: 0, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'architecture',
@@ -80,20 +81,22 @@ export const capabilities = [
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
     ],
-    depth: { carrier: 2, voice: 2, communications: 2, publishing: 1, yippify: 2 },
+    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'gov',
     no: '405',
-    name: 'Government technology',
-    claim: 'Public services where accessibility, security and a clean hand-over to the agency are part of the scope from day one.',
+    name: 'Government technology & federal compliance',
+    claim: 'Public services where accessibility, security and a clean hand-over to the agency are part of the scope from day one. Building, modernizing and supporting federal applications, including federal certification systems.',
     practice: [
       'Incremental modernization of services the public relies on',
-      'Accessibility (WCAG) and security as release gates',
-      'Procurement-aware delivery and agency hand-over',
+      'Engineering that supports federal security authorization: FedRAMP-aligned cloud environments, NIST security controls, Authority to Operate evidence, continuous monitoring',
+      'Section 508 and WCAG accessibility, and Plain Writing, in the acceptance criteria',
+      'Procurement-aware delivery, change management and agency hand-over',
     ],
-    stack: ['Python', 'Django', 'React', 'AWS', 'Terraform'],
+    stack: ['Python', 'Django', 'React', 'Vue', 'Rails', 'PostgreSQL', 'AWS', 'Terraform'],
     evidence: [
+      { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me' },
       { to: '/work/public-service-modernization/', label: 'Case study: public-sector modernization without a rewrite' },
       { to: '/projects/fedpath/', label: 'FedPath: SAM.gov opportunities for small businesses' },
     ],
@@ -134,8 +137,69 @@ export const capabilities = [
       { to: '/projects/', label: 'Products and sites I’ve shipped' },
       { to: '/writing/you-dont-need-to-remember-everything/', label: 'Why I still look things up after two decades' },
     ],
-    depth: { carrier: 2, voice: 1, communications: 2, publishing: 1, yippify: 2 },
+    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
     verify: true,
+  },
+  {
+    id: 'security',
+    no: '408',
+    name: 'Security engineering & secure architecture',
+    claim: 'Security as an engineering decision at every layer, from the router ACL to the authorization check on one record.',
+    practice: [
+      'Network security: Cisco ACLs in a carrier network, NetScreen firewalls and VPNs, security operations',
+      'Application security: authentication, SSO, OAuth, RBAC, object-level authorization, secure API design',
+      'Mobile application security: iOS and Android apps as untrusted clients, secure token storage, no secrets in the bundle, authorization re-checked on the server',
+      'Cloud and infrastructure security: AWS IAM, network controls, secrets management, Terraform, secure deployment',
+      'Operations and leadership: vulnerabilities monitored and fixed as high-priority work, security as a release gate, documentation and technical training',
+    ],
+    stack: ['Cisco ACLs', 'NetScreen / ScreenOS', 'IPsec VPN', 'AAA', 'OAuth', 'SSO', 'JWT', 'RBAC', 'AWS IAM', 'Terraform'],
+    evidence: [
+      { to: '/writing/network-security-before-devsecops/', label: 'From Cisco ACLs and NetScreen firewalls to cloud and application security' },
+      { to: '/writing/api-architecture-lessons/#security', label: 'Authorization: a valid token says nothing about the record' },
+      { to: '/work/public-service-modernization/', label: 'Case study: security and accessibility as release gates' },
+    ],
+    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
+  },
+  {
+    id: 'capacity',
+    no: '409',
+    name: 'Infrastructure strategy, capacity planning & cost optimization',
+    claim: 'Systems sized from measured demand, scaled when the data asks for it, and run at a cost the business can carry, from the carrier network to the company paying the bill.',
+    practice: [
+      'Capacity planning: forecasting from measured utilization, finding the resource that fills first, headroom decided in advance',
+      'Scaling: carrier networks across 2,000+ collocations, VoIP servers behind 8M+ minutes a month, a platform from one data center to cloud regions on three continents',
+      'Cost optimization: least-cost and geolocation routing, right-sizing, demand-based scaling, database query and connection fixes, managed versus self-hosted decisions',
+      'Infrastructure economics: total cost of ownership, technology investment and build-versus-buy decisions, software subscriptions reviewed like headcount',
+      'Leadership: engineering capacity, technical debt and operational overhead planned alongside infrastructure; architecture reviewed with a price column',
+    ],
+    stack: ['AWS ECS / Fargate', 'Lambda', 'RDS PostgreSQL', 'Redis', 'S3', 'CloudFront', 'Kafka', 'Terraform', 'Docker', 'GitHub Actions', 'SNMP / Cacti'],
+    evidence: [
+      { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning: what carrier networks taught me about scaling cloud infrastructure' },
+      { to: '/writing/hidden-cost-of-software-architecture/', label: 'The hidden cost of software architecture: scaling too early' },
+      { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What 20+ years taught me about infrastructure costs, from carrier to founder' },
+      { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
+      { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
+    ],
+    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
+  },
+  {
+    id: 'data',
+    no: '410',
+    name: 'Data, analytics & business optimization',
+    claim: 'Operational data turned into decisions with money attached: measure, analyze, forecast, optimize, validate.',
+    practice: [
+      'Capacity forecasting from SNMP statistics with an R program, so links were upgraded ahead of lead times',
+      'VoIP routing on call statistics: answer rates, durations, completion and quality weighed against carrier cost',
+      'Publishing analytics: traffic sources, rankings, engagement and revenue per thousand views deciding which content to invest in',
+      'Cloud monitoring and cost data driving right-sizing and scaling decisions',
+    ],
+    stack: ['R', 'SNMP / Cacti', 'SQL', 'Python', 'Google Analytics', 'Search Console', 'AWS cost and monitoring data'],
+    evidence: [
+      { to: '/writing/data-driven-engineering-network-voip-publishing/', label: 'Different industries, same engineering problems: the data-to-decision loop' },
+      { to: '/writing/digital-publishing-seo-adsense-affiliate-ai-search/', label: 'The publishing revenue engine, from an engineer’s seat' },
+      { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
+    ],
+    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 1 },
   },
 ];
 
@@ -160,6 +224,7 @@ export const practices = [
     body:
       'Significant choices get a short decision record: context, the options considered, what we chose, and what we are giving up. It keeps debates short, onboarding fast, and reversals honest.',
     signals: ['New engineers can find why, not just what', 'We revisit decisions on evidence, not mood'],
+    read: { to: '/writing/hidden-cost-of-software-architecture/#deciding', label: 'How I decide build or buy, managed or self-hosted, scale now or later' },
   },
   {
     no: '103',
@@ -179,6 +244,7 @@ export const practices = [
     body:
       'Batch size is the lever. Small changes get reviewed properly, deploy safely and roll back cheaply. I invest in the pipeline before asking a team to go faster.',
     signals: ['PRs reviewed within a day', 'Deploys are routine, rollbacks rare and fast'],
+    read: { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Why smaller stories and pull requests change everything downstream' },
   },
   {
     no: '105',
@@ -219,6 +285,16 @@ export const practices = [
       'Product gets honest options with costs attached. QA is in planning, not only at the end. Executives get risk in plain language, early.',
     signals: ['Roadmap changes cost negotiation, not surprise', 'Quality is planned, not inspected in'],
     read: { to: '/writing/when-everything-is-a-priority/', label: 'How I handle changing priorities' },
+  },
+  {
+    no: '109',
+    id: 'capacity',
+    title: 'Plan capacity before it becomes a cost',
+    claim: 'Compute, engineers and budget all fill up, and each has a lead time. I find the constraint before it becomes an expensive incident.',
+    body:
+      'I size systems from measured demand, decide headroom in advance, and treat team capacity, technical debt and operational overhead as resources with lead times, the same as a circuit order. Architecture reviews get a price column.',
+    signals: ['Nobody is surprised by the infrastructure bill', 'Hiring and scaling decisions are made ahead of the lead time, not after the incident'],
+    read: { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'What carrier networks taught me about scaling cloud infrastructure' },
   },
 ];
 

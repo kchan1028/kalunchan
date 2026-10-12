@@ -377,6 +377,11 @@
   max-width: 48ch;
 }
 
+.off-clock__read {
+  grid-column: 3 / 10;
+  justify-self: start;
+}
+
 @media (max-width: 899px) {
   .lead-leadership .page-lead__claim {
     grid-column: 1 / -1;
@@ -414,7 +419,8 @@
   .counterparts__h,
   .counterparts__table,
   .off-clock__h,
-  .off-clock__text {
+  .off-clock__text,
+  .off-clock__read {
     grid-column: 1 / -1;
   }
 
@@ -841,6 +847,37 @@
   border-top-color: var(--rule);
 }
 
+.case__para {
+  margin-top: var(--s4);
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+.decision__why {
+  margin-top: var(--s4);
+  line-height: 1.6;
+  max-width: 62ch;
+  color: var(--ink-2);
+}
+
+.case__execution {
+  padding-top: var(--s9);
+  row-gap: var(--s5);
+}
+
+.case__execution-body {
+  grid-column: 3 / 11;
+}
+
+.case__execution-body .case__para:first-child {
+  margin-top: 0;
+}
+
+.case__tradeoffs {
+  grid-column: 3 / 13;
+  margin-top: var(--s6);
+}
+
 .case__tech {
   grid-column: 10 / 13;
   font-size: var(--t-small);
@@ -924,6 +961,8 @@
   .case__tech,
   .lessons,
   .case__related,
+  .case__execution-body,
+  .case__tradeoffs,
   .case__h {
     grid-column: 1 / -1;
   }
@@ -1251,5 +1290,216 @@
   .case-index__lead .case-index__row {
     padding-inline: var(--gutter);
     margin-inline: calc(-1 * var(--gutter));
+  }
+}
+
+/* ---------- Fig. 200-1: responsibility progression on /experience/ ---------- */
+.prog {
+  margin-top: var(--s7);
+  margin-bottom: var(--s7);
+}
+
+.prog__cap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+  align-items: baseline;
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--t-small);
+  font-weight: 600;
+  font-stretch: 90%;
+}
+
+.prog__cap .mono {
+  color: var(--ink-3);
+}
+
+.prog__key {
+  flex-basis: 100%;
+  font-weight: 450;
+  color: var(--ink-3);
+}
+
+.prog__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: var(--s4);
+  border-top: 3px solid var(--rule);
+}
+
+.prog__role {
+  position: relative;
+  min-width: 0;
+}
+
+.prog__role + .prog__role::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--s4) / 2 - 4px);
+  top: calc(var(--s3) + 0.45em);
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid var(--ink-3);
+  border-right: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+}
+
+.prog__link {
+  display: grid;
+  gap: var(--s1);
+  align-content: start;
+  padding: var(--s3) 0 var(--s4);
+  min-height: 100%;
+  text-decoration: none;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.prog__link:hover {
+  background: var(--paper-sunk);
+}
+
+.prog__role.is-now .prog__link {
+  box-shadow: inset 0 -3px 0 var(--blue);
+}
+
+.prog__no {
+  color: var(--ink-3);
+}
+
+.prog__title {
+  font-weight: 650;
+  font-stretch: 92%;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.prog__org {
+  font-size: var(--t-small);
+  color: var(--ink-3);
+}
+
+.prog__scale {
+  margin-top: var(--s2);
+  font-size: 1.125rem;
+  font-weight: 800;
+  font-stretch: 80%;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.prog__label {
+  margin-top: var(--s3);
+}
+
+.prog__owned {
+  font-size: var(--t-small);
+  line-height: 1.45;
+}
+
+.prog__mode {
+  margin-top: var(--s2);
+  justify-self: start;
+  padding: 1px 6px;
+  border: 1px solid var(--rule-soft);
+  color: var(--ink-3);
+}
+
+/* Fig. 100-1 on /leadership/: the loop with practices placed on it. */
+.flow--page {
+  margin-top: var(--s7);
+}
+
+.flow--page .flow__steps {
+  margin-top: var(--s4);
+}
+
+.flow__name--static {
+  border-bottom: 0;
+}
+
+.flow__practices {
+  list-style: none;
+  margin: var(--s2) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s1);
+}
+
+.flow__practices a {
+  font-size: var(--t-small);
+  line-height: 1.4;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.flow__practices a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.flow__practices .mono {
+  color: var(--ink-3);
+  margin-right: 4px;
+}
+
+@media (max-width: 899px) {
+  .prog__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .prog__role:nth-child(4)::before {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .prog__list {
+    grid-template-columns: 1fr;
+  }
+  .prog__role + .prog__role::before {
+    display: none;
+  }
+}
+
+/* ---------- Privacy ---------- */
+.privacy {
+  padding-block: 0 var(--s8);
+}
+
+.privacy__body {
+  grid-column: 3 / 11;
+  max-width: 66ch;
+  color: var(--ink-2);
+}
+
+.privacy__body h2 {
+  color: var(--ink);
+  margin-top: var(--s7);
+}
+
+.privacy__body h2,
+.privacy__sub {
+  margin-bottom: var(--s3);
+}
+
+.privacy__sub {
+  color: var(--ink);
+  font-weight: 600;
+  margin-top: var(--s5);
+}
+
+.privacy__body p + p,
+.privacy__body ul + p {
+  margin-top: var(--s4);
+}
+
+@media (max-width: 899px) {
+  .privacy__body {
+    grid-column: 1 / -1;
   }
 }

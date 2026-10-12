@@ -6,7 +6,7 @@ import ContactForm, { contactEndpoint } from '../components/ContactForm';
 import useReveal from '../components/useReveal';
 import { ArrowDown, ArrowOut, ArrowRight } from '../components/Icons';
 import { person } from '../content/profile';
-import { branches, problems, strengths, operating, becomes, impression } from '../content/contact';
+import { branches, problems, strengths, operating, becomes, impression, responseTime } from '../content/contact';
 
 // Engineering leadership drawn as one system: three branches joined by a hands-on bus, converging on the outcome.
 function Stack() {
@@ -118,10 +118,10 @@ export default function Contact() {
             </div>
           ))}
         </dl>
-        <aside className="operate__mentor" aria-label="Mentorship">
+        <div className="operate__mentor">
           <p>I want engineers who can challenge me, make decisions, lead others, and eventually take over parts of my job. A team that needs me for every call is a team I’ve built badly.</p>
           <Link className="link-arrow" to="/mentorship/"><span>Read how I think about mentorship</span> <ArrowRight /></Link>
-        </aside>
+        </div>
       </section>
 
       <section className="sheet grid contact-band founder" aria-labelledby="founder-title" data-coord="705 · Founder perspective">
@@ -146,6 +146,7 @@ export default function Contact() {
           <h2 id="talk-title" className="talk__title display">Let’s talk.</h2>
           <p className="talk__lead">You don’t have to decide from a website whether I’m the right person. That’s what a conversation is for.</p>
           <p className="body-copy">You don’t need a polished pitch. If there’s an interesting engineering, product or organizational problem worth discussing, send me a note.</p>
+          <p className="talk__reply label">{responseTime}</p>
           {contactEndpoint && <ContactForm />}
           <div className="talk__direct">
             {contactEndpoint

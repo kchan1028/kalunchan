@@ -162,14 +162,14 @@ export default function Body() {
         <h2 id="not-a-maturity-level-h" className="post__h2">Microservices aren’t a maturity level</h2>
         <p>I’ve spent more than two decades building and running production software: first in network operations, later as a co-founder and CTO, and now leading engineering teams and helping companies with architecture. Over that time, one conversation keeps coming back. Someone proposes pulling a piece of the system out into its own service. Sometimes it’s the right call. Often, nobody in the room can say what problem it solves.</p>
         <p>The reasons tend to sound like this. “It’ll be cleaner.” “That’s how bigger companies do it.” “We’ll need it eventually.” “The monolith is getting too big.” None of those are wrong, exactly. They just aren’t reasons on their own.</p>
-        <p>Here’s where I’ve landed. A microservice should solve a real problem: an organizational one, a scaling one, a deployment one, a reliability one, or a domain-boundary one. It shouldn’t exist because microservices sound like what a serious engineering team is supposed to have.</p>
-        <p>What follows is how I actually think through the decision, including the parts that only show up after a service has been running for a few years.</p>
+        <p>Where I’ve landed is that a microservice should solve a real problem: an organizational one, a scaling one, a deployment one, a reliability one, or a domain-boundary one. It shouldn’t exist because microservices sound like what a serious engineering team is supposed to have.</p>
+        <p>Below is how I think through the decision, including the parts that only show up after a service has been running for a few years.</p>
       </section>
 
       <section id="when-to-use" aria-labelledby="when-to-use-h">
         <h2 id="when-to-use-h" className="post__h2">When should you use microservices?</h2>
         <p className="post__answer">Use a microservice when a separate service makes a specific problem meaningfully easier: teams blocked on each other’s releases, a component that needs to scale or fail on its own, or a security boundary that has to be enforced. If you can’t name the problem, you probably don’t need the service yet.</p>
-        <p>That means the conversation starts with the business and the operations, not with boxes on a whiteboard. Before I look at any architecture diagram, I want to know what’s actually hurting.</p>
+        <p>So before I look at any architecture diagram, I want to know what’s hurting in the business and in operations.</p>
         <ul className="post__list">
           <li>Are releases slow because teams are waiting on each other?</li>
           <li>Is one part of the system eating resources the rest doesn’t need?</li>
@@ -186,7 +186,7 @@ export default function Body() {
 
         <h3 className="post__h3">Does it have a clear domain boundary?</h3>
         <p>A good service boundary follows the business, not the folder structure. Billing, identity, search and notifications usually have their own vocabulary, their own rules and their own data. You can explain what they do without explaining the rest of the system.</p>
-        <p>A weak boundary is one you can only describe in technical terms: the validation service, the database service, the utilities service. If a component needs to know the internals of three other components to do its job, it isn’t a separate domain. It’s a piece of one.</p>
+        <p>A weak boundary is one you can only describe in technical terms: the validation service, the database service, the utilities service. If a component needs to know the internals of three other components to do its job, it’s part of another domain.</p>
         <p>One test I use: could we write the API contract for this in an afternoon, and would it stay mostly stable for a year? If the contract would change every time a product requirement changes, the boundary is in the wrong place.</p>
 
         <h3 className="post__h3">Can it be deployed and owned independently?</h3>
@@ -213,7 +213,7 @@ export default function Body() {
       <section id="data" aria-labelledby="data-h">
         <h2 id="data-h" className="post__h2">What happens to the data?</h2>
         <p>This question settles more of these debates for me than any other, and it’s the one teams most often leave for later.</p>
-        <p className="post__answer">A service that shares a database with the rest of the application isn’t really independent. If two services read and write the same tables, the database has quietly become the integration layer, and nobody designed it to be one.</p>
+        <p className="post__answer">A service that shares a database with the rest of the application isn’t really independent. If two services read and write the same tables, the database has become the integration layer, and nobody designed it to be one.</p>
         <p>A schema change in one service can break the other. Neither can migrate on its own schedule. Changing how something is stored means coordinating with everyone who reads it. You have separate deploys and a shared fate.</p>
         <p>Real independence means the service owns its data. The rest of the system gets at that data through the service’s API or the events it publishes, never by reaching into its tables. That has consequences you need to be ready for:</p>
         <ul className="post__list">
@@ -222,7 +222,7 @@ export default function Body() {
           <li>Some data gets copied, because services keep local views of what they need. Those copies have to be kept current, and someone has to decide what happens when they disagree.</li>
           <li>A data migration goes from one script to a coordinated rollout with backfills.</li>
         </ul>
-        <p>None of that is a reason not to do it. It’s a reason to know what you’re signing up for. When the plan for the data is “it’ll use the same database for now,” I take that as a sign the boundary isn’t ready yet.</p>
+        <p>You can still do it, as long as you know what you’re signing up for. When the plan for the data is “it’ll use the same database for now,” I take that as a sign the boundary isn’t ready yet.</p>
       </section>
 
       <section id="network" aria-labelledby="network-h">
@@ -261,9 +261,9 @@ export default function Body() {
 
       <section id="distributed-monolith" aria-labelledby="distributed-monolith-h">
         <h2 id="distributed-monolith-h" className="post__h2">The danger of a distributed monolith</h2>
-        <p>The worst outcome isn’t a monolith. It’s a system with all the costs of microservices and none of the benefits: lots of services, each with its own repository and pipeline, that still have to change together, deploy together and fail together.</p>
+        <p>The worst outcome is a system with all the costs of microservices and none of the benefits: lots of services, each with its own repository and pipeline, that still have to change together, deploy together and fail together.</p>
         <div className="post__diagram">
-          <Diagram spec={distributed} id="distributed-monolith" no="653-1" />
+          <Diagram spec={distributed} id="distributed-monolith" no="667-1" />
         </div>
         <p>The symptoms are easy to spot once you’ve lived with them:</p>
         <ul className="post__list">
@@ -274,8 +274,8 @@ export default function Body() {
           <li>Long chains of synchronous calls, where one slow service makes every request slow.</li>
           <li>The only place the whole system works is a shared staging environment nobody fully trusts.</li>
         </ul>
-        <p>This rarely comes from bad engineers. It comes from splitting along technical lines instead of domain lines, or splitting before anyone understood the domain. The boundaries land in the wrong places, and moving a boundary that’s already a network contract is far harder than moving one inside a codebase.</p>
-        <p>If you’re already there, the fix isn’t always more services. Sometimes it’s merging the services that always change together back into one, getting the boundaries right, and only then splitting again.</p>
+        <p>It usually comes from splitting along technical lines instead of domain lines, or splitting before anyone understood the domain. The boundaries land in the wrong places, and moving a boundary that’s already a network contract is far harder than moving one inside a codebase.</p>
+        <p>If you’re already there, the fix is sometimes fewer services: merging the services that always change together back into one, getting the boundaries right, and only then splitting again.</p>
       </section>
 
       <section id="modular-monolith" aria-labelledby="modular-monolith-h">
@@ -283,9 +283,9 @@ export default function Body() {
         <p className="post__answer">A modular monolith is one deployable application with strict internal boundaries. Each module owns its domain and its data, and modules talk to each other only through small, defined interfaces.</p>
         <p>It deploys as one unit and usually runs on one database, with each module owning its own tables or schema. Workers and queues can still scale separately.</p>
         <div className="post__diagram">
-          <Diagram spec={modular} id="modular-monolith" no="653-2" />
+          <Diagram spec={modular} id="modular-monolith" no="667-2" />
         </div>
-        <p>For most teams, this is where I’d start. You get much of what people actually want from microservices: clear ownership, code that’s easier to reason about, and boundaries you can enforce. You skip most of the cost. There’s no network between modules, one pipeline, one deploy, transactions that still work, and one stack trace when something breaks.</p>
+        <p>For most teams, this is where I’d start. You get much of what people want from microservices: clear ownership, code that’s easier to reason about, and boundaries you can enforce. You skip most of the cost. There’s no network between modules, one pipeline, one deploy, transactions that still work, and one stack trace when something breaks.</p>
         <p>Discipline is what makes it work. These are the rules I’d put in place:</p>
         <ol className="post__steps">
           <li><strong>Each module owns its tables.</strong> No other module queries them directly.</li>
@@ -303,7 +303,7 @@ export default function Body() {
         <p>Early in a product’s life, you don’t know where the real boundaries are. The domain is still moving. You don’t know which parts will see heavy load, which will need their own team, or which will pick up compliance requirements. Service boundaries drawn now are guesses, and wrong guesses turn into network contracts, separate databases and pipelines that are expensive to undo.</p>
         <p>Later, you know. You’ve seen which module changes on its own, which one gets the traffic spikes, and which one a new team is ready to own. If that module already has a clean interface and owns its data, extracting it is a contained project: stand up the service, route traffic to it, migrate the data, and delete the old code path.</p>
         <div className="post__diagram">
-          <Diagram spec={extracted} id="extract-later" no="653-3" />
+          <Diagram spec={extracted} id="extract-later" no="667-3" />
         </div>
         <p>It’s the same idea as the strangler pattern I’ve used to modernize legacy systems. On a <Link to="/work/public-service-modernization/">public-sector modernization without a big-bang rewrite</Link>, we put an API facade in front of the old system and moved one journey at a time behind it. One decision there was whether to build on a bespoke microservice mesh. We didn’t. The agency had no platform team to run it, and the team inheriting the system mattered more than how it looked on a diagram. We chose a conventional Django and React stack on managed AWS that they could own.</p>
         <p>So my default is to build the modular monolith well, keep the seams clean, and extract when a real reason shows up. Extraction is cheaper and safer at that point, because you’re working from evidence instead of guesses.</p>
@@ -311,11 +311,11 @@ export default function Body() {
 
       <section id="framework" aria-labelledby="framework-h">
         <h2 id="framework-h" className="post__h2">My practical decision framework</h2>
-        <p>When it’s time to decide, this is roughly the checklist I use. It isn’t a scoring system. It’s a way to make sure we’ve asked the right questions and can explain the answer to someone who wasn’t in the room.</p>
+        <p>When it’s time to decide, this is roughly the checklist I use. It helps make sure we’ve asked the right questions and can explain the answer to someone who wasn’t in the room.</p>
         <figure className="post__figure">
           <table className="post__table">
             <caption>
-              <span className="mono">Fig. 653-4</span> The questions, and which way each answer points
+              <span className="mono">Fig. 667-4</span> The questions, and which way each answer points
             </caption>
             <thead>
               <tr>
@@ -349,11 +349,11 @@ export default function Body() {
       <section id="five-years" aria-labelledby="five-years-h">
         <h2 id="five-years-h" className="post__h2">Creating a microservice is easy. Owning one for the next five years is the expensive part.</h2>
         <p>I’ve seen this over and over. Spinning up a new service takes days. With a good template and AI tools, it might take an afternoon. The cost doesn’t show up in the first sprint. It shows up in year two, three and five, often after the people who created the service have moved on.</p>
-        <p>Here’s what every service brings with it, for as long as it exists:</p>
+        <p>Every service brings all of this with it, for as long as it exists:</p>
         <dl className="post__terms">
           <div><dt>CI/CD</dt><dd>A pipeline to build, test, scan and deploy it, and to fix when the runner or base image changes.</dd></div>
           <div><dt>Infrastructure</dt><dd>Compute, networking, load balancers, DNS, and infrastructure as code to keep it reproducible.</dd></div>
-          <div><dt>Monitoring</dt><dd>Dashboards and health checks that someone actually looks at.</dd></div>
+          <div><dt>Monitoring</dt><dd>Dashboards and health checks that someone looks at.</dd></div>
           <div><dt>Logging</dt><dd>Structured logs shipped somewhere searchable, with retention and cost to manage.</dd></div>
           <div><dt>Alerts</dt><dd>Thresholds tuned to page for real problems and stay quiet otherwise.</dd></div>
           <div><dt>Secrets</dt><dd>Credentials, keys and certificates to store, rotate and audit.</dd></div>
@@ -370,12 +370,12 @@ export default function Body() {
 
       <section id="worth-it" aria-labelledby="worth-it-h">
         <h2 id="worth-it-h" className="post__h2">Are microservices worth the complexity?</h2>
-        <p className="post__answer">Sometimes, yes. When independent teams, independent scaling, real failure isolation or a compliance boundary are actually in play, microservices can pay for themselves many times over. When they aren’t, the complexity is pure cost.</p>
-        <p>There’s a quiet assumption in a lot of architecture discussions that microservices are what sophisticated teams build, and a monolith is what you have before you know better. I don’t agree.</p>
+        <p className="post__answer">Sometimes, yes. When independent teams, independent scaling, real failure isolation or a compliance boundary are in play, microservices can pay for themselves many times over. When they aren’t, the complexity is pure cost.</p>
+        <p>A lot of architecture discussions assume that microservices are what sophisticated teams build, and a monolith is what you have before you know better. I don’t agree.</p>
         <p>Choosing a monolith or a modular monolith isn’t a sign of unsophisticated engineering. Often it’s the opposite. It takes experience to look at a system, see that a split would be interesting, and decide against it because the problem doesn’t call for it. It takes some confidence to hold that position in a room where everyone wants the more impressive diagram.</p>
         <p className="post__pull">Sometimes the senior engineering decision is deliberately choosing the simpler architecture, and being able to say exactly what would have to change before you’d choose differently.</p>
-        <p>That second half matters. “We don’t do microservices” isn’t a position. “Billing stays in the monolith until it needs its own team or its own scaling, and here’s how we’ve kept it easy to extract” is. It tells everyone what would change the decision, and it keeps the door open.</p>
-        <p>The best engineers I’ve worked with spend their complexity budget carefully. They spend it where it buys something real for the business and keep everything else as boring as they can. It’s close to what I wrote in <Link to="/writing/you-dont-need-to-remember-everything/">You Don’t Need to Remember Everything to Be a Good Software Engineer</Link>: the skill that matters isn’t knowing every tool, it’s judging which one fits the situation in front of you.</p>
+        <p>“We don’t do microservices” isn’t a position. “Billing stays in the monolith until it needs its own team or its own scaling, and here’s how we’ve kept it easy to extract” is. It tells everyone what would change the decision, and it keeps the door open.</p>
+        <p>The best engineers I’ve worked with spend their complexity budget carefully. They spend it where it buys something real for the business and keep everything else as boring as they can. It’s close to what I wrote in <Link to="/writing/you-dont-need-to-remember-everything/">You Don’t Need to Remember Everything to Be a Good Software Engineer</Link>: the skill that matters is judging which tool fits the situation in front of you.</p>
       </section>
     </>
   );

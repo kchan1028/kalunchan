@@ -9,6 +9,8 @@
 export const cases = [
   {
     slug: 'three-continent-platform',
+    // First published (git history). The sitemap and dateModified come from src/lastmod.json.
+    published: '2026-09-26',
     no: '301',
     title: 'From one data center to three continents',
     seoTitle: 'One Data Center to Three Continents: Case Study',
@@ -21,6 +23,11 @@ export const cases = [
       'Taking a founder-built platform from a single data center to cloud regions in North America, Europe and Asia, with traffic routed by geography.',
     problem:
       'The platform started in one data center. As the user base grew past 400,000 across South America, Asia and Africa, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
+    context: [
+      'I co-founded the company and ran engineering as CTO. The platform carried VoIP and cloud telecom services for underserved and underbanked communities, many of them immigrants, sold directly and through local resellers who ran their own businesses on our hosted platform. It was built on open-source VoIP with an in-house billing system, and it handled millions of dollars in transactions.',
+      'We built the first data center ourselves: racked the servers, ran the cabling, configured the routers and switches, and wrote the software. We planned it deliberately, with web, application and data as separate tiers. That was a choice for clarity, not a plan to leave, and it turned out to be what made leaving possible.',
+      'Real-time voice is the hard case for distance. Audio that crosses an ocean twice arrives late and arrives damaged, and no amount of server capacity fixes latency. A data center also buys capacity in large, lumpy steps, while a startup’s revenue grows in small, uneven ones.',
+    ],
     constraints: [
       'A small engineering team that also owned operations',
       'No downtime window: users were active in every time zone',
@@ -47,6 +54,15 @@ export const cases = [
           { label: 'Geo-routed full regional stacks', note: 'Every region serves the whole application. Users resolve to the nearest one.', chosen: true },
           { label: 'Separate product instance per market', note: 'Fast locally, but it forks the codebase and the team.' },
         ],
+        why: 'Voice can’t hide behind a cache, so a CDN would have sped up the parts users noticed least. A separate instance per market would have meant a forked codebase and a team split across it. Running the same architecture in each region kept one product and one team, and the clean tiers from the first data center moved as units.',
+      },
+      {
+        question: 'Which path should a call’s audio take?',
+        options: [
+          { label: 'Relay every call through one site', note: 'Simple to run, but distant callers’ audio crosses the world and back.' },
+          { label: 'Choose the media path from the caller’s location', note: 'Estimate location from the source IP and use the nearest appropriate media path, with a fallback.', chosen: true },
+        ],
+        why: 'Geolocation from an IP address is an estimate, so the routing needed a sensible fallback for when it was wrong. As a single change it raised call quality for distant users and cut the bandwidth bill, because we stopped paying to haul audio across the world and back.',
       },
       {
         question: 'How should the migration run?',
@@ -54,17 +70,30 @@ export const cases = [
           { label: 'Cut over everything at once', note: 'Short project, unbounded blast radius.' },
           { label: 'Region by region, reversible at each step', note: 'Slower, but each step is observable and can be rolled back.', chosen: true },
         ],
+        why: 'Users were active in every time zone, so there was never a quiet hour to cut over. Going one region at a time meant each step could be watched under real traffic and reversed if it misbehaved, at the cost of a longer project.',
       },
     ],
-    technology: ['Multi-tier web & mobile application', 'Data center design', 'Cloud regions (NA / EU / Asia)', 'Geo-location DNS routing', 'Data replication'],
+    execution: [
+      'Each region carried the full web and application tier. Users resolved to the nearest healthy region through geo-location DNS, and data replicated back to a primary. Regions went live one at a time, with customers on calls throughout and a way back at every step.',
+      'Media routing changed alongside the regions. We estimated each caller’s location from the source IP and steered the audio through the nearest appropriate media path instead of hairpinning it through a single site. Least-cost routing picked the cheapest carrier for each call, and we tuned it with call statistics so the cheapest route also had to deliver acceptable quality.',
+      'The team that built the platform also ran it, so the migration happened alongside day-to-day operations rather than as a separate project. Over the life of the company the team grew to more than 30 engineers, VoIP specialists and designers, and the architecture grew with the customer base.',
+    ],
+    technology: ['Multi-tier web & mobile application', 'Open-source VoIP (Asterisk, OpenSIPS, MediaProxy)', 'In-house billing system', 'Least-cost routing', 'Data center design', 'Cloud regions (NA / EU / Asia)', 'Geo-location DNS routing', 'Data replication'],
     outcome: [
       '400k+ users served across South America, Asia and Africa',
       'Lower network latency and better quality for distant users',
+      'A lower cost structure: capacity followed revenue, and audio stopped crossing the world and back',
       'Multimillion-dollar growth and a successful acquisition',
     ],
     lessons: [
       'Latency is a product feature. Users feel geography before they notice any new feature.',
       'Designing the first data center carefully made leaving it easier. Clean tiers moved as units.',
+      'The best capacity decisions avoid consuming capacity in the first place.',
+    ],
+    tradeoffs: [
+      'Three regions took more operational attention than one site. We accepted that because capacity could follow revenue instead of leading it by a rack at a time.',
+      'Replicating to one primary kept data consistent and easy to reason about, at the cost of writes from distant regions travelling further than reads.',
+      'A staged rollout took longer than a single cutover. The extra time bought a way back at every step.',
     ],
     related: [
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#business', label: 'The founder story behind this platform, from 0→1 to acquisition' },
@@ -73,6 +102,7 @@ export const cases = [
   },
   {
     slug: 'publishing-distribution',
+    published: '2026-09-26',
     no: '302',
     title: 'Making a publishing platform compete on distribution',
     seoTitle: 'Publishing Platform SEO & Distribution Case Study',
@@ -84,6 +114,11 @@ export const cases = [
       'Setting technical strategy for a portfolio of media titles, and treating search and social reach as platform capabilities.',
     problem:
       'Good content lost to larger publishers on search rankings and social feeds. The platform treated distribution as something editors did after publishing, not something the system was built for.',
+    context: [
+      'I was CTO of a media publishing platform: a portfolio of titles on one shared platform, competing for readers with media companies far larger than us. I owned technical strategy and engineering, and worked on business and operations with the CEO and the partners across the affiliated publishing network.',
+      'In publishing, content is both the product and the distribution channel. An article is what a reader came for and also the reason they found the site. So an article wasn’t finished when an editor pressed publish. It was finished when it could be found, understood, shared and read on whatever device someone was holding, and most of that depended on engineering.',
+      'The site worked and it stayed up. The readers we wanted just weren’t finding it.',
+    ],
     constraints: [
       'Several titles on one shared platform',
       'An editorial team that could not pause publishing',
@@ -109,22 +144,53 @@ export const cases = [
           { label: 'In the shared platform', note: 'Every title gets it by default and improvements compound.', chosen: true },
           { label: 'Per-title custom builds', note: 'Local wins, but the platform fragments.' },
         ],
+        why: 'Anything that depended on an editor remembering a step would fail on the busiest news day. Putting it in the shared platform meant every title got it by default, and each improvement carried across the portfolio.',
+      },
+      {
+        question: 'What should the titles run on?',
+        options: [
+          { label: 'Keep extending the WordPress sites', note: 'Least effort now, but rendering, caching and metadata stay hard to control across titles.' },
+          { label: 'Re-platform to Ruby on Rails on AWS', note: 'One codebase for every title, with the delivery path under engineering control.', chosen: true },
+        ],
+        why: 'The move was also the chance to fix the infrastructure bill: right-size instances provisioned for a peak that never came back, scale the web tier on real demand, fix database queries and connection handling, cache pages that didn’t change between requests, and remove resources nobody remembered creating. Those improvements contributed to AWS costs about 30% lower.',
+      },
+      {
+        question: 'How do we know a release helped?',
+        options: [
+          { label: 'Ship it and judge by whether it works', note: 'Says nothing about whether anyone found the content.' },
+          { label: 'Measure every release against traffic and engagement', note: 'Which channel brought readers, what they did next, and whether the page answered what they came for.', chosen: true },
+        ],
+        why: 'Most of our audience arrived through algorithms we didn’t control, and traffic alone was a poor scoreboard: a page that ranks for a search it doesn’t answer brings in visitors who leave immediately. Measuring what readers did ended up shaping much of the roadmap.',
       },
     ],
-    technology: ['Publishing platform', 'Content APIs', 'Caching & page performance', 'Structured data & social metadata', 'Analytics'],
+    execution: [
+      'We put structure into the CMS so every article carried what search engines and social platforms read: titles, descriptions, authors, dates and images. Metadata and social cards were generated from that structure automatically instead of typed by hand.',
+      'Technical SEO became part of engineering review: readable, stable URLs, permanent redirects whenever something moved, one canonical URL per piece of content, current sitemaps, internal links between related pages, content included in the HTML a crawler receives, and pages that load fast on a phone.',
+      'Social cards got the same treatment. A shared link is judged in a second or two on a title, a description and an image, so headlines written for a feed, images sized for each platform and fast loads from mobile became platform features.',
+      'Editorial knew what readers wanted, marketing knew where they came from, and the business side knew which audiences mattered most. Engineering controlled whether the platform made any of that easy or hard, so the work included bringing those people into a decision before the release, not after the traffic dropped.',
+    ],
+    technology: ['Ruby on Rails', 'AWS', 'Publishing platform', 'Content APIs', 'Caching & page performance', 'Structured data & social metadata', 'Analytics'],
     outcome: [
       'Organic traffic up 50%',
       'Social traffic up 50%',
       'Social engagement up 50%',
+      'Infrastructure improvements contributed to about 30% lower AWS costs',
     ],
     lessons: [
       'A platform capability beats a process: it works on the busiest day, too.',
       'When the market is someone else’s algorithm, measurement is the roadmap.',
+      'Search value builds up over years and can be lost in one release by a team that didn’t know it was there.',
     ],
+    tradeoffs: [
+      'A re-platform carries search risk: every changed URL can throw away the rankings and links the old page earned, so redirect maps were part of the work.',
+      'Investing in the shared platform meant some title-specific requests waited. The return was improvements that compounded across every title.',
+    ],
+    related: { to: '/writing/what-publishing-taught-me-about-seo-aeo-geo/', label: 'What being a CTO in publishing taught me about SEO, AEO and GEO' },
     verify: true,
   },
   {
     slug: 'public-service-modernization',
+    published: '2026-09-26',
     no: '303',
     title: 'Modernizing a public-sector service without a big-bang rewrite',
     seoTitle: 'Public-Sector Modernization Without a Rewrite',
@@ -179,14 +245,16 @@ export const cases = [
       'Infrastructure and runbooks handed over to the agency team',
     ],
     lessons: [
-      'In government, hand-over is the product. Design for the team that inherits it.',
+      'In government, the team that inherits the system decides whether it lasts. Design for them.',
       'A facade turns one terrifying migration into a series of boring releases.',
     ],
+    related: { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me about engineering' },
     related: { to: '/writing/should-it-be-a-microservice/#extract-later', label: 'Why extracting a service later is often cheaper than splitting early' },
     verify: true,
   },
   {
     slug: 'document-intelligence',
+    published: '2026-09-26',
     no: '304',
     title: 'LLM document processing with a human in the loop',
     seoTitle: 'LLM Document Processing With a Human in the Loop',
@@ -244,12 +312,13 @@ export const cases = [
     ],
     lessons: [
       'The confidence threshold is a product decision, not a model setting.',
-      'Evaluation data is the moat. Design the review UI to produce it.',
+      'Reviewer corrections are the evaluation data, so design the review UI to produce them.',
     ],
     verify: true,
   },
   {
     slug: 'event-driven-platform',
+    published: '2026-09-26',
     no: '305',
     title: 'Event-driven microservices that stay consistent',
     seoTitle: 'Event-Driven Microservices With Kafka: Case Study',
@@ -268,7 +337,7 @@ export const cases = [
       'Existing PostgreSQL data as the source of truth',
     ],
     approach:
-      'Services write state and an outbox record in one transaction. A relay publishes the outbox to Kafka, and consumers are idempotent, so retries are safe. Redis handles hot read paths. Synchronous calls remain only where a user is actually waiting.',
+      'Services write state and an outbox record in one transaction. A relay publishes the outbox to Kafka, and consumers are idempotent, so retries are safe. Redis handles hot read paths. Synchronous calls remain only where a user is waiting.',
     diagram: {
       label: 'Outbox to Kafka with idempotent consumers',
       tiers: [
@@ -304,6 +373,7 @@ export const cases = [
   },
   {
     slug: 'carrier-capacity',
+    published: '2026-09-26',
     no: '306',
     title: 'Capacity planning across 2,000+ collocations',
     seoTitle: 'Carrier Network Capacity Planning Case Study',
@@ -316,6 +386,11 @@ export const cases = [
       'Integration, expansion and capacity planning for ATM, IP, VoIP and OC infrastructure across a national broadband footprint.',
     problem:
       'A broadband network spread over 2,000+ collocations had to keep adding customers and services, including VoIP, without degrading the service it already carried.',
+    context: [
+      'This was my first capacity planning job, as a Member of Technical Staff. Capacity meant physical things: bandwidth on a circuit, ports on a router, slots in a chassis, power and cooling in a cabinet. When a link filled up, the fix was a purchase order, a shipping date and a technician driving to a site. Noticing a link fill up the week it filled up meant you were already a quarter late.',
+      'I worked on integration, expansion, deployment and capacity planning for the ATM, IP, VoIP and OC infrastructure, and on operations for the Network Security and IP Services group: Cisco router access control lists and the managed firewall and VPN service built on NetScreen.',
+      'A mistake in either direction was expensive. Too little capacity meant congestion customers could feel. Too much meant equipment sitting dark for years that someone had already paid for.',
+    ],
     constraints: [
       'Nationwide footprint, long hardware lead times',
       'Several network generations running side by side (ATM, IP, VoIP)',
@@ -340,17 +415,45 @@ export const cases = [
           { label: 'React to congestion', note: 'Customers find the problem before you do.' },
           { label: 'Plan from measured utilization', note: 'Order ahead of lead times, where the data says growth is.', chosen: true },
         ],
+        why: 'We pulled interface statistics over SNMP, graphed them in Cacti, and projected the trend far enough ahead to order before the lead time ran out. Where the data showed growth, the next circuit or line card went there. Where it showed nothing, nothing was ordered, however loudly someone wanted a bigger box.',
+      },
+      {
+        question: 'When is high utilization a plan, and when is it an incident?',
+        options: [
+          { label: 'Decide case by case as links fill', note: 'The call gets made at two in the morning by whoever is on shift.' },
+          { label: 'Headroom thresholds set in advance', note: 'Written down: which level triggers an order, which level is an incident.', chosen: true },
+        ],
+        why: 'Every system has one resource that fills first, and the forecast only matters for that one. On a router it might be a specific uplink, not the chassis. Writing the thresholds down took the decision out of the moment.',
+      },
+      {
+        question: 'How should operations scale with the footprint?',
+        options: [
+          { label: 'Rely on the few experts who know the network', note: 'Works until they’re on vacation or the footprint doubles.' },
+          { label: 'Standard process, training and escalation', note: 'Expansions repeat cleanly, and more people can run them.', chosen: true },
+        ],
+        why: 'I was one of the first three people supporting the new managed security service in the Security Operations Center, and travelled to the East Coast to train the Technical Assistance Center. Training the next tier was how the service stopped depending on the first three of us.',
       },
     ],
-    technology: ['ATM', 'IP', 'VoIP', 'OC transport', 'Network security services', 'Capacity planning'],
+    execution: [
+      'Expansion followed a standard integration and deployment process, so adding capacity at one site looked like adding it at any other. Process development, training, escalation support and deployment covered the ATM, IP and VoIP networks and the network security services.',
+      'Several network generations ran side by side, so capacity in one layer wasn’t capacity in another. Each layer was planned from its own utilization data rather than from a single network-wide number.',
+      'Security services shared the same infrastructure, so a congested link was also a security problem. Access control lists on Cisco routers and the NetScreen managed firewall and VPN service sat with IP services in the same operations group, which meant capacity and security had to be planned together.',
+    ],
+    technology: ['ATM', 'IP', 'VoIP', 'OC transport', 'SNMP & Cacti', 'Cisco ACLs', 'NetScreen firewall & VPN', 'Capacity planning'],
     outcome: [
       'Integration and expansion across a 2,000+ collocation footprint',
       'Process, training and escalation for network security and IP services',
+      'A capacity method I still use on cloud infrastructure: measure first, plan from data, decide the headroom in advance, and know which resource fills first',
     ],
     lessons: [
       'Reliability is mostly process. Heroics do not scale to 2,000 sites.',
       'Everything I know about systems thinking started here.',
     ],
+    tradeoffs: [
+      'Ordering ahead of lead times means paying for capacity before the demand arrives. Planning from measured trends kept that bet small and specific.',
+      'Standard process is slower than an expert improvising, and it’s the only version that works across 2,000 sites.',
+    ],
+    related: { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'What this network taught me about scaling cloud infrastructure' },
   },
 ];
 

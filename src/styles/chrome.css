@@ -545,3 +545,92 @@ p.title-block__heading {
   .site-nav__link { padding-inline: var(--s2); gap: var(--s1); }
   .site-header__bar .coordinate { display: none; }
 }
+
+/* ---------- Stack ladder: layers of technology, each with experience, challenge, cost ---------- */
+.ladder { margin-top: var(--s8); row-gap: var(--s6); }
+.ladder__intro { grid-column: 1 / 8; }
+.ladder__intro h2 { max-width: 22ch; }
+.ladder__intro p { margin-top: var(--s4); color: var(--ink-2); max-width: 52ch; }
+.ladder__list { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--rule); }
+.ladder__row { display: grid; grid-template-columns: 2.75rem minmax(11rem, 1fr) 3fr; gap: var(--s2) var(--s4); align-items: start; padding: var(--s4) 0; border-bottom: 1px solid var(--rule-soft); }
+.ladder__no { color: var(--ink-3); padding-top: 0.2em; }
+.ladder .ladder__name, .post__prose .ladder .ladder__name { font-size: 1.125rem; font-weight: 650; font-stretch: 92%; line-height: 1.3; margin: 0; max-width: none; }
+.ladder__cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); margin: 0; }
+.ladder__cells dt { margin-bottom: var(--s1); }
+.ladder__cells dd { margin: 0; font-size: var(--t-small); line-height: 1.5; color: var(--ink-2); }
+.post__prose .ladder__cells dd { max-width: none; }
+@media (max-width: 899px) {
+  .ladder__row { grid-template-columns: 2.75rem 1fr; }
+  .ladder__cells { grid-column: 2; grid-template-columns: 1fr; gap: var(--s3); }
+}
+
+/* Ladder details: a toggle in the row and a three-cell panel beneath it. */
+.ladder__row {
+  grid-template-columns: 2.75rem minmax(11rem, 1fr) 3fr auto;
+}
+
+.ladder__toggle {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--rule-soft);
+  padding: 2px var(--s2);
+  font: inherit;
+  font-size: var(--t-mono);
+  font-family: var(--mono);
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  align-self: start;
+}
+
+.ladder__toggle[aria-expanded='true'],
+.ladder__toggle:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.ladder__more {
+  grid-column: 3 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s4);
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px dashed var(--rule-soft);
+}
+
+.ladder__more[hidden] {
+  display: none;
+}
+
+.ladder__more p {
+  margin: 0;
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.ladder__more .label {
+  margin-bottom: var(--s1);
+}
+
+.ladder__more .link-arrow {
+  display: inline-flex;
+  margin-top: var(--s2);
+  font-size: var(--t-small);
+}
+
+.post__prose .ladder__more p {
+  max-width: none;
+}
+
+@media (max-width: 899px) {
+  .ladder__row {
+    grid-template-columns: 2.75rem 1fr auto;
+  }
+  .ladder__more {
+    grid-column: 2 / -1;
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+}

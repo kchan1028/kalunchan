@@ -91,3 +91,64 @@
   .about-roles tbody th, .about-roles td { border-top: 0; padding: var(--s1) 0; }
   .about-roles td::before { content: attr(data-label); display: block; font-size: .8125rem; font-weight: 600; font-stretch: 86%; color: var(--ink-3); }
 }
+/* Fig. 050-1, the at-a-glance career arc: a span chart on the ruled sheet. Chapters run across, layers down;
+   below 900px the grid transposes so every label stays horizontal-readable and nothing scrolls sideways. */
+.arc { margin-top: var(--s8); row-gap: var(--s6); align-items: end; }
+.arc__intro { grid-column: 1 / 7; }
+.arc__intro h2 { max-width: 20ch; }
+.arc__intro p { margin-top: var(--s4); color: var(--ink-2); max-width: 48ch; }
+.arc__numbers { grid-column: 8 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule-soft); }
+.arc__numbers li { padding: var(--s3) var(--s4); border-left: 1px solid var(--rule-soft); font-size: var(--t-small); font-stretch: 92%; font-weight: 600; line-height: 1.35; color: var(--ink-2); }
+.arc__numbers li:first-child { border-left: 0; padding-left: 0; }
+.arc__numbers strong { display: block; margin-bottom: var(--s1); font-size: 1.75rem; font-weight: 800; font-stretch: 72%; line-height: 1.05; color: var(--ink); }
+.arc__figure { grid-column: 1 / -1; }
+.arc__caption { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s2) var(--s4); align-items: baseline; font-size: var(--t-small); font-weight: 600; font-stretch: 92%; padding-bottom: var(--s3); border-bottom: 1px solid var(--rule); }
+.arc__caption .mono { color: var(--ink-3); font-weight: 450; }
+.arc__key { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); }
+.arc__key span { display: inline-flex; align-items: center; gap: var(--s2); }
+.arc__key i { width: 10px; height: 10px; background: var(--ink); }
+.arc__key i.is-earlier { background: transparent; border: 1px solid var(--ink-3); }
+.arc__key i.is-now { background: var(--blue); }
+.arc__chart { --row: 44px; position: relative; display: grid; grid-template-columns: minmax(7rem, 11rem) repeat(var(--chapters), minmax(0, 1fr)); grid-template-rows: auto repeat(var(--layers), var(--row)) auto; column-gap: var(--s3); margin-top: var(--s5); }
+.arc__chart::after { content: ''; grid-column: 1 / -1; grid-row: calc(var(--layers) + 2); align-self: start; border-top: 1px solid var(--rule); }
+.arc__lrule { grid-column: 1 / -1; grid-row: calc(var(--l) + 2); align-self: start; border-top: 1px solid var(--rule-soft); }
+.arc__crule { display: none; }
+.arc__layer { grid-column: 1; grid-row: calc(var(--l) + 2); align-self: center; font-size: var(--t-small); font-weight: 600; font-stretch: 88%; line-height: 1.25; color: var(--ink-2); }
+.arc__layer-short { display: none; }
+.arc__chapter { display: contents; }
+.arc__head { grid-column: calc(var(--c) + 2); grid-row: 1; align-self: end; display: flex; flex-direction: column; gap: 2px; padding-bottom: var(--s3); line-height: 1.2; }
+.arc__name { font-weight: 750; font-stretch: 80%; font-size: .9375rem; text-wrap: balance; hyphens: auto; }
+.arc__role { font-size: .8125rem; font-weight: 600; font-stretch: 86%; color: var(--ink-3); }
+.arc__chapter.is-now .arc__name { color: var(--blue); }
+.arc__scale { grid-column: calc(var(--c) + 2); grid-row: calc(var(--layers) + 2); padding-top: var(--s3); font-size: .8125rem; font-weight: 650; font-stretch: 88%; line-height: 1.3; color: var(--ink-2); }
+.arc__span { grid-column: calc(var(--c) + 2); grid-row: calc(var(--t) + 2) / calc(var(--b) + 3); justify-self: start; width: 14px; margin-block: 7px; background: var(--ink); z-index: 1; }
+.arc__span.is-earlier { background: transparent; border: 1px solid var(--ink-3); }
+.arc__span.is-now { background: var(--blue); }
+.arc__close { grid-column: 1 / 8; }
+.arc__takeaway { padding-left: var(--s5); border-left: 3px solid var(--blue); font-size: var(--t-lead); line-height: 1.4; font-weight: 600; font-stretch: 92%; max-width: 40ch; }
+.arc__close .link-arrow { margin-top: var(--s4); }
+@media (max-width: 899px) {
+  .arc { margin-top: var(--s7); }
+  .arc__intro, .arc__numbers, .arc__close { grid-column: 1 / -1; }
+}
+@media (max-width: 899px) {
+  .arc__chart { grid-template-columns: minmax(7rem, 9rem) repeat(var(--layers), minmax(0, 1fr)); grid-template-rows: auto repeat(var(--chapters), auto) 0; column-gap: 0; }
+  .arc__chart::after { grid-row: calc(var(--chapters) + 2); }
+  .arc__lrule { grid-column: calc(var(--l) + 2); grid-row: 2 / -1; align-self: stretch; justify-self: start; border-top: 0; border-left: 1px solid var(--rule-soft); }
+  .arc__crule { display: block; grid-column: 1 / -1; grid-row: calc(var(--c) + 2); align-self: start; border-top: 1px solid var(--rule-soft); }
+  .arc__layer { grid-column: calc(var(--l) + 2); grid-row: 1; align-self: end; justify-self: center; writing-mode: vertical-rl; transform: rotate(180deg); padding-top: var(--s2); font-size: .75rem; }
+  .arc__layer-full { display: none; }
+  .arc__layer-short { display: inline; }
+  .arc__chapter { display: flex; flex-direction: column; gap: var(--s1); grid-column: 1; grid-row: calc(var(--c) + 2); align-self: center; padding: var(--s3) var(--s3) var(--s3) 0; }
+  .arc__head { padding-bottom: 0; align-self: start; }
+  .arc__name { font-size: .9375rem; }
+  .arc__scale { padding-top: var(--s1); font-size: .75rem; }
+  .arc__span { grid-column: calc(var(--t) + 2) / calc(var(--b) + 3); grid-row: calc(var(--c) + 2); justify-self: stretch; align-self: center; width: auto; height: 14px; margin: 0; }
+}
+@media (max-width: 599px) {
+  .arc__numbers { grid-template-columns: 1fr; }
+  .arc__numbers li { border-left: 0; padding-inline: 0; }
+  .arc__numbers li + li { border-top: 1px solid var(--rule-soft); }
+  .arc__caption { grid-template-columns: auto 1fr; }
+  .arc__key { grid-column: 1 / -1; }
+}

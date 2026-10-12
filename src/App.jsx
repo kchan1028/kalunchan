@@ -13,6 +13,7 @@ import Community from './pages/Community';
 import About from './pages/About';
 import Writing from './pages/Writing';
 import Post from './pages/Post';
+import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="expertise" element={<Expertise />} />
         <Route path="writing" element={<Writing />} />
         <Route path="writing/:slug" element={<Post />} />
+        <Route path="privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

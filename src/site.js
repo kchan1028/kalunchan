@@ -2,10 +2,14 @@ import { cases } from './content/work';
 import { projects, shotSrc } from './content/projects';
 import { cycling } from './content/community';
 import { publishedFaq } from './content/about';
-import { isPlaceholder } from './content/profile';
+import { entity, isPlaceholder } from './content/profile';
 import { posts } from './content/writing';
 
 export const ORIGIN = 'https://kalunchan.dev';
+// First commit of this site. ProfilePage dateCreated and the /about/ Article datePublished.
+const SITE_CREATED = '2026-09-26';
+// Posts published on or after this date get no FAQPage markup (FAQ rich results retired May 2026).
+const FAQ_SCHEMA_CUTOFF = '2026-10-13';
 
 const base = [
   {
@@ -73,7 +77,13 @@ const base = [
     "path": "/contact/",
     name: "Contact",
     "title": "Contact Ka Lun Chan \u2014 Engineering Leader",
-    "description": "Talk with Ka Lun Chan, a hands-on engineering leader, about scaling teams, software architecture, platform modernization, and engineering delivery."
+    "description": "Bring a hands-on engineering leader to your problem: scaling a team, modernizing a platform, fixing slow delivery or making a hard architecture call."
+  },
+  {
+    path: '/privacy/',
+    name: 'Privacy',
+    title: 'Privacy — Ka Lun Chan',
+    description: 'What kalunchan.dev collects through the contact form and cookieless analytics, who handles it, how long it is kept, and how to ask for access or deletion.',
   }
 ];
 
@@ -112,13 +122,14 @@ export const NOT_FOUND = {
 };
 
 // Sitewide Person (PROFILE.md section 4). Page schemas reference it by @id.
-// knowsAbout also keeps the terms from the site's earlier ProfilePage Person.
+// knowsAbout is professional expertise only. Personal interests (cycling, the race weekend) are described on
+// /community/ and /mentorship/ instead, so they don't dilute what the Person entity is known for.
 const PERSON_ID = `${ORIGIN}/#person`;
 const WEBSITE_ID = `${ORIGIN}/#website`;
 // Section pages without a more specific schema of their own.
 const sectionPageTypes = {
   '/leadership/': 'WebPage', '/experience/': 'WebPage', '/expertise/': 'WebPage',
-  '/mentorship/': 'WebPage', '/contact/': 'ContactPage',
+  '/mentorship/': 'WebPage', '/contact/': 'ContactPage', '/privacy/': 'WebPage',
 };
 const personLd = {
   '@type': 'Person',
@@ -128,7 +139,7 @@ const personLd = {
   url: 'https://kalunchan.dev/',
   image: 'REPLACE_WITH_PHOTO_URL',
   jobTitle: 'Engineering Leader',
-  description: 'San Francisco Bay Area engineering leader and generalist with 23+ years across support, network operations, product and architecture; co-founder and CTO who built a startup from the ground up to 400,000+ users and an acquisition.',
+  description: 'San Francisco Bay Area engineering leader and generalist with 20+ years across support, network operations, product and architecture; co-founder and CTO who built a startup from the ground up to 400,000+ users and an acquisition.',
   homeLocation: { '@type': 'Place', name: 'San Francisco Bay Area' },
   worksFor: { '@type': 'Organization', name: 'Yippify', url: 'https://yippify.com/' },
   knowsAbout: [
@@ -138,7 +149,7 @@ const personLd = {
     'Event-driven systems', 'Kafka', 'Engineering management', 'Mentorship',
     'Network operations', 'Capacity planning', 'Unix systems', 'Product management', 'SEO',
     'Government contracting', 'SAM.gov', 'Local SEO', 'Answer engine optimization', 'Generative engine optimization',
-    'Web performance', 'Small-business modernization', 'Event promotion', 'Community leadership', 'Youth cycling',
+    'Web performance', 'Small-business modernization',
   ],
   sameAs: [
     'https://www.linkedin.com/in/kchan1288/',
@@ -165,7 +176,8 @@ export function metaFor(path) {
   return routes.find((r) => r.path === norm) || NOT_FOUND;
 }
 
-export function headFor(path) {
+// `modified` is the page's lastmod (src/lastmod.json, kept by scripts/prerender.mjs). Posts carry their own dates.
+export function headFor(path, { modified } = {}) {
   const m = metaFor(path);
   const url = ORIGIN + (m.canonical || m.path);
   const preview = m.image || { path: '/logo512.png', width: 512, height: 512, alt: 'Ka Lun Chan monogram' };
@@ -237,6 +249,8 @@ export function headFor(path) {
         inLanguage: 'en-US',
         keywords: c.domain.join(', '),
         articleSection: 'Case study',
+        datePublished: c.published,
+        ...(modified && { dateModified: modified }),
         author: { '@id': PERSON_ID },
         publisher: { '@id': PERSON_ID },
         isPartOf: { '@id': `${ORIGIN}/projects/#webpage` },
@@ -255,7 +269,10 @@ export function headFor(path) {
   if (m.path === '/' || m.path === '/about/') {
     graph.push({
       '@type': 'ProfilePage',
+      '@id': `${url}#profilepage`,
       url,
+      dateCreated: SITE_CREATED,
+      ...(modified && { dateModified: modified }),
       name: m.title,
       description: m.description,
       mainEntity: { '@id': PERSON_ID },
@@ -267,16 +284,16 @@ export function headFor(path) {
         '@type': 'Article',
         '@id': `${url}#article`,
         headline: 'Ka Lun Chan (KC): Engineering Leader, San Francisco Bay Area',
-        description: 'Profile of Ka Lun Chan, a Bay Area engineering leader with 23+ years in software, co-founder and CTO experience through acquisition, and hands-on architecture skills.',
+        description: 'Profile of Ka Lun Chan, a Bay Area engineering leader with 20+ years in software, co-founder and CTO experience through acquisition, and hands-on architecture skills.',
         url,
         mainEntityOfPage: url,
         image: 'REPLACE_WITH_IMAGE_URL',
-        // Keep in sync with the visible "Updated" date on /about/.
-        datePublished: 'REPLACE_WITH_DATE',
-        dateModified: 'REPLACE_WITH_DATE',
+        datePublished: SITE_CREATED,
+        ...(modified && { dateModified: modified }),
         inLanguage: 'en-US',
         author: { '@id': PERSON_ID },
         about: { '@id': PERSON_ID },
+        breadcrumb: { '@id': `${url}#breadcrumbs` },
       },
       {
         '@type': 'FAQPage',
@@ -343,6 +360,8 @@ export function headFor(path) {
         headline: p.title,
         description: p.summary,
         image: ORIGIN + preview.path,
+        datePublished: p.published,
+        ...(modified && { dateModified: modified }),
         inLanguage: 'en-US',
         keywords: [...p.domain, ...p.capabilities].join(', '),
         creator: { '@id': PERSON_ID },
@@ -416,7 +435,9 @@ export function headFor(path) {
         ],
       },
     );
-    if (p.faq) {
+    // FAQ rich results were retired in May 2026. Posts that already emitted FAQPage keep it; newer posts
+    // still show "Short answers" on the page but get no FAQPage node (see FAQ_SCHEMA_CUTOFF).
+    if (p.faq && p.published < FAQ_SCHEMA_CUTOFF) {
       graph.push({
         '@type': 'FAQPage', '@id': `${url}#faq`,
         mainEntity: p.faq.map((item) => ({
@@ -430,4 +451,50 @@ export function headFor(path) {
   const ld = { '@context': 'https://schema.org', '@graph': dropPlaceholders(graph) };
   tags.push(`<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>`);
   return tags.join('\n    ');
+}
+
+// /llms.txt (llmstxt.org): a plain-Markdown map of the pages that best answer who KC is and what he has done.
+// Writing lists the posts below; edit the list to change what is featured.
+const llmsPosts = [
+  'building-a-startup-from-idea-to-acquisition',
+  'capacity-planning-carrier-networks-to-cloud',
+  'what-publishing-taught-me-about-seo-aeo-geo',
+  'should-it-be-a-microservice',
+  'open-source-voip-distributed-systems-lessons',
+  'building-federal-government-applications',
+  'what-sprint-carryover-is-telling-you',
+  'why-hiring-good-engineers-is-so-hard',
+  'why-i-enjoy-mentoring',
+  'ai-agents-reliable-in-production',
+];
+
+export function llmsTxt() {
+  const page = (r, label) => `- [${label || r.name}](${ORIGIN}${r.path}): ${r.description}`;
+  const byPath = Object.fromEntries(routes.map((r) => [r.path, r]));
+  const postRoutes = llmsPosts.map((slug) => byPath[`/writing/${slug}/`]).filter(Boolean);
+  return [
+    '# Ka Lun Chan (KC)',
+    '',
+    `> ${entity}`,
+    '',
+    '## About',
+    page(byPath['/about/']),
+    page(byPath['/experience/']),
+    page(byPath['/leadership/']),
+    page(byPath['/expertise/']),
+    '',
+    '## Case studies',
+    ...cases.map((c) => `- [${c.title}](${ORIGIN}/work/${c.slug}/): ${c.summary}`),
+    '',
+    '## Writing',
+    ...postRoutes.map((r) => `- [${r.post.title}](${ORIGIN}${r.path}): ${r.description}`),
+    `- [All writing](${ORIGIN}/writing/): ${byPath['/writing/'].description}`,
+    '',
+    '## Optional',
+    page(byPath['/projects/']),
+    page(byPath['/mentorship/']),
+    page(byPath['/community/']),
+    page(byPath['/contact/']),
+    '',
+  ].join('\n');
 }

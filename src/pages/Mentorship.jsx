@@ -123,8 +123,9 @@ export default function Mentorship() {
       <header className="sheet grid mentor-hero" data-coord="600 · Mentorship">
         <h1 id="mentor-title" className="mentor-hero__title display">Mentor people until they can replace you.</h1>
         <div className="mentor-hero__copy">
-          <p className="mentor-hero__lead">Done well, that makes you more valuable as a leader, because the team can do more without you.</p>
+          <p className="mentor-hero__lead">Done well, that makes you more useful as a leader, because the team can do more without you.</p>
           <p className="body-copy">I believe leadership should increase the capability of the people around you. If everything depends on me, I haven’t built a strong team. I’ve built a dependency. A good leader becomes less necessary to the decisions they once had to make.</p>
+          <Link className="link-arrow mentor-hero__cta" to="/contact/?topic=mentorship#start"><span>Want to grow your engineers, or be mentored? Let’s talk</span> <ArrowRight /></Link>
         </div>
         <ul className="mentor-hero__four" aria-label="What I build">
           <li>I build software.</li>
@@ -227,7 +228,7 @@ export default function Mentorship() {
             <ArrowDown className="mentor-turn__arrow" />
             <span>Building the next generation of cyclists.</span>
           </h2>
-          <p className="mentor-turn__copy lead">Mentorship isn’t something I only care about at work. I genuinely enjoy helping people develop, and it’s a big part of why I’m involved with junior cycling and the cycling community.</p>
+          <p className="mentor-turn__copy lead">I care about mentorship outside work too. I enjoy helping people develop, and it’s a big part of why I’m involved with junior cycling and the cycling community.</p>
         </div>
         <figure className="sheet mentor-turn__photo">
           <img src="/images/community/junior-cyclists-1280.webp" srcSet="/images/community/junior-cyclists-640.webp 640w, /images/community/junior-cyclists-960.webp 960w, /images/community/junior-cyclists-1280.webp 1280w" sizes="(max-width: 1440px) 92vw, 1330px" width="4898" height="3265" loading="lazy" decoding="async" alt="Three junior cyclists ride together on a wooded road" />
@@ -258,7 +259,7 @@ export default function Mentorship() {
         </figure>
         <div className="omnium__copy">
           <h2 id="omnium-title" className="h2">Bigger than organizing races.</h2>
-          <p className="body-copy">I help organize <a href={cycling.omnium}>Berkeley Omnium</a>, a nonprofit weekend that brings the Berkeley Hills Road Race and Berkeley Streets Criterium together. All proceeds go to six East Bay NICA teams. Part of why it matters to me is simple: it creates opportunities for the next generation of cyclists.</p>
+          <p className="body-copy">I help organize <a href={cycling.omnium}>Berkeley Omnium</a>, a nonprofit weekend that brings the Berkeley Hills Road Race and Berkeley Streets Criterium together. All proceeds go to six East Bay NICA teams. It matters to me because it creates opportunities for the next generation of cyclists.</p>
           <div className="omnium__join">
             <ul aria-label="Who the weekend brings together">
               {omniumPeople.map((p) => <li key={p}>{p}</li>)}
@@ -341,7 +342,7 @@ export default function Mentorship() {
           <div className="close__actions">
             <Link className="action" to="/leadership/">How I lead <ArrowRight /></Link>
             <Link className="link-arrow" to="/experience/"><span>My experience</span> <ArrowRight /></Link>
-            <Link className="link-arrow" to="/contact/"><span>Let’s talk</span> <ArrowRight /></Link>
+            <Link className="link-arrow" to="/contact/?topic=mentorship#start"><span>Talk about mentorship</span> <ArrowRight /></Link>
           </div>
         </div>
       </section>

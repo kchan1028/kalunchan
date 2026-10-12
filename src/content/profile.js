@@ -26,12 +26,20 @@ export const person = {
 export const isPlaceholder = (value) => typeof value === 'string' && value.includes('REPLACE_WITH_');
 
 export const entity =
-  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 23+ years across every layer of a business, from helpdesk and network operations to product, marketing and architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition. He now leads government technology work through Yippify.';
+  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 20+ years across every layer of a business, from helpdesk, network operations and security to product, marketing and architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, leading a team of 30+ engineers, VoIP specialists and designers. He now leads government technology work through Yippify.';
+
+// Verified proof points shown under the home positioning line, each linking to its evidence.
+export const proofPoints = [
+  { figure: '2,000+', text: 'collocations, carrier capacity planning', to: '/work/carrier-capacity/' },
+  { figure: '8M+', text: 'VoIP minutes a month, server farm and expansion', to: '/experience/#voice' },
+  { figure: '+50%', text: 'organic and social traffic as publishing CTO', to: '/work/publishing-distribution/' },
+  { figure: '~30%', text: 'lower AWS costs on a re-platform', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
+];
 
 export const headlineNumbers = [
-  { figure: '23+', text: 'years in software' },
-  { figure: '400,000+', text: 'users scaled as co-founder and CTO' },
-  { figure: 'Acquired', text: 'with users across 3 continents' },
+  { figure: '20+', text: 'years in software' },
+  { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
+  { figure: '30+', text: 'engineers, VoIP specialists and designers led' },
 ];
 
 export const updated = '[REPLACE_WITH_MONTH YEAR]';
@@ -50,6 +58,8 @@ export const roles = [
     title: 'Consultant',
     era: 'Consulting & government technology',
     scale: 'Public sector, startups, founders',
+    owned: 'Architecture, strategy and delivery for client teams, hands-on where it takes risk out',
+    mode: 'Led and hands-on',
     problem:
       'Government teams, startups and founders who need web and mobile products shipped by a small team, with no budget for a rewrite later.',
     responsibility:
@@ -58,13 +68,15 @@ export const roles = [
       'Choose well-understood platforms (Django, Rails, React and Next.js on AWS) that a client team can own after hand-over.',
       'Infrastructure as code and CI/CD from the first sprint, not the last.',
       'Record architecture decisions in writing so the reasoning survives the engagement.',
+      'Size infrastructure to the product’s maturity and measured demand, and buy before building when the capability is not what the client pays for.',
     ],
     verifyDecisions: true,
     execution:
-      'Small stacked pull requests, iterative releases stakeholders can see every sprint, and QA and product in the same planning loop as engineering.',
+      'Small stacked pull requests, iterative releases stakeholders can see every sprint, and QA and product in the same planning loop as engineering. On federal work, engineering that supports security authorization: FedRAMP-aligned environments, evidence for the Authority to Operate, Section 508 accessibility and Plain Writing in the acceptance criteria.',
     outcome:
       'Mobile and web applications delivered for government, startup and entrepreneur clients.',
     cases: ['public-service-modernization', 'document-intelligence'],
+    story: { to: '/writing/building-startups-technical-leadership/', label: 'Startup story: six engagements, from hybrid mobile to wholesale VoIP and virtual tours', kind: 'Startup story' },
   },
   {
     id: 'publishing',
@@ -72,19 +84,22 @@ export const roles = [
     title: 'Chief Technology Officer',
     era: 'Media platforms',
     scale: '+50% organic & social traffic',
+    owned: 'All technology, plus business and operations with the CEO and partner network',
+    mode: 'Led',
     problem:
       'Publishing platforms, a portfolio of media titles, competing for audience against far larger media companies on search and social.',
     responsibility:
-      'Overall technical strategy and engineering leadership for the publishing platforms.',
+      'Overall technical strategy and engineering leadership for the publishing platforms, plus business and operations work with the CEO and the partners across the affiliated publishing network.',
     decisions: [
       'Treat page speed, structured content and social distribution as platform features rather than editorial afterthoughts.',
       'Invest in the shared publishing platform instead of per-title one-offs.',
+      'Re-platform from WordPress to Rails on AWS, then right-size, scale on real demand and fix the database so the infrastructure bill followed the traffic.',
     ],
     verifyDecisions: true,
     execution:
       'Rebuilt the delivery path from editorial tooling to rendered page, and measured every release against traffic and engagement.',
     outcome:
-      'Organic traffic, social traffic and social engagement each up 50%.',
+      'Organic traffic, social traffic and social engagement each up 50%, with infrastructure improvements contributing to about 30% lower AWS costs.',
     cases: ['publishing-distribution'],
   },
   {
@@ -93,6 +108,8 @@ export const roles = [
     title: 'Co-Founder & CTO',
     era: 'SaaS, founder',
     scale: '400k+ users · 3 continents · acquired',
+    owned: 'Product, network, platform and a team of 30+, from first line of code to acquisition',
+    mode: 'Built, then led',
     problem:
       'Build a service from nothing, then keep it fast for users spread across South America, Asia and Africa.',
     responsibility:
@@ -100,6 +117,7 @@ export const roles = [
     decisions: [
       'Plan the first data center deliberately, then leave it: move from a single site to cloud regions on three continents.',
       'Route users by geography to the nearest region to cut latency and improve call and session quality.',
+      'Choose media paths by caller location, and improve least-cost routing with call statistics so the cheapest route also had to be a good one.',
     ],
     execution:
       'Staged the migration region by region so the platform kept serving users throughout, and grew the team and architecture with the customer base.',
@@ -113,13 +131,16 @@ export const roles = [
     org: 'Voice services',
     title: 'Vice President of Operations',
     era: 'Voice & web services',
-    scale: 'Voice network + web platform',
+    scale: '8M+ VoIP minutes a month',
+    owned: 'Software engineering, QA and network operations, run as one function',
+    mode: 'Led',
     problem:
       'A growing voice service whose software and network both had to scale without dropping calls.',
     responsibility:
       'Directed software engineering and network operations across web applications and the voice network.',
     decisions: [
       'Plan capacity expansions ahead of growth rather than after incidents.',
+      'Size SIP signaling, media and Asterisk capacity separately, because each fills at a different rate.',
     ],
     execution:
       'Built a resilient, supportable environment for application development and the voice network, with operations and engineering run as one function.',
@@ -133,19 +154,22 @@ export const roles = [
     title: 'Member of Technical Staff',
     era: 'Carrier networks',
     scale: '2,000+ collocations nationwide',
+    owned: 'Infrastructure integration, capacity planning, and security and IP services operations',
+    mode: 'Hands-on',
     problem:
       'A nationwide broadband network spanning 2,000+ collocations that had to keep expanding without degrading service.',
     responsibility:
-      'ATM, IP, VoIP and OC infrastructure integration, expansion, deployment, capacity planning and optimization. Operations for the Network Security and IP Services group.',
+      'ATM, IP, VoIP and OC infrastructure integration, expansion, deployment, capacity planning and optimization. Operations for the Network Security and IP Services group, including Cisco router access control lists and the managed firewall and VPN service built on NetScreen.',
     decisions: [
       'Capacity planning driven by measured utilization across the footprint.',
       'Standardize process, training and escalation so operations scale beyond individual experts.',
     ],
     execution:
-      'Process development, training, escalation support and deployment for the ATM, IP and VoIP networks and for network security services.',
+      'Process development, training, escalation support and deployment for the ATM, IP and VoIP networks and for network security services. One of the first three people supporting the new managed security service in the Security Operations Center, and travelled to the East Coast to train the Technical Assistance Center.',
     outcome:
       'Integrated and expanded carrier infrastructure across the national footprint while supporting network security and IP services operations.',
     cases: ['carrier-capacity'],
+    story: { to: '/writing/network-security-before-devsecops/', label: 'Security story: from Cisco ACLs and NetScreen to cloud and application security', kind: 'Security story' },
   },
 ];
 

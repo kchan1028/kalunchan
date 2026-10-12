@@ -22,6 +22,7 @@ export default function Community() {
     <section className="sheet community-organizer" aria-labelledby="organizer-title" data-coord="500 · My involvement">
       <h2 id="organizer-title" className="h3">Why I help organize it</h2>
       <p className="body-copy">I help organize Berkeley Omnium because it helps grow the next generation of cyclists. All proceeds go to six East Bay NICA teams. What I enjoy most is working with a fantastic team of people and volunteers who make the weekend happen.</p>
+      <p className="body-copy">I wrote about <Link to="/writing/organizing-berkeley-omnium-leadership-lessons/">what organizing it with this team has taught me about leading teams</Link>.</p>
       <p className="body-copy">I also built the event’s new website. Read <Link to="/writing/berkeley-omnium-new-website-next-generation/">why the new site tells the story behind the races</Link>, or see <Link to="/projects/berkeley-omnium/">how it was built</Link>.</p>
     </section>
 
@@ -62,7 +63,7 @@ export default function Community() {
         <figcaption className="label">Street racing makes the competition visible, lap after lap.</figcaption>
       </figure>
       <div>
-        <h2 id="legacy-title" className="h2">A local race with a lasting legacy.</h2>
+        <h2 id="legacy-title" className="h2">A local race riders keep coming back to.</h2>
         <p className="body-copy">Berkeley racing has deep roots in Northern California cycling. The Hills Road Race grew from local race promotion into a fixture that brings generations of riders back to the same demanding terrain.</p>
         <p className="body-copy">The <a href={cycling.club}>Berkeley Bicycle Club</a> carries that tradition forward. Its history connects the road race with a broader culture of club rides, amateur competition, and people sharing what they know.</p>
         <p className="body-copy">The street race adds another way to experience that culture: spectators can see the field repeatedly, understand the contest as it unfolds, and cheer for riders they recognize.</p>
@@ -108,6 +109,8 @@ export default function Community() {
       <dl>{participation.map((item) => <div key={item.title}><dt className="h3">{item.title}</dt><dd className="body-copy">{item.body}</dd></div>)}</dl>
       <div className="community-participate__links">
         <a href={cycling.omnium} className="action">Find your place at the race weekend <ArrowOut /></a>
+        <Link to="/contact/?topic=community#start" className="link-arrow">Sponsor, volunteer or ask a question <ArrowRight /></Link>
+        <Link to="/mentorship/" className="link-arrow">How junior racing shapes how I mentor <ArrowRight /></Link>
         <Link to="/about/" className="link-arrow">More about my work <ArrowRight /></Link>
       </div>
     </section>

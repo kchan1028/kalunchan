@@ -91,6 +91,7 @@
 .talk__title { font-size: clamp(3rem, 1.2rem + 6vw, 6rem); }
 .talk__lead { margin-top: var(--s5); font-size: var(--t-lead); line-height: 1.4; font-stretch: 96%; max-width: 40ch; }
 .talk__intro .body-copy { margin-top: var(--s4); }
+.talk__reply { margin-top: var(--s4); color: var(--ink-2); }
 .talk__direct { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s6); margin-top: var(--s6); }
 .talk__impression { grid-column: 8 / -1; }
 .talk__impression li { padding-block: var(--s3); border-top: 1px solid var(--rule-soft); font-size: var(--t-h3); font-weight: 700; font-stretch: 84%; line-height: 1.25; color: var(--ink-2); }

@@ -89,7 +89,7 @@ export default function Body() {
             </tbody>
           </table>
         </figure>
-        <p>The middle column changes all the time. Flags get renamed, APIs get new versions, cloud consoles move things around. The right column changes slowly, and most of it carries over from one tool to the next. It’s also the part that actually lets me do the job.</p>
+        <p>The middle column changes all the time. Flags get renamed, APIs get new versions, cloud consoles move things around. The right column changes slowly, and most of it carries over from one tool to the next. It’s also the part that lets me do the job.</p>
       </section>
 
       <section id="remember-everything" aria-labelledby="remember-everything-h">
@@ -136,7 +136,7 @@ export default function Body() {
           <li>An endpoint that checks whether you’re logged in, but not whether you’re allowed to see that record.</li>
           <li>A response that comes back suspiciously fast, which sometimes means it never did the work.</li>
         </ul>
-        <p>None of these take memorized syntax to spot. They come from seeing systems fail, reading other people’s postmortems, and fixing my own mistakes. You get it from building things, running them, and paying attention when they break.</p>
+        <p>Spotting these takes no memorized syntax. It comes from seeing systems fail, reading other people’s postmortems, and fixing my own mistakes. You get it from building things, running them, and paying attention when they break.</p>
       </section>
 
       <section id="senior-engineers" aria-labelledby="senior-engineers-h">
@@ -152,7 +152,7 @@ export default function Body() {
           <div><dt>Technical debt</dt><dd>Which shortcuts are fine, which ones will hurt, and when to pay them down.</dd></div>
           <div><dt>Mentoring</dt><dd>Helping other engineers grow into the decisions you used to make.</dd></div>
           <div><dt>Communication</dt><dd>Explaining a technical risk to someone who doesn’t need the details but does need to decide.</dd></div>
-          <div><dt>Business constraints</dt><dd>Deadlines, budgets, contracts, compliance, and the size of the team you actually have.</dd></div>
+          <div><dt>Business constraints</dt><dd>Deadlines, budgets, contracts, compliance, and the size of the team you have.</dd></div>
           <div><dt>Tradeoffs</dt><dd>There’s rarely a perfect answer, only one that fits this situation better than the others.</dd></div>
         </dl>
         <p>As a <Link to="/work/three-continent-platform/">co-founder and CTO</Link>, most of my hardest days had nothing to do with syntax. The questions were more like: Should we build this at all? What happens when it fails at two in the morning? Who is going to maintain it? Can we ship something smaller first? None of those have an answer you can paste in.</p>
@@ -179,7 +179,7 @@ export default function Body() {
         <h2 id="small-tools-h" className="post__h2">Why I build small tools</h2>
         <p>There’s a thought I have a lot. I keep looking this up. Or I keep working this out by hand, drawing the same diagram on a whiteboard, or explaining the same idea to someone new.</p>
         <p>At some point I stop and ask: <em>why don’t I just build a small tool for this?</em></p>
-        <p>That habit is a big part of why I build side projects like <a href={ult.url}>Useful Little Tools</a>, a collection of small, focused browser tools. Some started because I needed a quick answer and didn’t want to open a spreadsheet again. Others started because I wanted to understand something properly, and building it was the fastest way to find the gaps in what I thought I knew.</p>
+        <p>That habit is a big part of why I build side projects like <a href={ult.url}>Useful Little Tools</a>, a collection of small, focused browser tools. Some started because I needed a quick answer and didn’t want to open a spreadsheet again. Others started because I wanted to understand something properly, and building it was the fastest way to find the gaps in what I thought I knew. The longer story of how I got from bookmarks to building them is in <Link to="/writing/why-i-build-my-own-developer-tools/">why I build my own developer tools</Link>.</p>
         <p>Small tools are a good way to learn because they’re honest. You can’t hand-wave a calculation you have to implement. You find out quickly which edge cases you forgot, which formula you only half remembered, and what you assumed without checking.</p>
         <p>They pay off three ways. I learn something while building them. I have something to reuse the next time the problem comes up. And now and then someone else hits the same problem, finds the tool, and saves themselves twenty minutes. For larger systems I write up the decisions instead, like the case studies on my <Link to="/projects/">projects</Link> page.</p>
       </section>

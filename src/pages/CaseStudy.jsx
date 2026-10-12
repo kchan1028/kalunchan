@@ -9,6 +9,7 @@ const toc = [
   ['problem', 'Problem'],
   ['architecture', 'Architecture'],
   ['decisions', 'Decisions'],
+  ['execution', 'Delivery'],
   ['outcome', 'Outcome'],
   ['lessons', 'Lessons'],
 ];
@@ -46,7 +47,7 @@ export default function CaseStudy() {
       <div className="sheet grid case__body">
         <nav className="case__toc" aria-label="In this case study">
           <ol>
-            {toc.map(([id, label]) => (
+            {toc.filter(([id]) => id !== 'execution' || c.execution).map(([id, label]) => (
               <li key={id}>
                 <a href={`#${id}`}>{label}</a>
               </li>
@@ -56,7 +57,10 @@ export default function CaseStudy() {
 
         <section id="problem" className="case__problem" aria-labelledby="problem-h" data-coord={`${c.no}-1 · Problem`}>
           <h2 id="problem-h" className="case__h label">Problem</h2>
-          <p className="case__problem-text">{c.problem}</p>
+          <div className="case__problem-copy">
+            <p className="case__problem-text">{c.problem}</p>
+            {c.context?.map((t) => <p key={t} className="case__para">{t}</p>)}
+          </div>
           <div className="case__constraints">
             <h3 className="case__subh label">Constraints</h3>
             <ul className="spec-list">
@@ -95,10 +99,20 @@ export default function CaseStudy() {
                   </li>
                 ))}
               </ul>
+              {d.why && <p className="decision__why">{d.why}</p>}
             </div>
           ))}
         </div>
       </section>
+
+      {c.execution && (
+        <section id="execution" className="sheet grid case__execution" aria-labelledby="exe-h" data-coord={`${c.no}-3 · Delivery`}>
+          <h2 id="exe-h" className="case__h label">How it was delivered</h2>
+          <div className="case__execution-body">
+            {c.execution.map((t) => <p key={t} className="case__para">{t}</p>)}
+          </div>
+        </section>
+      )}
 
       <section id="outcome" className="sheet grid case__outcome" aria-labelledby="out-h" data-coord={`${c.no}-4 · Outcome`}>
         <h2 id="out-h" className="case__h label">Outcome</h2>
@@ -120,6 +134,14 @@ export default function CaseStudy() {
             <li key={l}>{l}</li>
           ))}
         </ul>
+        {c.tradeoffs && (
+          <div className="case__tradeoffs">
+            <h3 className="case__subh label">Tradeoffs accepted</h3>
+            <ul className="spec-list">
+              {c.tradeoffs.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+          </div>
+        )}
         {c.related && (
           <p className="case__related">
             <span className="label">Related writing</span>

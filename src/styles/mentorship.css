@@ -258,3 +258,4 @@
   .omnium__join ul { border-right: 0; padding-right: 0; }
   .worlds__node { font-size: 0.875rem; }
 }
+.mentor-hero__cta { margin-top: var(--s5); }

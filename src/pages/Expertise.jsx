@@ -11,7 +11,7 @@ export default function Expertise() {
       <TitleBlock section="400" title="Expertise" cells={[{ k: 'Areas', v: `${capabilities.length} capabilities` }, { k: 'Evidence', v: '5 roles' }]} />
       <div className="sheet grid page-lead">
         <p className="page-lead__claim">
-          Each capability is mapped to the roles where I actually used it. Tools are listed last because they changed the most.
+          Each capability is mapped to the roles where I used it. Tools are listed last because they changed the most.
         </p>
       </div>
 

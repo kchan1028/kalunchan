@@ -7,6 +7,8 @@ export default defineConfig({
     outDir: process.env.BUILD_DIR || 'build',
     emptyOutDir: true,
     cssCodeSplit: false,
+    // Read by scripts/prerender.mjs to preload each post's body chunk, then deleted.
+    manifest: true,
   },
   ssr: {
     noExternal: ['@fontsource-variable/archivo', '@fontsource-variable/martian-mono'],

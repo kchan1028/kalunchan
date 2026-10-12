@@ -61,7 +61,7 @@ function Role({ r, index }) {
           )}
           {r.story && (
             <div className="tenure__part tenure__part--cases">
-              <dt className="label">Founder story</dt>
+              <dt className="label">{r.story.kind || 'Founder story'}</dt>
               <dd>
                 <Link to={r.story.to} className="link-arrow">
                   <span>{r.story.label}</span>
@@ -73,6 +73,36 @@ function Role({ r, index }) {
         </dl>
       </div>
     </article>
+  );
+}
+
+// Fig. 200-1: five roles, oldest first, with scale, what KC owned, and whether he
+// did the work himself or led it. Each column links to the role below.
+function Progression() {
+  const ordered = [...roles].reverse();
+  return (
+    <figure className="sheet prog" aria-labelledby="prog-cap" data-coord="200-0 · Progression">
+      <figcaption id="prog-cap" className="prog__cap">
+        <span className="mono">Fig. 200-1</span>
+        <span>How the responsibility grew, role by role</span>
+        <span className="prog__key label">Oldest on the left. Each column links to the role.</span>
+      </figcaption>
+      <ol className="prog__list">
+        {ordered.map((r, i) => (
+          <li key={r.id} className={`prog__role${r.id === 'yippify' ? ' is-now' : ''}`}>
+            <a href={`#${r.id}`} className="prog__link">
+              <span className="prog__no mono">{String(i + 1).padStart(2, '0')}</span>
+              <span className="prog__title">{r.title}</span>
+              <span className="prog__org">{r.org}</span>
+              <span className="prog__scale">{r.scale}</span>
+              <span className="label prog__label">Owned</span>
+              <span className="prog__owned">{r.owned}</span>
+              <span className="prog__mode mono">{r.mode}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </figure>
   );
 }
 
@@ -88,6 +118,7 @@ export default function Experience() {
           For full career history, visit <a href={person.linkedin}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced.
         </p>
       </div>
+      <Progression />
       <div className="tenures">
         {roles.map((r, i) => (
           <Role key={r.id} r={r} index={i} />

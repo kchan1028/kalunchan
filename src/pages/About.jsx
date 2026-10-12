@@ -1,7 +1,8 @@
 import { Link } from 'react-router';
 import TitleBlock from '../components/TitleBlock';
+import CareerArc from '../components/CareerArc';
+import StackLadder from '../components/StackLadder';
 import { ArrowRight } from '../components/Icons';
-import { withTodos } from '../components/Todo';
 import { entity, isPlaceholder, person, updated } from '../content/profile';
 import { cycling } from '../content/community';
 import {
@@ -36,12 +37,33 @@ export default function About() {
       <a href="#contact" className="link-arrow about-opening__contact">Start a conversation <ArrowRight /></a>
     </header>
 
+    <CareerArc />
+
     <Qa id="generalist" coord="Generalist" q="What kind of engineering leader is Ka Lun Chan?">
       <p>KC is a generalist: an engineering leader who has done most of the jobs on his teams, and many of the jobs around them. That range came from building a startup from the ground up to an acquisition, where every problem was his to solve.</p>
-      <p>He learned how a business runs before he learned software. At his family’s florist he handled everything from the accounting to buying flowers, arranging them and selling them. At the family restaurant he ran everything from marketing to food delivery. Both taught him that software has to fit the way a business actually works.</p>
-      <p>His technical path started on the front line, on an IT helpdesk and in technical support for DSL providers. From there he kept a nationwide carrier network running, from DS1 circuits to OC links, working with routers, switches, Unix systems and fault management tools. He automated that work with scripts before anyone called it DevOps, and forecast network capacity with programs he wrote in R and Excel, using Cacti stats pulled into Excel.</p>
-      <p>As a co-founder and CTO, he did whatever the company needed that week: product management, marketing and SEO, racking and cabling servers in the data center, building the web application and building the voice network. Since then he has restructured a startup’s mobile app, network and open-source voice platform, advised many startups, worked in media publishing, and now builds government technology through Yippify.</p>
+      <p>He learned how a business runs before he learned software. At his family’s florist he handled everything from the accounting to buying flowers, arranging them and selling them. At the family restaurant he ran everything from marketing to food delivery. Both taught him that software has to fit the way a business works.</p>
+      <p>His curiosity started on a 286 running DOS, then Windows 3.1, bulletin boards, IRC and dial-up, a story he tells in <Link to="/writing/from-dos-to-ai-thirty-years-of-technology/">from DOS to AI</Link>. His technical path started on the front line, on an IT helpdesk and in technical support for DSL providers. From there he kept a nationwide carrier network running, from DS1 circuits to OC links, working with routers, switches, Unix systems and fault management tools. He automated that work with scripts before anyone called it DevOps, and forecast network capacity with an R program and Excel over SNMP and Cacti statistics, so upgrades were ordered ahead of lead times rather than after congestion.</p>
+      <p>As a co-founder and CTO, he did whatever the company needed that week: product management, marketing and SEO, racking and cabling servers in the data center, building the web application and building the voice network. Since then he has restructured a startup’s mobile app, network and open-source voice platform, <Link to="/writing/building-startups-technical-leadership/">helped six startups build their products</Link>, run technology and business operations for a media publisher, and now builds government and startup technology through Yippify: cloud infrastructure on AWS and Terraform, event-driven systems on Kafka, PostgreSQL, CI/CD, federal applications built to <Link to="/writing/building-federal-government-applications/">security authorization and accessibility requirements</Link>, and AI document processing with people in the loop.</p>
       <p className="about-qa__highlight">That background lets him talk to the executive team, product, marketing, finance, sales, operations and engineering in their own terms, and see how a technical decision will play out across the whole business.</p>
+    </Qa>
+
+    <Qa id="security" coord="Security" q="Where does his security experience come from?">
+      <p>From the network up. In carrier network operations KC wrote access control lists on Cisco routers, and when the carrier launched a managed firewall and VPN service on NetScreen products he was one of the first three people supporting it in the Security Operations Center. He later travelled to the East Coast to train the Technical Assistance Center to support and troubleshoot the service.</p>
+      <p>It never became a separate specialty. On the voice platforms it was AAA for every call. In application work it has been authentication, single sign-on, OAuth, role-based access and object-level authorization in Django, Rails and Node.js APIs, and in mobile apps treated as untrusted clients, from VoIP apps on Nokia, iPhone and Android to iOS and Android apps for a startup and for government clients. In cloud work it is IAM, network controls, secrets and Terraform on AWS. In government work it is federal security requirements, including FedRAMP-aligned environments, built into the scope. On every team he runs, vulnerabilities are monitored and fixed as high-priority work, and security review is a release gate rather than a launch-week audit.</p>
+      <p className="about-qa__highlight">The full story, with a layer-by-layer view of where security lives in a company: <Link to="/writing/network-security-before-devsecops/">I was working on network security long before DevSecOps was a thing</Link>.</p>
+    </Qa>
+
+    <Qa id="capacity" coord="Scale and cost" q="How does he think about scaling systems and what they cost to run?">
+      <p>KC learned capacity planning when capacity was a purchase order. On a carrier network spread across 2,000+ collocations he forecast utilization from measured data far enough ahead to cover hardware lead times. At a voice services company he ran the server farm behind 8M+ VoIP minutes a month and planned expansion ahead of demand. At the company he co-founded, least-cost routing and media paths chosen by caller location improved call quality and cut bandwidth cost at the same time, and the platform moved from one data center to cloud regions on three continents so that capacity could follow revenue.</p>
+      <p>The cloud replaced the purchase order with a monthly bill, and the same discipline applies to it. As CTO of a media publishing platform he led a re-platform onto AWS where right-sizing, demand-based scaling, database fixes and caching contributed to about 30% lower AWS costs. On client work he reviews architecture with a price column, defaults to managed services for small teams, and treats engineering capacity, technical debt and operational overhead as resources with lead times, the same as a circuit order. Running his own businesses added the questions an engineer rarely has to ask: can we afford to operate it, who maintains it, what does it cost at ten times the usage, and is the complexity justified by a problem we have today?</p>
+      <p className="about-qa__highlight">The method is the same across every generation: <Link to="/writing/capacity-planning-carrier-networks-to-cloud/">measure first, plan from data, know which resource fills first</Link>, and <Link to="/writing/hidden-cost-of-software-architecture/">count what each architecture decision costs to run</Link>.</p>
+    </Qa>
+
+    <StackLadder />
+
+    <Qa id="startups" coord="Startups" q="What does he do for startups?">
+      <p>Three things. Zero-to-one product development: turning an idea into a working application, as he did for his own company and for a hybrid iOS and Android app, a fitness platform, a wholesale VoIP business, a real estate platform and a 360-degree virtual tour product. Hands-on technical leadership: setting the architecture and the stack while still writing code, reviewing it and troubleshooting production. Business-aware engineering: choosing what to build now and what can wait, by budget, product maturity, actual demand and what the system will cost to run.</p>
+      <p className="about-qa__highlight">Startups need more than someone who can write code. They need someone who can help them make the right technical decisions for the stage of their business. The six engagements are in <Link to="/writing/building-startups-technical-leadership/">building startups: what I’ve learned turning ideas into working products</Link>.</p>
     </Qa>
 
     <Qa id="who" coord="Who is KC" q="Who is Ka Lun Chan?">
@@ -59,7 +81,7 @@ export default function About() {
     <Qa id="delivered" coord="Delivered" q="What has Ka Lun Chan delivered?">
       <p>His record includes scaling a product to 400,000+ users and an acquisition, and infrastructure work across 2,000+ carrier sites.</p>
       <ul className="spec-list">{delivered.map((d) => <li key={d.term}><strong>{d.term}</strong> {d.text}</li>)}</ul>
-      <p>{withTodos('[Add company names and years for each role where you’re allowed to. Delete this note.]')}</p>
+      <p>Employer names and dates are on <a href={person.linkedin}>his LinkedIn profile</a>.</p>
     </Qa>
 
     <Qa id="value" coord="Where he adds value" q="Where does Ka Lun Chan add the most value?">
@@ -96,11 +118,6 @@ export default function About() {
       <p>His core stack is Python, Django, Rails, React, Next.js and PostgreSQL, running on AWS. His experience also covers distributed systems, cloud infrastructure, and product and data engineering.</p>
     </Qa>
 
-    <Qa id="ai" coord="AI & data" q="What AI and data work has he done?">
-      <p>KC lists AI and machine-learning products and data work among his areas of expertise. VeloWise, his delivery analytics product, turns engineering delivery data into insight for leaders.</p>
-      <p>{withTodos('[Add one specific AI or ML project: what it did, the model or approach, and one result. Delete this note.]')}</p>
-    </Qa>
-
     <Qa id="engagements" coord="Engagements" q="How do engagements work?">
       <p>KC works with companies through Yippify, on scoped projects or ongoing engineering leadership. Each engagement starts by agreeing on the problem, the constraints and what a useful outcome looks like, then moves in small steps with working software early.</p>
       <p>For market context, GoFractional reports a median fractional CTO rate of $200 an hour, with the middle 50% between $175 and $250. That figure is from September 2026 and comes from a small sample: 14 job posts and 787 candidate profiles over 90 days.</p>
@@ -108,7 +125,7 @@ export default function About() {
 
     <Qa id="based" coord="Location" q="Where is he based?">
       <p>KC is based in the San Francisco Bay Area and works with teams across the US, remotely and in person in the Bay Area.</p>
-      <p>He is also active in the local cycling community. He founded and organizes the Berkeley Omnium, rides with the Berkeley Bicycle Club and leads a Bay Area cycling team.</p>
+      <p>He is also active in the local cycling community. He helps organize the Berkeley Omnium, rides with the Berkeley Bicycle Club and leads a Bay Area cycling team.</p>
     </Qa>
 
     <Qa id="work-with" coord="Contact" q="How can you work with Ka Lun Chan?">
@@ -131,7 +148,7 @@ export default function About() {
       <div className="about-chapter__body">
         <h2 id="engineering-title" className="h2">The work doesn’t end when the code ships.</h2>
         <div className="about-prose">
-          <p>Engineering and operating production systems taught me to care about what happens after launch. Building products added another question: does this actually solve the problem for the person using it?</p>
+          <p>Engineering and operating production systems taught me to care about what happens after launch. Building products added another question: does this solve the problem for the person using it?</p>
         </div>
       </div>
     </section>

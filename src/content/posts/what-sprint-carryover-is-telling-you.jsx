@@ -54,10 +54,10 @@ export default function Body() {
     <>
       <section id="symptom" aria-labelledby="symptom-h">
         <h2 id="symptom-h" className="post__h2">Carryover is a symptom, not a diagnosis</h2>
-        <p>Every sprint ends with a comparison: what the team said it would finish, and what it actually finished. The gap between the two is carryover.</p>
+        <p>Every sprint ends with a comparison: what the team said it would finish, and what it finished. The gap between the two is carryover.</p>
         <p className="post__answer">Sprint carryover, also called spillover, is work a team committed to in a sprint that isn’t finished when the sprint ends, so it moves into the next one. On its own, it only tells you that the plan and the result didn’t match. Why they didn’t match is what tells you what to fix.</p>
         <p>The usual reaction to carryover is some version of three things: estimate better, commit to less, or push harder. Sometimes one of those is right. Often it isn’t, because nobody has asked why the work didn’t finish.</p>
-        <p>In <Link to={priorities}>When Everything Is a Priority, Nothing Is</Link>, I wrote that when work keeps carrying over, I want to know the reason before I conclude anything about how fast engineers are delivering. This is the longer version: what each reason looks like, what it’s telling you, and what actually helps.</p>
+        <p>In <Link to={priorities}>When Everything Is a Priority, Nothing Is</Link>, I wrote that when work keeps carrying over, I want to know the reason before I conclude anything about how fast engineers are delivering. This is the longer version: what each reason looks like, what it’s telling you, and what helps.</p>
       </section>
 
       <section id="is-it-bad" aria-labelledby="is-it-bad-h">
@@ -68,7 +68,7 @@ export default function Body() {
         <ul className="post__list">
           <li><strong>The trend.</strong> Is carryover steady, growing or shrinking over several sprints?</li>
           <li><strong>The age.</strong> The same item carrying over three sprints in a row tells you far more than a dozen items that slipped by a day.</li>
-          <li><strong>The cause.</strong> What actually stopped the work from finishing.</li>
+          <li><strong>The cause.</strong> What stopped the work from finishing.</li>
         </ul>
         <p>The third one matters most.</p>
       </section>
@@ -78,12 +78,12 @@ export default function Body() {
         <p>When I look at why work didn’t finish, it usually comes down to one of six causes. They look the same on a burndown chart. They have very different fixes.</p>
 
         <h3 className="post__h3">The work was bigger than we thought</h3>
-        <p>This is the cause most people assume, and it’s real. A story that looked like two days takes five. A ticket stays “almost done” for most of the sprint. One piece of work quietly turns into three.</p>
+        <p>This is the cause most people assume, and it’s real. A story that looked like two days takes five. A ticket stays “almost done” for most of the sprint. One piece of work turns into three.</p>
         <p>What it’s telling you is usually about how the work was shaped before it started. It was too big to estimate well, or the unknowns inside it weren’t named. Better estimation helps less than you’d think. Smaller slices help more. So does spiking the riskiest unknown before committing to the whole thing, and agreeing what “done” means before the work starts. It’s why I put so much weight on <Link to="/leadership/#ambiguity">turning ambiguity into executable work</Link>.</p>
 
         <h3 className="post__h3">The requirements changed during the sprint</h3>
         <p>The work started, and then what “done” meant changed underneath it. A stakeholder saw a demo and asked for something different. An edge case turned into a product decision nobody had made yet.</p>
-        <p>Sometimes that’s healthy: the team learned something, and the plan should change. Sometimes it means the work entered the sprint before it was ready. The fix for the second is a lightweight bar for “ready” and keeping discovery separate from delivery. The fix for the first is treating the change as a new decision, with its cost made visible, instead of letting it silently stretch the original commitment.</p>
+        <p>Sometimes that’s healthy: the team learned something, and the plan should change. Sometimes it means the work entered the sprint before it was ready. The fix for the second is a lightweight bar for “ready” and keeping discovery separate from delivery. The fix for the first is treating the change as a new decision, with its cost made visible, instead of letting it silently stretch the original commitment. Left invisible, that stretch is how a sprint ends up full of <Link to="/writing/engineering-work-nobody-needed/">work nobody needed</Link>.</p>
 
         <h3 className="post__h3">Another team blocked us</h3>
         <p>The work was waiting on an API, a review, an environment, a decision or a deploy from somewhere else. The team was busy, just not on the thing it committed to.</p>
@@ -95,7 +95,7 @@ export default function Body() {
 
         <h3 className="post__h3">We found unexpected complexity</h3>
         <p>The work was understood and scoped sensibly, and then the system turned out to be harder to change than anyone expected. Missing tests. An undocumented dependency. Code only one person understands.</p>
-        <p>When that happens once, it’s normal. When it keeps happening in the same parts of the system, carryover is pointing at technical debt that’s charging interest. That’s useful information. It tells you where paying down debt would speed up the roadmap, which is how I prefer to <Link to="/leadership/#debt">balance delivery and technical debt</Link>.</p>
+        <p>When that happens once, it’s normal. When it keeps happening in the same parts of the system, carryover is pointing at technical debt that’s charging interest. That tells you where paying down debt would speed up the roadmap, which is how I prefer to <Link to="/leadership/#debt">balance delivery and technical debt</Link>.</p>
 
         <h3 className="post__h3">The priority changed halfway through</h3>
         <p>The team was pulled onto something else, and the original work was left partly done. On the board, it looks exactly like slow delivery.</p>
@@ -142,7 +142,7 @@ export default function Body() {
           <li><strong>Look across several sprints.</strong> One sprint is noise. A pattern over a quarter is information.</li>
           <li><strong>Keep it blameless.</strong> The goal is to find the system problem, not a person to blame. If it turns into blame, people will pick the safest reason instead of the true one.</li>
         </ol>
-        <p>Within a few sprints, a pattern tends to show up. That’s where to start.</p>
+        <p>Within a few sprints, a pattern tends to show up, and that’s where to start.</p>
       </section>
 
       <section id="not-a-metric" aria-labelledby="not-a-metric-h">
@@ -170,7 +170,7 @@ export default function Body() {
         <p>Compare that with this:</p>
         <p className="post__pull">“Five items carried over: two because priorities changed mid-sprint, two because of incident load, and one we underestimated.”</p>
         <p>Now leadership can see which problems are theirs to solve. Two of the five came from decisions above the team. Two came from reliability. Only one is an estimation problem. That’s a much more useful conversation, and a much fairer one.</p>
-        <p>It’s also the first thing I’d want to look at if a company brought me in through <a href={person.yippify}>Yippify</a> to help with unpredictable delivery. Before estimates, before velocity, before any process change: what is the carryover actually telling us?</p>
+        <p>It’s also the first thing I’d want to look at if a company brought me in through <a href={person.yippify}>Yippify</a> to help with unpredictable delivery. Before estimates, before velocity, before any process change: what is the carryover telling us?</p>
       </section>
 
       <section id="reduce" aria-labelledby="reduce-h">
@@ -179,7 +179,7 @@ export default function Body() {
         <p>In practice, that usually means a few targeted changes rather than a process overhaul:</p>
         <ul className="post__list">
           <li>Slice work smaller, so less of it is in flight when something goes wrong. It’s the same reason I <Link to="/leadership/#execution">improve execution with small, safe changes</Link>.</li>
-          <li>Reserve capacity for the unplanned work the team actually gets.</li>
+          <li>Reserve capacity for the unplanned work the team gets.</li>
           <li>Surface dependencies at planning, and fix ownership where blockers are constant.</li>
           <li>Make every mid-sprint priority change come with a stated tradeoff.</li>
           <li>Pay down debt where complexity keeps surprising the team.</li>
@@ -197,7 +197,7 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Carryover is one of the most honest signals an engineering team produces. Sprint after sprint, it shows where the system around the team is getting in the way. So I don’t start by asking, “Why didn’t the team finish?”</p>
         <p className="post__close-principle">I ask, “What stopped the work from finishing?”</p>
-        <p>The answers point to different owners and different fixes, and that’s exactly what makes them useful.</p>
+        <p>The answers point to different owners and different fixes, which is what makes them useful.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through what your carryover is telling you <ArrowRight /></Link>
           <a href={person.yippify} className="link-arrow"><span>Work with me through Yippify</span> <ArrowOut /></a>

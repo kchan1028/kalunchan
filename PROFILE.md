@@ -11,11 +11,11 @@ Before publishing, replace every [BRACKETED] note and every REPLACE_WITH_ value.
 
 ## 1a. Entity paragraph (place directly under the H1)
 
-Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 23+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
+Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
 
 ## 1b. Headline numbers (a short row or list under the paragraph)
 
-- 23+ years in software
+- 20+ years in software
 - 400,000+ users scaled as co-founder and CTO
 - Acquired, with users across 3 continents
 
@@ -26,7 +26,7 @@ Open to Director, Head or VP of Engineering and Staff or Principal roles, and co
 ## 1d. Homepage title and meta description
 
 - Title: Ka Lun Chan (KC) — Engineering Leader, SF Bay Area
-- Meta description: Ka Lun Chan (KC) is a Bay Area engineering leader with 23+ years in software: co-founder and CTO who scaled a platform to 400k+ users through acquisition.
+- Meta description: Ka Lun Chan (KC) is a Bay Area engineering leader with 20+ years in software: co-founder and CTO who scaled a platform to 400k+ users through acquisition.
 
 ---
 
@@ -42,11 +42,11 @@ Use the Person object from section 4 on every page (in the shared layout), so ev
 
 *Updated [REPLACE_WITH_MONTH YEAR]*
 
-Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 23+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
+Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
 
 ## Key takeaways
 
-- 23+ years in software development, from technical support and carrier networks to co-founder and CTO.
+- 20+ years in software development, from technical support and carrier networks to co-founder and CTO.
 - Scaled a communications platform to 400,000+ users on three continents, through to acquisition.
 - Hands-on in Python, Django, Rails, React, Next.js, PostgreSQL and AWS.
 - Leads by removing single points of failure: written architecture decisions, small safe changes, and growing engineers into leaders.
@@ -71,13 +71,15 @@ KC consults through Yippify and builds his own products. His Yippify clients inc
 
 His record includes scaling a product to 400,000+ users and an acquisition, and infrastructure work across 2,000+ carrier sites.
 
-- **Co-Founder & CTO, global communications platform:** scaled to 400,000+ users across three continents, grew revenue to multimillion-dollar levels, and led through to acquisition.
-- **Chief Technology Officer, media publishing platform:** grew organic traffic, social traffic and social engagement by 50% each.
-- **VP of Operations, voice services:** built a stable, scalable platform through a growth phase, with capacity expansion planned ahead of demand.
-- **Member of Technical Staff, national broadband network:** integrated and expanded carrier infrastructure across 2,000+ collocations.
+- **Fractional CTO and technical advisor, startups and growth companies:** between the acquisition and Yippify, served as interim head of engineering for a startup shipping iOS and Android apps, a web platform and REST APIs on AWS; built a wholesale VoIP platform on Asterisk and OpenSIPS; and led a fully remote team building on Go, React, Next.js and AWS Lambda.
+- **Software engineer, no-code machine-learning platform:** built the customer-facing product, React and Next.js over a Flask back end, with the ML research team, turning research algorithms into a tool non-technical users could run.
+- **Chief Technology Officer, media publishing platform:** grew organic traffic, social traffic and social engagement by 50% each. Re-platformed the titles from WordPress to Ruby on Rails and moved hosting to AWS, where infrastructure improvements contributed to about 30% lower AWS costs. Worked with the CEO on business and operations, including the partners across the affiliated publishing network.
+- **Co-Founder & CTO, global communications platform:** scaled to 400,000+ users across three continents, grew revenue to multimillion-dollar levels, and led through to acquisition, including the technical due diligence. Built and led a global team of 30+ engineers, VoIP specialists and designers, and held a board seat. Shipped the mobile VoIP app on Nokia, iPhone and Android.
+- **VP of Operations, voice services:** ran software engineering, QA and network operations. Restructured engineering and the server farm behind 8M+ VoIP minutes a month, rebuilt the engineering team, and planned capacity expansion ahead of demand. Delivered a mobile VoIP app for Nokia phones.
+- **Member of Technical Staff, national broadband network:** integrated and expanded carrier infrastructure across 2,000+ collocations. Wrote Cisco router access control lists, was one of the first three people supporting the new NetScreen-based managed firewall and VPN service in the Security Operations Center, and travelled to the East Coast to train the Technical Assistance Center.
 - **Earlier:** technical support roles in broadband and technical services.
 
-<!-- [Add company names and years for each role where you're allowed to. Delete this note.] -->
+Employer names and dates are on his LinkedIn profile.
 
 ## Which engineering leadership roles is he suited to?
 
@@ -88,7 +90,7 @@ KC fits roles where a leader needs to set technical direction and still ship: Di
 | VP Engineering | Engineering org strategy, leaders of managers, planning and budget | Co-founder and CTO experience through scale and acquisition |
 | Head of Engineering | First or only engineering leader at a startup or scale-up | Has built teams and platforms from inception |
 | Director of Engineering | Several teams, delivery and hiring | Delivery practices, cross-functional work with product and QA |
-| Staff / Principal | Architecture and technical direction across teams, still hands-on | 23+ years hands-on, written architecture decisions, distributed systems |
+| Staff / Principal | Architecture and technical direction across teams, still hands-on | 20+ years hands-on, written architecture decisions, distributed systems |
 | Consulting (via Yippify) | Scoped project, architecture review or delivery rescue | Web and mobile delivery for government, startup and founder clients |
 
 ## How does a founder-CTO background differ from a career engineering manager's?
@@ -119,12 +121,6 @@ Teams bring KC in when delivery is slow or unpredictable, when the architecture 
 
 His core stack is Python, Django, Rails, React, Next.js and PostgreSQL, running on AWS. His experience also covers distributed systems, cloud infrastructure, and product and data engineering.
 
-## What AI and data work has he done?
-
-KC lists AI and machine-learning products and data work among his areas of expertise. VeloWise, his delivery analytics product, turns engineering delivery data into insight for leaders.
-
-<!-- [Add one specific AI or ML project: what it did, the model or approach, and one result. Delete this note.] -->
-
 ## What does it cost to engage an engineering leader?
 
 Full-time pay for engineering leaders is negotiated and varies widely by level and company. Consulting is usually priced per project or by the hour.
@@ -139,7 +135,7 @@ Full-time pay for engineering leaders is negotiated and varies widely by level a
 
 KC is based in the San Francisco Bay Area.
 
-He is also active in the local cycling community. He founded and organizes the Berkeley Omnium, rides with the Berkeley Bicycle Club and leads a Bay Area cycling team.
+He is also active in the local cycling community. He helps organize the Berkeley Omnium, rides with the Berkeley Bicycle Club and leads a Bay Area cycling team.
 
 ## How can you contact or hire him?
 
@@ -148,7 +144,7 @@ The fastest way to reach KC is a LinkedIn message at [linkedin.com/in/kchan1288]
 ## FAQ
 
 **Who is Ka Lun Chan?**
-Ka Lun Chan (KC) is a software engineering leader based in the San Francisco Bay Area with 23+ years in software development. He was co-founder and CTO of a global communications platform that grew to 400,000+ users before it was acquired, and he now consults through Yippify.
+Ka Lun Chan (KC) is a software engineering leader based in the San Francisco Bay Area with 20+ years in software development. He was co-founder and CTO of a global communications platform that grew to 400,000+ users before it was acquired, and he now consults through Yippify.
 
 **What roles is Ka Lun Chan open to?**
 He is open to Director of Engineering, Head of Engineering, VP Engineering, Engineering Manager and Staff or Principal roles. He also takes technical consulting projects through Yippify.
@@ -201,7 +197,7 @@ The fastest route is a message on LinkedIn at linkedin.com/in/kchan1288. For con
       "url": "https://kalunchan.dev/",
       "image": "REPLACE_WITH_PHOTO_URL",
       "jobTitle": "Engineering Leader",
-      "description": "San Francisco Bay Area engineering leader with 23+ years in software; former co-founder and CTO of a global communications platform that scaled to 400,000+ users before acquisition.",
+      "description": "San Francisco Bay Area engineering leader with 20+ years in software; former co-founder and CTO of a global communications platform that scaled to 400,000+ users before acquisition.",
       "homeLocation": { "@type": "Place", "name": "San Francisco Bay Area" },
       "worksFor": { "@type": "Organization", "name": "Yippify", "url": "https://yippify.com/" },
       "knowsAbout": ["Engineering leadership", "Software architecture", "Product engineering", "Cloud infrastructure", "AWS", "Python", "Django", "Ruby on Rails", "React", "Next.js", "PostgreSQL", "Distributed systems", "AI and data"],
@@ -217,7 +213,7 @@ The fastest route is a message on LinkedIn at linkedin.com/in/kchan1288. For con
       "@type": "Article",
       "@id": "REPLACE_WITH_URL#article",
       "headline": "Ka Lun Chan (KC): Engineering Leader, San Francisco Bay Area",
-      "description": "Profile of Ka Lun Chan, a Bay Area engineering leader with 23+ years in software, co-founder and CTO experience through acquisition, and hands-on architecture skills.",
+      "description": "Profile of Ka Lun Chan, a Bay Area engineering leader with 20+ years in software, co-founder and CTO experience through acquisition, and hands-on architecture skills.",
       "url": "REPLACE_WITH_URL",
       "mainEntityOfPage": "REPLACE_WITH_URL",
       "image": "REPLACE_WITH_IMAGE_URL",
@@ -234,7 +230,7 @@ The fastest route is a message on LinkedIn at linkedin.com/in/kchan1288. For con
         {
           "@type": "Question",
           "name": "Who is Ka Lun Chan?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ka Lun Chan (KC) is a software engineering leader based in the San Francisco Bay Area with 23+ years in software development. He was co-founder and CTO of a global communications platform that grew to 400,000+ users before it was acquired, and he now consults through Yippify." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Ka Lun Chan (KC) is a software engineering leader based in the San Francisco Bay Area with 20+ years in software development. He was co-founder and CTO of a global communications platform that grew to 400,000+ users before it was acquired, and he now consults through Yippify." }
         },
         {
           "@type": "Question",

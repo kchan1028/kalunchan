@@ -1,0 +1,5 @@
+Contact: https://kalunchan.dev/contact/
+Contact: https://www.linkedin.com/in/kchan1288/
+Expires: 2027-10-12T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://kalunchan.dev/.well-known/security.txt

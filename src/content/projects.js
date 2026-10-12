@@ -11,6 +11,8 @@ import { cycling } from './community';
 export const projects = [
   {
     slug: 'fedpath',
+    // First published (git history). The sitemap and dateModified come from src/lastmod.json.
+    published: '2026-10-03',
     seoTitle: 'FedPath (GoFedPath): GovCon Product Case Study — Ka Lun Chan',
     description:
       'How I built FedPath at gofedpath.com: SAM.gov opportunity discovery, Fit Analysis, Go/No-Go decisions and a Compliance Matrix for small businesses.',
@@ -77,7 +79,7 @@ export const projects = [
     capabilities: ['SAM.gov opportunity data', 'Rule-based fit engine', 'Document parsing', 'Decision workflow', 'Compliance tracking', 'Product & UX design'],
     lessons: [
       'In a domain this regulated, an explanation is worth more than a score.',
-      'The most valuable feature is often the decision not to spend the next ten hours.',
+      'Often the most useful answer FedPath gives is not to spend the next ten hours.',
     ],
     alt: {
       desktop: 'FedPath home page: a headline about finding government contracts worth pursuing beside an Opportunity Watch panel listing matched federal notices',
@@ -87,6 +89,7 @@ export const projects = [
   },
   {
     slug: 'berkeley-omnium',
+    published: '2026-10-03',
     seoTitle: 'Berkeley Omnium Website: Event Platform Project — Ka Lun Chan',
     description:
       'The new berkeleyomnium.com: race landing pages, video and social, sponsorship and SEO for the Berkeley Hills Road Race and Berkeley Streets Criterium.',
@@ -123,7 +126,7 @@ export const projects = [
       { name: 'Video and social', text: 'Race footage and the club’s social channels bring the racing onto the page.' },
       { name: 'Sponsorship and impact', text: 'A clear story for partners: all proceeds support six East Bay NICA teams.' },
       { name: 'Paths for every audience', text: 'Register, volunteer, collegiate, kids and sponsor routes from a single navigation.' },
-      { name: 'SEO, AEO and GEO', text: 'Structured, answerable pages so search engines and AI assistants describe the event accurately.' },
+      { name: 'Search and AI answers', text: 'Structured, answerable pages so search engines and AI assistants describe the event accurately.' },
       { name: 'Performance and responsive design', text: 'Built mobile-first for people checking race details on the way to the start.' },
     ],
     flow: ['Discover', 'Watch', 'Register', 'Volunteer', 'Sponsor'],
@@ -148,7 +151,7 @@ export const projects = [
       'A sponsor story tied to a real outcome: all proceeds support six East Bay NICA teams',
       'Junior, collegiate and women’s racing visible alongside the elite fields',
     ],
-    capabilities: ['Event website & landing pages', 'Video & social integration', 'Structured data', 'SEO / AEO / GEO', 'Responsive design', 'Partnerships & promotion'],
+    capabilities: ['Event website & landing pages', 'Video & social integration', 'Structured data', 'SEO', 'Responsive design', 'Partnerships & promotion'],
     lessons: [
       'A volunteer-run event needs a site that works for sponsors as hard as it works for racers.',
       'The same skills that ship software, clear audiences and fast feedback, run a race weekend too.',
@@ -161,6 +164,7 @@ export const projects = [
   },
   {
     slug: 'union-city-smog-check',
+    published: '2026-10-03',
     seoTitle: 'Union City Smog Check: Small-Business Redesign — Ka Lun Chan',
     description:
       'Modernizing a family-owned STAR smog check station’s website with mobile-first UX, local SEO, real photography and a fast static React build.',
@@ -191,7 +195,7 @@ export const projects = [
       { name: 'Mobile-first redesign', text: 'Call and directions are the first two actions on every phone screen.' },
       { name: 'Clear service pages', text: 'STAR smog checks, a smog check guide, prep tips, FAQ, and location and hours.' },
       { name: 'Real business photography', text: 'The actual station and customers’ cars instead of generic stock or SEO imagery.' },
-      { name: 'Local SEO, AEO and GEO', text: 'Answer-first pages such as “Do I need a smog check?” for search engines and AI assistants.' },
+      { name: 'Answer-first local pages', text: 'Answer-first pages such as “Do I need a smog check?” for search engines and AI assistants.' },
       { name: 'Static React build', text: 'Prerendered pages that load fast and leave nothing to patch.' },
     ],
     flow: ['Search', 'Answer', 'Trust', 'Call', 'Arrive'],
@@ -224,7 +228,7 @@ export const projects = [
       'Real photography that shows the actual station',
       'Fast static pages a small business never has to maintain',
     ],
-    capabilities: ['React', 'Static prerendering', 'Local SEO', 'SEO / AEO / GEO', 'Mobile-first UX', 'Conversion design'],
+    capabilities: ['React', 'Static prerendering', 'Local SEO', 'Structured data', 'Mobile-first UX', 'Conversion design'],
     lessons: [
       'For a local business, the website’s job is to end the search, not to be browsed.',
       'Real photos are a trust signal and a search signal at the same time.',
