@@ -2,8 +2,40 @@
 // Dates feed JSON-LD and article:* meta only; the audit keeps years out of visible text.
 import { cycling } from './community';
 import { draftMetadata as hermesLearningDraft } from './posts/learning-hermes-building-ai-automation-around-the-clock';
+import { metadata as generalistMeta } from './posts/generalist-advantage-in-the-ai-era';
+import { metadata as aiCodeMeta } from './posts/recognizing-ai-generated-code';
+import { metadata as aiCurveMeta } from './posts/ai-learning-curve-future-of-work';
+import { metadata as codeReviewMeta } from './posts/code-review-in-the-ai-era';
+import { metadata as vibeAgenticMeta } from './posts/vibe-coding-vs-agentic-engineering';
+import { metadata as loopMeta } from './posts/loop-engineering-feedback-loops';
 
 export const posts = [
+  { ...loopMeta, no: '707', published: '2026-10-16', modified: '2026-10-16' },
+  {
+  slug: 'the-architecture-you-dont-build',
+  title: 'The Architecture You Don’t Build Is Sometimes Your Best Decision',
+  shortTitle: 'The architecture you don’t build',
+  seoTitle: 'The Architecture You Don’t Build: Engineering Judgment',
+  description: 'Every service creates work beyond the code. An engineering leader on choosing simpler architecture, counting operating costs, and knowing when complexity is justified.',
+  teaser: 'A reporting request can become a new platform before anyone asks how fresh the data needs to be. How I decide which complexity is worth owning.',
+  dek: 'After more than twenty years building and operating software, I’m much more interested in whether a system needs to exist than whether we know how to build it.',
+  summary: 'Starting with the business requirement; a hypothetical reporting request; the operating costs of AWS infrastructure, databases, APIs and Kafka; modular monoliths and team capacity; preserving useful boundaries; and recording when a deferred architecture decision should be revisited.',
+  topics: ['Architecture', 'Engineering judgment', 'Leadership'],
+  keywords: ['software architecture', 'engineering leadership', 'technical debt', 'system design', 'overengineering', 'operational complexity', 'modular monolith'],
+  minutes: 8,
+  related: [
+    { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },
+    { to: '/writing/event-driven-architecture-kafka-tradeoffs/', label: 'Event-driven architecture with Kafka: the tradeoffs' },
+    { to: '/writing/software-architecture-lessons-from-different-systems/', label: 'What different systems taught me about architecture' },
+    { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
+  ],
+  no: '706', published: '2026-10-16', modified: '2026-10-16',
+},
+  { ...vibeAgenticMeta, no: '705', published: '2026-10-15', modified: '2026-10-15' },
+  { ...codeReviewMeta, no: '704', published: '2026-10-15', modified: '2026-10-15' },
+  { ...aiCurveMeta, no: '703', published: '2026-10-14', modified: '2026-10-14' },
+  { ...aiCodeMeta, no: '702', published: '2026-10-13', modified: '2026-10-13' },
+  { ...generalistMeta, no: '701', published: '2026-10-13', modified: '2026-10-13' },
   {
     slug: 'hidden-cost-of-ai-coding',
     no: '700',
@@ -3169,6 +3201,12 @@ export const journeys = [
       'fast-paced-vs-changing-priorities',
       'engineering-work-nobody-needed',
       'hidden-cost-of-ai-coding',
+      'recognizing-ai-generated-code',
+      'generalist-advantage-in-the-ai-era',
+      'ai-learning-curve-future-of-work',
+      'code-review-in-the-ai-era',
+      'vibe-coding-vs-agentic-engineering',
+      'loop-engineering-feedback-loops',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
       'building-federal-government-applications',
@@ -3179,6 +3217,7 @@ export const journeys = [
     title: 'Software architecture',
     lead: 'Service boundaries, team size, events, APIs and the lessons that carried across systems.',
     slugs: [
+      'the-architecture-you-dont-build',
       'should-it-be-a-microservice',
       'team-size-should-influence-architecture',
       'event-driven-architecture-kafka-tradeoffs',
