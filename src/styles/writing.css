@@ -1290,3 +1290,97 @@
 .aicost__scroll { overflow-x: auto; margin-top: var(--s5); }
 .aicost__scroll .aicost__table { margin-top: 0; min-width: 28rem; }
 .aicost__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* Figure captions under in-prose tables. */
+.post__figcaption { padding-top: var(--s3); font-size: var(--t-small); color: var(--ink-3); max-width: 66ch; }
+
+/* Fig. 702-1: a three-column comparison that stacks on phones, each value labelled A or B. */
+@media (max-width: 639px) {
+  .post__compare thead { display: none; }
+  .post__compare tr, .post__compare th, .post__compare td { display: block; }
+  .post__compare tbody th { white-space: normal; padding-bottom: var(--s1); border-bottom: 0; }
+  .post__compare td { padding-block: var(--s1); border-bottom: 0; }
+  .post__compare tr { padding-bottom: var(--s2); border-bottom: 1px solid var(--rule-soft); }
+  .post__compare td::before { content: attr(data-col) '  '; font-family: var(--mono); font-size: var(--t-mono); color: var(--ink-3); white-space: pre; }
+}
+
+/* ---------- Post 705: vibe coding vs. agentic engineering ---------- */
+/* Fig. 705-1: lifecycle as three aligned columns. The agent column is dashed (a tool), the engineer column solid (accountable). */
+.aglife__head,
+.aglife__stage { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 1fr); gap: var(--s3); }
+.aglife__head { padding-top: var(--s3); color: var(--ink-3); }
+.aglife__stages { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: var(--s2); }
+.aglife__stage { align-items: stretch; font-size: var(--t-small); line-height: 1.45; }
+.aglife__name { display: flex; gap: var(--s2); align-items: baseline; padding: var(--s2) 0; font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.aglife__name .mono { color: var(--ink-3); font-weight: 400; }
+.aglife__agent,
+.aglife__human { padding: var(--s2) var(--s3); color: var(--ink-2); min-width: 0; }
+.aglife__agent { border: 1px dashed var(--blue); }
+.aglife__human { border: 1px solid var(--ink); color: var(--ink); }
+.aglife__who { display: none; }
+.aglife__back { margin-top: var(--s3); color: var(--ink-3); }
+.aglife__back::before { content: '↻ '; }
+
+@media (max-width: 639px) {
+  .aglife__head { display: none; }
+  .aglife__stages { gap: var(--s4); }
+  .aglife__stage { grid-template-columns: 1fr; gap: var(--s1); }
+  .aglife__name { padding: 0; }
+  .aglife__who { display: block; color: var(--ink-3); margin-bottom: 2px; }
+}
+
+/* Fig. 705-2: one preview environment fans out to five parallel checks, which all converge on the merge. */
+.agpar__flow { display: grid; grid-template-columns: 8rem minmax(0, 1fr) 8rem; gap: var(--s5); align-items: center; margin-top: var(--s4); }
+.agpar__node { position: relative; margin: 0; padding: var(--s3); border: 1px solid var(--ink); border-top: 3px solid var(--ink); font-size: var(--t-small); font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.agpar__node.is-end { border-top-color: var(--blue); }
+.agpar__node::after { content: '→'; position: absolute; right: calc(-1 * var(--s5)); top: 50%; width: var(--s5); transform: translateY(-50%); text-align: center; color: var(--ink-3); font-weight: 400; }
+.agpar__node.is-end::after { content: none; }
+.agpar__lanes { list-style: none; margin: 0; padding: 0 0 0 var(--s3); display: grid; gap: var(--s2); border-left: 2px solid var(--rule); border-right: 2px solid var(--rule); padding-right: var(--s3); position: relative; }
+.agpar__lanes::after { content: '→'; position: absolute; right: calc(-1 * var(--s5)); top: 50%; width: var(--s5); transform: translateY(-50%); text-align: center; color: var(--ink-3); }
+.agpar__lane { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 2px var(--s3); align-items: start; padding: var(--s2) var(--s3); border: 1px dashed var(--blue); font-size: var(--t-small); line-height: 1.45; }
+.agpar__lane.is-human { border: 1px solid var(--ink); }
+.agpar__name { font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.agpar__what { grid-column: 2; grid-row: 1 / span 2; color: var(--ink-2); }
+.agpar__who { grid-column: 1; grid-row: 2; color: var(--ink-3); }
+.agpar__back { margin-top: var(--s3); color: var(--ink-3); }
+.agpar__back::before { content: '↻ '; }
+
+@media (max-width: 899px) {
+  .agpar__flow { grid-template-columns: 1fr; gap: var(--s5); }
+  .agpar__node::after,
+  .agpar__lanes::after { content: '↓'; right: auto; left: var(--s3); top: auto; bottom: calc(-1 * var(--s5)); transform: none; width: auto; height: var(--s5); line-height: var(--s5); }
+  .agpar__lanes { border-right: 0; padding-right: 0; }
+  .agpar__lane { grid-template-columns: 1fr; }
+  .agpar__what { grid-column: 1; grid-row: auto; }
+  .agpar__who { grid-row: auto; }
+}
+
+/* ---------- Post 707: loop engineering ---------- */
+/* Fig. 707-1: the loop as six steps. Dashed = the inner loop an agent can repeat; solid = a person decides. */
+.loopfig__steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+.loopfig__step { display: flex; flex-direction: column; padding: var(--s3); border: 1px solid var(--ink); font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); min-width: 0; }
+.loopfig__step.is-agent { border: 1px dashed var(--blue); }
+.loopfig__name,
+.loopflow__name { display: flex; gap: var(--s2); align-items: baseline; margin-bottom: var(--s1); font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.loopfig__name .mono,
+.loopflow__name .mono { color: var(--ink-3); font-weight: 400; }
+.loopfig__who { margin-top: auto; padding-top: var(--s2); color: var(--ink-3); }
+.loopfig__back { margin-top: var(--s3); color: var(--ink-3); }
+.loopfig__back::before { content: '↻ '; }
+
+/* Fig. 707-4: ten steps in one column, each tagged with who closes it. */
+.loopflow__steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s2); }
+.loopflow__step { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) 6.5rem; gap: var(--s3); align-items: baseline; padding: var(--s2) var(--s3); border: 1px solid var(--ink); font-size: var(--t-small); line-height: 1.45; }
+.loopflow__step.is-agent { border: 1px dashed var(--blue); }
+.loopflow__name { margin-bottom: 0; }
+.loopflow__what { color: var(--ink-2); }
+.loopflow__who { color: var(--ink-3); text-align: right; }
+
+@media (max-width: 899px) {
+  .loopfig__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .loopflow__step { grid-template-columns: 1fr; gap: var(--s1); }
+  .loopflow__who { text-align: left; }
+}
+@media (max-width: 639px) {
+  .loopfig__steps { grid-template-columns: 1fr; }
+}
