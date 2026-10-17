@@ -8,8 +8,10 @@ import { metadata as aiCurveMeta } from './posts/ai-learning-curve-future-of-wor
 import { metadata as codeReviewMeta } from './posts/code-review-in-the-ai-era';
 import { metadata as vibeAgenticMeta } from './posts/vibe-coding-vs-agentic-engineering';
 import { metadata as loopMeta } from './posts/loop-engineering-feedback-loops';
+import { metadata as speedQualityMeta } from './posts/speed-vs-quality-software-engineering';
 
 export const posts = [
+  { ...speedQualityMeta, no: '708', published: '2026-10-17', modified: '2026-10-17' },
   { ...loopMeta, no: '707', published: '2026-10-16', modified: '2026-10-16' },
   {
   slug: 'the-architecture-you-dont-build',
@@ -3207,6 +3209,7 @@ export const journeys = [
       'code-review-in-the-ai-era',
       'vibe-coding-vs-agentic-engineering',
       'loop-engineering-feedback-loops',
+      'speed-vs-quality-software-engineering',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
       'building-federal-government-applications',

@@ -1384,3 +1384,59 @@
 @media (max-width: 639px) {
   .loopfig__steps { grid-template-columns: 1fr; }
 }
+
+/* Fig. 708-1: match the process to the risk. A 2x2 with real axes; each cell also names its quadrant in text,
+   so position is never the only cue. The costly, hard-to-undo cell carries the accent. */
+.sqrisk__frame { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: var(--s2); margin-top: var(--s4); }
+.sqrisk__axis { color: var(--ink-3); }
+.sqrisk__axis.is-y { grid-row: 1; grid-column: 1; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right; }
+.sqrisk__axis.is-x { grid-row: 2; grid-column: 2; text-align: right; }
+.sqrisk__grid { grid-row: 1; grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-left: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.sqrisk__cell { min-width: 0; display: grid; gap: var(--s1); align-content: start; padding: var(--s4); border-top: 1px solid var(--rule-soft); border-right: 1px solid var(--rule-soft); background: var(--paper); }
+.sqrisk__cell.is-slow { background: var(--paper-sunk); border-top: 3px solid var(--blue); }
+/* The cells are <section>s inside a prose <section>; cancel the article's between-sections spacing. */
+.post__prose .sqrisk__cell + .sqrisk__cell { margin-top: 0; }
+.sqrisk__tag { color: var(--ink-3); }
+.sqrisk__name { font-size: 1.125rem; font-weight: 650; font-stretch: 92%; color: var(--ink); margin: 0; }
+.is-slow .sqrisk__name { color: var(--blue); }
+.sqrisk__rule { margin: 0; font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); }
+.sqrisk__eg { margin: var(--s2) 0 0; font-size: var(--t-small); color: var(--ink); }
+.sqrisk__eg .label { display: block; color: var(--ink-3); }
+
+@media (max-width: 639px) {
+  .sqrisk__frame { grid-template-columns: minmax(0, 1fr); }
+  .sqrisk__axis { display: none; }
+  .sqrisk__grid { grid-column: 1; grid-template-columns: 1fr; border-left: 0; border-bottom: 0; }
+  .sqrisk__cell { border-right: 0; padding-inline: 0; background: none; }
+  .sqrisk__cell.is-slow { background: none; }
+}
+
+/* Fig. 708-2: one big release vs small releases. */
+.sqrelease__scroll { overflow-x: auto; }
+.sqrelease__scroll .sqrelease { min-width: 30rem; }
+.sqrelease__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.sqrelease td.is-better { color: var(--ink); font-weight: 560; }
+.sqrelease thead th:last-child { color: var(--blue); }
+
+/* Fig. 708-3: deadline levers stepping down toward a fixed quality floor. */
+.sqlevers__steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s2); }
+.sqlevers__step { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--s3); padding: var(--s3); margin-left: calc(var(--i) * var(--s5)); border: 1px solid var(--rule-soft); border-left: 3px solid var(--ink); background: var(--paper); }
+.sqlevers__no { grid-row: span 2; color: var(--ink-3); padding-top: 2px; }
+.sqlevers__name { font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.sqlevers__note { font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); }
+.sqlevers__floor { margin-top: var(--s4); padding: var(--s3) var(--s4); background: var(--blue); color: var(--on-blue); }
+.post__prose .sqlevers__floor-name, .post__prose .sqlevers__floor-list { color: var(--on-blue); }
+.sqlevers__floor-name { margin: 0; font-weight: 650; font-stretch: 92%; }
+.sqlevers__floor-list { list-style: none; margin: var(--s2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); font-size: var(--t-small); }
+.sqlevers__floor-list li { padding-left: var(--s3); border-left: 1px solid var(--on-blue-rule); }
+.sqlevers__floor-list li:first-child { padding-left: 0; border-left: 0; }
+
+@media (max-width: 639px) {
+  .sqlevers__step { margin-left: 0; }
+  .sqlevers__floor-list { display: grid; }
+  .sqlevers__floor-list li { padding-left: 0; border-left: 0; }
+}
+
+/* Example wording to reuse, set apart from the author's own prose. */
+.post__prose .post__quote { margin: var(--s4) 0; padding: var(--s1) 0 var(--s1) var(--s4); border-left: 3px solid var(--rule-soft); color: var(--ink-2); }
+.post__quote p { margin: 0; }
