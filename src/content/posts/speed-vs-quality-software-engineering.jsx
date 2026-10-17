@@ -19,7 +19,7 @@ export const metadata = {
   dek:
     'Speed to market matters. So does engineering quality. The hard part is knowing which one a given piece of work needs more, and making that tradeoff without making the next release harder.',
   summary:
-    'Why speed to market matters; what quality means beyond perfect code; four reasons the balance is hard; a risk matrix for matching process to the change; why small releases win on speed and safety; five principles, including a quality floor and cutting scope first; what AI changes; and how to present tradeoffs to leadership.',
+    'Why speed to market matters; what quality means beyond perfect code; four reasons the balance is hard; a risk matrix for matching process to the change; why small releases win on speed and safety; five principles, including a quality floor and cutting scope first; what AI changes; and how to put tradeoffs to leadership as options.',
   topics: ['Leadership', 'Delivery', 'Engineering judgment'],
   related: [
     { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Why smaller stories and pull requests ship faster' },
