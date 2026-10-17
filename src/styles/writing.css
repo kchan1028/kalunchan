@@ -1440,3 +1440,47 @@
 /* Example wording to reuse, set apart from the author's own prose. */
 .post__prose .post__quote { margin: var(--s4) 0; padding: var(--s1) 0 var(--s1) var(--s4); border-left: 3px solid var(--rule-soft); color: var(--ink-2); }
 .post__quote p { margin: 0; }
+
+/* Fig. 709-1: two learning paths. One column per stage; the row labels sit in a left column and the two mark rows
+   line up across stages through subgrid. A skipped stage shows a hollow dot and the word "skipped". */
+.learnpaths__grid { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: var(--s3); margin-top: var(--s4); }
+.learnpaths__rowname { grid-column: 1; align-self: center; color: var(--ink-3); }
+.learnpaths__rowname.is-full { grid-row: 2; }
+.learnpaths__rowname.is-fast { grid-row: 3; }
+.learnpaths__stages { grid-column: 2; grid-row: 1 / span 3; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: subgrid; list-style: none; margin: 0; padding: 0; }
+.learnpaths__stage { display: grid; grid-template-rows: subgrid; grid-row: span 3; min-width: 0; }
+.post__prose .learnpaths__stage { margin: 0; }
+.learnpaths__head { display: grid; align-content: start; gap: 2px; padding: 0 var(--s2) var(--s3) 0; }
+.learnpaths__no { color: var(--ink-3); }
+.learnpaths__name { font-weight: 650; font-stretch: 92%; color: var(--ink); overflow-wrap: anywhere; }
+.learnpaths__note { font-size: var(--t-small); line-height: 1.4; color: var(--ink-2); }
+.learnpaths__mark { position: relative; display: flex; align-items: center; gap: var(--s1); min-height: 2.5rem; }
+/* The track: a line through each row, so a path reads left to right. */
+.learnpaths__mark::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 2px solid var(--ink); z-index: 0; }
+.learnpaths__mark.is-off::before { border-top: 2px dashed var(--ink-3); opacity: .6; }
+.learnpaths__stage:last-child .learnpaths__mark::before { display: none; }
+.learnpaths__dot { position: relative; z-index: 1; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 2px solid var(--blue); flex: none; }
+.learnpaths__mark.is-off .learnpaths__dot { background: var(--paper); border: 2px dashed var(--ink-3); }
+.learnpaths__marklabel { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.learnpaths__skip { position: relative; z-index: 1; padding: 0 4px; background: var(--paper); color: var(--ink-3); }
+.learnpaths__loop { display: flex; gap: var(--s2); align-items: baseline; margin: var(--s3) 0 0; font-size: var(--t-small); color: var(--ink-2); }
+.learnpaths__loopicon { color: var(--blue); font-size: 1.25rem; line-height: 1; }
+
+@media (max-width: 639px) {
+  .learnpaths__grid { display: block; }
+  .learnpaths__rowname { display: none; }
+  .learnpaths__stages { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: var(--s3); }
+  .learnpaths__stage { grid-template-rows: none; grid-row: auto; grid-template-columns: auto auto; justify-content: start; gap: var(--s2) var(--s4); padding-bottom: var(--s3); border-bottom: 1px solid var(--rule-soft); }
+  .learnpaths__head { grid-column: 1 / -1; padding: 0; }
+  .learnpaths__mark { gap: var(--s1); min-height: 0; }
+  .learnpaths__mark::before { display: none; }
+  /* On a phone the row labels move into each stage. */
+  .learnpaths__marklabel { position: static; width: auto; height: auto; overflow: visible; clip: auto; color: var(--ink-3); }
+  .learnpaths__skip { padding: 0; }
+}
+
+/* Fig. 709-2: which path for which situation. */
+.learnchoose__scroll { overflow-x: auto; }
+.learnchoose__scroll .learnchoose { min-width: 32rem; }
+.learnchoose__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.learnchoose td.is-full { color: var(--blue); font-weight: 600; }
