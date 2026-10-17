@@ -9,8 +9,10 @@ import { metadata as codeReviewMeta } from './posts/code-review-in-the-ai-era';
 import { metadata as vibeAgenticMeta } from './posts/vibe-coding-vs-agentic-engineering';
 import { metadata as loopMeta } from './posts/loop-engineering-feedback-loops';
 import { metadata as speedQualityMeta } from './posts/speed-vs-quality-software-engineering';
+import { metadata as learnFasterMeta } from './posts/how-i-learn-faster-with-ai';
 
 export const posts = [
+  { ...learnFasterMeta, no: '709', published: '2026-10-17', modified: '2026-10-17' },
   { ...speedQualityMeta, no: '708', published: '2026-10-17', modified: '2026-10-17' },
   { ...loopMeta, no: '707', published: '2026-10-16', modified: '2026-10-16' },
   {
@@ -3242,6 +3244,7 @@ export const journeys = [
     slugs: [
       ...(import.meta.env.DEV ? [hermesLearningDraft.slug] : []),
       'you-dont-need-to-remember-everything',
+      'how-i-learn-faster-with-ai',
       'from-dos-to-ai-thirty-years-of-technology',
       'talking-to-ai-in-a-terminal',
       'why-i-build-my-own-developer-tools',
