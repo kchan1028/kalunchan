@@ -12,8 +12,12 @@ import { metadata as speedQualityMeta } from './posts/speed-vs-quality-software-
 import { metadata as learnFasterMeta } from './posts/how-i-learn-faster-with-ai';
 import { metadata as processMeta } from './posts/when-to-add-engineering-process';
 import { metadata as aolAiMeta } from './posts/from-aol-to-ai-lowering-the-barrier';
+import { metadata as modernizeMeta } from './posts/modernizing-public-sector-applications';
+import { metadata as docIntelMeta } from './posts/building-document-intelligence-workflows';
 
 export const posts = [
+  { ...docIntelMeta, no: '713', published: '2026-10-18', modified: '2026-10-18' },
+  { ...modernizeMeta, no: '712', published: '2026-10-18', modified: '2026-10-18' },
   { ...aolAiMeta, no: '711', published: '2026-10-18', modified: '2026-10-18' },
   { ...processMeta, no: '710', published: '2026-10-18', modified: '2026-10-18' },
   { ...learnFasterMeta, no: '709', published: '2026-10-17', modified: '2026-10-17' },
@@ -253,7 +257,7 @@ export const posts = [
       'What forward engineering is and where meaning gets lost between steps; why waterfall, Agile and iterative development are all forward engineering at different slice sizes; reverse engineering as the first half of every modernization, with a public-service migration, a WordPress-to-Rails re-platform and a data center move; what faster implementation does and does not change; why speeding up code moves the bottleneck to review, testing, security and maintenance; and what that asks of engineering leaders.',
     topics: ['Architecture', 'Engineering judgment', 'Leadership'],
     related: [
-      { to: '/work/public-service-modernization/', label: 'Design example: modernizing a public service without a rewrite' },
+      { to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications without a big-bang rewrite' },
       { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller user stories and pull requests' },
       { to: '/writing/software-architecture-lessons-from-different-systems/', label: 'Architecture lessons from very different systems' },
       { to: '/writing/what-sprint-carryover-is-telling-you/', label: 'What sprint carryover is telling you' },
@@ -307,15 +311,15 @@ export const posts = [
     no: '696',
     title: 'AI Agents Are Easy to Demonstrate. Making Them Reliable in Production Is Hard.',
     shortTitle: 'Making AI agents reliable in production',
-    seoTitle: 'Making AI Agents Reliable in Production — Ka Lun Chan',
+    seoTitle: 'AI Agents in Production: Reliability, Evaluation and Cost — Ka Lun Chan',
     description:
-      'An AI agent that works once is easy. One that runs daily, handles failures, controls cost, protects data and earns trust is distributed systems engineering.',
+      'An AI agent that works once is easy. Running it daily means retries, evaluation, permissions, human approval and cost control: distributed systems engineering with a model in it.',
     teaser:
-      'Retries, idempotency, missed schedules, state, observability, model cost and least privilege: what an agent needs before it runs unattended, and eight questions I would ask a team.',
+      'Retries, idempotency, recovery, evaluation, model cost, least privilege and human approval: what an agent needs before it runs unattended, how to tell whether it fits the problem, and nine questions I would ask a team.',
     dek:
       'Getting an agent to work in an afternoon is delightful. Getting it to run every morning without me, safely and within budget, is the same engineering I have done throughout my career, with a model in the middle.',
     summary:
-      'Part three of Still Building: the gap between an agent demo and a production agent; failures, retries, idempotency, missed runs and state as distributed-systems problems; cost as an architectural choice, including when FedPath deliberately uses no AI; scoping credentials and tools; and a readiness checklist for engineering leaders.',
+      'Part three of Still Building: the gap between an agent demo and a production agent; prototype, MVP and production as different questions; failures, retries, idempotency, missed runs, recovery and state as distributed-systems problems; evaluating non-deterministic output; cost and operating overhead as architectural choices, including when FedPath deliberately uses no AI; scoping credentials and tools; designing human approval; when agentic AI fits a business problem; and a readiness checklist for engineering leaders.',
     topics: ['AI', 'Architecture', 'Leadership'],
     related: [
       { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'Part 1: From Cisco routers to AI agents' },
@@ -324,10 +328,11 @@ export const posts = [
       { to: '/writing/open-source-voip-distributed-systems-lessons/', label: 'What open-source VoIP taught me about distributed systems' },
       { to: '/projects/fedpath/', label: 'FedPath: transparent scoring, no AI on solicitations' },
       { to: '/writing/hidden-cost-of-ai-coding/', label: 'What AI coding really costs, and who it costs most' },
+      { to: '/writing/building-software-before-and-after-ai/', label: 'I used to build everything myself: building before and after AI' },
     ],
-    minutes: 9,
+    minutes: 12,
     published: '2026-10-11',
-    modified: '2026-10-11',
+    modified: '2026-10-18',
     keywords: [
       'AI agents in production',
       'AI agent reliability',
@@ -337,6 +342,10 @@ export const posts = [
       'AI agent security least privilege',
       'multi-provider LLM architecture',
       'engineering leadership AI agents',
+      'AI agent evaluation',
+      'human in the loop AI agents',
+      'agentic AI for business',
+      'AI prototype vs production',
     ],
     about: [
       { '@type': 'Thing', name: 'Intelligent agent', sameAs: 'https://en.wikipedia.org/wiki/Intelligent_agent' },
@@ -357,6 +366,10 @@ export const posts = [
       {
         q: 'How do you make an AI agent reliable?',
         a: 'Treat it as a distributed system: timeouts and bounded retries with exponential backoff on every model and tool call, idempotent side effects keyed so a repeat changes nothing, detection of missed runs, durable state between runs, and observability of what ran, what it cost and whether the result passed a check.',
+      },
+      {
+        q: 'How should an engineering leader decide whether agentic AI fits a problem?',
+        a: 'Agentic AI fits when the task needs judgment over unstructured input, the steps vary, a wrong answer is cheap to catch or reverse, and the volume justifies the build and running cost. It fits poorly when the rules can be written down, decisions must be explained to a customer or regulator, mistakes are expensive and hard to detect, or volume is too low to repay the operational work. Often the best design is deterministic code plus a model for the one step that needs judgment, with a person approving what matters.',
       },
       {
         q: 'When should you not use AI in an agent?',
@@ -816,40 +829,44 @@ export const posts = [
     ],
   },
   {
-    slug: 'building-federal-government-applications',
+    slug: 'building-public-sector-applications',
     no: '688',
-    title: 'What Building Federal Government Applications Taught Me About Software Engineering',
-    shortTitle: 'What building federal government applications taught me',
-    seoTitle: 'Building Federal Government Applications: FedRAMP, ATO, 508 — Ka Lun Chan',
+    title: 'What Building Public-Sector Applications Taught Me About Software Engineering',
+    shortTitle: 'What building public-sector applications taught me',
+    seoTitle: 'Building Public-Sector Applications: FedRAMP, ATO, 508 — Ka Lun Chan',
     description:
-      'From startups to federal certification systems: what FedRAMP, Authority to Operate, Section 508, Plain Writing and continuous monitoring taught me about engineering that must be demonstrably secure, accessible and maintainable.',
+      'From startups to public-sector certification systems: what FedRAMP, Authority to Operate, Section 508, Plain Writing and continuous monitoring taught me about engineering that must be demonstrably secure, accessible and maintainable.',
     teaser:
       'The stack was familiar. Everything around it changed: demonstrable security, an Authorizing Official instead of a deploy button, accessibility in the acceptance criteria, plain language in every message, and change you can trace.',
     dek:
-      'From startup development to supporting federal systems: what I learned about FedRAMP, Authority to Operate, Section 508, Plain Writing, security and building software that must meet government requirements, and why the discipline makes commercial software better too.',
+      'From startup development to supporting public-sector systems: what I learned about FedRAMP, Authority to Operate, Section 508, Plain Writing, security and building software that must meet government requirements, and why the discipline makes commercial software better too.',
     summary:
-      'Federal certification systems on a familiar stack; the difference between implementing a control and proving it operates; what an Authority to Operate asks of an engineering team; Section 508 as an engineering responsibility; Plain Writing as a product problem; how security controls shape architecture; continuous monitoring folded into normal operations; change management without bureaucracy; a one-page map of the frameworks; and what it changed about leading engineers.',
+      'Public-sector certification systems on a familiar stack; why a form is rarely just a form; the difference between implementing a control and proving it operates; what an Authority to Operate asks of an engineering team; Section 508 as an engineering responsibility; Plain Writing as a product problem; authorization, least privilege and audit logging in the architecture; designing for external systems that behave unexpectedly; continuous monitoring; the difference between a working feature and an approvable one; the leadership habits that kept delivery predictable; a one-page map of the frameworks; and lessons for startups, SaaS and regulated teams.',
     topics: ['Leadership', 'Architecture', 'Engineering judgment'],
     related: [
-      { to: '/work/public-service-modernization/', label: 'Design example: public-sector modernization with security and accessibility as release gates' },
+      { to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications is more than rewriting code' },
       { to: '/writing/network-security-before-devsecops/', label: 'Where my security habits come from: network security before DevSecOps' },
       { to: '/writing/api-architecture-lessons/#security', label: 'Authorization is enforced on the server, on the record' },
       { to: '/projects/fedpath/', label: 'FedPath: finding and evaluating federal contracts' },
-      { to: '/expertise/#gov', label: 'Government technology and federal compliance' },
+      { to: '/expertise/#gov', label: 'Government technology and public-sector compliance' },
+      { to: '/writing/when-to-add-engineering-process/', label: 'When process helps an engineering team, and when it doesn’t' },
     ],
-    minutes: 11,
+    minutes: 14,
     published: '2026-10-09',
-    modified: '2026-10-09',
+    modified: '2026-10-18',
     keywords: [
-      'building federal government applications',
+      'building public-sector applications',
+      'government API integration',
+      'object-level authorization public-sector systems',
+      'audit logging government applications',
       'FedRAMP for engineers',
       'Authority to Operate engineering',
       'Section 508 accessibility web applications',
       'Plain Writing Act software',
       'NIST SP 800-53 controls engineering team',
-      'continuous monitoring federal systems',
+      'continuous monitoring public-sector systems',
       'government software engineering lessons',
-      'federal certification systems engineering',
+      'public-sector certification systems engineering',
       'regulated environment engineering leadership',
     ],
     about: [
@@ -876,6 +893,10 @@ export const posts = [
       {
         q: 'Why is Section 508 an engineering responsibility rather than a design one?',
         a: 'Because a feature can pass every functional test and still be unusable with a screen reader or a keyboard. Labelled fields, understandable validation errors, sufficient contrast, keyboard-operable controls and correct focus management are implemented in code, tested by people as well as tools, and belong in the acceptance criteria.',
+      },
+      {
+        q: 'How should a public-sector application handle external government system integrations?',
+        a: 'Assume the other system will change or fail without warning. Validate responses before trusting them, treat missing data as missing rather than as a default value, alert on authentication failures, time out and retry safely, record what the external system returned, and tell users plainly when a dependency is unavailable. Contract tests against recorded responses catch changes in the data’s shape.',
       },
       {
         q: 'Do government engineering disciplines apply to commercial software?',
@@ -1158,15 +1179,15 @@ export const posts = [
     no: '683',
     title: 'The Hidden Cost of Software Architecture: Why Scaling Too Early Is Expensive',
     shortTitle: 'The hidden cost of software architecture',
-    seoTitle: 'The Hidden Cost of Software Architecture — Ka Lun Chan',
+    seoTitle: 'Hidden Cost of Software Architecture: Scaling Too Early — Ka Lun Chan',
     description:
-      'Microservices, Kafka, managed services, database habits and premature scale all show up on the monthly bill. How I connect architecture decisions to what a system costs to run.',
+      'Microservices, Kafka, Kubernetes, database habits and premature scale all show up on the monthly bill. How I weigh architecture against operating cost, team size and business needs.',
     teaser:
       'How I compare service boundaries, event streaming, hosting and capacity decisions against infrastructure and support costs.',
     dek:
       'A design needs an operating budget as well as a build estimate. Service boundaries, storage and capacity choices determine what the business pays and who has to support the system.',
     summary:
-      'How microservices multiply the things that cost money, why Kafka is also a team, when managed services stop being cheaper than self-hosting, where the database leaks money, what scaling for users you don’t have costs, and the five inputs and three decisions I use to connect architecture to operating expense.',
+      'The recurring costs every component adds; modular monolith or microservices, and when separate services earn their cost; why Kafka is also a team; managed or self-hosted; where the database leaks money; scaling for users you don’t have; what an AWS re-platform with about 30% lower costs taught me about design; why architecture should fit the team; architecture as a business decision; and the five inputs and three decisions I use.',
     topics: ['Architecture', 'Engineering judgment', 'Leadership'],
     related: [
       { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning: what carrier networks taught me about scaling cloud infrastructure' },
@@ -1175,12 +1196,19 @@ export const posts = [
       { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },
       { to: '/expertise/#capacity', label: 'Infrastructure scaling, capacity planning and cost optimization' },
       { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'Infrastructure costs from seven seats, including the founder’s' },
+      { to: '/writing/the-architecture-you-dont-build/', label: 'The architecture you don’t build' },
     ],
-    minutes: 7,
+    minutes: 11,
     published: '2026-10-09',
-    modified: '2026-10-09',
+    modified: '2026-10-18',
     keywords: [
       'hidden cost of software architecture',
+      'monolith vs microservices',
+      'modular monolith',
+      'premature scaling',
+      'software architecture tradeoffs',
+      'engineering team size and architecture',
+      'cloud infrastructure costs',
       'cost of microservices',
       'scaling too early',
       'premature optimization infrastructure cost',
@@ -1211,6 +1239,10 @@ export const posts = [
         a: 'Because capacity in the cloud is easy to add later and costs money every month until it is needed. Multi-region, service meshes or Kafka for a product with a few thousand users spend cash and engineering attention a young product needs elsewhere. What is hard to change later is the data model and the boundaries, so that is where early effort belongs.',
       },
       {
+        q: 'When is a modular monolith better than microservices?',
+        a: 'When one team or a few teams ship a product with one release cadence and one scaling profile. Separate services pay for themselves when part of the system must scale very differently, sits behind a different security or compliance boundary, must keep working when the rest fails, or belongs to a team that needs to release independently. Ka Lun Chan’s co-founded platform grew past 400,000 users as a modular monolith.',
+      },
+      {
         q: 'When are managed services more expensive than self-hosting?',
         a: 'For a small team the managed premium is almost always cheaper than the engineer-hours it replaces. The math flips for large, steady workloads where the premium approaches an engineer’s salary and the team exists to carry the pager. The line moves as the workload and the team change, so the decision needs revisiting.',
       },
@@ -1221,15 +1253,15 @@ export const posts = [
     no: '682',
     title: 'Capacity Planning: What Carrier Networks Taught Me About Scaling Cloud Infrastructure',
     shortTitle: 'Capacity planning, from carrier networks to cloud',
-    seoTitle: 'Capacity Planning From Carrier Networks to Cloud — Ka Lun Chan',
+    seoTitle: 'Cloud Capacity Planning Lessons From Carrier Networks — Ka Lun Chan',
     description:
-      'Capacity planning on a 2,000-collocation carrier network, VoIP servers behind millions of minutes, geo-routed media paths, and AWS bills: the method that survived every generation of infrastructure.',
+      'Capacity planning from SNMP forecasting on a 2,000-collocation carrier network and VoIP servers behind millions of minutes to AWS autoscaling, database capacity and cost control.',
     teaser:
       'From purchase orders and technicians in trucks to a Terraform plan and a monthly invoice: forecasting demand, finding the bottleneck, routing media by location, and cutting cloud cost without cutting reliability.',
     dek:
       'When capacity was a purchase order, being wrong meant congestion or dark hardware. In the cloud, being wrong means a bill. The method in between did not change: measure first, plan from data, know what fills first, and count the engineers as capacity too.',
     summary:
-      'Forecasting carrier network capacity from measured utilization across 2,000+ collocations, planning VoIP servers behind millions of minutes a month, choosing media paths by caller location to improve quality and cut bandwidth cost, moving a platform from one data center to cloud regions as capacity followed revenue, and bringing a publishing platform’s AWS bill down by about 30%. Plus why engineering capacity is the constraint most dashboards miss.',
+      'Forecasting carrier network capacity from measured utilization across 2,000+ collocations, planning VoIP servers behind millions of minutes a month, choosing media paths by caller location to improve quality and cut bandwidth cost, moving a platform from one data center to cloud regions as capacity followed revenue, and the infrastructure improvements behind a publishing platform’s AWS costs about 30% lower. Then forecasting versus autoscaling on AWS, database capacity and caching, the metrics I want on the dashboard including cost per unit of work, and why engineering capacity is the constraint most dashboards miss.',
     topics: ['Architecture', 'Leadership', 'Engineering judgment'],
     related: [
       { to: '/writing/hidden-cost-of-software-architecture/', label: 'The hidden cost of software architecture: scaling too early' },
@@ -1241,12 +1273,17 @@ export const posts = [
       { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What each layer, from carrier to founder, taught me about cost' },
       { to: '/writing/data-driven-engineering-network-voip-publishing/', label: 'The R program, the routing metrics and the publishing analytics behind the method' },
     ],
-    minutes: 9,
+    minutes: 12,
     published: '2026-10-09',
-    modified: '2026-10-09',
+    modified: '2026-10-18',
     keywords: [
       'capacity planning',
       'infrastructure capacity planning',
+      'cloud capacity planning',
+      'AWS capacity planning',
+      'network capacity forecasting',
+      'SNMP capacity monitoring',
+      'autoscaling vs capacity planning',
       'cloud cost optimization',
       'AWS cost reduction',
       'infrastructure scaling',
@@ -1277,6 +1314,10 @@ export const posts = [
       {
         q: 'How does capacity planning differ between physical infrastructure and the cloud?',
         a: 'The unit of capacity changed from routers and circuits to containers and instance sizes, lead time collapsed from months to minutes, and the cost of over-provisioning went from sunk hardware to a recurring bill. The method is unchanged: measure first, plan from data, decide headroom in advance, and know which resource fills first.',
+      },
+      {
+        q: 'Does autoscaling replace capacity planning?',
+        a: 'No. Autoscaling reacts after a metric crosses a threshold, new capacity takes time to start, and the database and other limits such as connections, Lambda concurrency and third-party rate limits usually do not scale the same way. Forecast the baseline and known peaks from history, let autoscaling handle the variation, and set maximums as a cost guardrail.',
       },
       {
         q: 'How did Ka Lun Chan reduce AWS costs?',
@@ -1443,7 +1484,7 @@ export const posts = [
     dek:
       'How working in carrier networks, helping launch a managed security service, and training a technical support team shaped the way I approach software and infrastructure security today.',
     summary:
-      'Security as a thread through a whole career: router ACLs in carrier operations, one of the first three people supporting a NetScreen managed firewall service, training the TAC, then AAA on voice platforms, authentication and authorization in applications, mobile apps as untrusted clients, IAM and Terraform in the cloud, federal security requirements, and what it means to lead with security as a release gate. With a staged timeline and a layer-by-layer explorer.',
+      'Security as a thread through a whole career: router ACLs in carrier operations, security before the tooling existed, the problems of running a managed service for many customers, one of the first three people supporting a NetScreen managed firewall service, training the TAC, then AAA on voice platforms, authentication and authorization in applications, mobile apps as untrusted clients, IAM and Terraform in the cloud, public-sector security requirements, and what it means to lead with security as a release gate, and why security stays an engineering responsibility when CI/CD automates the checks. With a staged timeline and a layer-by-layer explorer.',
     topics: ['Architecture', 'Leadership', 'Learning'],
     related: [
       { to: '/writing/api-architecture-lessons/#security', label: 'Authorization in API design: a valid token says nothing about the record' },
@@ -1452,12 +1493,12 @@ export const posts = [
       { to: '/writing/software-architecture-lessons-from-different-systems/', label: 'Architecture lessons that held across very different systems' },
       { to: '/expertise/#security', label: 'Security engineering, role by role' },
       { to: '/mentorship/', label: 'How I mentor engineers until they can replace me' },
-      { to: '/writing/building-federal-government-applications/', label: 'Security that has to be demonstrable: building federal applications' },
+      { to: '/writing/building-public-sector-applications/', label: 'Security that has to be demonstrable: building public-sector applications' },
       { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'The longer path: Cisco routers to AI agents' },
     ],
-    minutes: 11,
+    minutes: 13,
     published: '2026-10-09',
-    modified: '2026-10-09',
+    modified: '2026-10-18',
     keywords: [
       'network security engineering career',
       'Cisco ACL network security',
@@ -1471,6 +1512,9 @@ export const posts = [
       'object-level authorization',
       'mobile application security',
       'security before DevSecOps',
+      'DevSecOps principles',
+      'security as an engineering responsibility',
+      'multi-tenant security operations',
     ],
     about: [
       { '@type': 'Thing', name: 'Network security', sameAs: 'https://en.wikipedia.org/wiki/Network_security' },
@@ -1492,6 +1536,10 @@ export const posts = [
       { '@type': 'Thing', name: 'FedRAMP', sameAs: 'https://en.wikipedia.org/wiki/FedRAMP' },
     ],
     faq: [
+      {
+        q: 'Are DevSecOps principles new?',
+        a: 'The term is relatively recent. Most of the principles are older: deny by default, least privilege, careful change control, and the people who build and operate a system owning its security. What DevSecOps added is automation, such as dependency scanning, static analysis, infrastructure-as-code checks and secret detection in CI/CD. Automation makes those practices repeatable. Deciding the rules still takes someone who understands the system.',
+      },
       {
         q: 'Where did Ka Lun Chan’s security experience start?',
         a: 'In carrier network operations, writing access control lists on Cisco routers. When the carrier launched a managed firewall and VPN service on NetScreen products, he was one of the first three people supporting it in the Security Operations Center, and he later travelled to the East Coast to train the Technical Assistance Center to support it.',
@@ -1598,7 +1646,7 @@ export const posts = [
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#customers', label: 'Building for people the system wasn’t designed for' },
       { to: '/writing/berkeley-omnium-new-website-next-generation/', label: 'The new Berkeley Omnium site' },
       { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: call and directions first' },
-      { to: '/work/public-service-modernization/', label: 'Design example: accessibility as a release gate' },
+      { to: '/writing/modernizing-public-sector-applications/#requirements', label: 'Accessibility from the first slice of a modernization' },
     ],
     minutes: 7,
     image: { path: '/images/writing/ux-before-and-after-ai-og.jpg', width: 1200, height: 630, alt: 'I used to design every screen myself. Then: signup forms, phone menus, a reseller dashboard, the support line as a usability lab. Now: a direction, a layout, a phone in hand. The person using it is still the point.' },
@@ -1648,13 +1696,13 @@ export const posts = [
     slug: 'building-software-before-and-after-ai',
     no: '676',
     title: 'I Used to Build Everything Myself',
-    seoTitle: 'Software Development Before and After AI — Ka Lun Chan',
+    seoTitle: 'A Technical Founder on Building Software Before and After AI — Ka Lun Chan',
     description:
-      'I racked the servers and wrote the billing system for my first startup. Now I build with AI. What got easier, what didn’t, and why I still write code.',
+      'I racked the servers and wrote the billing system for my first startup. Now I build with AI. What got faster, what still takes judgment, and how it shaped how I lead.',
     dek:
       'From a data center I cabled myself and a VoIP platform built on Asterisk and OpenSIPS, to shipping products with an AI assistant in the terminal. What changed, and what the years in the data center still pay for.',
     summary:
-      'Building a bootstrapped communications startup by hand, the open-source VoIP stack and the failures it taught, how AI-assisted development changed the way I build FedPath, Useful Little Tools and client work, and the six things that haven’t changed.',
+      'Building a bootstrapped communications startup by hand and letting business constraints make the product decisions, the open-source VoIP stack and the failures it taught, what doing every job changed about how I lead, how AI-assisted development changed the way I build FedPath, Useful Little Tools and client work, why faster building doesn’t mean better deciding, and why I still write code.',
     topics: ['Founder story', 'AI', 'Learning'],
     related: [
       { to: '/writing/founding-a-startup-isnt-easy/', label: 'Being every department at once' },
@@ -1669,11 +1717,12 @@ export const posts = [
       { to: '/writing/building-an-ai-job-search-agent-with-hermes/', label: 'The next experiment: a self-hosted job-search agent on Hermes' },
       { to: '/writing/why-i-still-write-code/', label: 'Why I still write code' },
       { to: '/writing/hidden-cost-of-ai-coding/', label: 'When AI coding costs more than a human engineer' },
+      { to: '/writing/ai-agents-reliable-in-production/', label: 'Working code versus a system you can leave running: AI agents in production' },
     ],
-    minutes: 7,
+    minutes: 10,
     image: { path: '/images/writing/before-and-after-ai-og.jpg', width: 1200, height: 630, alt: 'I used to build everything myself. Then: servers, cables, Asterisk, OpenSIPS, a billing system. Now: an idea, a conversation, working software. Same decisions.' },
     published: '2026-10-09',
-    modified: '2026-10-09',
+    modified: '2026-10-18',
     keywords: [
       'how AI has changed software development',
       'software engineering before AI',
@@ -1685,6 +1734,9 @@ export const posts = [
       'open-source VoIP startup',
       'Asterisk OpenSIPS platform',
       'technical founder lessons',
+      'technical founder experience',
+      'building a software startup',
+      'building software from scratch',
     ],
     about: [
       { '@type': 'Thing', name: 'AI-assisted software development' },
@@ -2094,10 +2146,10 @@ export const posts = [
     related: [
       { to: '/writing/event-driven-architecture-kafka-tradeoffs/', label: 'Event-driven architecture with Kafka: the tradeoffs' },
       { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },
-      { to: '/work/public-service-modernization/', label: 'Design example: modernizing a public-sector service' },
+      { to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications' },
       { to: '/writing/specialization-beyond-your-own-code/', label: 'Depth in one area, enough breadth to investigate' },
       { to: '/writing/network-security-before-devsecops/', label: 'Where my authorization habits come from: router ACLs' },
-      { to: '/writing/building-federal-government-applications/', label: 'What federal applications demand of authorization and audit' },
+      { to: '/writing/building-public-sector-applications/', label: 'What public-sector applications demand of authorization and audit' },
     ],
     minutes: 8,
     published: '2026-10-07',
@@ -2264,13 +2316,13 @@ export const posts = [
     slug: 'open-source-voip-distributed-systems-lessons',
     no: '666',
     title: 'What Open Source VoIP Taught Me About Distributed Systems Before We Called Them Distributed Systems',
-    seoTitle: 'Open Source VoIP Lessons on Distributed Systems — Ka Lun Chan',
+    seoTitle: 'Distributed Systems Lessons From Asterisk and OpenSIPS VoIP — Ka Lun Chan',
     description:
-      'Asterisk, OpenSIPS, Python AGI, billing and geolocation routing: what VoIP taught me about partial failure, retries, idempotency and reconciliation.',
+      'Asterisk, OpenSIPS, MediaProxy, Python AGI, billing and carrier routing: what VoIP taught me about partial failure, idempotency, latency, reconciliation and margins.',
     dek:
       'Partial failure, routing, retries and records that had to reconcile were everyday VoIP problems. Working with Asterisk, OpenSIPS, Python AGI and billing taught me the questions I still ask before choosing any architecture.',
     summary:
-      'How signaling, call handling, AGI business logic and billing split one call across boundaries, a hypothetical double-charge failure, routing as a business decision, why retries need context, reconciliation, and what modern tools do and don’t change.',
+      'How signaling, media relays, call handling, AGI business logic and billing split one call across boundaries, a hypothetical double-charge failure, carrier selection as the gross margin, distance and regions, why retries need context, reconciliation, following the whole path, engineering decisions as business decisions, a map from VoIP problems to modern distributed systems terms, and what modern tools do and don’t change.',
     topics: ['Architecture'],
     related: [
       { to: '/writing/founding-a-startup-isnt-easy/', label: 'What being every department at once taught me' },
@@ -2279,10 +2331,12 @@ export const posts = [
       { to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story: from an idea to an acquisition' },
       { to: '/writing/voip-apps-for-nokia-phones-before-the-iphone/', label: 'The same problems with a radio in someone’s pocket: VoIP on Nokia phones' },
       { to: '/writing/data-driven-engineering-network-voip-publishing/', label: 'Routing on call statistics: the data-to-decision loop' },
+      { to: '/writing/building-software-before-and-after-ai/', label: 'The founder side of the same platform: I used to build everything myself' },
+      { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning for signaling, media and regions' },
     ],
-    minutes: 7,
+    minutes: 11,
     published: '2026-10-07',
-    modified: '2026-10-07',
+    modified: '2026-10-18',
     keywords: [
       'VoIP distributed systems',
       'Asterisk OpenSIPS architecture',
@@ -2292,6 +2346,12 @@ export const posts = [
       'idempotency example',
       'SIP signaling vs media',
       'geolocation call routing',
+      'distributed systems engineering',
+      'VoIP architecture',
+      'SIP routing',
+      'least-cost routing',
+      'distributed systems failure handling',
+      'billing reconciliation',
     ],
     about: [
       { '@type': 'Thing', name: 'Distributed computing', sameAs: 'https://en.wikipedia.org/wiki/Distributed_computing' },
@@ -3221,7 +3281,8 @@ export const journeys = [
       'when-to-add-engineering-process',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
-      'building-federal-government-applications',
+      'building-public-sector-applications',
+      'modernizing-public-sector-applications',
     ],
   },
   {
@@ -3242,6 +3303,7 @@ export const journeys = [
       'hidden-cost-of-software-architecture',
       'infrastructure-costs-from-carrier-networks-to-the-cloud',
       'data-driven-engineering-network-voip-publishing',
+      'building-document-intelligence-workflows',
     ],
   },
   {

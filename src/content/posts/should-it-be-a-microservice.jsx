@@ -305,7 +305,7 @@ export default function Body() {
         <div className="post__diagram">
           <Diagram spec={extracted} id="extract-later" no="667-3" />
         </div>
-        <p>The <Link to="/work/public-service-modernization/">public-sector modernization example</Link> shows how an API facade could let a team replace one workflow at a time. In that scenario, I would compare a conventional Django and React stack on managed infrastructure with the extra operating work of a service mesh. The receiving team’s ability to support the system belongs in that decision.</p>
+        <p><Link to="/writing/modernizing-public-sector-applications/#incremental">Modernizing public-sector applications</Link> describes how a routing layer can let a team replace one workflow at a time. In that kind of project, I would compare a conventional stack on managed infrastructure with the extra operating work of a service mesh. The receiving team’s ability to support the system belongs in that decision.</p>
         <p>So my default is to build the modular monolith well, keep the seams clean, and extract when a real reason shows up. Extraction is cheaper and safer at that point, because you’re working from evidence instead of guesses.</p>
       </section>
 

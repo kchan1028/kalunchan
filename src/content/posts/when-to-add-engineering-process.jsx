@@ -3,7 +3,7 @@ import { ArrowRight } from '../../components/Icons';
 
 // When to add engineering process, with trust as the thread. Source: KC's brief (Oct 2026): 20+ years with startups,
 // growing organizations, distributed teams and regulated systems. Career facts from profile.md: co-founded company's
-// global team of 30+ engineers, VoIP specialists and designers; government systems with federal requirements.
+// global team of 30+ engineers, VoIP specialists and designers; government systems with public-sector requirements.
 // Researched: coordination paths n(n-1)/2 (Brooks's law); DORA's streamlining change approval capability (heavyweight
 // external approval hurts delivery performance, no evidence it lowers change fail rate; peer review can meet
 // segregation of duties), checked 2026-10-18. Every scenario is an illustration and is labelled as one.
@@ -26,7 +26,7 @@ export const metadata = {
     { to: '/writing/speed-vs-quality-software-engineering/', label: 'Match the process to the risk of the change' },
     { to: '/writing/code-review-in-the-ai-era/', label: 'Code review starts with the plan' },
     { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },
-    { to: '/writing/building-federal-government-applications/', label: 'What federal government applications taught me' },
+    { to: '/writing/building-public-sector-applications/', label: 'What public-sector applications taught me' },
     { to: '/writing/when-everything-is-a-priority/', label: 'When everything is a priority, nothing is' },
     { to: '/leadership/', label: 'How I run engineering' },
   ],
@@ -296,7 +296,7 @@ export default function Body() {
         <p>The right amount of process for a team should change as that team proves itself. A new team, a new leader or a team working in unfamiliar territory benefits from clear expectations, closer review and more frequent check-ins. That is how everyone learns what good looks like. As the team delivers consistently, leadership can delegate more decisions and judge the team on its results.</p>
         <TrustLadder />
         <p className="post__answer">Trust should earn a team more autonomy while its accountability stays the same. As a team delivers consistently, leaders can delegate decisions and supervise less. The team still owns its outcomes, raises risks early and keeps the controls that protect production, security and regulated work.</p>
-        <p>Some controls stay no matter how much I trust the people involved. A second reviewer on a change to permissions or payments protects the author as much as the company, and it says nothing about the author’s competence. In regulated work, separation of duties is a requirement, and DORA notes that peer review recorded in the development platform can satisfy it. I’ve <Link to="/writing/building-federal-government-applications/">built government applications</Link> where those requirements shape the whole delivery process.</p>
+        <p>Some controls stay no matter how much I trust the people involved. A second reviewer on a change to permissions or payments protects the author as much as the company, and it says nothing about the author’s competence. In regulated work, separation of duties is a requirement, and DORA notes that peer review recorded in the development platform can satisfy it. I’ve <Link to="/writing/building-public-sector-applications/">built government applications</Link> where those requirements shape the whole delivery process.</p>
         <p>Trust can also move the other way. If a team misses commitments repeatedly or ships a run of incidents, adding expectations back for a while is reasonable, as long as everyone knows what would remove them again.</p>
       </section>
 

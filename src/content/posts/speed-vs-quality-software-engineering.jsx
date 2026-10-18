@@ -5,7 +5,7 @@ import { ArrowRight } from '../../components/Icons';
 // larger organizations, the microservices and abstraction observations, the deployment/infrastructure/workflow
 // work, building in hours with AI what took days or weeks. Carrier scripting in Expect and Korn shell is from
 // profile.md. The marketing page and certification examples are KC's, framed as illustrations; the program stays
-// generic ("federal small business certification program"). Matrix examples are illustrations, labeled as such.
+// generic ("public-sector small business certification program"). Matrix examples are illustrations, labeled as such.
 
 export const metadata = {
   slug: 'speed-vs-quality-software-engineering',
@@ -237,7 +237,7 @@ export default function Body() {
         <p className="post__answer">Technical debt is acceptable when it is a deliberate decision: you know what you are borrowing, why, and how you will pay it back. Unmanaged debt is the problem, and it rarely goes away unless someone schedules the time to address it.</p>
 
         <h3 className="post__h3">Not every change carries the same risk</h3>
-        <p>Compare two changes. One updates the copy on a marketing page. If something goes wrong, you fix it quickly and the business impact is small. The other changes the ownership validation rules in an application for a federal small business certification program. A mistake there could block eligible applicants, let incorrect information through, or disrupt a process people depend on. I’ve <Link to="/writing/building-federal-government-applications/">built government applications</Link> where rules like that are the core of the product.</p>
+        <p>Compare two changes. One updates the copy on a marketing page. If something goes wrong, you fix it quickly and the business impact is small. The other changes the ownership validation rules in an application for a public-sector small business certification program. A mistake there could block eligible applicants, let incorrect information through, or disrupt a process people depend on. I’ve <Link to="/writing/building-public-sector-applications/">built government applications</Link> where rules like that are the core of the product.</p>
         <p>I would not give those two changes the same testing and review. Many organizations do anyway. That delays the low-risk work and can still leave the high-risk work under-protected.</p>
         <p className="post__answer">Engineering process should be risk-based. Two questions sort most changes: what would a failure cost, and how easily could you undo it?</p>
         <RiskMatrix />

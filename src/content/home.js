@@ -8,7 +8,7 @@ export const impact = [
   { figure: '400,000+', text: 'users served from cloud regions on three continents', to: '/work/three-continent-platform/' },
   { figure: '30+', text: 'people led through an acquisition, and fully remote teams after it', to: '/experience/#communications' },
   { figure: '~30%', text: 'lower AWS costs on a publishing re-platform, with traffic and engagement up 50%', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
-  { figure: 'Federal', text: 'applications engineered to security authorization and Section 508 requirements', to: '/writing/building-federal-government-applications/' },
+  { figure: 'Public sector', text: 'applications engineered to security authorization and Section 508 requirements', to: '/writing/building-public-sector-applications/' },
 ];
 
 // 002 · Career timeline: seven stages in the order lived. Stages, not dates.
@@ -58,7 +58,7 @@ export const careerStages = [
   {
     id: 'cloud-ai', name: 'Cloud & AI', role: 'Consultant and founder, Yippify',
     tech: 'AWS with ECS and Fargate, Lambda, RDS, Terraform, GitHub Actions; LLM document processing; an AI assistant in the terminal',
-    did: 'About 30% lower AWS costs on a re-platform. Federal applications built to security authorization and accessibility requirements. FedPath and Useful Little Tools shipped with AI assistance.',
+    did: 'About 30% lower AWS costs on a re-platform. Public-sector applications built to security authorization and accessibility requirements. FedPath and Useful Little Tools shipped with AI assistance.',
     lesson: 'Capacity became a bill, and the tools keep changing. Keep learning.',
     to: '/writing/building-software-before-and-after-ai/', label: 'Building software before and after AI',
   },
@@ -112,7 +112,7 @@ export const caseStudies = [
     to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost', label: 'Cloud capacity is a bill',
   },
   {
-    id: 'federal', name: 'Federal application security, accessibility and compliance', where: 'Government technology, Yippify',
+    id: 'federal', name: 'Public-sector application security, accessibility and compliance', where: 'Government technology, Yippify',
     steps: [
       'Applications that must prove they are secure and accessible',
       'Which controls the platform inherits and which the application owns',
@@ -120,7 +120,7 @@ export const caseStudies = [
       'Server-side authorization and audit logs, with a pipeline that leaves evidence',
       'Engineering evidence that supports the Authority to Operate',
     ],
-    to: '/writing/building-federal-government-applications/', label: 'What building federal applications taught me',
+    to: '/writing/building-public-sector-applications/', label: 'What building public-sector applications taught me',
   },
 ];
 

@@ -10,7 +10,8 @@ import { ArrowRight } from '../../components/Icons';
 // regions on three continents; media publishing re-platform to AWS where
 // infrastructure improvements contributed to about 30% lower AWS costs (KC);
 // Yippify client work on ECS/Fargate, RDS, Lambda, S3, CloudFront, Terraform,
-// Docker, GitHub Actions, PostgreSQL, Redis, Kafka. No other numbers. Employers
+// Docker, GitHub Actions, PostgreSQL, Redis, Kafka; the R forecasting program
+// (data-driven-engineering post). No other numbers. Employers
 // unnamed, no years.
 
 export const toc = [
@@ -20,6 +21,8 @@ export const toc = [
   ['geo', 'Routing media by where the caller is'],
   ['to-cloud', 'Leaving the data center'],
   ['cloud-cost', 'Cloud capacity is a bill'],
+  ['autoscaling', 'Forecasting versus reactive scaling'],
+  ['measure', 'What I want on the dashboard'],
   ['differences', 'What changed, what didn’t'],
   ['leadership', 'Capacity is a leadership problem too'],
   ['questions', 'The questions I ask'],
@@ -74,7 +77,7 @@ export default function Body() {
 
       <section id="forecast" aria-labelledby="forecast-h">
         <h2 id="forecast-h" className="post__h2">Forecasting from what you measure</h2>
-        <p>The approach we settled on was simple and it has not changed since: plan from measured utilization, not from hope. We pulled interface statistics from the network over SNMP, graphed them, and projected the trend far enough ahead to order before the lead time ran out. Where the data said growth was, that is where the next circuit or line card went. Where it said nothing was happening, nothing was ordered, however loudly someone wanted a bigger box.</p>
+        <p>The approach we settled on was simple and it has not changed since: plan from measured utilization, not from hope. We pulled interface statistics from the network over SNMP and kept the history, and I worked on a forecasting program in R that projected each link’s trend far enough ahead to order before the lead time ran out. The history mattered more than the latest reading. Traffic has a busy hour, a weekly shape and seasonal swings, and a link that looks comfortable on a quiet afternoon can be the first one to saturate when the busy hour comes around. The <Link to="/writing/data-driven-engineering-network-voip-publishing/#capacity">data-driven engineering post</Link> has more on the program itself. Where the data said growth was, that is where the next circuit or line card went. Where it said nothing was happening, nothing was ordered, however loudly someone wanted a bigger box.</p>
         <p>Two habits came out of that. The first is to know the bottleneck. Every system has one resource that fills first, and the forecast only matters for that resource. On a router it might be a specific uplink, not the chassis. On a web platform it is usually the database, not the web tier. The second is headroom as policy. You decide in advance what utilization triggers an order and what utilization is an incident, and you write it down, so the decision is not made at two in the morning. I described the operational side of that network in the <Link to="/work/carrier-capacity/">carrier capacity case study</Link>.</p>
       </section>
 
@@ -82,6 +85,7 @@ export default function Body() {
         <h2 id="voip-h" className="post__h2">A phone call is a capacity problem</h2>
         <p>Voice made the problem sharper. At a voice services company I ran the engineering and the server farm behind more than eight million VoIP minutes a month, and the lesson there was that a phone call consumes capacity in four places at once, and they fill at different rates.</p>
         <p>SIP signaling sets up and tears down calls, and it scales with calls per second, so a burst of short calls hits it harder than a steady stream of long ones. Media is the audio, and it scales with concurrent calls times the bandwidth of the codec, so a thousand long calls hit it harder than a thousand short ones. The media proxies that relay audio for users behind NAT carry that same traffic again. And the Asterisk servers that handle call logic and features have their own ceiling in concurrent channels, which arrives sooner if the server is also transcoding. Plan for calls per second and you run out of bandwidth. Plan for bandwidth and signaling falls over on the busy hour.</p>
+        <p>On the VoIP platforms I worked on, the call records told us where to spend. Concurrent calls at the busy hour sized the media servers and the bandwidth. Calls per second sized signaling. Per-route answer rates and call durations showed which routes were delivering the quality we were paying for. Those statistics made the question of whether we needed another server something we could check.</p>
         <p>We planned expansion ahead of demand instead of after incidents, which sounds obvious and is mostly a matter of nerve, because the money goes out before the minutes come in. Routing was the other half. Least-cost routing picks, per call, the cheapest carrier that can still deliver acceptable quality, and the cheapest route is often the one that fails most interestingly. Every routing rule was a capacity decision and a cost decision at the same time, and <Link to="/writing/open-source-voip-distributed-systems-lessons/#routing">routing was a business decision</Link> long before it was an engineering one.</p>
       </section>
 
@@ -103,6 +107,26 @@ export default function Body() {
         <p>The cloud removed the loading dock and added an invoice. Capacity became something you could have in minutes, and waste became something you paid for every month without anyone having to notice. Most of the cost optimization work I have done since is the carrier discipline applied to that invoice: measure what is used, plan from the data, and stop paying for what is not.</p>
         <p>As CTO of a media publishing platform, I led a re-platform of a portfolio of titles from WordPress to Ruby on Rails and a move of the hosting to AWS, and the infrastructure improvements that came with that move contributed to AWS costs roughly 30% lower. No single trick did it. It was the unglamorous list: right-sizing instances that had been provisioned for a traffic peak that never recurred, scaling the web tier on actual demand instead of a guess, fixing database queries and connection handling so the database did not need to be twice the size it should be, caching pages that did not change between requests, and finding resources that nobody was using and nobody remembered creating.</p>
         <p>On <Link to="/experience/#yippify">client work through Yippify</Link>, the same questions come up with a newer toolkit: ECS and Fargate for services that should scale with load, Lambda for work that happens rarely, RDS PostgreSQL sized for the real query load rather than the feared one, Redis in front of the queries that repeat, S3 and CloudFront for everything that does not need a server at all, and Terraform so that every one of those choices is reviewed before it costs money. Managed services win most of these decisions for a small team, because the operational cost of self-hosting is paid in engineers, which are more expensive than instances. They lose some of them at scale, where the managed premium stops being small. The job is knowing which side of that line a workload is on this year, and checking again next year.</p>
+      </section>
+
+      <section id="autoscaling" aria-labelledby="autoscaling-h">
+        <h2 id="autoscaling-h" className="post__h2">Forecasting versus reactive scaling</h2>
+        <p>Autoscaling sometimes gets treated as the end of capacity planning. It is reactive by design. It watches a metric, waits for the metric to cross a threshold, and then adds capacity, and adding capacity takes time: a new ECS task on Fargate or a new EC2 instance has to start, pass health checks and warm up, and Lambda has concurrency limits of its own. The database usually doesn’t scale the way the web tier does. Resizing an RDS instance is a planned change, not something that happens in the seconds a traffic spike gives you.</p>
+        <p className="post__answer">Cloud capacity planning combines a forecast with reactive scaling. The forecast covers the baseline, the known peaks and the resources that can’t grow quickly, such as the database. Autoscaling covers the variation around them. Neither one replaces the other.</p>
+        <p>In practice that means a few decisions made ahead of time. Forecast the baseline and the known peaks from history, the same way we did with SNMP data. Scale on a metric that tracks the real bottleneck, which is often request count or queue depth rather than CPU. Set maximums as a cost guardrail, so a bug or a crawler can’t scale the bill without limit. And keep a list of the limits that don’t autoscale at all: database connections, instance size, Lambda concurrency, and the rate limits of the third-party APIs you depend on.</p>
+        <p>The database deserves its own attention because on most web platforms it is the resource that fills first and the slowest to grow. Before buying a bigger instance I want to see the query plans, the indexes, the connection pooling and the cache hit rate. Read replicas help read-heavy work. Caching moves load from the most expensive resource to the cheapest one, and it brings its own costs in invalidation and stale data. The cost side of those database habits is in <Link to="/writing/hidden-cost-of-software-architecture/#database">the hidden cost of software architecture</Link>.</p>
+      </section>
+
+      <section id="measure" aria-labelledby="measure-h">
+        <h2 id="measure-h" className="post__h2">What I want on the dashboard</h2>
+        <p>On the carrier network the dashboard was utilization per link. In the cloud I want a few more lines, because the resource that fills first is less obvious and the bill arrives monthly:</p>
+        <ul className="post__list">
+          <li>Utilization and saturation of the bottleneck resource, usually the database, with the headroom threshold drawn on the chart.</li>
+          <li>Latency at the percentiles customers feel, p95 and p99, since an average hides the slow requests.</li>
+          <li>Error rates and queue depth, which often move before latency does.</li>
+          <li>Cost per unit of work, such as cost per thousand requests, per active customer or per call minute.</li>
+        </ul>
+        <p>The last line is the one that connects capacity to the business. If traffic is flat and cost per unit is rising, something is being wasted. If cost per unit is falling as traffic grows, the platform is getting more efficient with scale, which is what a finance team wants to hear. I prefer the alarms and dashboards defined in Terraform next to the infrastructure they watch, so a change to capacity and a change to how we observe it go through the same review.</p>
       </section>
 
       <section id="differences" aria-labelledby="differences-h">
@@ -131,7 +155,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Planning before capacity runs out</h2>
       <div className="post__close-copy">
-        <p className="lead">Working with carrier hardware, VoIP servers and cloud accounts taught me to measure demand and plan for the resource likely to run out first.</p>
+        <p className="lead">Working with carrier hardware, VoIP servers and cloud accounts taught me to measure demand and plan for the resource likely to run out first. Capacity planning means understanding demand, finding the bottleneck before customers do, protecting reliability and spending at the right time. Buying more is only one of the possible answers.</p>
         <p className="post__close-principle">I want the team to agree on headroom while there is time to act, rather than work it out during an outage.</p>
         <p>That is how I approach scaling a system and controlling what it costs to run, whether the constraint is a line card or a monthly invoice.</p>
         <div className="post__close-actions">

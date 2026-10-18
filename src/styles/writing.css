@@ -214,6 +214,12 @@
   color: var(--ink-2);
 }
 
+@media (max-width: 40rem) {
+  .post__table tbody th {
+    white-space: normal;
+  }
+}
+
 .post__table td:last-child {
   color: var(--ink);
 }

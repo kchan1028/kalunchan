@@ -5,17 +5,27 @@ import { ArrowRight } from '../../components/Icons';
 // Technologies (Asterisk, OpenSIPS, Python AGI, billing, geolocation routing)
 // supplied by KC. Topology, traffic, outages and results are not described; the
 // call flow below is hypothetical and labelled as such on the page.
+// Oct 18 revision adds facts already confirmed elsewhere on the site:
+// MediaProxy for NAT, least-cost routing on call statistics (ASR, ACD,
+// completion, cost, media quality; data-driven post), source-IP geolocation
+// for media paths, one application run in three regions (should-it-be-a-
+// microservice, three-continent case study), resellers on the hosted platform
+// (founder story), the move from one data center to cloud regions. Fallback
+// and fault-tolerance points are written as general practice, not incidents.
 
 export const toc = [
   ['before-the-term', 'Before I used the term'],
   ['boundaries', 'One call, several boundaries'],
   ['example', 'A hypothetical call'],
   ['partial-failure', '“The system is up”'],
-  ['routing', 'Routing as a business decision'],
+  ['routing', 'Carrier selection set the margin'],
+  ['distance', 'Distance was a boundary too'],
   ['retries', 'Retries need context'],
   ['records', 'State and records'],
   ['whole-path', 'Following the whole path'],
   ['boundaries-cost', 'Every boundary costs something'],
+  ['business', 'Engineering decisions were business decisions'],
+  ['map', 'The lessons in today’s terms'],
   ['today', 'What I ask today'],
 ];
 
@@ -44,6 +54,30 @@ const callFlow = {
   ],
 };
 
+const lessons = [
+  { voip: 'A call connects and the audio goes nowhere', term: 'Partial failure', ask: 'Which outcome does the customer care about, and do we measure that or only whether each component is up?' },
+  { voip: 'A replayed billing event could charge a call twice', term: 'Retries and idempotency', ask: 'Which operations are safe to retry, and what is the idempotency key for the ones that aren’t?' },
+  { voip: 'Audio crossing an ocean twice, and the cost of carrying it', term: 'Routing and latency', ask: 'Where are the users, and which path does each request really take?' },
+  { voip: 'Matching SIP messages, Asterisk channels, AGI logs and billing rows', term: 'Observability and tracing', ask: 'Can we follow one request across every component by a shared identifier?' },
+  { voip: 'A carrier that stops answering or degrades', term: 'Fault tolerance', ask: 'What is the fallback for each dependency we don’t control, and how do we notice it has degraded?' },
+  { voip: 'Call records, balances and carrier invoices that must agree', term: 'Consistency and reconciliation', ask: 'Who owns each piece of state, and how do we prove the records are right after a failure?' },
+  { voip: 'Signaling, media and relays filling at different rates', term: 'Capacity planning', ask: 'Which resource fills first, and what does the next step up cost?' },
+];
+
+function Lessons() {
+  return (
+    <figure className="post__figure">
+      <table className="post__table">
+        <caption><span className="mono">Fig. 666-2</span> VoIP problems, their modern names, and the question I ask before choosing an architecture</caption>
+        <thead><tr><th scope="col">Today’s term</th><th scope="col">On the VoIP platform</th><th scope="col">The question I ask now</th></tr></thead>
+        <tbody>
+          {lessons.map((l) => <tr key={l.term}><th scope="row">{l.term}</th><td>{l.voip}</td><td>{l.ask}</td></tr>)}
+        </tbody>
+      </table>
+    </figure>
+  );
+}
+
 export default function Body() {
   return (
     <>
@@ -58,14 +92,17 @@ export default function Body() {
         <h2 id="boundaries-h" className="post__h2">A phone call crossed several system boundaries</h2>
         <p>Each component in a VoIP platform has a different job, and each one fails differently.</p>
         <p>OpenSIPS handles SIP signaling: the messages that set up, change and end a call. It decides where a call request should go and passes it along. The audio doesn’t flow through it. The media path, carried over RTP, is a separate stream that can take a different route, which is why a call can be set up perfectly and still have one-way audio.</p>
+        <p>Users behind home and office NAT routers added another piece. MediaProxy relayed their audio, so for many calls the media went through a relay we operated. That made the relay a capacity concern, because it carried the full audio of every relayed call, and another place a call could fail while signaling looked fine.</p>
         <p>Asterisk handles the call itself. Its dialplan decides what happens step by step, and it can terminate and process media for features like prompts and recordings. When the dialplan needs a business decision, it can run an AGI script. With plain AGI, Asterisk starts the script as a local process and talks to it over standard input and output. That script is where Python could check an account, look up a rate or choose a route from backend data.</p>
-        <p>Billing sits after all of that. It turns usage into money: call records, rating, balances and reconciliation.</p>
+        <p>Billing sits after all of that. It turns usage into money: call records, rating, balances and reconciliation. Ours also had to work for local businesses that resold the service to their own communities on our hosted platform, so a single call could matter to a customer’s balance, a reseller’s account and a carrier’s invoice at once.</p>
       </section>
 
       <section id="example" aria-labelledby="example-h">
         <h2 id="example-h" className="post__h2">A hypothetical call, and where it goes wrong</h2>
         <p>The flow below is illustrative, and real deployments differ a lot. I didn’t take it from any system I ran.</p>
-        <Diagram spec={callFlow} id="voip-call-flow" no="666-1" />
+        <div className="post__diagram">
+          <Diagram spec={callFlow} id="voip-call-flow" no="666-1" />
+        </div>
         <p>A prepaid customer places a call. OpenSIPS receives the SIP request and forwards it to an Asterisk server. The dialplan runs a Python AGI script, which checks the customer’s balance and picks a carrier route. The call connects and lasts twelve minutes. At hangup, Asterisk writes a call detail record, and a billing job rates the call and deducts it from the balance.</p>
         <p>Now suppose the billing job deducts the charge, and the database connection drops before the job hears that the write succeeded. The job assumes it failed and tries again. Without protection, the customer pays twice for one call.</p>
         <p>A second problem sits earlier in the flow. If the AGI script can’t reach the balance database, should the call go through? Allowing it risks usage nobody can bill. Blocking it turns away a paying customer because of an internal timeout. That’s a policy decision, and someone on the business side should make it before the outage, not during it.</p>
@@ -78,9 +115,17 @@ export default function Body() {
       </section>
 
       <section id="routing" aria-labelledby="routing-h">
-        <h2 id="routing-h" className="post__h2">Routing was a business decision too</h2>
+        <h2 id="routing-h" className="post__h2">Carrier selection set the margin</h2>
         <p>Choosing where a call goes involves several inputs that pull against each other: carrier availability, cost per minute, call quality, regulatory policy and the caller’s location.</p>
+        <p>In a business that sells minutes, what you pay carriers is most of what each call costs, so the routing table effectively sets the gross margin. Least-cost routing picks the cheapest carrier for each destination that can still deliver acceptable quality. The cheapest carrier on the rate sheet was not always the cheapest in practice. A route that drops calls or delivers poor audio costs you in repeat attempts, support tickets and customers who stop calling. We ranked routes on call statistics, including answer rates, call durations, completion, cost and media quality, which I describe in <Link to="/writing/data-driven-engineering-network-voip-publishing/#voip">the data-to-decision loop behind those routes</Link>.</p>
+        <p>Carriers also fail, sometimes cleanly and sometimes by answering and then delivering bad audio. Routing has to account for that with a next choice for each destination, and the statistics are how you notice a route has degraded before the support queue tells you. In today’s terms that is fault tolerance: a fallback for every dependency you don’t control, and monitoring that measures the outcome customers care about, not just whether the dependency answered.</p>
         <p>Location needs care. A telephone number’s prefix tells you where the number was issued, not where the caller is standing; mobile and VoIP numbers travel with their owners. IP geolocation is an estimate, and sometimes a badly wrong one. And physical distance doesn’t guarantee a better network path. A nearby data center can sit behind a congested link while a farther one performs better. Location was a useful signal for routing, weighed with the others, and routing needs a sensible fallback for when it’s wrong.</p>
+      </section>
+
+      <section id="distance" aria-labelledby="distance-h">
+        <h2 id="distance-h" className="post__h2">Distance was a boundary too</h2>
+        <p>Our users were in South America, Asia and Africa, and the platform started in one data center. Audio that crosses an ocean twice arrives late, and no amount of server capacity fixes latency. We used the caller’s source IP address to estimate their location and steered the media through a closer path, which improved call quality for distant users and cut what we paid to carry the audio. I covered the capacity and cost side of that in <Link to="/writing/capacity-planning-carrier-networks-to-cloud/#geo">capacity planning from carrier networks to the cloud</Link>.</p>
+        <p>When we moved from the data center into cloud regions on three continents, we ran the same application in each region and routed users to the nearest one, rather than breaking the application apart. Distance was the problem, and splitting the code wouldn’t have fixed it. That is a distinction I still use when a team proposes microservices to solve a latency or scaling problem: first find out which boundary is actually causing it. The <Link to="/work/three-continent-platform/">three-continent case study</Link> covers how the move happened one region at a time.</p>
       </section>
 
       <section id="retries" aria-labelledby="retries-h">
@@ -111,6 +156,19 @@ export default function Body() {
         <h2 id="boundaries-cost-h" className="post__h2">Every boundary came with work</h2>
         <p>Separating signaling, call handling, business logic and billing made each piece easier to reason about. It also added configuration to keep consistent, monitoring for each component, version compatibility between them, and failure handling at every handoff.</p>
         <p>That trade is the same one teams face when they count services today. Each boundary should solve a real problem, and the team has to be able to carry it, which is the argument in <Link to="/writing/team-size-should-influence-architecture/">your team size should influence your architecture</Link>.</p>
+      </section>
+
+      <section id="business" aria-labelledby="business-h">
+        <h2 id="business-h" className="post__h2">Engineering decisions were business decisions</h2>
+        <p>On that platform almost every technical choice showed up somewhere in the business. Carrier selection set the gross margin. Routing decided whether a call sounded clear or broken, which is the whole product for a communications company. Infrastructure was a fixed cost that arrived every month whether or not the minutes did, and the move into cloud regions was as much about our cost structure as about latency. Reliability decided retention, because a customer who can’t complete a call rarely files a bug report. They are more likely to try another service.</p>
+        <p>Complexity was a cost too. Every component we added needed someone who understood it, monitoring that worked, and a plan for when it failed. The architecture had to fit the business requirements and the people we had at the time.</p>
+        <p>I still evaluate modern architecture that way. Before a team splits a system into microservices, I want to know which boundary <Link to="/writing/should-it-be-a-microservice/">earns its operating cost</Link>. Before Kafka, I want the fan-out or write volume that <Link to="/writing/event-driven-architecture-kafka-tradeoffs/">justifies an event stream</Link>. Before an infrastructure investment, I want the measured demand behind it and an idea of <Link to="/writing/hidden-cost-of-software-architecture/">what it will cost every month</Link> after it ships.</p>
+      </section>
+
+      <section id="map" aria-labelledby="map-h">
+        <h2 id="map-h" className="post__h2">The lessons in today’s terms</h2>
+        <p>The vocabulary changed more than the problems did. The table maps what the VoIP platform had to handle to the names modern engineers use, and to the question I ask now. The last column is general practice, not a description of how we implemented it.</p>
+        <Lessons />
       </section>
 
       <section id="today" aria-labelledby="today-h">

@@ -22,8 +22,8 @@ const stages = [
 ];
 
 const branches = [
-  { id: 'gov', from: 'product', label: ['Government', 'technology'], evidence: 'Public-sector delivery through Yippify; the linked design example discusses accessibility, security and hand-over.', to: '/work/public-service-modernization/' },
-  { id: 'ai', from: 'architecture', label: ['AI & data'], evidence: 'An illustrative document-processing design using retrieval and a reviewer queue.', to: '/work/document-intelligence/' },
+  { id: 'gov', from: 'product', label: ['Government', 'technology'], evidence: 'Public-sector applications through Yippify; the linked article covers modernization, accessibility, security and hand-over.', to: '/writing/modernizing-public-sector-applications/' },
+  { id: 'ai', from: 'architecture', label: ['AI & data'], evidence: 'AI document processing with people in the loop: classification, validation and review queues.', to: '/writing/building-document-intelligence-workflows/' },
 ];
 
 const handsOn = {
