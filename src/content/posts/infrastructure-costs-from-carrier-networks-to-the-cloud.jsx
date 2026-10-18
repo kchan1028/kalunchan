@@ -96,7 +96,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">From the network layer to the business layer</h2>
       <div className="post__close-copy">
         <p className="lead">More than two decades across carrier networks, data centers, VoIP, software architecture, cloud infrastructure, engineering teams and my own businesses, making technology work at scale.</p>
-        <p className="post__close-principle">Performance, reliability, capacity and cost are one decision, and I have owned all four at every layer.</p>
+        <p className="post__close-principle">I have paid the bill at every layer, and it changed which questions I ask first.</p>
         <p>That is the judgment I bring to an engineering organization or a client engagement: whether it works, what it takes to run, and what it costs to grow.</p>
         <div className="post__close-actions">
           <Link to="/about/#stack" className="action">The layers, on the About page <ArrowRight /></Link>

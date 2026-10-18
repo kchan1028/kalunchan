@@ -52,7 +52,7 @@ export default function Body() {
       <section id="whose-job" aria-labelledby="whose-job-h">
         <h2 id="whose-job-h" className="post__h2">Whose job this is</h2>
         <p>Both of ours. Product managers define increments that are small and still valuable, which is harder than writing one big requirement and far more useful. Engineering leaders help the team cut the implementation into changes they can review and ship. Neither gets to hand a developer a paragraph and hope. It’s the same reason <Link to="/writing/good-teams-dont-expect-everyone-to-know-everything/">good teams don’t expect everyone to know everything</Link>: shape the work so nobody has to.</p>
-        <p>Smaller stories and smaller pull requests solve related but different problems. Stories are about planning, prioritization and delivery. PRs are about review, collaboration and getting the code right. One story often needs several PRs, and that’s fine. The goal was never more tickets. It’s less complexity per step and a shorter distance between writing something and finding out whether it works.</p>
+        <p>Smaller stories and smaller pull requests solve related but different problems. Stories are about planning, prioritization and delivery. PRs are about review, collaboration and getting the code right. One story often needs several PRs, and that’s fine. What I’m after is less complexity per step and a shorter distance between writing something and finding out whether it works.</p>
       </section>
     </>
   );
@@ -64,7 +64,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Optimize for the team’s clock</h2>
       <div className="post__close-copy">
         <p className="lead">The fastest engineer on the team can’t make the team fast. The size of the work can.</p>
-        <p className="post__close-principle">Good engineering teams measure how long it takes for a change to be understood, reviewed, tested and safely in front of users, not how quickly one person closes a ticket.</p>
+        <p className="post__close-principle">The clock I care about runs until a change is safely in front of users, and it belongs to the whole team.</p>
         <div className="post__close-actions">
           <Link to="/leadership/#execution" className="action">How I improve execution with small, safe changes <ArrowRight /></Link>
           <Link to="/contact/" className="link-arrow"><span>Talk about how your team ships</span> <ArrowRight /></Link>

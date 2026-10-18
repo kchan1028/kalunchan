@@ -199,7 +199,7 @@ export default function Body() {
         <p>I’ll use Kafka as the running example. Event-driven systems are a subject I’ve <Link to="/writing/event-driven-architecture-kafka-tradeoffs/">written about before</Link>, and Kafka has enough moving parts to show every stage.</p>
 
         <h3 className="post__h3">Goals: what am I trying to learn?</h3>
-        <p>Before I ask AI anything, I write down what I’m trying to do and why. With Kafka, my goal usually isn’t to become an expert. It’s to answer questions like these:</p>
+        <p>Before I ask AI anything, I write down what I’m trying to do and why. With Kafka, I usually just want to answer questions like these:</p>
         <ul className="post__list">
           <li>When does Kafka make sense compared with a traditional message queue?</li>
           <li>How do producers, consumers, partitions and consumer groups work together?</li>

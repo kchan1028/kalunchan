@@ -208,7 +208,7 @@ export default function Body() {
 
       <section id="first-three" aria-labelledby="first-three-h">
         <h2 id="first-three-h" className="post__h2">One of the first three people in the Security Operations Center</h2>
-        <p>I was one of the first three people supporting that service in the Security Operations Center. I want to be precise about what that was. It was not a title and I was not running it. It was a chair in a new room, next to two other people, with a service that had customers and not yet a runbook.</p>
+        <p>I was one of the first three people supporting that service in the Security Operations Center. I want to be precise about what that was. I had no title for it and I was not running it. I had a chair in a new room, next to two other people, with a service that had customers and not yet a runbook.</p>
         <p>Being that early meant learning several things at once. The product, from the documentation and from devices in front of us. The customers’ environments, because a firewall policy only makes sense when you know what sits behind it and what it needs to reach. And the process, because none existed yet: how a change request came in, how we confirmed it was really the customer asking, how we applied it without taking them offline, where we wrote down what we did, and what we escalated to the vendor.</p>
         <p>In a team of three, everything ends up with you at some point. That is exhausting and it is also the fastest way I know to learn a system end to end. The habit I took from it was writing things down as we learned them, so the fourth person would not have to learn them the way we did. Looking back, that was the first operational documentation I ever cared about, and it was because I could see exactly who would need it.</p>
       </section>
@@ -231,7 +231,7 @@ export default function Body() {
         <h2 id="more-than-a-firewall-h" className="post__h2">Security is more than a firewall</h2>
         <p>The security work did not end when I left carrier networks. It changed shape with every job. On the voice platforms it was AAA: every call was authenticated, authorized and accounted for, so the platform always knew who was calling, what they were allowed to call, and what it cost. In application work it became authentication, single sign-on, OAuth, tokens, roles and the check on the individual record. On mobile it became the same questions asked of a client we did not control: where the credentials live on the device, what travels on the wire, and what the server re-checks. In cloud work it became IAM policies, network configuration and secrets, written as code. In government work it became federal security requirements, access control and auditability as part of the scope. And in leadership it became deciding who owns security on a team and when in the delivery cycle it gets attention.</p>
         <Timeline />
-        <p>That is not a strict chronology, and I have gone back and forth between layers more than once. The point is that security was never a separate specialty I visited. It was part of every layer I worked in, and each layer taught me something the next one needed.</p>
+        <p>That is not a strict chronology, and I have gone back and forth between layers more than once. The point is that security came with every layer I worked in, and each layer taught me something the next one needed.</p>
       </section>
 
       <section id="carried-forward" aria-labelledby="carried-forward-h">
@@ -246,7 +246,7 @@ export default function Body() {
 
       <section id="every-layer" aria-labelledby="every-layer-h">
         <h2 id="every-layer-h" className="post__h2">Security at every layer of a company</h2>
-        <p>Good security is not the property of a security team. It is the sum of decisions made at every layer, by the people who work there, most of whom do not have security in their title. The figure below walks the stack from the network up to the organization. For each layer it lists what typically goes wrong and the controls that usually answer it, which is general practice, and where I have worked in that layer myself, which is first-hand. I have kept the two apart on purpose.</p>
+        <p>Good security comes from decisions made at every layer, by the people who work there, and most of them do not have security in their title. The figure below walks the stack from the network up to the organization. For each layer it lists what typically goes wrong and the controls that usually answer it, which is general practice, and where I have worked in that layer myself, which is first-hand. I have kept the two apart on purpose.</p>
         <Layers />
         <p>Two things stand out when you read it as a whole. The technical controls get most of the attention and the organizational ones decide whether the technical ones exist. A team with no named owner for security does not have a firewall problem. It has a priority problem, and the firewall configuration is where it shows up.</p>
       </section>

@@ -120,14 +120,14 @@ export default function Body() {
         <h2 id="checklist-h" className="post__h2">What should you ask before committing engineering capacity?</h2>
         <p className="post__answer">Before a team commits, I want answers to eight questions about the problem, the evidence, the cost of doing nothing, the smallest test, existing alternatives, what gets delayed, who owns the outcome, and what would make us continue, change direction or stop.</p>
         <ol className="post__steps">
-          <li><strong>Who has this problem, and how often?</strong> A daily problem for many users and a quarterly annoyance for one are different investments.</li>
-          <li><strong>What evidence shows it matters?</strong> Support tickets, lost deals, usage data, customer conversations. One loud request is a signal, not evidence.</li>
-          <li><strong>What happens if we do nothing?</strong> Sometimes the honest answer is “not much,” and that’s worth knowing.</li>
-          <li><strong>What is the smallest way to test the need?</strong> A prototype, a manual process, or a conversation with five customers.</li>
-          <li><strong>What existing solution or manual process could work?</strong> An existing report, a configuration change, or someone doing it by hand for a month.</li>
-          <li><strong>What are we delaying by choosing this?</strong> Every yes delays something else. Name it.</li>
-          <li><strong>Who owns the outcome after launch?</strong> Someone responsible for whether it worked, and for retiring it if it didn’t.</li>
-          <li><strong>What result would make us continue, change direction or stop?</strong> Decide before launch, while nobody is attached to the answer.</li>
+          <li>Who has this problem, and how often? A daily problem for many users and a quarterly annoyance for one are different investments.</li>
+          <li>What evidence shows it matters? Support tickets, lost deals, usage data, customer conversations. One loud request is a signal, not evidence.</li>
+          <li>What happens if we do nothing? Sometimes the honest answer is “not much,” and that’s worth knowing.</li>
+          <li>What is the smallest way to test the need? A prototype, a manual process, or a conversation with five customers.</li>
+          <li>What existing solution or manual process could work? An existing report, a configuration change, or someone doing it by hand for a month.</li>
+          <li>What are we delaying by choosing this? Every yes delays something else. Name it.</li>
+          <li>Who owns the outcome after launch? Someone responsible for whether it worked, and for retiring it if it didn’t.</li>
+          <li>What result would make us continue, change direction or stop? Decide before launch, while nobody is attached to the answer.</li>
         </ol>
         <p>Thin answers don’t automatically mean no. They mean the first piece of work is finding out.</p>
       </section>
@@ -140,7 +140,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Protect capacity, measure outcomes</h2>
       <div className="post__close-copy">
-        <p className="lead">Engineering capacity is one of the most constrained resources a company has, and every piece of work spends it twice: once to build, and again for as long as it lives in the system. So I judge work by the outcome it changed, not only by whether it shipped on time.</p>
+        <p className="lead">Engineering capacity is one of the most constrained resources a company has, and every piece of work spends it twice: once to build, and again for as long as it lives in the system. So I judge work by the outcome it changed, and shipping on time is only part of that.</p>
         <p>Before asking how fast we can build something, I start here:</p>
         <p className="post__close-principle">Does this deserve the team’s time, and how will we know?</p>
         <div className="post__close-actions">

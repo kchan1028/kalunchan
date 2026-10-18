@@ -128,11 +128,11 @@ function SharedAssumption() {
   return (
     <figure className="post__figure">
       <ol className="post__steps">
-        <li><strong>The request:</strong> “Customers can cancel within 30 days.”</li>
-        <li><strong>The assumption:</strong> the AI counts 30 days from the order date. The business meant 30 days from delivery.</li>
-        <li><strong>The code</strong> checks the order date.</li>
-        <li><strong>The tests</strong> are generated from the same reading, so they check the order date too.</li>
-        <li><strong>Every test passes.</strong> The first customer whose package arrived late finds the bug.</li>
+        <li>Someone asks for “Customers can cancel within 30 days.”</li>
+        <li>The AI assumes it means 30 days from the order date. The business meant 30 days from delivery.</li>
+        <li>The code checks the order date.</li>
+        <li>The tests are generated from the same reading, so they check the order date too.</li>
+        <li>Every test passes, and the first customer whose package arrived late finds the bug.</li>
       </ol>
       <figcaption className="post__figcaption"><span className="mono">Fig. 703-2</span> A hypothetical example. When one reading of the requirement produces both the code and the tests, nothing checks the reading itself.</figcaption>
     </figure>
@@ -222,13 +222,13 @@ export default function Body() {
         <h2 id="leaders-h" className="post__h2">What engineering leaders should do</h2>
         <p className="post__answer">Treat AI like any other technology with a learning curve: train people, set standards, keep a human accountable, and measure results.</p>
         <ol className="post__steps">
-          <li><strong>Train people as well as buying seats.</strong> A subscription is access. Show people how to write a clear task, how to check output, and when to stop prompting and think.</li>
-          <li><strong>Set review and quality standards.</strong> AI-written code goes through the same review as any other code, and the person who opens the pull request has to be able to explain it.</li>
-          <li><strong>Decide where a human signs off.</strong> Production changes, security-sensitive code, customer communication and anything with money or legal weight need a named person, not just a passing check.</li>
-          <li><strong>Measure outcomes, not usage.</strong> Prompts sent and lines generated tell you nothing. Lead time, defects that reach customers, rework and cost per accepted change tell you something.</li>
-          <li><strong>Protect sensitive information.</strong> Be clear about which tools are approved for which data, and keep customer data, credentials and confidential work out of the rest.</li>
-          <li><strong>Keep investing in junior engineers.</strong> Hire them, pair them with experienced people, and give them work that builds judgment.</li>
-          <li><strong>Encourage experiments, with a budget.</strong> Let teams try things, set cost limits, and share what worked and what didn’t.</li>
+          <li>Train people as well as buying seats. A subscription is access, so show people how to write a clear task, how to check output, and when to stop prompting and think.</li>
+          <li>Set review and quality standards. AI-written code goes through the same review as any other code, and the person who opens the pull request has to be able to explain it.</li>
+          <li>Decide where a human signs off. Production changes, security-sensitive code, customer communication and anything with money or legal weight need a named person, because a passing check isn’t enough.</li>
+          <li>Measure outcomes instead of usage. Prompts sent and lines generated tell you nothing. Lead time, defects that reach customers, rework and cost per accepted change tell you something.</li>
+          <li>Protect sensitive information by being clear about which tools are approved for which data, and keep customer data, credentials and confidential work out of the rest.</li>
+          <li>Keep investing in junior engineers: hire them, pair them with experienced people, and give them work that builds judgment.</li>
+          <li>Encourage experiments within a budget. Let teams try things, set cost limits, and share what worked and what didn’t.</li>
         </ol>
         <p>None of this is new. It’s the same discipline we applied to cloud adoption, to DevOps, and to every other tool that made it easy to do a lot quickly.</p>
       </section>

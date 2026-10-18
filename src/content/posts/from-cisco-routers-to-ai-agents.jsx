@@ -100,7 +100,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">The tools changed. The fundamentals mostly did not.</h2>
       <div className="post__close-copy">
         <p className="lead">From Cisco routers and physical servers to cloud infrastructure and AI agents, the work kept moving up the stack.</p>
-        <p className="post__close-principle">Walk the path, deny by default, plan capacity before the lead time, write it down for the next shift, and know what every request costs.</p>
+        <p className="post__close-principle">Walk the path a request takes before you trust it, whether it crosses a router or an AI agent.</p>
         <p>Those habits came from the network, and they are still how I engineer systems that are reliable, secure and maintainable.</p>
         <div className="post__close-actions">
           <Link to="/writing/why-i-still-write-code/" className="action">Part 2: Why I still write code <ArrowRight /></Link>

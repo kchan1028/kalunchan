@@ -1,11 +1,11 @@
 {
   "/": {
-    "date": "2026-10-12",
-    "hash": "ddd802c65dd9c050"
+    "date": "2026-10-18",
+    "hash": "e61ef66927e33f3a"
   },
   "/about/": {
-    "date": "2026-10-12",
-    "hash": "b7b6d6d5f5a7527c"
+    "date": "2026-10-18",
+    "hash": "161a73225cb01dd9"
   },
   "/leadership/": {
     "date": "2026-10-12",
@@ -16,8 +16,8 @@
     "hash": "f235703ca08fef90"
   },
   "/projects/": {
-    "date": "2026-10-12",
-    "hash": "a6fb7e76a3592c34"
+    "date": "2026-10-18",
+    "hash": "8ca9faeb562af33e"
   },
   "/expertise/": {
     "date": "2026-10-12",
@@ -28,12 +28,12 @@
     "hash": "63da4f3002bb9f40"
   },
   "/mentorship/": {
-    "date": "2026-10-12",
-    "hash": "86e357b5bc44e11b"
+    "date": "2026-10-18",
+    "hash": "8afaa02f14eb33ee"
   },
   "/writing/": {
     "date": "2026-10-17",
-    "hash": "b30a7744b9235993"
+    "hash": "f1a528cf302daa21"
   },
   "/contact/": {
     "date": "2026-10-12",
@@ -44,8 +44,8 @@
     "hash": "9a678032388ae0a2"
   },
   "/projects/berkeley-omnium/": {
-    "date": "2026-10-12",
-    "hash": "132ff85eba70efa1"
+    "date": "2026-10-18",
+    "hash": "45a8af275111304d"
   },
   "/projects/union-city-smog-check/": {
     "date": "2026-10-12",
@@ -60,8 +60,8 @@
     "hash": "875079d85e342caf"
   },
   "/work/public-service-modernization/": {
-    "date": "2026-10-12",
-    "hash": "f11aac441fccde1b"
+    "date": "2026-10-18",
+    "hash": "0d5a8d6ae20ca143"
   },
   "/work/document-intelligence/": {
     "date": "2026-10-12",

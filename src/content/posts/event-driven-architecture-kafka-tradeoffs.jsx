@@ -181,7 +181,7 @@ export default function Body() {
           <li>Could a simpler queue meet the requirement?</li>
           <li>What will this cost to operate over the next year?</li>
         </ol>
-        <p>If the team can’t answer the fourth and fifth questions, the design isn’t ready, however clean the diagram looks. It’s the same capacity question I raise in <Link to="/writing/team-size-should-influence-architecture/">your team size should influence your architecture</Link>.</p>
+        <p>If the team can’t answer the fourth and fifth questions, the design isn’t ready, however clean the diagram looks. I raise the same capacity question in <Link to="/writing/team-size-should-influence-architecture/">your team size should influence your architecture</Link>.</p>
       </section>
     </>
   );

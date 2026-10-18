@@ -42,39 +42,39 @@ export default function About() {
     <Qa id="generalist" coord="Generalist" q="What kind of engineering leader is Ka Lun Chan?">
       <p>KC is a generalist: an engineering leader who has done most of the jobs on his teams, and many of the jobs around them. That range came from building a startup from the ground up to an acquisition, where every problem was his to solve.</p>
       <p>He learned how a business runs before he learned software. At his family’s florist he handled everything from the accounting to buying flowers, arranging them and selling them. At the family restaurant he ran everything from marketing to food delivery. Both taught him that software has to fit the way a business works.</p>
-      <p>His curiosity started on a 286 running DOS, then Windows 3.1, bulletin boards, IRC and dial-up, a story he tells in <Link to="/writing/from-dos-to-ai-thirty-years-of-technology/">from DOS to AI</Link>. His technical path started on the front line, on an IT helpdesk and in technical support for DSL providers. From there he kept a nationwide carrier network running, from DS1 circuits to OC links, working with routers, switches, Unix systems and fault management tools. He automated that work with scripts before anyone called it DevOps, and forecast network capacity with an R program and Excel over SNMP and Cacti statistics, so upgrades were ordered ahead of lead times rather than after congestion.</p>
-      <p>As a co-founder and CTO, he did whatever the company needed that week: product management, marketing and SEO, racking and cabling servers in the data center, building the web application and building the voice network. Since then he has restructured a startup’s mobile app, network and open-source voice platform, <Link to="/writing/building-startups-technical-leadership/">helped six startups build their products</Link>, run technology and business operations for a media publisher, and now builds government and startup technology through Yippify: cloud infrastructure on AWS and Terraform, event-driven systems on Kafka, PostgreSQL, CI/CD, federal applications built to <Link to="/writing/building-federal-government-applications/">security authorization and accessibility requirements</Link>, and AI document processing with people in the loop.</p>
-      <p className="about-qa__highlight">That background lets him talk to the executive team, product, marketing, finance, sales, operations and engineering in their own terms, and see how a technical decision will play out across the whole business.</p>
+      <p>His curiosity started on a 286 running DOS, then bulletin boards and dial-up, a story he tells in <Link to="/writing/from-dos-to-ai-thirty-years-of-technology/">from DOS to AI</Link>. His technical path started on the front line, on an IT helpdesk and in technical support for DSL providers. From there he kept a nationwide carrier network running, from DS1 circuits to OC links, working on routers and Unix systems. He automated that work with scripts before anyone called it DevOps. He also forecast network capacity with an R program over SNMP statistics, so upgrades were ordered ahead of lead times instead of after congestion.</p>
+      <p>As a co-founder and CTO, he did whatever the company needed that week, from marketing and SEO to racking and cabling servers in the data center. Since then he has restructured a startup’s mobile app and voice platform, <Link to="/writing/building-startups-technical-leadership/">helped six startups build their products</Link>, and run technology and business operations for a media publisher. Today he builds government and startup technology through Yippify. That includes federal applications built to <Link to="/writing/building-federal-government-applications/">security authorization and accessibility requirements</Link>, and AI document processing with people in the loop.</p>
+      <p className="about-qa__highlight">That background lets him talk to finance or sales as easily as to engineering, and see how a technical decision will play out across the whole business.</p>
     </Qa>
 
     <Qa id="security" coord="Security" q="Where does his security experience come from?">
       <p>From the network up. In carrier network operations KC wrote access control lists on Cisco routers, and when the carrier launched a managed firewall and VPN service on NetScreen products he was one of the first three people supporting it in the Security Operations Center. He later travelled to the East Coast to train the Technical Assistance Center to support and troubleshoot the service.</p>
-      <p>It never became a separate specialty. On the voice platforms it was AAA for every call. In application work it has been authentication, single sign-on, OAuth, role-based access and object-level authorization in Django, Rails and Node.js APIs, and in mobile apps treated as untrusted clients, from VoIP apps on Nokia, iPhone and Android to iOS and Android apps for a startup and for government clients. In cloud work it is IAM, network controls, secrets and Terraform on AWS. In government work it is federal security requirements, including FedRAMP-aligned environments, built into the scope. On every team he runs, vulnerabilities are monitored and fixed as high-priority work, and security review is a release gate rather than a launch-week audit.</p>
+      <p>It never became a separate specialty. On the voice platforms it was AAA for every call. In application work it has been single sign-on and object-level authorization in Django, Rails and Node.js APIs. Mobile apps were treated as untrusted clients, from VoIP apps on Nokia phones to iOS and Android apps for a startup and for government clients. In cloud work it is IAM and network controls on AWS. In government work it is federal security requirements, including FedRAMP-aligned environments, built into the scope. On every team he runs, vulnerabilities are monitored and fixed as high-priority work, and nothing ships until it has passed security review.</p>
       <p className="about-qa__highlight">The full story, with a layer-by-layer view of where security lives in a company: <Link to="/writing/network-security-before-devsecops/">I was working on network security long before DevSecOps was a thing</Link>.</p>
     </Qa>
 
     <Qa id="capacity" coord="Scale and cost" q="How does he think about scaling systems and what they cost to run?">
-      <p>KC learned capacity planning when capacity was a purchase order. On a carrier network spread across 2,000+ collocations he forecast utilization from measured data far enough ahead to cover hardware lead times. At a voice services company he ran the server farm behind 8M+ VoIP minutes a month and planned expansion ahead of demand. At the company he co-founded, least-cost routing and media paths chosen by caller location improved call quality and cut bandwidth cost at the same time, and the platform moved from one data center to cloud regions on three continents so that capacity could follow revenue.</p>
-      <p>The cloud replaced the purchase order with a monthly bill, and the same discipline applies to it. As CTO of a media publishing platform he led a re-platform onto AWS where right-sizing, demand-based scaling, database fixes and caching contributed to about 30% lower AWS costs. On client work he reviews architecture with a price column, defaults to managed services for small teams, and treats engineering capacity, technical debt and operational overhead as resources with lead times, the same as a circuit order. Running his own businesses added the questions an engineer rarely has to ask: can we afford to operate it, who maintains it, what does it cost at ten times the usage, and is the complexity justified by a problem we have today?</p>
+      <p>KC learned capacity planning when capacity was a purchase order. On a carrier network spread across 2,000+ collocations he forecast utilization from measured data far enough ahead to cover hardware lead times. At a voice services company he ran the server farm behind 8M+ VoIP minutes a month and planned expansion ahead of demand. At the company he co-founded, least-cost routing and media paths chosen by caller location improved call quality and cut bandwidth cost at the same time. The platform also moved from one data center to cloud regions on three continents so that capacity could follow revenue.</p>
+      <p>The cloud replaced the purchase order with a monthly bill, and the same discipline applies to it. As CTO of a media publishing platform he led a re-platform onto AWS where right-sizing and database fixes, among other changes, contributed to about 30% lower AWS costs. On client work he reviews architecture with a price column, defaults to managed services for small teams, and treats engineering capacity and technical debt as resources with lead times, the same as a circuit order. Running his own businesses added the questions an engineer rarely has to ask: can we afford to operate it, who maintains it, what does it cost at ten times the usage, and is the complexity justified by a problem we have today?</p>
       <p className="about-qa__highlight">The method is the same across every generation: <Link to="/writing/capacity-planning-carrier-networks-to-cloud/">measure first, plan from data, know which resource fills first</Link>, and <Link to="/writing/hidden-cost-of-software-architecture/">count what each architecture decision costs to run</Link>.</p>
     </Qa>
 
     <StackLadder />
 
     <Qa id="startups" coord="Startups" q="What does he do for startups?">
-      <p>Three things. Zero-to-one product development: turning an idea into a working application, as he did for his own company and for a hybrid iOS and Android app, a fitness platform, a wholesale VoIP business, a real estate platform and a 360-degree virtual tour product. Hands-on technical leadership: setting the architecture and the stack while still writing code, reviewing it and troubleshooting production. Business-aware engineering: choosing what to build now and what can wait, by budget, product maturity, actual demand and what the system will cost to run.</p>
+      <p>Three things. Zero-to-one product development: turning an idea into a working application, as he did for his own company and for products from a wholesale VoIP business to a 360-degree virtual tour. Hands-on technical leadership: setting the architecture and the stack while still writing code, reviewing it and troubleshooting production. Business-aware engineering: choosing what to build now and what can wait, by budget and by what the system will cost to run.</p>
       <p className="about-qa__highlight">Startups need more than someone who can write code. They need someone who can help them make the right technical decisions for the stage of their business. The six engagements are in <Link to="/writing/building-startups-technical-leadership/">building startups: what I’ve learned turning ideas into working products</Link>.</p>
     </Qa>
 
     <Qa id="who" coord="Who is KC" q="Who is Ka Lun Chan?">
       <p>Ka Lun Chan, known as KC, is a software engineering leader based in the San Francisco Bay Area. His career covers founding, scaling and running engineering at SaaS and communications companies.</p>
-      <p>He has worked as an engineer, SaaS co-founder, engineering manager and CTO. He describes his focus as combining hands-on technical depth, product judgment, strong execution and developing people.</p>
+      <p>He has worked as an engineer, SaaS co-founder, engineering manager and CTO. He describes his focus as hands-on technical depth and product judgment. Execution and developing people matter as much.</p>
     </Qa>
 
     <Qa id="now" coord="Working on now" q="What is he working on now?">
       <p>KC consults through Yippify and builds his own products. His Yippify clients include government, startup and entrepreneur teams, for whom he delivers mobile and web applications.</p>
       <ul className="spec-list">{currentWork.map((w) => <li key={w.name}>
-        <strong><a href={workUrl[w.name]}>{w.name}</a>:</strong> {w.text}
+        <a href={workUrl[w.name]}>{w.name}</a>: {w.text}
       </li>)}</ul>
     </Qa>
 
@@ -100,13 +100,13 @@ export default function About() {
     </Qa>
 
     <Qa id="founder-cto" coord="Founder-CTO" q="How does a founder-CTO background differ from a career engineering manager’s?">
-      <p>A founder-CTO has owned every layer at once: product, architecture, hiring, operations and business outcomes. A career manager has usually worked within an established organization and processes. KC has done both: he built from inception as a co-founder and ran established functions as CTO and VP of Operations. That combination suits companies that need structure without losing speed.</p>
+      <p>A founder-CTO has owned every layer at once, from the architecture to the business outcome. A career manager has usually worked within an established organization and processes. KC has done both: he built from inception as a co-founder and ran established functions as CTO and VP of Operations. That combination suits companies that need structure without losing speed.</p>
       <p>He tells the longer version, from the first line of code through 1→10 and the acquisition, in <Link to="/writing/building-a-startup-from-idea-to-acquisition/">From an Idea to an Acquisition: What Building a Startup Taught Me</Link>.</p>
     </Qa>
 
     <Qa id="approach" coord="How he leads" q="How does he lead engineering teams?">
       <p>KC’s guiding principle is to remove single points of failure. That covers systems, knowledge and decision-makers. In practice:</p>
-      <ul className="spec-list">{leadershipPractices.map((l) => <li key={l.term}><strong>{l.term}</strong> {l.text}</li>)}</ul>
+      <ul className="spec-list">{leadershipPractices.map((l) => <li key={l.term}>{l.term} {l.text}</li>)}</ul>
     </Qa>
 
     <Qa id="problems" coord="Problems he solves" q="What problems is he brought in to solve?">
@@ -115,7 +115,7 @@ export default function About() {
     </Qa>
 
     <Qa id="technology" coord="Technology" q="What technologies does he work with?">
-      <p>His core stack is Python, Django, Rails, React, Next.js and PostgreSQL, running on AWS. His experience also covers distributed systems, cloud infrastructure, and product and data engineering.</p>
+      <p>His core stack is Python, Django, Rails, React, Next.js and PostgreSQL, running on AWS. His experience also reaches into distributed systems and data engineering.</p>
     </Qa>
 
     <Qa id="engagements" coord="Engagements" q="How do engagements work?">
@@ -134,7 +134,7 @@ export default function About() {
 
     <header className="sheet about-words" data-coord="050 · Career story">
       <h2 className="display">From writing the code to leading the people who write it.</h2>
-      <p className="about-opening__lead">I’ve owned the code, the production problem, the product decision, and the business consequences. That experience shapes how I lead: stay close enough to understand the work, and build a team that can take it further.</p>
+      <p className="about-opening__lead">I’ve owned the code and the production problem, and later the business consequences. That experience shapes how I lead: stay close enough to understand the work, and build a team that can take it further.</p>
     </header>
 
     <nav className="sheet about-chapters" aria-label="Career story chapters">
@@ -172,9 +172,9 @@ export default function About() {
       <div className="about-chapter__body">
         <h2 id="leadership-title" className="h2">I didn’t stop being an engineer when I became a leader.</h2>
         <div className="about-prose">
-          <p>Moving through technical leadership, engineering management, and CTO responsibilities gave me several views of the same work. Engineers, product, QA, operations, executives, and customers can have different priorities. My job is to make those tradeoffs understandable and help us decide together.</p>
-          <p>I can discuss strategy and organizational risk, then go deep into an architecture review, a PostgreSQL query, an API, or an AWS production problem. I still review code and investigate difficult failures.</p>
-          <p>Technical depth helps me ask better questions. It doesn’t give me a reason to take the keyboard away. I want to provide context, remove obstacles, and help engineers make good decisions themselves.</p>
+          <p>Moving from engineering management into CTO responsibilities gave me several views of the same work. Engineers and executives can want different things. So can customers. My job is to make those tradeoffs understandable and help us decide together.</p>
+          <p>I can discuss strategy and organizational risk, then go deep into a PostgreSQL query or an AWS production problem. I still review code and investigate difficult failures.</p>
+          <p>Technical depth helps me ask better questions. It doesn’t give me a reason to take the keyboard away. I want to give context and clear obstacles so engineers make good decisions themselves.</p>
         </div>
       </div>
     </section>
@@ -184,7 +184,7 @@ export default function About() {
         <div className="about-independence__thesis">
           <h2 id="independence-title" className="h2">Remove the single point of failure.</h2>
           <p>We design resilient software. Leadership should follow the same principle.</p>
-          <p>If every difficult decision, escalation, or explanation still needs me, I haven’t scaled the organization.</p>
+          <p>If every difficult decision still needs me, I haven’t scaled the organization.</p>
           <p className="about-independence__conviction">My goal is to develop people who can eventually replace me.</p>
         </div>
         <ol className="about-independence__flow" aria-label="From resilient systems to stronger communities">
@@ -199,7 +199,7 @@ export default function About() {
       <div className="about-mentoring__intro">
         <h2 id="mentoring-title" className="h2">From asking for answers to owning decisions.</h2>
         <div className="about-prose">
-          <p>I’ve mentored engineers at different career stages and across distributed teams. The useful work goes beyond syntax: breaking down ambiguity, investigating a problem, understanding business context, communicating tradeoffs, and recovering from mistakes.</p>
+          <p>I’ve mentored engineers at different career stages and across distributed teams. The useful work goes beyond syntax. It is learning to break down ambiguity and to recover from mistakes.</p>
           <p>I want people to challenge my thinking and become better engineers and leaders than me. I consider a capable successor a leadership success.</p>
           <Link to="/mentorship/" className="link-arrow">More on mentoring engineers <ArrowRight /></Link>
         </div>
@@ -219,16 +219,16 @@ export default function About() {
         <div className="about-judgment">
           <div className="about-prose">
             <h3 className="h3">Make the tradeoffs explicit.</h3>
-            <p>I’ve worked across SaaS, customer-facing platforms, legacy modernization, government technology, and AI/ML products. Government work in particular demands speed alongside security, compliance, accessibility, reliability, and complex business rules, so process has to earn its place by helping us ship.</p>
-            <p>The stack changes from job to job: Python and Django, Rails, React and Next.js, cloud infrastructure, LLM systems. The questions I ask before choosing any of it stay the same.</p>
+            <p>I’ve worked on SaaS platforms, legacy modernization and AI/ML products. Government work asks for speed alongside strict security and accessibility rules. Process there has to earn its place by helping us ship.</p>
+            <p>The stack changes from job to job, from Django to LLM systems. The questions I ask before choosing any of it stay the same.</p>
             <p>What problem are we solving? Which constraints matter? What is the simplest architecture that can reliably support the outcome? And what will the decision cost the people maintaining it later?</p>
             <Link to="/expertise/" className="link-arrow">Explore my technical approach <ArrowRight /></Link>
           </div>
           <div className="about-prose about-judgment__execution">
             <h3 className="h3">Leadership shouldn’t be surprised by engineering.</h3>
-            <p>I look for clear requirements, real ownership, and work small enough to review and release safely. Architecture, technical debt, quality, and operational risk belong in delivery planning.</p>
-            <p>Leadership needs to know what is progressing, what is blocked, why a timeline changed, and which decisions need attention. That should be a clear conversation, not an exercise in decoding a backlog.</p>
-            <p>When people, decisions, delivery and production feedback are connected, teams spot problems earlier and executives hear about them while there’s still time to choose.</p>
+            <p>I look for clear requirements and work small enough to review and release safely. Technical debt and operational risk belong in delivery planning.</p>
+            <p>Leadership needs to know what is blocked and why a timeline changed. That should take one clear conversation. Nobody should have to decode a backlog to find out.</p>
+            <p>When delivery and production feedback are connected, teams spot problems earlier and executives hear about them while there’s still time to choose.</p>
             <Link to="/leadership/" className="link-arrow">How I run engineering <ArrowRight /></Link>
           </div>
         </div>
@@ -245,13 +245,13 @@ export default function About() {
             <figcaption className="label">Experience grows through practice, support, and opportunities to take the lead.</figcaption>
           </figure>
           <div className="about-prose">
-            <p>I put substantial time into cycling through <a href={cycling.club}>Berkeley Bicycle Club</a>, junior development, volunteering, and race organization. Mentoring young cyclists comes from the same place as mentoring engineers: offer guidance and real opportunities, let people gain experience, and give them room to become more capable.</p>
+            <p>I put substantial time into cycling through <a href={cycling.club}>Berkeley Bicycle Club</a>, from junior development to race organization. Mentoring young cyclists comes from the same place as mentoring engineers. Offer guidance and real opportunities, then give people room to grow.</p>
             <p><a href={cycling.omnium}>Berkeley Omnium</a> brings together the Berkeley Hills Road Race and Berkeley Streets Criterium. All proceeds go to six East Bay NICA teams, helping support the next generation of cyclists.</p>
-            <p>Race day is the visible part. Volunteers, racers, juniors, collegiate athletes, sponsors, officials and organizers all put in work long before it, and I enjoy being part of that team.</p>
+            <p>Race day is the visible part. Volunteers and organizers do most of the work long before it, and I enjoy being part of that team.</p>
             <Link to="/community/" className="link-arrow">The racing and the community behind it <ArrowRight /></Link>
           </div>
         </div>
-        <p className="about-community__closing">Systems, teams and race weekends get the same treatment from me: leave them stronger, with more people ready to carry them forward.</p>
+        <p className="about-community__closing">I treat a race weekend the way I treat a system or a team: leave it stronger, with more people ready to carry it forward.</p>
       </div>
     </section>
 

@@ -302,7 +302,7 @@ export default function Mentorship() {
       <section className="sheet grid mentor-band flywheel" aria-labelledby="flywheel-title" data-coord="610 · Mentorship flywheel">
         <div className="flywheel__copy">
           <h2 id="flywheel-title" className="h2">When the mentored start mentoring, it scales.</h2>
-          <p className="body-copy">When someone I mentored begins mentoring another person, knowledge stops depending on one person. That’s the point where mentorship stops being a favour I do and starts being how the team works.</p>
+          <p className="body-copy">When someone I mentored begins mentoring another person, knowledge stops depending on one person. Mentorship then becomes part of how the team works.</p>
         </div>
         <div className="flywheel__fig"><Flywheel /></div>
       </section>

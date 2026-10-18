@@ -130,7 +130,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">The right technical decisions for the stage you are in</h2>
       <div className="post__close-copy">
         <p className="lead">Six startups, six stacks, one job: turn an idea into a working product the business can afford to run.</p>
-        <p className="post__close-principle">Understand the business first, keep the architecture appropriate to the stage, manage complexity and cost, and build a team and a product that do not depend on one person.</p>
+        <p className="post__close-principle">I try to understand the business before I recommend anything technical, and sometimes the most useful answer is that a feature can wait.</p>
         <p>If you are building something and need that kind of help, tell me what you are building.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>

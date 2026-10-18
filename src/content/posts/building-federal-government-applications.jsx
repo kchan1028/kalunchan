@@ -181,7 +181,7 @@ export default function Body() {
       <section id="monitoring" aria-labelledby="monitoring-h">
         <h2 id="monitoring-h" className="post__h2">Security doesn’t end at deployment</h2>
         <p>A system that was secure the day it was authorized becomes vulnerable if nobody maintains it. Software changes, dependencies acquire vulnerabilities, configurations drift, new threats appear, and users join and leave. Continuous monitoring is how an organization notices and responds, and from an engineering seat it means vulnerability scanning, dependency management, infrastructure monitoring, security logging, access reviews, configuration assessment, patching, incident response and tracking remediation to closure.</p>
-        <p>The hard part is folding that into normal engineering operations. Treated as a separate function, security becomes a bottleneck and a source of surprises. Considered throughout the development lifecycle, it becomes routine. That is why I value automation: automated tests, dependency checks, infrastructure validation and deployment controls make the security work consistent and leave a trace. Automation does not replace review or judgment. It removes the repetitive part and makes the evidence a by-product. On my teams, vulnerabilities are monitored and fixed as high-priority work, in government and out of it.</p>
+        <p>That work has to fold into normal engineering operations. Treated as a separate function, security becomes a bottleneck and a source of surprises. Considered throughout the development lifecycle, it becomes routine. That is why I value automation: automated tests, dependency checks, infrastructure validation and deployment controls make the security work consistent and leave a trace. Automation does not replace review or judgment. It removes the repetitive part and makes the evidence a by-product. On my teams, vulnerabilities are monitored and fixed as high-priority work, in government and out of it.</p>
       </section>
 
       <section id="process" aria-labelledby="process-h">
@@ -219,7 +219,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Trusted, understood, usable, maintained</h2>
       <div className="post__close-copy">
         <p className="lead">Federal applications taught me that working code is the entry fee. Demonstrable security, designed-in accessibility, plain communication and traceable change are the product.</p>
-        <p className="post__close-principle">Identify the requirements early, automate the evidence, put accessibility in the acceptance criteria, and make sure the team knows why each control exists.</p>
+        <p className="post__close-principle">Plan for the evidence from the first sprint, and make sure the team knows why each control exists.</p>
         <p>That is how I lead engineering in regulated environments, and the same discipline, at the right level of rigor, makes commercial software better too.</p>
         <div className="post__close-actions">
           <Link to="/work/public-service-modernization/" className="action">Case study: public-service modernization <ArrowRight /></Link>

@@ -243,7 +243,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Different products. Same problems.</h2>
       <div className="post__close-copy">
         <p className="lead">Carrier capacity, call routing, website traffic, cloud infrastructure: every one of them was limited resources, changing demand, performance that mattered, costs that mattered, and decisions made with incomplete information.</p>
-        <p className="post__close-principle">Measure, analyze, predict, optimize, validate. Then check whether the decision was right, and adjust.</p>
+        <p className="post__close-principle">Decide with the data you have, then go back and check whether the decision was right.</p>
         <p>After more than two decades, using the information we have to make a system work better and create more value for the business is still one of my favorite problems to solve.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re measuring <ArrowRight /></Link>

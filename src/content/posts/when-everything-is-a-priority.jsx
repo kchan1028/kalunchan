@@ -130,7 +130,7 @@ export default function Body() {
           <div><dt>Exploratory work</dt><dd>Spikes and experiments to learn something before committing.</dd></div>
         </dl>
         <p>Pretending all of that can be perfectly planned two weeks in advance creates frustration.</p>
-        <p className="post__answer">If a team historically spends 20% of its capacity on unplanned work, planning every sprint at 100% feature capacity isn’t ambitious. It’s unrealistic. Plan around the interruptions the team gets.</p>
+        <p className="post__answer">If a team historically spends 20% of its capacity on unplanned work, planning every sprint at 100% feature capacity is unrealistic. Plan around the interruptions the team gets.</p>
         <p>Understanding the team’s real operating pattern makes planning much more useful, and it stops urgent work from eating the roadmap.</p>
       </section>
 
@@ -212,7 +212,7 @@ export default function Body() {
       <section id="agility" aria-labelledby="agility-h">
         <h2 id="agility-h" className="post__h2">Agility isn’t constantly changing your mind</h2>
         <p>Engineering organizations should be adaptable. I want teams that can respond quickly when the business learns something important. But adaptability and instability aren’t the same thing.</p>
-        <p className="post__answer">An agile team changes direction quickly because it has clear ownership, small increments of work, good architecture and strong communication. A team that changes direction every few days because nobody can decide what matters isn’t agile. It’s just busy.</p>
+        <p className="post__answer">An agile team changes direction quickly because it has clear ownership, small increments of work, good architecture and strong communication. A team that changes direction every few days because nobody can decide what matters stays busy and gets very little done.</p>
         <p>Architecture plays a bigger part than people expect. Clear boundaries let one part of a system change without touching everything around it, which is much of what I look for when I decide <Link to="/writing/should-it-be-a-microservice/">whether something should actually be a microservice</Link>.</p>
       </section>
     </>

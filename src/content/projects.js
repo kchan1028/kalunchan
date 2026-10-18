@@ -93,7 +93,7 @@ export const projects = [
     seoTitle: 'Berkeley Omnium Website: Event Platform Project — Ka Lun Chan',
     description:
       'The new berkeleyomnium.com: race landing pages, video and social, sponsorship and SEO for the Berkeley Hills Road Race and Berkeley Streets Criterium.',
-    problemShort: 'A volunteer-run race weekend has to win riders, sponsors and volunteers against events with far bigger budgets.',
+    problemShort: 'A volunteer-run race weekend has to win riders and sponsors from events with far bigger budgets.',
     schema: { '@type': 'WebSite', about: { '@id': `${cycling.omnium}#subject` } },
     related: [
       { to: '/writing/berkeley-omnium-new-website-next-generation/', label: 'Why I built the new Berkeley Omnium website' },
@@ -110,11 +110,11 @@ export const projects = [
     domain: ['Community leadership', 'Event promotion', 'Web & search'],
     title: 'Berkeley Omnium: a digital home for a community race weekend',
     claim:
-      'Two races, their riders, sponsors and volunteers got one fast, modern home that makes the case for local racing.',
+      'Two races got one fast, modern home. It makes the case for local racing.',
     summary:
-      'A modern event website for the Berkeley Hills Road Race and Berkeley Streets Criterium, with race landing pages, video and social, sponsorship and community impact.',
+      'A modern event website for the Berkeley Hills Road Race and Berkeley Streets Criterium. Each race has its own landing page, and video shows what the racing is like.',
     problem:
-      'A long-running local race weekend has to compete for riders, spectators, sponsors and volunteers with events that have far bigger budgets. Each of those groups needs something different from the site, and the racing itself is hard to convey in text.',
+      'A long-running local race weekend competes with events that have far bigger budgets. Riders, sponsors and volunteers each need something different from the site. And the racing itself is hard to convey in text.',
     audience: [
       'Racers choosing their season',
       'Sponsors and partners',
@@ -125,7 +125,7 @@ export const projects = [
       { name: 'Race landing pages', text: 'The Berkeley Hills Road Race and Berkeley Streets Criterium each have their own page, under one weekend brand.' },
       { name: 'Video and social', text: 'Race footage and the club’s social channels bring the racing onto the page.' },
       { name: 'Sponsorship and impact', text: 'A clear story for partners: all proceeds support six East Bay NICA teams.' },
-      { name: 'Paths for every audience', text: 'Register, volunteer, collegiate, kids and sponsor routes from a single navigation.' },
+      { name: 'Paths for every audience', text: 'One navigation, with a route for each audience from registration to sponsorship.' },
       { name: 'Search and AI answers', text: 'Structured, answerable pages so search engines and AI assistants describe the event accurately.' },
       { name: 'Performance and responsive design', text: 'Built mobile-first for people checking race details on the way to the start.' },
     ],
@@ -134,27 +134,27 @@ export const projects = [
       {
         question: 'One site for the weekend, or one per race?',
         options: [
-          { label: 'A separate site for each race', note: 'Splits the audience, the search authority and the sponsor story in two.' },
+          { label: 'A separate site for each race', note: 'Splits the audience and the sponsor story in two.' },
           { label: 'One weekend brand with a landing page per race', note: 'Each race keeps its identity, and every visit builds the same event.', chosen: true },
         ],
       },
       {
         question: 'How should the site show what racing here is like?',
         options: [
-          { label: 'Schedules, text and a photo gallery', note: 'Complete, but it undersells the racing to new riders and sponsors.' },
+          { label: 'Schedules and a photo gallery', note: 'Complete, but it undersells the racing to new riders.' },
           { label: 'Lead with video and live social channels', note: 'The racing sells itself, and the site stays current between editions.', chosen: true },
         ],
       },
     ],
     outcome: [
-      'One home for both races: registration, race information, volunteering, sponsorship and impact',
+      'One home for both races, from registration to sponsorship',
       'A sponsor story tied to a real outcome: all proceeds support six East Bay NICA teams',
       'Junior, collegiate and women’s racing visible alongside the elite fields',
     ],
     capabilities: ['Event website & landing pages', 'Video & social integration', 'Structured data', 'SEO', 'Responsive design', 'Partnerships & promotion'],
     lessons: [
       'A volunteer-run event needs a site that works for sponsors as hard as it works for racers.',
-      'The same skills that ship software, clear audiences and fast feedback, run a race weekend too.',
+      'Running a race weekend takes the same skills as shipping software. Know your audience and get feedback fast.',
     ],
     alt: {
       desktop: 'Berkeley Omnium home page: the headline Where champions race over video of a pack of cyclists on a hillside road',

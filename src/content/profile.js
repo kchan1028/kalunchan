@@ -26,7 +26,11 @@ export const person = {
 export const isPlaceholder = (value) => typeof value === 'string' && value.includes('REPLACE_WITH_');
 
 export const entity =
-  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 20+ years across every layer of a business, from helpdesk, network operations and security to product, marketing and architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, leading a team of 30+ engineers, VoIP specialists and designers. He now leads government technology work through Yippify.';
+  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 20+ years across every layer of a business, from an IT helpdesk to software architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, and led its team of 30+. He now leads government technology work through Yippify.';
+
+// The homepage says the same thing in its own words, so / and /about/ don't repeat each other.
+export const homeIntro =
+  'Ka Lun Chan (KC) is an engineering leader in the San Francisco Bay Area. He co-founded a communications company and grew it to 400,000+ users on three continents. After the acquisition he stayed on the board. Today he leads government technology work through Yippify.';
 
 // Verified proof points shown under the home positioning line, each linking to its evidence.
 export const proofPoints = [
@@ -39,7 +43,7 @@ export const proofPoints = [
 export const headlineNumbers = [
   { figure: '20+', text: 'years in software' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
-  { figure: '30+', text: 'engineers, VoIP specialists and designers led' },
+  { figure: '30+', text: 'engineers and VoIP specialists led' },
 ];
 
 export const updated = '[REPLACE_WITH_MONTH YEAR]';
