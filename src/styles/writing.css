@@ -1484,3 +1484,56 @@
 .learnchoose__scroll .learnchoose { min-width: 32rem; }
 .learnchoose__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .learnchoose td.is-full { color: var(--blue); font-weight: 600; }
+
+/* Fig. 710-1: possible one-to-one connections. Horizontal bars on one linear scale from zero, values labeled directly. */
+.pcpaths__rows { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s3); }
+.pcpaths__row { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) 7.5rem; align-items: center; gap: var(--s3); }
+.pcpaths__label { font-weight: 600; font-stretch: 92%; color: var(--ink); }
+.pcpaths__track { height: 14px; background: var(--paper-sunk); border-left: 2px solid var(--ink); }
+.pcpaths__bar { display: block; height: 100%; min-width: 2px; background: var(--blue); }
+.pcpaths__value { font-size: var(--t-small); color: var(--ink-2); text-align: right; }
+
+@media (max-width: 639px) {
+  .pcpaths__row { grid-template-columns: minmax(0, 1fr) auto; row-gap: var(--s1); }
+  .pcpaths__track { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* Fig. 710-2: useful control vs bureaucracy. */
+.pccontrol__scroll { overflow-x: auto; }
+.pccontrol__scroll .pccontrol { min-width: 34rem; }
+.pccontrol__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.pccontrol td.is-better { color: var(--ink); font-weight: 560; }
+.pccontrol thead th:nth-child(2) { color: var(--blue); }
+
+/* Fig. 710-3: trust ladder. Steps rise left to right above a fixed floor of controls that never step away. */
+.pctrust__steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s2); align-items: end; }
+.pctrust__step { display: grid; gap: var(--s1); align-content: start; padding: var(--s3); min-height: calc(10rem + var(--i) * var(--s6)); border: 1px solid var(--rule-soft); border-top: 3px solid var(--ink); background: var(--paper); }
+.pctrust__step:last-child { border-top-color: var(--blue); background: var(--paper-sunk); }
+.pctrust__no { color: var(--ink-3); }
+.pctrust__name { font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.pctrust__step:last-child .pctrust__name { color: var(--blue); }
+.pctrust__who { color: var(--ink-3); }
+.pctrust__how { font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); }
+.pctrust__floor { margin-top: var(--s2); padding: var(--s3) var(--s4); background: var(--blue); color: var(--on-blue); }
+.post__prose .pctrust__floor-name, .post__prose .pctrust__floor-list { color: var(--on-blue); }
+.pctrust__floor-name { margin: 0; font-weight: 650; font-stretch: 92%; }
+.pctrust__floor-list { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s1) var(--s5); font-size: var(--t-small); }
+.pctrust__floor-list li { padding-left: var(--s3); border-left: 1px solid var(--on-blue-rule); }
+
+@media (max-width: 639px) {
+  .pctrust__steps { grid-template-columns: 1fr; }
+  .pctrust__step { min-height: 0; }
+  .pctrust__floor-list { grid-template-columns: 1fr; }
+}
+
+/* Fig. 710-4: eight-step decision path. Step 3 carries an exit, step 8 a loop back, both set off in the accent. */
+.pcdecide__steps { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2) var(--s4); grid-auto-flow: column; grid-template-rows: repeat(4, auto); }
+.pcdecide__step { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--s3); align-content: start; padding: var(--s3) 0; border-top: 1px solid var(--rule-soft); }
+.pcdecide__no { grid-row: span 3; color: var(--ink-3); padding-top: 2px; }
+.pcdecide__name { font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.pcdecide__note { font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); }
+.pcdecide__branch { margin-top: var(--s2); padding-left: var(--s3); border-left: 3px solid var(--blue); font-size: var(--t-small); line-height: 1.45; color: var(--blue); font-weight: 560; }
+
+@media (max-width: 639px) {
+  .pcdecide__steps { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+}
