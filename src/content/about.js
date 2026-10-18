@@ -99,7 +99,7 @@ export const faq = [
   },
   {
     q: 'What is Ka Lun Chan’s security background?',
-    a: 'It started in carrier network operations: Cisco router access control lists, then one of the first three people supporting a new NetScreen-based managed firewall and VPN service in the Security Operations Center, and training the Technical Assistance Center to support it. It continued through AAA on voice platforms and object-level authorization in applications, where mobile apps were treated as untrusted clients. On AWS it meant IAM and Terraform. Government systems were built to federal security requirements. On his teams, vulnerabilities are monitored and fixed as high-priority work.',
+    a: 'It started in carrier network operations: Cisco router access control lists, then one of the first three people supporting a new NetScreen-based managed firewall and VPN service in the Security Operations Center, and training the Technical Assistance Center to support it. It continued through AAA on voice platforms and object-level authorization in applications, where mobile apps were treated as untrusted clients. On AWS it meant IAM and Terraform. Government systems were built to public-sector security requirements. On his teams, vulnerabilities are monitored and fixed as high-priority work.',
   },
   {
     q: 'What is Ka Lun Chan’s experience with capacity planning and infrastructure cost?',
@@ -181,12 +181,12 @@ export const experienceMap = [
   { id: 'cloud', name: 'Cloud & infrastructure', sub: 'Linux · data centers · AWS · Terraform · CI/CD', claim: 'Capacity planned from measured demand, at a cost the business can carry.', examples: [
     { text: 'One data center, cabled by hand, to cloud regions on three continents with no downtime', to: '/work/three-continent-platform/' },
     { text: 'About 30% lower AWS costs on a publishing re-platform', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
-    { text: 'Design example: ECS and Terraform with security and accessibility checks', to: '/work/public-service-modernization/' },
+    { text: 'Modernizing public-sector applications one journey at a time, with security and accessibility checks', to: '/writing/modernizing-public-sector-applications/' },
   ] },
   { id: 'security', name: 'Cybersecurity', sub: 'firewalls · VPN · ACLs · security operations · AppSec', claim: 'Deny by default, allow explicitly, and test the rule with the traffic it should permit.', examples: [
     { text: 'Cisco ACLs on a carrier network, then one of the first three in a new SOC on NetScreen', to: '/writing/network-security-before-devsecops/' },
     { text: 'AAA on voice platforms, then SSO and object-level authorization in applications', to: '/expertise/#security' },
-    { text: 'Federal applications in FedRAMP-aligned environments, with ATO evidence', to: '/writing/building-federal-government-applications/' },
+    { text: 'Public-sector applications in FedRAMP-aligned environments, with ATO evidence', to: '/writing/building-public-sector-applications/' },
   ] },
   { id: 'network', name: 'Network infrastructure', sub: 'Cisco · carrier networks · SNMP · capacity forecasting', claim: 'Where capacity was a purchase order and reliability was a process.', examples: [
     { text: '2,000+ collocations of ATM, IP and VoIP infrastructure, expanded without degrading service', to: '/work/carrier-capacity/' },

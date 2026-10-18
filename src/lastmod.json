@@ -1,27 +1,27 @@
 {
   "/": {
     "date": "2026-10-18",
-    "hash": "a818a1b59faccf10"
+    "hash": "34dff0a5881830c5"
   },
   "/about/": {
     "date": "2026-10-18",
-    "hash": "a07ea6d438c283af"
+    "hash": "e5b30373f4c28df7"
   },
   "/leadership/": {
     "date": "2026-10-18",
     "hash": "f8f03245a1607b21"
   },
   "/experience/": {
-    "date": "2026-10-12",
-    "hash": "f235703ca08fef90"
+    "date": "2026-10-18",
+    "hash": "53a7973a08bd832f"
   },
   "/projects/": {
     "date": "2026-10-18",
-    "hash": "229027b7df9f806d"
+    "hash": "d9806cd73a1f2b6b"
   },
   "/expertise/": {
     "date": "2026-10-18",
-    "hash": "2125df2bb8c6b936"
+    "hash": "a3fc5c065a082701"
   },
   "/community/": {
     "date": "2026-10-18",
@@ -33,7 +33,7 @@
   },
   "/writing/": {
     "date": "2026-10-18",
-    "hash": "6f8dfa6cef22b013"
+    "hash": "442c1ecd8f8f3912"
   },
   "/contact/": {
     "date": "2026-10-18",
@@ -57,15 +57,7 @@
   },
   "/work/publishing-distribution/": {
     "date": "2026-10-18",
-    "hash": "bad3bf058e8de323"
-  },
-  "/work/public-service-modernization/": {
-    "date": "2026-10-18",
-    "hash": "3c7c52e3ef0b2c1e"
-  },
-  "/work/document-intelligence/": {
-    "date": "2026-10-18",
-    "hash": "31b1b943756b990f"
+    "hash": "6d482e6d8c991d86"
   },
   "/work/event-driven-platform/": {
     "date": "2026-10-18",

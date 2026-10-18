@@ -19,6 +19,7 @@
     "validate": "BUILD_DIR=.validate npm run build && BUILD_DIR=.validate npm run audit:seo && BUILD_DIR=.validate npm run audit:writing",
     "deploy": "bash scripts/deploy.sh",
     "headers": "node scripts/cloudflare-security-headers.mjs",
+    "redirects": "node scripts/cloudflare-redirects.mjs",
     "contact:dev": "node scripts/contact-dev-server.mjs",
     "contact:email-dns": "node scripts/contact-email-dns.mjs",
     "contact:deploy": "bash serverless/contact/deploy.sh",

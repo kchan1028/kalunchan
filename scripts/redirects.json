@@ -1,0 +1,14 @@
+[
+  {
+    "from": "/work/public-service-modernization/",
+    "to": "/writing/modernizing-public-sector-applications/"
+  },
+  {
+    "from": "/work/document-intelligence/",
+    "to": "/writing/building-document-intelligence-workflows/"
+  },
+  {
+    "from": "/writing/building-federal-government-applications/",
+    "to": "/writing/building-public-sector-applications/"
+  }
+]

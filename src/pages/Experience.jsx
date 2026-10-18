@@ -59,17 +59,17 @@ function Role({ r, index }) {
               </dd>
             </div>
           )}
-          {r.story && (
-            <div className="tenure__part tenure__part--cases">
-              <dt className="label">{r.story.kind || 'Founder story'}</dt>
+          {[].concat(r.story || []).map((s) => (
+            <div key={s.to} className="tenure__part tenure__part--cases">
+              <dt className="label">{s.kind || 'Founder story'}</dt>
               <dd>
-                <Link to={r.story.to} className="link-arrow">
-                  <span>{r.story.label}</span>
+                <Link to={s.to} className="link-arrow">
+                  <span>{s.label}</span>
                   <ArrowRight />
                 </Link>
               </dd>
             </div>
-          )}
+          ))}
         </dl>
       </div>
     </article>

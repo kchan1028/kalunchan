@@ -12,6 +12,7 @@ export const toc = [
   ['everything-myself', 'Everything myself'],
   ['the-stack', 'What the platform was made of'],
   ['failure', 'Where it failed'],
+  ['leading', 'What it changed about how I lead'],
   ['today', 'How I build now'],
   ['hasnt-changed', 'What hasn’t changed'],
   ['still-building', 'Why I still build'],
@@ -25,6 +26,7 @@ export default function Body() {
         <p>When I started my first company, I did almost everything myself. We had raised our first money from friends and family and bootstrapped the rest, so there was rarely anyone else to hand a problem to.</p>
         <p>In a given week I’d be in a data center with a field technician, racking servers, routers and switches and running cable. Then I’d configure the network gear, get circuits turned up with the service providers, and install Linux on the boxes I had just racked. Then I’d go home and write the software that was supposed to run on them: the backend, the front end, the database, the user interface, and the billing system that decided what a call cost. When something broke in production, the pager, the logs and the code in the logs all belonged to me. Somewhere in there I was also the product manager, which mostly meant talking to customers and learning that what they needed was not what I had assumed.</p>
         <p>I’ve written about <Link to="/writing/founding-a-startup-isnt-easy/">being every department at once</Link>, so I won’t repeat the whole org chart here. The short version is that I learned whatever the business needed that week. This post is about what that work was made of, and how different the same work looks today.</p>
+        <p>The constraints made most of the product decisions. With friends-and-family money, everything we bought had to pay for itself quickly, and we were bringing in revenue in less than four months. That meant shipping the version customers would pay for and postponing the version I would have enjoyed building. When an off-the-shelf tool fit, we used it. When it didn’t, as with billing, I wrote our own, because the alternative was not being able to charge correctly for the product.</p>
       </section>
 
       <section id="the-stack" aria-labelledby="the-stack-h">
@@ -41,6 +43,12 @@ export default function Body() {
         <p>Operations taught the rest. A hard drive that fails in a cabinet forty minutes away doesn’t have a retry button. A carrier that degrades at two in the morning doesn’t open a pull request. You learn to design for the failure you haven’t seen yet, to keep state somewhere you can reconcile later, and to know which layer a problem lives in before you touch anything. Most of what I believe about architecture, reliability and running systems started in that building.</p>
       </section>
 
+      <section id="leading" aria-labelledby="leading-h">
+        <h2 id="leading-h" className="post__h2">What it changed about how I lead</h2>
+        <p>Having done every job on that platform, I know what I am asking for when I ask an engineer to own one. I know what it costs to be paged for a component you didn’t design, how long a circuit order really takes, and how a billing bug feels from the customer’s side. That makes me ask about failure modes, operating cost and support before I ask about the framework.</p>
+        <p>It also showed me my own limits. Because I had built the first version of almost everything, I could often fix a problem faster than I could explain it, and the team learned that hard problems came back to me. I had become the bottleneck I would have flagged in anyone else’s system. Handing systems over with the context behind them, and letting other people own them, was harder than learning SIP. I wrote about that change in <Link to="/writing/building-a-startup-from-idea-to-acquisition/#delegation">going from technical founder to engineering leader</Link>.</p>
+      </section>
+
       <section id="today" aria-labelledby="today-h">
         <h2 id="today-h" className="post__h2">How I build now</h2>
         <p>These days, when I have an idea, I open a terminal and start a conversation.</p>
@@ -53,7 +61,9 @@ export default function Body() {
       <section id="hasnt-changed" aria-labelledby="hasnt-changed-h">
         <h2 id="hasnt-changed-h" className="post__h2">What hasn’t changed</h2>
         <p className="post__answer">The difficult decisions usually concerned which problem was worth solving, what the solution had to survive, and which trade-offs the business could afford. Once people depended on it, keeping it running was a substantial part of the work. AI helps with implementation, but I still have to understand those decisions.</p>
-        <p>Speed doesn’t improve the decision. The assistant generates code quickly, and whether the code makes sense is a separate question that is still mine to answer. That is why I care about <Link to="/writing/engineering-work-nobody-needed/">not building work nobody needed</Link>.</p>
+        <p>AI makes building software faster. It doesn’t make anyone better at deciding what should be built. The assistant generates code quickly, and whether the code should exist is a separate question that is still mine to answer. That is why I care about <Link to="/writing/engineering-work-nobody-needed/">not building work nobody needed</Link>.</p>
+        <p>The fundamentals matter more when the code arrives this fast. An assistant will produce a design that works for the demo and falls over at the first network partition, or a schema that is easy today and painful once it holds customer data. Recognizing that takes an understanding of how systems behave in production, which I learned on the VoIP platform, and an idea of what the business can afford to run, which I learned from paying the bills.</p>
+        <p>Generating working code and building a system that stays reliable are separate skills. Code that works on day one still has to survive the dependency that times out, the retry that runs twice, the migration with customer data in it, the library upgrade a year later and the engineer who inherits it without context. An assistant is very good at the first part. Most of my career has been the second, and it is the part I lean on most when I evaluate anything AI builds, including the agents I described in <Link to="/writing/ai-agents-reliable-in-production/">making AI agents reliable in production</Link>.</p>
         <p>Experience shows up as earlier recognition. Years of troubleshooting production systems, running infrastructure and leading teams mean I see the retry without an idempotency key, or the schema that will hurt at ten times the data, before the code runs. The assistant will happily write both. I’ve learned to ask it why not, and to check its answer.</p>
         <p>Finding customers still takes work. I need to understand which problems they will pay to solve and whether they will keep using the product. AI helps me test an implementation sooner, but it does not answer those questions for me.</p>
         <p>Learning is still the job. I learned Asterisk from mailing lists and SIP from packet captures. Now I learn by reading what the assistant wrote and checking it against what I know. AI is a big shift, and I’ve worked through several before it. Adapting to the next tool is nothing new. It is most of what the career has been.</p>
@@ -61,7 +71,7 @@ export default function Body() {
 
       <section id="still-building" aria-labelledby="still-building-h">
         <h2 id="still-building-h" className="post__h2">Why I still build</h2>
-        <p>I moved into engineering leadership a long time ago, and I still write code. What changed is where the time goes: less on scaffolding, more on the idea, the design, and finding out quickly whether anyone wants the thing. That was the part I liked in the first place. The rack, the cables and the late-night pages were the price of admission.</p>
+        <p>I moved into engineering leadership a long time ago, and I still write code. Building keeps my estimates honest and my judgment current, and it is the only way I know to review what an assistant writes with any confidence. The longer argument is in <Link to="/writing/why-i-still-write-code/">why I still write code</Link>. What changed is where the time goes: less on scaffolding, more on the idea, the design, and finding out quickly whether anyone wants the thing. That was the part I liked in the first place. The rack, the cables and the late-night pages were the price of admission.</p>
         <p>AI lowered that price. The reason I keep paying it is the same as it was when I unpacked the first server. There is a problem, I can see a way to solve it, and I want to find out whether I’m right.</p>
       </section>
     </>

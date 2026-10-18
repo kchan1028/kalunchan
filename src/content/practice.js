@@ -86,18 +86,18 @@ export const capabilities = [
   {
     id: 'gov',
     no: '405',
-    name: 'Government technology & federal compliance',
-    claim: 'Public services where accessibility, security and a clean hand-over to the agency are part of the scope from day one. Building, modernizing and supporting federal applications, including federal certification systems.',
+    name: 'Government technology & public-sector compliance',
+    claim: 'Public services where accessibility, security and a clean hand-over to the agency are part of the scope from day one. Building, modernizing and supporting public-sector applications, including public-sector certification systems.',
     practice: [
       'Incremental modernization of services the public relies on',
-      'Engineering that supports federal security authorization: FedRAMP-aligned cloud environments, NIST security controls, Authority to Operate evidence, continuous monitoring',
+      'Engineering that supports public-sector security authorization: FedRAMP-aligned cloud environments, NIST security controls, Authority to Operate evidence, continuous monitoring',
       'Section 508 and WCAG accessibility, and Plain Writing, in the acceptance criteria',
       'Procurement-aware delivery, change management and agency hand-over',
     ],
-    stack: ['Python', 'Django', 'React', 'Vue', 'Rails', 'PostgreSQL', 'AWS', 'Terraform'],
+    stack: [],
     evidence: [
-      { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me' },
-      { to: '/work/public-service-modernization/', label: 'Design example: public-sector modernization without a rewrite' },
+      { to: '/writing/building-public-sector-applications/', label: 'What building public-sector applications taught me' },
+      { to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications is more than rewriting code' },
       { to: '/projects/fedpath/', label: 'FedPath: SAM.gov opportunities for small businesses' },
     ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 0, yippify: 2 },
@@ -116,7 +116,7 @@ export const capabilities = [
     ],
     stack: ['LLM APIs', 'RAG', 'Vector search', 'Python'],
     evidence: [
-      { to: '/work/document-intelligence/', label: 'Design example: LLM document processing with a human in the loop' },
+      { to: '/writing/building-document-intelligence-workflows/', label: 'Building document intelligence is more than extracting text with AI' },
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#still-build', label: 'Why I stay hands-on with LLMs, RAG, agents and MCP' },
     ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 1, yippify: 2 },
@@ -156,7 +156,8 @@ export const capabilities = [
     evidence: [
       { to: '/writing/network-security-before-devsecops/', label: 'From Cisco ACLs and NetScreen firewalls to cloud and application security' },
       { to: '/writing/api-architecture-lessons/#security', label: 'Authorization: a valid token says nothing about the record' },
-      { to: '/work/public-service-modernization/', label: 'Design example: security and accessibility as release gates' },
+      { to: '/writing/building-public-sector-applications/#architecture', label: 'Public-sector applications: authorization, least privilege and audit logging' },
+      { to: '/writing/modernizing-public-sector-applications/#requirements', label: 'Modernizing public-sector applications: security, accessibility and audit from the first slice' },
     ],
     depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },

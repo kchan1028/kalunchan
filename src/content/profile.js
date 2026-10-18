@@ -69,18 +69,23 @@ export const roles = [
     responsibility:
       'Architecture, technical strategy and delivery leadership across client engagements, plus hands-on engineering wherever it takes risk out of the build.',
     decisions: [
-      'Choose well-understood platforms (Django, Rails, React and Next.js on AWS) that a client team can own after hand-over.',
+      'Choose well-understood platforms that a client team can own after hand-over.',
       'Infrastructure as code and CI/CD from the first sprint, not the last.',
       'Record architecture decisions in writing so the reasoning survives the engagement.',
       'Size infrastructure to the product’s maturity and measured demand, and buy before building when the capability is not what the client pays for.',
     ],
     verifyDecisions: true,
     execution:
-      'Small stacked pull requests, iterative releases stakeholders can see every sprint, and QA and product in the same planning loop as engineering. On federal work, engineering that supports security authorization: FedRAMP-aligned environments, evidence for the Authority to Operate, Section 508 accessibility and Plain Writing in the acceptance criteria.',
+      'Small stacked pull requests, iterative releases stakeholders can see every sprint, and QA and product in the same planning loop as engineering. On public-sector work, engineering that supports security authorization: FedRAMP-aligned environments, evidence for the Authority to Operate, Section 508 accessibility and Plain Writing in the acceptance criteria.',
     outcome:
       'Mobile and web applications delivered for government, startup and entrepreneur clients.',
-    cases: ['public-service-modernization', 'document-intelligence'],
-    story: { to: '/writing/building-startups-technical-leadership/', label: 'Startup story: six engagements, from hybrid mobile to wholesale VoIP and virtual tours', kind: 'Startup story' },
+    cases: [],
+    story: [
+      { to: '/writing/building-startups-technical-leadership/', label: 'Startup story: six engagements, from hybrid mobile to wholesale VoIP and virtual tours', kind: 'Startup story' },
+      { to: '/writing/building-public-sector-applications/', label: 'Government story: security, accessibility, integrations and change control on public-sector applications', kind: 'Government story' },
+      { to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications: legacy rules, incremental replacement and approvals', kind: 'Modernization story' },
+      { to: '/writing/building-document-intelligence-workflows/', label: 'AI document processing with people in the loop: validation, review and integration', kind: 'AI story' },
+    ],
   },
   {
     id: 'publishing',
@@ -105,6 +110,7 @@ export const roles = [
     outcome:
       'Organic traffic, social traffic and social engagement each up 50%, with infrastructure improvements contributing to about 30% lower AWS costs.',
     cases: ['publishing-distribution'],
+    story: { to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost', label: 'How infrastructure improvements contributed to about 30% lower AWS costs', kind: 'Cost story' },
   },
   {
     id: 'communications',
@@ -128,7 +134,10 @@ export const roles = [
     outcome:
       '400k+ users, multimillion-dollar growth, and a successful acquisition.',
     cases: ['three-continent-platform'],
-    story: { to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder journey: from 0→1 to acquisition' },
+    story: [
+      { to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder journey: from 0→1 to acquisition' },
+      { to: '/writing/hidden-cost-of-software-architecture/#monolith', label: 'A modular monolith past 400,000 users, and what each architecture decision costs to run', kind: 'Architecture story' },
+    ],
   },
   {
     id: 'voice',
@@ -151,6 +160,7 @@ export const roles = [
     outcome:
       'A stable, scalable platform through the company’s growth phase, with expansion planned ahead of demand.',
     cases: [],
+    story: { to: '/writing/capacity-planning-carrier-networks-to-cloud/#voip', label: 'Capacity planning behind 8M+ VoIP minutes a month: signaling, media and concurrent calls', kind: 'Capacity story' },
   },
   {
     id: 'carrier',
@@ -173,7 +183,10 @@ export const roles = [
     outcome:
       'Integrated and expanded carrier infrastructure across the national footprint while supporting network security and IP services operations.',
     cases: ['carrier-capacity'],
-    story: { to: '/writing/network-security-before-devsecops/', label: 'Security story: from Cisco ACLs and NetScreen to cloud and application security', kind: 'Security story' },
+    story: [
+      { to: '/writing/capacity-planning-carrier-networks-to-cloud/#forecast', label: 'Forecasting capacity from SNMP data across 2,000+ collocations, and what it taught me about cloud scaling', kind: 'Capacity story' },
+      { to: '/writing/network-security-before-devsecops/', label: 'Security story: from Cisco ACLs and NetScreen to cloud and application security', kind: 'Security story' },
+    ],
   },
 ];
 

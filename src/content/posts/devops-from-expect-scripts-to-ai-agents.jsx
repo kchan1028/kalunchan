@@ -178,7 +178,7 @@ export default function Body() {
         <p>Deployment scripts that used to live on somebody’s server became a pipeline that starts when code is pushed:</p>
         <Code label="Pipeline">{pipeline}</Code>
         <p>And a process that crashed at night no longer needed someone to log in and restart it. Kubernetes notices the failed container and starts a new one.</p>
-        <p>The <Link to="/work/public-service-modernization/">public-sector modernization example</Link> combines containers on AWS, Terraform and a pipeline with accessibility and security checks. It illustrates how much of the deployment work can be defined and checked in code, compared with the manual steps of a NOC change window.</p>
+        <p>The approach in <Link to="/writing/modernizing-public-sector-applications/">modernizing public-sector applications</Link> combines infrastructure defined as code and a pipeline with accessibility and security checks. It shows how much of the deployment work can be defined and checked in code, compared with the manual steps of a NOC change window.</p>
       </section>
 
       <section id="still-scripts" aria-labelledby="still-scripts-h">
@@ -283,7 +283,7 @@ export default function Body() {
             <dd>Production secrets never go into a prompt or a context window unless there’s no other way.</dd>
           </div>
         </dl>
-        <p>These are the controls we already built for people, applied to a new kind of operator. In the <Link to="/work/document-intelligence/">illustrative LLM document pipeline</Link>, a review threshold needs to reflect the cost of a wrong answer and be tested against representative documents. Production access deserves at least that much care.</p>
+        <p>These are the controls we already built for people, applied to a new kind of operator. In <Link to="/writing/building-document-intelligence-workflows/#messy">a document intelligence workflow</Link>, a review threshold needs to reflect the cost of a wrong answer and be tested against representative documents. Production access deserves at least that much care.</p>
         <p className="post__pull">For now, let AI take the investigation and the repetitive work, and keep the accountability with engineers.</p>
       </section>
 

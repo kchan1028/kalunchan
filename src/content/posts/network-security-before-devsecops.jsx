@@ -8,14 +8,17 @@ import { ArrowRight } from '../../components/Icons';
 // Center; travelled to the East Coast to train the Technical Assistance Center;
 // later AAA on the voice platforms, then authentication, SSO, OAuth, JWT, RBAC
 // and object-level authorization in applications, AWS/IAM/Terraform on client
-// work, and government systems with federal security requirements. Employers
+// work, and government systems with public-sector security requirements. Employers
 // unnamed, no job title invented, no customer incidents, no metrics. NetScreen
 // history is public record (founded 1997, bought by Juniper in 2004); those two
 // years are owner-approved on this route in scripts/audit-seo.py. The stages in
-// Fig. 679-1 are undated on purpose.
+// Fig. 679-1 are undated on purpose. Oct 18 revision: "before the tooling",
+// multi-customer operations and the engineering-responsibility section add no
+// new incidents; the multi-customer points are inherent to the service.
 
 export const toc = [
   ['routers-and-acls', 'Before cloud security, there were routers and ACLs'],
+  ['before-tooling', 'Security before the tooling'],
   ['managed-security', 'When the carrier started selling security'],
   ['first-three', 'One of the first three in the SOC'],
   ['netscreen', 'Firewalls, VPNs and the whole path'],
@@ -23,6 +26,7 @@ export const toc = [
   ['more-than-a-firewall', 'Security is more than a firewall'],
   ['carried-forward', 'What carried into software, cloud and government work'],
   ['every-layer', 'Security at every layer of a company'],
+  ['responsibility', 'Security is an engineering responsibility'],
   ['learned', 'What I learned'],
 ];
 
@@ -36,7 +40,7 @@ const stages = [
   { title: 'Application security', text: 'Authentication, SSO, OAuth, JWT, role-based access and object-level authorization in Django, Rails and Node APIs.' },
   { title: 'Mobile application security', text: 'Nokia, iPhone and Android apps as untrusted clients: credentials on the device, tokens on the wire, and every permission checked again on the server.' },
   { title: 'Cloud infrastructure security', text: 'IAM, network controls, secrets and Terraform on AWS. The ACL came back as a security group and a policy document.' },
-  { title: 'Government systems', text: 'Federal security requirements: access control, auditability and secure deployment as part of the scope, with FedRAMP-aligned environments.' },
+  { title: 'Government systems', text: 'Public-sector security requirements: access control, auditability and secure deployment as part of the scope, with FedRAMP-aligned environments.' },
   { title: 'Engineering leadership', text: 'Security as a release gate and a named owner, pulled to the front of delivery instead of the week before launch.', now: true },
 ];
 
@@ -82,7 +86,7 @@ const layers = [
     concerns: 'Over-permissive IAM policies, public storage buckets, secrets committed to code, and configuration that drifted from what was reviewed.',
     controls: ['IAM with least privilege and no shared keys', 'Private networks, security groups, minimal public surface', 'Secrets in a secrets manager', 'Infrastructure as code with review'],
     mine: 'AWS environments for client work, provisioned with Terraform, with ECS, RDS, S3 and CloudFront behind IAM policies that are reviewed like code.',
-    to: '/work/public-service-modernization/', label: 'Design example: modernizing a public service on AWS',
+    to: '/writing/modernizing-public-sector-applications/', label: 'Modernizing public-sector applications with security in every slice',
   },
   {
     id: 'delivery', name: 'Software delivery', hint: 'Reviews, dependencies, pipelines',
@@ -199,11 +203,19 @@ export default function Body() {
         <p>So the actual skill was understanding which systems needed to talk to each other, writing rules that allowed exactly that, and knowing where to look when something that should connect didn’t. An ACL was a frequent suspect in connectivity troubleshooting, and reading one carefully, in order, with the implicit deny at the bottom in mind, became a habit I never lost.</p>
       </section>
 
+      <section id="before-tooling" aria-labelledby="before-tooling-h">
+        <h2 id="before-tooling-h" className="post__h2">Security before the tooling</h2>
+        <p>There was no pipeline to scan a router configuration before it went live, and no policy check to flag a rule that opened more than it should. The router accepted what you typed. The safeguards were understanding the network well enough to know what a rule would touch, reading the whole list before changing any line of it, and confirming afterwards that the traffic that should flow still flowed.</p>
+        <p>A configuration mistake on a carrier router was a production change with customers behind it, which is why security never felt like a separate checkbox. The people who wrote the rules were the people who took the ticket when a rule broke something. We automated the repetitive parts ourselves with Expect and KornShell scripts, the story I told in <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">DevOps from Expect scripts to AI agents</Link>. Automation made the work consistent. It did not decide whether a rule was right.</p>
+        <p>DevSecOps later gave a name, and a lot of good tooling, to the idea that the people who build and operate a system own its security. In carrier operations we didn’t have the name, and there was nobody else to hand the responsibility to.</p>
+      </section>
+
       <section id="managed-security" aria-labelledby="managed-security-h">
         <h2 id="managed-security-h" className="post__h2">When the carrier started selling security</h2>
         <p>Then the carrier introduced a managed security service built on NetScreen firewall and VPN products, and security stopped being something we did to protect our own network and became something we sold.</p>
         <p>NetScreen Technologies was founded in 1997 and built firewalls and VPN gateways as purpose-built hardware, with security processing in custom silicon rather than on a general-purpose server. The devices ran ScreenOS, which organized a network into zones and expressed security as policies between them. They were fast, they were reliable, and they were a good fit for a carrier that wanted to put a managed box at the customer’s edge. Juniper Networks bought the company in 2004 for about four billion dollars, and ScreenOS lived on in Juniper’s product line for years afterward.</p>
         <p>A managed security service changed what the carrier was responsible for. Before, a customer bought connectivity and we made sure the circuit was up. Now the customer bought a firewall we configured, a VPN between their offices that ran across our network, a security policy we maintained on their behalf, and monitoring to tell us when any of it broke. Every change request was a security decision made for someone else. Every outage on that box was both a security event and a connectivity outage. The operational side of that, the process for taking a change, verifying it, applying it and recording it, had to be built alongside the service.</p>
+        <p>Running it for many customers brought its own problems. Every customer’s network was different, so a policy that was right for one was wrong for the next, and the service could only grow if the way we built and changed policies stayed consistent even when the policies themselves didn’t. Troubleshooting crossed into networks we didn’t run and couldn’t see. A change for one customer had to stay with that customer. Those are the problems a multi-tenant SaaS platform has today: per-tenant configuration, isolation between tenants, and support that works without the engineers who set it up.</p>
       </section>
 
       <section id="first-three" aria-labelledby="first-three-h">
@@ -229,7 +241,7 @@ export default function Body() {
 
       <section id="more-than-a-firewall" aria-labelledby="more-than-a-firewall-h">
         <h2 id="more-than-a-firewall-h" className="post__h2">Security is more than a firewall</h2>
-        <p>The security work did not end when I left carrier networks. It changed shape with every job. On the voice platforms it was AAA: every call was authenticated, authorized and accounted for, so the platform always knew who was calling, what they were allowed to call, and what it cost. In application work it became authentication, single sign-on, OAuth, tokens, roles and the check on the individual record. On mobile it became the same questions asked of a client we did not control: where the credentials live on the device, what travels on the wire, and what the server re-checks. In cloud work it became IAM policies, network configuration and secrets, written as code. In government work it became federal security requirements, access control and auditability as part of the scope. And in leadership it became deciding who owns security on a team and when in the delivery cycle it gets attention.</p>
+        <p>The security work did not end when I left carrier networks. It changed shape with every job. On the voice platforms it was AAA: every call was authenticated, authorized and accounted for, so the platform always knew who was calling, what they were allowed to call, and what it cost. In application work it became authentication, single sign-on, OAuth, tokens, roles and the check on the individual record. On mobile it became the same questions asked of a client we did not control: where the credentials live on the device, what travels on the wire, and what the server re-checks. In cloud work it became IAM policies, network configuration and secrets, written as code. In government work it became public-sector security requirements, access control and auditability as part of the scope. And in leadership it became deciding who owns security on a team and when in the delivery cycle it gets attention.</p>
         <Timeline />
         <p>That is not a strict chronology, and I have gone back and forth between layers more than once. The point is that security came with every layer I worked in, and each layer taught me something the next one needed.</p>
       </section>
@@ -241,7 +253,7 @@ export default function Body() {
         <p>Mobile made that lesson sharper. From the <Link to="/writing/voip-apps-for-nokia-phones-before-the-iphone/">VoIP apps we wrote for Nokia phones</Link> through the iOS and Android apps I have shipped since, the app in someone’s pocket is a client we do not control. Anything it holds can be read, anything it sends can be replayed, and anything it is trusted to decide will eventually be decided wrong. So the credentials live in the platform’s secure storage, the tokens are short-lived, the secrets stay out of the bundle, and every authorization decision is made again on the server, where the app cannot argue with it.</p>
         <p>Telecom taught me to consider security controls alongside reliability. They have different goals, but a control can affect whether a legitimate caller gets through. On a VoIP platform, registration, routing and billing all have to agree on who is calling and what they may do, and a security control that drops legitimate calls is an outage. The platform I co-founded needed routing, billing and access control to be right at the same time, and a failure in any of them looked, to the customer, like the same failure.</p>
         <p>Cloud infrastructure felt familiar faster than I expected. A security group is a stateful ACL. An IAM policy is an ACL over API calls. A VPC with public and private subnets is a zone design. Terraform is the configuration I used to type into a router, now in version control with a reviewer. The differences are real too: the perimeter is mostly gone, identity carries the weight the network edge used to carry, everything is an API, and change moves through a pipeline instead of a maintenance window. The questions underneath are the ones from the ACL days. Who needs to reach what, and what happens to legitimate traffic when the rule is wrong.</p>
-        <p>Government work added a discipline I had not had before. Systems built for federal programs come with security requirements that are written down, including FedRAMP-aligned environments, and the requirements have to be visible in how the system is designed, deployed and operated: access control, auditability, secure configuration and a deployment path that can be shown to someone. My role there was engineering, designing and building systems to meet those requirements. I have not obtained an authorization myself or worked as a security assessor, and I would not want this story to suggest otherwise.</p>
+        <p>Government work added a discipline I had not had before. Systems built for public-sector programs come with security requirements that are written down, including FedRAMP-aligned environments, and the requirements have to be visible in how the system is designed, deployed and operated: access control, auditability, secure configuration and a deployment path that can be shown to someone. My role there was engineering, designing and building systems to meet those requirements. I have not obtained an authorization myself or worked as a security assessor, and I would not want this story to suggest otherwise.</p>
       </section>
 
       <section id="every-layer" aria-labelledby="every-layer-h">
@@ -249,6 +261,13 @@ export default function Body() {
         <p>Good security comes from decisions made at every layer, by the people who work there, and most of them do not have security in their title. The figure below walks the stack from the network up to the organization. For each layer it lists what typically goes wrong and the controls that usually answer it, which is general practice, and where I have worked in that layer myself, which is first-hand. I have kept the two apart on purpose.</p>
         <Layers />
         <p>Two things stand out when you read it as a whole. The technical controls get most of the attention and the organizational ones decide whether the technical ones exist. A team with no named owner for security does not have a firewall problem. It has a priority problem, and the firewall configuration is where it shows up.</p>
+      </section>
+
+      <section id="responsibility" aria-labelledby="responsibility-h">
+        <h2 id="responsibility-h" className="post__h2">Security is an engineering responsibility</h2>
+        <p>A security team can set standards, review designs, run assessments and lead incident response. It can’t write the authorization check in every endpoint, choose the IAM policy for every role, or notice that a new feature exposes a record it shouldn’t. Developers, infrastructure engineers and operators make those decisions every day, and engineering leaders decide whether there is time to make them well. That is why, on <Link to="/writing/building-public-sector-applications/">public-sector applications</Link> and everywhere else, I want security in the acceptance criteria and found vulnerabilities fixed as high-priority work.</p>
+        <p>Modern tooling helps a great deal. Dependency scanning, static analysis, infrastructure-as-code checks and secret detection in CI/CD catch whole classes of mistakes before they reach production, and they run on every change, which people don’t. I want those checks in the pipeline from the first sprint.</p>
+        <p>They have limits. A scanner can report a vulnerable library, and someone still has to know whether the vulnerable code is reachable and what upgrading will break. A policy check can flag a security group open to the internet, and someone has to know whether that endpoint is meant to be public. A tool enforces the rules it was given. Writing good rules takes someone who understands the system, the same understanding a router ACL demanded.</p>
       </section>
 
       <section id="learned" aria-labelledby="learned-h">
