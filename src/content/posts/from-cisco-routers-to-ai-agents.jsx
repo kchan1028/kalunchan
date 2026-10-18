@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowRight } from '../../components/Icons';
 
-// Series "Still Building After 20 Years", part 1. Facts from the site and KC:
+// Series "Still Building", part 1. Facts from the site and KC:
 // carrier network MTS (Cisco routers and switches, ACLs, ATM/IP/VoIP, 2,000+
 // collocations, Expect/KornShell); one of the first three in a new SOC on
 // NetScreen managed firewall/VPN; trained the TAC on the East Coast; VoIP on
@@ -47,7 +47,7 @@ export default function Body() {
     <>
       <section id="before-cloud" aria-labelledby="before-cloud-h">
         <h2 id="before-cloud-h" className="post__h2">Before the cloud, the network was the computer</h2>
-        <p>This is the first story in a short series I am calling Still Building After 20 Years. It is the infrastructure one, and it starts where my engineering career did: on a carrier network, at a console prompt, with a Cisco router on the other end of a serial cable.</p>
+        <p>This is the first story in a short series I am calling Still Building. It is the infrastructure one, and it starts where my engineering career did: on a carrier network, at a console prompt, with a Cisco router on the other end of a serial cable.</p>
         <p>The network spanned more than 2,000 collocations, carrying ATM, IP and VoIP traffic for a national broadband provider. The work was routers and switches, access control lists, circuits that went down at inconvenient hours, Linux and Unix boxes doing the monitoring, and a lot of scripts in Expect and KornShell that typed into consoles so a person did not have to. There was no console in a browser and no API to call for more capacity. If a link was full, someone ordered hardware, and someone else drove to a building to install it.</p>
         <p>What that kind of work teaches is how to think in paths. When a customer could not reach something, the answer was somewhere between them and it, and the job was to walk the path one hop at a time until you found the hop that disagreed with the others. I have used that habit on every system since, including ones with no routers in them.</p>
       </section>
@@ -87,7 +87,7 @@ export default function Body() {
       <section id="carried" aria-labelledby="carried-h">
         <h2 id="carried-h" className="post__h2">What carried over</h2>
         <Carried />
-        <p>The tools changed almost completely. Routers became APIs, data centers became regions, scripts became pipelines, and now some of the scripts write themselves. The questions did not change much. What can talk to what? Who is allowed? What happens when this hop fails? Who will notice? What does it cost? I learned to ask those at a console port, and I have not found a system yet where they stopped being the right questions.</p>
+        <p>The tools changed almost completely. Routers became APIs, data centers became regions, scripts became pipelines, and now some of the scripts write themselves. The questions did not change much. I still trace which systems communicate, check who has access, and work out how failures will be detected and recovered from. I also need to know what the design costs to operate. I learned to ask those at a console port, and I have not found a system yet where they stopped being the right questions.</p>
         <p>The next story in the series is about why, after all of that and several leadership roles, I still write code.</p>
       </section>
     </>

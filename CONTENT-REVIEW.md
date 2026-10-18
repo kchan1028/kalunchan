@@ -7,10 +7,10 @@ The 2026 redesign drafted some content from the brief rather than from the previ
 | Case | Status | What to check |
 |---|---|---|
 | 301 From one data center to three continents | Mostly confirmed | Rejected options (CDN only, per-market instances, relaying every call through one site) and the region-by-region rollout are inferred. Expanded text is drawn from the founder and capacity-planning posts; inferred: the migration ran alongside day-to-day operations, the 30+ team "over the life of the company", and the tradeoffs (replicated writes travelling further, extra operational attention). |
-| 302 Publishing platform distribution | `verify` | The +50% and ~30% AWS figures and the WordPress → Rails on AWS re-platform are confirmed. The approach (structured content, cached rendering, social metadata) is inferred. Expanded text is drawn from the publishing SEO post; inferred: the rejected "keep extending WordPress" option, the CMS field list, redirect maps as part of the re-platform, and title-specific requests waiting. |
-| 303 Public-sector modernization | `verify` | Not expanded to 600–900 words: needs a real engagement first. Entire case is drafted: strangler pattern, Django/React, ECS, Terraform, WCAG gates, hand-over. Replace it with a real engagement or remove it. |
-| 304 LLM document processing | `verify` | Not expanded: needs a real engagement first. Entire case is drafted, including the 2023 start date. Replace it with a real engagement or remove it. |
-| 305 Event-driven microservices | `verify` | Not expanded: needs the real organization and details first. Organization and years are unknown ("SaaS platform", "Various"). The outbox and Kafka design is drafted. |
+| 302 Publishing platform distribution | `verify` | The +50% and ~30% AWS figures and the WordPress → Rails on AWS re-platform are confirmed. The approach (structured content, cached rendering, social metadata) is inferred. The options are now labelled as a design discussion rather than a record of rejected proposals. Expanded text is drawn from the publishing SEO post; inferred: the rejected "keep extending WordPress" option, the CMS field list, redirect maps as part of the re-platform, and title-specific requests waiting. |
+| 303 Public-sector modernization | Illustrative design | Converted to a hypothetical scenario. Client role and delivered outcomes removed. Do not describe it as a completed engagement without a confirmed source. |
+| 304 LLM document processing | Illustrative design | Converted to a hypothetical document-intake design, with proposed goals and review criteria. No client engagement or achieved outcome is claimed. |
+| 305 Event-driven microservices | Illustrative design | Converted to a hypothetical SaaS design. The outbox and Kafka discussion remains educational; no organization, client role or delivered result is claimed. |
 | 306 Carrier capacity planning | Mostly confirmed | The "plan from measured utilization" decision is inferred. Expanded text is drawn from the capacity-planning post and the Experience role; inferred: the rejected options in the headroom and operations decisions, planning each network layer from its own data, and the two tradeoffs. |
 
 ## Shipped projects (`src/content/projects.js`)
@@ -43,4 +43,6 @@ Screenshots in `public/images/projects/` were captured from the live sites; re-c
 - Colophon location: "San Francisco Bay Area" (inferred from the cycling team).
 - Public email: none is shown. Set `person.email` in `profile.js` to add one.
 - Leadership practices (101–108) and "Signals I watch" are written in your voice from the brief. Edit them freely.
-- Contact reply time: "I usually reply within two business days." (`responseTime` in `src/content/contact.js`) is a drafted promise shown beside the form and on the sent screen. Confirm or change it.
+- Contact reply channel: the unconfirmed two-business-day promise was removed. The form and contact page now state only that replies go to the supplied email address.
+
+The AI-style cleanup also recast article references to 303–305 as illustrative designs, including the microservices, DevOps, forward-engineering, federal-applications and architecture articles. Routes and incoming links remain available.

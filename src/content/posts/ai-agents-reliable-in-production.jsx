@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowRight } from '../../components/Icons';
 
-// Series "Still Building After 20 Years", part 3. Facts from the site and KC:
+// Series "Still Building", part 3. Facts from the site and KC:
 // experiments with Claude Code, ChatGPT, OpenAI Codex, Hermes Agent on a VPS,
 // OmniRoute, scheduled agents and multiple providers; a job-search agent in
 // progress (not in production, stated); FedPath deliberately keeps
@@ -46,9 +46,9 @@ export default function Body() {
     <>
       <section id="demo" aria-labelledby="demo-h">
         <h2 id="demo-h" className="post__h2">The afternoon it worked</h2>
-        <p>This is the third story in Still Building After 20 Years, and the most current one. For the past while I have been experimenting with AI agents: Claude Code and OpenAI’s Codex in the terminal, ChatGPT in the browser, Hermes Agent on a VPS I administer, OmniRoute as a gateway across several model providers, and scheduled jobs that run without me. I am building a job-search agent on that setup and planning a content research assistant for Useful Little Tools.</p>
+        <p>This is the third story in Still Building, and the most current one. For the past while I have been experimenting with AI agents: Claude Code and OpenAI’s Codex in the terminal, ChatGPT in the browser, Hermes Agent on a VPS I administer, OmniRoute as a gateway across several model providers, and scheduled jobs that run without me. I am building a job-search agent on that setup and planning a content research assistant for Useful Little Tools.</p>
         <p>Getting an agent to work the first time is delightful. You describe the task, connect a tool or two, run it, and an afternoon later something that would have taken a week of glue code is answering questions and calling APIs on your behalf. The first time my agent came back with a sensible answer I felt the way I felt the first time a script I wrote configured a router while I watched. Then I asked the question I have asked about every system I have run: what happens tomorrow, at six in the morning, when I am not watching?</p>
-        <p className="post__answer">An AI agent demo shows that a model can do the task once with a person watching. A production agent has to do it every day without one: survive failed calls and missed schedules, never do the same irreversible thing twice, stay inside a budget, touch only what it is allowed to, and produce results someone can trust and check. The model is the easy part. Everything around it is distributed systems engineering.</p>
+        <p className="post__answer">An AI agent demo shows that a model can do the task once with a person watching. A production agent has to do it every day without one: survive failed calls and missed schedules, never do the same irreversible thing twice, stay inside a budget, touch only what it is allowed to, and produce results someone can trust and check. Alongside evaluating the model’s output, I need to design recovery, permissions and the state kept between runs.</p>
       </section>
 
       <section id="production" aria-labelledby="production-h">
@@ -90,11 +90,11 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">New capabilities, old problems, higher stakes</h2>
+      <h2 id="closing-h" className="post__close-title h2">Before I leave an agent running</h2>
       <div className="post__close-copy">
-        <p className="lead">AI agents bring capabilities I could not have built a few years ago. They do not remove a single traditional software engineering problem.</p>
-        <p className="post__close-principle">The test I end on is whether I would let it run unattended with my name on the result.</p>
-        <p>That is the end of the series, for now. The start was <Link to="/writing/from-cisco-routers-to-ai-agents/">a router console</Link>, and the habits I learned there are still the ones keeping the newest systems honest.</p>
+        <p className="lead">AI agents let me attempt work I could not have built a few years ago. Before I rely on one, I need to know how it recovers from failure, what it can access and how I will check its output.</p>
+        <p className="post__close-principle">I am still working toward an agent I would trust to run unattended with my name on the result.</p>
+        <p>The series began at <Link to="/writing/from-cisco-routers-to-ai-agents/">a router console</Link>, and I still use the troubleshooting habits I learned there.</p>
         <div className="post__close-actions">
           <Link to="/writing/?path=still-building" className="action">The whole series <ArrowRight /></Link>
         </div>

@@ -72,7 +72,7 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Organizing Berkeley Omnium with this team has made me more careful about what I ask of people, and more deliberate about how ownership is shared and how credit is given. None of it is mine alone. The race happens because a lot of people choose, again, to give it their time.</p>
         <p>It has changed how I lead engineering teams, too. A delivery date matters, but it isn’t the whole job. The people who carried this release will carry the next one, and how they were treated shapes what they’ll be willing to give.</p>
-        <p className="post__close-principle">Deliver the work, and leave people wanting to do it together again.</p>
+        <p className="post__close-principle">I want people to feel that their time was respected and that they would be willing to work together on the next event.</p>
         <div className="post__close-actions">
           <a href={cycling.omnium} className="action">Visit berkeleyomnium.com <ArrowOut /></a>
           <Link to={cyclingPost} className="link-arrow"><span>What cycling taught me about engineering leadership</span> <ArrowRight /></Link>

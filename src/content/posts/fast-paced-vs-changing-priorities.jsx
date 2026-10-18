@@ -114,7 +114,7 @@ export default function Body() {
       <section id="tradeoffs" aria-labelledby="tradeoffs-h">
         <h2 id="tradeoffs-h" className="post__h2">Leaders make the tradeoff visible</h2>
         <p>The worst thing an engineering leader can do with a new priority is say yes and add it to the pile. It feels supportive, and it hurts the team, because it now carries more than it can finish, and the business believes it is getting everything it asked for. The gap shows up weeks later as a missed date nobody saw coming.</p>
-        <p>The better response is a question, asked without any defensiveness, because it is a real question:</p>
+        <p>I ask the requester to choose what should stop so the team can take on the new priority:</p>
         <p className="post__pull">If this becomes our highest priority, what should we stop working on?</p>
         <p>That question does two things. It treats the request as legitimate, which it usually is. And it puts the cost on the table where the person who owns the business decision can see it. Sometimes the answer is to stop something, and that is fine; the business decided with the facts. Sometimes, seeing the cost, the requester decides it can wait two weeks, and that is fine too. What it prevents is the silent version, where everything is accepted and the team absorbs the impossible. As CTO and in operations roles, I learned that executives almost always prefer to make the tradeoff themselves than to discover later that engineering made it for them. Making tradeoffs visible is part of what I mean by <Link to="/leadership/#cross-functional">working across product and leadership</Link>.</p>
       </section>

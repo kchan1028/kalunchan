@@ -124,20 +124,20 @@ export default function Mentorship() {
         <h1 id="mentor-title" className="mentor-hero__title display">Mentor people until they can replace you.</h1>
         <div className="mentor-hero__copy">
           <p className="mentor-hero__lead">Done well, that makes you more useful as a leader, because the team can do more without you.</p>
-          <p className="body-copy">I believe leadership should increase the capability of the people around you. If everything depends on me, I haven’t built a strong team. I’ve built a dependency. A good leader becomes less necessary to the decisions they once had to make.</p>
+          <p className="body-copy">I want engineers to have enough context and support to make decisions without waiting for me. That means sharing what I know, explaining the constraints and handing over responsibility as someone becomes ready for it.</p>
           <Link className="link-arrow mentor-hero__cta" to="/contact/?topic=mentorship#start"><span>Want to grow your engineers, or be mentored? Let’s talk</span> <ArrowRight /></Link>
         </div>
-        <ul className="mentor-hero__four" aria-label="What I build">
-          <li>I build software.</li>
-          <li>I build teams.</li>
-          <li>I develop people.</li>
-          <li>I help build communities.</li>
+        <ul className="mentor-hero__four" aria-label="Where I mentor">
+          <li>Engineering teams</li>
+          <li>Technical leaders</li>
+          <li>Junior cyclists</li>
+          <li>New riders</li>
         </ul>
       </header>
 
       <section className="sheet mentor-band" aria-labelledby="ladder-title" data-coord="601 · Dependency to leadership">
         <BandHead no="601" id="ladder-title" title="Every step moves a decision from me to them.">
-          <p>Mentorship should create another decision-maker, not another follower. Select a step.</p>
+          <p>I give people more responsibility as they become comfortable with the decisions involved. Select a step to see how that changes my role.</p>
         </BandHead>
         <Ladder />
       </section>
@@ -145,7 +145,7 @@ export default function Mentorship() {
       <section className="sheet grid mentor-band replace" aria-labelledby="replace-title" data-coord="602 · The replacement principle">
         <h2 id="replace-title" className="replace__title display">If you can replace me, I’ve done my job.</h2>
         <div className="replace__not">
-          <p className="body-copy">This doesn’t mean stepping back from responsibility or pushing work onto people who aren’t ready. I stay accountable for the team, its results and the support people need. What moves is everything I used to hold alone.</p>
+          <p className="body-copy">I stay accountable for the team and its results while other people take on decisions I used to make. We agree on the scope, the risks they can accept and when to ask for help.</p>
           <ol className="replace__chain" aria-label="What transfers">
             {transfers.map((t, i) => <li key={t} style={{ '--i': i }} data-reveal>{t}</li>)}
           </ol>
@@ -157,12 +157,11 @@ export default function Mentorship() {
               <li key={d.rest} style={{ '--i': i }} data-reveal><strong>{d.who}</strong> {d.rest}</li>
             ))}
           </ol>
-          <p className="replace__leverage">That’s organizational leverage.</p>
         </div>
       </section>
 
       <section className="sheet mentor-band spof" aria-labelledby="spof-title" data-coord="603 · Single points of failure">
-        <BandHead no="603" id="spof-title" title="We remove single points of failure from systems. Why would we create one in leadership?" />
+        <BandHead no="603" id="spof-title" title="Share the knowledge and decisions the team depends on." />
         <div className="spof__table">
           {spof.map((s) => (
             <div key={s.layer} className="spof__row">
@@ -185,7 +184,7 @@ export default function Mentorship() {
       <section className="sheet grid mentor-band twoway" aria-labelledby="twoway-title" data-coord="604 · Every direction">
         <div className="twoway__head">
           <h2 id="twoway-title" className="h2">Everyone should challenge everyone.</h2>
-          <p className="body-copy">I don’t mentor because I think I always have the best answer. I want engineers to challenge my assumptions and bring ideas I haven’t considered.</p>
+          <p className="body-copy">I want engineers to challenge my assumptions and bring ideas I haven’t considered. Explaining a decision gives both of us a chance to find something we missed.</p>
         </div>
         <div className="twoway__line">
           <svg className="twoway__arcs" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -196,12 +195,7 @@ export default function Mentorship() {
           </ol>
           <p className="label twoway__caption">Knowledge moves in every direction. Nobody is at the top of this drawing.</p>
         </div>
-        <ul className="twoway__who">
-          <li>Sometimes I teach.</li>
-          <li>Sometimes they teach me.</li>
-          <li>Sometimes we figure it out together.</li>
-        </ul>
-        <p className="twoway__end">That’s how everyone improves.</p>
+        <p className="twoway__end">I learn from the people I mentor too. They bring questions and approaches I might not have considered, and sometimes we have to work out the answer together.</p>
       </section>
 
       <section className="sheet mentor-band arc" aria-labelledby="arc-title" data-coord="605 · Engineer to mentor">
@@ -278,7 +272,7 @@ export default function Mentorship() {
         <div className="sheet">
           <header className="worlds__head">
             <p className="mono worlds__fig">Fig. 600-1</p>
-            <h2 id="worlds-title" className="h2">Two worlds, same principle.</h2>
+            <h2 id="worlds-title" className="h2">How mentoring differs at work and on the bike.</h2>
           </header>
           <div className="worlds__cols" aria-hidden="true">
             <p className="h3">Engineering</p><span /><p className="h3">Cycling</p>
@@ -295,7 +289,7 @@ export default function Mentorship() {
           <svg className="worlds__merge" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <path d="M0 0V28H100V0M50 28V60" />
           </svg>
-          <p className="worlds__out display">Growth compounds when people teach the next person.</p>
+          <p className="worlds__out display">An engineer can explain a design decision; a rider can help a newcomer prepare for a race.</p>
         </div>
       </section>
 
@@ -328,17 +322,16 @@ export default function Mentorship() {
       </section>
 
       <section className="sheet grid mentor-band close" aria-labelledby="close-title" data-coord="613 · Leave people stronger">
-        <h2 id="close-title" className="close__title display">Leave people stronger than you found them.</h2>
-        <ul className="close__change" aria-label="What doesn’t last">
-          <li>Software changes.</li>
-          <li>Companies change.</li>
-          <li>Teams change.</li>
-          <li>Racing seasons end.</li>
+        <h2 id="close-title" className="close__title display">When someone is ready to take over.</h2>
+        <ul className="close__change" aria-label="Signs someone can own the work">
+          <li>Explains the decision</li>
+          <li>Recognizes the risks</li>
+          <li>Handles a setback</li>
+          <li>Knows when to ask for help</li>
         </ul>
         <div className="close__copy">
-          <p className="lead">But when someone becomes more capable, more confident, and then helps the next person grow, the impact keeps moving forward.</p>
-          <p className="body-copy">That’s the kind of leadership and community work I enjoy most. I care about building strong systems, and just as much about building strong people.</p>
-          <p className="close__principle">Make yourself replaceable, then help the next person grow.</p>
+          <p className="lead">I enjoy the point where someone can take on work they once needed help with. We can talk through their reasoning as colleagues, and I can learn from the choices they make.</p>
+          <p className="body-copy">On a team or a bike, I try to give people enough room to reach that point. I’m still available, but they no longer have to wait for me before they start.</p>
           <div className="close__actions">
             <Link className="action" to="/leadership/">How I lead <ArrowRight /></Link>
             <Link className="link-arrow" to="/experience/"><span>My experience</span> <ArrowRight /></Link>

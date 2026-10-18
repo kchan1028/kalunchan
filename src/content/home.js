@@ -45,14 +45,14 @@ export const careerStages = [
     id: 'architecture', name: 'Software architecture', role: 'CTO, media publishing; architect on client platforms',
     tech: 'Ruby on Rails, Python and Django, React and Next.js, PostgreSQL, Redis, Kafka',
     did: 'Re-platformed a publishing portfolio from WordPress to Rails on AWS, and organic and social traffic rose 50%. Built event-driven services on Kafka and APIs that enforce authorization on the record.',
-    lesson: 'A boundary should pay for itself, and the rent is due monthly.',
+    lesson: 'A service boundary needs to justify its ongoing infrastructure and support cost.',
     to: '/writing/software-architecture-lessons-from-different-systems/', label: 'Architecture lessons from very different systems',
   },
   {
     id: 'leadership', name: 'Engineering leadership', role: 'CTO, VP of Operations, interim head of engineering',
     tech: 'Decisions in writing, small pull requests, frequent deploys, security and accessibility as release gates',
     did: 'Led engineering at a startup through its acquisition and at a media publisher, then for client teams, some fully remote. Mentored engineers into leads.',
-    lesson: 'The measure of a lead is the team that works without them.',
+    lesson: 'Help the team make decisions without depending on one person.',
     to: '/leadership/', label: 'How I run engineering',
   },
   {

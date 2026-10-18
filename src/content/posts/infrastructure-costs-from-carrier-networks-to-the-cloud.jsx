@@ -75,7 +75,7 @@ export default function Body() {
 
       <section id="founder" aria-labelledby="founder-h">
         <h2 id="founder-h" className="post__h2">The founder’s questions</h2>
-        <p>The seat that changed me most was the one where the company was mine. As an engineer you ask whether a solution works. As a founder, and now running Yippify, the questions that follow are the ones that decide whether the business survives the solution. Can we afford to operate it? What will it cost at ten times the usage? Who maintains it when the person who built it is busy? Is the extra complexity justified by a problem we have today? What happens if demand jumps? And the one that catches the most spending: are we solving a real business problem, or an interesting one?</p>
+        <p>The seat that changed me most was the one where the company was mine. As an engineer you ask whether a solution works. As a founder, and now running Yippify, the questions that follow are the ones that decide whether the business survives the solution. I need to estimate the operating cost, including what happens if usage grows tenfold, and identify who maintains it when the author is busy. Extra complexity needs a reason grounded in a problem the business actually has.</p>
         <p>Those questions shaped how I run my own company. Budgets are small and real, so infrastructure gets chosen for the product’s actual maturity and measured demand, not for the company it might become. Software subscriptions get reviewed like headcount, because each one is a recurring cost with a quiet growth curve. Build-or-buy is decided by whether the capability is what clients pay us for. Complexity has to earn its place, because every piece of it is maintained by a small team that also has to ship. Technical quality is balanced against business need, which sounds like a compromise and is really the whole job.</p>
         <p>I have carried those questions back into every engagement. A client does not need a system that would impress a conference. They need one that does the job, that their team can own after hand-over, and that costs what they expected it to cost next year.</p>
       </section>
@@ -95,7 +95,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">From the network layer to the business layer</h2>
       <div className="post__close-copy">
-        <p className="lead">More than two decades across carrier networks, data centers, VoIP, software architecture, cloud infrastructure, engineering teams and my own businesses, making technology work at scale.</p>
+        <p className="lead">I have worked on capacity and operating cost across carrier networks, data centers, VoIP and cloud infrastructure, as well as running engineering teams and my own businesses.</p>
         <p className="post__close-principle">I have paid the bill at every layer, and it changed which questions I ask first.</p>
         <p>That is the judgment I bring to an engineering organization or a client engagement: whether it works, what it takes to run, and what it costs to grow.</p>
         <div className="post__close-actions">

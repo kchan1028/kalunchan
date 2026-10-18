@@ -209,13 +209,13 @@ export default function Body() {
         <h2 id="decades-h" className="post__h2">We’ve been doing this for decades</h2>
         <p>Software engineering has always been more than writing code. It’s understanding a problem, making decisions, checking assumptions, delivering something that works and learning from what happens next. Most of our best practices are feedback loops of different lengths:</p>
         <ul className="post__list">
-          <li><strong>Test-driven development:</strong> seconds to minutes. Does this function do what I said it would?</li>
-          <li><strong>Continuous integration:</strong> minutes. Does my change still work with everyone else’s?</li>
-          <li><strong>Code review:</strong> hours. Does another engineer understand it and agree with the approach?</li>
-          <li><strong>Agile iterations:</strong> a week or two. Did we build what the business needed?</li>
-          <li><strong>Monitoring and observability:</strong> continuous. Is it working for real users right now?</li>
-          <li><strong>Incident reviews:</strong> after something breaks. Why did our other loops miss it?</li>
-          <li><strong>Customer feedback:</strong> weeks to months. Did it solve the problem?</li>
+          <li>Test-driven development: seconds to minutes. Does this function do what I said it would?</li>
+          <li>Continuous integration: minutes. Does my change still work with everyone else’s?</li>
+          <li>Code review: hours. Does another engineer understand it and agree with the approach?</li>
+          <li>Agile iterations: a week or two. Did we build what the business needed?</li>
+          <li>Monitoring and observability: continuous. Is it working for real users right now?</li>
+          <li>Incident reviews: after something breaks. Why did our other loops miss it?</li>
+          <li>Customer feedback: weeks to months. Did it solve the problem?</li>
         </ul>
         <p>None of this is new. I made the same argument about design and requirements in <Link to="/writing/forward-engineering-isnt-new/">forward engineering isn’t new</Link>. What’s changing is how fast the inner loops can run, and that puts new pressure on the outer ones.</p>
       </section>
@@ -313,19 +313,19 @@ export default function Body() {
         <p>That changes what to invest in. A team that doubles its code output without improving its tests or adding review capacity has built a bigger queue in front of review.</p>
         <p>It also changes what to measure. Lines of code, pull request counts and agent iterations were weak measures before AI, and they’re now trivial to inflate. I’d look at:</p>
         <ul className="post__list">
-          <li><strong>Lead time</strong> to deliver useful functionality</li>
-          <li><strong>Change failure rate</strong>, how often a release causes a problem</li>
-          <li><strong>Time to recover</strong> when one does</li>
-          <li><strong>Escaped defects</strong> that customers find before we do</li>
-          <li><strong>Rework</strong>, changes that exist to fix recent changes</li>
-          <li><strong>Customer outcomes</strong>, whether the feature solved the problem it was built for</li>
+          <li>Lead time to deliver useful functionality</li>
+          <li>Change failure rate, how often a release causes a problem</li>
+          <li>Time to recover when one does</li>
+          <li>Escaped defects that customers find before we do</li>
+          <li>Rework, changes that exist to fix recent changes</li>
+          <li>Customer outcomes, whether the feature solved the problem it was built for</li>
         </ul>
         <p>The first three come from <a href="https://dora.dev/guides/dora-metrics/" rel="noopener" target="_blank">DORA’s delivery metrics</a>. All of them describe how well the loop works, which is why they’re harder to game than activity counts. More on how I run teams in <Link to="/leadership/">how I run engineering</Link>.</p>
       </section>
 
       <section id="perspective" aria-labelledby="perspective-h">
         <h2 id="perspective-h" className="post__h2">My perspective</h2>
-        <p>Over more than 20 years in software engineering, I’ve watched the tools change many times: languages, frameworks, infrastructure models, cloud platforms, and now AI coding agents.</p>
+        <p>Over the course of my career, I’ve watched the tools change many times: languages, frameworks, infrastructure models, cloud platforms, and now AI coding agents.</p>
         <p>The basic problem hasn’t changed. We still need to understand what we’re building, why we’re building it, and whether it works. AI makes each trip around the loop faster. Engineering judgment decides whether those trips are heading somewhere useful.</p>
       </section>
     </>
@@ -335,10 +335,10 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Code got cheaper. Being wrong didn’t.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Check the result before adding more code</h2>
       <div className="post__close-copy">
         <p className="lead">AI has reduced the cost of writing code. The cost of building the wrong thing is still there, and it shows up later and bigger when the feedback is weak.</p>
-        <p className="post__close-principle">The goal is to shorten the distance between an idea and a validated outcome.</p>
+        <p className="post__close-principle">I want each loop to tell us something specific about whether the software solves the problem, before we spend time building on it.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me how your team works with AI agents <ArrowRight /></Link>
           <Link to="/writing/vibe-coding-vs-agentic-engineering/" className="link-arrow"><span>Vibe coding vs. agentic engineering</span> <ArrowRight /></Link>

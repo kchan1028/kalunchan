@@ -19,7 +19,7 @@ export default function Body() {
       <section id="group-ride" aria-labelledby="group-ride-h">
         <h2 id="group-ride-h" className="post__h2">Most of the decisions on a group ride are about effort</h2>
         <p>On a group ride, the decisions that matter most are small and constant. When to close a gap. When to sit in and save energy. When to take a pull. When to tell the group the pace is too high for the riders at the back.</p>
-        <p>Outside work, I lead a co-ed amateur cycling team in the Bay Area, ride with the <a href={cycling.club}>Berkeley Bicycle Club</a>, support junior riders, and help organize the Berkeley Omnium. Inside work, I’ve spent <Link to="/about/">more than two decades in software</Link>, much of it leading engineering teams.</p>
+        <p>Outside work, I lead a co-ed amateur cycling team in the Bay Area, ride with the <a href={cycling.club}>Berkeley Bicycle Club</a>, support junior riders, and help organize the Berkeley Omnium. Inside work, I’ve spent <Link to="/about/">my career in software</Link>, much of it leading engineering teams.</p>
         <p className="post__answer">Cycling has taught me that leadership is mostly judgment about effort: when to push, when to recover, when to support someone else, and when to change the plan. Engineering leadership involves the same decisions, with less visibility into how hard people are working.</p>
       </section>
 

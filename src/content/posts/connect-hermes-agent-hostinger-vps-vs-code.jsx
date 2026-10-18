@@ -181,8 +181,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">A server you can reach is a server you can learn on</h2>
       <div className="post__close-copy">
-        <p className="lead">Keys instead of passwords, a non-root user, VS Code as the remote workspace, the container found and its volumes understood, and the model key in the one file it belongs in.</p>
-        <p className="post__close-principle">Secure the path first, then build the agent on it. The interesting part is everything around the model, and it starts with being able to get at the machine.</p>
+        <p className="lead">With key-based access and a non-root account in place, I can use VS Code to inspect the container and understand where it stores its data and configuration.</p>
+        <p className="post__close-principle">That gives me a workspace for learning how the agent runs and troubleshooting it when something goes wrong.</p>
         <p>Next in the series: the first scheduled runs of the job-search agent, and what broke.</p>
         <div className="post__close-actions">
           <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>

@@ -30,7 +30,7 @@ export default function Home() {
             <span>Founder story: from an idea to an acquisition</span> <ArrowRight />
           </Link>
         </p>
-        <p className="opening__level">For more than two decades I have made technology work at scale, first on carrier networks and a data center I cabled by hand, now in the cloud. Every system had to perform at a cost the business could carry. I’m still hands-on.</p>
+        <p className="opening__level">I have made technology work at scale, first on carrier networks and a data center I cabled by hand, now in the cloud. Every system had to perform at a cost the business could carry. I’m still hands-on.</p>
         <ul className="opening__proof" aria-label="Proof points">
           {proofPoints.map((p) => <li key={p.figure}><Link to={p.to}><strong>{p.figure}</strong> {p.text}</Link></li>)}
         </ul>

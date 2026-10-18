@@ -69,7 +69,7 @@ export default function Body() {
     <>
       <section id="bill" aria-labelledby="bill-h">
         <h2 id="bill-h" className="post__h2">Every architecture decision has a bill</h2>
-        <p>Architecture diagrams do not have a price column, and they should. Every box on the whiteboard is a thing that runs somewhere, is monitored by someone, fails on its own schedule and is paid for every month. Most teams count the engineering cost of building a system. Fewer count the cost of operating it, and almost nobody counts it at the design review, which is the only place it is cheap to change.</p>
+        <p>I want design reviews to include estimates of what the proposed system will cost to run. Every box on the whiteboard is a thing that runs somewhere, is monitored by someone, fails on its own schedule and is paid for every month. Most teams count the engineering cost of building a system. Fewer count the cost of operating it, and it is easy to leave that cost out of a design review, when changing the plan is still relatively cheap.</p>
         <p className="post__answer">Software architecture drives operating cost through the number of components that must run and be watched, the way they communicate, how much of the work a vendor does for you, how efficiently the database is used, and how much capacity is bought ahead of demand. Scaling too early spends on the last of those before there is any demand to justify it, and it is one of the most expensive mistakes a growing company can make.</p>
         <p>I have paid that bill from several seats: as a founder watching a data center invoice land before the revenue did, as a CTO who re-platformed a media business onto AWS and brought the AWS bill down by about 30% along the way, and as an advisor to teams that had built for a million users and were serving a few thousand. The patterns repeat.</p>
       </section>
@@ -77,13 +77,13 @@ export default function Body() {
       <section id="monolith" aria-labelledby="monolith-h">
         <h2 id="monolith-h" className="post__h2">Monolith or microservices: count the boxes</h2>
         <p>Microservices buy flexibility: independent deployment, separate scaling, a boundary a team can own. They also multiply the things that cost money. Each service is its own compute, its own logs and metrics, its own deployment pipeline, its own set of failure modes, and its own share of someone’s attention. Traffic between services is not free either, in latency or, across availability zones, in actual dollars. Ten services serving the traffic of one modest monolith will usually cost more to run and considerably more to operate, and the operating cost is paid in engineers.</p>
-        <p>The platform I co-founded ran as a modular monolith for most of its life and scaled to hundreds of thousands of users that way. The boundaries were in the code, which cost nothing to cross, and we split things out only where a real reason appeared. I wrote the longer argument in <Link to="/writing/should-it-be-a-microservice/#five-years">what it costs to own a service for five years</Link>. The short version: a boundary should pay for itself, and the rent is due monthly.</p>
+        <p>The platform I co-founded ran as a modular monolith for most of its life and scaled to hundreds of thousands of users that way. The boundaries were in the code, which cost nothing to cross, and we split things out only where a real reason appeared. I wrote the longer argument in <Link to="/writing/should-it-be-a-microservice/#five-years">what it costs to own a service for five years</Link>. A separate deployment needs to justify its recurring infrastructure cost, monitoring and on-call work.</p>
       </section>
 
       <section id="events" aria-labelledby="events-h">
         <h2 id="events-h" className="post__h2">Synchronous or event-driven: Kafka is also a team</h2>
         <p>Event-driven architecture decouples producers from consumers and lets each side scale on its own. I have built on Kafka and I would do it again for the right workload. The right workload is the part that gets skipped. A Kafka cluster is brokers, storage, replication, a schema registry, consumers that have to be idempotent, and an operations burden that lands on whoever is nearest when a partition rebalances at the wrong moment. A managed Kafka service removes some of that and replaces it with a line on the invoice that grows with throughput and retention.</p>
-        <p>For a system with real fan-out, high write volume or several consumers that must not block each other, the decoupling is worth every dollar. For a service that calls two others in order, a queue or a plain HTTP call does the job for a fraction of the cost and with far less to understand at three in the morning. The <Link to="/writing/event-driven-architecture-kafka-tradeoffs/">tradeoffs of Kafka</Link> have their own post, and the <Link to="/work/event-driven-platform/">event-driven platform case study</Link> shows where it earned its place.</p>
+        <p>For a system with real fan-out, high write volume or several consumers that must not block each other, the decoupling is worth every dollar. For a service that calls two others in order, a queue or a plain HTTP call does the job for a fraction of the cost and with far less to understand at three in the morning. The <Link to="/writing/event-driven-architecture-kafka-tradeoffs/">tradeoffs of Kafka</Link> have their own post, and the <Link to="/work/event-driven-platform/">event-driven design example</Link> explores the responsibilities that come with it.</p>
       </section>
 
       <section id="managed" aria-labelledby="managed-h">
@@ -108,7 +108,7 @@ export default function Body() {
         <h2 id="deciding-h" className="post__h2">How I decide</h2>
         <p>Five inputs settle most of these questions. The size of the team, because every component is carried by people and a small team can carry only so many. The maturity of the product, because a system still looking for its market needs flexibility more than throughput. The actual traffic, measured, not the number in the deck. The growth we have evidence for, as opposed to the growth we hope for. And the business constraints: budget, compliance, what the client can own after hand-over.</p>
         <Decisions />
-        <p>The common thread is to be honest about which resource is scarce. Early on it is engineering attention and cash, so the right architecture is the one that spends the least of both while keeping the doors open. Later it may be compute, or the database, or the team’s ability to understand the system, and the right architecture changes with it. The job of a technical leader is to keep asking which resource is scarce this year, and to make sure the design review has a price column.</p>
+        <p>The common thread is to be honest about which resource is scarce. Early on it is engineering attention and cash, so the right architecture is the one that spends the least of both while keeping the doors open. Later it may be compute, or the database, or the team’s ability to understand the system, and the right architecture changes with it. The job of a technical leader is to keep asking which resource is scarce this year, and to include that constraint in the design review.</p>
       </section>
     </>
   );
@@ -117,7 +117,7 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Put a price column on the whiteboard</h2>
+      <h2 id="closing-h" className="post__close-title h2">Include operating cost in the design review</h2>
       <div className="post__close-copy">
         <p className="lead">Every box in an architecture diagram runs somewhere, is watched by someone and is paid for every month.</p>
         <p className="post__close-principle">Spend early effort on boundaries and the data model, which are hard to change. Buy capacity when measured demand asks for it, which is easy.</p>

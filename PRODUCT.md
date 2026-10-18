@@ -26,6 +26,7 @@ Primary action: contact (LinkedIn first). Consulting work routes to Yippify.
 ## Evidence (confirmed, from the previous site)
 
 - 20+ years in software engineering, architecture and technical leadership.
+  - Not stated on the site (KC, 2026-10-18): show experience through the work; see AGENTS.md.
 - Co-founder & CTO, iWorld Services (2007–2015): co-founded and scaled a SaaS company through multimillion-dollar growth and its acquisition; built network and multi-tier web/mobile app for 400k+ users; planned initial data center, migrated from single site to cloud across North America, Europe and Asia with geo-location routing.
 - CTO, Boulevard New Media (2016–2018): technical strategy for movietimes and Boulevard publishing platforms; organic traffic, social traffic and social engagement up 50%.
 - VP Operations, Talkfree (2005–2007): software engineering, network operations, VoIP network; planned expansions for growth.

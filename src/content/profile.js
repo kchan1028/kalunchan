@@ -26,7 +26,7 @@ export const person = {
 export const isPlaceholder = (value) => typeof value === 'string' && value.includes('REPLACE_WITH_');
 
 export const entity =
-  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 20+ years across every layer of a business, from an IT helpdesk to software architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, and led its team of 30+. He now leads government technology work through Yippify.';
+  'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist who has worked across every layer of a business, from an IT helpdesk to software architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, and led its team of 30+. He now leads government technology work through Yippify.';
 
 // The homepage says the same thing in its own words, so / and /about/ don't repeat each other.
 export const homeIntro =

@@ -35,7 +35,7 @@ export default function Body() {
       <section id="later" aria-labelledby="later-h">
         <h2 id="later-h" className="post__h2">Readers, residents and drivers</h2>
         <p>Later roles changed who the person on the other side was. As CTO of a <Link to="/experience/#publishing">media publishing platform</Link>, I finally had designers on the team, and the people using the product were readers arriving from search and social on their phones. Speed was part of the experience. We shipped progressive web apps and AMP pages because a slow article is an unread article, and the design conversation was as much about load time as layout.</p>
-        <p>Government work turned the dial again. On a <Link to="/work/public-service-modernization/">public-service modernization</Link>, residents didn’t choose the service and couldn’t go elsewhere, so accessibility stopped being a nice-to-have. WCAG checks and security review were release gates, in the pipeline, not a review at the end.</p>
+        <p>Government work turned the dial again. Residents may depend on a service without being able to choose an alternative. Accessibility and security need attention throughout delivery. The <Link to="/work/public-service-modernization/">public-service modernization example</Link> shows how I would include those checks in a migration.</p>
         <p>The small projects taught the same thing in miniature. On the <Link to="/projects/union-city-smog-check/">Union City Smog Check site</Link>, a driver is on a phone, close to a deadline, picking whichever nearby station they trust fastest, so calling and directions are the first two actions on every screen. The <Link to="/projects/berkeley-omnium/">Berkeley Omnium site</Link> was built for someone checking race details on the way to the start. In each case the design question was the same one the support line used to ask me: what is this person trying to do, and how fast can we let them do it?</p>
       </section>
 
@@ -67,7 +67,7 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The screens got cheaper. The person using them didn’t change.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Review the design with its users in mind.</h2>
       <div className="post__close-copy">
         <p className="lead">An assistant can draw a layout in a minute. It still can’t tell you who will use it, on what phone, with how much patience, or what they do when it fails.</p>
         <p className="post__close-principle">Build for the person using the system. Then give the assistant that person, in detail.</p>

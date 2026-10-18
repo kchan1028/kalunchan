@@ -136,7 +136,7 @@ export default function Body() {
     <>
       <section id="different" aria-labelledby="different-h">
         <h2 id="different-h" className="post__h2">The technology was familiar. Everything around it changed.</h2>
-        <p>After more than two decades in software, telecom, startups and engineering leadership, I assumed I had met most of the ways building and running software can be hard. Then I started working on federal government applications, and it was a different experience, though not because the technology was harder. We were still building web applications, designing APIs, working with databases, deploying infrastructure and troubleshooting production, on Python and Django, React, Vue, Ruby on Rails, PostgreSQL, AWS and the usual tools.</p>
+        <p>After working in software, telecom, startups and engineering leadership, I assumed I had met most of the ways building and running software can be hard. Then I started working on federal government applications, and it was a different experience, though not because the technology was harder. We were still building web applications, designing APIs, working with databases, deploying infrastructure and troubleshooting production, on Python and Django, React, Vue, Ruby on Rails, PostgreSQL, AWS and the usual tools.</p>
         <p>What changed was everything surrounding the software: the security requirements, accessibility, documentation, change management, operational controls, the authorization process, and even how we were allowed to word a message to a user. Building software for the federal government is not only delivering features. You also have to demonstrate that the software is secure, accessible, maintainable and operated according to the requirements that apply to it, and that changed how I approach engineering.</p>
         <p className="post__answer">Building federal government applications teaches an engineer that quality has more dimensions than working code. Security has to be demonstrable, accessibility has to be designed in, communication has to be understandable, changes have to be traceable, operations have to be documented, and risk has to be evaluated continuously. None of those is unique to government, and government is where they stop being optional.</p>
       </section>
@@ -162,8 +162,8 @@ export default function Body() {
 
       <section id="section-508" aria-labelledby="section-508-h">
         <h2 id="section-508-h" className="post__h2">Section 508: accessibility is an engineering responsibility</h2>
-        <p>Section 508 requires covered federal information and communication technology to meet applicable accessibility standards, which for web applications means the Web Content Accessibility Guidelines at the required level. In practice it means designing for how people with disabilities use the system, which a development team focused on whether a feature looks right will miss. Does it work with a screen reader? Can it be operated entirely from the keyboard? Are the form fields labelled? Are validation errors understandable without seeing them? Is the contrast sufficient? Can someone get through a long workflow without relying on visual cues? Those are engineering questions as much as design questions.</p>
-        <p>A certification application makes it concrete. A business owner completes a long form, uploads documents, reviews the information and submits. If a validation error is only red text, some users never learn what went wrong. If a custom dropdown ignores the keyboard, some users cannot complete the form at all. If focus is not managed when a modal opens, a screen reader user loses their place. A feature can pass every functional test and still be inaccessible, which is why accessibility belongs in design, implementation, testing and the acceptance criteria. Automated tools catch some of it; keyboard and assistive-technology testing by a person catches the rest. I treat it as part of software quality rather than a step at the end, which is why it is a release gate in the <Link to="/work/public-service-modernization/">public-service modernization case study</Link>.</p>
+        <p>Section 508 requires covered federal information and communication technology to meet applicable accessibility standards, which for web applications means the Web Content Accessibility Guidelines at the required level. In practice it means designing for how people with disabilities use the system, which a development team focused on whether a feature looks right will miss. We need to check screen-reader and keyboard operation, field labels, error messages and contrast. A long workflow also needs to be usable without relying on visual cues. Those checks affect both the design and the implementation.</p>
+        <p>A certification application makes it concrete. A business owner completes a long form, uploads documents, reviews the information and submits. If a validation error is only red text, some users never learn what went wrong. If a custom dropdown ignores the keyboard, some users cannot complete the form at all. If focus is not managed when a modal opens, a screen reader user loses their place. A feature can pass every functional test and still be inaccessible, which is why accessibility belongs in design, implementation, testing and the acceptance criteria. Automated tools catch some of it; keyboard and assistive-technology testing by a person catches the rest. I treat it as part of software quality throughout development. The <Link to="/work/public-service-modernization/">public-service modernization example</Link> includes those checks in the proposed release process.</p>
       </section>
 
       <section id="plain-writing" aria-labelledby="plain-writing-h">
@@ -206,7 +206,7 @@ export default function Body() {
 
       <section id="still-learning" aria-labelledby="still-learning-h">
         <h2 id="still-learning-h" className="post__h2">Still learning</h2>
-        <p>Every industry has taught me something. Carrier networks taught me infrastructure reliability and capacity planning. Telecom taught me performance, routing and operating cost. Startups taught me to work with little and make practical architectural decisions. Digital publishing taught me traffic, monetization and business performance. Federal applications have taught me security authorization, accessibility, compliance and accountability. Different environments, different requirements, and the same fundamentals underneath: understand the problem, understand the constraints, build the right solution, measure the result, keep improving.</p>
+        <p>Federal work made me more deliberate about documenting decisions and demonstrating that controls operate as intended. My earlier operations experience helped me recognize the value of those records when a system changes hands or something fails.</p>
         <p>Those disciplines are not only for government. A startup does not need an authorization process, and it still benefits from good access control, accessible interfaces, clear documentation and reliable deployment. The skill is applying the level of rigor the system’s risks and the business actually call for. The biggest lesson for me is that building software means more than making something work. It means making something people can trust, understand, use and maintain, and that is what I will carry into whatever I build next.</p>
       </section>
     </>
@@ -216,13 +216,13 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Trusted, understood, usable, maintained</h2>
+      <h2 id="closing-h" className="post__close-title h2">What I carry into other work</h2>
       <div className="post__close-copy">
-        <p className="lead">Federal applications taught me that working code is the entry fee. Demonstrable security, designed-in accessibility, plain communication and traceable change are the product.</p>
+        <p className="lead">Federal applications made me more deliberate about security evidence, accessibility and the records we keep of a change. Those requirements affect how the team builds the software from the start.</p>
         <p className="post__close-principle">Plan for the evidence from the first sprint, and make sure the team knows why each control exists.</p>
         <p>That is how I lead engineering in regulated environments, and the same discipline, at the right level of rigor, makes commercial software better too.</p>
         <div className="post__close-actions">
-          <Link to="/work/public-service-modernization/" className="action">Case study: public-service modernization <ArrowRight /></Link>
+          <Link to="/work/public-service-modernization/" className="action">Design example: public-service modernization <ArrowRight /></Link>
         </div>
       </div>
     </>

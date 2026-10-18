@@ -26,8 +26,8 @@ export default function Body() {
     <>
       <section id="expectations" aria-labelledby="expectations-h">
         <h2 id="expectations-h" className="post__h2">What should we reasonably expect from each other?</h2>
-        <p>After more than 20 years in software engineering, writing code and leading engineering teams, there’s one question I keep coming back to: what should we reasonably expect from other people, when everyone has a different level of experience, a different technical background and a different amount of knowledge about the system?</p>
-        <p>Should a senior developer know everything about the codebase? Should someone six months into a project remember every technical decision? Should a junior developer be able to investigate an unfamiliar system without help? And if something seems obvious to me, should I expect it to be obvious to everyone else?</p>
+        <p>Across my career writing code and leading engineering teams, there’s one question I keep coming back to: what should we reasonably expect from other people, when everyone has a different level of experience, a different technical background and a different amount of knowledge about the system?</p>
+        <p>I have seen teams expect a senior developer to know an entire codebase, or someone six months into a project to remember every technical decision. A junior developer may be expected to investigate an unfamiliar system with little help. Those expectations deserve a closer look, especially when they come from something that seems obvious to me.</p>
         <p className="post__answer">The answer changes with the person and the situation. What doesn’t change is this: we shouldn’t make understanding the work harder than the work itself. That’s why I push for smaller pull requests, smaller stories, clearer acceptance criteria and more precise communication. I want people spending less time working out what someone meant and more time solving the actual problem.</p>
       </section>
 
@@ -48,7 +48,7 @@ export default function Body() {
       <section id="clarity" aria-labelledby="clarity-h">
         <h2 id="clarity-h" className="post__h2">Experience should change expectations, not replace clarity</h2>
         <p>I expect more independence from a senior engineer than from a junior one. A senior engineer should be better at breaking down problems, recognizing risks, investigating unfamiliar code and making technical decisions. They should also know when to ask. I don’t expect them to know everything. Even a very experienced engineer can’t know a business rule nobody explained or a decision nobody documented.</p>
-        <p>I’ve heard “they’re a senior engineer, they should know this” plenty of times. Sometimes it’s fair. Sometimes we’re asking experience to make up for missing information. Did we explain the business requirements? Did we document the decision? Were the acceptance criteria clear? Did they have access to the right information? Or are we assuming they should work it all out because of their title?</p>
+        <p>I’ve heard “they’re a senior engineer, they should know this” plenty of times. Sometimes it’s fair. Sometimes we’re asking experience to make up for missing information. Before judging their work, I check whether we explained the business requirements, documented the decisions and gave them clear acceptance criteria. A job title cannot fill in information we never shared.</p>
         <p>A challenging problem helps people grow. An unclear problem with not enough context wastes their time. Experience helps people handle ambiguity. It isn’t a license to create ambiguity that didn’t need to exist. Turning ambiguity into work people can actually execute is <Link to="/leadership/#ambiguity">part of how I lead</Link>.</p>
       </section>
 
@@ -73,7 +73,7 @@ export default function Body() {
 
       <section id="acceptance-criteria" aria-labelledby="acceptance-criteria-h">
         <h2 id="acceptance-criteria-h" className="post__h2">Clear acceptance criteria save more time than they cost</h2>
-        <p>A ticket can look perfectly clear to the person who wrote it and still be unclear to everyone else. Take “Update the application status when validation fails.” Which validation? What status should be displayed? Does the user get an error message? Is the failure logged? What happens if the validation service is unavailable? What if the user retries?</p>
+        <p>A ticket can look perfectly clear to the person who wrote it and still be unclear to everyone else. Take “Update the application status when validation fails.” It leaves out which validation triggers the change, the status to display and what the user should see. It also leaves the developer to guess how to log the failure and handle an unavailable service or a retry.</p>
         <p>The developer makes one set of assumptions. QA makes another. The product owner expected something different again. We discover the gaps during testing, the ticket goes back to development, and we spend the next week in meetings, messages and rework, all because nobody spent a few extra minutes clarifying the requirements up front. Some of that rework is <Link to="/writing/engineering-work-nobody-needed/">work nobody needed in the first place</Link>, built carefully to the wrong understanding.</p>
         <p>I want acceptance criteria that describe the expected behavior clearly enough that someone unfamiliar with the implementation can follow them. They can be short. What matters is that the important questions are answered before development begins. A few minutes of clarity saves hours of rework.</p>
       </section>
@@ -88,7 +88,7 @@ export default function Body() {
       <section id="reviews-and-docs" aria-labelledby="reviews-and-docs-h">
         <h2 id="reviews-and-docs-h" className="post__h2">Reviews for understanding, documentation without ceremony</h2>
         <p>I’ve worked with teams where pull requests get approved almost immediately. Sometimes that’s fine: the change is small, obvious and low risk. Sometimes I wonder whether the reviewer understood it. A code review is a chance to catch problems, share knowledge and improve the codebase, and it only works if reviewing is practical. When a PR holds two thousand lines of unrelated changes, even a good reviewer misses things, because there’s too much to process.</p>
-        <p>Small, focused PRs make room for the questions that matter. Why this approach? Could it affect another part of the system? Are the failure cases handled? Is there a simpler solution? Is there enough test coverage? Those conversations are worth far more than arguing about formatting, and over time they’re how developers learn from each other.</p>
+        <p>Small, focused PRs give reviewers room to examine the approach, its effects on other parts of the system, and the handling of failure cases. They can consider simpler alternatives and whether the tests cover the risks. Those conversations are worth far more than arguing about formatting, and over time they’re how developers learn from each other.</p>
         <p>Documentation works the same way. I don’t mean long technical documents. Sometimes a few sentences in a pull request are enough. Sometimes it’s a short README explaining how to run a service, a comment explaining why a business rule exists, or a note on the Jira ticket recording what the team decided. I’ve watched teams spend hours in Slack reaching a decision and never write it down anywhere. Three months later someone asks the same question and the team has the same conversation again. Not every conversation needs recording. A decision that affects how the system works does, so that someone can find the reasoning later, especially once the person who made it has left. I hold myself to the same rule for <Link to="/leadership/#decisions">architecture decisions</Link>.</p>
       </section>
 
@@ -101,7 +101,7 @@ export default function Body() {
       <section id="everyone" aria-labelledby="everyone-h">
         <h2 id="everyone-h" className="post__h2">What I expect from everyone, regardless of experience</h2>
         <p className="post__answer">A few things I expect from everyone on an engineering team, whatever their level: say when you’re blocked, ask when something isn’t clear, make an effort to understand the problem before jumping to a solution, take responsibility for your work, and think about the next person who has to read, review, test or maintain what you built.</p>
-        <p>That last one matters most to me. You might understand your code perfectly today. Will someone else understand it in six months? Will QA know what to test? Will another developer understand why you made a particular decision? Will the next person be able to investigate a problem without calling you? None of these are expectations about memorizing syntax or knowing every framework. They’re expectations about working together.</p>
+        <p>That last one matters most to me. You might understand your code today, but the next developer needs enough context to investigate a problem without calling you. QA needs to know what to test, and a future reviewer needs to understand why you made the decision. Providing that context is part of working together.</p>
         <p>I don’t believe in dropping accountability because someone has less experience. Everyone has a responsibility to contribute, communicate and improve. I also don’t believe in holding everyone to identical expectations without considering their experience, their responsibilities and the information they were given. A junior engineer may need more guidance. A senior engineer should show more independence and judgment. A tech lead should help others make progress, not only close their own tickets. An engineering manager should notice when the team’s process is creating obstacles. Different roles carry different expectations, and everyone deserves to know what those expectations are.</p>
         <p>If someone has the information, tools and support they need and still consistently struggles to deliver, that needs addressing. If the whole team keeps asking the same questions or misreading the same requirements, the problem is probably how we communicate and organize the work, and we should fix that instead. Being understanding doesn’t lower the standard. It makes sure the standard is reasonable, clear and applied the same way to everyone.</p>
       </section>
@@ -120,13 +120,12 @@ export default function Body() {
           <li>Keep pull requests focused. One logical change is easier to review than five unrelated ones bundled together.</li>
           <li>Break large stories into smaller deliverables, so progress is visible and problems surface early.</li>
           <li>Write acceptance criteria someone else can understand. Don’t assume the developer, QA and the product owner read a ticket the same way.</li>
-          <li>Explain why, not only what. Code says what the system does. Context says why.</li>
+          <li>Explain the reasoning behind a change so the next person can assess whether it still applies.</li>
           <li>Make important decisions discoverable, instead of leaving them in Slack threads or someone’s memory.</li>
           <li>Encourage questions. I’d rather someone ask than spend two days building the wrong thing.</li>
           <li>Review for understanding. A review should improve quality and share knowledge. Getting through the process is the minimum.</li>
           <li>Don’t let the team depend on one person. Share knowledge so work keeps moving when someone is away.</li>
         </ul>
-        <p>None of this is complicated. Doing it consistently is what makes the difference.</p>
       </section>
     </>
   );

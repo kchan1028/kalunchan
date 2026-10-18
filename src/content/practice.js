@@ -61,7 +61,7 @@ export const capabilities = [
     stack: ['REST APIs', 'Microservices', 'Kafka', 'PostgreSQL', 'Redis'],
     evidence: [
       { to: '/writing/should-it-be-a-microservice/', label: 'When something should actually be a microservice' },
-      { to: '/work/event-driven-platform/', label: 'Case study: event-driven microservices with Kafka' },
+      { to: '/work/event-driven-platform/', label: 'Design example: event-driven microservices with Kafka' },
     ],
     depth: { carrier: 1, voice: 1, communications: 2, publishing: 2, yippify: 2 },
   },
@@ -97,7 +97,7 @@ export const capabilities = [
     stack: ['Python', 'Django', 'React', 'Vue', 'Rails', 'PostgreSQL', 'AWS', 'Terraform'],
     evidence: [
       { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me' },
-      { to: '/work/public-service-modernization/', label: 'Case study: public-sector modernization without a rewrite' },
+      { to: '/work/public-service-modernization/', label: 'Design example: public-sector modernization without a rewrite' },
       { to: '/projects/fedpath/', label: 'FedPath: SAM.gov opportunities for small businesses' },
     ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 0, yippify: 2 },
@@ -116,7 +116,7 @@ export const capabilities = [
     ],
     stack: ['LLM APIs', 'RAG', 'Vector search', 'Python'],
     evidence: [
-      { to: '/work/document-intelligence/', label: 'Case study: LLM document processing with a human in the loop' },
+      { to: '/work/document-intelligence/', label: 'Design example: LLM document processing with a human in the loop' },
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#still-build', label: 'Why I stay hands-on with LLMs, RAG, agents and MCP' },
     ],
     depth: { carrier: 0, voice: 0, communications: 0, publishing: 1, yippify: 2 },
@@ -135,7 +135,7 @@ export const capabilities = [
     stack: ['Python', 'TypeScript', 'SQL', 'Docker'],
     evidence: [
       { to: '/projects/', label: 'Products and sites I’ve shipped' },
-      { to: '/writing/you-dont-need-to-remember-everything/', label: 'Why I still look things up after two decades' },
+      { to: '/writing/you-dont-need-to-remember-everything/', label: 'Why I still look things up' },
     ],
     depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
     verify: true,
@@ -156,7 +156,7 @@ export const capabilities = [
     evidence: [
       { to: '/writing/network-security-before-devsecops/', label: 'From Cisco ACLs and NetScreen firewalls to cloud and application security' },
       { to: '/writing/api-architecture-lessons/#security', label: 'Authorization: a valid token says nothing about the record' },
-      { to: '/work/public-service-modernization/', label: 'Case study: security and accessibility as release gates' },
+      { to: '/work/public-service-modernization/', label: 'Design example: security and accessibility as release gates' },
     ],
     depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
@@ -170,13 +170,13 @@ export const capabilities = [
       'Scaling: carrier networks across 2,000+ collocations, VoIP servers behind 8M+ minutes a month, a platform from one data center to cloud regions on three continents',
       'Cost optimization: least-cost and geolocation routing, right-sizing, demand-based scaling, database query and connection fixes, managed versus self-hosted decisions',
       'Infrastructure economics: total cost of ownership, technology investment and build-versus-buy decisions, software subscriptions reviewed like headcount',
-      'Leadership: engineering capacity, technical debt and operational overhead planned alongside infrastructure; architecture reviewed with a price column',
+      'Leadership: engineering capacity, technical debt and operational overhead planned alongside infrastructure; architecture reviewed alongside infrastructure and support costs',
     ],
     stack: ['AWS ECS / Fargate', 'Lambda', 'RDS PostgreSQL', 'Redis', 'S3', 'CloudFront', 'Kafka', 'Terraform', 'Docker', 'GitHub Actions', 'SNMP / Cacti'],
     evidence: [
       { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning: what carrier networks taught me about scaling cloud infrastructure' },
       { to: '/writing/hidden-cost-of-software-architecture/', label: 'The hidden cost of software architecture: scaling too early' },
-      { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What 20+ years taught me about infrastructure costs, from carrier to founder' },
+      { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What I’ve learned about infrastructure costs, from carrier to founder' },
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
     ],
@@ -222,7 +222,7 @@ export const practices = [
     title: 'Make architecture decisions in writing',
     claim: 'Decisions outlive the meeting. Put the options, the choice and the tradeoff on paper.',
     body:
-      'Significant choices get a short decision record: context, the options considered, what we chose, and what we are giving up. It keeps debates short, onboarding fast, and reversals honest.',
+      'Significant choices get a short decision record: context, the options considered, what we chose, and what we are giving up. A new engineer can recover the reasoning, and the team can revisit it when the constraints change.',
     signals: ['New engineers can find why, not just what', 'We revisit decisions on evidence, not mood'],
     read: { to: '/writing/hidden-cost-of-software-architecture/#deciding', label: 'How I decide build or buy, managed or self-hosted, scale now or later' },
   },
@@ -253,7 +253,7 @@ export const practices = [
     claim: 'Surprises are cheapest in week one. I pull integration, data and security risk to the front.',
     body:
       'Walking skeletons end to end before features, real data before demos, and security and accessibility as release gates rather than launch-week audits.',
-    signals: ['Nothing new is learned on launch day', 'Estimates tighten as work progresses'],
+    signals: ['Major integration and security risks investigated before launch', 'Estimates tighten as work progresses'],
     read: { to: '/writing/what-sprint-carryover-is-telling-you/', label: 'What sprint carryover is telling you' },
   },
   {
@@ -270,7 +270,7 @@ export const practices = [
     no: '107',
     id: 'mentoring',
     title: 'Grow engineers into leaders',
-    claim: 'The measure of a lead is the team that works without them.',
+    claim: 'Engineers have the context and authority to lead design reviews and make decisions without waiting for me.',
     body:
       'I delegate real ownership with context, review for judgement as well as syntax, and create room for engineers to lead a decision end to end.',
     signals: ['Engineers run their own design reviews', 'Promotions come from inside the team'],
@@ -292,7 +292,7 @@ export const practices = [
     title: 'Plan capacity before it becomes a cost',
     claim: 'Compute, engineers and budget all fill up, and each has a lead time. I find the constraint before it becomes an expensive incident.',
     body:
-      'I size systems from measured demand, decide headroom in advance, and treat team capacity, technical debt and operational overhead as resources with lead times, the same as a circuit order. Architecture reviews get a price column.',
+      'I size systems from measured demand, decide headroom in advance, and treat team capacity, technical debt and operational overhead as resources with lead times, the same as a circuit order. Architecture reviews include infrastructure estimates and the engineering time needed to operate the design.',
     signals: ['Nobody is surprised by the infrastructure bill', 'Hiring and scaling decisions are made ahead of the lead time, not after the incident'],
     read: { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'What carrier networks taught me about scaling cloud infrastructure' },
   },

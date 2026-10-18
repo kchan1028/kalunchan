@@ -30,7 +30,7 @@ export default function Work() {
       <section className="sheet shipped" aria-labelledby="shipped-h" data-coord="310 · Shipped">
         <header className="shipped__head">
           <h2 id="shipped-h" className="h2">Shipped products and sites</h2>
-          <p className="body-copy">Each write-up starts with the problem and ends with what changed. All three are live.</p>
+          <p className="body-copy">Live products for federal contracting, local cycling and a small business.</p>
         </header>
         <ol className="shipped__list">
           {projects.map((p) => (
@@ -78,8 +78,8 @@ export default function Work() {
 
       <section className="sheet cases" aria-labelledby="cases-h">
         <header className="shipped__head">
-          <h2 id="cases-h" className="h2">Architecture case studies</h2>
-          <p className="body-copy">Six systems, written up the way I would review them. Each one starts with what was at stake. Then it covers the options we rejected and what shipped.</p>
+          <h2 id="cases-h" className="h2">Architecture work and design examples</h2>
+          <p className="body-copy">Work on communications, publishing and carrier infrastructure, alongside illustrative designs for modernization, document processing and event-driven services.</p>
         </header>
       </section>
       <ol className="sheet case-index" data-coord="300 · Case studies">

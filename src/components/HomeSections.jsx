@@ -12,7 +12,7 @@ export function Impact() {
     <section className="sheet home-section" aria-labelledby="impact-h" data-coord="001 · Impact">
       <div className="home-section__head">
         <h2 id="impact-h" className="h2">What the work produced.</h2>
-        <p>Six things a hiring manager can check. Each links to the page that backs it.</p>
+        <p>Results from the communications platform, publishing work and government delivery.</p>
       </div>
       <ul className="impact" aria-label="Verified accomplishments">
         {impact.map((i) => (
@@ -49,7 +49,7 @@ export function CareerTimeline() {
   return (
     <section className="sheet home-section" aria-labelledby="timeline-h" data-coord="002 · Career">
       <div className="home-section__head">
-        <h2 id="timeline-h" className="h2">Seven stages, one direction.</h2>
+        <h2 id="timeline-h" className="h2">My work across networks, software and leadership.</h2>
         <p>Stages, not dates. Select one for the role, the technology, what it produced and the lesson carried to the next.</p>
       </div>
       <figure className="tl">

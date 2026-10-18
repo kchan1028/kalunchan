@@ -72,7 +72,7 @@ export default function Community() {
 
     <section id="development" className="sheet community-development" aria-labelledby="development-title" data-coord="503 · Rider development">
       <header className="community-section-head">
-        <h2 id="development-title" className="h2">Room for the next rider.</h2>
+        <h2 id="development-title" className="h2">Junior, collegiate and women’s racing.</h2>
         <p>Local racing grows when riders can find an entry point, build confidence, and see a reason to come back.</p>
       </header>
       <div className="community-development__body">

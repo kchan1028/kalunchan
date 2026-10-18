@@ -22,7 +22,7 @@ export default function Body() {
     <>
       <section id="depth-and-breadth" aria-labelledby="depth-and-breadth-h">
         <h2 id="depth-and-breadth-h" className="post__h2">Deep expertise and broad understanding do different jobs</h2>
-        <p>Over more than 23 years in VoIP, publishing, SaaS and government applications, I’ve worked across React and Next.js, Python with Django and DRF, Rails, Node.js, APIs, AWS and CI/CD, from application code through architecture to production operations. I’ve led small teams and larger distributed ones. In my experience, the problems that drag on are often the ones that cross a boundary nobody is watching, more than the technically hardest ones.</p>
+        <p>In VoIP, publishing, SaaS and government applications, I’ve worked across React and Next.js, Python with Django and DRF, Rails, Node.js, APIs, AWS and CI/CD, from application code through architecture to production operations. I’ve led small teams and larger distributed ones. In my experience, the problems that drag on are often the ones that cross a boundary nobody is watching, more than the technically hardest ones.</p>
         <p>Specialists matter. A frontend engineer who understands rendering, accessibility and state management builds things a generalist can’t. A backend engineer who knows query plans and transaction isolation prevents problems most people never see. Neither needs to master the other’s field.</p>
         <p className="post__answer">Specialization becomes a problem when engineers can’t follow a user’s problem across system boundaries, explain what they need from another team, or see how their decisions affect someone else’s work. Depth in one area works best with enough understanding of the neighboring systems to investigate and collaborate.</p>
       </section>
@@ -91,7 +91,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Strong in one area, curious about the next</h2>
       <div className="post__close-copy">
-        <p className="lead">I don’t need every engineer to know everything. I need them to be able to follow a problem past the edge of their own code.</p>
+        <p className="lead">I expect engineers to follow a problem beyond their own code, investigate the next part of the request and ask for help when they reach unfamiliar ground.</p>
         <p className="post__close-principle">Be strong in your specialty, and curious enough about neighboring systems to investigate problems, ask useful questions and help deliver a working product.</p>
         <p>It’s the same argument I made in <Link to="/writing/you-dont-need-to-remember-everything/">you don’t need to remember everything</Link>: understanding how systems connect matters more than memorizing all of them.</p>
         <div className="post__close-actions">

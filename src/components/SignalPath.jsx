@@ -17,13 +17,13 @@ const BW = 112;
 const stages = [
   { id: 'leadership', y: 104, label: 'Engineering leadership', evidence: 'Co-founded a global communications platform and led its engineering from the first line of code to acquisition. Later CTO of a media publishing platform; earlier VP of Operations for a voice service.', to: '/leadership/' },
   { id: 'product', y: 196, label: 'Product engineering', evidence: 'Web and mobile products for 400k+ users. Publishing platforms that grew organic and social traffic 50%.', to: '/work/publishing-distribution/' },
-  { id: 'architecture', y: 288, label: 'Software architecture', evidence: 'Multi-tier platforms, event-driven microservices, and incremental migrations that keep legacy systems in service.', to: '/work/event-driven-platform/' },
+  { id: 'architecture', y: 288, label: 'Software architecture', evidence: 'Experience with multi-tier platforms and event-driven systems; the linked example explores publication and recovery.', to: '/work/event-driven-platform/' },
   { id: 'cloud', y: 380, label: 'Cloud & infrastructure', evidence: 'From one data center to cloud regions on three continents with geo-routing. Earlier: 2,000+ carrier collocations.', to: '/work/three-continent-platform/' },
 ];
 
 const branches = [
-  { id: 'gov', from: 'product', label: ['Government', 'technology'], evidence: 'Public-sector delivery through Yippify, where accessibility, security and hand-over shape the architecture.', to: '/work/public-service-modernization/' },
-  { id: 'ai', from: 'architecture', label: ['AI & data'], evidence: 'LLM integrations, retrieval (RAG) and document processing, with people in the loop where accuracy matters.', to: '/work/document-intelligence/' },
+  { id: 'gov', from: 'product', label: ['Government', 'technology'], evidence: 'Public-sector delivery through Yippify; the linked design example discusses accessibility, security and hand-over.', to: '/work/public-service-modernization/' },
+  { id: 'ai', from: 'architecture', label: ['AI & data'], evidence: 'An illustrative document-processing design using retrieval and a reviewer queue.', to: '/work/document-intelligence/' },
 ];
 
 const handsOn = {
