@@ -175,6 +175,21 @@ for path, page in pages.items():
                 assert n['item'] in urls, (path, n['item'])
 missing = {(str(p), i) for p, i in referenced if i not in defined}
 assert not missing, missing
+# Moved pages (scripts/redirects.json, served as 301s by npm run redirects): every target is built and
+# canonical, no source is still built or linked, and no target is itself redirected.
+redirects = json.loads((Path(__file__).resolve().parent / 'redirects.json').read_text())
+sources = {r['from'] for r in redirects}
+for r in redirects:
+    assert r['to'] not in sources, ('redirect chain', r)
+    assert (ROOT / r['to'].strip('/') / 'index.html').is_file(), ('redirect target not built', r)
+    assert ORIGIN + r['to'] in urls, ('redirect target not in sitemap', r)
+    assert not (ROOT / r['from'].strip('/') / 'index.html').exists(), ('redirect source still built', r)
+for path, page in pages.items():
+    for a in page.links:
+        href = urlsplit(a.get('href', ''))
+        if href.netloc in ('', 'kalunchan.dev'):
+            assert href.path not in sources, ('link to a redirected page', path, a.get('href'))
+
 community = pages[ROOT / 'community/index.html']
 graph = community.structured[0]['@graph']
 assert {'WebPage', 'Thing', 'SportsOrganization', 'BreadcrumbList'} <= {v['@type'] for v in graph}
