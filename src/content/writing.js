@@ -11,8 +11,10 @@ import { metadata as loopMeta } from './posts/loop-engineering-feedback-loops';
 import { metadata as speedQualityMeta } from './posts/speed-vs-quality-software-engineering';
 import { metadata as learnFasterMeta } from './posts/how-i-learn-faster-with-ai';
 import { metadata as processMeta } from './posts/when-to-add-engineering-process';
+import { metadata as aolAiMeta } from './posts/from-aol-to-ai-lowering-the-barrier';
 
 export const posts = [
+  { ...aolAiMeta, no: '711', published: '2026-10-18', modified: '2026-10-18' },
   { ...processMeta, no: '710', published: '2026-10-18', modified: '2026-10-18' },
   { ...learnFasterMeta, no: '709', published: '2026-10-17', modified: '2026-10-17' },
   { ...speedQualityMeta, no: '708', published: '2026-10-17', modified: '2026-10-17' },
@@ -1308,6 +1310,7 @@ export const posts = [
       { to: '/writing/you-dont-need-to-remember-everything/', label: 'You don’t need to remember everything' },
       { to: '/writing/network-security-before-devsecops/', label: 'Network security long before DevSecOps' },
       { to: '/writing/talking-to-ai-in-a-terminal/', label: 'Back at a prompt: talking to AI in a terminal' },
+      { to: '/writing/from-aol-to-ai-lowering-the-barrier/', label: 'From AOL to AI: each wave lowered a different barrier' },
     ],
     minutes: 9,
     published: '2026-10-09',
@@ -3110,6 +3113,7 @@ export const posts = [
       { to: '/mentorship/', label: 'How I mentor engineers until they can replace me' },
       { to: '/leadership/', label: 'How I lead engineering teams' },
       { to: '/writing/building-software-before-and-after-ai/', label: 'How I build with AI, and what hasn’t changed' },
+      { to: '/writing/from-aol-to-ai-lowering-the-barrier/', label: 'Will developers forget the fundamentals?' },
     ],
     minutes: 11,
     published: '2026-09-28',
@@ -3249,6 +3253,7 @@ export const journeys = [
       'you-dont-need-to-remember-everything',
       'how-i-learn-faster-with-ai',
       'from-dos-to-ai-thirty-years-of-technology',
+      'from-aol-to-ai-lowering-the-barrier',
       'talking-to-ai-in-a-terminal',
       'why-i-build-my-own-developer-tools',
       'specialization-beyond-your-own-code',

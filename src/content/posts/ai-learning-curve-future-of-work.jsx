@@ -38,6 +38,7 @@ export const metadata = {
     { to: '/writing/hidden-cost-of-ai-coding/', label: 'The hidden cost of AI coding' },
     { to: '/writing/ux-ui-design-before-and-after-ai/', label: 'How I design screens now, with AI in the loop' },
     { to: '/writing/why-i-enjoy-mentoring/', label: 'Why I enjoy mentoring' },
+    { to: '/writing/from-aol-to-ai-lowering-the-barrier/', label: 'From AOL to AI: what happens when the knowledge barrier falls' },
     { to: '/leadership/', label: 'How I run engineering' },
   ],
   keywords: [
