@@ -27,6 +27,7 @@ export const metadata = {
     { to: '/writing/hidden-cost-of-ai-coding/', label: 'What AI coding really costs' },
     { to: '/writing/loop-engineering-feedback-loops/', label: 'Loop engineering: faster, more honest feedback loops' },
     { to: '/writing/should-it-be-a-microservice/', label: 'Should it be a microservice?' },
+    { to: '/writing/when-to-add-engineering-process/', label: 'When process helps, and when it becomes the problem' },
     { to: '/leadership/', label: 'How I run engineering' },
   ],
   minutes: 10,

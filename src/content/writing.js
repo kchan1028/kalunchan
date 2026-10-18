@@ -10,8 +10,10 @@ import { metadata as vibeAgenticMeta } from './posts/vibe-coding-vs-agentic-engi
 import { metadata as loopMeta } from './posts/loop-engineering-feedback-loops';
 import { metadata as speedQualityMeta } from './posts/speed-vs-quality-software-engineering';
 import { metadata as learnFasterMeta } from './posts/how-i-learn-faster-with-ai';
+import { metadata as processMeta } from './posts/when-to-add-engineering-process';
 
 export const posts = [
+  { ...processMeta, no: '710', published: '2026-10-18', modified: '2026-10-18' },
   { ...learnFasterMeta, no: '709', published: '2026-10-17', modified: '2026-10-17' },
   { ...speedQualityMeta, no: '708', published: '2026-10-17', modified: '2026-10-17' },
   { ...loopMeta, no: '707', published: '2026-10-16', modified: '2026-10-16' },
@@ -3212,6 +3214,7 @@ export const journeys = [
       'vibe-coding-vs-agentic-engineering',
       'loop-engineering-feedback-loops',
       'speed-vs-quality-software-engineering',
+      'when-to-add-engineering-process',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
       'building-federal-government-applications',
