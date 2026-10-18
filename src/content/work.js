@@ -20,7 +20,7 @@ export const cases = [
     claim:
       'Users on three continents got the same fast, reliable service, with no big-bang migration.',
     summary:
-      'Taking a founder-built platform from a single data center to cloud regions in North America, Europe and Asia, with traffic routed by geography.',
+      'Moving a founder-built platform out of a single data center and into the cloud. Each user’s traffic went to the nearest region.',
     problem:
       'The platform started in one data center. As the user base grew past 400,000 across South America, Asia and Africa, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
     context: [
@@ -111,7 +111,7 @@ export const cases = [
     domain: ['Product engineering', 'Software architecture', 'Engineering leadership'],
     claim: 'Organic traffic, social traffic and social engagement each grew 50%.',
     summary:
-      'Setting technical strategy for a portfolio of media titles, and treating search and social reach as platform capabilities.',
+      'Setting technical strategy for a group of media titles. Search and social reach were built into the platform once, for every title.',
     problem:
       'Good content lost to larger publishers on search rankings and social feeds. The platform treated distribution as something editors did after publishing, not something the system was built for.',
     context: [
@@ -198,11 +198,11 @@ export const cases = [
     role: 'Architecture & delivery lead',
     domain: ['Government technology', 'Software architecture', 'Cloud & infrastructure'],
     claim:
-      'A legacy public service moved onto a modern, accessible platform while it stayed in service.',
+      'A legacy public service moved onto a modern, accessible platform. It stayed in service throughout.',
     summary:
-      'Replacing a legacy public-facing service incrementally, using a strangler pattern, Django and React on AWS, and infrastructure as code.',
+      'Replacing a legacy public service one piece at a time with the strangler pattern. The new system runs Django and React on AWS.',
     problem:
-      'A government service ran on an ageing system that was hard to change, hard to secure and hard to use on a phone. Residents still depended on it every day, so switching it off to rebuild was not an option.',
+      'A government service ran on an ageing system. It was hard to change, hard to secure and hard to use on a phone. Residents still depended on it every day. Switching it off to rebuild was not an option.',
     constraints: [
       'Continuous public availability',
       'Accessibility (WCAG) and security review as release gates',
@@ -210,7 +210,7 @@ export const cases = [
       'Legacy data that could not be migrated in one step',
     ],
     approach:
-      'Put an API facade in front of the legacy system, then replace one journey at a time behind it. New services run as containers on AWS, provisioned with Terraform, and ship through a pipeline with automated accessibility and security checks.',
+      'Put an API facade in front of the legacy system. Then replace one journey at a time behind it. New services run as containers on AWS, provisioned with Terraform. Each one ships through a pipeline with automated accessibility and security checks.',
     diagram: {
       label: 'Strangler migration behind an API facade',
       tiers: [
@@ -248,8 +248,10 @@ export const cases = [
       'In government, the team that inherits the system decides whether it lasts. Design for them.',
       'A facade turns one terrifying migration into a series of boring releases.',
     ],
-    related: { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me about engineering' },
-    related: { to: '/writing/should-it-be-a-microservice/#extract-later', label: 'Why extracting a service later is often cheaper than splitting early' },
+    related: [
+      { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me about engineering' },
+      { to: '/writing/should-it-be-a-microservice/#extract-later', label: 'Why extracting a service later is often cheaper than splitting early' },
+    ],
     verify: true,
   },
   {
@@ -266,7 +268,7 @@ export const cases = [
     claim:
       'Document intake went from manual keying to reviewer-approved extraction, and every decision stays auditable.',
     summary:
-      'Designing an LLM pipeline that extracts and classifies documents, grounds answers in the client’s own policy through retrieval, and sends low-confidence results to a person.',
+      'Designing an LLM pipeline that reads and sorts documents and checks its answers against the client’s own policy. When it isn’t sure, a person decides.',
     problem:
       'Staff re-keyed information from incoming documents by hand. The process was slow and error-prone, and it was hard to audit why a document was handled a certain way.',
     constraints: [
@@ -328,7 +330,7 @@ export const cases = [
     claim:
       'Teams could ship services independently without breaking each other or losing events.',
     summary:
-      'Moving a platform from tightly coupled synchronous calls to Kafka-based events, using a transactional outbox and idempotent consumers.',
+      'Moving a platform from tightly coupled synchronous calls to Kafka events, with an outbox and idempotent consumers so no event is lost or applied twice.',
     problem:
       'Services called each other synchronously. One slow dependency stalled every request behind it, and each team’s release had to be coordinated with the others.',
     constraints: [
@@ -383,7 +385,7 @@ export const cases = [
     claim:
       'The network expanded nationwide while service held steady and operations stayed repeatable.',
     summary:
-      'Integration, expansion and capacity planning for ATM, IP, VoIP and OC infrastructure across a national broadband footprint.',
+      'Planning capacity and growth for a national broadband network, from ATM and OC circuits to IP and VoIP.',
     problem:
       'A broadband network spread over 2,000+ collocations had to keep adding customers and services, including VoIP, without degrading the service it already carried.',
     context: [

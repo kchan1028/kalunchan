@@ -64,7 +64,7 @@ export default function Body() {
         <p>When I was younger, recovery was what happened by accident between workouts. Rest days were a sign of weak planning. All three disciplines eventually corrected me, and cycling did it most clearly, with a coach who put rest weeks on the calendar on purpose and expected me to take them.</p>
         <p>Fatigue builds up without telling you. A hard week feels fine. Three hard weeks feel fine until the fourth one, when the numbers go backwards and the mood goes with them. Sleep and food are training. Enough, absorbed, beats more. The adaptation happens while you rest. The session only orders it.</p>
         <p>Teams accumulate fatigue the same way. Constant emergencies, overtime that becomes the schedule, and deadlines nobody believed in the first place do not produce a stronger team. They produce a tired one that eventually breaks, and the break is rarely at a convenient moment. I have written about <Link to="/writing/what-sprint-carryover-is-telling-you/">what sprint carryover is telling you</Link>, and a lot of it is this: the load is higher than the capacity, and no amount of pushing fixes that.</p>
-        <p>Recovery is not the opposite of progress. It is part of it. I believe that now. It took me an embarrassingly long time, and a few injuries, to get there.</p>
+        <p>Recovery is part of progress. I believe that now. It took me an embarrassingly long time, and a few injuries, to get there.</p>
       </section>
 
       <section id="coming-back" aria-labelledby="coming-back-h">
@@ -111,7 +111,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Train smarter. Then keep showing up.</h2>
       <div className="post__close-copy">
         <p className="lead">I used to think getting better meant working harder. Three sports taught me it means training smarter, recovering on purpose, and coming back from the gaps.</p>
-        <p className="post__close-principle">Consistency over heroics, the right effort at the right time, recovery as part of the plan, and people who make you better.</p>
+        <p className="post__close-principle">Show up consistently and put in the right effort at the right time. Plan the recovery, and train with people who make you better.</p>
         <p>That is how I train now, and it is how I try to build engineering teams. Neither is finished.</p>
         <div className="post__close-actions">
           <Link to="/mentorship/" className="action">How I mentor engineers and junior riders <ArrowRight /></Link>

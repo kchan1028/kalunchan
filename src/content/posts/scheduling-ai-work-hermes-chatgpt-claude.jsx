@@ -61,7 +61,7 @@ export default function Body() {
     <>
       <section id="what-changes" aria-labelledby="what-changes-h">
         <h2 id="what-changes-h" className="post__h2">What changes when nobody is watching</h2>
-        <p>I have spent the last few weeks learning self-hosted agents by putting Hermes Agent on a Hostinger VPS, <Link to="/writing/connect-hermes-agent-hostinger-vps-vs-code/">reaching it from VS Code</Link> and designing a job-search agent to run on it. Somewhere in that I realized the thing I was learning was not Hermes. It was scheduling. The moment an AI task runs on a timer instead of in a conversation, almost every assumption I had about working with an assistant stops holding.</p>
+        <p>I have spent the last few weeks learning self-hosted agents by putting Hermes Agent on a Hostinger VPS, <Link to="/writing/connect-hermes-agent-hostinger-vps-vs-code/">reaching it from VS Code</Link> and designing a job-search agent to run on it. Somewhere in that I realized I was mostly learning about scheduling. The moment an AI task runs on a timer instead of in a conversation, almost every assumption I had about working with an assistant stops holding.</p>
         <p className="post__answer">In a conversation, I supply the context, catch the mistakes, and decide what happens next, turn by turn. On a schedule, nobody does. The task has to carry its own instructions, find its own context, fail in a way someone will notice, and never take an action I would have stopped. Scheduling turns an assistant into a system, and systems need an owner for execution, context, credentials, uptime, logs and recovery.</p>
         <p>This post compares the five ways I could schedule one concrete job, and what each one makes me responsible for. I am still learning; nothing here reports a finished automation.</p>
       </section>
@@ -122,8 +122,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">A schedule turns an assistant into a system</h2>
       <div className="post__close-copy">
-        <p className="lead">The difference between asking an AI once and running it every week is not the model. It is everything around the model that now needs an owner.</p>
-        <p className="post__close-principle">Durable instructions, data on disk, a named account that pays, deterministic plumbing, and a human gate before anything irreversible.</p>
+        <p className="lead">Asking an AI once and running it every week use the same model. The difference is everything around the model that now needs an owner.</p>
+        <p className="post__close-principle">Write instructions that last and keep the data on disk. Name the account that pays, keep the plumbing deterministic, and put a human gate in front of anything irreversible.</p>
         <p>Next in the series: the research assistant's first scheduled runs, what it suggested, and what the first week cost.</p>
         <div className="post__close-actions">
           <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>

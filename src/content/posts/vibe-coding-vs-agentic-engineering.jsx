@@ -274,11 +274,11 @@ export default function Body() {
         <h2 id="leaders-h" className="post__h2">What engineering leaders should change</h2>
         <p>For engineering leadership in the AI era, the work shifts toward deciding what gets built and making sure it’s verified. A few things I’d change:</p>
         <ul className="post__list">
-          <li><strong>Move review earlier.</strong> Review the plan and acceptance criteria before the agents start. A wrong design costs a conversation there and a rewrite later.</li>
-          <li><strong>Scale review to risk.</strong> Docs and copy can rely on automated checks. Authentication, permissions, billing, data migrations and production infrastructure always get a human approval.</li>
-          <li><strong>Treat AI-generated debt like any other debt.</strong> Set standards the agents follow, keep pull requests small, and budget time to remove duplication before it spreads.</li>
-          <li><strong>Balance speed against operational risk.</strong> Feature flags, gradual rollouts and a tested rollback let you ship fast without betting everything on each release.</li>
-          <li><strong>Protect how juniors learn.</strong> Ask them to explain the code and the tradeoff before merging, and give them decisions to make, not only prompts to write. Judgment comes from making decisions, with a mentor close by.</li>
+          <li>Move review earlier, to the plan and acceptance criteria, before the agents start. A wrong design costs a conversation there and a rewrite later.</li>
+          <li>Scale review to risk. Docs and copy can rely on automated checks. Authentication, permissions, billing, data migrations and production infrastructure always get a human approval.</li>
+          <li>Treat AI-generated debt like any other debt: set standards the agents follow, keep pull requests small, and budget time to remove duplication before it spreads.</li>
+          <li>Balance speed against operational risk. Feature flags, gradual rollouts and a tested rollback let you ship fast without betting everything on each release.</li>
+          <li>Protect how juniors learn. Ask them to explain the code and the tradeoff before merging, and give them decisions to make, not only prompts to write. Judgment comes from making decisions, with a mentor close by.</li>
         </ul>
         <p>Then measure outcomes instead of output. Lines of code and prompt counts got even less meaningful once an agent can produce thousands of lines in an hour. I’d watch these at the team level:</p>
         <ul className="post__list">
@@ -290,7 +290,7 @@ export default function Body() {
           <li><strong>Cost per successfully delivered feature:</strong> people, tokens and infrastructure, divided by features customers actually use</li>
         </ul>
         <p>These describe how the system of work is performing. They shouldn’t be used to rank individual developers, because people learn to game whatever they’re ranked on. If lead time drops while rework and escaped defects climb, the team got faster at producing problems.</p>
-        <p>The goal isn’t to generate more code. The goal is to deliver better software with less unnecessary work. More on how I approach that in <Link to="/leadership/">how I run engineering</Link>.</p>
+        <p>What I want is better software with less unnecessary work, and generating more code doesn’t get you there by itself. More on how I approach that in <Link to="/leadership/">how I run engineering</Link>.</p>
       </section>
     </>
   );

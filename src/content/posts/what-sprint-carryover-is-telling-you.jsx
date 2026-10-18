@@ -64,13 +64,7 @@ export default function Body() {
         <h2 id="is-it-bad-h" className="post__h2">Is sprint carryover bad?</h2>
         <p className="post__answer">Not by itself. Some carryover is normal for a team doing work with real uncertainty. It becomes a problem when it’s persistent, when the same items carry over sprint after sprint, or when nobody can explain why it’s happening.</p>
         <p>A team that never carries anything over isn’t necessarily healthy. Sometimes it’s a team that has learned to commit to less than it can do, or to pad every estimate, because missing a commitment gets punished. The number looks great. Delivery doesn’t improve.</p>
-        <p>So I look at three things instead of a single number:</p>
-        <ul className="post__list">
-          <li><strong>The trend.</strong> Is carryover steady, growing or shrinking over several sprints?</li>
-          <li><strong>The age.</strong> The same item carrying over three sprints in a row tells you far more than a dozen items that slipped by a day.</li>
-          <li><strong>The cause.</strong> What stopped the work from finishing.</li>
-        </ul>
-        <p>The third one matters most.</p>
+        <p>So I look at three things instead of a single number. The first is the trend: is carryover steady, growing or shrinking over several sprints? The second is age. The same item carrying over three sprints in a row tells you far more than a dozen items that slipped by a day. The third is the cause, meaning what stopped the work from finishing, and that one matters most.</p>
       </section>
 
       <section id="causes" aria-labelledby="causes-h">
@@ -132,15 +126,15 @@ export default function Body() {
       </section>
 
       <section id="record" aria-labelledby="record-h">
-        <h2 id="record-h" className="post__h2">Record the reason, not just the number</h2>
+        <h2 id="record-h" className="post__h2">Record the reason along with the number</h2>
         <p>Most teams already track carryover in some form. Jira will show you what moved from one sprint to the next. What it won’t show you is why.</p>
         <p>The simplest fix I know is to record one primary reason for every item that carries over, at the end of the sprint, while people still remember. A few rules make it work:</p>
         <ol className="post__steps">
-          <li><strong>Use a short, fixed list.</strong> The six causes above, plus “other,” is enough. Free text is hard to add up.</li>
-          <li><strong>Pick one primary reason per item.</strong> Most items have several. Choose the one that mattered most.</li>
-          <li><strong>Ask the people who did the work.</strong> They know why it didn’t finish. A manager guessing afterward often doesn’t.</li>
-          <li><strong>Look across several sprints.</strong> One sprint is noise. A pattern over a quarter is information.</li>
-          <li><strong>Keep it blameless.</strong> The goal is to find the system problem, not a person to blame. If it turns into blame, people will pick the safest reason instead of the true one.</li>
+          <li>Use a short, fixed list. The six causes above, plus “other,” is enough. Free text is hard to add up.</li>
+          <li>Pick one primary reason per item. Most items have several, so choose the one that mattered most.</li>
+          <li>Ask the people who did the work, because they know why it didn’t finish. A manager guessing afterward often doesn’t.</li>
+          <li>Look across several sprints. One sprint is noise. A pattern over a quarter is information.</li>
+          <li>Keep it blameless. You are looking for the system problem, and if it turns into blame, people will pick the safest reason instead of the true one.</li>
         </ol>
         <p>Within a few sprints, a pattern tends to show up, and that’s where to start.</p>
       </section>

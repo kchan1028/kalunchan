@@ -164,12 +164,12 @@ export default function Body() {
         <p>AI tools have changed how I work. I use them to recall syntax, draft boilerplate, explain an unfamiliar codebase, and sketch a first version of something I’d otherwise spend an hour scaffolding. Retrieving information and generating code are both much faster than they used to be.</p>
         <p>What hasn’t changed is who is responsible for the result. An AI answer is a starting point, and it’s only as useful as your ability to judge it. You still need enough understanding to:</p>
         <ul className="post__list">
-          <li><strong>Ask the right question.</strong> A vague prompt gets a plausible, generic answer. A precise one comes from knowing what matters in your system.</li>
-          <li><strong>Validate the answer.</strong> Does it do what it claims? Does it handle the edge cases you care about?</li>
-          <li><strong>Recognize incorrect assumptions.</strong> Generated code often assumes a different library version, a different schema, or a simpler world than the one you run in.</li>
-          <li><strong>Understand the tradeoffs.</strong> There are usually several ways to solve a problem, and the first one offered isn’t always right for your constraints.</li>
-          <li><strong>Debug it when it doesn’t work.</strong> Sometimes it won’t, in ways that only make sense if you understand what’s underneath.</li>
-          <li><strong>Decide whether it fits the system.</strong> Code that works in isolation can still be wrong for your architecture, your team or your security model.</li>
+          <li>Ask the right question. A vague prompt gets a plausible, generic answer. A precise one comes from knowing what matters in your system.</li>
+          <li>Validate the answer: does it do what it claims? Does it handle the edge cases you care about?</li>
+          <li>Recognize incorrect assumptions. Generated code often assumes a different library version, a different schema, or a simpler world than the one you run in.</li>
+          <li>Understand the tradeoffs. There are usually several ways to solve a problem, and the first one offered isn’t always right for your constraints.</li>
+          <li>Debug it when it doesn’t work. Sometimes it won’t, in ways that only make sense if you understand what’s underneath.</li>
+          <li>Decide whether it fits the system. Code that works in isolation can still be wrong for your architecture, your team or your security model.</li>
         </ul>
         <p>I’ve seen generated code that looked clean and would pass a quick review: a Django view that ran one query per row once real data showed up, a JWT check that never validated the audience claim, a Kafka consumer that committed offsets before the work was done. Each one would have worked in a demo. Each one is the kind of thing you only catch if you already understand how the system behaves.</p>
         <p className="post__pull">So I think AI makes understanding more important. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
@@ -188,13 +188,13 @@ export default function Body() {
         <h2 id="keep-learning-h" className="post__h2">How I keep learning as a software engineer</h2>
         <p>I don’t have a grand system. These are the habits that have stuck:</p>
         <ol className="post__steps">
-          <li><strong>Read the official docs, not just the first answer.</strong> A snippet tells you what to type. The docs tell you why, and what the defaults are.</li>
-          <li><strong>Reproduce it small.</strong> When something confuses me, I build the smallest version that shows the behavior: a throwaway script, a local container, a two-table database.</li>
-          <li><strong>Write down anything I’ve looked up twice.</strong> If I searched for it twice, I’ll search for it a third time. A short note saves that time.</li>
-          <li><strong>Read the source when it matters.</strong> Frameworks are just code. Seeing how Django builds a query or how a client library retries teaches more than most articles, including this one.</li>
-          <li><strong>Explain it to someone else.</strong> <Link to="/mentorship/">Mentoring</Link> is one of the best ways I know to find out what I don’t really understand.</li>
-          <li><strong>Build something small.</strong> See above.</li>
-          <li><strong>Stay curious outside my lane.</strong> Some of my most useful lessons came from support tickets, sales calls and budget reviews, not code.</li>
+          <li>Read the official docs instead of stopping at the first answer. A snippet tells you what to type. The docs tell you why, and what the defaults are.</li>
+          <li>Reproduce it small. When something confuses me, I build the smallest version that shows the behavior: a throwaway script, a local container, a two-table database.</li>
+          <li>Write down anything I’ve looked up twice, because if I searched for it twice, I’ll search for it a third time. A short note saves that time.</li>
+          <li>Read the source when it matters. Frameworks are just code. Seeing how Django builds a query or how a client library retries teaches more than most articles, including this one.</li>
+          <li>Explain it to someone else. <Link to="/mentorship/">Mentoring</Link> is one of the best ways I know to find out what I don’t really understand.</li>
+          <li>Build something small (see above).</li>
+          <li>Stay curious outside my lane. Some of my most useful lessons came from support tickets, sales calls and budget reviews, not code.</li>
         </ol>
       </section>
     </>

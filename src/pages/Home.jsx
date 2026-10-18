@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { nav } from '../components/Layout';
 import ExperienceMap from '../components/ExperienceMap';
 import { Impact, CareerTimeline, CaseStudies, LeadershipFlow } from '../components/HomeSections';
-import { entity, headlineNumbers, person, proofPoints } from '../content/profile';
+import { homeIntro, headlineNumbers, person, proofPoints } from '../content/profile';
 import { projects } from '../content/projects';
 import { ArrowRight } from '../components/Icons';
 
@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div className="opening__text">
         <h1 id="thesis" className="opening__thesis display">{person.thesis}</h1>
-        <p className="opening__entity">{entity}</p>
+        <p className="opening__entity">{homeIntro}</p>
         <p className="opening__actions">
           <Link to="/contact/#start" className="action">Start a conversation <ArrowRight /></Link>
           <Link to="/experience/" className="action action--quiet">Experience <ArrowRight /></Link>
@@ -30,7 +30,7 @@ export default function Home() {
             <span>Founder story: from an idea to an acquisition</span> <ArrowRight />
           </Link>
         </p>
-        <p className="opening__level">From carrier networks and physical data centers to cloud infrastructure, distributed systems and building businesses, I have spent more than two decades making technology work at scale, balancing performance, reliability, capacity and cost. Still hands-on.</p>
+        <p className="opening__level">For more than two decades I have made technology work at scale, first on carrier networks and a data center I cabled by hand, now in the cloud. Every system had to perform at a cost the business could carry. I’m still hands-on.</p>
         <ul className="opening__proof" aria-label="Proof points">
           {proofPoints.map((p) => <li key={p.figure}><Link to={p.to}><strong>{p.figure}</strong> {p.text}</Link></li>)}
         </ul>

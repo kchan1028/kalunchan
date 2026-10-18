@@ -146,7 +146,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Whatever impresses us today will be ordinary tomorrow</h2>
       <div className="post__close-copy">
         <p className="lead">From a 286 and a screaming modem to fiber, a phone that does everything, and an AI that writes code: every decade changed what I thought was possible.</p>
-        <p className="post__close-principle">The tools keep changing. The job, making systems reliable and reaching people, has stayed the same, and so has the need to keep learning.</p>
+        <p className="post__close-principle">I’ve never been able to stop learning, because the tools have never stopped changing.</p>
         <p>I built some of the infrastructure that made those changes ordinary, and I am still building on whatever comes next.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>

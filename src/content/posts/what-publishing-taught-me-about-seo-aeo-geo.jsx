@@ -142,14 +142,14 @@ export default function Body() {
         <p>I’m still learning this. Some of it is familiar from publishing, some of it is new, and I’m testing it on my own sites, including this one. Each post here ends with short answers to the questions it covers, the pages carry structured data that describes who wrote them and what they’re about, and I try to keep the people, organizations and projects I mention consistent from page to page.</p>
         <p>This is what I’m paying attention to:</p>
         <ul className="post__list">
-          <li><strong>Be direct.</strong> Answer the question near the top, in plain language, without a long warm-up written for keyword density.</li>
-          <li><strong>Structure around real questions.</strong> Headings that match what people ask, not every variation of a keyword.</li>
-          <li><strong>Write passages that stand alone.</strong> An AI system may quote one paragraph with nothing around it. That paragraph should still name what it’s about and make sense.</li>
-          <li><strong>Show first-hand experience.</strong> Evidence, data, examples and original observations are the parts nobody else can write, and they’re what make content worth citing.</li>
-          <li><strong>Use semantic structure.</strong> Clear headings, lists and tables, and an information architecture that shows how pages relate.</li>
-          <li><strong>Keep content readable by machines without hurting people.</strong> Server-rendered HTML, accurate structured data and fast pages help both.</li>
-          <li><strong>Link with meaning.</strong> Internal links that connect related topics show what a site knows about.</li>
-          <li><strong>Aim to be cited, not just ranked.</strong> A page that’s accurate, specific and clearly sourced is more likely to be used in an answer than one written only to rank.</li>
+          <li>Be direct: answer the question near the top, in plain language, without a long warm-up written for keyword density.</li>
+          <li>Structure pages around real questions, with headings that match what people ask instead of every variation of a keyword.</li>
+          <li>Write passages that stand alone. An AI system may quote one paragraph with nothing around it. That paragraph should still name what it’s about and make sense.</li>
+          <li>Show first-hand experience. Evidence, data, examples and original observations are the parts nobody else can write, and they’re what make content worth citing.</li>
+          <li>Use semantic structure: clear headings, lists and tables, and an information architecture that shows how pages relate.</li>
+          <li>Keep content readable by machines without hurting people. Server-rendered HTML, accurate structured data and fast pages help both.</li>
+          <li>Link with meaning. Internal links that connect related topics show what a site knows about.</li>
+          <li>Aim to be cited as well as ranked. A page that’s accurate, specific and clearly sourced is more likely to be used in an answer than one written only to rank.</li>
         </ul>
         <p>Most of that list is good writing and good engineering, applied with AI readers in mind.</p>
       </section>
@@ -169,7 +169,7 @@ export default function Body() {
           <li><strong>Can search engines understand it?</strong> Crawlable HTML, stable URLs, accurate metadata, a clear structure.</li>
           <li><strong>Can AI systems understand it?</strong> Clear entities, standalone answers, structured data that matches what’s on the page.</li>
           <li><strong>Does it answer a real question?</strong> One that someone is asking, not one we invented to fill a keyword.</li>
-          <li><strong>Does it create value after we ship it?</strong> Measured by what readers did, not just by the release going out.</li>
+          <li><strong>Does it create value after we ship it?</strong> Measured by what readers did after the release went out.</li>
         </ol>
         <p>I asked versions of these on the <Link to="/projects/berkeley-omnium/">Berkeley Omnium website</Link> and the <Link to="/projects/union-city-smog-check/">Union City Smog Check redesign</Link>, where answer-first pages and structured data were part of the build from the start rather than a cleanup task afterward. I wrote up the Omnium rebuild, and what the old site was failing at, in <Link to="/writing/berkeley-omnium-new-website-next-generation/">a new website for the next generation of the Berkeley Omnium</Link>.</p>
       </section>

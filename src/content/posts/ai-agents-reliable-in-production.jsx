@@ -93,7 +93,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">New capabilities, old problems, higher stakes</h2>
       <div className="post__close-copy">
         <p className="lead">AI agents bring capabilities I could not have built a few years ago. They do not remove a single traditional software engineering problem.</p>
-        <p className="post__close-principle">Retries, idempotency, state, observability, cost and least privilege matter more when the system can decide what to do next.</p>
+        <p className="post__close-principle">The test I end on is whether I would let it run unattended with my name on the result.</p>
         <p>That is the end of the series, for now. The start was <Link to="/writing/from-cisco-routers-to-ai-agents/">a router console</Link>, and the habits I learned there are still the ones keeping the newest systems honest.</p>
         <div className="post__close-actions">
           <Link to="/writing/?path=still-building" className="action">The whole series <ArrowRight /></Link>

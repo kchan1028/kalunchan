@@ -285,16 +285,16 @@ export default function Body() {
 
       <section id="workflow" aria-labelledby="workflow-h">
         <h2 id="workflow-h" className="post__h2">A practical loop engineering workflow</h2>
-        <p>Here’s how I’d run a hypothetical feature, letting customers book appointments, with Claude Code or Codex.</p>
+        <p>This is how I’d run a hypothetical feature, letting customers book appointments, with Claude Code or Codex.</p>
         <Workflow />
         <p>The pattern is that people approve direction and agents iterate inside it. Steps 1 to 4 decide what we’re building and how. Steps 5 to 7 are where automated iteration pays off, because the agent is working against checks a person already agreed with. Steps 8 to 10 confirm it worked for a real user.</p>
         <p>The guardrails I’d set before step 5:</p>
         <ul className="post__list">
-          <li><strong>Iteration limits.</strong> Three attempts at the same failure, then stop and report what was tried. Repeated failure usually means the plan is wrong, and more attempts won’t fix a plan.</li>
-          <li><strong>Scoped changes.</strong> The plan names the files and directories the agent may change. Anything outside that is a new conversation.</li>
-          <li><strong>Independent checks.</strong> Tests come from the acceptance criteria and the agent can’t edit them without approval. CI runs them, not the agent’s own report.</li>
-          <li><strong>Escalation.</strong> When the agent hits a limit, touches authentication or payments, or wants to change a test, a person decides.</li>
-          <li><strong>Written instructions.</strong> Project rules in a CLAUDE.md or AGENTS.md file, so every session starts with the same constraints.</li>
+          <li>Three attempts at the same failure, then the agent stops and reports what was tried. Repeated failure usually means the plan is wrong, and more attempts won’t fix a plan.</li>
+          <li>The plan names the files and directories the agent may change. Anything outside that is a new conversation.</li>
+          <li>Tests come from the acceptance criteria and the agent can’t edit them without approval. CI runs them, not the agent’s own report.</li>
+          <li>When the agent hits a limit, touches authentication or payments, or wants to change a test, a person decides.</li>
+          <li>Project rules live in a CLAUDE.md or AGENTS.md file, so every session starts with the same constraints.</li>
         </ul>
         <p>Review scales with risk. A copy change can lean on automated checks. Anything touching permissions, money or customer data gets a person, which I covered in <Link to="/writing/code-review-in-the-ai-era/">code review doesn’t start with a pull request</Link>. Unlimited loops also cost real money in tokens and time, as I worked through in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>.</p>
       </section>
@@ -338,7 +338,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Code got cheaper. Being wrong didn’t.</h2>
       <div className="post__close-copy">
         <p className="lead">AI has reduced the cost of writing code. The cost of building the wrong thing is still there, and it shows up later and bigger when the feedback is weak.</p>
-        <p className="post__close-principle">The goal isn’t to generate more code. It’s to shorten the distance between an idea and a validated outcome.</p>
+        <p className="post__close-principle">The goal is to shorten the distance between an idea and a validated outcome.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me how your team works with AI agents <ArrowRight /></Link>
           <Link to="/writing/vibe-coding-vs-agentic-engineering/" className="link-arrow"><span>Vibe coding vs. agentic engineering</span> <ArrowRight /></Link>

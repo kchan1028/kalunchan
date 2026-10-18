@@ -218,9 +218,9 @@ export default function Body() {
         <p>Give five people the same AI coding agent and you won’t get five equal results. I use these tools every day, on my own products and on client work, and the difference between users is bigger than the difference between tools.</p>
         <p className="post__answer">AI coding tools multiply the skill of the person using them. An engineer who knows what to build, and how to check it, gets faster. Someone who can’t judge the output gets more output to judge, and more ways to go in circles.</p>
         <ul className="post__list">
-          <li><strong>A junior developer</strong> gets working code quickly, but often can’t tell whether it’s good. So they ask the AI to check its own work, and then to check the check.</li>
-          <li><strong>An experienced engineer</strong> already knows what done looks like. They use the AI to draft, then compare the draft with what they know about the system, the users and the failure cases.</li>
-          <li><strong>A nontechnical user</strong> can get an impressive demo running in an afternoon. What they usually can’t see is the missing security check, the data that will be lost on the next deploy, or the hosting bill that arrives later.</li>
+          <li>A junior developer gets working code quickly, but often can’t tell whether it’s good. So they ask the AI to check its own work, and then to check the check.</li>
+          <li>An experienced engineer already knows what done looks like. They use the AI to draft, then compare the draft with what they know about the system, the users and the failure cases.</li>
+          <li>A nontechnical user can get an impressive demo running in an afternoon. What they usually can’t see is the missing security check, the data that will be lost on the next deploy, or the hosting bill that arrives later.</li>
         </ul>
         <p>AI doesn’t care which kind of decision it is executing. A good decision gets done sooner. A bad decision also gets done sooner, and now there is code to undo as well.</p>
       </section>
@@ -233,10 +233,10 @@ export default function Body() {
         <p>Login is also a bad place to learn by trial and error. It touches passwords, sessions and account recovery, which are exactly where a plausible-looking mistake becomes a security problem.</p>
         <p>I want junior developers using AI. I learned SIP from packet captures and a lot of trial and error, and today’s junior developers have a tutor that never gets tired of questions. What needs to change is how the work is set up:</p>
         <ul className="post__list">
-          <li><strong>Mentorship.</strong> A senior engineer sets the task up and reviews it with them, not after them.</li>
-          <li><strong>Smaller tasks.</strong> “Add the password reset email” instead of “add login.”</li>
-          <li><strong>Clear acceptance criteria.</strong> Written before the first prompt, so there is something to check the output against.</li>
-          <li><strong>Learning separate from building.</strong> Ask the AI to teach how sessions and tokens work in a scratch session, on a small model. Then build the feature in a short, focused session.</li>
+          <li>A senior engineer mentors them, setting the task up and reviewing it with them, not after them.</li>
+          <li>Tasks get smaller: “Add the password reset email” instead of “add login.”</li>
+          <li>Clear acceptance criteria are written before the first prompt, so there is something to check the output against.</li>
+          <li>Learning happens separately from building. Ask the AI to teach how sessions and tokens work in a scratch session, on a small model. Then build the feature in a short, focused session.</li>
         </ul>
         <MentorFlow />
         <p>I wrote more about why I enjoy this part of the job in <Link to="/writing/why-i-enjoy-mentoring/">why I enjoy mentoring</Link>. AI doesn’t replace that work. It makes it more important, because the junior developer can now produce code faster than they can learn from it.</p>
@@ -296,15 +296,15 @@ export default function Body() {
         <h2 id="leaders-h" className="post__h2">Recommendations for engineering leaders</h2>
         <p>Giving everyone an AI agent is easy. Getting value from it takes the same management habits as any other engineering spend.</p>
         <ul className="post__list">
-          <li><strong>Set AI usage budgets.</strong> A monthly budget per team, reviewed like any other cost. The point is to notice unusual spend, not to punish people for using the tools.</li>
-          <li><strong>Monitor tokens and runs.</strong> Claude Code shows session usage with <code>/usage</code>, and API organizations get usage reports and per-user analytics. Look at which tasks consume the most, and why.</li>
-          <li><strong>Set retry limits.</strong> If the agent hasn’t solved it after the third attempt, stop and bring in a person. A fourth attempt with the same context rarely does better.</li>
-          <li><strong>Pick the model for the job.</strong> A smaller, cheaper model handles most routine coding. Save the largest model for hard design and reasoning, and use the smallest for simple subtasks.</li>
-          <li><strong>Keep tasks small.</strong> <Link to="/writing/smaller-user-stories-and-pull-requests/">Smaller user stories and pull requests</Link> help AI for the same reasons they help people: less context, clearer checks, easier review.</li>
-          <li><strong>Write acceptance criteria first.</strong> If you can’t say what done looks like, the agent can’t either.</li>
-          <li><strong>Keep people accountable for what ships.</strong> Someone who understands the code reads it, especially around login, payments and anything that deletes data.</li>
-          <li><strong>Pair AI with mentorship.</strong> Have senior engineers look at how juniors use the tools, not only at what they merge.</li>
-          <li><strong>Measure cost per accepted change.</strong> People hours plus tokens plus review plus rework, divided by changes that were merged and stayed merged. Lines of code and prompt counts don’t tell you much.</li>
+          <li>Set a monthly AI usage budget per team and review it like any other cost. The point is to notice unusual spend, not to punish people for using the tools.</li>
+          <li>Monitor tokens and runs. Claude Code shows session usage with <code>/usage</code>, and API organizations get usage reports and per-user analytics. Look at which tasks consume the most, and why.</li>
+          <li>Set retry limits. If the agent hasn’t solved it after the third attempt, stop and bring in a person. A fourth attempt with the same context rarely does better.</li>
+          <li>Pick the model for the job. A smaller, cheaper model handles most routine coding. Save the largest model for hard design and reasoning, and use the smallest for simple subtasks.</li>
+          <li>Keep tasks small. <Link to="/writing/smaller-user-stories-and-pull-requests/">Smaller user stories and pull requests</Link> help AI for the same reasons they help people: less context, clearer checks, easier review.</li>
+          <li>Write acceptance criteria first. If you can’t say what done looks like, the agent can’t either.</li>
+          <li>Keep people accountable for what ships. Someone who understands the code reads it, especially around login, payments and anything that deletes data.</li>
+          <li>Pair AI with mentorship. Have senior engineers look at how juniors use the tools, not only at what they merge.</li>
+          <li>Measure cost per accepted change. People hours plus tokens plus review plus rework, divided by changes that were merged and stayed merged. Lines of code and prompt counts don’t tell you much.</li>
         </ul>
         <p>Start fresh sessions between unrelated tasks, too. Old context carried into a new task is sent again with every request, and you pay for it each time.</p>
       </section>
@@ -325,7 +325,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">What AI changes, and what it doesn’t</h2>
       <div className="post__close-copy">
         <p className="lead">AI doesn’t automatically make someone a better engineer, marketer or business strategist. It makes them faster at executing decisions, including bad ones.</p>
-        <p className="post__close-principle">The real competitive advantage isn’t giving every engineer an AI agent. It’s building a team that knows how to use AI without wasting time, money or engineering judgment.</p>
+        <p className="post__close-principle">Every engineer can have an AI agent. The advantage comes from a team that knows how to use AI without wasting time, money or engineering judgment.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about your team’s AI workflow <ArrowRight /></Link>
           <Link to="/mentorship/" className="link-arrow"><span>How I mentor engineers</span> <ArrowRight /></Link>

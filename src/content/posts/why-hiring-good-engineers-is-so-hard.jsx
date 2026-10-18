@@ -61,7 +61,7 @@ export default function Body() {
         <h2 id="what-would-you-ask-h" className="post__h2">Why I ask “what would you ask?”</h2>
         <p>Behavioral questions, situational questions and system-design exercises became common because they get closer to judgment, which is the thing I’m actually trying to hire. Here’s the kind of prompt I like: “Your team wants to introduce Kafka because the application is getting slow. What would you want to know before agreeing?”</p>
         <p>One candidate explains Kafka well: brokers, partitions, consumer groups, the works. That tells me they know the technology. Another asks why the application is slow, whether anyone has measured it, whether Kafka addresses that cause at all, who would run it, what it would cost, and what happens to the team’s delivery while they learn it. The second candidate might know less about Kafka. They’re showing me how they make decisions, and that’s what I’ll be living with. (I’ve been on both ends of that exact conversation, and I wrote up <Link to="/writing/event-driven-architecture-kafka-tradeoffs/">the tradeoffs I actually weigh</Link>.)</p>
-        <p>Scenario questions have limits too. Some people are much better at thinking through a problem quietly than at narrating their reasoning on demand, and a question like this still rewards talkers. When I notice a candidate going quiet, I try to give them the problem in writing and come back to it, or ask them to walk me through a decision they already made rather than one I invented on the spot.</p>
+        <p>Scenario questions have limits too. Some people are much better at thinking through a problem quietly than at narrating their reasoning on demand, and a question like this still rewards talkers. When I notice a candidate going quiet, I try to give them the problem in writing and come back to it, or ask them to walk me through a real decision they already made, which beats one I invented on the spot.</p>
       </section>
 
       <section id="cost" aria-labelledby="cost-h">
@@ -80,7 +80,7 @@ export default function Body() {
       <section id="managing" aria-labelledby="managing-h">
         <h2 id="managing-h" className="post__h2">Managing people is the harder half</h2>
         <p>Hiring is where the work starts. After that you’re managing a person, and people are harder than systems. A system behaves the same way given the same inputs. People don’t, and they don’t come with logs.</p>
-        <p>Some engineers want autonomy and will go quiet if you check in too often. Others want more guidance than you expected and will spin for a week rather than say so. Some are superb individual contributors who have no interest in mentoring, and that’s fine. Others make an entire team better through patience and explanation and never top the commit count, and that’s valuable in a way a dashboard won’t show you.</p>
+        <p>Some engineers want autonomy and will go quiet if you check in too often. Others want more guidance than you expected and will spin for a week before they say so. Some are superb individual contributors who have no interest in mentoring, and that’s fine. Others make an entire team better through patience and explanation and never top the commit count, and that’s valuable in a way a dashboard won’t show you.</p>
         <p>The job is to notice those differences while keeping expectations fair. That means supporting someone and still giving them honest feedback. It means setting expectations clearly enough that nobody is surprised, and then holding to them. And sometimes it means admitting that a working relationship isn’t working, after you’ve genuinely tried, and handling that with as much respect as the hiring process had. I don’t find any of that easy. I find it easier than it used to be, mostly because I’ve made the mistakes already. How I try to do the mentoring part is on <Link to="/mentorship/">my mentorship page</Link>.</p>
       </section>
 
@@ -106,7 +106,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The question I keep coming back to</h2>
       <div className="post__close-copy">
-        <p className="lead">Resumes, interviews, coding tests, references and scenario questions are all imperfect signals, and I don’t think a perfect process exists. What I can do is remember that each one is partial, look at the whole person rather than one measurement, and stay honest about the times I’ve still been wrong.</p>
+        <p className="lead">Resumes, interviews, coding tests, references and scenario questions are all imperfect signals, and I don’t think a perfect process exists. What I can do is remember that each one is partial, look at the whole person instead of one measurement, and stay honest about the times I’ve still been wrong.</p>
         <p className="post__close-principle">We spend hours interviewing someone to decide whether they’re good enough to join our team. Once they’re hired, are we willing to spend the same effort helping them succeed?</p>
         <p>For me the second question has become the more important one, and the one that determines whether all the time spent on the first was worth anything.</p>
         <div className="post__close-actions">

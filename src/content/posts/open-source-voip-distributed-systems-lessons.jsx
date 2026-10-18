@@ -64,7 +64,7 @@ export default function Body() {
 
       <section id="example" aria-labelledby="example-h">
         <h2 id="example-h" className="post__h2">A hypothetical call, and where it goes wrong</h2>
-        <p>Here’s an illustrative flow. It isn’t the topology of any system I ran, and real deployments differ a lot.</p>
+        <p>The flow below is illustrative, and real deployments differ a lot. I didn’t take it from any system I ran.</p>
         <Diagram spec={callFlow} id="voip-call-flow" no="666-1" />
         <p>A prepaid customer places a call. OpenSIPS receives the SIP request and forwards it to an Asterisk server. The dialplan runs a Python AGI script, which checks the customer’s balance and picks a carrier route. The call connects and lasts twelve minutes. At hangup, Asterisk writes a call detail record, and a billing job rates the call and deducts it from the balance.</p>
         <p>Now suppose the billing job deducts the charge, and the database connection drops before the job hears that the write succeeded. The job assumes it failed and tries again. Without protection, the customer pays twice for one call.</p>
@@ -128,8 +128,8 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Boundaries and failure first, tools second</h2>
       <div className="post__close-copy">
         <p className="lead">VoIP taught me to look at a system through what crosses its boundaries and what happens when one of them fails.</p>
-        <p className="post__close-principle">Before choosing tools, understand the boundaries, the failure behavior, who owns each piece, and how the system recovers.</p>
-        <p>That order still shapes my architecture decisions. The tools are much better now, and I use them gladly, once those four questions have answers.</p>
+        <p className="post__close-principle">I pick the tools last, after I know who owns each piece and how the system gets back up when one fails.</p>
+        <p>That order still shapes my architecture decisions. The tools are much better now, and I use them gladly, once those questions have answers.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an architecture decision <ArrowRight /></Link>
         </div>

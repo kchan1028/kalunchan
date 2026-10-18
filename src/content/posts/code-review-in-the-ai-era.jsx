@@ -178,11 +178,11 @@ export default function Body() {
         <h2 id="humans-h" className="post__h2">What people should still review</h2>
         <p>Human attention is expensive, so I want it on the decisions that need context, accountability and judgment:</p>
         <ul className="post__list">
-          <li><strong>Are we building the right thing?</strong> Does the change address the customer’s problem, or only the ticket’s wording?</li>
-          <li><strong>Is the design appropriate?</strong> Are we adding abstractions or moving parts the problem doesn’t need?</li>
-          <li><strong>What could go wrong?</strong> Operational failures, security boundaries, scale, data integrity and side effects in other parts of the system.</li>
-          <li><strong>Can the team maintain it?</strong> Will another engineer understand this six months from now?</li>
-          <li><strong>Are we comfortable deploying it?</strong> And who owns the risk if it fails?</li>
+          <li>Are we building the right thing? Does the change address the customer’s problem, or only the ticket’s wording?</li>
+          <li>Is the design appropriate, or are we adding abstractions and moving parts the problem doesn’t need?</li>
+          <li>What could go wrong? Think about operational failures, security boundaries, scale, data integrity and side effects in other parts of the system.</li>
+          <li>Can the team maintain it, and will another engineer understand this six months from now?</li>
+          <li>Are we comfortable deploying it, and who owns the risk if it fails?</li>
         </ul>
         <p>A reviewer who spends their time on these, and leaves the routine comments to automation, adds far more than one who reads every line looking for style issues.</p>
       </section>
@@ -239,7 +239,7 @@ export default function Body() {
         <p>With too much review, developers wait days for approval. Several engineers review a one-line change. Comments argue about style instead of outcomes. Review becomes the bottleneck and people lose momentum.</p>
         <p>With too little review, AI-generated code gets merged by people who don’t understand it. Security and data-integrity risks go unnoticed. Teams ship features that technically work and still fail users. Incidents go up and technical debt piles up. Endless AI review loops are their own version of this, and they cost more than people expect, as I covered in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>.</p>
         <p>To tell which problem you have, look at a few measures together: review turnaround time, change failure rate (one of the <a href="https://dora.dev/" rel="noopener" target="_blank">DORA</a> delivery metrics), escaped defects and customer-reported issues. Fast reviews with a rising failure rate mean you’re reviewing too little or reviewing the wrong things. Slow reviews with few escaped defects may mean you’re over-reviewing low-risk work. I wouldn’t use lines of code reviewed or number of approvals as a measure of quality. They measure activity.</p>
-        <p>As engineering leaders, our job isn’t to make sure another engineer has read every line. Our job is to make sure the team delivers the right solution, safely and reliably. AI changes how we do that. We should automate the repetitive review and spend engineering expertise where it creates the most value. And developers still need to understand the systems they build, whether a person or an AI wrote the code.</p>
+        <p>As engineering leaders, our job is to make sure the team delivers the right solution, safely and reliably, and that doesn’t require another engineer to read every line. AI changes how we do that. We should automate the repetitive review and spend engineering expertise where it creates the most value. And developers still need to understand the systems they build, whether a person or an AI wrote the code.</p>
       </section>
     </>
   );
@@ -252,7 +252,7 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">We shouldn’t stop reviewing code. We should rethink what we review, when we review it, and who or what does the reviewing.</p>
         <p>AI can help us review code faster. Someone still has to decide whether we’re building the right thing, whether it works for the customer, and whether we’re ready to put it into production.</p>
-        <p className="post__close-principle">I don’t expect the future of code review to be more people reading more code. I expect better engineering judgment, supported by automation, from the plan to production.</p>
+        <p className="post__close-principle">I expect code review to move toward better engineering judgment, supported by automation, from the plan to production. More people reading more code won’t get us there.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about how your team reviews code <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

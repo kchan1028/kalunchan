@@ -44,7 +44,7 @@ export default function Body() {
       <section id="five-people" aria-labelledby="five-people-h">
         <h2 id="five-people-h" className="post__h2">A hypothetical five-person team considering twelve services</h2>
         <p>Picture a five-person team running a B2B SaaS product as a single application. The codebase is getting crowded, and someone proposes splitting it into a dozen services: accounts, billing, orders, notifications, reporting, search and six more.</p>
-        <p>Here’s what their week would look like afterward.</p>
+        <p>After the split, their week changes.</p>
         <p>A feature that touches orders and billing now means two pull requests in two repositories, an API contract change between them, and a deploy order someone has to remember. A security fix in the web framework becomes twelve upgrades, each with its own pipeline run. A slow checkout request crosses four services, so finding the cause needs distributed tracing that somebody has to set up and maintain.</p>
         <p>On-call changes most. Five people now cover twelve services. Either everyone learns enough about all twelve to handle a page, or the rotation depends on whoever built the service that’s failing. When the engineer who knows billing goes on vacation, billing changes wait.</p>
         <p>Every hour spent on that work comes out of the same five people’s week. Features, customer support, infrastructure and production problems all draw on one pool of attention, and a small team feels each new obligation right away.</p>

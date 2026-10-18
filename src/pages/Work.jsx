@@ -23,14 +23,14 @@ export default function Work() {
           I find the problem, build the product, and stay with it until it works for the people using it.
         </p>
         <p className="page-lead__aside body-copy">
-          That work crosses engineering, product and operations: a product for small businesses chasing federal contracts, the digital home of a community race weekend, and a family-owned local business brought up to date. Below those are six systems from my engineering leadership work.
+          Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.
         </p>
       </div>
 
       <section className="sheet shipped" aria-labelledby="shipped-h" data-coord="310 · Shipped">
         <header className="shipped__head">
           <h2 id="shipped-h" className="h2">Shipped products and sites</h2>
-          <p className="body-copy">Each one reads the same way: the problem, what I built, the decision that shaped it, and what it changed. All three are live.</p>
+          <p className="body-copy">Each write-up starts with the problem and ends with what changed. All three are live.</p>
         </header>
         <ol className="shipped__list">
           {projects.map((p) => (
@@ -79,7 +79,7 @@ export default function Work() {
       <section className="sheet cases" aria-labelledby="cases-h">
         <header className="shipped__head">
           <h2 id="cases-h" className="h2">Architecture case studies</h2>
-          <p className="body-copy">Six systems, written up the way I would review them: what was at stake, what constrained us, which options we rejected, and what shipped.</p>
+          <p className="body-copy">Six systems, written up the way I would review them. Each one starts with what was at stake. Then it covers the options we rejected and what shipped.</p>
         </header>
       </section>
       <ol className="sheet case-index" data-coord="300 · Case studies">
