@@ -14,8 +14,11 @@ import { metadata as processMeta } from './posts/when-to-add-engineering-process
 import { metadata as aolAiMeta } from './posts/from-aol-to-ai-lowering-the-barrier';
 import { metadata as modernizeMeta } from './posts/modernizing-public-sector-applications';
 import { metadata as docIntelMeta } from './posts/building-document-intelligence-workflows';
+import { metadata as fedpathMeta } from './posts/why-i-built-fedpath';
 
 export const posts = [
+  // Hidden draft: dev server only until KC approves publishing.
+  ...(import.meta.env.DEV ? [{ ...fedpathMeta, no: '714', published: '2026-10-18', modified: '2026-10-18' }] : []),
   { ...docIntelMeta, no: '713', published: '2026-10-18', modified: '2026-10-18' },
   { ...modernizeMeta, no: '712', published: '2026-10-18', modified: '2026-10-18' },
   { ...aolAiMeta, no: '711', published: '2026-10-18', modified: '2026-10-18' },
@@ -3304,6 +3307,7 @@ export const journeys = [
       'infrastructure-costs-from-carrier-networks-to-the-cloud',
       'data-driven-engineering-network-voip-publishing',
       'building-document-intelligence-workflows',
+      ...(import.meta.env.DEV ? [fedpathMeta.slug] : []),
     ],
   },
   {
