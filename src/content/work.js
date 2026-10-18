@@ -1,6 +1,6 @@
-// Engineering case studies. `verify: true` marks case studies whose detail was
-// drafted from the owner's brief and must be confirmed (see CONTENT-REVIEW.md).
-// Drafted studies stay qualitative: no unconfirmed numbers.
+// Engineering work and illustrative architecture discussions. `illustrative`
+// entries describe hypothetical scenarios, not completed engagements.
+// `verify: true` marks remaining inferred details in CONTENT-REVIEW.md.
 //
 // Diagram spec: `tiers` are drawn left→right on wide screens and top→bottom on
 // narrow ones. `edges` connect node ids; `accent` marks the path the decision
@@ -102,6 +102,7 @@ export const cases = [
   },
   {
     slug: 'publishing-distribution',
+    illustrativeDecisions: true,
     published: '2026-09-26',
     no: '302',
     title: 'Making a publishing platform compete on distribution',
@@ -144,7 +145,7 @@ export const cases = [
           { label: 'In the shared platform', note: 'Every title gets it by default and improvements compound.', chosen: true },
           { label: 'Per-title custom builds', note: 'Local wins, but the platform fragments.' },
         ],
-        why: 'Anything that depended on an editor remembering a step would fail on the busiest news day. Putting it in the shared platform meant every title got it by default, and each improvement carried across the portfolio.',
+        why: 'Automating shared metadata can reduce the number of publishing steps an editor has to remember. A shared implementation also lets titles benefit from the same validation and updates.',
       },
       {
         question: 'What should the titles run on?',
@@ -177,7 +178,7 @@ export const cases = [
       'Infrastructure improvements contributed to about 30% lower AWS costs',
     ],
     lessons: [
-      'A platform capability beats a process: it works on the busiest day, too.',
+      'Automating common publishing checks can reduce manual work, though the generated output still needs validation.',
       'When the market is someone else’s algorithm, measurement is the roadmap.',
       'Search value builds up over years and can be lost in one release by a team that didn’t know it was there.',
     ],
@@ -190,19 +191,20 @@ export const cases = [
   },
   {
     slug: 'public-service-modernization',
+    illustrative: true,
     published: '2026-09-26',
     no: '303',
     title: 'Modernizing a public-sector service without a big-bang rewrite',
     seoTitle: 'Public-Sector Modernization Without a Rewrite',
-    org: 'Yippify client engagement',
-    role: 'Architecture & delivery lead',
+    org: 'Illustrative public-service scenario',
+    role: 'Design example',
     domain: ['Government technology', 'Software architecture', 'Cloud & infrastructure'],
     claim:
-      'A legacy public service moved onto a modern, accessible platform. It stayed in service throughout.',
+      'A proposed migration for a public service that needs to stay available while its application is replaced.',
     summary:
-      'Replacing a legacy public service one piece at a time with the strangler pattern. The new system runs Django and React on AWS.',
+      'An illustrative design for replacing a legacy public service incrementally, using Django and React on AWS.',
     problem:
-      'A government service ran on an ageing system. It was hard to change, hard to secure and hard to use on a phone. Residents still depended on it every day. Switching it off to rebuild was not an option.',
+      'Consider a government service running on an ageing system that is difficult to change and use on a phone. Residents depend on it daily, so the example assumes it must remain available during replacement.',
     constraints: [
       'Continuous public availability',
       'Accessibility (WCAG) and security review as release gates',
@@ -225,28 +227,28 @@ export const cases = [
       {
         question: 'How do we replace a system the public relies on daily?',
         options: [
-          { label: 'Full rewrite, then switch over', note: 'Years without user value, plus one very risky launch day.' },
-          { label: 'Lift-and-shift to the cloud', note: 'New hosting, same problems.' },
+          { label: 'Full rewrite, then switch over', note: 'Delays benefits until the replacement is ready and concentrates cutover risk.' },
+          { label: 'Lift-and-shift to the cloud', note: 'Changes the hosting while leaving application and workflow problems to address.' },
           { label: 'Strangler pattern behind an API facade', note: 'Ship one journey at a time. The legacy system shrinks with every release.', chosen: true },
         ],
       },
       {
         question: 'What stack will the agency own after we leave?',
         options: [
-          { label: 'Bespoke microservice mesh', note: 'Powerful, but needs a platform team the agency does not have.' },
+          { label: 'Bespoke microservice mesh', note: 'Adds operational responsibilities that would need a suitably staffed platform team.' },
           { label: 'Django + React on managed AWS, all in Terraform', note: 'Conventional, well documented, and easy to hire for.', chosen: true },
         ],
       },
     ],
     technology: ['Python / Django', 'React', 'AWS ECS', 'RDS PostgreSQL', 'Terraform', 'CI/CD', 'WCAG accessibility'],
     outcome: [
-      'Resident journeys moved to the new platform one at a time, with the service up throughout',
-      'Accessibility and security checks built into every release',
-      'Infrastructure and runbooks handed over to the agency team',
+      'Migrate resident workflows individually while maintaining service availability',
+      'Validate accessibility and security as part of each release',
+      'Provide infrastructure definitions and runbooks the receiving team can maintain',
     ],
     lessons: [
       'In government, the team that inherits the system decides whether it lasts. Design for them.',
-      'A facade turns one terrifying migration into a series of boring releases.',
+      'An API facade can support incremental replacement; routing, data consistency and rollback still need testing.',
     ],
     related: [
       { to: '/writing/building-federal-government-applications/', label: 'What building federal government applications taught me about engineering' },
@@ -256,21 +258,22 @@ export const cases = [
   },
   {
     slug: 'document-intelligence',
+    illustrative: true,
     published: '2026-09-26',
     no: '304',
     title: 'LLM document processing with a human in the loop',
     seoTitle: 'LLM Document Processing With a Human in the Loop',
     description:
-      'An LLM pipeline that classifies documents, grounds answers in the client’s policy through retrieval, and sends low-confidence results to a person.',
-    org: 'Yippify client engagement',
-    role: 'Architect & hands-on engineer',
+      'An illustrative LLM document pipeline with policy retrieval, validation and a reviewer queue.',
+    org: 'Illustrative document-intake scenario',
+    role: 'Design example',
     domain: ['AI & data', 'Software architecture', 'Hands-on engineering'],
     claim:
-      'Document intake went from manual keying to reviewer-approved extraction, and every decision stays auditable.',
+      'A proposed document-intake pipeline with source-linked suggestions and human review.',
     summary:
-      'Designing an LLM pipeline that reads and sorts documents and checks its answers against the client’s own policy. When it isn’t sure, a person decides.',
+      'An illustrative design for extracting document fields, checking them against policy and routing uncertain results for review.',
     problem:
-      'Staff re-keyed information from incoming documents by hand. The process was slow and error-prone, and it was hard to audit why a document was handled a certain way.',
+      'Consider an intake process where staff re-key incoming documents and need a record of how each document was handled. The design explores extraction assistance while retaining review and an audit trail.',
     constraints: [
       'Wrong answers are expensive, so the model cannot have the last word',
       'Sensitive documents: data stays in the client’s cloud account',
@@ -293,8 +296,8 @@ export const cases = [
       {
         question: 'Fine-tune a model or ground it with retrieval?',
         options: [
-          { label: 'Fine-tune on historical documents', note: 'Bakes today’s policy into weights, so every policy change means retraining.' },
-          { label: 'Retrieval over the live policy corpus', note: 'Policy updates take effect immediately, and citations make answers auditable.', chosen: true },
+          { label: 'Fine-tune on historical documents', note: 'Can help teach an extraction format, but policy changes are harder to inspect when encoded in model weights.' },
+          { label: 'Retrieval over the live policy corpus', note: 'Makes current policy available to retrieval; citations and evaluation help reviewers check the answer.', chosen: true },
         ],
       },
       {
@@ -308,31 +311,32 @@ export const cases = [
     ],
     technology: ['LLM APIs', 'Retrieval-augmented generation', 'PostgreSQL + vector search', 'AWS S3 · Lambda', 'Python', 'React review UI'],
     outcome: [
-      'Manual keying replaced by reviewer-approved extraction',
-      'Every automated decision traceable to its source passages',
-      'Reviewer corrections captured as evaluation data',
+      'Evaluate whether reviewer-approved extraction reduces manual entry',
+      'Retain source passages and decision records for review',
+      'Capture reviewer corrections for evaluation',
     ],
     lessons: [
-      'The confidence threshold is a product decision, not a model setting.',
+      'Review thresholds need validation against error costs and representative documents, rather than relying on a model’s self-reported confidence.',
       'Reviewer corrections are the evaluation data, so design the review UI to produce them.',
     ],
     verify: true,
   },
   {
     slug: 'event-driven-platform',
+    illustrative: true,
     published: '2026-09-26',
     no: '305',
     title: 'Event-driven microservices that stay consistent',
-    seoTitle: 'Event-Driven Microservices With Kafka: Case Study',
-    org: 'SaaS platform',
-    role: 'Architect & engineering lead',
+    seoTitle: 'Event-Driven Microservices With Kafka: Design Example',
+    org: 'Illustrative SaaS scenario',
+    role: 'Design example',
     domain: ['Software architecture', 'Hands-on engineering', 'Engineering leadership'],
     claim:
-      'Teams could ship services independently without breaking each other or losing events.',
+      'A proposed design for independent consumers, durable event publication and safe retries.',
     summary:
-      'Moving a platform from tightly coupled synchronous calls to Kafka events, with an outbox and idempotent consumers so no event is lost or applied twice.',
+      'An illustrative Kafka design using a transactional outbox and idempotent consumers to recover from publication failures and duplicate delivery.',
     problem:
-      'Services called each other synchronously. One slow dependency stalled every request behind it, and each team’s release had to be coordinated with the others.',
+      'Consider services connected by synchronous calls, where a slow downstream dependency delays unrelated work. The example explores moving suitable reactions to events while preserving synchronous responses where users need them.',
     constraints: [
       'No lost or double-applied business events',
       'Teams migrating at different speeds',
@@ -362,13 +366,13 @@ export const cases = [
     ],
     technology: ['Kafka', 'PostgreSQL', 'Redis', 'Microservices', 'REST APIs', 'Docker'],
     outcome: [
-      'Services release independently',
-      'A slow dependency no longer stalls unrelated requests',
-      'Event delivery is safe to retry end to end',
+      'Allow consumers to release independently within compatible event contracts',
+      'Keep slow asynchronous consumers off the user’s request path',
+      'Verify recovery from duplicate delivery and partial failure',
     ],
     lessons: [
-      'Exactly-once is a property you design with idempotency, not a setting you buy.',
-      'Keep synchronous calls for where a person is waiting. Everything else can be an event.',
+      'Idempotency helps make retries safe, but its guarantees depend on where state is recorded and which side effects are covered.',
+      'Use synchronous calls where an immediate response is required. For other work, compare a background job with an event stream before choosing.',
     ],
     related: { to: '/writing/should-it-be-a-microservice/', label: 'How I decide whether a microservice should actually be a microservice' },
     verify: true,

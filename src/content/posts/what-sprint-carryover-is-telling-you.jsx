@@ -81,7 +81,7 @@ export default function Body() {
 
         <h3 className="post__h3">Another team blocked us</h3>
         <p>The work was waiting on an API, a review, an environment, a decision or a deploy from somewhere else. The team was busy, just not on the thing it committed to.</p>
-        <p>Occasional blockers mean dependencies weren’t visible at planning. Surfacing them earlier and sequencing around them usually fixes that. Constant blockers mean something bigger: the boundaries between teams are probably in the wrong place. If one team can’t finish its work without another team shipping at the same time, that’s the same coupling I look for when I decide <Link to="/writing/should-it-be-a-microservice/">whether something should actually be a microservice</Link>. It’s an ownership problem dressed up as a scheduling problem.</p>
+        <p>Occasional blockers mean dependencies weren’t visible at planning. Surfacing them earlier and sequencing around them usually fixes that. Constant blockers mean something bigger: the boundaries between teams are probably in the wrong place. If one team can’t finish its work without another team shipping at the same time, that’s the same coupling I look for when I decide <Link to="/writing/should-it-be-a-microservice/">whether something should actually be a microservice</Link>. That can indicate a problem with ownership or service boundaries, so I would investigate the dependency before changing the schedule.</p>
 
         <h3 className="post__h3">Production support consumed the capacity</h3>
         <p>Incidents, bugs, customer escalations and security fixes arrived during the sprint, and they had to win. Usually they should.</p>
@@ -122,7 +122,6 @@ export default function Body() {
             </tbody>
           </table>
         </figure>
-        <p>Notice that “push the team harder” doesn’t appear anywhere in the last column.</p>
       </section>
 
       <section id="record" aria-labelledby="record-h">
@@ -189,8 +188,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The question I ask about carryover</h2>
       <div className="post__close-copy">
-        <p className="lead">Carryover is one of the most honest signals an engineering team produces. Sprint after sprint, it shows where the system around the team is getting in the way. So I don’t start by asking, “Why didn’t the team finish?”</p>
-        <p className="post__close-principle">I ask, “What stopped the work from finishing?”</p>
+        <p className="lead">Carryover is one of the most honest signals an engineering team produces. Sprint after sprint, it shows where the system around the team is getting in the way. I start by investigating what blocked completion and who can help remove it.</p>
         <p>The answers point to different owners and different fixes, which is what makes them useful.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through what your carryover is telling you <ArrowRight /></Link>

@@ -10,7 +10,7 @@ import { ArrowRight } from '../../components/Icons';
 
 export const metadata = {
   slug: 'when-to-add-engineering-process',
-  title: 'When Process Helps—and When It Becomes the Problem',
+  title: 'When Process Helps and When It Becomes the Problem',
   shortTitle: 'When process helps',
   seoTitle: 'When Should Engineering Teams Add Process? Balancing Trust, Speed, and Accountability',
   description:
@@ -233,7 +233,7 @@ export default function Body() {
       <section id="why" aria-labelledby="why-h">
         <h2 id="why-h" className="post__h2">When should a company introduce process?</h2>
         <p>With five engineers, most process lives in one chat channel. Everyone knows who is changing the billing code, who is on call, and who to ask when a deploy looks strange. Add twenty-five people, a second time zone and a customer contract with security terms, and the same informal habits start dropping things.</p>
-        <p>I’ve spent more than 20 years on both sides of that line: early startups, the global team of more than 30 engineers, VoIP specialists and designers at the company I co-founded, and government systems where some controls are written into the requirements. The question of when to add process has come up in every one of them.</p>
+        <p>I’ve worked on both sides of that line: early startups, the global team of more than 30 engineers, VoIP specialists and designers at the company I co-founded, and government systems where some controls are written into the requirements. The question of when to add process has come up in every one of them.</p>
         <p className="post__answer">Companies should introduce process when a specific, recurring problem costs more than the process would: unclear ownership, missed handoffs, unpredictable delivery, repeated quality failures, or a security or regulatory requirement. Growth makes those problems more likely, but headcount on its own is not a reason. The best process also builds trust, and the supervision it adds should shrink as that trust is earned.</p>
         <p>Part of the pressure is arithmetic. Every pair of people who might need to coordinate is a possible conversation, and the number of pairs grows much faster than the team. Fred Brooks used the same count in <cite>The Mythical Man-Month</cite> to explain why adding people to a late software project tends to make it later.</p>
         <CoordinationPaths />
@@ -320,14 +320,8 @@ export default function Body() {
       <section id="remove" aria-labelledby="remove-h">
         <h2 id="remove-h" className="post__h2">Removing process is a leadership job</h2>
         <p>Adding a process is easy. It feels responsible, and nobody gets blamed for being careful. Removing one takes judgment, because someone remembers why it was added and removing it feels like accepting risk. That is why process tends to pile up, and why someone with authority has to own taking it away.</p>
-        <p>Before any of those eight steps, I ask two questions. The first:</p>
-        <blockquote className="post__quote">
-          <p>“What problem are we solving, how much does that problem cost us today, and how will we know this process is worth the additional work?”</p>
-        </blockquote>
-        <p>And then:</p>
-        <blockquote className="post__quote">
-          <p>“Can we solve this without adding another recurring obligation to the team?”</p>
-        </blockquote>
+        <p>Before adding a process, I want to agree on the problem, its current cost and how we will judge whether the additional work helps.</p>
+        <p>I also look for a fix that avoids adding another recurring obligation. A clearer owner or a one-time change to the tooling may be enough.</p>
         <p>An engineering leader answers for reliability and for speed at the same time, so they are the person who has to weigh one against the other. Protecting reliability with controls nobody questions is easy. So is protecting speed by removing everything. The job is keeping the controls that earn their cost and having the discipline to drop the rest.</p>
       </section>
     </>
@@ -340,7 +334,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Good process makes people more effective</h2>
       <div className="post__close-copy">
         <p className="lead">Good process makes an organization more predictable without making the people in it less effective. People can see who owns what and how the work gets done, which gives leadership confidence and lets teams work on their own without someone checking each step. When a process stops doing those things, leadership should have the discipline to change it or remove it, even if it was a good idea when it started.</p>
-        <p className="post__close-principle">Use process to build trust, use trust to enable autonomy, and use accountability to sustain both.</p>
+        <p className="post__close-principle">I want the team to know which decisions it can make on its own and when someone else needs to be involved. A process should make that easier to understand.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through your team’s process <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

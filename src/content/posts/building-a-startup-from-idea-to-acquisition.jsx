@@ -283,13 +283,13 @@ export default function Body() {
         <p className="post__answer">At 0→1 the job is to solve the problem. At 1→10 the job is to build a team and a system that can solve problems repeatedly, without a founder in every decision. Processes, ownership, deployments, architecture and technical debt all have to become deliberate.</p>
         <p>The things that got us to our first customers started to break as we grew, one at a time and usually under load.</p>
         <ul className="post__list">
-          <li><strong>Early processes stopped working.</strong> What a small team could coordinate by talking had to be written down once the team outgrew a single conversation.</li>
-          <li><strong>Knowledge couldn’t stay in people’s heads,</strong> including mine. Every system only one person understood was an outage waiting for that person’s vacation.</li>
-          <li><strong>Deployments had to become repeatable.</strong> A release that depended on someone remembering the right steps would eventually go wrong.</li>
-          <li><strong>Ownership had to become clear.</strong> “Everyone owns it” turned out to mean nobody did.</li>
-          <li><strong>The architecture had to evolve</strong> while the business kept running on it.</li>
-          <li><strong>Technical debt needed managing,</strong> not just accumulating.</li>
-          <li><strong>Communication had to scale,</strong> between engineers and between engineering and everyone else.</li>
+          <li>Early processes stopped working. What a small team could coordinate by talking had to be written down once the team outgrew a single conversation.</li>
+          <li>Knowledge couldn’t stay in people’s heads, including mine. Every system only one person understood was an outage waiting for that person’s vacation.</li>
+          <li>Deployments had to become repeatable. A release that depended on someone remembering the right steps would eventually go wrong.</li>
+          <li>Ownership had to become clear. “Everyone owns it” turned out to mean nobody did.</li>
+          <li>The architecture had to evolve while the business kept running on it.</li>
+          <li>Technical debt needed managing, not just accumulating.</li>
+          <li>Communication had to scale, between engineers and between engineering and everyone else.</li>
         </ul>
         <p>Underneath all of that, my job changed.</p>
         <dl className="post__contrast">
@@ -406,7 +406,7 @@ export default function Body() {
         <p>Any one of those can sink a company that gets the others right. Three ideas from those years have stayed with me more than any technical lesson:</p>
         <ol className="post__tenets">
           <li>A technically correct decision can still be the wrong business decision.</li>
-          <li>A perfectly architected system nobody needs has zero value.</li>
+          <li>Before investing in a more elaborate design, check whether the product solves a problem customers have.</li>
           <li>Engineering leadership is about repeatedly turning difficult problems into useful outcomes.</li>
         </ol>
         <p>The first took me longest to accept. Being right about the technology and being right about the business are separate questions, and the second one usually decides what happens.</p>
@@ -425,14 +425,12 @@ export default function Body() {
         <h2 id="starting-today-h" className="post__h2">What I’d tell someone starting today</h2>
         <p>If you’re building something from nothing, this is what I’d tell you, mostly because I learned it the slow way:</p>
         <ol className="post__steps">
-          <li><strong>Find a real problem.</strong> Ideally one you can describe without mentioning your solution.</li>
-          <li><strong>Talk to customers,</strong> before you build and constantly after.</li>
-          <li><strong>Build the smallest useful version.</strong></li>
-          <li><strong>Get it into people’s hands.</strong></li>
-          <li><strong>Observe what they actually do,</strong> not what they say they’ll do.</li>
-          <li><strong>Learn.</strong></li>
-          <li><strong>Change it.</strong></li>
-          <li><strong>Repeat.</strong></li>
+          <li>Find a real problem. Ideally one you can describe without mentioning your solution.</li>
+          <li>Talk to customers, before you build and constantly after.</li>
+          <li>Build the smallest useful version.</li>
+          <li>Get it into people’s hands.</li>
+          <li>Observe what they actually do, not what they say they’ll do.</li>
+          <li>Use what you learn to change the product, then check the result again.</li>
         </ol>
         <p>As usage grows, invest deliberately in architecture, reliability, security, automation, people and process. Not all at once, and not before you need them. Don’t prematurely optimize for a scale you may never reach.</p>
         <p>But learn to recognize when yesterday’s solution is becoming tomorrow’s bottleneck. It rarely announces itself. It shows up as slower releases, more incidents, more questions routed to one person, and a team that’s busier without shipping more. That’s when to invest.</p>
@@ -446,8 +444,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What I took from it</h2>
       <div className="post__close-copy">
-        <p className="lead">Building that company taught me that building the product and building the organization are the same job at different scales.</p>
-        <p className="post__close-principle">Solve the problem. Then build the team and the system that can keep solving it without you.</p>
+        <p className="lead">As the company grew, my responsibility expanded from making the product work to helping other people build, operate and improve it.</p>
+        <p className="post__close-principle">As the company grew, I had to give other people enough context and ownership to make decisions without waiting for me.</p>
         <p>If you’re at 0→1, or somewhere between 1 and 10 and watching the old ways break, I’m happy to compare notes.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about building or scaling a team <ArrowRight /></Link>

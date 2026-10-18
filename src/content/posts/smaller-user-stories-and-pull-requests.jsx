@@ -61,9 +61,9 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Optimize for the team’s clock</h2>
+      <h2 id="closing-h" className="post__close-title h2">Measure the time until users get the change</h2>
       <div className="post__close-copy">
-        <p className="lead">The fastest engineer on the team can’t make the team fast. The size of the work can.</p>
+        <p className="lead">An engineer finishing quickly does not help much if their pull request waits days for review. Smaller changes make that wait easier to reduce.</p>
         <p className="post__close-principle">The clock I care about runs until a change is safely in front of users, and it belongs to the whole team.</p>
         <div className="post__close-actions">
           <Link to="/leadership/#execution" className="action">How I improve execution with small, safe changes <ArrowRight /></Link>

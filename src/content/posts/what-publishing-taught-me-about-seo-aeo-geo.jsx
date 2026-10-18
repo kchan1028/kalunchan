@@ -36,7 +36,7 @@ export default function Body() {
     <>
       <section id="engineering-lens" aria-labelledby="engineering-lens-h">
         <h2 id="engineering-lens-h" className="post__h2">I used to judge a website by how well it was built</h2>
-        <p>For most of my career, I looked at a website the way an engineer does. Is the architecture sound? Is it fast? Does it stay up? Can we ship changes safely? Will the infrastructure hold when traffic spikes?</p>
+        <p>For most of my career, I evaluated websites mainly in terms of architecture, performance and reliability. I wanted to know that we could ship changes safely and that the infrastructure could handle a traffic spike.</p>
         <p>Those are good questions. I still ask all of them. But when I became CTO of a <Link to="/experience/#publishing">media publishing platform</Link>, I found out they weren’t enough.</p>
         <p>We ran a portfolio of media titles on a shared platform, competing for readers with media companies far larger than us. Our editors produced good content. A lot of it still lost on search rankings and social feeds to publishers with more money and more people.</p>
         <p>That was hard for an engineer to accept at first. The site worked and it was reliable, but the readers we wanted weren’t finding it.</p>
@@ -119,7 +119,6 @@ export default function Body() {
         <p>The biggest shift was realizing that engineering couldn’t work as a separate function in that business.</p>
         <p>Editorial knew what readers wanted. Marketing knew where they came from. The business side knew which audiences and titles mattered most. Engineering controlled whether the platform made any of that easy or hard. Every one of those groups was affected by decisions the others made, often without knowing it.</p>
         <p>The decision that came out of that was to treat distribution as something the platform did, rather than something editors did after publishing. We put structure into the CMS, made rendering fast and cached, and generated metadata for search engines and social cards automatically, so every title got it by default and improvements carried across the portfolio. Over that period, organic traffic, social traffic and social engagement each grew 50%. I’ve written up the decisions behind that in the <Link to="/work/publishing-distribution/">publishing platform case study</Link>.</p>
-        <p className="post__pull">A platform capability beats a process. It still works on the busiest day.</p>
         <p>A CTO doesn’t need to become the company’s SEO specialist or content marketer. There are people who do that work far better. But a technology leader should understand these systems well enough to recognize when an engineering decision helps or hurts the company’s ability to be found, and to bring the right people in before the release, not after the traffic drops. That’s a large part of how I think about <Link to="/leadership/#cross-functional">working across product, marketing and leadership</Link>.</p>
       </section>
 
@@ -165,11 +164,11 @@ export default function Body() {
         <h2 id="questions-h" className="post__h2">The questions I ask when I build something now</h2>
         <p>Publishing changed the questions I ask about software. “Does it work?” is still first. It just isn’t the last one anymore:</p>
         <ol className="post__steps">
-          <li><strong>Can people find it?</strong> Through search, social, links from other sites, or wherever they already are.</li>
-          <li><strong>Can search engines understand it?</strong> Crawlable HTML, stable URLs, accurate metadata, a clear structure.</li>
-          <li><strong>Can AI systems understand it?</strong> Clear entities, standalone answers, structured data that matches what’s on the page.</li>
-          <li><strong>Does it answer a real question?</strong> One that someone is asking, not one we invented to fill a keyword.</li>
-          <li><strong>Does it create value after we ship it?</strong> Measured by what readers did after the release went out.</li>
+          <li>Can people find it? Through search, social, links from other sites, or wherever they already are.</li>
+          <li>Can search engines understand it? Crawlable HTML, stable URLs, accurate metadata, a clear structure.</li>
+          <li>Can AI systems understand it? Clear entities, standalone answers, structured data that matches what’s on the page.</li>
+          <li>Does it answer a real question? One that someone is asking, not one we invented to fill a keyword.</li>
+          <li>Does it create value after we ship it? Measured by what readers did after the release went out.</li>
         </ol>
         <p>I asked versions of these on the <Link to="/projects/berkeley-omnium/">Berkeley Omnium website</Link> and the <Link to="/projects/union-city-smog-check/">Union City Smog Check redesign</Link>, where answer-first pages and structured data were part of the build from the start rather than a cleanup task afterward. I wrote up the Omnium rebuild, and what the old site was failing at, in <Link to="/writing/berkeley-omnium-new-website-next-generation/">a new website for the next generation of the Berkeley Omnium</Link>.</p>
       </section>
@@ -192,16 +191,9 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Still learning the interface</h2>
       <div className="post__close-copy">
-        <p className="lead">One of the more interesting parts of a long career in technology is finding out how much is still left to learn.</p>
-        <ol className="post__close-list">
-          <li>I learned engineering.</li>
-          <li>Then leadership.</li>
-          <li>Then product and operations.</li>
-          <li>Publishing made me learn content, SEO, technical SEO and distribution.</li>
-          <li>Now AI is making me rethink discovery again, through AEO and GEO.</li>
-        </ol>
-        <p>Technology keeps changing the interface between information and people. Part of being a technology leader is continuing to learn how that interface works, the same way I still <Link to="/writing/you-dont-need-to-remember-everything/">look things up after two decades in software</Link>.</p>
-        <p className="post__close-principle">Does it work, and can the people who need it find it?</p>
+        <p className="lead">Publishing added content, SEO and distribution to work I had previously thought of mainly in terms of software and operations. Now AI search gives me another way to investigate how people find information.</p>
+        <p>I still <Link to="/writing/you-dont-need-to-remember-everything/">look things up</Link> all the time. In publishing, that includes understanding how a reader reaches a page and whether the page answers what they came for.</p>
+        <p className="post__close-principle">I want discovery and the reader’s experience to be part of the engineering discussion from the start.</p>
         <div className="post__close-actions">
           <Link to="/work/publishing-distribution/" className="action">Read the publishing platform case study <ArrowRight /></Link>
         </div>

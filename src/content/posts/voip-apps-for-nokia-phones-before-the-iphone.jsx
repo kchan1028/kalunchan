@@ -89,7 +89,7 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">We weren’t building something fashionable</h2>
+      <h2 id="closing-h" className="post__close-title h2">Making calls on the phones people had</h2>
       <div className="post__close-copy">
         <p className="lead">Looking back, writing VoIP apps for Nokia phones was one of the most enjoyable stretches of my engineering career.</p>
         <p className="post__close-principle">We were trying to make an affordable call home available to the people who needed it, on the phones they already had.</p>

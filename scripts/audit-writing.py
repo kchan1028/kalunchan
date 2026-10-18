@@ -1,6 +1,7 @@
-"""Audit prerendered pages for AI-writing patterns (see the humanizer checklist in KC's profile.md).
+"""Audit prerendered pages for AI-writing patterns (see AGENTS.md).
 
-Fails on: "isn't X. It's Y" contrasts and "Here's the thing" / "Here's how" run-ups.
+Fails on: em dashes, en/double-hyphen sentence separators, "isn't X. It's Y" contrasts,
+and "Here's the thing" / "Here's how" run-ups in rendered prose. Code is excluded.
 Warns on: pages where more than 25% of bullets open with a bold label, and post closing lines that are slogan lists.
 A hit listed in KNOWN warns instead of failing; keep that list empty.
 """
@@ -13,8 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / os.environ.get('BUILD_DIR', 'build')
 BOLD_LEAD_MAX = 0.25
 BOLD_LEAD_MIN_ITEMS = 8  # a page with a handful of bullets says little about habit
-BLOCKS = {'p', 'li', 'blockquote', 'figcaption', 'td', 'th', 'dd', 'h2', 'h3', 'h4'}
-SKIP = {'script', 'style', 'nav', 'header', 'footer'}
+BLOCKS = {'p', 'li', 'blockquote', 'figcaption', 'td', 'th', 'dd', 'h1', 'h2', 'h3', 'h4'}
+SKIP = {'script', 'style', 'nav', 'header', 'footer', 'pre', 'code'}
 
 A = "['’]"  # straight or curly apostrophe
 ISNT_ITS = re.compile(rf"[^.!?]*\b(?:isn{A}t|is not|aren{A}t|are not|wasn{A}t|was not)\b[^.!?]*[.!?]\s+It(?:{A}s| is)\b[^.!?]*[.!?]?")
@@ -22,6 +23,11 @@ HERES = re.compile(rf"\bHere{A}s (?:the thing|how)\b", re.I)
 
 # (route, start of the matched text) for a hit that has to stay live for now. Rewrite it and delete the entry.
 KNOWN = set()
+
+# En dashes between numbers are ranges, not sentence separators.
+EM_DASH = re.compile('—')
+EN_SEPARATOR = re.compile(r'(?<!\d)–|–(?!\d)')
+DOUBLE_HYPHEN = re.compile(r'(?<=\s)--(?=\s)')
 
 
 class Page(HTMLParser):
@@ -100,7 +106,7 @@ failures, warnings, debt, seen = [], [], [], set()
 for path, page in sorted(pages.items()):
     route = '/' + str(path.relative_to(ROOT)).removesuffix('index.html')
     for block in page.blocks:
-        for rx, label in ((ISNT_ITS, '"isn’t X. It’s Y" contrast'), (HERES, '"Here’s the thing/how" run-up')):
+        for rx, label in ((EM_DASH, 'em dash in prose'), (EN_SEPARATOR, 'en dash sentence separator'), (DOUBLE_HYPHEN, 'double-hyphen sentence separator'), (ISNT_ITS, '"isn’t X. It’s Y" contrast'), (HERES, '"Here’s the thing/how" run-up')):
             for m in rx.finditer(block):
                 text = m.group(0).strip()
                 if (route, text) in seen:

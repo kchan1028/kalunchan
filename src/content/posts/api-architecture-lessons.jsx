@@ -46,7 +46,7 @@ export default function Body() {
       <section id="consumer" aria-labelledby="consumer-h">
         <h2 id="consumer-h" className="post__h2">Start with the consumer and the workflow</h2>
         <p>An API is a promise other people build on. The endpoints are the part everyone sees. Ownership, the contract, how it behaves when something fails and how it’s operated decide whether that promise is still worth anything two years later.</p>
-        <p>I’ve built and integrated APIs for more than 23 years across VoIP, publishing, SaaS and government applications: in Django and Django REST Framework, Flask, including Flask APIs at Brainome, FastAPI, Rails and Node.js, consumed by React and Next.js front ends and by other services. The frameworks changed often. The questions in this post didn’t. Many of them first came up <Link to="/writing/open-source-voip-distributed-systems-lessons/">operating a VoIP platform</Link>, where the contract between systems was a phone call that had to connect.</p>
+        <p>I’ve built and integrated APIs across VoIP, publishing, SaaS and government applications: in Django and Django REST Framework, Flask, including Flask APIs at Brainome, FastAPI, Rails and Node.js, consumed by React and Next.js front ends and by other services. The frameworks changed often. The questions in this post didn’t. Many of them first came up <Link to="/writing/open-source-voip-distributed-systems-lessons/">operating a VoIP platform</Link>, where the contract between systems was a phone call that had to connect.</p>
         <p className="post__answer">API architecture is how systems agree to cooperate: the contracts between them, who owns each one, how access is controlled, and how requests behave when something fails. Good API architecture lets consumers depend on a stable contract while the team changes the implementation safely.</p>
         <p>To keep it concrete, I’ll use one hypothetical example throughout: a government application platform. Residents submit information, reviewers assess it, and external agency systems receive updates. That’s four consumers with different needs: a browser form, a reviewer dashboard, possibly a mobile app, and partner systems that integrate over months, not days.</p>
         <p>Those consumers shouldn’t see the database. If the API mirrors the tables, every schema change becomes a breaking change for someone else, and partners end up depending on column names you never meant to promise. The contract should describe the workflow: submit an application, assign a reviewer, record a decision.</p>
@@ -145,10 +145,10 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">A dependable contract, room to change</h2>
+      <h2 id="closing-h" className="post__close-title h2">Keeping the API dependable</h2>
       <div className="post__close-copy">
         <p className="lead">Consumers rarely care which framework an API runs on. They care whether it keeps doing what it promised.</p>
-        <p className="post__close-principle">A good API gives consumers a dependable contract and gives the team room to evolve the implementation safely.</p>
+        <p className="post__close-principle">Consumers need to be able to upgrade on their own schedule, with compatibility they can test and changes they can plan for.</p>
         <p>Get the ownership, the authorization, the retries and the compatibility right, and the choice of framework becomes one of the easier decisions.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an API design <ArrowRight /></Link>

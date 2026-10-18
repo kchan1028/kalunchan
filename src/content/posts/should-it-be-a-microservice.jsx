@@ -160,7 +160,7 @@ export default function Body() {
     <>
       <section id="not-a-maturity-level" aria-labelledby="not-a-maturity-level-h">
         <h2 id="not-a-maturity-level-h" className="post__h2">Microservices aren’t a maturity level</h2>
-        <p>I’ve spent more than two decades building and running production software: first in network operations, later as a co-founder and CTO, and now leading engineering teams and helping companies with architecture. Over that time, one conversation keeps coming back. Someone proposes pulling a piece of the system out into its own service. Sometimes it’s the right call. Often, nobody in the room can say what problem it solves.</p>
+        <p>I’ve been building and running production software for my whole career: first in network operations, later as a co-founder and CTO, and now leading engineering teams and helping companies with architecture. Over that time, one conversation keeps coming back. Someone proposes pulling a piece of the system out into its own service. Sometimes it’s the right call. Often, nobody in the room can say what problem it solves.</p>
         <p>The reasons tend to sound like this. “It’ll be cleaner.” “That’s how bigger companies do it.” “We’ll need it eventually.” “The monolith is getting too big.” None of those are wrong, exactly. They just aren’t reasons on their own.</p>
         <p>Where I’ve landed is that a microservice should solve a real problem: an organizational one, a scaling one, a deployment one, a reliability one, or a domain-boundary one. It shouldn’t exist because microservices sound like what a serious engineering team is supposed to have.</p>
         <p>Below is how I think through the decision, including the parts that only show up after a service has been running for a few years.</p>
@@ -245,7 +245,7 @@ export default function Body() {
       <section id="kafka" aria-labelledby="kafka-h">
         <h2 id="kafka-h" className="post__h2">Kafka helps decouple systems, and it isn’t free</h2>
         <p>Event-driven architecture is often the right answer to the coupling problems above. Instead of the order service calling billing, notifications and search one after another and waiting on each, it publishes an “order placed” event and moves on. Each consumer picks it up on its own time. A slow consumer no longer slows down the user’s request, and a new consumer can be added without touching the producer.</p>
-        <p>I’ve led a move like that, from tightly coupled synchronous calls to Kafka-based events. The <Link to="/work/event-driven-platform/">event-driven microservices case study</Link> walks through it: a transactional outbox so events aren’t lost, and idempotent consumers so retries are safe. It made independent releases possible. It also brought a lot of new work with it.</p>
+        <p>The <Link to="/work/event-driven-platform/">event-driven design example</Link> explores a move from synchronous calls to Kafka events. A transactional outbox records work to publish, and idempotent consumers handle repeated deliveries. That can support independent releases, but it adds operational work:</p>
         <p>Kafka moves complexity more than it removes it. Some of what comes along:</p>
         <ul className="post__list">
           <li>Event schemas become public contracts. Changing one safely needs versioning and compatibility rules.</li>
@@ -305,7 +305,7 @@ export default function Body() {
         <div className="post__diagram">
           <Diagram spec={extracted} id="extract-later" no="667-3" />
         </div>
-        <p>It’s the same idea as the strangler pattern I’ve used to modernize legacy systems. On a <Link to="/work/public-service-modernization/">public-sector modernization without a big-bang rewrite</Link>, we put an API facade in front of the old system and moved one journey at a time behind it. One decision there was whether to build on a bespoke microservice mesh. We didn’t. The agency had no platform team to run it, and the team inheriting the system mattered more than how it looked on a diagram. We chose a conventional Django and React stack on managed AWS that they could own.</p>
+        <p>The <Link to="/work/public-service-modernization/">public-sector modernization example</Link> shows how an API facade could let a team replace one workflow at a time. In that scenario, I would compare a conventional Django and React stack on managed infrastructure with the extra operating work of a service mesh. The receiving team’s ability to support the system belongs in that decision.</p>
         <p>So my default is to build the modular monolith well, keep the seams clean, and extract when a real reason shows up. Extraction is cheaper and safer at that point, because you’re working from evidence instead of guesses.</p>
       </section>
 
@@ -386,9 +386,9 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The principle I keep coming back to</h2>
       <div className="post__close-copy">
-        <p className="lead">Every service is a long-term commitment to a team, a pipeline, a pager and a contract. So I don’t ask, “Could this be a microservice?”</p>
-        <p className="post__close-principle">I ask, “What problem becomes meaningfully easier if this is a separate service?”</p>
-        <p>If there’s a clear answer, you probably have a good service boundary. If there isn’t, the code can stay where it is, well organized and ready to move when the answer changes.</p>
+        <p className="lead">A separate service needs an owner, a deployment pipeline, monitoring and a stable contract. Those ongoing responsibilities belong in the decision.</p>
+        <p className="post__close-principle">I would extract it when a specific benefit, such as independent scaling or release ownership, justifies that work.</p>
+        <p>Until then, the code can stay in a module with a clear interface. We can return to the deployment decision when demand or ownership changes.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an architecture decision <ArrowRight /></Link>
         </div>

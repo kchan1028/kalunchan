@@ -24,7 +24,7 @@ export default function Body() {
     <>
       <section id="predicting" aria-labelledby="predicting-h">
         <h2 id="predicting-h" className="post__h2">We’re predicting years of work from a few hours</h2>
-        <p>I’ve spent more than 20 years in software: writing code, chasing production problems at bad hours, building products, and eventually hiring and leading the people who do those things. Of everything on that list, hiring is the part I’m least confident I’ve gotten right, and I’ve done a fair amount of it.</p>
+        <p>Most of my working life has been in software: writing code, chasing production problems at bad hours, building products, and eventually hiring and leading the people who do those things. Of everything on that list, hiring is the part I’m least confident I’ve gotten right, and I’ve done a fair amount of it.</p>
         <p className="post__answer">Hiring engineers is hard because you’re trying to predict how someone will perform over the next several years from a resume, a few conversations and maybe a coding exercise. That’s a few hours of evidence for a decision that can shape a team for a long time. Every signal we use is partial, and the person on the other side of the table is as nervous as you are tired.</p>
         <p>On a large team, a miss gets absorbed. On a team of five with a fixed budget, one wrong hire changes what the whole team can ship that year, and so does leaving the seat empty for six months while you look for someone perfect. As a founder, <Link to="/writing/building-a-startup-from-idea-to-acquisition/">every hire was a meaningful share of the payroll</Link>, and that’s part of why I think <Link to="/writing/team-size-should-influence-architecture/">team size should shape the architecture</Link> as much as the hiring plan. Neither option is comfortable. You pick with the information you have, and you find out later whether you were right.</p>
       </section>
@@ -33,7 +33,7 @@ export default function Body() {
         <h2 id="on-paper-h" className="post__h2">A resume is a writing sample, and not everyone is a writer</h2>
         <p>Being good at engineering and being good at describing engineering are different skills. Some excellent engineers write a flat resume because they’ve never had to sell themselves. Others have learned exactly which words a job post is fishing for.</p>
         <p>Applicant tracking systems make that gap wider. When a recruiter has several hundred applications and the first pass is a keyword filter, a candidate who spent five years running Postgres in production but wrote “relational databases” can lose to one who listed every tool they sat near. I don’t blame candidates for optimizing. I blame the filter for pretending it measures ability.</p>
-        <p>So I read resumes for shape rather than keywords. What did this person actually own? Did their responsibilities grow? Can I see a problem they stayed with for a while? A thin resume from someone who has only worked at one company for eight years tells me very little, and that’s a reason to talk to them, not a reason to pass.</p>
+        <p>When I read a resume, I look for what someone owned, how their responsibilities grew, and whether they stayed with a problem long enough to see the consequences of their decisions. A thin resume from someone who has only worked at one company for eight years tells me very little, and that’s a reason to talk to them, not a reason to pass.</p>
       </section>
 
       <section id="interviews" aria-labelledby="interviews-h">
@@ -54,7 +54,7 @@ export default function Body() {
         <h2 id="references-h" className="post__h2">A reference comes with a manager attached</h2>
         <p>A glowing reference doesn’t guarantee anything, and a lukewarm one doesn’t mean someone is a weak engineer. Every reference is one manager’s opinion, shaped by that manager’s expectations, that team’s structure and that company’s habits.</p>
         <p>Imagine, hypothetically, an engineer who was judged slow at a company where nobody wrote tickets and every requirement arrived in a hallway conversation. Put the same engineer on a team with clear acceptance criteria and small pull requests, and they might be the most reliable person on it. The reference from the first manager would be accurate and still tell you almost nothing about how they’d do with you.</p>
-        <p>I use references for context rather than verdicts. What was the team like? What did this person own? What kind of work did they gravitate toward? Where did they need support? Those answers help me set someone up well if I hire them. “Would you hire them again?” mostly tells me about the person answering.</p>
+        <p>I use references to understand the team someone worked in, the responsibilities they held and the work they preferred. I also ask where they needed support. Those answers help me set someone up well if I hire them. “Would you hire them again?” mostly tells me about the person answering.</p>
       </section>
 
       <section id="what-would-you-ask" aria-labelledby="what-would-you-ask-h">
@@ -67,7 +67,7 @@ export default function Body() {
       <section id="cost" aria-labelledby="cost-h">
         <h2 id="cost-h" className="post__h2">What a bad hire actually costs</h2>
         <p>The salary is the smallest part. The larger cost shows up in the team. Picture a small group where one person dismisses feedback, treats questions as attacks, and makes everyone else a little more careful about what they say in standup. Within a few months, people stop asking questions in the open. Reviews get shorter because nobody wants the argument. Two of your better engineers start taking recruiter calls. The code might even be fine. The team isn’t.</p>
-        <p>I want to be careful here, because it’s easy to label every struggling hire a mistake. Someone who creates conflict and someone who hasn’t been given a chance to succeed can look similar from a distance. If a new engineer is floundering, I ask what we gave them first. Did they get real onboarding? Clear tickets? Feedback before the review that surprised them? Someone to ask who wasn’t too busy? Not every performance problem is a hiring mistake. Some of them are mine.</p>
+        <p>I want to be careful here, because it’s easy to label every struggling hire a mistake. Someone who creates conflict and someone who hasn’t been given a chance to succeed can look similar from a distance. If a new engineer is floundering, I ask what we gave them first. I check the onboarding, the clarity of their tickets, and whether they received useful feedback early enough to act on it. They also need someone with time to answer questions. Some performance problems begin with what I failed to provide.</p>
       </section>
 
       <section id="good-hire-fails" aria-labelledby="good-hire-fails-h">
@@ -94,7 +94,7 @@ export default function Body() {
       <section id="two-way" aria-labelledby="two-way-h">
         <h2 id="two-way-h" className="post__h2">The candidate is evaluating you, too</h2>
         <p>Companies put enormous effort into evaluating candidates and are often surprised when a candidate does the same back. They should. A strong engineer joining a badly run company is signing up to struggle, and the company has responsibilities in this transaction too.</p>
-        <p>If I were the candidate, I’d want to know: Are the expectations reasonable? Does leadership communicate clearly, or does everyone find out about changes in the sprint review? Do engineers here grow into bigger problems, or do they do the same thing for four years? Is anyone honest about the technical debt and the organizational problems, or is every answer “it’s great”? When something goes wrong, does management stand behind its people?</p>
+        <p>As a candidate, I would ask how leadership communicates a change in direction and what happens when a project goes wrong. I would also want examples of engineers taking on larger responsibilities. Specific answers tell me more than a general assurance that the culture is good.</p>
         <p>As the hiring manager, I try to answer those questions before they’re asked, including the unflattering parts. A candidate who takes the job knowing what’s broken is far more likely to stay and help fix it than one who finds out in week three.</p>
       </section>
     </>
@@ -104,11 +104,11 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The question I keep coming back to</h2>
+      <h2 id="closing-h" className="post__close-title h2">Supporting the person after hiring</h2>
       <div className="post__close-copy">
         <p className="lead">Resumes, interviews, coding tests, references and scenario questions are all imperfect signals, and I don’t think a perfect process exists. What I can do is remember that each one is partial, look at the whole person instead of one measurement, and stay honest about the times I’ve still been wrong.</p>
-        <p className="post__close-principle">We spend hours interviewing someone to decide whether they’re good enough to join our team. Once they’re hired, are we willing to spend the same effort helping them succeed?</p>
-        <p>For me the second question has become the more important one, and the one that determines whether all the time spent on the first was worth anything.</p>
+        <p className="post__close-principle">After investing time in hiring someone, I want to make sure they get clear expectations, useful feedback and a colleague with time to help them learn the system.</p>
+        <p>That gives the person a fair chance to do the work we hired them for. It also gives me better information when something is not going well.</p>
         <div className="post__close-actions">
           <Link to="/leadership/" className="action">How I lead engineering teams <ArrowRight /></Link>
           <Link to="/contact/" className="link-arrow"><span>Talk about hiring or building a team</span> <ArrowRight /></Link>

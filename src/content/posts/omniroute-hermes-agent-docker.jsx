@@ -244,7 +244,7 @@ hermes chat          # ask something small and watch the OmniRoute dashboard reg
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">One more box, and the bill that comes with it</h2>
+      <h2 id="closing-h" className="post__close-title h2">Deciding whether to run a model router</h2>
       <div className="post__close-copy">
         <p className="lead">A model router gives an agent one endpoint, many providers, fallback and a cost ledger, and in return it asks to be run, secured, updated and backed up like any other infrastructure.</p>
         <p className="post__close-principle">Add it when the model choice actually varies or when fallback and visibility are problems you have. Until then, connect the agent directly and keep the diagram small.</p>

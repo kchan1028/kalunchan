@@ -200,7 +200,7 @@ export default function Body() {
     <>
       <section id="opposites" aria-labelledby="opposites-h">
         <h2 id="opposites-h" className="post__h2">Why speed and quality feel like opposites</h2>
-        <p>For more than 20 years I’ve watched teams have the same argument. The business wants the feature this month. Product wants to answer a customer who is waiting. Engineers want something reliable that they can still change next year. Each of them is right about something, and the meeting still turns into speed against quality.</p>
+        <p>Throughout my career I’ve watched teams have the same argument. The business wants the feature this month. Product wants to answer a customer who is waiting. Engineers want something reliable that they can still change next year. Each of them is right about something, and the meeting still turns into speed against quality.</p>
         <p className="post__answer">Speed and quality are hard to balance because business and engineering see different risks, and because the right level of quality changes from one piece of work to the next. The two are connected: small, well-tested changes are usually the fastest way to ship, and a codebase full of unmanaged shortcuts slows down every release after it.</p>
       </section>
 
@@ -209,7 +209,7 @@ export default function Body() {
         <p>I believe speed matters. A great product that arrives too late may not matter at all. Customers don’t wait, competitors keep shipping, and market conditions change while a team is still designing.</p>
         <p>I’ve worked in startups and in larger organizations. The pressure to deliver feels different in each, but the business reality is the same: software creates value only once someone can use it. A carefully architected system that took six months, for customers who needed it three months ago, hasn’t accomplished much.</p>
         <p className="post__answer">Speed to market matters because early, working releases bring revenue and feedback sooner. Feedback from real customers tells a team whether it is solving the right problem, which another architecture meeting or another sprint can’t tell it.</p>
-        <p>There is a catch. Shipping quickly only helps when what you ship works.</p>
+        <p>A release that breaks a customer’s workflow creates support and recovery work before it delivers any benefit.</p>
       </section>
 
       <section id="quality" aria-labelledby="quality-h">
@@ -284,7 +284,7 @@ export default function Body() {
 
         <h3 className="post__h3">5. Invest in what makes the next release faster</h3>
         <p>Organizations often treat any engineering work that doesn’t produce a feature as overhead: automated testing, CI/CD pipelines, monitoring, development environments, fewer unnecessary dependencies, better code review. None of it earns revenue this week. All of it lowers the cost and risk of every release after.</p>
-        <p>Early in my career I scripted the routine work on a carrier network in Expect and Korn shell, <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">before anyone called it DevOps</Link>. A large part of my work since has been deployment processes, infrastructure and engineering workflows. The aim was never more tools. It was making it easier for engineers to ship a change with confidence.</p>
+        <p>Early in my career I scripted the routine work on a carrier network in Expect and Korn shell, <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">before anyone called it DevOps</Link>. A large part of my work since has been deployment processes, infrastructure and engineering workflows. The aim was to make it easier for engineers to ship a change with confidence.</p>
         <p>Good engineering practices should make a team faster over time. If a process keeps blocking delivery without meaningfully reducing risk, it is worth asking whether it still serves its purpose.</p>
       </section>
 
@@ -313,8 +313,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The goal is sustainable speed</h2>
       <div className="post__close-copy">
-        <p className="lead">I’ve seen teams move incredibly fast for a few weeks and spend months fixing what they shipped. I’ve also seen teams design for so long that the opportunity passed. Sustainable speed means delivering business value quickly without making the next delivery harder. Sometimes that means shipping something imperfect. Sometimes it means slowing down for a critical risk, saying no to complexity, or challenging a deadline because a failure would cost too much. After more than two decades, I don’t think that call ever gets easy. Experience helps you see which tradeoffs are worth making.</p>
-        <p className="post__close-principle">Speed gets a product to market, and quality keeps it there. Sustainable engineering lets a team do both, release after release.</p>
+        <p className="lead">I’ve seen teams move incredibly fast for a few weeks and spend months fixing what they shipped. I’ve also seen teams design for so long that the opportunity passed. Sustainable speed means delivering business value quickly without making the next delivery harder. Sometimes that means shipping something imperfect. Sometimes it means slowing down for a critical risk, saying no to complexity, or challenging a deadline because a failure would cost too much. I don’t think that call ever gets easy, however many times you make it. Experience helps you see which tradeoffs are worth making.</p>
+        <p className="post__close-principle">I want the team to ship at a pace it can maintain, with enough room to fix problems and keep the next release manageable.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through a delivery tradeoff <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

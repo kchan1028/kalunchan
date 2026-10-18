@@ -148,7 +148,7 @@ export default function Body() {
         <p>I’ve spent a lot of this year experimenting with AI, and I think it’s great. It writes code, drafts documents, sketches screens and answers questions in fields I don’t work in. Some days it feels like I have a small team sitting in my terminal.</p>
         <p>What I keep noticing is how different the results are from one person to the next. Two people can use the same tool, on the same subscription, on the same kind of task, and get very different outcomes. One ships something useful. The other spends the afternoon going in circles with a confident assistant.</p>
         <p>That shouldn’t surprise anyone who has been in this industry for a while. Every technology I’ve learned had a learning curve. On a carrier network I had to learn router access lists and shell scripting, and neither came easily. Moving a publishing platform onto AWS meant learning a new way to think about capacity and cost. Nobody handed me a login and expected me to be good at it the next day.</p>
-        <p>AI is the same. Giving someone access to it doesn’t mean they know how to use it. So why do so many companies roll it out as if it does?</p>
+        <p>AI takes practice too. Companies need to give people time to learn how to use it, alongside access to the tools.</p>
       </section>
 
       <section id="tasks" aria-labelledby="tasks-h">
@@ -181,10 +181,9 @@ export default function Body() {
 
       <section id="engineers" aria-labelledby="engineers-h">
         <h2 id="engineers-h" className="post__h2">Engineers: from writing code to evaluating it</h2>
-        <p>AI writes code well enough now that typing it is rarely the slow part. The slow part is everything around it. Does this design hold up at ten times the traffic? What happens when the payment provider times out? Who can call this endpoint? What does it cost to run every month? Will someone understand it in a year?</p>
-        <p>Those questions are architecture, performance, security, reliability, maintainability and operating cost. The AI will answer each one if you ask. Knowing to ask, and recognizing a weak answer, is the engineer’s job. I wrote about one side of this in <Link to="/writing/recognizing-ai-generated-code/">recognizing AI-generated code</Link>, where a 53-line answer lost to a 6-line one.</p>
-        <p>AI is also good at the checking side. It can generate tests, run them, read the failures, suggest fixes and point out likely problems in a pull request. I use it for all of those. But there’s a question I keep coming back to:</p>
-        <p className="post__pull">If AI writes both the implementation and the tests, how do we know they aren’t making the same wrong assumption?</p>
+        <p>AI can produce an implementation quickly. I still need to check how it behaves under load, whether it handles a payment timeout safely, and who can call each endpoint. Operating cost and maintainability need attention too.</p>
+        <p>An assistant can help investigate each of those concerns. The engineer needs to recognize which ones apply and check whether the answers hold up. I wrote about one side of this in <Link to="/writing/recognizing-ai-generated-code/">recognizing AI-generated code</Link>, where a 53-line answer lost to a 6-line one.</p>
+        <p>I also use AI to generate and run tests, investigate failures and review pull requests. When it writes both the implementation and the tests, I check whether they share a mistaken assumption.</p>
         <SharedAssumption />
         <p>Passing tests feel like proof. They’re only proof that the code does what the tests expect. If the same misunderstanding produced both, nothing in the pipeline compares the code with what the customer asked for. The fix is a human who understands the requirement writing or reviewing the important test cases, especially the edge cases and failure paths.</p>
         <p>Developers sense this. In <a href="https://survey.stackoverflow.co/2025/ai" rel="noopener" target="_blank">Stack Overflow’s developer survey</a>, the top frustration with AI tools was “solutions that are almost right, but not quite,” picked by 66% of respondents. In <a href="https://survey.stackoverflow.co/2026/ai" rel="noopener" target="_blank">the latest edition</a>, 48% said they trust AI when the answer is easy to validate. Trust follows the ability to check.</p>
@@ -194,7 +193,7 @@ export default function Body() {
         <h2 id="product-h" className="post__h2">Product managers: from requirements to problems</h2>
         <p>AI can turn a rough idea into a tidy requirements document, a set of user stories and a clickable prototype in an afternoon. That’s useful, and it makes it easy to skip the hard part.</p>
         <p>Building faster doesn’t mean building the right thing. If the problem is wrong, AI just gets you to the wrong product sooner, with better documentation. I’ve always believed in starting with the customer’s problem, not the architecture, and that matters more when the architecture is nearly free to produce.</p>
-        <p>So the product work that grows in value is the part AI can’t do from a prompt: talking to customers, deciding what not to build, choosing between two good ideas with one team, and connecting the work to a business result someone will pay for. How do you know this is a problem people have? What will change for them if you solve it? How will you know it worked?</p>
+        <p>So the product work that grows in value is the part AI can’t do from a prompt: talking to customers, deciding what not to build, choosing between two good ideas with one team, and connecting the work to a business result someone will pay for. That requires evidence that people have the problem, a clear idea of what would improve for them, and a way to measure the result.</p>
       </section>
 
       <section id="juniors" aria-labelledby="juniors-h">
@@ -202,12 +201,12 @@ export default function Body() {
         <p>This is the part I worry about most. I learned to debug by being stuck. I read logs, broke things, fixed them, and slowly built a feel for where problems hide. If an AI writes most of a junior engineer’s code, where does that feel come from?</p>
         <p>There’s early evidence on this. In a <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" rel="noopener" target="_blank">randomized study by Anthropic</a>, 52 mostly junior engineers learned a new Python library, half with an AI assistant and half without. On the quiz afterward the AI group averaged 50% and the hand-coding group 67%. The biggest gap was on debugging questions. The authors call the results preliminary, and the sample was small.</p>
         <p>The more useful finding was about how people used it. Participants who asked the AI to explain things, or who generated code and then worked to understand it, scored much higher than those who handed the whole task over. How people used the assistant mattered more than whether they had one.</p>
-        <p>That puts a responsibility on engineering leaders. If AI takes the routine tasks juniors used to learn on, we have to design the learning on purpose: reviews where they explain their code, debugging work without the assistant, smaller tasks they can own end to end, and time with someone experienced. I wrote about <Link to="/writing/why-i-enjoy-mentoring/">why I enjoy mentoring</Link>, and this is why it matters more now. If nobody grows junior engineers today, who reviews the AI’s work in ten years?</p>
+        <p>That puts a responsibility on engineering leaders. If AI takes the routine tasks juniors used to learn on, we have to design the learning on purpose: reviews where they explain their code, debugging work without the assistant, smaller tasks they can own end to end, and time with someone experienced. I wrote about <Link to="/writing/why-i-enjoy-mentoring/">why I enjoy mentoring</Link>, and this is why it matters more now. Experienced reviewers have to come from somewhere, and developing them takes years.</p>
       </section>
 
       <section id="generalists" aria-labelledby="generalists-h">
         <h2 id="generalists-h" className="post__h2">Why a broad background helps</h2>
-        <p>I’ve been in this industry for 20+ years, and I’ve worked across carrier networking and VoIP, network and application security, software engineering and architecture, cloud infrastructure and DevOps, product development, and the business side of running a startup as a co-founder and CTO. I wasn’t the deepest expert in all of those. I learned how they affect each other.</p>
+        <p>Over my career I’ve worked across carrier networking and VoIP, network and application security, software engineering and architecture, cloud infrastructure and DevOps, product development, and the business side of running a startup as a co-founder and CTO. I wasn’t the deepest expert in all of those. I learned how they affect each other.</p>
         <p>That turns out to be useful with AI. When an assistant hands me a solution, I can look at it from several sides: will it scale, who can abuse it, what will it cost, who supports it, does the customer even need it? I don’t need to be a specialist to notice that a design has no rate limit or that a cost estimate ignores data transfer. I need to have seen those problems before. I went into more detail in <Link to="/writing/generalist-advantage-in-the-ai-era/">why being a generalist is an advantage in the AI era</Link>.</p>
         <p>That doesn’t make specialists less important. AI gets you to a decent first answer in most fields. The hard last stretch still needs people who have spent years in one area.</p>
       </section>
@@ -250,7 +249,7 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The learning curve is the point</h2>
+      <h2 id="closing-h" className="post__close-title h2">Give people time to learn</h2>
       <div className="post__close-copy">
         <p className="lead">AI makes it easier to produce work. Experience and judgment decide whether that work is valuable.</p>
         <p className="post__close-principle">I’m still learning how to use it well myself. I expect the teams that treat it as a skill to build, and give people time to learn it, to get the most out of it.</p>

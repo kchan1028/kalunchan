@@ -90,7 +90,7 @@ export default function Body() {
         <h2 id="reverse-h" className="post__h2">Forward and reverse engineering</h2>
         <p>Most of the forward engineering I have done in the second half of my career started with reverse engineering. A legacy system is a set of requirements nobody wrote down, expressed in code. Before you can rebuild it, you have to read it back out.</p>
         <Directions />
-        <p>The public-service modernization I describe in a <Link to="/work/public-service-modernization/">case study</Link> is a good example. A government service ran on an ageing system that residents depended on every day, so switching it off to rebuild was not an option. The first job was reverse engineering: learning what the old system did, including the rules that had become important precisely because nobody remembered adding them. Only then could we forward-engineer replacements. We put an API facade in front of the legacy system and replaced one resident journey at a time behind it, with accessibility and security checks as release gates and the infrastructure in Terraform so the agency team could own it after hand-over.</p>
+        <p>Consider the <Link to="/work/public-service-modernization/">illustrative public-service modernization design</Link>. The scenario assumes an ageing system that residents need to keep using. I would first investigate its existing behavior and business rules, then place an API facade in front of it to support replacing workflows individually. The example includes accessibility and security checks in the release process and infrastructure definitions the receiving team could maintain.</p>
         <p>The same pattern showed up elsewhere. Moving a publishing platform off WordPress onto Ruby on Rails meant first understanding how years of plugins and templates had shaped the content, then designing a structure that kept what readers relied on. Moving the communications platform from one data center to cloud regions meant mapping what depended on what before moving anything, then migrating one region at a time with a way back at every step. In every case the reverse half took longer than people expected, and it was where the risk lived. A migration fails on the behaviour you did not know you had.</p>
         <p>For junior engineers, this is the most useful thing I can say about legacy code: treat it as evidence, not as an embarrassment. Somebody made each of those decisions for a reason. Some reasons are gone, and some are still holding up the business.</p>
       </section>
@@ -128,13 +128,13 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The direction is old. Keep the chain honest.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Following a requirement through delivery</h2>
       <div className="post__close-copy">
         <p className="lead">Forward engineering has always been the job: need, requirement, design, code, running system. What changes is how fast one step moves.</p>
         <p className="post__close-principle">Speed at one step moves the bottleneck to the next. Clear requirements, written decisions, named owners and reliable production are what turn code into delivery.</p>
-        <p>That is what twenty years of building, migrating and leading have taught me to protect.</p>
+        <p>I want a team to be able to trace a requirement through those decisions and check it against the running system.</p>
         <div className="post__close-actions">
-          <Link to="/work/public-service-modernization/" className="action">Case study: modernizing without a rewrite <ArrowRight /></Link>
+          <Link to="/work/public-service-modernization/" className="action">Design example: modernizing without a rewrite <ArrowRight /></Link>
         </div>
       </div>
     </>

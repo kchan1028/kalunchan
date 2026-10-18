@@ -33,7 +33,7 @@ export default function Body() {
         <p>Priorities change. That’s normal. Customers change their minds. A major deal suddenly needs something. Production breaks. Leadership learns something new. A competitor moves. An assumption we made three months ago turns out to be wrong.</p>
         <p>A good engineering organization needs to be able to respond to all of that.</p>
         <p className="post__answer">Changing priorities becomes a problem when nobody acknowledges what the change costs.</p>
-        <p>Across more than two decades in software, as an engineer, a co-founder and CTO, and an engineering leader, I’ve seen teams fall into the same cycle. Something is the top priority on Monday. Something else replaces it on Wednesday. By Friday, everyone is asking why the first thing isn’t finished.</p>
+        <p>As an engineer, a co-founder and CTO, and an engineering leader, I’ve seen teams fall into the same cycle. Something is the top priority on Monday. Something else replaces it on Wednesday. By Friday, everyone is asking why the first thing isn’t finished.</p>
         <p>At that point the problem is the system around the team. Engineering velocity is just where it shows up.</p>
       </section>
 
@@ -201,11 +201,11 @@ export default function Body() {
         <p className="post__answer">Make the cost of the change visible. When priorities change, say why, name the single new priority, decide what stops or slips, decide what happens to work already in progress, and update the dates or commitments that no longer hold.</p>
         <p>In practice, these are the five things I try to make clear every time:</p>
         <ol className="post__steps">
-          <li><strong>Why are we changing?</strong> There should be a reason people can understand.</li>
-          <li><strong>What is the new priority?</strong> Not one of twelve priorities. The priority.</li>
-          <li><strong>What are we stopping or delaying?</strong> New work has a cost.</li>
-          <li><strong>What happens to work already in progress?</strong> Finish it, pause it intentionally, reduce its scope, or cancel it.</li>
-          <li><strong>Which expectations need to change?</strong> Dates, scope, capacity or commitments need to reflect the new decision.</li>
+          <li>Why are we changing? There should be a reason people can understand.</li>
+          <li>What is the new priority? Not one of twelve priorities. The priority.</li>
+          <li>What are we stopping or delaying? New work has a cost.</li>
+          <li>What happens to work already in progress? Finish it, pause it intentionally, reduce its scope, or cancel it.</li>
+          <li>Which expectations need to change? Dates, scope, capacity or commitments need to reflect the new decision.</li>
         </ol>
       </section>
 
@@ -222,11 +222,11 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The question I keep coming back to</h2>
+      <h2 id="closing-h" className="post__close-title h2">Agree on what stops when priorities change</h2>
       <div className="post__close-copy">
         <p className="lead">There will always be another customer request, another production problem, another executive idea, and another technology everyone suddenly wants to explore. The goal is an organization that can respond to all of it without losing its ability to finish things.</p>
-        <p>So when a new priority arrives, the most useful question often isn’t “How quickly can we start?”</p>
-        <p className="post__close-principle">It’s “What are we willing to stop?”</p>
+        <p>When a new priority arrives, I ask what we are willing to stop and explain what that means for the existing work.</p>
+        <p className="post__close-principle">The decision belongs to the business, with the cost and revised dates visible to everyone involved.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through a delivery problem <ArrowRight /></Link>
           <a href={person.yippify} className="link-arrow"><span>Work with me through Yippify</span> <ArrowOut /></a>

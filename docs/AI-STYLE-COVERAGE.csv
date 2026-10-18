@@ -1,0 +1,106 @@
+file,lines,findings,scope
+src/components/BandHead.jsx,10,0,"page, shared copy, data or supporting UI"
+src/components/CareerArc.jsx,68,0,"page, shared copy, data or supporting UI"
+src/components/CareerLine.jsx,7,0,"page, shared copy, data or supporting UI"
+src/components/ContactForm.jsx,204,0,"page, shared copy, data or supporting UI"
+src/components/Coordinate.jsx,39,0,"page, shared copy, data or supporting UI"
+src/components/Diagram.jsx,192,0,"page, shared copy, data or supporting UI"
+src/components/ExperienceMap.jsx,59,0,"page, shared copy, data or supporting UI"
+src/components/HermesWorkflow.jsx,57,0,"page, shared copy, data or supporting UI"
+src/components/HomeSections.jsx,164,2,"page, shared copy, data or supporting UI"
+src/components/Icons.jsx,26,0,"page, shared copy, data or supporting UI"
+src/components/Layout.jsx,179,1,"page, shared copy, data or supporting UI"
+src/components/ProjectShot.jsx,24,0,"page, shared copy, data or supporting UI"
+src/components/ReadNext.jsx,68,0,"page, shared copy, data or supporting UI"
+src/components/SignalPath.jsx,169,0,"page, shared copy, data or supporting UI"
+src/components/StackLadder.jsx,82,0,"page, shared copy, data or supporting UI"
+src/components/TitleBlock.jsx,23,0,"page, shared copy, data or supporting UI"
+src/components/Todo.jsx,4,0,"page, shared copy, data or supporting UI"
+src/content/about.js,206,2,"page, shared copy, data or supporting UI"
+src/content/community.js,53,0,"page, shared copy, data or supporting UI"
+src/content/contact.js,45,1,"page, shared copy, data or supporting UI"
+src/content/home.js,137,0,"page, shared copy, data or supporting UI"
+src/content/mentorship.js,72,0,"page, shared copy, data or supporting UI"
+src/content/postBodies.js,15,0,"page, shared copy, data or supporting UI"
+src/content/posts/ai-agents-reliable-in-production.jsx,104,2,article
+src/content/posts/ai-learning-curve-future-of-work.jsx,263,1,article
+src/content/posts/api-architecture-lessons.jsx,159,0,article
+src/content/posts/berkeley-omnium-new-website-next-generation.jsx,129,0,article
+src/content/posts/building-a-startup-from-idea-to-acquisition.jsx,457,2,article
+src/content/posts/building-an-ai-job-search-agent-with-hermes.jsx,125,4,article
+src/content/posts/building-federal-government-applications.jsx,230,2,article
+src/content/posts/building-software-before-and-after-ai.jsx,85,2,article
+src/content/posts/building-startups-technical-leadership.jsx,141,1,article
+src/content/posts/capacity-planning-carrier-networks-to-cloud.jsx,143,0,article
+src/content/posts/code-review-in-the-ai-era.jsx,263,2,article
+src/content/posts/connect-hermes-agent-hostinger-vps-vs-code.jsx,193,0,article
+src/content/posts/connect-strava-to-claude-mcp.jsx,707,0,article
+src/content/posts/data-driven-engineering-network-voip-publishing.jsx,254,3,article
+src/content/posts/devops-from-expect-scripts-to-ai-agents.jsx,349,0,article
+src/content/posts/digital-publishing-seo-adsense-affiliate-ai-search.jsx,226,2,article
+src/content/posts/engineering-work-nobody-needed.jsx,151,1,article
+src/content/posts/event-driven-architecture-kafka-tradeoffs.jsx,204,0,article
+src/content/posts/fast-paced-vs-changing-priorities.jsx,158,1,article
+src/content/posts/first-bike-races-novice-race-reports.jsx,89,0,article
+src/content/posts/fitness-journey-training-smarter.jsx,122,1,article
+src/content/posts/forward-engineering-isnt-new.jsx,142,0,article
+src/content/posts/founding-a-startup-isnt-easy.jsx,84,0,article
+src/content/posts/from-aol-to-ai-lowering-the-barrier.jsx,224,0,article
+src/content/posts/from-cisco-routers-to-ai-agents.jsx,111,0,article
+src/content/posts/from-dos-to-ai-thirty-years-of-technology.jsx,158,0,article
+src/content/posts/generalist-advantage-in-the-ai-era.jsx,149,0,article
+src/content/posts/good-teams-dont-expect-everyone-to-know-everything.jsx,149,1,article
+src/content/posts/hidden-cost-of-ai-coding.jsx,336,0,article
+src/content/posts/hidden-cost-of-software-architecture.jsx,131,2,article
+src/content/posts/how-i-learn-faster-with-ai.jsx,343,2,article
+src/content/posts/infrastructure-costs-from-carrier-networks-to-the-cloud.jsx,107,0,article
+src/content/posts/learning-hermes-building-ai-automation-around-the-clock.jsx,112,0,article (development-only)
+src/content/posts/loop-engineering-feedback-loops.jsx,349,2,article
+src/content/posts/network-security-before-devsecops.jsx,281,1,article
+src/content/posts/omniroute-hermes-agent-docker.jsx,258,0,article
+src/content/posts/open-source-voip-distributed-systems-lessons.jsx,139,0,article
+src/content/posts/organizing-berkeley-omnium-leadership-lessons.jsx,83,0,article
+src/content/posts/recognizing-ai-generated-code.jsx,354,1,article
+src/content/posts/scheduling-ai-work-hermes-chatgpt-claude.jsx,134,0,article
+src/content/posts/should-it-be-a-microservice.jsx,398,2,article
+src/content/posts/smaller-user-stories-and-pull-requests.jsx,75,0,article
+src/content/posts/software-architecture-lessons-from-different-systems.jsx,209,0,article
+src/content/posts/specialization-beyond-your-own-code.jsx,103,1,article
+src/content/posts/speed-vs-quality-software-engineering.jsx,325,2,article
+src/content/posts/talking-to-ai-in-a-terminal.jsx,141,1,article
+src/content/posts/team-size-should-influence-architecture.jsx,132,0,article
+src/content/posts/the-architecture-you-dont-build.jsx,89,0,article
+src/content/posts/ux-ui-design-before-and-after-ai.jsx,81,1,article
+src/content/posts/vibe-coding-vs-agentic-engineering.jsx,314,2,article
+src/content/posts/voip-apps-for-nokia-phones-before-the-iphone.jsx,103,0,article
+src/content/posts/what-cycling-taught-me-about-engineering-leadership.jsx,94,0,article
+src/content/posts/what-publishing-taught-me-about-seo-aeo-geo.jsx,203,2,article
+src/content/posts/what-sprint-carryover-is-telling-you.jsx,200,3,article
+src/content/posts/when-everything-is-a-priority.jsx,237,2,article
+src/content/posts/when-to-add-engineering-process.jsx,345,1,article
+src/content/posts/why-hiring-good-engineers-is-so-hard.jsx,119,2,article
+src/content/posts/why-i-build-my-own-developer-tools.jsx,130,1,article
+src/content/posts/why-i-enjoy-mentoring.jsx,147,1,article
+src/content/posts/why-i-still-write-code.jsx,103,2,article
+src/content/posts/you-dont-need-to-remember-everything.jsx,220,1,article
+src/content/practice.js,306,4,"page, shared copy, data or supporting UI"
+src/content/profile.js,184,0,"page, shared copy, data or supporting UI"
+src/content/projects.js,252,1,"page, shared copy, data or supporting UI"
+src/content/work.js,466,4,"page, shared copy, data or supporting UI"
+src/content/writing.js,3351,3,"page, shared copy, data or supporting UI"
+src/pages/About.jsx,269,0,"page, shared copy, data or supporting UI"
+src/pages/CaseStudy.jsx,165,0,"page, shared copy, data or supporting UI"
+src/pages/Community.jsx,118,1,"page, shared copy, data or supporting UI"
+src/pages/Contact.jsx,168,1,"page, shared copy, data or supporting UI"
+src/pages/Experience.jsx,142,0,"page, shared copy, data or supporting UI"
+src/pages/Expertise.jsx,106,0,"page, shared copy, data or supporting UI"
+src/pages/Home.jsx,58,0,"page, shared copy, data or supporting UI"
+src/pages/Leadership.jsx,134,0,"page, shared copy, data or supporting UI"
+src/pages/Mentorship.jsx,344,10,"page, shared copy, data or supporting UI"
+src/pages/NotFound.jsx,24,0,"page, shared copy, data or supporting UI"
+src/pages/Post.jsx,95,0,"page, shared copy, data or supporting UI"
+src/pages/Privacy.jsx,83,0,"page, shared copy, data or supporting UI"
+src/pages/Project.jsx,169,0,"page, shared copy, data or supporting UI"
+src/pages/Work.jsx,105,2,"page, shared copy, data or supporting UI"
+src/pages/Writing.jsx,67,0,"page, shared copy, data or supporting UI"
+src/site.js,500,0,"page, shared copy, data or supporting UI"

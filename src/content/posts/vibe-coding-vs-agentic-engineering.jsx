@@ -190,9 +190,9 @@ export default function Body() {
     <>
       <section id="bottleneck" aria-labelledby="bottleneck-h">
         <h2 id="bottleneck-h" className="post__h2">The bottleneck moved</h2>
-        <p>I’ve spent more than 20 years building software and running the systems underneath it: networks, security, infrastructure, DevOps, product and operations. Lately I’ve been spending a lot of time with AI coding agents, mostly Claude Code and Codex. I still enjoy writing code. What makes AI interesting to me is how much of the software lifecycle I can now explore and automate on my own.</p>
+        <p>I’ve spent my career building software and running the systems underneath it: networks, security, infrastructure, DevOps, product and operations. Lately I’ve been spending a lot of time with AI coding agents, mostly Claude Code and Codex. I still enjoy writing code. What makes AI interesting to me is how much of the software lifecycle I can now explore and automate on my own.</p>
         <p>I’ve also noticed patterns. The agent produces working software quickly. Then I see the same shapes again and again: more abstraction than the problem needs, a second version of something that already exists, and rework when the first answer solved a slightly different problem than the one I had.</p>
-        <p className="post__answer">AI has made writing code cheaper and faster. It hasn’t made bad engineering decisions cheaper. It implements them faster.</p>
+        <p className="post__answer">AI can produce an implementation quickly, including one based on a mistaken requirement. If we build on that mistake, the resulting rework can consume the time we saved.</p>
         <p>The bigger change is where the time goes. A team with AI agents can now produce code faster than it can review, test and validate it. The bottleneck has moved from writing code to deciding what to build and verifying that it works. That shift is the main difference between vibe coding and agentic engineering.</p>
       </section>
 
@@ -282,12 +282,12 @@ export default function Body() {
         </ul>
         <p>Then measure outcomes instead of output. Lines of code and prompt counts got even less meaningful once an agent can produce thousands of lines in an hour. I’d watch these at the team level:</p>
         <ul className="post__list">
-          <li><strong>Lead time for changes:</strong> from commit to running in production</li>
-          <li><strong>Change failure rate:</strong> how often a release causes a problem</li>
-          <li><strong>Rework rate:</strong> deployments that exist to fix a recent one, which <a href="https://dora.dev/guides/dora-metrics/" rel="noopener" target="_blank">DORA</a> added to its delivery metrics</li>
-          <li><strong>Escaped defects:</strong> bugs found by customers instead of by us</li>
-          <li><strong>Production incidents:</strong> how many, and how severe</li>
-          <li><strong>Cost per successfully delivered feature:</strong> people, tokens and infrastructure, divided by features customers actually use</li>
+          <li>Lead time for changes: from commit to running in production</li>
+          <li>Change failure rate: how often a release causes a problem</li>
+          <li>Rework rate: deployments that exist to fix a recent one, which <a href="https://dora.dev/guides/dora-metrics/" rel="noopener" target="_blank">DORA</a> added to its delivery metrics</li>
+          <li>Escaped defects: bugs found by customers instead of by us</li>
+          <li>Production incidents: how many, and how severe</li>
+          <li>Cost per successfully delivered feature: people, tokens and infrastructure, divided by features customers actually use</li>
         </ul>
         <p>These describe how the system of work is performing. They shouldn’t be used to rank individual developers, because people learn to game whatever they’re ranked on. If lead time drops while rework and escaped defects climb, the team got faster at producing problems.</p>
         <p>What I want is better software with less unnecessary work, and generating more code doesn’t get you there by itself. More on how I approach that in <Link to="/leadership/">how I run engineering</Link>.</p>
@@ -299,11 +299,11 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Code got cheaper. Decisions didn’t.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Using AI on software we have to maintain</h2>
       <div className="post__close-copy">
         <p className="lead">Vibe coding makes software development more accessible. Agentic engineering gives us a structured way to use AI to build and maintain production software. Neither one removes the need for engineering judgment.</p>
-        <p>The future of engineering won’t be decided by who generates code fastest. It belongs to the people who can turn a business problem into reliable software while managing complexity, risk and cost.</p>
-        <p className="post__close-principle">Writing code is getting easier. Knowing what to build, how to build it, and whether it should be built at all is still the hard part.</p>
+        <p>For a team maintaining production software, I care about whether we understand the changes, can recover from failure and can afford to operate what we build.</p>
+        <p className="post__close-principle">I use those questions to judge the workflow, regardless of which tool produced the code.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about how your team works with AI agents <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

@@ -135,7 +135,7 @@ export default function Body() {
           <li>How do we find which service produced bad data?</li>
           <li>How do we debug a business transaction that crossed six services asynchronously?</li>
         </ul>
-        <p>The diagram gets cleaner, but operating the system often gets harder. The <Link to="/work/event-driven-platform/">event-driven platform case study</Link> shows how we answered some of those questions with a transactional outbox and idempotent consumers.</p>
+        <p>The diagram gets cleaner, but operating the system often gets harder. The <Link to="/work/event-driven-platform/">event-driven design example</Link> explores how a transactional outbox and idempotent consumers address publication failures and duplicate delivery.</p>
       </section>
 
       <section id="organizations" aria-labelledby="organizations-h">
@@ -158,7 +158,7 @@ export default function Body() {
         <h2 id="fashion-h" className="post__h2">I’ve become more skeptical of architecture fashion</h2>
         <p>Technology has trends like every other industry. Everything needed to be service-oriented. Then everything needed to be microservices. Then Kubernetes, then serverless. Now everything seems to need AI.</p>
         <p>I’ve learned to be careful when an architecture conversation starts with a technology instead of a problem. “We should use microservices.” “We should use Kafka.” “We should use Kubernetes.” My answer to each is the same: why? Until someone answers that, they’re technology preferences, and nobody has made an architecture decision yet.</p>
-        <p>The architecture conversation should start with the constraints. What are we building, and who uses it? How much traffic is there? How quickly will it change? What needs to scale, and what needs to stay reliable? What does the team understand, and what can it realistically operate? Then choose the technology.</p>
+        <p>The architecture conversation should start with the constraints. We need to understand who uses the product, its traffic and reliability requirements, and how quickly those may change. The design also has to fit what the team can realistically operate. Those constraints guide the technology choice.</p>
       </section>
 
       <section id="boring" aria-labelledby="boring-h">

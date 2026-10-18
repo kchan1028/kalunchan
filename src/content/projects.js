@@ -226,7 +226,7 @@ export const projects = [
       'Call and directions one tap away on every phone',
       'Services, STAR certification, hours and prep tips each easy to find and answer',
       'Real photography that shows the actual station',
-      'Fast static pages a small business never has to maintain',
+      'Static pages that avoid routine CMS and plugin updates',
     ],
     capabilities: ['React', 'Static prerendering', 'Local SEO', 'Structured data', 'Mobile-first UX', 'Conversion design'],
     lessons: [

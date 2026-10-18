@@ -1,7 +1,7 @@
 // Contact page copy supplied by KC. No testimonials, logos or metrics.
 
-// Reply-time promise shown next to the form and on the sent screen. Drafted: confirm in CONTENT-REVIEW.md.
-export const responseTime = 'I usually reply within two business days.';
+// Reply channel shown next to the form and on the sent screen.
+export const responseTime = 'Replies go to the email address you provide.';
 
 export const branches = [
   { id: 'people', name: 'People', items: ['Mentorship', 'Team growth', 'Ownership', 'Leadership'] },

@@ -115,8 +115,8 @@ export default function ContactForm() {
     return (
       <div className="cform cform--sent">
         <h3 className="cform__title" tabIndex={-1} ref={sentRef}>Thanks. Your message is on its way.</h3>
-        <p className="cform__lead">I’ll reply to the email address you gave. {responseTime}</p>
-        <p className="cform__lead">Nothing back after that? Check your spam folder, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
+        <p className="cform__lead">{responseTime}</p>
+        <p className="cform__lead">If you’re waiting for a reply, check your spam folder, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
         <button className="link-arrow cform__again" type="button" onClick={sendAnother}><span>Send another message</span> <ArrowRight /></button>
       </div>
     );
@@ -138,7 +138,7 @@ export default function ContactForm() {
   return (
     <form ref={formRef} className="cform" action={contactEndpoint} method="post" noValidate={enhanced} onSubmit={onSubmit} onInput={onInput} aria-labelledby="cform-title">
       <h3 id="cform-title" className="cform__title">Send a note</h3>
-      <p id="message-sent" className="cform__notice" tabIndex={-1}>Thanks. Your message is on its way, and I’ll reply by email. {responseTime}</p>
+      <p id="message-sent" className="cform__notice" tabIndex={-1}>Thanks. Your message is on its way. {responseTime}</p>
       <p id="message-not-sent" className="cform__notice cform__notice--error" tabIndex={-1}>Your message didn’t go through. Check every field is filled in and try again, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
 
       {errorCount > 0 && (

@@ -30,7 +30,7 @@ export default function Body() {
       <section id="the-stack" aria-labelledby="the-stack-h">
         <h2 id="the-stack-h" className="post__h2">What the platform was made of</h2>
         <p className="post__answer">The platform was built on open-source VoIP. Asterisk handled the calls and the voice applications. OpenSIPS handled SIP signaling, registration and the routing logic in front of Asterisk. MediaProxy relayed audio for users behind NAT routers. The business logic lived in Python, called from Asterisk through AGI, and it talked to a billing system I wrote myself because nothing off the shelf priced calls the way we needed.</p>
-        <p>Routing was where engineering met the spreadsheet. Least-cost routing meant choosing, per call, the cheapest carrier that could still deliver acceptable quality, and the two rarely agreed. Geolocation routing meant sending a user to the nearest region so a call didn’t cross an ocean twice. Both were code, and both were business decisions wearing a config file.</p>
+        <p>Routing was where engineering met the spreadsheet. Least-cost routing meant choosing, per call, the cheapest carrier that could still deliver acceptable quality, and the two rarely agreed. Geolocation routing meant sending a user to the nearest region so a call didn’t cross an ocean twice. Both decisions affected call quality and the margin on each call.</p>
         <p>The mobile apps sat on top of the same stack. We wrote them in C++ for Nokia phones first, then for iPhone and Android, and to the platform each one was another SIP endpoint. That chapter has <Link to="/writing/voip-apps-for-nokia-phones-before-the-iphone/">its own story</Link>.</p>
         <p>Underneath all of it was a data center I had cabled by hand, and later a move into early cloud infrastructure, mostly to lower our cost structure and put servers closer to users on three continents. The migration had to happen with customers on the phone, so it happened one region at a time, with a way back at every step. I describe that move in the <Link to="/work/three-continent-platform/">case study on going from one data center to three continents</Link>.</p>
       </section>
@@ -47,20 +47,20 @@ export default function Body() {
         <p className="post__answer">I use AI-assisted development for most of the work I used to do by hand: exploring an idea before committing to it, sketching the design, generating a first implementation, writing tests, reviewing code, researching a library I haven’t used, troubleshooting, writing documentation, and scripting deployments. The assistant does the first pass. I read every line.</p>
         <p><Link to="/projects/fedpath/">FedPath</Link>, which helps small businesses find and evaluate federal contracts, went from an idea to a working product far faster than I could have managed alone. <Link to="/writing/why-i-build-my-own-developer-tools/">Useful Little Tools</Link> is a collection of small browser tools built the same way, for the things I kept searching for. The <Link to="/projects/berkeley-omnium/">Berkeley Omnium site</Link> and the Berkeley Bicycle Club site were built with an assistant in the loop, and so was the site you’re reading. None of these needed a rack, and none needed a drive to a data center.</p>
         <p>On <Link to="/experience/#yippify">Yippify</Link> client work the gain is different. The code still has to meet security and accessibility requirements, and it still goes through review, tests and a pipeline before it reaches production. The assistant drafts the migration, the test and the infrastructure module. A person still owns what ships.</p>
-        <p>What surprised me is how much of the old job this replaces. The assistant is the field technician for a different kind of rack. It handles the first hour of research, the boring parts of setup, and the scaffolding I used to type from memory. Some of what it writes is wrong in ways that look right, and the reason I catch it is that I’ve been bitten by the real version before.</p>
+        <p>What surprised me is how much of the old job this replaces. It handles the first hour of research, the boring parts of setup, and the scaffolding I used to type from memory. Some of what it writes is wrong in ways that look right, and the reason I catch it is that I’ve been bitten by the real version before.</p>
       </section>
 
       <section id="hasnt-changed" aria-labelledby="hasnt-changed-h">
         <h2 id="hasnt-changed-h" className="post__h2">What hasn’t changed</h2>
-        <p className="post__answer">Writing code was never the hardest part. It wasn’t the hardest part in the data center and it isn’t now. The hard parts were working out which problem was worth solving, what the solution had to survive, which trade-offs to accept, and keeping the thing running once people depended on it. AI compresses the typing and leaves the understanding to me.</p>
-        <p>Speed doesn’t improve the decision. The assistant generates code quickly, and whether the code makes sense is a separate question that is still mine to answer. A faster way to build the wrong thing is still the wrong thing, only sooner, which is why I care more than ever about <Link to="/writing/engineering-work-nobody-needed/">not building work nobody needed</Link>.</p>
+        <p className="post__answer">The difficult decisions usually concerned which problem was worth solving, what the solution had to survive, and which trade-offs the business could afford. Once people depended on it, keeping it running was a substantial part of the work. AI helps with implementation, but I still have to understand those decisions.</p>
+        <p>Speed doesn’t improve the decision. The assistant generates code quickly, and whether the code makes sense is a separate question that is still mine to answer. That is why I care about <Link to="/writing/engineering-work-nobody-needed/">not building work nobody needed</Link>.</p>
         <p>Experience shows up as earlier recognition. Years of troubleshooting production systems, running infrastructure and leading teams mean I see the retry without an idempotency key, or the schema that will hurt at ten times the data, before the code runs. The assistant will happily write both. I’ve learned to ask it why not, and to check its answer.</p>
-        <p>Building a product is still not building a business. Software got cheaper. Customers didn’t. Finding people with the problem, understanding what they will pay for, and keeping them around is as hard as it was when the servers were mine.</p>
+        <p>Finding customers still takes work. I need to understand which problems they will pay to solve and whether they will keep using the product. AI helps me test an implementation sooner, but it does not answer those questions for me.</p>
         <p>Learning is still the job. I learned Asterisk from mailing lists and SIP from packet captures. Now I learn by reading what the assistant wrote and checking it against what I know. AI is a big shift, and I’ve worked through several before it. Adapting to the next tool is nothing new. It is most of what the career has been.</p>
       </section>
 
       <section id="still-building" aria-labelledby="still-building-h">
-        <h2 id="still-building-h" className="post__h2">Why I still build after more than two decades</h2>
+        <h2 id="still-building-h" className="post__h2">Why I still build</h2>
         <p>I moved into engineering leadership a long time ago, and I still write code. What changed is where the time goes: less on scaffolding, more on the idea, the design, and finding out quickly whether anyone wants the thing. That was the part I liked in the first place. The rack, the cables and the late-night pages were the price of admission.</p>
         <p>AI lowered that price. The reason I keep paying it is the same as it was when I unpacked the first server. There is a problem, I can see a way to solve it, and I want to find out whether I’m right.</p>
       </section>
@@ -71,10 +71,10 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The code got cheaper. The decisions didn’t.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Where I spend my time now</h2>
       <div className="post__close-copy">
-        <p className="lead">Turning an idea into working software has never been easier. Knowing which idea deserves it, how it should fail, and whether anyone will pay for it is as hard as it ever was.</p>
-        <p className="post__close-principle">I used to build everything myself. Now I have help with the building, and the thinking is still the job.</p>
+        <p className="lead">I can get a first version working much sooner now. Before I rely on it, I still need to check the failure cases and find out whether it solves a problem someone cares enough about to use it.</p>
+        <p className="post__close-principle">The help lets me try more ideas. I still own the decision to ship and the consequences once someone uses what I built.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/writing/building-a-startup-from-idea-to-acquisition/" className="link-arrow"><span>Read the full founder story</span> <ArrowRight /></Link>

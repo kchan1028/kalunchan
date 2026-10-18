@@ -67,7 +67,7 @@ export const metadata = {
 };
 
 export const toc = [
-  ['wrong-question', 'We’re asking the wrong question'],
+  ['wrong-question', 'What the review needs to establish'],
   ['plan', 'Review the plan before the code'],
   ['risk', 'Not every change needs the same review'],
   ['ai', 'What AI should review'],
@@ -126,9 +126,9 @@ export default function Body() {
   return (
     <>
       <section id="wrong-question" aria-labelledby="wrong-question-h">
-        <h2 id="wrong-question-h" className="post__h2">We’re asking the wrong question</h2>
-        <p>I’ve spent more than 20 years reviewing code, designing systems, mentoring engineers, managing releases and dealing with whatever broke in production. Now AI can generate the code, review the pull request, write the tests and flag likely vulnerabilities. So I’ve been asking myself how much traditional code review we still need.</p>
-        <p>I think that’s the wrong question. Whether AI can review code matters less than whether we’re building and delivering what we actually intended.</p>
+        <h2 id="wrong-question-h" className="post__h2">What the review needs to establish</h2>
+        <p>For most of my career I’ve been reviewing code, designing systems, mentoring engineers, managing releases and dealing with whatever broke in production. Now AI can generate the code, review the pull request, write the tests and flag likely vulnerabilities. So I’ve been asking myself how much traditional code review we still need.</p>
+        <p>AI review is useful, but I also need to know whether the implementation does what we intended and works for the customer.</p>
         <p>An AI review can tell me the code follows best practices, the implementation is efficient, the tests pass, there are no obvious vulnerabilities and the architecture looks reasonable. All of that can be true of a feature the customer can’t use. A technically correct implementation can still be the wrong solution, and a code review won’t tell you which one you have.</p>
         <p>AI has also moved the bottleneck. Engineers used to spend most of their time writing the code. Now a team can produce code faster than it can confidently verify it. That makes review more important, and it makes reading every diff line by line a poor way to spend the time we have.</p>
         <p className="post__answer">Every change has to answer three questions: did we build it correctly, did we build the right thing, and can we operate it safely?</p>

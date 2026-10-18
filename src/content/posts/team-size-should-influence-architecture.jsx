@@ -23,7 +23,7 @@ export default function Body() {
       <section id="carry" aria-labelledby="carry-h">
         <h2 id="carry-h" className="post__h2">Every design comes with someone to carry it</h2>
         <p>An architecture diagram shows boxes and arrows. It doesn’t show who gets paged when one of the arrows stops working at two in the morning, or who spends a Thursday upgrading the same library in nine repositories.</p>
-        <p>I’ve spent more than 23 years building software across VoIP, publishing, SaaS and government applications. Most of that time I’ve led small teams of two to six engineers, and I’ve helped grow teams from five people to thirty. I’ve worked in Rails and Django monoliths and in microservices on AWS, with CI/CD pipelines and teams spread across time zones. When someone proposes a new design, I ask a practical question early: who is going to carry this?</p>
+        <p>I’ve built software across VoIP, publishing, SaaS and government applications. Most of the time I’ve led small teams of two to six engineers, and I’ve helped grow teams from five people to thirty. I’ve worked in Rails and Django monoliths and in microservices on AWS, with CI/CD pipelines and teams spread across time zones. When someone proposes a new design, I ask a practical question early: who is going to carry this?</p>
         <p className="post__answer">Team size should influence architecture because every architecture creates ongoing work: deployments, monitoring, security updates, incident response and ownership. The right design meets the business’s requirements and fits the structure of the team, and the team has to be able to operate it.</p>
       </section>
 

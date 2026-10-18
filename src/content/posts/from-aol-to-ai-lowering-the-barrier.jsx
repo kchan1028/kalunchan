@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { ArrowRight } from '../../components/Icons';
 
 // Each technology wave lowered a different barrier and changed who could take part. Source: KC's brief (Oct 2026).
-// Career facts from profile.md and earlier posts: 20+ years (site-wide figure; the brief said 25+); BBS and IRC over
+// Career facts from profile.md and earlier posts: no years-of-experience counts (KC, 2026-10-18); BBS and IRC over
 // AOL; co-founded platform on open-source VoIP (Asterisk, OpenSIPS); racked and cabled its servers, then moved to cloud
 // regions for cost and geo routing; a startup's mobile app on a LAMP backend; media publisher re-platformed to Rails;
 // builds FedPath and Useful Little Tools with an AI assistant. Researched, checked 2026-10-18: AOL sold as the service
@@ -136,7 +136,7 @@ export default function Body() {
     <>
       <section id="aol" aria-labelledby="aol-h">
         <h2 id="aol-h" className="post__h2">AOL made getting online easier</h2>
-        <p>I remember when getting online took work. You needed a modem, a phone line nobody else in the house wanted, the right dial-up number, and patience. I spent those years on BBSs and IRC, but for a lot of the people around me, America Online was the internet.</p>
+        <p>I remember when getting online took work. You needed a modem, a phone line nobody else in the house wanted, the right dial-up number, and patience. I was still in high school and spent my time online on BBSs and IRC, but for a lot of the people around me, America Online was the internet.</p>
         <p className="post__answer">Looking back, I’m struck by how often the important change was who could use the technology. Getting connected became simpler, software became available without large license bills, and starting a service no longer required buying servers. AI is making another part of the work more accessible: turning an idea into an implementation.</p>
         <p>The internet was already there. What AOL did was make being online ordinary. Steve Case <a href="https://en.wikipedia.org/wiki/AOL" target="_blank" rel="noopener noreferrer">sold AOL as the online service for people unfamiliar with computers</a>, the trial discs turned up everywhere, and the subscriber count grew into the tens of millions. People who would never have configured a modem by hand were sending email and sitting in chat rooms.</p>
         <p>AOL was one of several services that helped more people get online. As that audience grew, so did the opportunities to build businesses for it. I doubt I could have pictured the range of services we now use every day. I wrote about those decades from the user’s side in <Link to="/writing/from-dos-to-ai-thirty-years-of-technology/">From DOS to AI</Link>. Here, I’m interested in how those changes affected what a small team could build.</p>
@@ -167,7 +167,7 @@ export default function Body() {
 
       <section id="fundamentals" aria-labelledby="fundamentals-h">
         <h2 id="fundamentals-h" className="post__h2">Will developers forget the fundamentals?</h2>
-        <p>Abstraction has always been how this field moves forward. Most web developers have never written a TCP stack, a database storage engine or a garbage collector, and they don’t need to. I’m not worried that a new engineer can’t recite command flags. After more than 20 years <Link to="/writing/you-dont-need-to-remember-everything/">I still look things up</Link>, and memorizing syntax was never the same as understanding engineering.</p>
+        <p>Abstraction has always been how this field moves forward. Most web developers have never written a TCP stack, a database storage engine or a garbage collector, and they don’t need to. I’m not worried that a new engineer can’t recite command flags. <Link to="/writing/you-dont-need-to-remember-everything/">I still look things up</Link> all the time, and memorizing syntax was never the same as understanding engineering.</p>
         <p>What worries me is losing the practice of reasoning through a problem independently. Debugging, networking, databases and security take time to understand. If the assistant handles every difficult step, a junior engineer can finish the task without learning much about the system.</p>
 
         <h3 className="post__h3">When AI-generated software fails in production</h3>

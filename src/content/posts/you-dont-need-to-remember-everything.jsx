@@ -155,7 +155,7 @@ export default function Body() {
           <div><dt>Business constraints</dt><dd>Deadlines, budgets, contracts, compliance, and the size of the team you have.</dd></div>
           <div><dt>Tradeoffs</dt><dd>There’s rarely a perfect answer, only one that fits this situation better than the others.</dd></div>
         </dl>
-        <p>As a <Link to="/work/three-continent-platform/">co-founder and CTO</Link>, most of my hardest days had nothing to do with syntax. The questions were more like: Should we build this at all? What happens when it fails at two in the morning? Who is going to maintain it? Can we ship something smaller first? None of those have an answer you can paste in.</p>
+        <p>As a <Link to="/work/three-continent-platform/">co-founder and CTO</Link>, I spent more effort deciding what to build and what the business could afford to maintain than recalling syntax. Those decisions required context about our customers, budget and team. Looking up a command was straightforward by comparison.</p>
         <p>Nobody holds all of that in their head in full detail. What you can do is understand each area well enough to ask good questions, know who to bring in, and notice when a decision in one area creates a problem in another. I’ve written more about that side of the work on my <Link to="/leadership/">engineering leadership</Link> page.</p>
       </section>
 

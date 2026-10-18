@@ -137,8 +137,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Knowing how the pieces fit</h2>
       <div className="post__close-copy">
-        <p className="lead">AI makes knowledge and implementation easier to reach than they have ever been. Experience, judgment and curiosity decide what to do with them.</p>
-        <p className="post__close-principle">I don’t know everything. I know enough to connect the pieces and notice what matters, and these days that goes a long way.</p>
+        <p className="lead">AI helps me explore unfamiliar areas and try an implementation sooner. My background helps me spot where I need to investigate further or bring in a specialist.</p>
+        <p className="post__close-principle">I am comfortable following a problem across several layers, and asking for help when it reaches beyond what I understand.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/about/" className="link-arrow"><span>More about my background</span> <ArrowRight /></Link>

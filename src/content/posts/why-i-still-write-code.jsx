@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowRight } from '../../components/Icons';
 
-// Series "Still Building After 20 Years", part 2. Facts from the site and KC:
+// Series "Still Building", part 2. Facts from the site and KC:
 // network engineering, Linux, C++ on Nokia, PHP/LAMP, Django, Rails,
 // React/Next.js, AWS, distributed systems; co-founder/CTO doing everything,
 // VP of Operations, CTO of a media publisher, Yippify; recent builds FedPath,
@@ -43,7 +43,7 @@ export default function Body() {
     <>
       <section id="everything" aria-labelledby="everything-h">
         <h2 id="everything-h" className="post__h2">I started by doing almost everything</h2>
-        <p>This is the second story in Still Building After 20 Years. The first was about <Link to="/writing/from-cisco-routers-to-ai-agents/">the infrastructure path</Link>. This one is about a question I get from recruiters, engineers and occasionally my own family: after CTO and VP roles, why am I still writing code?</p>
+        <p>This is the second story in Still Building. The first was about <Link to="/writing/from-cisco-routers-to-ai-agents/">the infrastructure path</Link>. This one is about a question I get from recruiters, engineers and occasionally my own family: after CTO and VP roles, why am I still writing code?</p>
         <p>The honest answer starts with how I learned the job. My early career was network engineering and Linux administration. Then I co-founded a company, and for a long time I was most of its engineering department. In a given week I racked servers, configured routers, administered Linux, wrote the backend, built the front end, kept the billing system honest, wrote C++ for the Nokia app, carried the pager and made product calls with customers on the phone. I have told that story in <Link to="/writing/founding-a-startup-isnt-easy/">being every department at once</Link>.</p>
         <p>What that period gave me was a sense of the whole system, physically. I know what a slow query feels like from the database side, the application side and the customer side, because at one point all three were me. That turned out to be the most useful thing I ever learned for leading engineers, and I did not know it at the time.</p>
       </section>
@@ -79,7 +79,7 @@ export default function Body() {
 
       <section id="ai" aria-labelledby="ai-h">
         <h2 id="ai-h" className="post__h2">AI made building fun in a new way</h2>
-        <p>The last few years changed how I build, and I have enjoyed it more than I expected. Claude Code and OpenAI’s Codex sit in my terminal, and I describe what I want, read what they propose, and decide. The typing got cheaper. The judgment did not, and that suits a leader with limited hours very well, because judgment is the part I have the most of.</p>
+        <p>The last few years changed how I build, and I have enjoyed it more than I expected. Claude Code and OpenAI’s Codex sit in my terminal, and I describe what I want, read what they propose, and decide. That saves time on the first implementation, which helps when I have limited hours to build. I still spend time reviewing the proposed design and checking what happens when it fails.</p>
         <p>It also brought back an old feeling. Working at a prompt, typing instructions and watching text come back, is how I started on DOS and on router consoles, which I wrote about in <Link to="/writing/talking-to-ai-in-a-terminal/">talking to AI in a terminal</Link>. The difference is that now I speak my own language and the assistant speaks the machine’s.</p>
         <p>The next story in the series is about the part that is not fun: what it takes to make an AI agent reliable once nobody is watching it.</p>
       </section>
@@ -90,11 +90,10 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Not to prove anything. Because I like building.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Why I keep building</h2>
       <div className="post__close-copy">
-        <p className="lead">I do not write code to prove I am still an engineer. I write it because I enjoy building things, learning new tools and understanding the problems my teams solve.</p>
-        <p className="post__close-principle">Stay close enough to the work to support it. Stay far enough from it that the team never has to wait for you.</p>
-        <p>That balance is most of what I believe about technical leadership.</p>
+        <p className="lead">I write code because I enjoy building things, learning new tools and understanding the problems my teams solve.</p>
+        <p className="post__close-principle">My own projects give me a way to keep learning without putting myself in the way of the team’s delivery.</p>
         <div className="post__close-actions">
           <Link to="/writing/ai-agents-reliable-in-production/" className="action">Part 3: Making AI agents reliable <ArrowRight /></Link>
         </div>

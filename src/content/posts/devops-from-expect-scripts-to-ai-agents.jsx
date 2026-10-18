@@ -178,7 +178,7 @@ export default function Body() {
         <p>Deployment scripts that used to live on somebody’s server became a pipeline that starts when code is pushed:</p>
         <Code label="Pipeline">{pipeline}</Code>
         <p>And a process that crashed at night no longer needed someone to log in and restart it. Kubernetes notices the failed container and starts a new one.</p>
-        <p>I’ve used a lot of this in my own work. On a <Link to="/work/public-service-modernization/">public-sector modernization</Link>, new services ran as containers on AWS, provisioned with Terraform and shipped through a pipeline with accessibility and security checks built in. When I compare that with a NOC change window, the difference is enormous.</p>
+        <p>The <Link to="/work/public-service-modernization/">public-sector modernization example</Link> combines containers on AWS, Terraform and a pipeline with accessibility and security checks. It illustrates how much of the deployment work can be defined and checked in code, compared with the manual steps of a NOC change window.</p>
       </section>
 
       <section id="still-scripts" aria-labelledby="still-scripts-h">
@@ -283,7 +283,7 @@ export default function Body() {
             <dd>Production secrets never go into a prompt or a context window unless there’s no other way.</dd>
           </div>
         </dl>
-        <p>These are the controls we already built for people, applied to a new kind of operator. When I designed an <Link to="/work/document-intelligence/">LLM document pipeline with a human in the loop</Link>, the confidence threshold for sending work to a person was a product decision. Production access deserves at least that much care.</p>
+        <p>These are the controls we already built for people, applied to a new kind of operator. In the <Link to="/work/document-intelligence/">illustrative LLM document pipeline</Link>, a review threshold needs to reflect the cost of a wrong answer and be tested against representative documents. Production access deserves at least that much care.</p>
         <p className="post__pull">For now, let AI take the investigation and the repetitive work, and keep the accountability with engineers.</p>
       </section>
 

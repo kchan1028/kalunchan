@@ -28,7 +28,7 @@ export default function Body() {
     <>
       <section id="still-look-it-up" aria-labelledby="still-look-it-up-h">
         <h2 id="still-look-it-up-h" className="post__h2">I still look up syntax almost every day</h2>
-        <p>I’ve worked in technology for more than two decades, long enough to have used more languages, frameworks and tools than I could list. I started with shell scripts, network operations and open-source VoIP. Since then I’ve written PHP, Perl, Python, Ruby on Rails, JavaScript and React, run Django against PostgreSQL, and spent a lot of time in AWS, Docker and Terraform.</p>
+        <p>I’ve worked in technology long enough to have used more languages, frameworks and tools than I could list. I started with shell scripts, network operations and open-source VoIP. Since then I’ve written PHP, Perl, Python, Ruby on Rails, JavaScript and React, run Django against PostgreSQL, and spent a lot of time in AWS, Docker and Terraform.</p>
         <p className="post__answer">I still look up syntax almost every day. Sometimes it’s a PostgreSQL query I haven’t written in a while, or a Docker flag, or a Django ORM expression, or a JavaScript method I know exists but can’t picture. I know what I want the code to do. I just can’t always remember how to spell it.</p>
         <p>At some point I accepted that there’s too much to keep in my head, and I stopped treating that as a problem to fix. What changed instead was my system for finding things again. It went from bookmarks to Stack Overflow to AI assistants, and none of them quite fit the problem, so I started building small tools of my own.</p>
       </section>
@@ -94,7 +94,7 @@ export default function Body() {
 
       <section id="worse-developer" aria-labelledby="worse-developer-h">
         <h2 id="worse-developer-h" className="post__h2">Does this make me a worse developer?</h2>
-        <p className="post__answer">I think it makes me a better one. Over the years I’ve cared less and less about how much syntax a developer can recite. When I work with engineers, I want to know how they approach a problem. Can they investigate something unfamiliar? Can they follow an issue across different parts of an application? Do they understand why something works, and can they tell when a solution adds complexity it doesn’t need? Can they explain their decisions? Those matter far more to me than a function signature.</p>
+        <p className="post__answer">I think it makes me a better one. Over the years I’ve cared less and less about how much syntax a developer can recite. When I work with engineers, I want to know how they approach a problem. I look at how they investigate unfamiliar work, follow an issue across an application, and explain their decisions. I want them to understand why a solution works and notice unnecessary complexity. Those matter far more to me than a function signature.</p>
         <p>I’ve worked with developers who know their framework cold and stall the moment a problem crosses into another part of the system. A frontend developer who understands React but can’t investigate an API issue. A backend developer who knows Django inside out and can’t tell what’s happening in the browser. Specializing is fine. Software doesn’t run in isolation, though. The browser, the API, the database, the infrastructure and the external services all have to work together, and you need enough understanding of each to follow how they connect. Sometimes that means opening the docs, asking someone, or reaching for a tool that jogs your memory. I’ve made the longer version of that argument in <Link to="/writing/specialization-beyond-your-own-code/">specialization shouldn’t stop at your own code</Link>.</p>
       </section>
 
@@ -119,7 +119,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Open one and use it</h2>
       <div className="post__close-copy">
         <p className="lead">Useful Little Tools is a set of small, practical developer tools for everyday problems. No setup, no account.</p>
-        <p className="post__close-principle">Keep the concepts in your head. Keep the syntax somewhere you can open in a second.</p>
+        <p className="post__close-principle">Building these tools gives me a reason to revisit the concepts and a convenient place to check the details next time.</p>
         <div className="post__close-actions">
           <a href={ult.url} className="action">Explore Useful Little Tools <ArrowOut /></a>
           <Link to="/projects/" className="link-arrow"><span>The larger systems I write up instead</span> <ArrowRight /></Link>

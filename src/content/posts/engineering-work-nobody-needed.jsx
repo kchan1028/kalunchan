@@ -19,7 +19,7 @@ export default function Body() {
     <>
       <section id="on-time" aria-labelledby="on-time-h">
         <h2 id="on-time-h" className="post__h2">Shipping on time doesn’t prove the work was worth doing</h2>
-        <p>Most engineering organizations are good at measuring whether work was delivered. Was it on time? On budget? Did the launch go smoothly? Far fewer go back and ask whether anyone needed it.</p>
+        <p>Engineering organizations often measure delivery dates, budgets and how smoothly a launch went. I also want us to go back and check whether anyone needed what we shipped.</p>
         <p>A team can execute perfectly and still deliver something that didn’t deserve the investment. The estimates held, the code is clean, the release was quiet, and six months later almost nobody uses the feature.</p>
         <p className="post__answer">The most expensive engineering work is work nobody needed. It costs the time to build it, keeps costing maintenance, support and operational complexity for as long as it exists, and takes the place of work that would have mattered.</p>
         <p>On-time delivery tells you the team can execute. It says nothing about whether the decision to build was sound, and that decision usually has a different owner.</p>
@@ -141,8 +141,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Protect capacity, measure outcomes</h2>
       <div className="post__close-copy">
         <p className="lead">Engineering capacity is one of the most constrained resources a company has, and every piece of work spends it twice: once to build, and again for as long as it lives in the system. So I judge work by the outcome it changed, and shipping on time is only part of that.</p>
-        <p>Before asking how fast we can build something, I start here:</p>
-        <p className="post__close-principle">Does this deserve the team’s time, and how will we know?</p>
+        <p className="post__close-principle">Before committing the team, I want a clear problem, evidence that it matters and a way to judge the result. If those are missing, the first task is to investigate them.</p>
         <div className="post__close-actions">
           <Link to="/leadership/" className="action">How I lead engineering teams <ArrowRight /></Link>
         </div>

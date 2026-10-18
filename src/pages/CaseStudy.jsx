@@ -25,12 +25,12 @@ export default function CaseStudy() {
     <article className="case" aria-labelledby="case-title">
       <TitleBlock
         section={c.no}
-        title="Case study"
+        title={c.illustrative ? 'Design example' : 'Case study'}
         as="p"
-        coord={`${c.no} · Case study`}
+        coord={`${c.no} · ${c.illustrative ? 'Design example' : 'Case study'}`}
         cells={[
           { k: 'Where', v: c.org },
-          { k: 'Role', v: c.role },
+          { k: c.illustrative ? 'Format' : 'Role', v: c.role },
         ]}
       />
       <header className="sheet grid case__head">
@@ -41,15 +41,16 @@ export default function CaseStudy() {
         </nav>
         <h1 id="case-title" className="case__title display">{c.title}</h1>
         <p className="case__claim">{c.claim}</p>
+        {c.illustrative && <p className="case__para">This is an illustrative architecture discussion, not an account of a completed client engagement. The choices and goals below belong to the example.</p>}
         <p className="case__domains label">{c.domain.join(' / ')}</p>
       </header>
 
       <div className="sheet grid case__body">
-        <nav className="case__toc" aria-label="In this case study">
+        <nav className="case__toc" aria-label={c.illustrative ? 'In this design example' : 'In this case study'}>
           <ol>
             {toc.filter(([id]) => id !== 'execution' || c.execution).map(([id, label]) => (
               <li key={id}>
-                <a href={`#${id}`}>{label}</a>
+                <a href={`#${id}`}>{id === 'outcome' && c.illustrative ? 'Design goals' : label}</a>
               </li>
             ))}
           </ol>
@@ -83,7 +84,7 @@ export default function CaseStudy() {
       </section>
 
       <section id="decisions" className="sheet grid case__decisions" aria-labelledby="dec-h" data-coord={`${c.no}-3 · Decisions`}>
-        <h2 id="dec-h" className="case__h label">Key decisions</h2>
+        <h2 id="dec-h" className="case__h label">{c.illustrative || c.illustrativeDecisions ? 'Design tradeoffs' : 'Key decisions'}</h2>
         <div className="case__decision-list">
           {c.decisions.map((d, i) => (
             <div key={d.question} className="decision">
@@ -93,7 +94,7 @@ export default function CaseStudy() {
               <ul className="decision__options">
                 {d.options.map((o) => (
                   <li key={o.label} className={o.chosen ? 'is-chosen' : 'is-rejected'}>
-                    <span className="decision__state label">{o.chosen ? 'Chosen' : 'Rejected'}</span>
+                    <span className="decision__state label">{c.illustrative || c.illustrativeDecisions ? (o.chosen ? 'Example choice' : 'Alternative') : (o.chosen ? 'Chosen' : 'Rejected')}</span>
                     <span className="decision__label">{o.label}</span>
                     <span className="decision__note">{o.note}</span>
                   </li>
@@ -115,7 +116,7 @@ export default function CaseStudy() {
       )}
 
       <section id="outcome" className="sheet grid case__outcome" aria-labelledby="out-h" data-coord={`${c.no}-4 · Outcome`}>
-        <h2 id="out-h" className="case__h label">Outcome</h2>
+        <h2 id="out-h" className="case__h label">{c.illustrative ? 'Design goals' : 'Outcome'}</h2>
         <ol className="outcomes">
           {c.outcome.map((o) => (
             <li key={o}>{o}</li>
@@ -155,7 +156,7 @@ export default function CaseStudy() {
       <nav className="sheet case__next" aria-label="Next case study">
         <Link to={`/work/${next.slug}/`} className="case__next-link">
           <span className="case__next-title">{next.title}</span>
-          <span className="case__next-no label">Next case study · {next.no}</span>
+          <span className="case__next-no label">{next.illustrative ? 'Next design example' : 'Next case study'} · {next.no}</span>
           <ArrowRight />
         </Link>
       </nav>

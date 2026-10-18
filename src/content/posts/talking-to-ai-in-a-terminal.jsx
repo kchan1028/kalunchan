@@ -127,9 +127,9 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The cursor is the same. The language is mine.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Describing a task at the prompt</h2>
       <div className="post__close-copy">
-        <p className="lead">Thirty years after DOS, I am back at a prompt. The difference is that I describe what I want and read what the assistant proposes before it runs.</p>
+        <p className="lead">Decades after DOS, I am back at a prompt. The difference is that I describe what I want and read what the assistant proposes before it runs.</p>
         <p className="post__close-principle">Approachable interfaces help people start. Understanding the system, reviewing the change and verifying the result are still the job.</p>
         <p>That is the habit I carry from the console port to the AI terminal, and the one I ask of every engineer I work with.</p>
         <div className="post__close-actions">

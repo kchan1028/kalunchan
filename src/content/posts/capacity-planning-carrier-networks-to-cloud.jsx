@@ -129,10 +129,10 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Build it, scale it, run it, and know what it costs</h2>
+      <h2 id="closing-h" className="post__close-title h2">Planning before capacity runs out</h2>
       <div className="post__close-copy">
-        <p className="lead">Capacity planning taught me on carrier hardware, VoIP servers and cloud accounts that the method survives every generation of infrastructure.</p>
-        <p className="post__close-principle">Know which resource fills first, and decide the headroom before two in the morning decides it for you.</p>
+        <p className="lead">Working with carrier hardware, VoIP servers and cloud accounts taught me to measure demand and plan for the resource likely to run out first.</p>
+        <p className="post__close-principle">I want the team to agree on headroom while there is time to act, rather than work it out during an outage.</p>
         <p>That is how I approach scaling a system and controlling what it costs to run, whether the constraint is a line card or a monthly invoice.</p>
         <div className="post__close-actions">
           <Link to="/writing/hidden-cost-of-software-architecture/" className="action">Next: the hidden cost of scaling too early <ArrowRight /></Link>

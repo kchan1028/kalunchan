@@ -26,7 +26,7 @@ export const posts = [
   seoTitle: 'The Architecture You Don’t Build: Engineering Judgment',
   description: 'Every service creates work beyond the code. An engineering leader on choosing simpler architecture, counting operating costs, and knowing when complexity is justified.',
   teaser: 'A reporting request can become a new platform before anyone asks how fresh the data needs to be. How I decide which complexity is worth owning.',
-  dek: 'After more than twenty years building and operating software, I’m much more interested in whether a system needs to exist than whether we know how to build it.',
+  dek: 'I’ve built and operated enough software to care more about whether a system needs to exist than whether we know how to build it.',
   summary: 'Starting with the business requirement; a hypothetical reporting request; the operating costs of AWS infrastructure, databases, APIs and Kafka; modular monoliths and team capacity; preserving useful boundaries; and recording when a deferred architecture decision should be revisited.',
   topics: ['Architecture', 'Engineering judgment', 'Leadership'],
   keywords: ['software architecture', 'engineering leadership', 'technical debt', 'system design', 'overengineering', 'operational complexity', 'modular monolith'],
@@ -47,7 +47,7 @@ export const posts = [
   {
     slug: 'hidden-cost-of-ai-coding',
     no: '700',
-    title: 'AI Coding Can Cost More Than a Human Engineer — Especially When Used Incorrectly',
+    title: 'AI Coding Can Cost More Than a Human Engineer When Used Incorrectly',
     shortTitle: 'The hidden cost of AI coding',
     seoTitle: 'The Hidden Cost of AI Coding: Why Experience Still Matters',
     description:
@@ -119,13 +119,13 @@ export const posts = [
     shortTitle: 'Why I enjoy mentoring',
     seoTitle: 'Why I Enjoy Mentoring Engineers and Junior Cyclists — Ka Lun Chan',
     description:
-      'After 20+ years in software engineering and years mentoring junior cyclists, I’ve learned that helping others grow is one of the most rewarding parts of leadership.',
+      'Leading engineering teams and mentoring junior cyclists have taught me that helping others grow is one of the most rewarding parts of leadership.',
     teaser:
       'What mentoring junior engineers and junior riders has in common, why the goal is independence, why some lessons can only be experienced, and why it is as rewarding as building something myself.',
     dek:
       'I still love building software. But somewhere along the way, I discovered that helping people grow can be just as rewarding as building something myself, at work and on a bike.',
     summary:
-      'How the moments I remember best became other people’s; why mentoring aims at judgment and independence; the parallels between junior engineers and junior riders in the Berkeley Bicycle Club; why you cannot hand someone twenty years and should make mistakes survivable instead; what mentoring teaches the mentor; why a leader does not need to be the smartest person in the room; and the part that lasts.',
+      'How the moments I remember best became other people’s; why mentoring aims at judgment and independence; the parallels between junior engineers and junior riders in the Berkeley Bicycle Club; why you cannot hand someone your experience and should make mistakes survivable instead; what mentoring teaches the mentor; why a leader does not need to be the smartest person in the room; and the part that lasts.',
     topics: ['Leadership', 'Community', 'Cycling'],
     related: [
       { to: '/mentorship/', label: 'How I mentor engineers until they can replace me' },
@@ -183,7 +183,7 @@ export const posts = [
     teaser:
       'Fast teams decide quickly toward a stable goal. Churning teams start everything and finish little. When to drop Scrum for Kanban, why WIP limits work, and the question every new priority should face.',
     dek:
-      'I enjoy fast-paced teams. After more than twenty years as an engineer, founder, CTO and engineering leader, I have learned that moving quickly and changing direction constantly are two very different things.',
+      'I enjoy fast-paced teams. As an engineer, founder, CTO and engineering leader, I have learned that moving quickly and changing direction constantly are two very different things.',
     summary:
       'The difference between fast and churning; what Agile’s response to change does and does not cover; when fixed sprint commitments stop fitting and how to match the process to the real rate of change; the hidden costs of context switching; real emergencies versus loud requests; making each new priority a visible tradeoff; finishing before starting with WIP limits and small changes; process that helps engineers; and balancing business flexibility with engineering discipline.',
     topics: ['Leadership', 'Delivery'],
@@ -248,12 +248,12 @@ export const posts = [
     teaser:
       'Need, requirement, design, code, running system: the chain is decades old. How it fits Agile, why modernization starts with reverse engineering, and why faster code moves the bottleneck.',
     dek:
-      'Forward engineering is having a moment, but it is the oldest direction in software. After twenty years of building, migrating and leading teams, what I have learned is that the risk lives in the handoffs, not the typing.',
+      'Forward engineering is having a moment, but it is the oldest direction in software. Building, migrating and leading teams has taught me that the risk lives in the handoffs, not the typing.',
     summary:
       'What forward engineering is and where meaning gets lost between steps; why waterfall, Agile and iterative development are all forward engineering at different slice sizes; reverse engineering as the first half of every modernization, with a public-service migration, a WordPress-to-Rails re-platform and a data center move; what faster implementation does and does not change; why speeding up code moves the bottleneck to review, testing, security and maintenance; and what that asks of engineering leaders.',
     topics: ['Architecture', 'Engineering judgment', 'Leadership'],
     related: [
-      { to: '/work/public-service-modernization/', label: 'Case study: modernizing a public service without a rewrite' },
+      { to: '/work/public-service-modernization/', label: 'Design example: modernizing a public service without a rewrite' },
       { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller user stories and pull requests' },
       { to: '/writing/software-architecture-lessons-from-different-systems/', label: 'Architecture lessons from very different systems' },
       { to: '/writing/what-sprint-carryover-is-telling-you/', label: 'What sprint carryover is telling you' },
@@ -313,13 +313,13 @@ export const posts = [
     teaser:
       'Retries, idempotency, missed schedules, state, observability, model cost and least privilege: what an agent needs before it runs unattended, and eight questions I would ask a team.',
     dek:
-      'Getting an agent to work in an afternoon is delightful. Getting it to run every morning without me, safely and within budget, is the same engineering I have done for twenty years, with a model in the middle.',
+      'Getting an agent to work in an afternoon is delightful. Getting it to run every morning without me, safely and within budget, is the same engineering I have done throughout my career, with a model in the middle.',
     summary:
-      'Part three of Still Building After 20 Years: the gap between an agent demo and a production agent; failures, retries, idempotency, missed runs and state as distributed-systems problems; cost as an architectural choice, including when FedPath deliberately uses no AI; scoping credentials and tools; and a readiness checklist for engineering leaders.',
+      'Part three of Still Building: the gap between an agent demo and a production agent; failures, retries, idempotency, missed runs and state as distributed-systems problems; cost as an architectural choice, including when FedPath deliberately uses no AI; scoping credentials and tools; and a readiness checklist for engineering leaders.',
     topics: ['AI', 'Architecture', 'Leadership'],
     related: [
       { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'Part 1: From Cisco routers to AI agents' },
-      { to: '/writing/why-i-still-write-code/', label: 'Part 2: Why I still write code after 20 years' },
+      { to: '/writing/why-i-still-write-code/', label: 'Part 2: Why I still write code' },
       { to: '/writing/scheduling-ai-work-hermes-chatgpt-claude/', label: 'Scheduling AI work: Hermes, ChatGPT and Claude compared' },
       { to: '/writing/open-source-voip-distributed-systems-lessons/', label: 'What open-source VoIP taught me about distributed systems' },
       { to: '/projects/fedpath/', label: 'FedPath: transparent scoring, no AI on solicitations' },
@@ -367,17 +367,17 @@ export const posts = [
   {
     slug: 'why-i-still-write-code',
     no: '695',
-    title: 'Why I Still Write Code After More Than 20 Years in Software Engineering',
-    shortTitle: 'Why I still write code after 20 years',
+    title: 'Why I Still Write Code as an Engineering Leader',
+    shortTitle: 'Why I still write code',
     seoTitle: 'Why I Still Write Code as an Engineering Leader — Ka Lun Chan',
     description:
-      'After CTO and VP roles, I still write code. Not to prove anything, but because staying technical makes me a better judge of estimates, debt and tradeoffs.',
+      'After CTO and VP roles, I still write code. Building my own projects helps me understand estimates, debt and technical tradeoffs.',
     teaser:
       'From doing almost everything at a startup to CTO roles, and why I still build FedPath, Useful Little Tools and the Omnium site without becoming my team’s bottleneck.',
     dek:
       'After CTO and VP roles, I still build software. Here is where the hours went when I moved into leadership, what staying technical buys a leader, and the line I try never to cross.',
     summary:
-      'Part two of Still Building After 20 Years: learning the whole system by doing almost every job at a startup; how leadership moves your hours; what I build now and why on my own projects; how hands-on work sharpens estimates, debt, tradeoffs and cost; how not to become the bottleneck; and how AI coding tools changed the fun.',
+      'Part two of Still Building: learning the whole system by doing almost every job at a startup; how leadership moves your hours; what I build now and why on my own projects; how hands-on work sharpens estimates, debt, tradeoffs and cost; how not to become the bottleneck; and how AI coding tools changed the fun.',
     topics: ['Leadership', 'Learning', 'Founder story'],
     related: [
       { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'Part 1: From Cisco routers to AI agents' },
@@ -430,10 +430,10 @@ export const posts = [
     dek:
       'The tools changed from Cisco routers and physical servers to cloud regions and AI agents. The questions I ask about a system mostly did not, and most of them I learned at a console port.',
     summary:
-      'Part one of Still Building After 20 Years: carrier network operations before the cloud; security as an operations job in a new SOC; VoIP where networking met the business; moving up the stack with the network still in my head; security as every layer’s job; why AI agents are a network problem too; and five habits that carried over.',
+      'Part one of Still Building: carrier network operations before the cloud; security as an operations job in a new SOC; VoIP where networking met the business; moving up the stack with the network still in my head; security as every layer’s job; why AI agents are a network problem too; and five habits that carried over.',
     topics: ['Architecture', 'Learning', 'Leadership'],
     related: [
-      { to: '/writing/why-i-still-write-code/', label: 'Part 2: Why I still write code after 20 years' },
+      { to: '/writing/why-i-still-write-code/', label: 'Part 2: Why I still write code' },
       { to: '/writing/ai-agents-reliable-in-production/', label: 'Part 3: Making AI agents reliable in production' },
       { to: '/writing/network-security-before-devsecops/', label: 'Network security long before DevSecOps' },
       { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'DevOps from Expect scripts to AI agents' },
@@ -555,7 +555,7 @@ export const posts = [
     shortTitle: 'Talking to AI in a terminal',
     seoTitle: 'Talking to AI in a Terminal Feels Like DOS Again — Ka Lun Chan',
     description:
-      'Claude Code and Codex CLI put me back at a prompt, thirty years after DOS. What is the same, what changed, why the terminal never left, and why judgment matters more when execution is free.',
+      'Claude Code and Codex CLI put me back at a prompt, decades after DOS. What is the same, what changed, why the terminal never left, and why judgment matters more when execution is free.',
     teaser:
       'A prompt, typed words, text back, real effects on the machine. The shape is DOS and the Unix shells; the language is now mine. Why the terminal survived, and why reading the command still matters.',
     dek:
@@ -564,7 +564,7 @@ export const posts = [
       'Why terminal AI assistants feel like DOS and early Unix; how precise syntax gave way to interpreted intent while permissions and consequences stayed real; the lineage from Expect scripts to agents that type for you; an illustrative six-command fix done both ways; and the leadership lesson that faster execution makes clear intent and verification more valuable.',
     topics: ['Learning', 'AI'],
     related: [
-      { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'From DOS to AI: thirty years of technology' },
+      { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'From DOS to AI: one decade at a time' },
       { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'DevOps from Expect scripts to AI agents' },
       { to: '/writing/building-software-before-and-after-ai/', label: 'Building software before and after AI' },
       { to: '/writing/you-dont-need-to-remember-everything/', label: 'You don’t need to remember everything' },
@@ -831,7 +831,7 @@ export const posts = [
       'Federal certification systems on a familiar stack; the difference between implementing a control and proving it operates; what an Authority to Operate asks of an engineering team; Section 508 as an engineering responsibility; Plain Writing as a product problem; how security controls shape architecture; continuous monitoring folded into normal operations; change management without bureaucracy; a one-page map of the frameworks; and what it changed about leading engineers.',
     topics: ['Leadership', 'Architecture', 'Engineering judgment'],
     related: [
-      { to: '/work/public-service-modernization/', label: 'Case study: public-sector modernization with security and accessibility as release gates' },
+      { to: '/work/public-service-modernization/', label: 'Design example: public-sector modernization with security and accessibility as release gates' },
       { to: '/writing/network-security-before-devsecops/', label: 'Where my security habits come from: network security before DevSecOps' },
       { to: '/writing/api-architecture-lessons/#security', label: 'Authorization is enforced on the server, on the record' },
       { to: '/projects/fedpath/', label: 'FedPath: finding and evaluating federal contracts' },
@@ -968,7 +968,7 @@ export const posts = [
       { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning: what carrier networks taught me about scaling cloud infrastructure' },
       { to: '/writing/open-source-voip-distributed-systems-lessons/', label: 'What open-source VoIP taught me about distributed systems' },
       { to: '/writing/digital-publishing-seo-adsense-affiliate-ai-search/', label: 'From SEO and AdSense to AI search: what digital publishing taught me' },
-      { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What 20+ years taught me about infrastructure costs' },
+      { to: '/writing/infrastructure-costs-from-carrier-networks-to-the-cloud/', label: 'What I’ve learned about infrastructure costs' },
       { to: '/leadership/', label: 'How I run engineering' },
     ],
     minutes: 9,
@@ -1092,13 +1092,13 @@ export const posts = [
   {
     slug: 'infrastructure-costs-from-carrier-networks-to-the-cloud',
     no: '684',
-    title: 'From Carrier Networks to the Cloud: What 20+ Years Taught Me About Infrastructure Costs',
-    shortTitle: 'What 20+ years taught me about infrastructure costs',
+    title: 'From Carrier Networks to the Cloud: What I’ve Learned About Infrastructure Costs',
+    shortTitle: 'What I’ve learned about infrastructure costs',
     seoTitle: 'Infrastructure Costs From Carrier Networks to the Cloud — Ka Lun Chan',
     description:
       'Infrastructure economics from seven seats: carrier capital, data center bills, VoIP routing margins, AWS consumption, architecture, teams and my own businesses. What each layer taught me about cost.',
     teaser:
-      'Carrier capital, the real cost of a server, why the cheapest VoIP route loses money, cloud waste by default, and the questions a founder asks that an engineer doesn’t. Seven layers, one bill.',
+      'Carrier capital, the real cost of a server, why the cheapest VoIP route loses money, cloud waste by default, and the questions a founder asks that an engineer doesn’t. How infrastructure decisions affect the operating budget.',
     dek:
       'I have paid for infrastructure from the carrier network to the company that owns the invoice. Each layer taught me something different about cost, and together they are why I never evaluate a technical decision on whether it works alone.',
     summary:
@@ -1162,9 +1162,9 @@ export const posts = [
     description:
       'Microservices, Kafka, managed services, database habits and premature scale all show up on the monthly bill. How I connect architecture decisions to what a system costs to run.',
     teaser:
-      'Every box on the whiteboard runs somewhere and is paid for monthly. Monolith or microservices, Kafka or a queue, managed or self-hosted, scale now or later: how I decide, with a price column.',
+      'How I compare service boundaries, event streaming, hosting and capacity decisions against infrastructure and support costs.',
     dek:
-      'Architecture diagrams have no price column, and they should. Every component runs somewhere, is watched by someone and is paid for every month, and scaling before the demand exists is one of the most expensive mistakes a growing company makes.',
+      'A design needs an operating budget as well as a build estimate. Service boundaries, storage and capacity choices determine what the business pays and who has to support the system.',
     summary:
       'How microservices multiply the things that cost money, why Kafka is also a team, when managed services stop being cheaper than self-hosting, where the database leaks money, what scaling for users you don’t have costs, and the five inputs and three decisions I use to connect architecture to operating expense.',
     topics: ['Architecture', 'Engineering judgment', 'Leadership'],
@@ -1293,15 +1293,15 @@ export const posts = [
     no: '681',
     title: 'From DOS to AI: Watching the World Change, One Decade at a Time',
     shortTitle: 'From DOS to AI',
-    seoTitle: 'From DOS to AI: 30 Years of Technology Evolution — Ka Lun Chan',
+    seoTitle: 'From DOS to AI: Technology Evolution, Decade by Decade — Ka Lun Chan',
     description:
-      'From 286 computers, DOS, BBSs and dial-up to fiber, 5G, cloud computing and AI. A personal journey through 30 years of technology, as a user and as the engineer behind some of it.',
+      'From 286 computers, DOS, BBSs and dial-up to fiber, 5G, cloud computing and AI. A personal journey from DOS and dial-up to AI, as a user and as the engineer behind some of it.',
     teaser:
-      'A 286 and a screaming modem, BBSs and mIRC, dial-up to fiber, Nokia apps to AI assistants: what thirty years of technology looked like from the inside.',
+      'A 286 and a screaming modem, BBSs and mIRC, dial-up to fiber, Nokia apps to AI assistants: what those decades of technology looked like from the inside.',
     dek:
       'From 286 computers and dial-up modems to fiber internet, smartphones and artificial intelligence. Every decade changed what I thought was possible, and I helped build some of the infrastructure that made it ordinary.',
     summary:
-      'DOS and Windows 3.1 on a 486, dialing into BBSs, IRC and mIRC, AOL bringing everyone online, dial-up giving way to DSL and cable, VoIP and Nokia apps, 3G to 5G, fiber, cloud, and now AI. What stayed the same underneath, and why the only durable skill is learning the next thing.',
+      'DOS and Windows 3.1 on a 486, dialing into BBSs, IRC and mIRC, AOL bringing everyone online, dial-up giving way to DSL and cable, VoIP and Nokia apps, 3G to 5G, fiber, cloud, and now AI. What stayed the same underneath, and how I use new tools while continuing to learn the systems underneath.',
     topics: ['Learning', 'AI'],
     related: [
       { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'The engineering side: DevOps from Expect scripts to AI agents' },
@@ -1317,7 +1317,7 @@ export const posts = [
     modified: '2026-10-09',
     keywords: [
       'from DOS to AI',
-      '30 years of technology evolution',
+      'technology evolution by decade',
       'personal technology journey',
       'BBS and IRC in the 1990s',
       'dial-up to broadband to fiber',
@@ -1352,7 +1352,7 @@ export const posts = [
         a: 'DSL and cable kept the connection up all the time, so the internet stopped being something you dialed into for a while and became something that was always there. That made online businesses, connected software and streaming practical, and later fiber raised expectations again.',
       },
       {
-        q: 'What stayed the same across thirty years of technology change?',
+        q: 'What stayed the same across decades of technology change?',
         a: 'The underlying engineering problems: networking, security, monitoring, and understanding how systems talk to each other. Cloud, infrastructure as code and AI changed the tools and the amount of automation, and the goal of making systems reliable and taking repetitive work off people did not change.',
       },
       {
@@ -1598,7 +1598,7 @@ export const posts = [
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#customers', label: 'Building for people the system wasn’t designed for' },
       { to: '/writing/berkeley-omnium-new-website-next-generation/', label: 'The new Berkeley Omnium site' },
       { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: call and directions first' },
-      { to: '/work/public-service-modernization/', label: 'Case study: accessibility as a release gate' },
+      { to: '/work/public-service-modernization/', label: 'Design example: accessibility as a release gate' },
     ],
     minutes: 7,
     image: { path: '/images/writing/ux-before-and-after-ai-og.jpg', width: 1200, height: 630, alt: 'I used to design every screen myself. Then: signup forms, phone menus, a reseller dashboard, the support line as a usability lab. Now: a direction, a layout, a phone in hand. The person using it is still the point.' },
@@ -1667,7 +1667,7 @@ export const posts = [
       { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'The longer view: from DOS to AI, one decade at a time' },
       { to: '/writing/building-startups-technical-leadership/', label: 'The startups I helped build in between' },
       { to: '/writing/building-an-ai-job-search-agent-with-hermes/', label: 'The next experiment: a self-hosted job-search agent on Hermes' },
-      { to: '/writing/why-i-still-write-code/', label: 'Why I still write code after 20 years' },
+      { to: '/writing/why-i-still-write-code/', label: 'Why I still write code' },
       { to: '/writing/hidden-cost-of-ai-coding/', label: 'When AI coding costs more than a human engineer' },
     ],
     minutes: 7,
@@ -2094,7 +2094,7 @@ export const posts = [
     related: [
       { to: '/writing/event-driven-architecture-kafka-tradeoffs/', label: 'Event-driven architecture with Kafka: the tradeoffs' },
       { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },
-      { to: '/work/public-service-modernization/', label: 'Case study: modernizing a public-sector service' },
+      { to: '/work/public-service-modernization/', label: 'Design example: modernizing a public-sector service' },
       { to: '/writing/specialization-beyond-your-own-code/', label: 'Depth in one area, enough breadth to investigate' },
       { to: '/writing/network-security-before-devsecops/', label: 'Where my authorization habits come from: router ACLs' },
       { to: '/writing/building-federal-government-applications/', label: 'What federal applications demand of authorization and audit' },
@@ -2152,7 +2152,7 @@ export const posts = [
       'When to call directly and when to publish, facts versus commands, topics, partitions and replay, eventual consistency, the dual-write problem and outbox, what exactly-once covers, coupling through events, the total cost of Kafka, and a leadership checklist.',
     topics: ['Architecture', 'Leadership'],
     related: [
-      { to: '/work/event-driven-platform/', label: 'Case study: event-driven microservices with Kafka' },
+      { to: '/work/event-driven-platform/', label: 'Design example: event-driven microservices with Kafka' },
       { to: '/writing/should-it-be-a-microservice/', label: 'How I decide whether a microservice should be a microservice' },
       { to: '/writing/team-size-should-influence-architecture/', label: 'Why a small team shouldn’t build like a large one' },
       { to: '/writing/api-architecture-lessons/', label: 'API architecture: what real systems have taught me' },
@@ -2216,7 +2216,7 @@ export const posts = [
       'The questions I ask before splitting out a service, what happens to the data, the distributed monolith trap, when a modular monolith wins, and what it really costs to own a service for five years.',
     topics: ['Architecture', 'Engineering judgment', 'Leadership'],
     related: [
-      { to: '/work/event-driven-platform/', label: 'Case study: event-driven microservices with Kafka' },
+      { to: '/work/event-driven-platform/', label: 'Design example: event-driven microservices with Kafka' },
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
       { to: '/writing/you-dont-need-to-remember-everything/', label: 'Why judgment matters more than memorizing tools' },
       { to: '/writing/team-size-should-influence-architecture/', label: 'Team size and architecture: matching one to the other' },
@@ -2335,7 +2335,7 @@ export const posts = [
       { to: '/writing/should-it-be-a-microservice/', label: 'Should it be a microservice? How I decide' },
       { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'From Expect scripts to AI agents: how DevOps changed' },
       { to: '/writing/what-publishing-taught-me-about-seo-aeo-geo/', label: 'What being a CTO in publishing taught me about SEO' },
-      { to: '/work/event-driven-platform/', label: 'Case study: event-driven microservices with Kafka' },
+      { to: '/work/event-driven-platform/', label: 'Design example: event-driven microservices with Kafka' },
       { to: '/writing/team-size-should-influence-architecture/', label: 'Architecture decisions that depend on headcount' },
       { to: '/writing/open-source-voip-distributed-systems-lessons/', label: 'What open source VoIP taught me about distributed systems' },
       { to: '/writing/network-security-before-devsecops/', label: 'Security as a thread through every system' },
@@ -2408,7 +2408,7 @@ export const posts = [
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
       { to: '/writing/building-software-before-and-after-ai/', label: 'I used to build everything myself, then with AI' },
       { to: '/writing/network-security-before-devsecops/', label: 'The security story from the same carrier network' },
-      { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'From DOS to AI: thirty years of technology, as a user and a builder' },
+      { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'From DOS to AI: decades of technology, as a user and a builder' },
       { to: '/writing/capacity-planning-carrier-networks-to-cloud/', label: 'Capacity planning, from the same carrier network to the cloud' },
       { to: '/writing/building-an-ai-job-search-agent-with-hermes/', label: 'An agent on a VPS: cron, state and a Telegram report' },
       { to: '/writing/talking-to-ai-in-a-terminal/', label: 'Expect’s descendant: the AI assistant in my terminal' },
@@ -3101,11 +3101,11 @@ export const posts = [
     title: 'You Don’t Need to Remember Everything to Be a Good Software Engineer',
     seoTitle: 'Do Software Engineers Need to Remember Everything? — Ka Lun Chan',
     description:
-      'After two decades in software, I still look up Git commands, SQL syntax and Kafka settings. Why understanding systems beats memorizing syntax, especially with AI.',
+      'I still look up Git commands, SQL syntax and Kafka settings, and so do most experienced engineers. Why understanding systems beats memorizing syntax, especially with AI.',
     dek:
-      'After more than two decades in software, I still look things up. That isn’t something I’m embarrassed about anymore. There is simply too much to know, and the amount you need to understand only grows as your career goes on.',
+      'I’ve been writing software for a long time, and I still look things up. That isn’t something I’m embarrassed about anymore. There is simply too much to know, and the amount you need to understand only grows as your career goes on.',
     summary:
-      'Why I still look things up after two decades in software, the difference between memorizing syntax and understanding systems, and what that means now that AI can retrieve almost anything.',
+      'Why I still look things up as an experienced engineer, the difference between memorizing syntax and understanding systems, and what that means now that AI can retrieve almost anything.',
     topics: ['Learning', 'Engineering judgment', 'AI'],
     related: [
       { to: '/writing/why-i-build-my-own-developer-tools/', label: 'Why I started building my own developer tools' },
@@ -3298,7 +3298,7 @@ export const journeys = [
   },
   {
     id: 'still-building',
-    title: 'Still Building After 20 Years',
+    title: 'Still Building',
     lead: 'A three-part series: from network engineer to software developer, CTO, engineering leader and AI practitioner.',
     slugs: [
       'from-cisco-routers-to-ai-agents',

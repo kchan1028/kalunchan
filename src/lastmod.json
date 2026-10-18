@@ -1,15 +1,15 @@
 {
   "/": {
     "date": "2026-10-18",
-    "hash": "e61ef66927e33f3a"
+    "hash": "a818a1b59faccf10"
   },
   "/about/": {
     "date": "2026-10-18",
-    "hash": "161a73225cb01dd9"
+    "hash": "a07ea6d438c283af"
   },
   "/leadership/": {
-    "date": "2026-10-12",
-    "hash": "0d077dd5228a26f8"
+    "date": "2026-10-18",
+    "hash": "f8f03245a1607b21"
   },
   "/experience/": {
     "date": "2026-10-12",
@@ -17,27 +17,27 @@
   },
   "/projects/": {
     "date": "2026-10-18",
-    "hash": "8ca9faeb562af33e"
+    "hash": "229027b7df9f806d"
   },
   "/expertise/": {
-    "date": "2026-10-12",
-    "hash": "c2fbd4de3a7f3538"
+    "date": "2026-10-18",
+    "hash": "2125df2bb8c6b936"
   },
   "/community/": {
-    "date": "2026-10-12",
-    "hash": "63da4f3002bb9f40"
+    "date": "2026-10-18",
+    "hash": "bed49d316acbd833"
   },
   "/mentorship/": {
     "date": "2026-10-18",
-    "hash": "8afaa02f14eb33ee"
+    "hash": "009e527b3a6b3e34"
   },
   "/writing/": {
     "date": "2026-10-18",
-    "hash": "b3db95e65ce2178c"
+    "hash": "6f8dfa6cef22b013"
   },
   "/contact/": {
     "date": "2026-10-18",
-    "hash": "488f9f13f99aeb1d"
+    "hash": "9c16006d40481981"
   },
   "/projects/fedpath/": {
     "date": "2026-10-12",
@@ -48,32 +48,32 @@
     "hash": "45a8af275111304d"
   },
   "/projects/union-city-smog-check/": {
-    "date": "2026-10-12",
-    "hash": "11616926057f43db"
+    "date": "2026-10-18",
+    "hash": "82c7d6ff72ef6a4d"
   },
   "/work/three-continent-platform/": {
-    "date": "2026-10-12",
-    "hash": "b3d0d86d47391ed4"
+    "date": "2026-10-18",
+    "hash": "ccbecab35dd30cc0"
   },
   "/work/publishing-distribution/": {
-    "date": "2026-10-12",
-    "hash": "875079d85e342caf"
+    "date": "2026-10-18",
+    "hash": "bad3bf058e8de323"
   },
   "/work/public-service-modernization/": {
     "date": "2026-10-18",
-    "hash": "0d5a8d6ae20ca143"
+    "hash": "3c7c52e3ef0b2c1e"
   },
   "/work/document-intelligence/": {
-    "date": "2026-10-12",
-    "hash": "78843f4082fdb7a8"
+    "date": "2026-10-18",
+    "hash": "31b1b943756b990f"
   },
   "/work/event-driven-platform/": {
-    "date": "2026-10-12",
-    "hash": "d035016aa12f4c7d"
+    "date": "2026-10-18",
+    "hash": "44fdcdc1af5e4b0c"
   },
   "/work/carrier-capacity/": {
-    "date": "2026-10-12",
-    "hash": "581c7af8edaf03ad"
+    "date": "2026-10-18",
+    "hash": "d3933b13e011ed3f"
   },
   "/privacy/": {
     "date": "2026-10-12",

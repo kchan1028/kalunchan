@@ -55,7 +55,7 @@ export const twoWorlds = [
 export const flywheel = ['Learn', 'Practice', 'Own', 'Lead', 'Teach'];
 
 export const gives = [
-  { title: 'Context, not just answers.', body: 'The why behind the problem, so the next one like it doesn’t need me.' },
+  { title: 'Context for the decision.', body: 'I explain the reasoning so someone can handle a similar problem independently.' },
   { title: 'Room to make decisions.', body: 'Real calls with real consequences, sized to where someone is now.' },
   { title: 'Permission to challenge me.', body: 'If my reasoning is wrong, I want to hear it before we ship it, not after.' },
   { title: 'Support when things go wrong.', body: 'We learn and recover together. I don’t take the work back.' },

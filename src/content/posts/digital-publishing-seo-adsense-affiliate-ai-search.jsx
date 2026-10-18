@@ -212,10 +212,10 @@ export function AdUnit({ slot }) {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Building the technology is half the job</h2>
+      <h2 id="closing-h" className="post__close-title h2">Distribution, revenue and operating cost</h2>
       <div className="post__close-copy">
         <p className="lead">Publishing taught me that a website with good architecture, fast APIs and clean code is not yet a business.</p>
-        <p className="post__close-principle">Understanding how the technology makes money, and what it costs to run, is what turns a website into a business.</p>
+        <p className="post__close-principle">I learned to include distribution, advertising revenue and operating cost in engineering decisions, alongside performance and reliability.</p>
         <p>That is the judgment I bring to engineering leadership: the audience, the distribution, the revenue model and the operating costs are part of the system, and the engineering has to serve all of them.</p>
         <div className="post__close-actions">
           <Link to="/work/publishing-distribution/" className="action">Case study: the publishing platform <ArrowRight /></Link>

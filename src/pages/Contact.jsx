@@ -99,7 +99,7 @@ export default function Contact() {
 
       <section className="sheet grid contact-band fit" aria-labelledby="fit-title" data-coord="703 · Where I add value">
         <div className="fit__copy">
-          <h2 id="fit-title" className="h2">Capability first. Title second.</h2>
+          <h2 id="fit-title" className="h2">Where I can help.</h2>
           <p className="body-copy">I’m most useful where engineering, product and the business have to move together, and where the team needs to get stronger while it ships.</p>
         </div>
         <ul className="fit__run" aria-label="Where I’m most relevant">

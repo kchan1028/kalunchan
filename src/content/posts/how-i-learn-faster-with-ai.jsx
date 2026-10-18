@@ -166,7 +166,7 @@ function PathChooser() {
               <tr key={situation}>
                 <th scope="row">{situation}</th>
                 <td className={`is-${path}`}>{path === 'full' ? 'Full path (5 stages)' : 'Faster path (3 stages)'}</td>
-                <td>{extra || '—'}</td>
+                <td>{extra || 'None'}</td>
               </tr>
             ))}
           </tbody>
@@ -181,7 +181,7 @@ export default function Body() {
     <>
       <section id="faster" aria-labelledby="faster-h">
         <h2 id="faster-h" className="post__h2">Finishing faster isn’t the same as learning faster</h2>
-        <p>In more than 20 years of software engineering I’ve learned technologies from books, documentation, forums and a lot of trial and error. Some took weeks before I trusted myself with them. Others took months before I’d use them in a real project.</p>
+        <p>Over my career I’ve learned technologies from books, documentation, forums and a lot of trial and error. Some took weeks before I trusted myself with them. Others took months before I’d use them in a real project.</p>
         <p>With AI, something that used to take me several days to understand can sometimes be explored, tested and running in a few hours. The quick answers are the smaller part of that. What changed is how fast I get from curiosity to a working example.</p>
         <p>I’ve also noticed a trap. If I ask an assistant to build everything, I can finish the project with very little idea of how it works. I want both: the work done, and more knowledge than I had when I started.</p>
         <p className="post__answer">To learn faster with AI, use it to build understanding: decide what you need to learn, ask it to map the subject, connect new ideas to ones you already know, have it test you, and then build something small. An answer you can’t explain hasn’t taught you anything yet.</p>
@@ -242,7 +242,7 @@ export default function Body() {
           <li>Look for retries and duplicate processing.</li>
           <li>Experiment with message ordering.</li>
         </ol>
-        <p>It doesn’t need to be a large application. It needs to be small enough that I can understand all of it and change it. AI can write the boilerplate, explain errors and suggest experiments. I still want to know the reasons behind the code. Why this configuration? What happens if the service crashes? How does it behave under load? What would need to change before production?</p>
+        <p>It doesn’t need to be a large application. It needs to be small enough that I can understand all of it and change it. AI can write the boilerplate, explain errors and suggest experiments. I still want to know the reasons behind the code. I check why a configuration was chosen, how the service recovers from a crash and how it behaves under load. That helps me understand what would need to change before production.</p>
         <p>Those questions turn a demo into learning. Sometimes the most useful thing I learn is that a simpler solution would have been enough.</p>
       </section>
 
@@ -331,8 +331,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">AI should make us better engineers</h2>
       <div className="post__close-copy">
-        <p className="lead">After more than two decades in engineering, I’m probably learning new technologies faster than at any other point in my career. AI didn’t hand me the knowledge. It shortened the time between curiosity, research, experimentation and feedback. I use the full path for unfamiliar or complex subjects and the faster one when I know the fundamentals, and on both I stay responsible for understanding the result. That matters most for engineers early in their careers. Generating code keeps getting easier. Understanding systems, spotting risks, making sound architecture decisions and solving unfamiliar problems are still worth a great deal.</p>
-        <p className="post__close-principle">I want AI to help me think better, learn faster and build things I couldn’t have built as quickly before. The thinking stays mine.</p>
+        <p className="lead">I’m probably learning new technologies faster now than at any other point in my career. It takes less time to find an explanation, try it and get feedback on what I misunderstood. I use the full path for unfamiliar or complex subjects and the faster one when I know the fundamentals, and on both I stay responsible for understanding the result. That matters most for engineers early in their careers. Generating code keeps getting easier. Understanding systems, spotting risks, making sound architecture decisions and solving unfamiliar problems are still worth a great deal.</p>
+        <p className="post__close-principle">I want AI to help me think better, learn faster and build things I couldn’t have built as quickly before.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re learning <ArrowRight /></Link>
           <Link to="/writing/why-i-still-write-code/" className="link-arrow"><span>Why I still write code</span> <ArrowRight /></Link>

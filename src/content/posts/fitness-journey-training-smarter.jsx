@@ -30,7 +30,7 @@ export default function Body() {
       <section id="harder" aria-labelledby="harder-h">
         <h2 id="harder-h" className="post__h2">I used to think getting better meant working harder</h2>
         <p>For most of my twenties and thirties, my theory of improvement was simple. If something wasn’t getting better, I wasn’t working hard enough. It worked for a while in the gym, it worked for a while in a startup, and it stopped working in both places for the same reason.</p>
-        <p>I have spent more than two decades in technology, from hands-on engineering to founding a company and leading engineering teams. Outside work, I have trained in three very different ways: strength training and weightlifting, then many Spartan races and the obstacle course training that goes with them, and then road cycling, which turned into endurance training and amateur bike racing. Each one taught me something the others could not, and together they changed what I think improvement is.</p>
+        <p>My career in technology has run from hands-on engineering to founding a company and leading engineering teams. Outside work, I have trained in three very different ways: strength training and weightlifting, then many Spartan races and the obstacle course training that goes with them, and then road cycling, which turned into endurance training and amateur bike racing. Each one taught me something the others could not, and together they changed what I think improvement is.</p>
         <p className="post__answer">Strength training, Spartan racing and cycling taught me that getting better means training smarter, not harder. Progress comes from consistency, the right kind of effort at the right time, recovery you take on purpose, and people who are better than you. The same is true of engineering teams.</p>
       </section>
 
@@ -108,11 +108,11 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">Train smarter. Then keep showing up.</h2>
+      <h2 id="closing-h" className="post__close-title h2">How I train now</h2>
       <div className="post__close-copy">
         <p className="lead">I used to think getting better meant working harder. Three sports taught me it means training smarter, recovering on purpose, and coming back from the gaps.</p>
-        <p className="post__close-principle">Show up consistently and put in the right effort at the right time. Plan the recovery, and train with people who make you better.</p>
-        <p>That is how I train now, and it is how I try to build engineering teams. Neither is finished.</p>
+        <p className="post__close-principle">I now leave recovery in the plan and resist trying to make up missed weeks all at once. Training with other people helps me judge when to push and when to ease off.</p>
+        <p>I try to plan engineering work with the same attention to capacity and recovery, although a team needs more conversation than a training schedule.</p>
         <div className="post__close-actions">
           <Link to="/mentorship/" className="action">How I mentor engineers and junior riders <ArrowRight /></Link>
         </div>
