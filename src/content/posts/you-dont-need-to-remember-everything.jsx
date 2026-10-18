@@ -171,7 +171,7 @@ export default function Body() {
           <li>Debug it when it doesn’t work. Sometimes it won’t, in ways that only make sense if you understand what’s underneath.</li>
           <li>Decide whether it fits the system. Code that works in isolation can still be wrong for your architecture, your team or your security model.</li>
         </ul>
-        <p>I’ve seen generated code that looked clean and would pass a quick review: a Django view that ran one query per row once real data showed up, a JWT check that never validated the audience claim, a Kafka consumer that committed offsets before the work was done. Each one would have worked in a demo. Each one is the kind of thing you only catch if you already understand how the system behaves.</p>
+        <p>I’ve seen generated code that looked clean and would pass a quick review: a Django view that ran one query per row once real data showed up, a JWT check that never validated the audience claim, a Kafka consumer that committed offsets before the work was done. Each one would have worked in a demo. Each one is the kind of thing you only catch if you already understand how the system behaves. I wrote more about that risk in <Link to="/writing/from-aol-to-ai-lowering-the-barrier/#fundamentals">whether developers will forget the fundamentals</Link> as AI lowers the barrier to building software.</p>
         <p className="post__pull">So I think AI makes understanding more important. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
       </section>
 
