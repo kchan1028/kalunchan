@@ -466,6 +466,7 @@ const llmsPosts = [
   'what-sprint-carryover-is-telling-you',
   'why-hiring-good-engineers-is-so-hard',
   'why-i-enjoy-mentoring',
+  'what-engineering-leadership-actually-does',
   'ai-agents-reliable-in-production',
 ];
 

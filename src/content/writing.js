@@ -15,8 +15,10 @@ import { metadata as aolAiMeta } from './posts/from-aol-to-ai-lowering-the-barri
 import { metadata as modernizeMeta } from './posts/modernizing-public-sector-applications';
 import { metadata as docIntelMeta } from './posts/building-document-intelligence-workflows';
 import { metadata as fedpathMeta } from './posts/why-i-built-fedpath';
+import { metadata as leadDayMeta } from './posts/what-engineering-leadership-actually-does';
 
 export const posts = [
+  { ...leadDayMeta, no: '715', published: '2026-10-19', modified: '2026-10-19' },
   // Hidden draft: dev server only until KC approves publishing.
   ...(import.meta.env.DEV ? [{ ...fedpathMeta, no: '714', published: '2026-10-18', modified: '2026-10-18' }] : []),
   { ...docIntelMeta, no: '713', published: '2026-10-18', modified: '2026-10-18' },
@@ -136,6 +138,7 @@ export const posts = [
     topics: ['Leadership', 'Community', 'Cycling'],
     related: [
       { to: '/mentorship/', label: 'How I mentor engineers until they can replace me' },
+      { to: '/writing/what-engineering-leadership-actually-does/', label: 'What engineering leadership actually does all day' },
       { to: '/writing/what-cycling-taught-me-about-engineering-leadership/', label: 'What cycling taught me about engineering leadership' },
       { to: '/leadership/', label: 'How I run engineering' },
       { to: '/experience/', label: 'Experience, role by role' },
@@ -3282,6 +3285,7 @@ export const journeys = [
       'loop-engineering-feedback-loops',
       'speed-vs-quality-software-engineering',
       'when-to-add-engineering-process',
+      'what-engineering-leadership-actually-does',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
       'building-public-sector-applications',
