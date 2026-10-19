@@ -467,6 +467,7 @@ const llmsPosts = [
   'why-hiring-good-engineers-is-so-hard',
   'why-i-enjoy-mentoring',
   'what-engineering-leadership-actually-does',
+  'from-idea-to-working-product',
   'ai-agents-reliable-in-production',
 ];
 
