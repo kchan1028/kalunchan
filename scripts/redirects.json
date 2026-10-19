@@ -10,5 +10,13 @@
   {
     "from": "/writing/building-federal-government-applications/",
     "to": "/writing/building-public-sector-applications/"
+  },
+  {
+    "from": "/writing/what-building-federal-government-applications-taught-me/",
+    "to": "/writing/building-public-sector-applications/"
+  },
+  {
+    "from": "/writing/open-source-voip-distributed-systems/",
+    "to": "/writing/open-source-voip-distributed-systems-lessons/"
   }
 ]
