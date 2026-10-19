@@ -16,8 +16,10 @@ import { metadata as modernizeMeta } from './posts/modernizing-public-sector-app
 import { metadata as docIntelMeta } from './posts/building-document-intelligence-workflows';
 import { metadata as fedpathMeta } from './posts/why-i-built-fedpath';
 import { metadata as leadDayMeta } from './posts/what-engineering-leadership-actually-does';
+import { metadata as ideaProductMeta } from './posts/from-idea-to-working-product';
 
 export const posts = [
+  { ...ideaProductMeta, no: '716', published: '2026-10-19', modified: '2026-10-19' },
   { ...leadDayMeta, no: '715', published: '2026-10-19', modified: '2026-10-19' },
   // Hidden draft: dev server only until KC approves publishing.
   ...(import.meta.env.DEV ? [{ ...fedpathMeta, no: '714', published: '2026-10-18', modified: '2026-10-18' }] : []),
@@ -3320,6 +3322,7 @@ export const journeys = [
     lead: 'What experienced engineers actually keep in their heads, and what they build instead.',
     slugs: [
       ...(import.meta.env.DEV ? [hermesLearningDraft.slug] : []),
+      'from-idea-to-working-product',
       'you-dont-need-to-remember-everything',
       'how-i-learn-faster-with-ai',
       'from-dos-to-ai-thirty-years-of-technology',
