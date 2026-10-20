@@ -18,8 +18,10 @@ import { metadata as fedpathMeta } from './posts/why-i-built-fedpath';
 import { metadata as leadDayMeta } from './posts/what-engineering-leadership-actually-does';
 import { metadata as ideaProductMeta } from './posts/from-idea-to-working-product';
 import { metadata as verifyDepthMeta } from './posts/ai-generated-code-verification-depth';
+import { metadata as userStoriesMeta } from './posts/why-writing-good-user-stories-is-hard';
 
 export const posts = [
+  { ...userStoriesMeta, no: '718', published: '2026-10-20', modified: '2026-10-20' },
   { ...verifyDepthMeta, no: '717', published: '2026-10-20', modified: '2026-10-20' },
   { ...ideaProductMeta, no: '716', published: '2026-10-19', modified: '2026-10-19' },
   { ...leadDayMeta, no: '715', published: '2026-10-19', modified: '2026-10-19' },
@@ -1851,6 +1853,7 @@ export const posts = [
       'Why oversized stories produce oversized pull requests, how smaller stories improve planning and prioritization, how smaller PRs improve review and quality, why smaller releases shrink the blast radius, individual speed versus team throughput, and how product and engineering share the job.',
     topics: ['Delivery', 'Leadership'],
     related: [
+      { to: '/writing/why-writing-good-user-stories-is-hard/', label: 'Why is writing a good user story so hard?' },
       { to: '/writing/good-teams-dont-expect-everyone-to-know-everything/', label: 'Why good teams don’t expect everyone to know everything' },
       { to: '/writing/what-sprint-carryover-is-telling-you/', label: 'What sprint carryover is actually telling you' },
       { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
@@ -3275,6 +3278,7 @@ export const journeys = [
       'why-hiring-good-engineers-is-so-hard',
       'good-teams-dont-expect-everyone-to-know-everything',
       'smaller-user-stories-and-pull-requests',
+      'why-writing-good-user-stories-is-hard',
       'specialization-beyond-your-own-code',
       'what-sprint-carryover-is-telling-you',
       'when-everything-is-a-priority',

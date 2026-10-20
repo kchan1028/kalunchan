@@ -469,6 +469,7 @@ const llmsPosts = [
   'what-engineering-leadership-actually-does',
   'from-idea-to-working-product',
   'ai-generated-code-verification-depth',
+  'why-writing-good-user-stories-is-hard',
   'ai-agents-reliable-in-production',
 ];
 
