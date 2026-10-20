@@ -17,8 +17,10 @@ import { metadata as docIntelMeta } from './posts/building-document-intelligence
 import { metadata as fedpathMeta } from './posts/why-i-built-fedpath';
 import { metadata as leadDayMeta } from './posts/what-engineering-leadership-actually-does';
 import { metadata as ideaProductMeta } from './posts/from-idea-to-working-product';
+import { metadata as verifyDepthMeta } from './posts/ai-generated-code-verification-depth';
 
 export const posts = [
+  { ...verifyDepthMeta, no: '717', published: '2026-10-20', modified: '2026-10-20' },
   { ...ideaProductMeta, no: '716', published: '2026-10-19', modified: '2026-10-19' },
   { ...leadDayMeta, no: '715', published: '2026-10-19', modified: '2026-10-19' },
   // Hidden draft: dev server only until KC approves publishing.
@@ -3285,6 +3287,7 @@ export const journeys = [
       'code-review-in-the-ai-era',
       'vibe-coding-vs-agentic-engineering',
       'loop-engineering-feedback-loops',
+      'ai-generated-code-verification-depth',
       'speed-vs-quality-software-engineering',
       'when-to-add-engineering-process',
       'what-engineering-leadership-actually-does',
