@@ -23,6 +23,7 @@ export const metadata = {
     'Why growing organizations add process; how process builds trust between leadership and engineering, between teams and between individuals; why process fails; the hidden workload it adds; how trust should earn autonomy while accountability stays; an eight-step way to decide whether to add a process, plus a process budget; how needs change with complexity and risk; and why removing process is a leadership job.',
   topics: ['Leadership', 'Delivery', 'Engineering judgment'],
   related: [
+    { to: '/writing/hidden-cost-of-too-many-meetings/', label: 'The hidden cost of too many meetings' },
     { to: '/writing/speed-vs-quality-software-engineering/', label: 'Match the process to the risk of the change' },
     { to: '/writing/code-review-in-the-ai-era/', label: 'Code review starts with the plan' },
     { to: '/writing/team-size-should-influence-architecture/', label: 'Your team size should influence your architecture' },

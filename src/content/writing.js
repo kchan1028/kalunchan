@@ -19,8 +19,10 @@ import { metadata as leadDayMeta } from './posts/what-engineering-leadership-act
 import { metadata as ideaProductMeta } from './posts/from-idea-to-working-product';
 import { metadata as verifyDepthMeta } from './posts/ai-generated-code-verification-depth';
 import { metadata as userStoriesMeta } from './posts/why-writing-good-user-stories-is-hard';
+import { metadata as meetingsMeta } from './posts/hidden-cost-of-too-many-meetings';
 
 export const posts = [
+  { ...meetingsMeta, no: '719', published: '2026-10-21', modified: '2026-10-21' },
   { ...userStoriesMeta, no: '718', published: '2026-10-20', modified: '2026-10-20' },
   { ...verifyDepthMeta, no: '717', published: '2026-10-20', modified: '2026-10-20' },
   { ...ideaProductMeta, no: '716', published: '2026-10-19', modified: '2026-10-19' },
@@ -3294,6 +3296,7 @@ export const journeys = [
       'ai-generated-code-verification-depth',
       'speed-vs-quality-software-engineering',
       'when-to-add-engineering-process',
+      'hidden-cost-of-too-many-meetings',
       'what-engineering-leadership-actually-does',
       'what-cycling-taught-me-about-engineering-leadership',
       'why-i-enjoy-mentoring',
