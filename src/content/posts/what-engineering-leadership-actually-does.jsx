@@ -23,6 +23,7 @@ export const metadata = {
     'Measuring productivity by personal output and why that stopped working as a founder and CTO; becoming the bottleneck; questioning whether to build something at all; pushing back on unnecessary UX and UI complexity and what it costs users, developers, QA and the business; where simplifying goes too far; implementing a solution versus being accountable for the outcome; removing obstacles and developing people who can replace me; explaining technical problems in business terms; the invisible work of preventing problems; balancing today against tomorrow; and the difficult decisions I’m still learning to make.',
   topics: ['Leadership', 'Engineering judgment', 'Delivery'],
   related: [
+    { to: '/writing/hidden-cost-of-too-many-meetings/', label: 'The hidden cost of too many meetings' },
     { to: '/writing/why-i-still-write-code/', label: 'Why I still write code as an engineering leader' },
     { to: '/writing/why-i-enjoy-mentoring/', label: 'Why I enjoy mentoring' },
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
