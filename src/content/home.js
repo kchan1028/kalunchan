@@ -3,7 +3,7 @@
 
 // 001 · Impact: six verified accomplishments, each linking to its evidence.
 export const impact = [
-  { figure: '20+', text: 'years in technology, from the helpdesk to the boardroom', to: '/about/' },
+  { figure: 'Every layer', text: 'of a company, from the helpdesk and network operations to the boardroom', to: '/about/' },
   { figure: 'Acquired', text: 'co-founded a communications company and led it to acquisition, staying on the board', to: '/writing/building-a-startup-from-idea-to-acquisition/#acquisition' },
   { figure: '400,000+', text: 'users served from cloud regions on three continents', to: '/work/three-continent-platform/' },
   { figure: '30+', text: 'people led through an acquisition, and fully remote teams after it', to: '/experience/#communications' },

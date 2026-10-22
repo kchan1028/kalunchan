@@ -66,6 +66,7 @@ export default function Leadership() {
             <a className="action" href={person.linkedin} rel="me noopener" target="_blank">
               Start a conversation <ArrowOut />
             </a>
+            <Link to="/engineering-leadership/" className="link-arrow"><span>Hiring for a leadership role?</span> <ArrowRight /></Link>
           </div>
         </div>
       </aside>

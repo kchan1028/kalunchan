@@ -20,10 +20,12 @@
     "deploy": "bash scripts/deploy.sh",
     "headers": "node scripts/cloudflare-security-headers.mjs",
     "redirects": "node scripts/cloudflare-redirects.mjs",
+    "events": "node scripts/cloudflare-events.mjs",
     "contact:dev": "node scripts/contact-dev-server.mjs",
     "contact:email-dns": "node scripts/contact-email-dns.mjs",
     "contact:deploy": "bash serverless/contact/deploy.sh",
-    "test:contact": "node --test tests/contact.test.mjs"
+    "test:contact": "node --test tests/contact.test.mjs",
+    "test:events": "node --test tests/events.test.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.2.0",

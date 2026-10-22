@@ -1,0 +1,275 @@
+/* /engineering-leadership/: recruiter and hiring-manager page. Ruled rows on the shared 12-column sheet. */
+.hire-lead__actions {
+  grid-column: 3 / 13;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s5);
+  align-items: center;
+}
+
+.hire-paths {
+  padding-bottom: var(--s8);
+  row-gap: var(--s3);
+}
+
+.hire-paths__h {
+  grid-column: 1 / 3;
+  color: var(--ink-3);
+  padding-top: var(--s3);
+}
+
+.hire-paths__list {
+  grid-column: 3 / 13;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--col-gap);
+}
+
+.hire-paths__list a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  height: 100%;
+  padding-top: var(--s3);
+  border-top: 3px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+}
+
+.hire-paths__who {
+  font-weight: 750;
+  font-stretch: 80%;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.hire-paths__wants {
+  color: var(--ink-2);
+}
+
+.hire-paths__go {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.hire-paths__list a:hover .hire-paths__go {
+  text-decoration: underline;
+}
+
+.hire-section {
+  border-top: 3px solid var(--rule);
+  padding-block: var(--s7) var(--s8);
+  row-gap: var(--s6);
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.hire-section__head {
+  grid-column: 1 / 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  align-self: start;
+}
+
+.hire-section__head .label {
+  color: var(--ink-3);
+}
+
+.hire-section__head .body-copy {
+  color: var(--ink-2);
+}
+
+.hire-section__head ~ * {
+  grid-column: 6 / 13;
+}
+
+.hire-section__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s5);
+  align-items: center;
+}
+
+.hire-summary > div,
+.hire-expertise > div {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: var(--s5);
+  padding: var(--s4) 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.hire-summary dt {
+  color: var(--ink-3);
+  padding-top: 0.2em;
+}
+
+.hire-expertise dt {
+  font-weight: 750;
+  font-stretch: 80%;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.hire-expertise dd {
+  color: var(--ink-2);
+}
+
+.hire-impact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s6) var(--col-gap);
+}
+
+.hire-impact li,
+.hire-problems article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  align-items: flex-start;
+  padding-top: var(--s4);
+  border-top: 1px solid var(--rule);
+}
+
+.hire-impact__figure {
+  font-size: var(--t-h2);
+  font-weight: 800;
+  font-stretch: 68%;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--blue);
+}
+
+.hire-impact .body-copy,
+.hire-problems .body-copy {
+  color: var(--ink-2);
+}
+
+.hire-problems {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s6) var(--col-gap);
+}
+
+.hire-problems article {
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.hire-career > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--s3) var(--col-gap);
+  padding-block: var(--s5);
+  border-top: 1px solid var(--rule);
+}
+
+.hire-career__role {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.hire-career__org {
+  color: var(--ink-2);
+}
+
+.hire-career__role .label {
+  color: var(--ink-3);
+  margin-top: var(--s2);
+}
+
+.hire-career__spec > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--s4);
+  padding-block: var(--s2);
+}
+
+.hire-career__spec dt {
+  color: var(--ink-3);
+  padding-top: 0.2em;
+}
+
+.hire-career__more {
+  grid-column: 2;
+}
+
+.hire-principles li {
+  display: grid;
+  grid-template-columns: 2.5em 1fr;
+  gap: var(--s3);
+  padding-block: var(--s3);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.hire-principles .mono {
+  color: var(--ink-3);
+  font-size: var(--t-mono);
+  padding-top: 0.45em;
+}
+
+.hire-principles a {
+  color: inherit;
+  text-decoration-color: var(--rule-soft);
+  text-underline-offset: 0.2em;
+}
+
+.hire-principles a:hover {
+  text-decoration-color: currentColor;
+}
+
+.hire-writing li {
+  padding-block: var(--s4);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.hire-writing h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hire-writing h3 a:hover {
+  text-decoration: underline;
+}
+
+.hire-writing .body-copy {
+  margin-top: var(--s2);
+  color: var(--ink-2);
+}
+
+@media (max-width: 899px) {
+  .hire-lead__actions,
+  .hire-paths__h,
+  .hire-paths__list,
+  .hire-section__head,
+  .hire-section__head ~ * {
+    grid-column: 1 / -1;
+  }
+
+  .hire-paths__list,
+  .hire-impact,
+  .hire-problems {
+    grid-template-columns: 1fr;
+  }
+
+  .hire-career > li {
+    grid-template-columns: 1fr;
+  }
+
+  .hire-career__more {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 599px) {
+  .hire-summary > div,
+  .hire-expertise > div,
+  .hire-career__spec > div {
+    grid-template-columns: 1fr;
+    gap: var(--s1);
+  }
+}

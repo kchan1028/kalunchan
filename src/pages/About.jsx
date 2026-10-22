@@ -230,6 +230,7 @@ export default function About() {
             <p>Leadership needs to know what is blocked and why a timeline changed. That should take one clear conversation. Nobody should have to decode a backlog to find out.</p>
             <p>When delivery and production feedback are connected, teams spot problems earlier and executives hear about them while there’s still time to choose.</p>
             <Link to="/leadership/" className="link-arrow">How I run engineering <ArrowRight /></Link>
+            <Link to="/engineering-leadership/" className="link-arrow">Hiring an engineering leader? Start here <ArrowRight /></Link>
           </div>
         </div>
       </div>

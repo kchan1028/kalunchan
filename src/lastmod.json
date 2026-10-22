@@ -1,19 +1,19 @@
 {
   "/": {
-    "date": "2026-10-18",
-    "hash": "34dff0a5881830c5"
+    "date": "2026-10-22",
+    "hash": "18cfde69b9b9f49e"
   },
   "/about/": {
-    "date": "2026-10-18",
-    "hash": "e5b30373f4c28df7"
+    "date": "2026-10-22",
+    "hash": "c232abcf2a03092c"
   },
   "/leadership/": {
-    "date": "2026-10-18",
-    "hash": "f8f03245a1607b21"
+    "date": "2026-10-22",
+    "hash": "f0cf3176fd7ebe5b"
   },
   "/experience/": {
-    "date": "2026-10-18",
-    "hash": "53a7973a08bd832f"
+    "date": "2026-10-22",
+    "hash": "1d1e59c06fe3b8b2"
   },
   "/projects/": {
     "date": "2026-10-18",
@@ -68,7 +68,11 @@
     "hash": "d3933b13e011ed3f"
   },
   "/privacy/": {
-    "date": "2026-10-12",
-    "hash": "5fabd70ff2f46458"
+    "date": "2026-10-22",
+    "hash": "538e9b5d3f551c9c"
+  },
+  "/engineering-leadership/": {
+    "date": "2026-10-22",
+    "hash": "43c778f9fade00cd"
   }
 }

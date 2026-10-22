@@ -41,7 +41,7 @@ export const proofPoints = [
 ];
 
 export const headlineNumbers = [
-  { figure: '20+', text: 'years in software' },
+  { figure: 'Helpdesk to CTO', text: 'every layer of a company, still hands-on' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
   { figure: '30+', text: 'engineers and VoIP specialists led' },
 ];

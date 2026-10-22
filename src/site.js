@@ -24,6 +24,12 @@ const base = [
     "description": "Meet KC: an engineering leader and SaaS founder combining hands-on technical depth, product judgment, strong execution, and developing people."
   },
   {
+    path: '/engineering-leadership/',
+    name: 'Engineering Leadership',
+    title: 'Engineering Leader & Former CTO for VP or Director Roles — Ka Lun Chan',
+    description: 'Bay Area engineering leader and former co-founder and CTO, open to VP, Head or Director of Engineering roles: results, experience and how I lead.',
+  },
+  {
     "path": "/leadership/",
     name: "Leadership",
     "title": "How I Lead Engineering Teams \u2014 Ka Lun Chan",
@@ -130,7 +136,10 @@ const WEBSITE_ID = `${ORIGIN}/#website`;
 const sectionPageTypes = {
   '/leadership/': 'WebPage', '/experience/': 'WebPage', '/expertise/': 'WebPage',
   '/mentorship/': 'WebPage', '/contact/': 'ContactPage', '/privacy/': 'WebPage',
+  '/engineering-leadership/': 'WebPage',
 };
+// Section pages whose subject is KC himself.
+const aboutPerson = new Set(['/engineering-leadership/']);
 const personLd = {
   '@type': 'Person',
   '@id': PERSON_ID,
@@ -235,6 +244,7 @@ export function headFor(path, { modified } = {}) {
       name: m.title, description: m.description, inLanguage: 'en-US',
       isPartOf: { '@id': WEBSITE_ID },
       author: { '@id': PERSON_ID },
+      ...(aboutPerson.has(m.path) && { about: { '@id': PERSON_ID }, mainEntity: { '@id': PERSON_ID } }),
       breadcrumb: { '@id': `${url}#breadcrumbs` },
     });
   }
@@ -486,6 +496,7 @@ export function llmsTxt() {
     '',
     '## About',
     page(byPath['/about/']),
+    page(byPath['/engineering-leadership/']),
     page(byPath['/experience/']),
     page(byPath['/leadership/']),
     page(byPath['/expertise/']),

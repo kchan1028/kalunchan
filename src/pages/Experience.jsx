@@ -115,7 +115,7 @@ export default function Experience() {
           One through-line: keep the system up while the business grows around it. The systems changed, from carrier networks to SaaS, media and public services. The job didn’t.
         </p>
         <p className="page-lead__aside body-copy">
-          For full career history, visit <a href={person.linkedin}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced.
+          For full career history, visit <a href={person.linkedin}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced. Hiring for a senior engineering role? <Link to="/engineering-leadership/">Start with the summary for hiring teams</Link>.
         </p>
       </div>
       <Progression />
