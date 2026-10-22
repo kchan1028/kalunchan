@@ -4,6 +4,14 @@ This file overrides any conflicting wording in PROFILE.md and GENERALIST.md.
 Positioning: an engineering leader and generalist who works with companies through Yippify. Not a candidate.
 -->
 
+# 0. Exception: /engineering-leadership/ (owner decision, 2026-10-22)
+
+/engineering-leadership/ is the one recruiter and hiring-manager page. It may name the roles KC is open to
+(VP, Head or Director of Engineering; CTO where it fits) and invite conversations about them. Every other page
+keeps the positioning below. The page follows the site's privacy rules: no employer names, no career years, and
+no résumé file; the résumé is requested through /contact/?topic=leadership.
+
+
 # 1. Intro paragraph (homepage under the H1, and top of /about/), 59 words
 
 Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist with 23+ years across every layer of a business, from helpdesk and network operations to product, marketing and architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition. He now leads government technology work through Yippify.

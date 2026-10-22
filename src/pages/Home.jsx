@@ -21,6 +21,7 @@ export default function Home() {
           <Link to="/contact/#start" className="action">Start a conversation <ArrowRight /></Link>
           <Link to="/experience/" className="action action--quiet">Experience <ArrowRight /></Link>
           <Link to="/leadership/" className="action action--quiet">Leadership <ArrowRight /></Link>
+          <Link to="/engineering-leadership/" className="action action--quiet">For hiring teams <ArrowRight /></Link>
         </p>
         <ul className="opening__facts" aria-label="Headline numbers">{headlineNumbers.map((n) => <li key={n.figure}>
           <strong>{n.figure}</strong> {n.text}
