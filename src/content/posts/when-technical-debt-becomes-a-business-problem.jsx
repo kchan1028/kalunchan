@@ -171,6 +171,7 @@ export function Closing() {
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through your technical debt <ArrowRight /></Link>
           <Link to="/leadership/#debt" className="link-arrow"><span>How I balance delivery and debt</span> <ArrowRight /></Link>
+          <Link to="/engineering-leadership/#technical-debt" className="link-arrow"><span>Hiring a leader to get debt under control?</span> <ArrowRight /></Link>
         </div>
       </div>
     </>

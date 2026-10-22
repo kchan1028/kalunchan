@@ -220,6 +220,7 @@ export function Closing() {
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>
+          <Link to="/engineering-leadership/" className="link-arrow"><span>Hiring an engineering leader? Start here</span> <ArrowRight /></Link>
         </div>
       </div>
     </>
