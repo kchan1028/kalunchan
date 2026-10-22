@@ -3,9 +3,9 @@ import TitleBlock from '../components/TitleBlock';
 import { person } from '../content/profile';
 
 // Privacy notice (CalOPPA, GDPR Art. 13, PIPEDA openness). Every statement here must match what the code does:
-// serverless/contact (form, hashed IP, logs), the Cloudflare edge and Cloudflare Web Analytics. Change the
+// serverless/contact (form, hashed IP, logs), serverless/events (click counts), the Cloudflare edge and Cloudflare Web Analytics. Change the
 // effective date whenever the practices described here change. The phrase is allowed in scripts/audit-seo.py.
-export const PRIVACY_EFFECTIVE = 'Effective 12 October 2026';
+export const PRIVACY_EFFECTIVE = 'Effective 22 October 2026';
 const OPERATOR = 'Yippify';
 
 export default function Privacy() {
@@ -13,7 +13,7 @@ export default function Privacy() {
     <>
       <TitleBlock section="800" title="Privacy" cells={[{ k: 'Updated', v: PRIVACY_EFFECTIVE.replace('Effective ', '') }]} />
       <div className="sheet grid page-lead">
-        <p className="page-lead__claim">This site collects as little as it can: what you send through the contact form, and anonymous page counts.</p>
+        <p className="page-lead__claim">This site collects as little as it can: what you send through the contact form, and anonymous page and link counts.</p>
       </div>
       <div className="sheet grid privacy">
         <div className="privacy__body">
@@ -33,6 +33,7 @@ export default function Privacy() {
           <h3 className="privacy__sub">When you read the site</h3>
           <ul className="ticks">
             <li>Page views and page speed, through Cloudflare Web Analytics. It sets no cookies, stores nothing in your browser, and doesn’t identify you.</li>
+            <li>On the engineering leadership page, a count each time someone uses its résumé, LinkedIn, contact or article links. Each count records only which link was used and on which page, with no cookie, IP address or identifier.</li>
             <li>Standard request details such as IP address, browser and the page requested, which Cloudflare and Amazon Web Services handle to deliver the site and protect it from abuse.</li>
           </ul>
           <p>This site sets no cookies of its own and doesn’t use advertising or cross-site tracking. Cloudflare may set a strictly necessary security cookie if it needs to check that a visitor isn’t a bot.</p>
@@ -41,7 +42,7 @@ export default function Privacy() {
           <ul className="ticks">
             <li>To read and reply to your message.</li>
             <li>To keep the form free of spam and abuse.</li>
-            <li>To see which pages people read and whether the site loads quickly.</li>
+            <li>To see which pages people read, which links they use, and whether the site loads quickly.</li>
           </ul>
           <p>Where the law asks for a legal basis, replying to you rests on your request, and spam protection and anonymous statistics rest on legitimate interests in running a usable, secure site.</p>
 
@@ -49,7 +50,7 @@ export default function Privacy() {
           <p>I don’t sell or share personal information, and I don’t use it for advertising. These service providers process it on my behalf:</p>
           <ul className="ticks">
             <li><strong>Amazon Web Services</strong> (United States, Oregon region): runs the contact form, sends the email and keeps the short-lived spam and rate-limit records.</li>
-            <li><strong>Cloudflare</strong>: delivers the site and provides Web Analytics.</li>
+            <li><strong>Cloudflare</strong>: delivers the site, provides Web Analytics and keeps the link counts.</li>
             <li><strong>My email provider</strong>: holds the messages you send.</li>
           </ul>
           <p>If you write from outside the United States, your message is processed in the United States.</p>
@@ -59,6 +60,7 @@ export default function Privacy() {
             <li>Contact messages: up to 24 months after our last exchange, then deleted.</li>
             <li>Rate-limit hashes: expire after two hours, then are deleted automatically.</li>
             <li>Form IDs: expire after 24 hours, then are deleted automatically.</li>
+            <li>Link counts: kept by Cloudflare for three months, then deleted automatically.</li>
             <li>Contact form logs, which record only the outcome and never what you wrote: 30 days.</li>
           </ul>
 

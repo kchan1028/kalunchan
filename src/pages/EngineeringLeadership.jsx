@@ -5,7 +5,11 @@ import {
   targetRoles, resumeRequest, paths, summary, impact, problems, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
+import { track } from '../track';
 import { ArrowOut, ArrowRight } from '../components/Icons';
+
+const onResume = () => track('resume_request', resumeRequest);
+const onLinkedIn = () => track('linkedin_click', person.linkedin);
 
 const featured = featuredSlugs.map((slug) => posts.find((p) => p.slug === slug)).filter(Boolean);
 
@@ -22,9 +26,9 @@ export default function EngineeringLeadership() {
         </p>
         <p className="hire-lead__actions">
           <a href="#experience" className="action">View my experience <ArrowRight /></a>
-          <Link to={resumeRequest} className="action action--quiet">Request my résumé <ArrowRight /></Link>
-          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank">Connect on LinkedIn <ArrowOut /></a>
-          <Link to="/contact/#start" className="action action--quiet">Contact me <ArrowRight /></Link>
+          <Link to={resumeRequest} className="action action--quiet" onClick={onResume}>Request my résumé <ArrowRight /></Link>
+          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>Connect on LinkedIn <ArrowOut /></a>
+          <Link to="/contact/#start" className="action action--quiet" onClick={() => track('contact_click', '/contact/#start')}>Contact me <ArrowRight /></Link>
         </p>
       </div>
 
@@ -32,7 +36,7 @@ export default function EngineeringLeadership() {
         <div className="sheet grid">
           <p className="open-to__roles">Open to conversations about {targetRoles.slice(0, -1).join(', ')} and {targetRoles.at(-1)} roles.</p>
           <div className="open-to__side">
-            <Link className="action" to={resumeRequest}>Talk about a role <ArrowRight /></Link>
+            <Link className="action" to={resumeRequest} onClick={() => track('contact_click', resumeRequest)}>Talk about a role <ArrowRight /></Link>
           </div>
         </div>
       </aside>
@@ -66,8 +70,8 @@ export default function EngineeringLeadership() {
           ))}
         </dl>
         <p className="hire-section__foot">
-          <Link to={resumeRequest} className="action">Request my résumé <ArrowRight /></Link>
-          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank">LinkedIn profile <ArrowOut /></a>
+          <Link to={resumeRequest} className="action" onClick={onResume}>Request my résumé <ArrowRight /></Link>
+          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>LinkedIn profile <ArrowOut /></a>
         </p>
       </section>
 
@@ -172,7 +176,7 @@ export default function EngineeringLeadership() {
         <ul className="hire-writing">
           {featured.map((p) => (
             <li key={p.slug}>
-              <h3 className="h3"><Link to={`/writing/${p.slug}/`}>{p.title}</Link></h3>
+              <h3 className="h3"><Link to={`/writing/${p.slug}/`} onClick={() => track('article_click', `/writing/${p.slug}/`)}>{p.title}</Link></h3>
               <p className="body-copy">{p.description}</p>
             </li>
           ))}
