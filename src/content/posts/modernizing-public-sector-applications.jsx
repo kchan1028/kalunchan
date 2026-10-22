@@ -28,6 +28,7 @@ export const metadata = {
     'Why modernizing public-sector applications is more than replacing old technology; treating the legacy system as the specification for eligibility rules and workflows; keeping the service running during replacement; incremental, one-journey-at-a-time migration behind a routing layer; technical debt while still delivering features; carrying security, Section 508, authorization and audit into every slice; coordinating with program staff, reviewers and change approval; the people who feel the change; and what I would tell a team starting one.',
   topics: ['Leadership', 'Architecture', 'Engineering judgment'],
   related: [
+    { to: '/writing/when-technical-debt-becomes-a-business-problem/', label: 'When technical debt becomes a business problem' },
     { to: '/writing/building-public-sector-applications/', label: 'What building public-sector applications taught me' },
     { to: '/writing/should-it-be-a-microservice/#extract-later', label: 'Why extracting a service later is often cheaper than splitting early' },
     { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller user stories and pull requests' },

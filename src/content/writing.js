@@ -20,8 +20,10 @@ import { metadata as ideaProductMeta } from './posts/from-idea-to-working-produc
 import { metadata as verifyDepthMeta } from './posts/ai-generated-code-verification-depth';
 import { metadata as userStoriesMeta } from './posts/why-writing-good-user-stories-is-hard';
 import { metadata as meetingsMeta } from './posts/hidden-cost-of-too-many-meetings';
+import { metadata as techDebtMeta } from './posts/when-technical-debt-becomes-a-business-problem';
 
 export const posts = [
+  { ...techDebtMeta, no: '720', published: '2026-10-22', modified: '2026-10-22' },
   { ...meetingsMeta, no: '719', published: '2026-10-21', modified: '2026-10-21' },
   { ...userStoriesMeta, no: '718', published: '2026-10-20', modified: '2026-10-20' },
   { ...verifyDepthMeta, no: '717', published: '2026-10-20', modified: '2026-10-20' },
@@ -2958,6 +2960,7 @@ export const posts = [
       'Co-founding and building a global communications company: 0→1 with incomplete information, when reliability becomes the product, 1→10, learning to delegate, technical debt as an investment, and an acquisition.',
     topics: ['Founder story', 'Leadership', 'Architecture'],
     related: [
+      { to: '/writing/when-technical-debt-becomes-a-business-problem/', label: 'When technical debt becomes a business problem' },
       { to: '/writing/founding-a-startup-isnt-easy/', label: 'What being every department at once taught me' },
       { to: '/experience/#communications', label: 'Co-founder and CTO: the problem, decisions and outcome' },
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
@@ -3019,6 +3022,7 @@ export const posts = [
       'The six causes behind most sprint carryover, what each one is telling you, how to record the reason instead of just the number, and the common fixes that make the number look better without improving delivery.',
     topics: ['Delivery', 'Leadership', 'Engineering judgment'],
     related: [
+      { to: '/writing/when-technical-debt-becomes-a-business-problem/', label: 'When technical debt becomes a business problem' },
       { to: '/writing/when-everything-is-a-priority/', label: 'Why “everything is urgent” means nothing gets finished' },
       { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller stories, smaller pull requests, smaller releases' },
       { to: '/writing/good-teams-dont-expect-everyone-to-know-everything/', label: 'Why good teams don’t expect everyone to know everything' },
@@ -3320,6 +3324,7 @@ export const journeys = [
       'network-security-before-devsecops',
       'capacity-planning-carrier-networks-to-cloud',
       'hidden-cost-of-software-architecture',
+      'when-technical-debt-becomes-a-business-problem',
       'infrastructure-costs-from-carrier-networks-to-the-cloud',
       'data-driven-engineering-network-voip-publishing',
       'building-document-intelligence-workflows',
