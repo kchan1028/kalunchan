@@ -32,6 +32,7 @@ export const metadata = {
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
     { to: '/writing/the-architecture-you-dont-build/', label: 'The architecture you don’t build' },
     { to: '/writing/speed-vs-quality-software-engineering/', label: 'Speed vs quality: match the process to the risk' },
+    { to: '/writing/patch-mitigate-or-retire-vulnerability-triage/', label: 'Patch, mitigate or retire: when debt blocks a security fix' },
     { to: '/leadership/#debt', label: 'How I balance delivery and technical debt' },
   ],
   keywords: [

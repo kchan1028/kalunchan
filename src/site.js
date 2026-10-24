@@ -482,6 +482,7 @@ const llmsPosts = [
   'why-writing-good-user-stories-is-hard',
   'hidden-cost-of-too-many-meetings',
   'when-technical-debt-becomes-a-business-problem',
+  'patch-mitigate-or-retire-vulnerability-triage',
   'ai-agents-reliable-in-production',
 ];
 
