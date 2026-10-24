@@ -21,8 +21,10 @@ import { metadata as verifyDepthMeta } from './posts/ai-generated-code-verificat
 import { metadata as userStoriesMeta } from './posts/why-writing-good-user-stories-is-hard';
 import { metadata as meetingsMeta } from './posts/hidden-cost-of-too-many-meetings';
 import { metadata as techDebtMeta } from './posts/when-technical-debt-becomes-a-business-problem';
+import { metadata as vulnTriageMeta } from './posts/patch-mitigate-or-retire-vulnerability-triage';
 
 export const posts = [
+  { ...vulnTriageMeta, no: '721', published: '2026-10-24', modified: '2026-10-24' },
   { ...techDebtMeta, no: '720', published: '2026-10-22', modified: '2026-10-22' },
   { ...meetingsMeta, no: '719', published: '2026-10-21', modified: '2026-10-21' },
   { ...userStoriesMeta, no: '718', published: '2026-10-20', modified: '2026-10-20' },
@@ -1511,6 +1513,7 @@ export const posts = [
       { to: '/mentorship/', label: 'How I mentor engineers until they can replace me' },
       { to: '/writing/building-public-sector-applications/', label: 'Security that has to be demonstrable: building public-sector applications' },
       { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'The longer path: Cisco routers to AI agents' },
+      { to: '/writing/patch-mitigate-or-retire-vulnerability-triage/', label: 'Patch, mitigate or retire: triaging a critical vulnerability' },
     ],
     minutes: 13,
     published: '2026-10-09',
@@ -3322,6 +3325,7 @@ export const journeys = [
       'open-source-voip-distributed-systems-lessons',
       'forward-engineering-isnt-new',
       'network-security-before-devsecops',
+      'patch-mitigate-or-retire-vulnerability-triage',
       'capacity-planning-carrier-networks-to-cloud',
       'hidden-cost-of-software-architecture',
       'when-technical-debt-becomes-a-business-problem',
