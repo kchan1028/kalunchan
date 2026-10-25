@@ -466,15 +466,198 @@
   }
 }
 
-/* Lead line shown on /writing/ when a reading path is selected. */
-.writing-path-lead {
-  margin-top: var(--s4);
+.post__journey > .label + .post__journey-place,
+.post__journey-place + .label {
+  margin-top: var(--s3);
+}
+
+.post__journey-place {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  max-width: 66ch;
+}
+
+.post__journey-place a {
+  font-weight: 700;
+}
+
+.post__journey-place span {
+  color: var(--ink-2);
+}
+
+/* /writing/: jump links, then Start here, reading paths, chapters and the archive. */
+.writing-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s6);
+  padding-block: var(--s3);
+  border-block: 1px solid var(--rule);
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+.writing-section {
+  margin-top: var(--s9);
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.writing-section > .case-index {
+  margin-top: var(--s5);
+}
+
+.writing-section__lead {
+  margin-top: var(--s2);
   color: var(--ink-2);
   max-width: 66ch;
 }
 
-.writing-path-lead strong {
+.writing-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--s6);
+  margin-top: var(--s5);
+}
+
+.writing-path {
+  padding-top: var(--s4);
+  border-top: 2px solid var(--ink);
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.writing-path:target {
+  border-top-color: var(--blue);
+}
+
+.writing-path__title {
+  font-size: var(--t-h3);
+  font-weight: 700;
+  font-stretch: 88%;
+  line-height: 1.2;
+}
+
+.writing-path .label {
+  margin-top: var(--s1);
+}
+
+.writing-path__lead {
+  margin-top: var(--s3);
+  color: var(--ink-2);
+}
+
+.writing-path__steps {
+  margin-top: var(--s4);
+  padding-left: 1.5em;
+  list-style: decimal-leading-zero;
+}
+
+.writing-path__steps li + li,
+.writing-chapter__list li + li {
+  margin-top: var(--s2);
+}
+
+.writing-path__steps li::marker {
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.writing-chapters {
+  margin-top: var(--s5);
+  border-bottom: 1px solid var(--rule);
+}
+
+.writing-chapter {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s6);
+  padding-block: var(--s6);
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.writing-chapter--side .writing-chapter__no {
+  color: var(--ink-3);
+}
+
+.writing-chapter__no {
+  font-size: var(--t-small);
+  font-weight: 700;
+  font-stretch: 86%;
+  color: var(--blue);
+}
+
+.writing-chapter__title {
+  margin-top: var(--s1);
+  font-size: clamp(1.5rem, 1.1rem + 1.3vw, 2.25rem);
+  font-weight: 750;
+  font-stretch: 74%;
+  line-height: 1.05;
+}
+
+.writing-chapter__lead {
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  max-width: 40ch;
+}
+
+.writing-chapter__anchor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding: var(--s4);
+  background: var(--paper-sunk);
+  text-decoration: none;
+  border-left: 3px solid var(--blue);
+  transition: border-color 200ms var(--ease-out);
+}
+
+.writing-chapter__anchor:hover .writing-chapter__anchor-title {
+  color: var(--blue);
+}
+
+.writing-chapter__anchor-title {
+  font-size: var(--t-h3);
+  font-weight: 700;
+  font-stretch: 88%;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.writing-chapter__anchor-teaser {
+  color: var(--ink-2);
+}
+
+.writing-chapter__list {
+  margin-top: var(--s4);
+  padding-left: 1.1em;
+  list-style: square;
+}
+
+.writing-chapter__list li::marker {
+  color: var(--ink-3);
+}
+
+.writing-chapter__more {
+  margin-top: var(--s3);
+}
+
+.writing-chapter__more summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-stretch: 92%;
+  color: var(--ink-2);
+}
+
+.writing-chapter__more summary:hover {
   color: var(--ink);
+}
+
+@media (max-width: 899px) {
+  .writing-chapter {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
 }
 
 /* ---------- In-prose figures: staged timeline (Fig. 656-1, 679-1) ---------- */

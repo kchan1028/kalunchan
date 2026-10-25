@@ -1,26 +1,39 @@
 import { Link } from 'react-router';
-import { continueReading, elsewhereLinks, journeyFor } from '../content/writing';
+import { chapterFor, continueReading, elsewhereLinks, journeyFor, postBySlug } from '../content/writing';
 import { ArrowLeft, ArrowRight } from './Icons';
 
-// Previous / next within the reading path a post belongs to.
-export function JourneyNav({ slug }) {
+// Where a post sits: its chapter, then previous / next within its reading path,
+// or within the chapter when the post is in no path.
+export function WhereThisFits({ slug }) {
+  const c = chapterFor(slug);
   const j = journeyFor(slug);
-  if (!j) return null;
+  if (!c) return null;
+  const i = c.slugs.indexOf(slug);
+  const prev = j ? j.prev : postBySlug[c.slugs[i - 1]];
+  const next = j ? j.next : postBySlug[c.slugs[i + 1]];
   return (
-    <nav className="sheet post__journey" aria-label={`Reading path: ${j.title}`}>
+    <nav className="sheet post__journey" aria-labelledby="fits-h">
+      <h2 id="fits-h" className="label">Where this fits</h2>
+      <p className="post__journey-place">
+        <Link to={`/writing/#chapter-${c.id}`}>{c.side ? `Side track: ${c.title}` : `Chapter ${c.no}: ${c.title}`}</Link>
+        <span>{c.lead}</span>
+      </p>
       <p className="label">
-        <Link to={`/writing/?path=${j.id}`}>{j.title}</Link>
-        {' · '}Part {j.index + 1} of {j.slugs.length}
+        {j ? (
+          <><Link to={`/writing/#path-${j.id}`}>{j.title}</Link>{' · '}Part {j.index + 1} of {j.slugs.length}</>
+        ) : (
+          <>Post {i + 1} of {c.slugs.length} in this chapter</>
+        )}
       </p>
       <div className="post__journey-links">
-        {j.prev ? (
-          <Link to={`/writing/${j.prev.slug}/`} className="link-arrow" rel="prev">
-            <ArrowLeft /> <span>{j.prev.shortTitle || j.prev.title}</span>
+        {prev ? (
+          <Link to={`/writing/${prev.slug}/`} className="link-arrow" rel="prev">
+            <ArrowLeft /> <span>{prev.shortTitle || prev.title}</span>
           </Link>
         ) : <span />}
-        {j.next ? (
-          <Link to={`/writing/${j.next.slug}/`} className="link-arrow" rel="next">
-            <span>{j.next.shortTitle || j.next.title}</span> <ArrowRight />
+        {next ? (
+          <Link to={`/writing/${next.slug}/`} className="link-arrow" rel="next">
+            <span>{next.shortTitle || next.title}</span> <ArrowRight />
           </Link>
         ) : <span />}
       </div>

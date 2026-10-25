@@ -250,7 +250,7 @@ export function Closing() {
         <p className="post__close-principle">Add it when the model choice actually varies or when fallback and visibility are problems you have. Until then, connect the agent directly and keep the diagram small.</p>
         <p>Next in the series: the first end-to-end run, Telegram to Hermes to OmniRoute to a provider, and what it cost.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>
+          <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>
       </div>
     </>

@@ -24,8 +24,11 @@ for e in entries:
     slug = e.split("'", 1)[0]
     m = re.search(r"related: \[(.*?)\n\s{4}\],", e, re.S)
     related[slug] = re.findall(r"to: '([^']+)'", m.group(1)) if m else []
-journeys = re.search(r"export const journeys = \[(.*?)\n\];", src, re.S).group(1)
-journey_slugs = re.findall(r"^\s{6}'([^']+)',", journeys, re.M)
+# Reading paths and chapters on /writing/ both link every slug they list.
+journey_slugs = []
+for name in ('journeys', 'chapters'):
+    block = re.search(r"export const " + name + r" = \[(.*?)\n\]", src, re.S).group(1)
+    journey_slugs += re.findall(r"^\s{6}'([^']+)',", block, re.M)
 
 # Routes outside /writing/ that links may point at.
 routes = set(re.findall(r'path="([^"]+)"', open(APP, encoding='utf-8').read()))

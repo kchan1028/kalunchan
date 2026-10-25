@@ -126,7 +126,7 @@ export function Closing() {
         <p className="post__close-principle">Write instructions that last and keep the data on disk. Name the account that pays, keep the plumbing deterministic, and put a human gate in front of anything irreversible.</p>
         <p>Next in the series: the research assistant's first scheduled runs, what it suggested, and what the first week cost.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>
+          <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>
       </div>
     </>
