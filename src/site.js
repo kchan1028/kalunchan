@@ -120,6 +120,9 @@ export const routes = [
   })),
 ];
 
+// Local-only roadmap (App.jsx); never in routes, so never prerendered or in the sitemap.
+const DEV_ROADMAP = { path: '/roadmap/', title: 'Roadmap (local) — Ka Lun Chan', description: 'Local-only roadmap.', noindex: true };
+
 export const NOT_FOUND = {
   path: '/404',
   title: 'Section not found — Ka Lun Chan',
@@ -182,6 +185,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 export function metaFor(path) {
   const norm = path.endsWith('/') ? path : `${path}/`;
+  if (import.meta.env.DEV && norm === '/roadmap/') return DEV_ROADMAP;
   return routes.find((r) => r.path === norm) || NOT_FOUND;
 }
 
@@ -256,6 +260,7 @@ export function headFor(path, { modified } = {}) {
         mainEntityOfPage: url,
         headline: c.title,
         description: c.summary,
+        image: ORIGIN + preview.path,
         inLanguage: 'en-US',
         keywords: c.domain.join(', '),
         articleSection: c.illustrative ? 'Illustrative architecture example' : 'Case study',
@@ -297,7 +302,7 @@ export function headFor(path, { modified } = {}) {
         description: 'Profile of Ka Lun Chan, a Bay Area engineering leader with co-founder and CTO experience through acquisition and hands-on architecture skills.',
         url,
         mainEntityOfPage: url,
-        image: 'REPLACE_WITH_IMAGE_URL',
+        image: ORIGIN + preview.path,
         datePublished: SITE_CREATED,
         ...(modified && { dateModified: modified }),
         inLanguage: 'en-US',
