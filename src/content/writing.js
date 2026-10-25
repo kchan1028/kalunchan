@@ -22,8 +22,10 @@ import { metadata as userStoriesMeta } from './posts/why-writing-good-user-stori
 import { metadata as meetingsMeta } from './posts/hidden-cost-of-too-many-meetings';
 import { metadata as techDebtMeta } from './posts/when-technical-debt-becomes-a-business-problem';
 import { metadata as vulnTriageMeta } from './posts/patch-mitigate-or-retire-vulnerability-triage';
+import { metadata as firstTimeTestMeta } from './posts/why-i-test-my-products-like-someone-who-has-never-used-them';
 
 export const posts = [
+  { ...firstTimeTestMeta, no: '722', published: '2026-10-25', modified: '2026-10-25' },
   { ...vulnTriageMeta, no: '721', published: '2026-10-24', modified: '2026-10-24' },
   { ...techDebtMeta, no: '720', published: '2026-10-22', modified: '2026-10-22' },
   { ...meetingsMeta, no: '719', published: '2026-10-21', modified: '2026-10-21' },
@@ -1665,6 +1667,7 @@ export const posts = [
       { to: '/writing/building-a-startup-from-idea-to-acquisition/#customers', label: 'Building for people the system wasn’t designed for' },
       { to: '/writing/berkeley-omnium-new-website-next-generation/', label: 'The new Berkeley Omnium site' },
       { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: call and directions first' },
+      { to: '/writing/why-i-test-my-products-like-someone-who-has-never-used-them/', label: 'Why I test my products like someone who has never used them' },
       { to: '/writing/modernizing-public-sector-applications/#requirements', label: 'Accessibility from the first slice of a modernization' },
     ],
     minutes: 7,
@@ -3288,6 +3291,7 @@ export const journeys = [
       'good-teams-dont-expect-everyone-to-know-everything',
       'smaller-user-stories-and-pull-requests',
       'why-writing-good-user-stories-is-hard',
+      'why-i-test-my-products-like-someone-who-has-never-used-them',
       'specialization-beyond-your-own-code',
       'what-sprint-carryover-is-telling-you',
       'when-everything-is-a-priority',

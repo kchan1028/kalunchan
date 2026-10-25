@@ -27,6 +27,7 @@ export const metadata = {
     { to: '/writing/good-teams-dont-expect-everyone-to-know-everything/', label: 'Good teams don’t expect everyone to know everything' },
     { to: '/writing/what-engineering-leadership-actually-does/', label: 'What engineering leadership actually does all day' },
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
+    { to: '/writing/why-i-test-my-products-like-someone-who-has-never-used-them/', label: 'When the story is built as written and still confuses users' },
     { to: '/writing/code-review-in-the-ai-era/', label: 'Code review doesn’t start with a pull request' },
     { to: '/writing/when-to-add-engineering-process/', label: 'When process helps' },
   ],
