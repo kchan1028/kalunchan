@@ -44,7 +44,18 @@ const rules = redirects.map(({ from, to }) => ({
   enabled: true,
 }));
 
-for (const r of rules) console.log(`  301 ${r.expression}\n      → ${r.action_parameters.from_value.target_url.value}`);
+// S3 answers a slashless page path (/about) with a 302 to /about/. Send a 301 from Cloudflare instead. It runs after
+// the moved-page rules (first matching redirect wins), skips files (a dot in the path) and the /e click-count Worker.
+rules.push({
+  ref: `${PREFIX}trailing_slash`,
+  description: 'Add trailing slash to page paths (scripts/cloudflare-redirects.mjs)',
+  expression: `http.host eq "kalunchan.dev" and http.request.method in {"GET" "HEAD"} and not ends_with(http.request.uri.path, "/") and not http.request.uri.path contains "." and http.request.uri.path ne "/e"`,
+  action: 'redirect',
+  action_parameters: { from_value: { target_url: { expression: `concat("${ORIGIN}", http.request.uri.path, "/")` }, status_code: 301, preserve_query_string: true } },
+  enabled: true,
+});
+
+for (const r of rules) console.log(`  301 ${r.expression}\n      → ${r.action_parameters.from_value.target_url.value ?? r.action_parameters.from_value.target_url.expression}`);
 if (!apply) {
   console.log(`\nDry run: ${rules.length} redirect rule(s), nothing changed. Re-run with --apply to write them.`);
   process.exit(0);
