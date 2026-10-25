@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { postBySlug, journeyFor } from '../content/writing';
+import { postBySlug, chapterFor } from '../content/writing';
 import { getBody, loadBody } from '../content/postBodies';
 import TitleBlock from '../components/TitleBlock';
 import NotFound from './NotFound';
 import { ArrowLeft } from '../components/Icons';
-import { ContinueReading, JourneyNav } from '../components/ReadNext';
+import { ContinueReading, WhereThisFits } from '../components/ReadNext';
 
 export default function Post() {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ export default function Post() {
   }, [slug]);
   if (!post) return <NotFound />;
   const { default: Body, Closing, toc = [] } = getBody(slug) || {};
-  const journey = journeyFor(slug);
+  const chapter = chapterFor(slug);
   const contents = post.faq ? [...toc, ['short-answers', 'Short answers']] : toc;
 
   return (
@@ -42,10 +42,10 @@ export default function Post() {
         <p className="case__claim">{post.dek}</p>
         <p className="case__domains label">
           By <Link to="/about/">Ka Lun Chan</Link>
-          {journey && (
+          {chapter && (
             <>
               {' · '}
-              <Link to={`/writing/?path=${journey.id}`} className="post__topic">{journey.title}</Link>
+              <Link to={`/writing/#chapter-${chapter.id}`} className="post__topic">{chapter.title}</Link>
             </>
           )}
           {' · '}{post.topics.join(' / ')}
@@ -88,7 +88,7 @@ export default function Post() {
         </section>
       )}
 
-      <JourneyNav slug={slug} />
+      <WhereThisFits slug={slug} />
       <ContinueReading slug={slug} />
     </article>
   );

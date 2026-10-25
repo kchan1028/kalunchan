@@ -117,7 +117,7 @@ export function Closing() {
         <p className="post__close-principle">I plan to use ordinary code for filtering, call the model for the parts that need judgment, and review anything that spends money or speaks for me.</p>
         <p>The next post in this series will cover what the first scheduled runs actually did, including what broke.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>
+          <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>
       </div>
     </>

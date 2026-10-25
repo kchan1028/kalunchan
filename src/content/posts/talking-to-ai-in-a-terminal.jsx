@@ -133,7 +133,7 @@ export function Closing() {
         <p className="post__close-principle">Approachable interfaces help people start. Understanding the system, reviewing the change and verifying the result are still the job.</p>
         <p>That is the habit I carry from the console port to the AI terminal, and the one I ask of every engineer I work with.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>
+          <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>
       </div>
     </>

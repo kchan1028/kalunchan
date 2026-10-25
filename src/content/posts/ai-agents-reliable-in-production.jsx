@@ -137,7 +137,7 @@ export function Closing() {
         <p className="post__close-principle">I am still working toward an agent I would trust to run unattended with my name on the result.</p>
         <p>The series began at <Link to="/writing/from-cisco-routers-to-ai-agents/">a router console</Link>, and I still use the troubleshooting habits I learned there. How AI changed the way I build, from a data center I cabled by hand to an assistant in the terminal, is in <Link to="/writing/building-software-before-and-after-ai/">I used to build everything myself</Link>.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=still-building" className="action">The whole series <ArrowRight /></Link>
+          <Link to="/writing/#path-still-building" className="action">The whole series <ArrowRight /></Link>
         </div>
       </div>
     </>

@@ -1,17 +1,19 @@
-import { Link, useSearchParams } from 'react-router';
-import { posts, journeys, postBySlug } from '../content/writing';
+import { Link } from 'react-router';
+import { posts, postBySlug, startHere, journeys, chapters } from '../content/writing';
 import TitleBlock from '../components/TitleBlock';
 import { ArrowRight } from '../components/Icons';
 
+const minutesOf = (slugs) => slugs.reduce((n, s) => n + postBySlug[s].minutes, 0);
+const PostLink = ({ p }) => <Link to={`/writing/${p.slug}/`}>{p.shortTitle || p.title}</Link>;
+
+// Shown first in each chapter; the rest sit behind a toggle.
+const CHAPTER_VISIBLE = 3;
+
 export default function Writing() {
-  const [params, setParams] = useSearchParams();
-  const path = journeys.find((j) => j.id === params.get('path')) || null;
-  const setPath = (j) => setParams(j ? { path: j.id } : {}, { replace: true });
-  // A selected path lists its posts newest first, like the full list.
-  const shown = path ? path.slugs.map((slug) => postBySlug[slug]).sort((a, b) => Number(b.no) - Number(a.no)) : posts;
+  const start = startHere.map((s) => postBySlug[s]);
   return (
     <>
-      <TitleBlock section="650" title="Writing" cells={[{ k: 'Posts', v: `${posts.length}` }]} />
+      <TitleBlock section="650" title="Writing" cells={[{ k: 'Posts', v: `${posts.length}` }, { k: 'Chapters', v: `${chapters.length}` }]} />
       <div className="sheet grid page-lead">
         <p className="page-lead__claim">
           Things I’m learning, building, riding and testing.
@@ -20,40 +22,116 @@ export default function Writing() {
           Some of it is about work, and a lot of it isn’t. Usually I write because I wanted to understand how something works, or because I learned something on the bike that I don’t want to forget.
         </p>
       </div>
-      <div className="sheet writing-topics" role="group" aria-label="Filter posts by reading path">
-        <span className="label">Reading paths</span>
-        {[null, ...journeys].map((j) => (
-          <button key={j ? j.id : 'all'} type="button" aria-pressed={path === j} aria-controls="writing-index" onClick={() => setPath(j)}>
-            {j ? j.title : 'All'}
-          </button>
-        ))}
-        <p className="visually-hidden" aria-live="polite">
-          {path ? `${shown.length} posts in ${path.title}, newest first` : ''}
-        </p>
-      </div>
-      {path && (
-        <p className="sheet writing-path-lead" id={`path-${path.id}`}>
-          <strong>{path.title}.</strong> {path.lead} Newest first.
-        </p>
-      )}
-      <ol id="writing-index" className="sheet case-index" data-coord="650 · Index">
-        {shown.map((p) => (
-          <li key={p.slug}>
-            <Link to={`/writing/${p.slug}/`} className="case-index__row">
-              <span className="case-index__no">{p.no}</span>
-              <span className="case-index__body">
-                <span className="case-index__title">{p.title}</span>
-                <span className="case-index__summary">{p.summary}</span>
-              </span>
-              <span className="case-index__meta">
-                <span className="label">{p.minutes} min read</span>
-                <span className="case-index__domains">{p.topics.join(' / ')}</span>
-              </span>
-              <ArrowRight className="case-index__arrow" />
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <nav className="sheet writing-jump" aria-label="On this page">
+        <a href="#start-here">Start here</a>
+        <a href="#paths">Reading paths</a>
+        <a href="#chapters">Chapters</a>
+        <a href="#all-posts">All posts</a>
+      </nav>
+
+      <section id="start-here" className="sheet writing-section" aria-labelledby="start-here-h">
+        <h2 id="start-here-h" className="h3">Start here</h2>
+        <p className="writing-section__lead">If you only read five posts, read these, in this order. About {minutesOf(startHere)} minutes in all.</p>
+        <ol className="case-index writing-start">
+          {start.map((p, i) => (
+            <li key={p.slug}>
+              <Link to={`/writing/${p.slug}/`} className="case-index__row">
+                <span className="case-index__no">{String(i + 1).padStart(2, '0')}</span>
+                <span className="case-index__body">
+                  <span className="case-index__title">{p.shortTitle || p.title}</span>
+                  <span className="case-index__summary">{p.teaser || p.description}</span>
+                </span>
+                <span className="case-index__meta">
+                  <span className="label">{p.minutes} min read</span>
+                  <span className="case-index__domains">No. {p.no}</span>
+                </span>
+                <ArrowRight className="case-index__arrow" />
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="paths" className="sheet writing-section" aria-labelledby="paths-h">
+        <h2 id="paths-h" className="h3">Reading paths</h2>
+        <p className="writing-section__lead">Short, ordered paths depending on why you’re here. Each post links to the next one in its path.</p>
+        <div className="writing-paths">
+          {journeys.map((j) => (
+            <section key={j.id} id={`path-${j.id}`} className="writing-path" aria-labelledby={`path-${j.id}-h`}>
+              <h3 id={`path-${j.id}-h`} className="writing-path__title">{j.title}</h3>
+              <p className="label">{j.slugs.length} posts · {minutesOf(j.slugs)} min</p>
+              <p className="writing-path__lead">{j.lead}</p>
+              <ol className="writing-path__steps">
+                {j.slugs.map((s) => <li key={s}><PostLink p={postBySlug[s]} /></li>)}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <section id="chapters" className="sheet writing-section" aria-labelledby="chapters-h">
+        <h2 id="chapters-h" className="h3">Chapters</h2>
+        <p className="writing-section__lead">The same stages as the career timeline on the homepage, in the order I lived them, then two side tracks. Each chapter starts with the post I’d read first.</p>
+        <ol className="writing-chapters">
+          {chapters.map((c, i) => {
+            const [anchor, ...rest] = c.slugs.map((s) => postBySlug[s]);
+            const shown = rest.slice(0, CHAPTER_VISIBLE);
+            const more = rest.slice(CHAPTER_VISIBLE);
+            return (
+              <li key={c.id} id={`chapter-${c.id}`} className={`writing-chapter${c.side ? ' writing-chapter--side' : ''}`}>
+                <div className="writing-chapter__head">
+                  <span className="writing-chapter__no">{c.side ? 'Side track' : `Chapter ${String(i + 1).padStart(2, '0')}`}</span>
+                  <h3 className="writing-chapter__title">{c.title}</h3>
+                  <p className="writing-chapter__lead">{c.lead}</p>
+                </div>
+                <div className="writing-chapter__posts">
+                  <Link to={`/writing/${anchor.slug}/`} className="writing-chapter__anchor">
+                    <span className="label">Start with · {anchor.minutes} min</span>
+                    <span className="writing-chapter__anchor-title">{anchor.shortTitle || anchor.title}</span>
+                    <span className="writing-chapter__anchor-teaser">{anchor.teaser || anchor.description}</span>
+                  </Link>
+                  {shown.length > 0 && (
+                    <ul className="writing-chapter__list">
+                      {shown.map((p) => <li key={p.slug}><PostLink p={p} /></li>)}
+                    </ul>
+                  )}
+                  {more.length > 0 && (
+                    <details className="writing-chapter__more">
+                      <summary>{more.length} more in this chapter</summary>
+                      <ul className="writing-chapter__list">
+                        {more.map((p) => <li key={p.slug}><PostLink p={p} /></li>)}
+                      </ul>
+                    </details>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+
+      <section id="all-posts" className="sheet writing-section" aria-labelledby="all-posts-h">
+        <h2 id="all-posts-h" className="h3">All posts</h2>
+        <p className="writing-section__lead">Everything, newest first.</p>
+        <ol id="writing-index" className="case-index" data-coord="650 · Index">
+          {posts.map((p) => (
+            <li key={p.slug}>
+              <Link to={`/writing/${p.slug}/`} className="case-index__row">
+                <span className="case-index__no">{p.no}</span>
+                <span className="case-index__body">
+                  <span className="case-index__title">{p.title}</span>
+                  <span className="case-index__summary">{p.summary}</span>
+                </span>
+                <span className="case-index__meta">
+                  <span className="label">{p.minutes} min read</span>
+                  <span className="case-index__domains">{p.topics.join(' / ')}</span>
+                </span>
+                <ArrowRight className="case-index__arrow" />
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
       <aside className="sheet writing-next" aria-labelledby="writing-next-title">
         <h2 id="writing-next-title" className="h3">Working through one of these problems?</h2>
         <p className="body-copy">If you’re dealing with something a post touches on, at work or on the bike, I’m happy to compare notes.</p>

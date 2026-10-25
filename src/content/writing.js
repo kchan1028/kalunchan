@@ -1,6 +1,7 @@
 // Writing: metadata for each post. Bodies live in src/content/posts/.
 // Dates feed JSON-LD and article:* meta only; the audit keeps years out of visible text.
 import { cycling } from './community';
+import { careerStages } from './home';
 import { draftMetadata as hermesLearningDraft } from './posts/learning-hermes-building-ai-automation-around-the-clock';
 import { metadata as generalistMeta } from './posts/generalist-advantage-in-the-ai-era';
 import { metadata as aiCodeMeta } from './posts/recognizing-ai-generated-code';
@@ -3279,119 +3280,19 @@ export const postBySlug = Object.fromEntries(posts.map((p) => [p.slug, p]));
 const topicOrder = ['Leadership', 'Architecture', 'Delivery', 'Engineering judgment', 'Learning', 'AI', 'Hiring', 'Founder story', 'Cycling', 'Community'];
 export const topics = topicOrder.filter((t) => posts.some((p) => p.topics.includes(t)));
 
-// Reading paths: the five categories on /writing/ and the ordered journey through
-// each. A post may appear in more than one; the first match is its primary.
+// Start here: five posts, in reading order, for someone new to the site.
+export const startHere = [
+  'from-cisco-routers-to-ai-agents',
+  'building-a-startup-from-idea-to-acquisition',
+  'software-architecture-lessons-from-different-systems',
+  'what-engineering-leadership-actually-does',
+  'ai-agents-reliable-in-production',
+];
+
+// Reading paths: short ordered paths for a kind of reader, plus the Still Building
+// series. A post may appear in more than one; the first match is its primary, so
+// the series comes first.
 export const journeys = [
-  {
-    id: 'leadership',
-    title: 'Engineering leadership',
-    lead: 'From hiring an engineer to running a team that can work without you.',
-    slugs: [
-      'why-hiring-good-engineers-is-so-hard',
-      'good-teams-dont-expect-everyone-to-know-everything',
-      'smaller-user-stories-and-pull-requests',
-      'why-writing-good-user-stories-is-hard',
-      'why-i-test-my-products-like-someone-who-has-never-used-them',
-      'specialization-beyond-your-own-code',
-      'what-sprint-carryover-is-telling-you',
-      'when-everything-is-a-priority',
-      'fast-paced-vs-changing-priorities',
-      'engineering-work-nobody-needed',
-      'hidden-cost-of-ai-coding',
-      'recognizing-ai-generated-code',
-      'generalist-advantage-in-the-ai-era',
-      'ai-learning-curve-future-of-work',
-      'code-review-in-the-ai-era',
-      'vibe-coding-vs-agentic-engineering',
-      'loop-engineering-feedback-loops',
-      'ai-generated-code-verification-depth',
-      'speed-vs-quality-software-engineering',
-      'when-to-add-engineering-process',
-      'hidden-cost-of-too-many-meetings',
-      'what-engineering-leadership-actually-does',
-      'what-cycling-taught-me-about-engineering-leadership',
-      'why-i-enjoy-mentoring',
-      'building-public-sector-applications',
-      'modernizing-public-sector-applications',
-    ],
-  },
-  {
-    id: 'architecture',
-    title: 'Software architecture',
-    lead: 'Service boundaries, team size, events, APIs and the lessons that carried across systems.',
-    slugs: [
-      'the-architecture-you-dont-build',
-      'should-it-be-a-microservice',
-      'team-size-should-influence-architecture',
-      'event-driven-architecture-kafka-tradeoffs',
-      'api-architecture-lessons',
-      'software-architecture-lessons-from-different-systems',
-      'open-source-voip-distributed-systems-lessons',
-      'forward-engineering-isnt-new',
-      'network-security-before-devsecops',
-      'patch-mitigate-or-retire-vulnerability-triage',
-      'capacity-planning-carrier-networks-to-cloud',
-      'hidden-cost-of-software-architecture',
-      'when-technical-debt-becomes-a-business-problem',
-      'infrastructure-costs-from-carrier-networks-to-the-cloud',
-      'data-driven-engineering-network-voip-publishing',
-      'building-document-intelligence-workflows',
-      ...(import.meta.env.DEV ? [fedpathMeta.slug] : []),
-    ],
-  },
-  {
-    id: 'learning',
-    title: 'Learning and tools',
-    lead: 'What experienced engineers actually keep in their heads, and what they build instead.',
-    slugs: [
-      ...(import.meta.env.DEV ? [hermesLearningDraft.slug] : []),
-      'from-idea-to-working-product',
-      'you-dont-need-to-remember-everything',
-      'how-i-learn-faster-with-ai',
-      'from-dos-to-ai-thirty-years-of-technology',
-      'from-aol-to-ai-lowering-the-barrier',
-      'talking-to-ai-in-a-terminal',
-      'why-i-build-my-own-developer-tools',
-      'specialization-beyond-your-own-code',
-      'devops-from-expect-scripts-to-ai-agents',
-      'building-software-before-and-after-ai',
-      'ux-ui-design-before-and-after-ai',
-      'what-publishing-taught-me-about-seo-aeo-geo',
-      'digital-publishing-seo-adsense-affiliate-ai-search',
-      'connect-hermes-agent-hostinger-vps-vs-code',
-      'omniroute-hermes-agent-docker',
-      'building-an-ai-job-search-agent-with-hermes',
-      'scheduling-ai-work-hermes-chatgpt-claude',
-    ],
-  },
-  {
-    id: 'founder',
-    title: 'Founder story',
-    lead: 'Building a communications platform from a rack of servers to an acquisition, and what stuck.',
-    slugs: [
-      'building-a-startup-from-idea-to-acquisition',
-      'founding-a-startup-isnt-easy',
-      'building-startups-technical-leadership',
-      'building-software-before-and-after-ai',
-      'voip-apps-for-nokia-phones-before-the-iphone',
-      'open-source-voip-distributed-systems-lessons',
-      'software-architecture-lessons-from-different-systems',
-      'what-publishing-taught-me-about-seo-aeo-geo',
-    ],
-  },
-  {
-    id: 'cycling',
-    title: 'Cycling and community',
-    lead: 'Racing, organizing the Berkeley Omnium, and the small projects that came out of it.',
-    slugs: [
-      'first-bike-races-novice-race-reports',
-      'what-cycling-taught-me-about-engineering-leadership',
-      'organizing-berkeley-omnium-leadership-lessons',
-      'berkeley-omnium-new-website-next-generation',
-      'connect-strava-to-claude-mcp',
-      'fitness-journey-training-smarter',
-    ],
-  },
   {
     id: 'still-building',
     title: 'Still Building',
@@ -3402,7 +3303,157 @@ export const journeys = [
       'ai-agents-reliable-in-production',
     ],
   },
+  {
+    id: 'hiring',
+    title: 'Hiring an engineering leader',
+    lead: 'How I build, lead and make technical decisions, in five posts.',
+    slugs: [
+      'building-a-startup-from-idea-to-acquisition',
+      'what-engineering-leadership-actually-does',
+      'building-public-sector-applications',
+      'hidden-cost-of-software-architecture',
+      'ai-generated-code-verification-depth',
+    ],
+  },
+  {
+    id: 'clients',
+    title: 'Planning a project with me',
+    lead: 'What I weigh before changing a system: public-sector constraints, document processing, architecture I’d rather not build, technical debt and security fixes.',
+    slugs: [
+      'modernizing-public-sector-applications',
+      'building-document-intelligence-workflows',
+      'the-architecture-you-dont-build',
+      'when-technical-debt-becomes-a-business-problem',
+      'patch-mitigate-or-retire-vulnerability-triage',
+    ],
+  },
+  {
+    id: 'engineers',
+    title: 'Growing as an engineer',
+    lead: 'For engineers and the people I mentor: learning, looking things up, and working well with AI.',
+    slugs: [
+      'good-teams-dont-expect-everyone-to-know-everything',
+      'you-dont-need-to-remember-everything',
+      'how-i-learn-faster-with-ai',
+      'recognizing-ai-generated-code',
+      'why-i-enjoy-mentoring',
+    ],
+  },
 ];
+
+// Chapters: the seven career stages on the homepage, in the order lived, then two
+// side tracks. Every post belongs to exactly one; the first slug is the anchor.
+const stageById = Object.fromEntries(careerStages.map((s) => [s.id, s]));
+const chapter = (id, slugs) => ({ id, title: stageById[id].name, lead: stageById[id].lesson, slugs });
+export const chapters = [
+  chapter('carrier', [
+      'capacity-planning-carrier-networks-to-cloud',
+      'from-cisco-routers-to-ai-agents',
+      'infrastructure-costs-from-carrier-networks-to-the-cloud',
+      'devops-from-expect-scripts-to-ai-agents',
+      'from-dos-to-ai-thirty-years-of-technology',
+  ]),
+  chapter('security', [
+      'network-security-before-devsecops',
+      'patch-mitigate-or-retire-vulnerability-triage',
+  ]),
+  chapter('voip', [
+      'open-source-voip-distributed-systems-lessons',
+      'voip-apps-for-nokia-phones-before-the-iphone',
+      'data-driven-engineering-network-voip-publishing',
+  ]),
+  chapter('founder', [
+      'building-a-startup-from-idea-to-acquisition',
+      'founding-a-startup-isnt-easy',
+      'building-startups-technical-leadership',
+      'from-idea-to-working-product',
+      'ux-ui-design-before-and-after-ai',
+      ...(import.meta.env.DEV ? [fedpathMeta.slug] : []),
+  ]),
+  chapter('architecture', [
+      'software-architecture-lessons-from-different-systems',
+      'should-it-be-a-microservice',
+      'hidden-cost-of-software-architecture',
+      'the-architecture-you-dont-build',
+      'team-size-should-influence-architecture',
+      'event-driven-architecture-kafka-tradeoffs',
+      'api-architecture-lessons',
+      'forward-engineering-isnt-new',
+      'when-technical-debt-becomes-a-business-problem',
+      'what-publishing-taught-me-about-seo-aeo-geo',
+      'digital-publishing-seo-adsense-affiliate-ai-search',
+  ]),
+  chapter('leadership', [
+      'what-engineering-leadership-actually-does',
+      'why-hiring-good-engineers-is-so-hard',
+      'good-teams-dont-expect-everyone-to-know-everything',
+      'you-dont-need-to-remember-everything',
+      'specialization-beyond-your-own-code',
+      'smaller-user-stories-and-pull-requests',
+      'why-writing-good-user-stories-is-hard',
+      'what-sprint-carryover-is-telling-you',
+      'when-everything-is-a-priority',
+      'fast-paced-vs-changing-priorities',
+      'when-to-add-engineering-process',
+      'speed-vs-quality-software-engineering',
+      'hidden-cost-of-too-many-meetings',
+      'engineering-work-nobody-needed',
+      'why-i-test-my-products-like-someone-who-has-never-used-them',
+      'why-i-enjoy-mentoring',
+  ]),
+  chapter('cloud-ai', [
+      'building-software-before-and-after-ai',
+      'why-i-still-write-code',
+      'ai-agents-reliable-in-production',
+      'building-public-sector-applications',
+      'modernizing-public-sector-applications',
+      'building-document-intelligence-workflows',
+      'ai-generated-code-verification-depth',
+      'hidden-cost-of-ai-coding',
+      'recognizing-ai-generated-code',
+      'code-review-in-the-ai-era',
+      'vibe-coding-vs-agentic-engineering',
+      'loop-engineering-feedback-loops',
+      'ai-learning-curve-future-of-work',
+      'generalist-advantage-in-the-ai-era',
+      'how-i-learn-faster-with-ai',
+      'from-aol-to-ai-lowering-the-barrier',
+  ]),
+  {
+    id: 'lab',
+    title: 'The lab',
+    lead: 'Setups, tools and experiments: Hermes agents, model routing and the developer tools I build for myself.',
+    side: true,
+    slugs: [
+      'why-i-build-my-own-developer-tools',
+      'talking-to-ai-in-a-terminal',
+      ...(import.meta.env.DEV ? [hermesLearningDraft.slug] : []),
+      'connect-hermes-agent-hostinger-vps-vs-code',
+      'omniroute-hermes-agent-docker',
+      'building-an-ai-job-search-agent-with-hermes',
+      'scheduling-ai-work-hermes-chatgpt-claude',
+    ],
+  },
+  {
+    id: 'bike',
+    title: 'Off the bike',
+    lead: 'Racing, organizing the Berkeley Omnium, and the small projects that came out of it.',
+    side: true,
+    slugs: [
+      'what-cycling-taught-me-about-engineering-leadership',
+      'first-bike-races-novice-race-reports',
+      'organizing-berkeley-omnium-leadership-lessons',
+      'berkeley-omnium-new-website-next-generation',
+      'fitness-journey-training-smarter',
+      'connect-strava-to-claude-mcp',
+    ],
+  },
+].map((c) => ({ ...c, slugs: c.slugs.filter((s) => postBySlug[s]) }));
+
+export function chapterFor(slug) {
+  const i = chapters.findIndex((c) => c.slugs.includes(slug));
+  return i === -1 ? null : { ...chapters[i], no: String(i + 1).padStart(2, '0') };
+}
 
 const slugOf = (to) => (to.match(/^\/writing\/([^/#?]+)\/?$/) || [])[1];
 

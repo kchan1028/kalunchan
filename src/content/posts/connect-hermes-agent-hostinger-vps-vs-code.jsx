@@ -185,7 +185,7 @@ export function Closing() {
         <p className="post__close-principle">That gives me a workspace for learning how the agent runs and troubleshooting it when something goes wrong.</p>
         <p>Next in the series: the first scheduled runs of the job-search agent, and what broke.</p>
         <div className="post__close-actions">
-          <Link to="/writing/?path=learning" className="action">More from the learning path <ArrowRight /></Link>
+          <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>
       </div>
     </>
