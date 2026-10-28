@@ -191,7 +191,7 @@ export default function Contact() {
       </section>
 
       <div className={bar ? 'contact-bar is-on' : 'contact-bar'} aria-hidden={!bar}>
-        <a className="action" href="#start" tabIndex={bar ? 0 : -1}>Start a conversation <ArrowDown /></a>
+        <a className="action" href="#leadership" tabIndex={bar ? 0 : -1}>{paths.leadership.title} <ArrowDown /></a>
       </div>
     </article>
   );

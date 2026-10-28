@@ -46,6 +46,8 @@ export function createHandler({ send, store, env = process.env, now = () => Date
       : json(statusCode, payload));
 
     const raw = event.isBase64Encoded ? Buffer.from(event.body ?? '', 'base64').toString('utf8') : (event.body ?? '');
+    // Read before the size and parse checks, so even those failures send a no-JavaScript post back to its own form.
+    leadership = isHtmlForm && /(?:^|&)form=leadership(?:&|$)/.test(raw);
     if (Buffer.byteLength(raw, 'utf8') > MAX_BODY_BYTES) return reply(413, { ok: false, error: 'too_large' });
     let input;
     try {

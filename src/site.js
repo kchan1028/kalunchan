@@ -280,7 +280,8 @@ export function headFor(path, { modified } = {}) {
       },
     );
   }
-  if (m.path === '/' || m.path === '/about/') {
+  // /about/ is the canonical profile; /engineering-leadership/ is the recruiter profile (sectionPageTypes).
+  if (m.path === '/about/') {
     graph.push({
       '@type': 'ProfilePage',
       '@id': `${url}#profilepage`,

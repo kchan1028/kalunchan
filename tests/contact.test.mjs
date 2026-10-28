@@ -180,6 +180,8 @@ test('without JavaScript, the leadership form redirects back to its own notices'
   assert.equal(ok.headers.location, `${ORIGIN}/contact/#leadership-sent`);
   const bad = await post('/contact', form(contact({ form: 'leadership', email: 'nope' })), { contentType: 'application/x-www-form-urlencoded' });
   assert.equal(bad.headers.location, `${ORIGIN}/contact/#leadership-not-sent`);
+  const huge = await post('/contact', form(contact({ form: 'leadership', message: 'x'.repeat(30_000) })), { contentType: 'application/x-www-form-urlencoded' });
+  assert.equal(huge.headers.location, `${ORIGIN}/contact/#leadership-not-sent`, 'a too-large post still returns to the leadership form');
 });
 
 test('a missing sender or inbox fails safely instead of guessing an address', async () => {
