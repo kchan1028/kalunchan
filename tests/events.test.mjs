@@ -25,8 +25,17 @@ test('keeps LinkedIn targets and drops any other external target', () => {
   assert.equal(parseEvent(body({ t: 'https://evil.example/x' })).target, '');
 });
 
+test('contact_submit carries only which form was sent', () => {
+  assert.deepEqual(parseEvent(body({ e: 'contact_submit', p: '/contact/', t: 'leadership' })), { event: 'contact_submit', path: '/contact/', target: 'leadership' });
+  assert.equal(parseEvent(body({ e: 'contact_submit', p: '/contact/', t: 'consulting' })).target, 'consulting');
+  assert.equal(parseEvent(body({ e: 'contact_submit', p: '/contact/', t: 'alex@example.com' })), null);
+  assert.equal(parseEvent(body({ e: 'contact_submit', p: '/contact/', t: '' })), null);
+});
+
 test('rejects unknown events, bad paths, junk and oversized bodies', () => {
   assert.equal(parseEvent(body({ e: 'page_view' })), null);
+  assert.equal(parseEvent(body({ e: 'contact_click' })), null);
+  assert.equal(parseEvent(body({ e: 'article_click' })), null);
   assert.equal(parseEvent(body({ p: 'https://kalunchan.dev/' })), null);
   assert.equal(parseEvent(body({ p: '/Engineering<script>' })), null);
   assert.equal(parseEvent('not json'), null);

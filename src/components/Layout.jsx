@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { availability, person } from '../content/profile';
 import { headFor } from '../site';
@@ -87,7 +88,7 @@ function Colophon() {
           )}
           <div className="colophon__routes">
             {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
-            <a className="action" href={person.linkedin} rel="me noopener" target="_blank">
+            <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
               {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />
             </a>
             <ul className="colophon__links">

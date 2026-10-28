@@ -1,11 +1,29 @@
 // /engineering-leadership/: the recruiter and hiring-manager page. The one place on the site that names the
 // roles KC is open to (owner decision, recorded in POSITIONING.md). Every figure here already appears, with its
 // evidence, on /experience/, /about/ or a linked post. Keep employer names, career years and résumé files off
-// this page (scripts/audit-seo.py); the résumé is sent on request through the contact form.
+// this page (scripts/audit-seo.py); the résumé is sent on request through the leadership form on /contact/.
 
-export const targetRoles = ['VP of Engineering', 'Head of Engineering', 'Director of Engineering'];
+export const targetRoles = ['VP of Engineering', 'Director of Engineering', 'Head of Engineering'];
 
-export const resumeRequest = '/contact/?topic=leadership#start';
+// The leadership form on /contact/. Every enquiry there gets the résumé in reply.
+export const resumeRequest = '/contact/#leadership';
+
+// Shared link into this page from case studies and Leadership-topic posts.
+export const hireLink = { to: '/engineering-leadership/', label: 'Hiring a VP or Director of Engineering? What I bring to the role' };
+
+// Briefing block at the top of the page: the 60-second answer. Facts from facts.md (owner-confirmed 2026-10-28).
+export const briefing = [
+  { k: 'Target roles', v: 'VP or Director of Engineering. Head of Engineering or CTO where the company needs a hands-on technical executive.' },
+  { k: 'Lane', v: 'Growth-stage and scale-up companies, and engineering leadership for GovTech and regulated platforms.' },
+  { k: 'Location', v: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.' },
+  { k: 'Org scope', v: 'Co-founder and CTO who built a team that grew to 30+ engineers, VoIP specialists and designers. CTO of a media publishing platform. VP of Operations running software engineering, QA and network operations as one function.' },
+];
+
+export const outcomes = [
+  { figure: '400,000+', text: 'users and an acquisition, as co-founder and CTO', to: '/writing/building-a-startup-from-idea-to-acquisition/' },
+  { figure: '30+', text: 'engineers, VoIP specialists and designers in the team I built', to: '/experience/#communications' },
+  { figure: '~30%', text: 'lower AWS costs on a publishing re-platform, with infrastructure improvements contributing', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
+];
 
 // Three readers, three starting points.
 export const paths = [
@@ -15,11 +33,11 @@ export const paths = [
 ];
 
 export const summary = [
-  { k: 'Target roles', v: 'VP of Engineering, Head of Engineering or Director of Engineering. CTO where the company needs a hands-on technical executive.' },
+  { k: 'Target roles', v: 'VP or Director of Engineering at growth-stage and scale-up companies. Head of Engineering or CTO where the company needs a hands-on technical executive.' },
   { k: 'Most recent scope', v: 'Architecture, technical strategy and delivery for government, startup and founder clients through Yippify.' },
   { k: 'Executive roles', v: 'Co-founder and CTO through an acquisition, CTO of a media publishing platform, VP of Operations for a voice services company.' },
   { k: 'Core strengths', v: 'Engineering organization leadership, cloud platforms on AWS, architecture and modernization, public-sector and regulated systems, product engineering, security and reliability, practical AI adoption.' },
-  { k: 'Location', v: 'San Francisco Bay Area. Works with teams across the US, remotely and in person in the Bay Area.' },
+  { k: 'Location', v: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.' },
   { k: 'Résumé and history', v: 'Résumé on request. Employer names and dates are on LinkedIn.' },
 ];
 
@@ -28,13 +46,13 @@ export const impact = [
   {
     figure: '30+',
     title: 'Built and led engineering teams',
-    text: 'Built and led a global team of 30+ engineers, VoIP specialists and designers as co-founder and CTO, then led fully remote teams as a fractional CTO.',
+    text: 'Built and led a global team that grew to 30+ engineers, VoIP specialists and designers as co-founder and CTO, then led fully remote teams as a fractional CTO.',
     to: '/experience/#communications', label: 'The founder-CTO role',
   },
   {
     figure: 'Acquired',
     title: 'Built a company through an acquisition',
-    text: '400,000+ users across South America, Asia and Africa, millions of dollars in transactions, and multimillion-dollar revenue. I led the technical due diligence and stayed on the board after the sale.',
+    text: '400,000+ users across South America, Asia and Africa, millions of dollars in transactions, and multimillion-dollar revenue. I led the technical due diligence and stayed on with the company after the sale.',
     to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story',
   },
   {

@@ -71,6 +71,11 @@
   max-width: 11ch;
 }
 
+.opening__intent {
+  margin-top: var(--s5);
+  max-width: 56ch;
+}
+
 .opening__entity {
   margin-top: var(--s6);
   font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);

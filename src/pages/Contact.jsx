@@ -6,7 +6,10 @@ import ContactForm, { contactEndpoint } from '../components/ContactForm';
 import useReveal from '../components/useReveal';
 import { ArrowDown, ArrowOut, ArrowRight } from '../components/Icons';
 import { person } from '../content/profile';
-import { branches, problems, strengths, operating, becomes, impression, responseTime } from '../content/contact';
+import { branches, problems, strengths, operating, becomes, impression, responseTime, paths } from '../content/contact';
+import { track } from '../track';
+
+const onLinkedIn = () => track('linkedin_click', person.linkedin);
 
 // Engineering leadership drawn as one system: three branches joined by a hands-on bus, converging on the outcome.
 function Stack() {
@@ -34,6 +37,7 @@ export default function Contact() {
   const ref = useReveal();
   const heroRef = useRef(null);
   const talkRef = useRef(null);
+  const leadRef = useRef(null);
   const [bar, setBar] = useState(false);
 
   // Mobile: keep the primary action one tap away between the hero and the form.
@@ -46,6 +50,7 @@ export default function Contact() {
     });
     io.observe(heroRef.current);
     io.observe(talkRef.current);
+    io.observe(leadRef.current);
     return () => io.disconnect();
   }, []);
 
@@ -58,8 +63,8 @@ export default function Contact() {
         <div className="contact-hero__copy">
           <p className="contact-hero__lead">I’m always interested in a good engineering problem: scaling an engineering organization, modernizing a complex platform, fixing slow delivery, building a new product, or bringing in experienced technical leadership.</p>
           <div className="contact-hero__actions">
-            <a className="action" href="#start">Start a conversation <ArrowDown /></a>
-            <Link className="link-arrow" to="/experience/"><span>View my experience</span> <ArrowRight /></Link>
+            <a className="action" href="#leadership">{paths.leadership.title} <ArrowDown /></a>
+            <a className="action action--quiet" href="#consulting">{paths.consulting.title} <ArrowDown /></a>
           </div>
         </div>
         <nav className="contact-hero__still" aria-label="Still evaluating">
@@ -71,6 +76,31 @@ export default function Contact() {
           </ul>
         </nav>
       </header>
+      <section id="leadership" ref={leadRef} className="sheet grid contact-path" aria-labelledby="leadership-title" data-coord="700-1 · Leadership roles">
+        <div className="contact-path__intro">
+          <h2 id="leadership-title" className="h2">{paths.leadership.title}</h2>
+          <p className="contact-path__lead">{paths.leadership.lead}</p>
+          <p className="contact-path__links">
+            <Link className="link-arrow" to="/engineering-leadership/"><span>What I bring to the role</span> <ArrowRight /></Link>
+            {contactEndpoint && <a className="link-arrow" href={person.linkedin} target="_blank" rel="me noopener" onClick={onLinkedIn}><span>Prefer LinkedIn? Message me there</span> <ArrowOut /></a>}
+          </p>
+        </div>
+        <div className="contact-path__side">
+          {contactEndpoint
+            ? <ContactForm variant="leadership" />
+            : <a className="action" href={person.linkedin} target="_blank" rel="me noopener" onClick={onLinkedIn}>Contact me on LinkedIn <ArrowOut /></a>}
+        </div>
+      </section>
+      <section id="consulting" className="sheet grid contact-path" aria-labelledby="consulting-title" data-coord="700-2 · Consulting">
+        <div className="contact-path__intro">
+          <h2 id="consulting-title" className="h2">{paths.consulting.title}</h2>
+          <p className="contact-path__lead">{paths.consulting.lead}</p>
+        </div>
+        <p className="contact-path__side contact-path__links">
+          <a className="action" href={person.yippify}>Visit Yippify <ArrowOut /></a>
+          <a className="link-arrow" href="#start"><span>{paths.consulting.note}</span> <ArrowDown /></a>
+        </p>
+      </section>
 
       <section className="stack on-blue" aria-labelledby="stack-title" data-coord="701 · Leader who goes deep">
         <div className="sheet grid">
@@ -150,8 +180,8 @@ export default function Contact() {
           {contactEndpoint && <ContactForm />}
           <div className="talk__direct">
             {contactEndpoint
-              ? <a className="link-arrow" href={person.linkedin} target="_blank" rel="me noopener"><span>Prefer LinkedIn? Message me there</span> <ArrowOut /></a>
-              : <a className="action" href={person.linkedin} target="_blank" rel="me noopener">Contact me on LinkedIn <ArrowOut /></a>}
+              ? <a className="link-arrow" href={person.linkedin} target="_blank" rel="me noopener" onClick={onLinkedIn}><span>Prefer LinkedIn? Message me there</span> <ArrowOut /></a>
+              : <a className="action" href={person.linkedin} target="_blank" rel="me noopener" onClick={onLinkedIn}>Contact me on LinkedIn <ArrowOut /></a>}
             {person.email && <a className="link-arrow" href={`mailto:${person.email}`}><span>{person.email}</span></a>}
           </div>
         </div>

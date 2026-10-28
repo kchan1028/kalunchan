@@ -38,3 +38,6 @@ yarn-error.log*
 
 # contact form: local dev outbox
 /.contact-outbox
+
+# owner fact sheet: names employers and dates, never committed (repo is public)
+/facts.md

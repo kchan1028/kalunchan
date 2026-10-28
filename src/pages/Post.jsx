@@ -4,7 +4,8 @@ import { postBySlug, chapterFor } from '../content/writing';
 import { getBody, loadBody } from '../content/postBodies';
 import TitleBlock from '../components/TitleBlock';
 import NotFound from './NotFound';
-import { ArrowLeft } from '../components/Icons';
+import { ArrowLeft, ArrowRight } from '../components/Icons';
+import { hireLink } from '../content/engineeringLeadership';
 import { ContinueReading, WhereThisFits } from '../components/ReadNext';
 
 export default function Post() {
@@ -86,6 +87,12 @@ export default function Post() {
             <Closing />
           </div>
         </section>
+      )}
+
+      {post.topics.includes('Leadership') && (
+        <nav className="sheet post__hire" aria-label="For hiring teams">
+          <Link to={hireLink.to} className="link-arrow"><span>{hireLink.label}</span> <ArrowRight /></Link>
+        </nav>
       )}
 
       <WhereThisFits slug={slug} />

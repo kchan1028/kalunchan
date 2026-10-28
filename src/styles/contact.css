@@ -86,6 +86,15 @@
 .founder__becomes li:last-child strong { color: var(--blue); }
 
 /* ---------- 706 Talk ---------- */
+/* The two paths under the hero: leadership roles, then consulting. */
+.contact-path { padding-block: var(--s8); border-top: 3px solid var(--rule); row-gap: var(--s6); align-items: start; }
+.contact-path__intro { grid-column: 1 / 6; }
+.contact-path__lead { margin-top: var(--s4); font-size: var(--t-lead); line-height: 1.45; font-stretch: 96%; max-width: 40ch; }
+.contact-path__links { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s3); margin-top: var(--s5); }
+.contact-path__side { grid-column: 7 / -1; }
+.contact-path__side.contact-path__links { margin-top: 0; }
+.contact-path .cform { margin-top: 0; }
+
 .talk { padding-bottom: var(--s10); row-gap: var(--s7); align-items: end; }
 .talk__intro { grid-column: 1 / 7; }
 .talk__title { font-size: clamp(3rem, 1.2rem + 6vw, 6rem); }
@@ -147,7 +156,7 @@
 
 @media (max-width: 899px) {
   .contact-band { padding-top: var(--s9); }
-  .contact-hero > *, .stack .grid > *, .fit > *, .founder > *, .talk > * { grid-column: 1 / -1; }
+  .contact-hero > *, .contact-path > *, .stack .grid > *, .fit > *, .founder > *, .talk > * { grid-column: 1 / -1; }
   .contact-hero { padding-block: var(--s7) var(--s8); }
 
   .problems__list { grid-template-columns: 1fr; }

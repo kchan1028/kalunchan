@@ -33,7 +33,7 @@ export default function Privacy() {
           <h3 className="privacy__sub">When you read the site</h3>
           <ul className="ticks">
             <li>Page views and page speed, through Cloudflare Web Analytics. It sets no cookies, stores nothing in your browser, and doesn’t identify you.</li>
-            <li>On the engineering leadership page, a count each time someone uses its résumé, LinkedIn, contact or article links. Each count records only which link was used and on which page, with no cookie, IP address or identifier.</li>
+            <li>A count each time someone requests my résumé, opens my LinkedIn profile from this site, or sends the contact form. Each count records only which link or form was used and on which page, with no cookie, IP address, identifier or anything you typed.</li>
             <li>Standard request details such as IP address, browser and the page requested, which Cloudflare and Amazon Web Services handle to deliver the site and protect it from abuse.</li>
           </ul>
           <p>This site sets no cookies of its own and doesn’t use advertising or cross-site tracking. Cloudflare may set a strictly necessary security cookie if it needs to check that a visitor isn’t a bot.</p>

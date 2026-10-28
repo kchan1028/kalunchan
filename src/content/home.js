@@ -4,9 +4,9 @@
 // 001 · Impact: six verified accomplishments, each linking to its evidence.
 export const impact = [
   { figure: 'Every layer', text: 'of a company, from the helpdesk and network operations to the boardroom', to: '/about/' },
-  { figure: 'Acquired', text: 'co-founded a communications company and led it to acquisition, staying on the board', to: '/writing/building-a-startup-from-idea-to-acquisition/#acquisition' },
+  { figure: 'Acquired', text: 'co-founded a communications company and led it to acquisition, then stayed on after the sale', to: '/writing/building-a-startup-from-idea-to-acquisition/#acquisition' },
   { figure: '400,000+', text: 'users served from cloud regions on three continents', to: '/work/three-continent-platform/' },
-  { figure: '30+', text: 'people led through an acquisition, and fully remote teams after it', to: '/experience/#communications' },
+  { figure: '30+', text: 'people in the team I built as co-founder and CTO, and fully remote teams after it', to: '/experience/#communications' },
   { figure: '~30%', text: 'lower AWS costs on a publishing re-platform, with traffic and engagement up 50%', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
   { figure: 'Public sector', text: 'applications engineered to security authorization and Section 508 requirements', to: '/writing/building-public-sector-applications/' },
 ];
@@ -37,14 +37,14 @@ export const careerStages = [
   {
     id: 'founder', name: 'Startup founder', role: 'Co-founder and CTO, global communications platform',
     tech: 'A multi-tier web and mobile platform, a data center cabled by hand, then cloud regions on three continents',
-    did: '400,000+ users across South America, Asia and Africa, with revenue in under four months. Growth reached multimillion-dollar levels, then an acquisition with a board seat.',
+    did: '400,000+ users across South America, Asia and Africa, with revenue in under four months. Growth reached multimillion-dollar levels, then an acquisition.',
     lesson: 'Build for the person using the system, not for the engineers building it.',
     to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story: from an idea to an acquisition',
   },
   {
     id: 'architecture', name: 'Software architecture', role: 'CTO, media publishing; architect on client platforms',
     tech: 'Ruby on Rails, Python and Django, React and Next.js, PostgreSQL, Redis, Kafka',
-    did: 'Re-platformed a publishing portfolio from WordPress to Rails on AWS, and organic and social traffic rose 50%. Built event-driven services on Kafka and APIs that enforce authorization on the record.',
+    did: 'Re-platformed a publishing portfolio from WordPress to Rails on AWS. Organic traffic, social traffic and social engagement each grew 50%, and infrastructure improvements contributed to about 30% lower AWS costs. Built event-driven services on Kafka and APIs that enforce authorization on the record.',
     lesson: 'A service boundary needs to justify its ongoing infrastructure and support cost.',
     to: '/writing/software-architecture-lessons-from-different-systems/', label: 'Architecture lessons from very different systems',
   },
@@ -56,9 +56,9 @@ export const careerStages = [
     to: '/leadership/', label: 'How I run engineering',
   },
   {
-    id: 'cloud-ai', name: 'Cloud & AI', role: 'Consultant and founder, Yippify',
+    id: 'cloud-ai', name: 'Cloud & AI', role: 'Consultant, Yippify',
     tech: 'AWS with ECS and Fargate, Lambda, RDS, Terraform, GitHub Actions; LLM document processing; an AI assistant in the terminal',
-    did: 'About 30% lower AWS costs on a re-platform. Public-sector applications built to security authorization and accessibility requirements. FedPath and Useful Little Tools shipped with AI assistance.',
+    did: 'Public-sector applications built to security authorization and accessibility requirements. FedPath and Useful Little Tools shipped with AI assistance.',
     lesson: 'Capacity became a bill, and the tools keep changing. Keep learning.',
     to: '/writing/building-software-before-and-after-ai/', label: 'Building software before and after AI',
   },
@@ -107,7 +107,7 @@ export const caseStudies = [
       'Database load, and the pages that never changed',
       'Right-size, scale on real demand, fix the database before buying a bigger one',
       'Caching and query fixes, with Terraform-managed infrastructure',
-      'About 30% lower AWS costs, with faster pages',
+      'Infrastructure improvements contributed to about 30% lower AWS costs',
     ],
     to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost', label: 'Cloud capacity is a bill',
   },

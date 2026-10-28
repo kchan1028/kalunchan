@@ -315,6 +315,17 @@
 }
 
 /* Reading path: previous / next within the journey a post belongs to. */
+.post__hire {
+  margin-top: var(--s8);
+  padding-block: var(--s4);
+  border-top: 1px solid var(--rule);
+}
+
+.post__hire + .post__journey {
+  margin-top: 0;
+  border-top: 0;
+}
+
 .post__journey {
   margin-top: var(--s8);
   padding-block: var(--s4);

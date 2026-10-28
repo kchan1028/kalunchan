@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
-  targetRoles, resumeRequest, paths, summary, impact, problems, principles, expertise, featuredSlugs,
+  targetRoles, resumeRequest, briefing, outcomes, paths, summary, impact, problems, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import { track } from '../track';
@@ -16,7 +16,30 @@ const featured = featuredSlugs.map((slug) => posts.find((p) => p.slug === slug))
 export default function EngineeringLeadership() {
   return (
     <>
-      <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP, Head or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
+      <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
+      <section className="sheet grid hire-brief" aria-labelledby="brief-h" data-coord="090 · Briefing">
+        <h2 id="brief-h" className="hire-brief__h label">Briefing</h2>
+        <dl className="hire-brief__facts">
+          {briefing.map((b) => (
+            <div key={b.k}>
+              <dt className="label">{b.k}</dt>
+              <dd>{b.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <ul className="hire-brief__outcomes" aria-label="Headline outcomes">
+          {outcomes.map((o) => (
+            <li key={o.figure}>
+              <Link to={o.to}><strong className="hire-brief__figure">{o.figure}</strong> <span>{o.text}</span></Link>
+            </li>
+          ))}
+        </ul>
+        <p className="hire-brief__actions">
+          <Link to={resumeRequest} className="action" onClick={onResume}>Request my résumé <ArrowRight /></Link>
+          <Link to={resumeRequest} className="action action--quiet">Contact me <ArrowRight /></Link>
+          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>LinkedIn <ArrowOut /></a>
+        </p>
+      </section>
       <div className="sheet grid page-lead hire-lead">
         <p className="page-lead__claim">
           I connect engineering execution, architecture, security and the business, and I’m looking for a senior engineering leadership role to do it.
@@ -25,10 +48,7 @@ export default function EngineeringLeadership() {
           Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader. As co-founder and CTO he built a startup from the ground up to 400,000+ users and an acquisition, then served as CTO of a media publishing platform. Earlier he was VP of Operations for a voice services company. He now leads architecture and delivery for government and startup clients through Yippify, and he still writes code.
         </p>
         <p className="hire-lead__actions">
-          <a href="#experience" className="action">View my experience <ArrowRight /></a>
-          <Link to={resumeRequest} className="action action--quiet" onClick={onResume}>Request my résumé <ArrowRight /></Link>
-          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>Connect on LinkedIn <ArrowOut /></a>
-          <Link to="/contact/#start" className="action action--quiet" onClick={() => track('contact_click', '/contact/#start')}>Contact me <ArrowRight /></Link>
+          <a href="#experience" className="action action--quiet">View my experience <ArrowRight /></a>
         </p>
       </div>
 
@@ -36,7 +56,7 @@ export default function EngineeringLeadership() {
         <div className="sheet grid">
           <p className="open-to__roles">Open to conversations about {targetRoles.slice(0, -1).join(', ')} and {targetRoles.at(-1)} roles.</p>
           <div className="open-to__side">
-            <Link className="action" to={resumeRequest} onClick={() => track('contact_click', resumeRequest)}>Talk about a role <ArrowRight /></Link>
+            <Link className="action" to={resumeRequest}>Talk about a role <ArrowRight /></Link>
           </div>
         </div>
       </aside>
@@ -176,7 +196,7 @@ export default function EngineeringLeadership() {
         <ul className="hire-writing">
           {featured.map((p) => (
             <li key={p.slug}>
-              <h3 className="h3"><Link to={`/writing/${p.slug}/`} onClick={() => track('article_click', `/writing/${p.slug}/`)}>{p.title}</Link></h3>
+              <h3 className="h3"><Link to={`/writing/${p.slug}/`}>{p.title}</Link></h3>
               <p className="body-copy">{p.description}</p>
             </li>
           ))}

@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { track } from '../track';
 import { person } from '../content/profile';
 import { practices, counterparts } from '../content/practice';
 import { leadershipFlow } from '../content/home';
@@ -63,7 +64,7 @@ export default function Leadership() {
         <div className="sheet grid">
           <p className="open-to__roles">Working with teams through Yippify on engineering leadership, architecture and delivery.</p>
           <div className="open-to__side">
-            <a className="action" href={person.linkedin} rel="me noopener" target="_blank">
+            <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
               Start a conversation <ArrowOut />
             </a>
             <Link to="/engineering-leadership/" className="link-arrow"><span>Hiring for a leadership role?</span> <ArrowRight /></Link>

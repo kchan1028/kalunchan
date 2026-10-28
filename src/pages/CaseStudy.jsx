@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router';
 import { cases, caseBySlug } from '../content/work';
+import { hireLink } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import Diagram from '../components/Diagram';
 import NotFound from './NotFound';
@@ -151,6 +152,10 @@ export default function CaseStudy() {
             ))}
           </p>
         )}
+        <p className="case__related">
+          <span className="label">For hiring teams</span>
+          <Link to={hireLink.to} className="link-arrow"><span>{hireLink.label}</span> <ArrowRight /></Link>
+        </p>
       </section>
 
       <nav className="sheet case__next" aria-label="Next case study">

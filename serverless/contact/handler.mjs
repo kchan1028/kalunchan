@@ -12,6 +12,9 @@ const FORM = 'contact';
 // Without JavaScript the browser posts the form directly; these anchors show a notice on the contact page.
 export const SUCCESS_PATH = '/contact/#message-sent';
 export const FAILURE_PATH = '/contact/#message-not-sent';
+// The leadership form (form=leadership) has its own notices, so a no-JavaScript post lands back on that form.
+export const LEADERSHIP_SUCCESS_PATH = '/contact/#leadership-sent';
+export const LEADERSHIP_FAILURE_PATH = '/contact/#leadership-not-sent';
 
 const list = (value) => (value ?? '').split(',').map((item) => item.trim()).filter(Boolean);
 const lowerKeys = (headers = {}) => Object.fromEntries(Object.entries(headers).map(([key, value]) => [key.toLowerCase(), value]));
@@ -37,8 +40,9 @@ export function createHandler({ send, store, env = process.env, now = () => Date
 
     const siteUrl = (env.SITE_URL || 'https://kalunchan.dev').replace(/\/$/, '');
     const isHtmlForm = (headers['content-type'] ?? '').startsWith('application/x-www-form-urlencoded');
+    let leadership = false;
     const reply = (statusCode, payload) => (isHtmlForm
-      ? { statusCode: 303, headers: { location: `${siteUrl}${payload.ok ? SUCCESS_PATH : FAILURE_PATH}`, 'cache-control': 'no-store' }, body: '' }
+      ? { statusCode: 303, headers: { location: `${siteUrl}${leadership ? (payload.ok ? LEADERSHIP_SUCCESS_PATH : LEADERSHIP_FAILURE_PATH) : (payload.ok ? SUCCESS_PATH : FAILURE_PATH)}`, 'cache-control': 'no-store' }, body: '' }
       : json(statusCode, payload));
 
     const raw = event.isBase64Encoded ? Buffer.from(event.body ?? '', 'base64').toString('utf8') : (event.body ?? '');
@@ -50,6 +54,7 @@ export function createHandler({ send, store, env = process.env, now = () => Date
       return reply(400, { ok: false, error: 'bad_request' });
     }
     if (!input || typeof input !== 'object' || Array.isArray(input)) return reply(400, { ok: false, error: 'bad_request' });
+    leadership = input.form === 'leadership';
 
     // Bots get a normal-looking success and nothing is sent.
     const spam = spamReason(input, now());

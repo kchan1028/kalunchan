@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { nav } from '../components/Layout';
 import ExperienceMap from '../components/ExperienceMap';
 import { Impact, CareerTimeline, CaseStudies, LeadershipFlow } from '../components/HomeSections';
-import { homeIntro, headlineNumbers, person, proofPoints } from '../content/profile';
+import { homeIntro, headlineNumbers, person, proofPoints, roleIntent } from '../content/profile';
 import { projects } from '../content/projects';
 import { ArrowRight } from '../components/Icons';
 
@@ -16,6 +16,9 @@ export default function Home() {
       </div>
       <div className="opening__text">
         <h1 id="thesis" className="opening__thesis display">{person.thesis}</h1>
+        <p className="opening__intent">
+          <Link to="/engineering-leadership/" className="link-arrow"><span>{roleIntent}</span> <ArrowRight /></Link>
+        </p>
         <p className="opening__entity">{homeIntro}</p>
         <p className="opening__actions">
           <Link to="/contact/#start" className="action">Start a conversation <ArrowRight /></Link>
