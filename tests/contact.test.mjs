@@ -150,6 +150,40 @@ test('without JavaScript, posts redirect back to the contact page notices', asyn
   assert.equal(bad.headers.location, `${ORIGIN}/contact/#message-not-sent`);
 });
 
+test('the leadership form needs only a name and email, and its optional fields reach the email', async () => {
+  const { sent, post } = setup();
+  const bare = await post('/contact', contact({ company: '', message: '' }));
+  assert.equal(bare.statusCode, 200);
+  assert.ok(sent[0].text.includes('Message:\n(none)'));
+  await post('/contact', contact({ role: 'VP of Engineering', location: 'Remote, US', source: 'recruiter' }));
+  for (const line of ['Role:\nVP of Engineering', 'Location expectation:\nRemote, US', 'Found me through:\nA recruiter']) {
+    assert.ok(sent[1].text.includes(line), `email includes ${line.split('\n')[0]}`);
+  }
+  assert.ok(!sent[0].text.includes('Role:'), 'empty optional fields are left out');
+});
+
+test('other topics still need a message, and unknown sources or long optional fields are rejected', async () => {
+  const { sent, post } = setup();
+  const noMessage = await post('/contact', contact({ topic: 'project', message: '' }));
+  assert.equal(noMessage.statusCode, 422);
+  assert.ok(json(noMessage).errors.message);
+  const bad = await post('/contact', contact({ source: 'billboard', role: 'x'.repeat(151), location: 'y'.repeat(151) }));
+  assert.equal(bad.statusCode, 422);
+  assert.deepEqual(Object.keys(json(bad).errors).sort(), ['location', 'role', 'source']);
+  assert.equal(sent.length, 0);
+});
+
+test('without JavaScript, the leadership form redirects back to its own notices', async () => {
+  const { post } = setup();
+  const form = (values) => new URLSearchParams(values).toString();
+  const ok = await post('/contact', form(contact({ form: 'leadership', startedAt: '', submissionId: '' })), { contentType: 'application/x-www-form-urlencoded' });
+  assert.equal(ok.headers.location, `${ORIGIN}/contact/#leadership-sent`);
+  const bad = await post('/contact', form(contact({ form: 'leadership', email: 'nope' })), { contentType: 'application/x-www-form-urlencoded' });
+  assert.equal(bad.headers.location, `${ORIGIN}/contact/#leadership-not-sent`);
+  const huge = await post('/contact', form(contact({ form: 'leadership', message: 'x'.repeat(30_000) })), { contentType: 'application/x-www-form-urlencoded' });
+  assert.equal(huge.headers.location, `${ORIGIN}/contact/#leadership-not-sent`, 'a too-large post still returns to the leadership form');
+});
+
 test('a missing sender or inbox fails safely instead of guessing an address', async () => {
   const { post } = setup({ env: { FORMS_FROM: '', CONTACT_TO: '' } });
   const response = await post('/contact', contact());

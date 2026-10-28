@@ -1,4 +1,73 @@
 /* /engineering-leadership/: recruiter and hiring-manager page. Ruled rows on the shared 12-column sheet. */
+/* Briefing: the 60-second answer, above the longer evidence. */
+.hire-brief {
+  padding-block: var(--s6) var(--s8);
+  row-gap: var(--s6);
+}
+
+.hire-brief__h {
+  grid-column: 1 / 3;
+  color: var(--ink-3);
+  padding-top: var(--s3);
+}
+
+.hire-brief__facts {
+  grid-column: 3 / 9;
+}
+
+.hire-brief__facts > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: var(--s5);
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.hire-brief__facts dt {
+  color: var(--ink-3);
+  padding-top: 0.2em;
+}
+
+.hire-brief__outcomes {
+  grid-column: 9 / 13;
+  border-top: 3px solid var(--rule);
+}
+
+.hire-brief__outcomes a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding-block: var(--s3);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  color: inherit;
+}
+
+.hire-brief__outcomes a span {
+  color: var(--ink-2);
+}
+
+.hire-brief__outcomes a:hover span {
+  text-decoration: underline;
+}
+
+.hire-brief__figure {
+  font-size: var(--t-h2);
+  font-weight: 800;
+  font-stretch: 68%;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--blue);
+}
+
+.hire-brief__actions {
+  grid-column: 3 / 13;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s5);
+  align-items: center;
+}
+
 .hire-lead__actions {
   grid-column: 3 / 13;
   display: flex;
@@ -242,6 +311,10 @@
 }
 
 @media (max-width: 899px) {
+  .hire-brief__h,
+  .hire-brief__facts,
+  .hire-brief__outcomes,
+  .hire-brief__actions,
   .hire-lead__actions,
   .hire-paths__h,
   .hire-paths__list,
@@ -266,6 +339,7 @@
 }
 
 @media (max-width: 599px) {
+  .hire-brief__facts > div,
   .hire-summary > div,
   .hire-expertise > div,
   .hire-career__spec > div {

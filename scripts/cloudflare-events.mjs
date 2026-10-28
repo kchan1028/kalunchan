@@ -87,4 +87,4 @@ const route = existing
   : await cf('POST', `/zones/${zone}/workers/routes`, { pattern: PATTERN, script: SCRIPT });
 if (!route.json?.success) fail(`Cloudflare did not accept the route (${route.status}): ${JSON.stringify(route.json?.errors)}`);
 console.log(`✓ Worker ${SCRIPT} deployed; ${PATTERN} ${existing ? 'updated' : 'created'}.`);
-console.log(`  Check with: curl -si -X POST https://${PATTERN} -H 'Origin: https://kalunchan.dev' -d '{"e":"contact_click","p":"/engineering-leadership/","t":"/contact/"}' | head -1`);
+console.log(`  Check with: curl -si -X POST https://${PATTERN} -H 'Origin: https://kalunchan.dev' -d '{"e":"contact_submit","p":"/contact/","t":"leadership"}' | head -1`);

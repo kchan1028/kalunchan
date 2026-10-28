@@ -11,6 +11,13 @@ Positioning: an engineering leader and generalist who works with companies throu
 keeps the positioning below. The page follows the site's privacy rules: no employer names, no career years, and
 no résumé file; the résumé is requested through /contact/?topic=leadership.
 
+Update (owner decision, 2026-10-28): target lanes are VP or Director of Engineering at growth-stage and scale-up
+companies (primary) and engineering leadership in GovTech and regulated platforms (secondary); remote across the US
+or hybrid/on-site in the Bay Area. Two further exceptions to the positioning below:
+- The homepage carries one line of role intent under the H1, linking to /engineering-leadership/
+  (`roleIntent` in src/content/profile.js). No other availability line on the homepage; §2c still applies.
+- /contact/ leads with a "Leadership roles" path, then "Consulting via Yippify".
+
 
 # 1. Intro paragraph (homepage under the H1, and top of /about/), 59 words
 

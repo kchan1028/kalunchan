@@ -15,19 +15,19 @@ const base = [
   {
     "path": "/",
     "title": "Ka Lun Chan (KC) \u2014 Engineering Leader, SF Bay Area",
-    "description": "Ka Lun Chan (KC): Bay Area engineering leader and generalist. Co-founder and CTO who built a startup from the ground up to 400k+ users and an acquisition."
+    "description": "Ka Lun Chan (KC): Bay Area engineering leader for growing companies. Co-founder and CTO who built a startup to 400k+ users and an acquisition."
   },
   {
     "path": "/about/",
     name: "About",
-    "title": "Ka Lun Chan | Engineering Leader & SaaS Founder",
-    "description": "Meet KC: an engineering leader and SaaS founder combining hands-on technical depth, product judgment, strong execution, and developing people."
+    "title": "About Ka Lun Chan (KC): Engineering Leader and Former CTO",
+    "description": "Ka Lun Chan (KC) builds engineering teams and the systems they run: co-founder and CTO through an acquisition, media CTO, and still a hands-on architect."
   },
   {
     path: '/engineering-leadership/',
     name: 'Engineering Leadership',
-    title: 'Engineering Leader & Former CTO for VP or Director Roles — Ka Lun Chan',
-    description: 'Bay Area engineering leader and former co-founder and CTO, open to VP, Head or Director of Engineering roles: results, experience and how I lead.',
+    title: 'Engineering Leader for VP or Director Roles — Ka Lun Chan (KC)',
+    description: 'Ka Lun Chan (KC), Bay Area engineering leader and former co-founder and CTO, open to VP or Director of Engineering roles at scale-ups, remote or hybrid.',
   },
   {
     "path": "/leadership/",
@@ -82,8 +82,8 @@ const base = [
   {
     "path": "/contact/",
     name: "Contact",
-    "title": "Contact Ka Lun Chan \u2014 Engineering Leader",
-    "description": "Bring a hands-on engineering leader to your problem: scaling a team, modernizing a platform, fixing slow delivery or making a hard architecture call."
+    "title": "Contact Ka Lun Chan (KC) — Leadership Roles and Consulting",
+    "description": "Hiring a VP or Director of Engineering? Tell me about the role and I’ll reply with my résumé. Consulting projects go through Yippify."
   },
   {
     path: '/privacy/',
@@ -139,7 +139,8 @@ const WEBSITE_ID = `${ORIGIN}/#website`;
 const sectionPageTypes = {
   '/leadership/': 'WebPage', '/experience/': 'WebPage', '/expertise/': 'WebPage',
   '/mentorship/': 'WebPage', '/contact/': 'ContactPage', '/privacy/': 'WebPage',
-  '/engineering-leadership/': 'WebPage',
+  // The recruiter page is a profile of KC: ProfilePage whose mainEntity is the sitewide Person.
+  '/engineering-leadership/': 'ProfilePage',
 };
 // Section pages whose subject is KC himself.
 const aboutPerson = new Set(['/engineering-leadership/']);
@@ -166,9 +167,6 @@ const personLd = {
   sameAs: [
     'https://www.linkedin.com/in/kchan1288/',
     'https://github.com/kchan1028',
-    'https://yippify.com/',
-    'https://getvelowise.com/',
-    'https://getsurgeiq.com/',
   ],
 };
 
@@ -249,6 +247,7 @@ export function headFor(path, { modified } = {}) {
       isPartOf: { '@id': WEBSITE_ID },
       author: { '@id': PERSON_ID },
       ...(aboutPerson.has(m.path) && { about: { '@id': PERSON_ID }, mainEntity: { '@id': PERSON_ID } }),
+      ...(sectionPageTypes[m.path] === 'ProfilePage' && { dateCreated: SITE_CREATED, ...(modified && { dateModified: modified }) }),
       breadcrumb: { '@id': `${url}#breadcrumbs` },
     });
   }
@@ -281,7 +280,8 @@ export function headFor(path, { modified } = {}) {
       },
     );
   }
-  if (m.path === '/' || m.path === '/about/') {
+  // /about/ is the canonical profile; /engineering-leadership/ is the recruiter profile (sectionPageTypes).
+  if (m.path === '/about/') {
     graph.push({
       '@type': 'ProfilePage',
       '@id': `${url}#profilepage`,

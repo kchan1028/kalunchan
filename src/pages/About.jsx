@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import { track } from '../track';
 import TitleBlock from '../components/TitleBlock';
 import CareerArc from '../components/CareerArc';
 import StackLadder from '../components/StackLadder';
@@ -81,7 +82,7 @@ export default function About() {
     <Qa id="delivered" coord="Delivered" q="What has Ka Lun Chan delivered?">
       <p>His record includes scaling a product to 400,000+ users and an acquisition, and infrastructure work across 2,000+ carrier sites.</p>
       <ul className="spec-list">{delivered.map((d) => <li key={d.term}><strong>{d.term}</strong> {d.text}</li>)}</ul>
-      <p>Employer names and dates are on <a href={person.linkedin}>his LinkedIn profile</a>.</p>
+      <p>Employer names and dates are on <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>his LinkedIn profile</a>.</p>
     </Qa>
 
     <Qa id="value" coord="Where he adds value" q="Where does Ka Lun Chan add the most value?">
@@ -129,7 +130,7 @@ export default function About() {
     </Qa>
 
     <Qa id="work-with" coord="Contact" q="How can you work with Ka Lun Chan?">
-      <p>The fastest way to reach KC is a LinkedIn message at <a href={person.linkedin}>linkedin.com/in/kchan1288</a>. For consulting projects, contact <a href={person.yippify}>Yippify</a>. His code is on GitHub at <a href={person.github}>github.com/kchan1028</a>.</p>
+      <p>The fastest way to reach KC is a LinkedIn message at <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>linkedin.com/in/kchan1288</a>. For consulting projects, contact <a href={person.yippify}>Yippify</a>. His code is on GitHub at <a href={person.github}>github.com/kchan1028</a>.</p>
     </Qa>
 
     <header className="sheet about-words" data-coord="050 · Career story">

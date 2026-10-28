@@ -30,7 +30,10 @@ export const entity =
 
 // The homepage says the same thing in its own words, so / and /about/ don't repeat each other.
 export const homeIntro =
-  'Ka Lun Chan (KC) is an engineering leader in the San Francisco Bay Area. He co-founded a communications company and grew it to 400,000+ users on three continents. After the acquisition he stayed on the board. Today he leads government technology work through Yippify.';
+  'Ka Lun Chan (KC) is an engineering leader in the San Francisco Bay Area. He co-founded a communications company and grew it to 400,000+ users on three continents. After the acquisition he stayed on with the company. Today he leads government technology work through Yippify.';
+
+// One line of role intent under the home headline, linking to /engineering-leadership/ (POSITIONING.md §0).
+export const roleIntent = 'Open to VP or Director of Engineering roles at growing companies, remote or in the Bay Area';
 
 // Verified proof points shown under the home positioning line, each linking to its evidence.
 export const proofPoints = [
@@ -43,7 +46,7 @@ export const proofPoints = [
 export const headlineNumbers = [
   { figure: 'Helpdesk to CTO', text: 'every layer of a company, still hands-on' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
-  { figure: '30+', text: 'engineers and VoIP specialists led' },
+  { figure: '30+', text: 'engineers, VoIP specialists and designers in the team I built as co-founder and CTO' },
 ];
 
 export const updated = '[REPLACE_WITH_MONTH YEAR]';
