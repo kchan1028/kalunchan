@@ -33,11 +33,11 @@ export default function Privacy() {
           <h3 className="privacy__sub">When you read the site</h3>
           <ul className="ticks">
             <li>Page views and page speed, through Cloudflare Web Analytics. It sets no cookies, stores nothing in your browser, and doesn’t identify you.</li>
-            <li>Visits and how people move through the site, through Google Analytics. It sets first-party cookies (named <code>_ga</code>) that recognize a returning browser, and records the pages you view, roughly where you are, your device and browser, and the site that sent you. It isn’t loaded for visitors in the European Union, the wider European Economic Area or the United Kingdom, or if your browser sends Global Privacy Control.</li>
+            <li>Visits and how people move through the site, through Google Analytics. It sets first-party cookies (named <code>_ga</code>) that recognize a returning browser, and records the pages you view, roughly where you are, your device and browser, and the site that sent you. It isn’t loaded for visitors in the European Union, the wider European Economic Area, the United Kingdom, Gibraltar, Jersey, Guernsey or the Isle of Man, or if your browser sends Global Privacy Control.</li>
             <li>A count each time someone requests my résumé, opens my LinkedIn profile from this site, or sends the contact form. Each count records only which link or form was used and on which page, with no cookie, IP address, identifier or anything you typed.</li>
             <li>Standard request details such as IP address, browser and the page requested, which Cloudflare and Amazon Web Services handle to deliver the site and protect it from abuse.</li>
           </ul>
-          <p>Apart from the Google Analytics cookies, which aren’t set for visitors in the EU, EEA or UK, this site sets no cookies and doesn’t use advertising or cross-site tracking. Cloudflare may set a strictly necessary security cookie if it needs to check that a visitor isn’t a bot.</p>
+          <p>Apart from the Google Analytics cookies, which aren’t set for visitors in those places, this site sets no cookies and doesn’t use advertising or cross-site tracking. Cloudflare may set a strictly necessary security cookie if it needs to check that a visitor isn’t a bot.</p>
 
           <h2 className="h3">Why</h2>
           <ul className="ticks">
@@ -45,7 +45,7 @@ export default function Privacy() {
             <li>To keep the form free of spam and abuse.</li>
             <li>To see which pages people read, which links they use, and whether the site loads quickly.</li>
           </ul>
-          <p>Where the law asks for a legal basis, replying to you rests on your request, and spam protection and anonymous statistics rest on legitimate interests in running a usable, secure site.</p>
+          <p>Where the law asks for a legal basis, replying to you rests on your request, and spam protection and site statistics rest on legitimate interests in running a usable, secure site.</p>
 
           <h2 className="h3">Who else handles it</h2>
           <p>I don’t sell or share personal information, and I don’t use it for advertising. These service providers process it on my behalf:</p>

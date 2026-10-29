@@ -15,9 +15,11 @@
       gtag('js', new Date());
       gtag('config', 'G-144Q39Z8BD');
       // Fetch the ~180 KB tag after the page loads so it doesn't compete with first paint. Skipped when the browser sends
-      // Global Privacy Control, and for visitors in the EU, EEA or UK (no consent banner), using the country Cloudflare
+      // Global Privacy Control, and for visitors in the EU (including its outermost regions and Åland, which have their own
+      // ISO codes), the EEA, the UK, Gibraltar and the Crown Dependencies (no consent banner), using the country Cloudflare
       // reports at /cdn-cgi/trace. If the country can't be read, GA stays off.
-      var NO_GA = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB T1 XX'.split(' ');
+      var NO_GA = ('AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE GF GP MQ RE YT MF AX ' +
+        'IS LI NO GB GI JE GG IM T1 XX').split(' ');
       if (!navigator.globalPrivacyControl) addEventListener('load', function () {
         fetch('/cdn-cgi/trace').then(function (r) { return r.text(); }).then(function (t) {
           var loc = (t.match(/^loc=([A-Z0-9]+)$/m) || [])[1];
