@@ -13,7 +13,7 @@ EVENT_YEAR_ROUTES = {'/writing/', '/writing/berkeley-omnium-new-website-next-gen
 APPROVED_DATED_TEXT = {
     '/about/': ['That figure is from September 2026'],
     # The privacy notice's effective date (src/pages/Privacy.jsx PRIVACY_EFFECTIVE, shown twice).
-    '/privacy/': ['Effective 22 October 2026', '22 October 2026'],
+    '/privacy/': ['Effective 29 October 2026', '29 October 2026'],
     # Token prices change; the pricing table must say when they were checked.
     '/writing/hidden-cost-of-ai-coding/': ['as of October 2026'],
 }

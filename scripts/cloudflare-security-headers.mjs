@@ -41,12 +41,13 @@ const contact = config.VITE_CONTACT_ENDPOINT ? new URL(config.VITE_CONTACT_ENDPO
 const csp = [
   "default-src 'self'",
   // Cloudflare Web Analytics: the beacon is injected at the edge and reports to cloudflareinsights.com.
-  ['script-src', "'self'", ...hashes, 'https://static.cloudflareinsights.com'].join(' '),
+  // Google Analytics 4: gtag.js from googletagmanager.com, hits to *.google-analytics.com.
+  ['script-src', "'self'", ...hashes, 'https://static.cloudflareinsights.com', 'https://www.googletagmanager.com'].join(' '),
   // Prerender inlines the CSS, and components set custom properties through style attributes.
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
   "font-src 'self'",
-  `connect-src 'self' https://cloudflareinsights.com ${contact}`.trim(),
+  `connect-src 'self' https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com ${contact}`.trim(),
   // Without JavaScript the contact form posts straight to the endpoint.
   `form-action 'self' ${contact}`.trim(),
   "frame-ancestors 'none'",
