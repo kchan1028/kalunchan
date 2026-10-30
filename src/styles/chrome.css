@@ -458,6 +458,92 @@ p.title-block__heading {
   padding-bottom: var(--s9);
 }
 
+/* Proof figures: the last thing every page says, each linking to the work behind it. */
+.colophon__proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: var(--s9);
+  border-block: 1px solid rgb(244 245 242 / 0.22);
+}
+
+.colophon__proof li + li {
+  border-left: 1px solid rgb(244 245 242 / 0.22);
+}
+
+.colophon__proof a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  height: 100%;
+  padding: var(--s5) var(--s4) var(--s5) var(--s5);
+  text-decoration: none;
+  color: #b6bcc2;
+  font-size: var(--t-small);
+  transition: color 180ms var(--ease-out);
+}
+
+.colophon__proof li:first-child a {
+  padding-left: 0;
+}
+
+.colophon__proof a:hover {
+  color: var(--paper);
+}
+
+.colophon__figure {
+  display: block;
+  font-size: clamp(3rem, 1rem + 5.6vw, 7rem);
+  font-weight: 800;
+  font-stretch: 68%;
+  letter-spacing: -0.015em;
+  line-height: 0.94;
+  color: var(--paper);
+}
+
+.colophon__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.colophon .colophon__actions .action--quiet {
+  background: transparent;
+  color: var(--paper);
+}
+
+.local-time {
+  display: none;
+  white-space: nowrap;
+  color: var(--ink-3);
+}
+
+.colophon__base .local-time {
+  display: inline;
+  color: inherit;
+}
+
+@media (min-width: 1560px) {
+  .site-header__bar .local-time {
+    display: block;
+  }
+}
+
+@media (max-width: 599px) {
+  .colophon__proof {
+    grid-template-columns: minmax(0, 1fr);
+    margin-bottom: var(--s8);
+  }
+
+  .colophon__proof li + li {
+    border-left: 0;
+    border-top: 1px solid rgb(244 245 242 / 0.22);
+  }
+
+  .colophon__proof a {
+    padding-inline: 0;
+  }
+}
+
 .colophon__ask {
   grid-column: 1 / 8;
   font-size: clamp(2.25rem, 1.2rem + 3.4vw, 4.25rem);

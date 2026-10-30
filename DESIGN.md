@@ -236,6 +236,9 @@ Locked at the header's left, after the wordmark: a 7px blue square, then the mon
 ### Title Block (signature)
 The ruled head of every page: section number in condensed 800 (2.25rem), page title in the headline style, then meta cells and the issue, each cell a label word over its value. Wraps to rows under soft rules below 900px.
 
+### Pressed Type (signature)
+Page titles, the home thesis and band heads press into place word by word along the width axis: from 125% width at weight 300 to their final setting over 900ms, 70ms between words. Page titles play on load; band heads play once as they scroll in. The final layout is reserved, so nothing shifts. Static under reduced motion. Contents entries open to 112% width on hover.
+
 ### Blue Field
 The one region that matters now on each page, a solid carrier-blue rectangle with white text and linework, soft-blue labels and 32%-white hairlines. Carries a figure caption (mono "Fig." number, Archivo title, key) when it holds a drawing.
 
@@ -248,8 +251,11 @@ Options listed as ruled rows (state, option, note). Rejected options stay visibl
 ### Contents List
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
 
+### Print-In Motion
+Below the fold, blue fields wipe in from the left, and figures, images and plain section heads wipe in from the top, once each. The title block's head rule draws across on load, and a 2px blue line on the header rule tracks scroll progress. Everything is visible without JavaScript or under reduced motion.
+
 ### Colophon
-Every page closes on a solid ink band: a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It is the only dark surface.
+Every page closes on a solid ink band: three large proof figures that link to their evidence, a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It is the only dark surface.
 
 ## Do's and Don'ts
 

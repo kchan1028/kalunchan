@@ -117,7 +117,7 @@ export default function Body() {
 
       <section id="specialists" aria-labelledby="specialists-h">
         <h2 id="specialists-h" className="post__h2">Generalists still need specialists</h2>
-        <p>None of this makes generalists better than specialists. As the company grew, the team grew to more than 30 people, including VoIP specialists and designers. I could talk with them about their work. I couldn’t do it as well as they did, which is why they were there.</p>
+        <p>None of this makes generalists better than specialists. As the company grew, the team grew to more than 30 people. I could talk with them about their work. I couldn’t do it as well as they did, which is why they were there.</p>
         <p>Specialists find the problems a generalist walks past: the slow query that only shows up at a million rows, or the race condition that appears once a week. AI doesn’t replace that depth either. It gets you to a decent first answer in almost any field. The last stretch, where the hard bugs and the real risks are, still belongs to people who have spent years in that one area.</p>
         <p>The generalist’s job on a team is connecting the parts. That means noticing that a security decision changes the support load, explaining an engineering tradeoff to the person who owns the budget, and asking the question that falls between two teams. I wrote about what happens when nobody watches those boundaries in <Link to="/writing/specialization-beyond-your-own-code/">specialization shouldn’t stop at your own code</Link>. Good teams need both kinds of people, and they need them to respect each other.</p>
       </section>

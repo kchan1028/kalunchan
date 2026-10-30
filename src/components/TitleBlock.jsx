@@ -1,3 +1,4 @@
+import PressedType from './PressedType';
 
 // The ruled title block that heads every page of the manual.
 export default function TitleBlock({ section, title, cells = [], as: Heading = 'h1', coord }) {
@@ -6,10 +7,10 @@ export default function TitleBlock({ section, title, cells = [], as: Heading = '
       <div className="title-block__row">
         <div className="title-block__cell title-block__section">
           <span className="label">Section</span>
-          <span className="title-block__no">{section}</span>
+          <span className="title-block__no"><PressedType text={section} /></span>
         </div>
         <div className="title-block__cell title-block__title">
-          <Heading className="title-block__heading">{title}</Heading>
+          <Heading className="title-block__heading"><PressedType text={title} /></Heading>
         </div>
         {cells.map((c) => (
           <div className="title-block__cell title-block__meta" key={c.k}>

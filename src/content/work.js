@@ -77,7 +77,7 @@ export const cases = [
     execution: [
       'Each region carried the full web and application tier. Users resolved to the nearest healthy region through geo-location DNS, and data replicated back to a primary. Regions went live one at a time, with customers on calls throughout and a way back at every step.',
       'Media routing changed alongside the regions. We estimated each caller’s location from the source IP and steered the audio through the nearest appropriate media path instead of hairpinning it through a single site. Least-cost routing picked the cheapest carrier for each call, and we tuned it with call statistics so the cheapest route also had to deliver acceptable quality.',
-      'The team that built the platform also ran it, so the migration happened alongside day-to-day operations rather than as a separate project. Over the life of the company the team grew to more than 30 engineers, VoIP specialists and designers, and the architecture grew with the customer base.',
+      'The team that built the platform also ran it, so the migration happened alongside day-to-day operations rather than as a separate project. Over the life of the company the team grew to more than 30 people, and the architecture grew with the customer base.',
     ],
     technology: ['Multi-tier web & mobile application', 'Open-source VoIP (Asterisk, OpenSIPS, MediaProxy)', 'In-house billing system', 'Least-cost routing', 'Data center design', 'Cloud regions (NA / EU / Asia)', 'Geo-location DNS routing', 'Data replication'],
     outcome: [

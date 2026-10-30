@@ -44,9 +44,9 @@ export const proofPoints = [
 ];
 
 export const headlineNumbers = [
-  { figure: 'Helpdesk to CTO', text: 'every layer of a company, still hands-on' },
+  { figure: 'Still hands-on', text: 'at every layer of a company, from network operations to CTO' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
-  { figure: '30+', text: 'engineers, VoIP specialists and designers in the team I built as co-founder and CTO' },
+  { figure: '30+', text: 'in the team I built as co-founder and CTO' },
 ];
 
 export const updated = '[REPLACE_WITH_MONTH YEAR]';
