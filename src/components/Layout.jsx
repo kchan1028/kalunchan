@@ -194,8 +194,8 @@ function useScrollVisuals() {
       e.target.dataset.sw = 'in';
       io.unobserve(e.target);
     }), { rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('main .on-blue, main figure, main img, main h2:not(:has(.pressed))').forEach((n) => {
-      if (n.getBoundingClientRect().top < window.innerHeight) return;
+    document.querySelectorAll('main .on-blue, main figure, main img, main h2').forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight || (n.matches('h2') && n.querySelector('.pressed'))) return;
       n.dataset.sw = 'wait';
       waiting.push(n);
       io.observe(n);
