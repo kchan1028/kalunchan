@@ -1,78 +1,78 @@
 {
   "/": {
-    "date": "2026-10-28",
-    "hash": "3e70369905e38ea3"
+    "date": "2026-10-30",
+    "hash": "45ee3cc19a604fe5"
   },
   "/about/": {
-    "date": "2026-10-28",
-    "hash": "51a56eed63c0289c"
+    "date": "2026-10-30",
+    "hash": "829eb27b4389d8cb"
   },
   "/leadership/": {
-    "date": "2026-10-22",
-    "hash": "f0cf3176fd7ebe5b"
+    "date": "2026-10-30",
+    "hash": "83ddc9040decc538"
   },
   "/experience/": {
-    "date": "2026-10-22",
-    "hash": "1d1e59c06fe3b8b2"
+    "date": "2026-10-30",
+    "hash": "212d26f851691691"
   },
   "/projects/": {
-    "date": "2026-10-18",
-    "hash": "d9806cd73a1f2b6b"
+    "date": "2026-10-30",
+    "hash": "2445f5f8f22ebb4c"
   },
   "/expertise/": {
-    "date": "2026-10-18",
-    "hash": "a3fc5c065a082701"
+    "date": "2026-10-30",
+    "hash": "7cb0d80b96eed982"
   },
   "/community/": {
-    "date": "2026-10-18",
-    "hash": "bed49d316acbd833"
+    "date": "2026-10-30",
+    "hash": "5a7f41fd8920691c"
   },
   "/mentorship/": {
-    "date": "2026-10-18",
-    "hash": "009e527b3a6b3e34"
+    "date": "2026-10-30",
+    "hash": "225d3a588b5340ac"
   },
   "/writing/": {
-    "date": "2026-10-25",
-    "hash": "ba979c75b82658d1"
+    "date": "2026-10-30",
+    "hash": "7714ba775cdf1eba"
   },
   "/contact/": {
-    "date": "2026-10-28",
-    "hash": "b4bb88021891644b"
+    "date": "2026-10-30",
+    "hash": "a21eca0caff0a6a4"
   },
   "/projects/fedpath/": {
-    "date": "2026-10-12",
-    "hash": "9a678032388ae0a2"
+    "date": "2026-10-30",
+    "hash": "4fd9d377a8e6cbcd"
   },
   "/projects/berkeley-omnium/": {
-    "date": "2026-10-18",
-    "hash": "45a8af275111304d"
+    "date": "2026-10-30",
+    "hash": "0e6d7eb5ceca3670"
   },
   "/projects/union-city-smog-check/": {
-    "date": "2026-10-18",
-    "hash": "82c7d6ff72ef6a4d"
+    "date": "2026-10-30",
+    "hash": "d1d5f997068c92ee"
   },
   "/work/three-continent-platform/": {
-    "date": "2026-10-28",
-    "hash": "5d1090abf10793fc"
+    "date": "2026-10-30",
+    "hash": "b3da98f35898f44a"
   },
   "/work/publishing-distribution/": {
-    "date": "2026-10-28",
-    "hash": "a0b414e36e1d6221"
+    "date": "2026-10-30",
+    "hash": "41fb792ff2b24517"
   },
   "/work/event-driven-platform/": {
-    "date": "2026-10-28",
-    "hash": "76ed4d92071caa8a"
+    "date": "2026-10-30",
+    "hash": "de543db38c442ec6"
   },
   "/work/carrier-capacity/": {
-    "date": "2026-10-28",
-    "hash": "3702a40e5ed80787"
+    "date": "2026-10-30",
+    "hash": "4b0dea91d0f9533d"
   },
   "/privacy/": {
-    "date": "2026-10-29",
-    "hash": "8a755052e4255c37"
+    "date": "2026-10-30",
+    "hash": "6bc0cd2b66fb8ced"
   },
   "/engineering-leadership/": {
-    "date": "2026-10-28",
-    "hash": "04d5dc71589c7859"
+    "date": "2026-10-30",
+    "hash": "0ed4ec7b87aa54f1"
   }
 }

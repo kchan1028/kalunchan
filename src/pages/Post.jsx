@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router';
 import { postBySlug, chapterFor } from '../content/writing';
 import { getBody, loadBody } from '../content/postBodies';
 import TitleBlock from '../components/TitleBlock';
+import PressedType from '../components/PressedType';
 import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight } from '../components/Icons';
 import { hireLink } from '../content/engineeringLeadership';
@@ -39,7 +40,7 @@ export default function Post() {
             <ArrowLeft /> <span>All writing</span>
           </Link>
         </nav>
-        <h1 id="post-title" className="post__title display">{post.title}</h1>
+        <h1 id="post-title" className="post__title display"><PressedType key={slug} text={post.title} /></h1>
         <p className="case__claim">{post.dek}</p>
         <p className="case__domains label">
           By <Link to="/about/">Ka Lun Chan</Link>

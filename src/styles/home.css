@@ -76,6 +76,64 @@
   max-width: 56ch;
 }
 
+/* The one result the first screen leads with. */
+.opening__lead {
+  margin-top: var(--s6);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: auto minmax(0, 24ch);
+  gap: var(--s5);
+  align-items: end;
+  font-size: var(--t-small);
+  font-stretch: 92%;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+.opening__lead strong {
+  font-size: var(--t-h1);
+  font-weight: 800;
+  font-stretch: 68%;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+/* The evidence that used to crowd the first screen. */
+.opening__more {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: var(--s7);
+  padding-block: var(--s8) var(--s6);
+}
+
+.opening__more-text {
+  grid-column: 1 / 7;
+}
+
+.opening__more-proof {
+  grid-column: 8 / 13;
+}
+
+.opening__more .opening__facts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.opening__more .opening__entity {
+  margin-top: 0;
+}
+
+@media (max-width: 899px) {
+  .opening__more-text,
+  .opening__more-proof {
+    grid-column: 1 / -1;
+  }
+}
+
 .opening__entity {
   margin-top: var(--s6);
   font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);

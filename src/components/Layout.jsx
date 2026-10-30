@@ -2,9 +2,25 @@ import { useEffect, useState } from 'react';
 import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { availability, person } from '../content/profile';
+import { outcomes } from '../content/engineeringLeadership';
 import { headFor } from '../site';
-import { ArrowOut } from './Icons';
+import { ArrowOut, ArrowRight } from './Icons';
 import Coordinate from './Coordinate';
+import PressedType from './PressedType';
+
+const bayAreaTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' });
+
+// Filled in on the client: the prerendered page must not carry the time it was built.
+function LocalTime() {
+  const [time, setTime] = useState(null);
+  useEffect(() => {
+    const tick = () => setTime(bayAreaTime.format(new Date()));
+    tick();
+    const id = setInterval(tick, 30000);
+    return () => clearInterval(id);
+  }, []);
+  return time && <span className="local-time label">Bay Area <span className="mono">{time}</span></span>;
+}
 
 export const nav = [
   { to: '/about/', no: '050', label: 'About' },
@@ -37,6 +53,7 @@ function Header() {
           <span className="wordmark__name">Ka Lun Chan</span>
         </Link>
         <Coordinate />
+        <LocalTime />
         <button
           type="button"
           className="contents-toggle"
@@ -60,6 +77,7 @@ function Header() {
           </ul>
         </nav>
       </div>
+      <span className="site-header__progress" aria-hidden="true" />
     </header>
   );
 }
@@ -71,10 +89,20 @@ function Colophon() {
   return (
     <footer id="contact" className="colophon" data-coord="Contact">
       <div className="sheet">
+        <ul className="colophon__proof" aria-label="Headline outcomes">
+          {outcomes.map((o) => (
+            <li key={o.figure}>
+              <Link to={o.to}>
+                <strong className="colophon__figure"><PressedType text={o.figure} onScroll /></strong>
+                <span>{o.text}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div className="grid colophon__grid">
           {isAbout ? (
             <div className="colophon__story">
-              <h2 className="colophon__ask h2">Talk to me about your engineering team.</h2>
+              <h2 className="colophon__ask h2"><PressedType text="Talk to me about your engineering team." onScroll /></h2>
               <p>I’m interested in organizations scaling teams, modernizing platforms, improving engineering execution, or building new products. If your next challenge needs technical depth, product thinking, and people who can grow with the work, I’d like to talk.</p>
               <nav className="colophon__next" aria-label="Explore my engineering work">
                 <Link to="/experience/">See my engineering experience</Link>
@@ -83,14 +111,17 @@ function Colophon() {
             </div>
           ) : (
             <h2 className="colophon__ask h2">
-              Have a system to ship or a team to lead? Let’s talk.
+              <PressedType text="Have a system to ship or a team to lead? Let’s talk." onScroll />
             </h2>
           )}
           <div className="colophon__routes">
             {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
-            <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
-              {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />
-            </a>
+            <div className="colophon__actions">
+              <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
+                {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />
+              </a>
+              <Link className="action action--quiet" to="/engineering-leadership/">For hiring teams <ArrowRight /></Link>
+            </div>
             <ul className="colophon__links">
               {person.email && (
                 <li>
@@ -117,6 +148,7 @@ function Colophon() {
         <div className="colophon__base label">
           <span>Ka Lun Chan · Engineering practice</span>
           <span>San Francisco Bay Area</span>
+          <LocalTime />
           <span>© Ka Lun Chan</span>
           <Link to="/privacy/">Privacy</Link>
         </div>
@@ -150,6 +182,31 @@ function useScrollReset() {
   }, [pathname, hash]);
 }
 
+// Blue fields, figures, images and plain section heads print in as they scroll into view. Only what starts below
+// the fold waits, so nothing already on screen flashes, and no JS or reduced motion leaves everything visible.
+function useScrollVisuals() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const waiting = [];
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.dataset.sw = 'in';
+      io.unobserve(e.target);
+    }), { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('main .on-blue, main figure, main img, main h2:not(:has(.pressed))').forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight) return;
+      n.dataset.sw = 'wait';
+      waiting.push(n);
+      io.observe(n);
+    });
+    return () => {
+      io.disconnect();
+      waiting.forEach((n) => delete n.dataset.sw);
+    };
+  }, [pathname]);
+}
+
 export const legacyAnchors = {
   about: '/about/', experience: '/experience/', projects: '/projects/',
   work: '/projects/', 'work-h': '/projects/', leadership: '/leadership/',
@@ -167,6 +224,7 @@ export default function Layout() {
   }, [pathname, hash, navigate]);
   useDocumentTitle();
   useScrollReset();
+  useScrollVisuals();
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>

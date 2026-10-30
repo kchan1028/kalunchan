@@ -336,6 +336,105 @@ svg {
   transform: none;
 }
 
+/* Pressed type (PressedType): static unless motion is allowed. Keyframes end on the heading's own width and weight. */
+@media (prefers-reduced-motion: no-preference) {
+  .pressed__word {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .pressed__word::before {
+    content: attr(data-t);
+    visibility: hidden;
+  }
+
+  .pressed__ink {
+    position: absolute;
+    inset: 0 auto auto 0;
+  }
+
+  .pressed:not(.pressed--scroll) .pressed__ink,
+  .pressed--scroll.is-in .pressed__ink {
+    animation: pressed-width 900ms var(--ease-out) both, pressed-ink 200ms linear both;
+    animation-delay: calc(var(--i) * 70ms);
+  }
+
+  .pressed[data-wait] .pressed__ink {
+    opacity: 0;
+  }
+
+  .contents-list li a > span:last-child {
+    transition: font-stretch 240ms var(--ease-out);
+  }
+
+  .contents-list li a:hover > span:last-child {
+    font-stretch: 112%;
+  }
+}
+
+/* Scroll visuals (useScrollVisuals in Layout): only below-the-fold elements wait; no JS or reduced motion shows everything. */
+@media (prefers-reduced-motion: no-preference) {
+  .on-blue[data-sw='wait'] { clip-path: inset(0 100% 0 0); }
+  figure[data-sw='wait'], img[data-sw='wait'], h2[data-sw='wait'] { clip-path: inset(0 0 100% 0); }
+
+  .on-blue[data-sw='in'] { animation: sw-wipe-x 1000ms var(--ease-out); }
+  figure[data-sw='in'], img[data-sw='in'] { animation: sw-wipe-y 1000ms var(--ease-out); }
+  h2[data-sw='in'] { animation: sw-wipe-y 800ms var(--ease-out), sw-rise 800ms var(--ease-out); }
+
+  .opening__figure { animation: sw-wipe-x 1100ms var(--ease-out); }
+
+  /* Title block: the head rule draws across, then the cells print in. */
+  .title-block__row { position: relative; }
+
+  .title-block__row::after {
+    content: '';
+    position: absolute;
+    inset: -3px 0 auto;
+    height: 3px;
+    background: var(--paper);
+    transform: scaleX(0);
+    transform-origin: right;
+    animation: sw-uncover 1000ms var(--ease-out);
+  }
+
+  .title-block__meta { animation: pressed-ink 500ms linear 350ms both; }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header__progress {
+      display: block;
+      position: absolute;
+      inset: auto 0 -1px;
+      height: 2px;
+      background: var(--blue);
+      transform-origin: left;
+      animation: sw-progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@keyframes sw-wipe-x { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(-2px); } }
+@keyframes sw-wipe-y { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(-2px); } }
+@keyframes sw-rise { from { transform: translateY(0.35em); } }
+@keyframes sw-uncover { from { transform: scaleX(1); } }
+@keyframes sw-progress { from { transform: scaleX(0); } }
+
+@keyframes pressed-width {
+  from {
+    font-stretch: 125%;
+    font-weight: 300;
+  }
+}
+
+@keyframes pressed-ink {
+  from {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

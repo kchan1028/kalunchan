@@ -16,12 +16,12 @@ export const briefing = [
   { k: 'Target roles', v: 'VP or Director of Engineering. Head of Engineering or CTO where the company needs a hands-on technical executive.' },
   { k: 'Lane', v: 'Growth-stage and scale-up companies, and engineering leadership for GovTech and regulated platforms.' },
   { k: 'Location', v: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.' },
-  { k: 'Org scope', v: 'Co-founder and CTO who built a team that grew to 30+ engineers, VoIP specialists and designers. CTO of a media publishing platform. VP of Operations running software engineering, QA and network operations as one function.' },
+  { k: 'Org scope', v: 'Co-founder and CTO who built a team that grew to 30+. CTO of a media publishing platform. VP of Operations running software engineering, QA and network operations as one function.' },
 ];
 
 export const outcomes = [
   { figure: '400,000+', text: 'users and an acquisition, as co-founder and CTO', to: '/writing/building-a-startup-from-idea-to-acquisition/' },
-  { figure: '30+', text: 'engineers, VoIP specialists and designers in the team I built', to: '/experience/#communications' },
+  { figure: '30+', text: 'in the team I built as co-founder and CTO', to: '/experience/#communications' },
   { figure: '~30%', text: 'lower AWS costs on a publishing re-platform, with infrastructure improvements contributing', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
 ];
 
@@ -46,7 +46,7 @@ export const impact = [
   {
     figure: '30+',
     title: 'Built and led engineering teams',
-    text: 'Built and led a global team that grew to 30+ engineers, VoIP specialists and designers as co-founder and CTO, then led fully remote teams as a fractional CTO.',
+    text: 'Built and led a global team that grew to 30+ as co-founder and CTO, then led fully remote teams as a fractional CTO.',
     to: '/experience/#communications', label: 'The founder-CTO role',
   },
   {

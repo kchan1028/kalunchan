@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { impact, careerStages, caseStudies, caseSteps, leadershipFlow } from '../content/home';
 import { ArrowRight } from './Icons';
+import PressedType from './PressedType';
 
 // Homepage sections below the hero: 001 impact, 002 career timeline,
 // 003 case-study previews, 004 leadership flow. Each keeps all of its text in
@@ -11,7 +12,7 @@ export function Impact() {
   return (
     <section className="sheet home-section" aria-labelledby="impact-h" data-coord="001 · Impact">
       <div className="home-section__head">
-        <h2 id="impact-h" className="h2">What the work produced.</h2>
+        <h2 id="impact-h" className="h2"><PressedType text="What the work produced." onScroll /></h2>
         <p>Results from the communications platform, publishing work and government delivery.</p>
       </div>
       <ul className="impact" aria-label="Verified accomplishments">
@@ -49,7 +50,7 @@ export function CareerTimeline() {
   return (
     <section className="sheet home-section" aria-labelledby="timeline-h" data-coord="002 · Career">
       <div className="home-section__head">
-        <h2 id="timeline-h" className="h2">My work across networks, software and leadership.</h2>
+        <h2 id="timeline-h" className="h2"><PressedType text="My work across networks, software and leadership." onScroll /></h2>
         <p>Stages, not dates. Select one for the role, the technology, what it produced and the lesson carried to the next.</p>
       </div>
       <figure className="tl">
@@ -101,7 +102,7 @@ export function CaseStudies() {
   return (
     <section className="sheet home-section" aria-labelledby="cases-h" data-coord="003 · Case studies">
       <div className="home-section__head">
-        <h2 id="cases-h" className="h2">Problem, analysis, decision, implementation, outcome.</h2>
+        <h2 id="cases-h" className="h2"><PressedType text="Problem, analysis, decision, implementation, outcome." onScroll /></h2>
         <p>Five pieces of work in the same five steps. Open one, then read the full account.</p>
       </div>
       <ol className="cs">
@@ -138,7 +139,7 @@ export function LeadershipFlow() {
   return (
     <section className="sheet home-section" aria-labelledby="flow-h" data-coord="004 · Leadership">
       <div className="home-section__head">
-        <h2 id="flow-h" className="h2">How I run engineering, as a loop.</h2>
+        <h2 id="flow-h" className="h2"><PressedType text="How I run engineering, as a loop." onScroll /></h2>
         <p>Business goals in, measured outcomes out, and the measurement feeds the next round. Each step links to the practice behind it.</p>
       </div>
       <figure className="flow">
