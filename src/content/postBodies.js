@@ -16,7 +16,9 @@ export const getBody = (slug) => loaded[slug];
 export function loadBody(slug) {
   const load = loaders[`./posts/${slug}.jsx`];
   if (loaded[slug] || !load) return Promise.resolve(loaded[slug]);
-  return Promise.all([load(), metaLoaders[`./posts/meta/${slug}.js`]()]).then(([mod, meta]) => (loaded[slug] = { ...mod, metadata: meta.metadata }));
+  const loadMeta = metaLoaders[`./posts/meta/${slug}.js`];
+  if (!loadMeta) return Promise.reject(new Error(`Post "${slug}" needs src/content/posts/meta/${slug}.js`));
+  return Promise.all([load(), loadMeta()]).then(([mod, meta]) => (loaded[slug] = { ...mod, metadata: meta.metadata }));
 }
 
 export const loadAllBodies = () => Promise.all(Object.keys(loaders).map((key) => loadBody(key.slice('./posts/'.length, -'.jsx'.length))));

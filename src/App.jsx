@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import Layout from './components/Layout';
 import { usePageTransition } from './components/usePageTransition';
-import { getPage, loadPage, pageRoutes } from './pageRoutes';
+import { getPage, loadPage, pageRoutes, reloadPage } from './pageRoutes';
 
-// The route's chunk is normally in before this renders. If not (a second click mid-transition), render once it arrives;
-// a chunk that won't load usually means a deploy replaced it, so fetch the current page fresh.
+// The route's chunk is normally in before this renders. If not (a second click mid-transition), render once it arrives.
 function Page({ name }) {
   const [, setLoaded] = useState(null);
   useEffect(() => {
-    if (!getPage(name)) loadPage(name).then(() => setLoaded(name), () => window.location.reload());
+    if (!getPage(name)) loadPage(name).then(() => setLoaded(name), reloadPage);
   }, [name]);
   const Component = getPage(name);
   return Component ? <Component /> : null;
