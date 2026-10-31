@@ -16,7 +16,13 @@ const featured = featuredSlugs.map((slug) => posts.find((p) => p.slug === slug))
 
 // Matches first, otherwise in their written order. Nothing is removed.
 const matchesFirst = (items, keys, keyOf) => (keys ? [...items].sort((a, b) => keys.includes(keyOf(b)) - keys.includes(keyOf(a))) : items);
-const count = (n, noun) => `${n} ${noun}${n === 1 ? '' : 's'}`;
+const matchCount = (noun, items, keys, keyOf) => {
+  const n = items.filter((i) => keys.includes(keyOf(i))).length;
+  return `${n} ${noun}${n === 1 ? '' : 's'}`;
+};
+const figureOf = (i) => i.figure;
+const idOf = (p) => p.id;
+const slugOf = (p) => p.slug;
 
 export default function EngineeringLeadership() {
   const { search, hash } = useLocation();
@@ -25,13 +31,27 @@ export default function EngineeringLeadership() {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => setHydrated(true), []);
   const focus = hydrated ? focuses.find((f) => f.id === new URLSearchParams(search).get('for')) : undefined;
-  const choose = (id) => navigate({ search: focus?.id === id ? '' : `?for=${id}`, hash }, { replace: true, preventScrollReset: true });
+  // Someone who arrived on a focused link hasn't reached the control yet, so the first screen says the page is arranged for them.
+  const [arrivedFocused] = useState(() => new URLSearchParams(search).has('for'));
+  const choose = (id) => {
+    const params = new URLSearchParams(search);
+    if (focus?.id === id) params.delete('for');
+    else params.set('for', id);
+    const next = params.toString();
+    navigate({ search: next ? `?${next}` : '', hash }, { replace: true, preventScrollReset: true });
+  };
   const isMatch = (group, key) => (focus?.[group].includes(key) ? 'is-match' : undefined);
 
   return (
     <>
       <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
       <section className="sheet grid hire-brief" aria-labelledby="brief-h" data-coord="090 · Briefing">
+        {arrivedFocused && focus && (
+          <p className="hire-brief__focus">
+            <span className="label">Evidence arranged for</span>
+            <a href="#impact" className="link-arrow"><span>{focus.label}</span> <ArrowRight /></a>
+          </p>
+        )}
         <h2 id="brief-h" className="hire-brief__h label">Briefing</h2>
         <dl className="hire-brief__facts">
           {briefing.map((b) => (
@@ -118,7 +138,7 @@ export default function EngineeringLeadership() {
         </div>
         <p className="hire-focus__status" role="status">
           {focus
-            ? `Moved to the top: ${count(focus.impact.length, 'result')}, ${count(focus.problems.length, 'problem')} and ${count(focus.writing.length, 'post')}. Everything else is still below.`
+            ? `Moved to the top: ${matchCount('result', impact, focus.impact, figureOf)}, ${matchCount('problem', problems, focus.problems, idOf)} and ${matchCount('post', featured, focus.writing, slugOf)}. Everything else is still below.`
             : 'Pick one and the closest evidence moves to the top of each section below. Nothing is hidden.'}
         </p>
       </section>
@@ -130,7 +150,7 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Each result links to the work behind it.</p>
         </div>
         <ol className="hire-impact">
-          {matchesFirst(impact, focus?.impact, (i) => i.figure).map((i) => (
+          {matchesFirst(impact, focus?.impact, figureOf).map((i) => (
             <li key={i.title} className={isMatch('impact', i.figure)}>
               <p className="hire-impact__figure">{i.figure}</p>
               <h3 className="h3">{i.title}</h3>
@@ -148,7 +168,7 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Companies rarely need more engineering in general. They need one of these fixed.</p>
         </div>
         <div className="hire-problems">
-          {matchesFirst(problems, focus?.problems, (p) => p.id).map((p) => (
+          {matchesFirst(problems, focus?.problems, idOf).map((p) => (
             <article key={p.id} id={p.id} className={isMatch('problems', p.id)} aria-labelledby={`${p.id}-h`}>
               <h3 id={`${p.id}-h`} className="h3">{p.title}</h3>
               <p className="body-copy">{p.text}</p>
@@ -222,7 +242,7 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Essays on decisions engineering leaders make every week. <Link to="/writing/">All writing</Link>.</p>
         </div>
         <ul className="hire-writing">
-          {matchesFirst(featured, focus?.writing, (p) => p.slug).map((p) => (
+          {matchesFirst(featured, focus?.writing, slugOf).map((p) => (
             <li key={p.slug} className={isMatch('writing', p.slug)}>
               <h3 className="h3"><Link to={`/writing/${p.slug}/`}>{p.title}</Link></h3>
               <p className="body-copy">{p.description}</p>
