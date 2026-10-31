@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { useRealNavigationType } from './usePageTransition';
-import { availability, person } from '../content/profile';
+import { person } from '../content/profile';
 import { outcomes } from '../content/engineeringLeadership';
 import { ArrowOut } from './Icons';
 import Coordinate from './Coordinate';
@@ -89,19 +89,13 @@ function Colophon() {
   const { pathname } = useLocation();
   const isAbout = pathname.replace(/\/$/, '') === '/about';
   const isHome = pathname === '/';
+  const isHiringJourney = isHome || ['/engineering-leadership/', '/contact/'].includes(pathname);
   return (
     <footer id="contact" className="colophon" data-coord="Contact">
       <div className="sheet">
-        <ul className="colophon__proof" aria-label="Headline outcomes">
-          {outcomes.map((o) => (
-            <li key={o.figure}>
-              <Link to={o.to}>
-                <strong className="colophon__figure"><PressedType text={o.figure} onScroll /></strong>
-                <span>{o.text}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {!isHiringJourney && <ul className="colophon__proof" aria-label="Headline outcomes">
+          {outcomes.map((o) => <li key={o.figure}><Link to={o.to}><strong className="colophon__figure"><PressedType text={o.figure} onScroll /></strong><span>{o.text}</span></Link></li>)}
+        </ul>}
         <div className="grid colophon__grid">
           {isAbout ? (
             <div className="colophon__story">
@@ -118,7 +112,6 @@ function Colophon() {
             </h2>
           )}
           <div className="colophon__routes">
-            {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
             <div className="colophon__actions">
               <HiringContactLink />
               <a className="action action--quiet" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
@@ -139,7 +132,7 @@ function Colophon() {
                 <a href={person.yippify} rel="noopener" target="_blank">Yippify</a>
                 <span className="colophon__note">For a team to deliver your software</span>
               </li>
-              {person.products.map((p) => (
+              {!isHiringJourney && person.products.map((p) => (
                 <li key={p.url}>
                   <a href={p.url} rel="noopener" target="_blank">{p.name}</a>
                   {p.note && <span className="colophon__note">{p.note}</span>}
