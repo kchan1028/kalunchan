@@ -3,6 +3,7 @@ import { cases, caseBySlug } from '../content/work';
 import { hireLink } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import Diagram from '../components/Diagram';
+import DecisionList from '../components/DecisionList';
 import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight } from '../components/Icons';
 
@@ -86,25 +87,7 @@ export default function CaseStudy() {
 
       <section id="decisions" className="sheet grid case__decisions" aria-labelledby="dec-h" data-coord={`${c.no}-3 · Decisions`}>
         <h2 id="dec-h" className="case__h label">{c.illustrative || c.illustrativeDecisions ? 'Design tradeoffs' : 'Key decisions'}</h2>
-        <div className="case__decision-list">
-          {c.decisions.map((d, i) => (
-            <div key={d.question} className="decision">
-              <h3 className="decision__q h3">
-                {d.question} <span className="decision__no mono">{`${c.no}-3.${i + 1}`}</span>
-              </h3>
-              <ul className="decision__options">
-                {d.options.map((o) => (
-                  <li key={o.label} className={o.chosen ? 'is-chosen' : 'is-rejected'}>
-                    <span className="decision__state label">{c.illustrative || c.illustrativeDecisions ? (o.chosen ? 'Example choice' : 'Alternative') : (o.chosen ? 'Chosen' : 'Rejected')}</span>
-                    <span className="decision__label">{o.label}</span>
-                    <span className="decision__note">{o.note}</span>
-                  </li>
-                ))}
-              </ul>
-              {d.why && <p className="decision__why">{d.why}</p>}
-            </div>
-          ))}
-        </div>
+        <DecisionList decisions={c.decisions} no={c.no} illustrative={Boolean(c.illustrative || c.illustrativeDecisions)} />
       </section>
 
       {c.execution && (
