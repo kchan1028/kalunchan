@@ -872,7 +872,12 @@
   flex-basis: 100%;
 }
 
-/* Live sites: a ruled thumbnail strip that scrolls off the viewport's right edge. */
+/* Live sites: a ruled thumbnail strip that scrolls off the viewport's right edge. 100vw counts a classic
+   scrollbar, so the hero clips the bleed; clip keeps the pinned map's sticky positioning working. */
+.opening {
+  overflow-x: clip;
+}
+
 .opening__work {
   grid-column: 1 / -1;
   min-width: 0;

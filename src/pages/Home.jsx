@@ -34,17 +34,6 @@ export default function Home() {
         </p>
       </div>
       <div className="opening__figure"><ExperienceMap /></div>
-      <div className="opening__work">
-        <p id="built-sites" className="label">Live sites I’ve built</p>
-        <ul aria-labelledby="built-sites">{builtSites.map((s) => <li key={s.url}>
-          <a href={s.url} target="_blank" rel="noopener">
-            <img src={s.src} alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async" />
-            <strong>{s.name}</strong>
-            <span>{s.type}</span>
-            <span className="mono">{s.domain}</span>
-          </a>
-        </li>)}</ul>
-      </div>
       <div className="opening__more">
       <div className="opening__more-text">
         <p className="opening__entity">{homeIntro}</p>
@@ -79,6 +68,17 @@ export default function Home() {
           <Link to={item.to}><span className="mono">{item.no}</span><span>{item.label}</span></Link>
         </li>)}</ol>
       </div>
+      </div>
+      <div className="opening__work">
+        <p id="built-sites" className="label">Live sites I’ve built</p>
+        <ul aria-labelledby="built-sites">{builtSites.map((s) => <li key={s.url}>
+          <a href={s.url} target="_blank" rel="noopener">
+            <img src={s.src} alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async" />
+            <strong>{s.name}</strong>
+            <span>{s.type}</span>
+            <span className="mono">{s.domain}</span>
+          </a>
+        </li>)}</ul>
       </div>
     </div>
   </section>
