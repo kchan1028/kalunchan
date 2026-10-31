@@ -251,8 +251,10 @@ Options listed as ruled rows (state, option, note). Rejected options stay visibl
 ### Contents List
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
 
-### Hiring Focus (engineering leadership)
-Ruled buttons above Business impact ask what the reader is hiring for. Choosing one moves the matching results, problems and posts to the top of their sections with a heavier blue rule, and nothing is hidden. The choice lives in `?for=`, so a focused link can be sent to someone, and a reader arriving on one sees a line above the briefing naming the focus and linking down to the evidence. The prerendered page stays in the default order and the canonical URL doesn't change. No animation: only the order and the rule change.
+### Hiring Focus
+The same four focuses and the same `?for=` value work on three pages. On `/projects/`, the picker sits under the lead; choosing one lists the matching case studies ahead of the shipped products, with the first match taking the blue lead row, and only focuses with a real case study are offered. On `/experience/`, it sits above the progression figure; roles outside the focus collapse to their headings, so the career still reads in order and links to them still land.
+
+On `/engineering-leadership/`, ruled buttons above Business impact ask what the reader is hiring for. Choosing one moves the matching results, problems and posts to the top of their sections with a heavier blue rule, and nothing is hidden. The choice lives in `?for=`, so a focused link can be sent to someone, and a reader arriving on one sees a line above the briefing naming the focus and linking down to the evidence. The prerendered page stays in the default order and the canonical URL doesn't change. No animation: only the order and the rule change.
 
 ### Layer Stack (home)
 At 1360×800 and larger, the home layer map stays pinned beside the evidence while the page scrolls normally. Its layers tilt apart in CSS 3D, light up in turn with their proof, and close flat again. A click selects a layer until the scroll reaches the next one. Smaller screens and reduced motion keep the flat map, which is the one exception to the flat rule and only ever opens while scrolling.

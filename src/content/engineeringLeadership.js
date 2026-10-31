@@ -120,13 +120,14 @@ export const problems = [
   },
 ];
 
-// "What are you hiring for?": each focus names the items below it moves to the top of their sections. It only reorders
-// existing evidence, so add a focus when the page already has proof for it. Keys: impact figure, problem id, post slug.
+// "What are you hiring for?": each focus names the evidence for it, here and on /projects/ and /experience/. It only
+// arranges existing evidence, so add a focus when the site already has proof for it. Illustrative case studies stay out.
+// Keys: impact figure, problem id, post slug, case study slug, role id.
 export const focuses = [
-  { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], problems: ['scaling-teams', 'slow-delivery'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'] },
-  { id: 'cloud', label: 'Cloud cost and infrastructure', impact: ['~30%', '8M+'], problems: ['cloud-costs', 'technical-debt'], writing: ['when-technical-debt-becomes-a-business-problem'] },
-  { id: 'regulated', label: 'Regulated or public-sector systems', impact: ['Public sector'], problems: ['security'], writing: ['building-public-sector-applications'] },
-  { id: 'growth', label: 'Product and company growth', impact: ['Acquired', '+50%'], problems: ['strategy-and-execution'], writing: ['speed-vs-quality-software-engineering'] },
+  { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], problems: ['scaling-teams', 'slow-delivery'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'], cases: ['three-continent-platform'], roles: ['communications', 'voice'] },
+  { id: 'cloud', label: 'Cloud cost and infrastructure', impact: ['~30%', '8M+'], problems: ['cloud-costs', 'technical-debt'], writing: ['when-technical-debt-becomes-a-business-problem'], cases: ['three-continent-platform', 'carrier-capacity'], roles: ['publishing', 'communications', 'voice', 'carrier'] },
+  { id: 'regulated', label: 'Regulated or public-sector systems', impact: ['Public sector'], problems: ['security'], writing: ['building-public-sector-applications'], cases: [], roles: ['yippify', 'carrier'] },
+  { id: 'growth', label: 'Product and company growth', impact: ['Acquired', '+50%'], problems: ['strategy-and-execution'], writing: ['speed-vs-quality-software-engineering'], cases: ['three-continent-platform', 'publishing-distribution'], roles: ['publishing', 'communications'] },
 ];
 
 export const principles = [

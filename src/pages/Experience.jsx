@@ -2,7 +2,9 @@ import { Link } from 'react-router';
 import { track } from '../track';
 import { roles, earlier, person } from '../content/profile';
 import { caseBySlug } from '../content/work';
+import { focuses } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
+import FocusPicker, { useFocus } from '../components/FocusPicker';
 import { ArrowRight } from '../components/Icons';
 
 const parts = [
@@ -13,12 +15,12 @@ const parts = [
   ['outcome', 'Outcome'],
 ];
 
-function Role({ r, index }) {
+function Role({ r, index, collapsed }) {
   const now = r.id === 'yippify';
   return (
     <article
       id={r.id}
-      className={`tenure${now ? ' tenure--now on-blue' : ''}`}
+      className={`tenure${now ? ' tenure--now on-blue' : ''}${collapsed ? ' tenure--collapsed' : ''}`}
       aria-labelledby={`${r.id}-h`}
       data-coord={`200-${index + 1} · ${r.org}`}
     >
@@ -108,6 +110,8 @@ function Progression() {
 }
 
 export default function Experience() {
+  const { focus, choose } = useFocus(focuses);
+  const matching = focus ? roles.filter((r) => focus.roles.includes(r.id)).length : 0;
   return (
     <>
       <TitleBlock section="200" title="Experience" cells={[{ k: 'Roles', v: `${roles.length} leadership & engineering` }]} />
@@ -119,10 +123,19 @@ export default function Experience() {
           For full career history, visit <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced. Hiring for a senior engineering role? <Link to="/engineering-leadership/">Start with the summary for hiring teams</Link>.
         </p>
       </div>
+      <FocusPicker
+        options={focuses}
+        focus={focus}
+        choose={choose}
+        coord="200 · Hiring for"
+        status={focus
+          ? `Showing ${matching} of ${roles.length} roles in full. The others are collapsed to their headings.`
+          : 'Pick one to keep the closest roles open and collapse the rest.'}
+      />
       <Progression />
       <div className="tenures">
         {roles.map((r, i) => (
-          <Role key={r.id} r={r} index={i} />
+          <Role key={r.id} r={r} index={i} collapsed={focus && !focus.roles.includes(r.id)} />
         ))}
       </div>
       <section className="sheet grid earlier" aria-labelledby="earlier-h" data-coord="200-6 · Earlier">
