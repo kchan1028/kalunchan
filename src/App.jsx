@@ -1,45 +1,28 @@
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import Layout from './components/Layout';
 import { usePageTransition } from './components/usePageTransition';
-import Home from './pages/Home';
-import Leadership from './pages/Leadership';
-import EngineeringLeadership from './pages/EngineeringLeadership';
-import Experience from './pages/Experience';
-import Work from './pages/Work';
-import CaseStudy from './pages/CaseStudy';
-import Project from './pages/Project';
-import Expertise from './pages/Expertise';
-import Contact from './pages/Contact';
-import Mentorship from './pages/Mentorship';
-import Community from './pages/Community';
-import About from './pages/About';
-import Writing from './pages/Writing';
-import Post from './pages/Post';
-import Privacy from './pages/Privacy';
-import NotFound from './pages/NotFound';
+import { getPage, loadPage, pageRoutes } from './pageRoutes';
+
+// The route's chunk is normally in before this renders. If not (a second click mid-transition), render once it arrives;
+// a chunk that won't load usually means a deploy replaced it, so fetch the current page fresh.
+function Page({ name }) {
+  const [, setLoaded] = useState(null);
+  useEffect(() => {
+    if (!getPage(name)) loadPage(name).then(() => setLoaded(name), () => window.location.reload());
+  }, [name]);
+  const Component = getPage(name);
+  return Component ? <Component /> : null;
+}
 
 export default function App() {
   const shown = usePageTransition();
   return (
     <Routes location={shown}>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="community" element={<Community />} />
-        <Route path="mentorship" element={<Mentorship />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="projects" element={<Work />} />
-        <Route path="projects/:slug" element={<Project />} />
-        <Route path="leadership" element={<Leadership />} />
-        <Route path="engineering-leadership" element={<EngineeringLeadership />} />
-        <Route path="experience" element={<Experience />} />
-        <Route path="work" element={<Work />} />
-        <Route path="work/:slug" element={<CaseStudy />} />
-        <Route path="expertise" element={<Expertise />} />
-        <Route path="writing" element={<Writing />} />
-        <Route path="writing/:slug" element={<Post />} />
-        <Route path="privacy" element={<Privacy />} />
-        <Route path="*" element={<NotFound />} />
+        {pageRoutes.map((r) => (
+          <Route key={r.path || 'index'} index={r.index} path={r.path} element={<Page name={r.page} />} />
+        ))}
       </Route>
     </Routes>
   );

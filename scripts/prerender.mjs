@@ -7,9 +7,9 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // BUILD_DIR lets validation render into a scratch directory instead of build/.
 const out = path.resolve(root, process.env.BUILD_DIR || 'build');
-const { render, routes, headFor, llmsTxt, loadAllBodies } = await import(pathToFileURL(path.join(root, '.ssr/entry-server.js')).href);
-// Post bodies are lazy chunks; load them all so render() stays synchronous.
-await loadAllBodies();
+const { render, routes, headFor, llmsTxt, loadAllBodies, loadAllPages, pageFor } = await import(pathToFileURL(path.join(root, '.ssr/entry-server.js')).href);
+// Pages and post bodies are lazy chunks; load them all so render() stays synchronous.
+await Promise.all([loadAllPages(), loadAllBodies()]);
 
 // Inline the single stylesheet: one fewer render-blocking request before first paint.
 const template = fs.readFileSync(path.join(out, 'index.html'), 'utf8').replace(
@@ -22,11 +22,25 @@ const preload = assets
   .map((f) => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin />`)
   .join('\n    ');
 
-// Each post page preloads its own body chunk, so hydration doesn't wait on a second round trip.
+// Each page preloads its own chunks and what they import (the entry already loads its own), so hydration doesn't wait on another round trip.
 const manifestFile = path.join(out, '.vite', 'manifest.json');
 const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
 fs.rmSync(path.join(out, '.vite'), { recursive: true, force: true });
-const bodyChunk = (slug) => manifest[`src/content/posts/${slug}.jsx`]?.file;
+function collectChunks(key, files) {
+  const chunk = manifest[key];
+  if (!chunk || chunk.isEntry || files.has(chunk.file)) return files;
+  files.add(chunk.file);
+  (chunk.imports || []).forEach((i) => collectChunks(i, files));
+  return files;
+}
+function chunksFor(route) {
+  const files = collectChunks(`src/pages/${pageFor(route.path)}.jsx`, new Set());
+  if (route.post) {
+    collectChunks(`src/content/posts/${route.post.slug}.jsx`, files);
+    collectChunks(`src/content/posts/meta/${route.post.slug}.js`, files);
+  }
+  return [...files];
+}
 
 // lastmod for every page that isn't a post (posts keep their own dates): the date its <main> content last
 // changed, tracked by content hash in src/lastmod.json. Commit that file; a date moves only on a genuine edit.
@@ -55,14 +69,19 @@ function write(route, file) {
   const body = render(route.path);
   const date = modifiedFor(route, body);
   if (date) modified[route.path] = date;
-  const chunk = route.post && bodyChunk(route.post.slug);
-  const head = [headFor(route.path, { modified: date }), preload, chunk && `<link rel="modulepreload" href="/${chunk}" />`].filter(Boolean);
+  const tags = headFor(route.path, { modified: date });
+  const chunks = chunksFor(route).map((chunk) => `<link rel="modulepreload" href="/${chunk}" />`);
+  const head = [tags, preload, ...chunks];
   const html = template
-    .replace('<!--app-head-->', head.join('\n    '))
-    .replace('<!--app-html-->', body);
+    .replace('<!--app-head-->', () => head.join('\n    '))
+    .replace('<!--app-html-->', () => body);
   const dest = path.join(out, file);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html);
+  // The same tags for client-side navigation (useDocumentTitle in Layout.jsx).
+  const headFile = path.join(out, '_head', `${route.path.replace(/\/$/, '') || '/index'}.json`);
+  fs.mkdirSync(path.dirname(headFile), { recursive: true });
+  fs.writeFileSync(headFile, JSON.stringify(tags));
 }
 
 for (const r of routes) write(r, path.join(r.path, 'index.html'));

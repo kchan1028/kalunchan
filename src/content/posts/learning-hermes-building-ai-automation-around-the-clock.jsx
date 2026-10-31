@@ -3,24 +3,7 @@ import HermesWorkflow from '../../components/HermesWorkflow';
 
 // Review draft: deliberately absent from writing.js and Post.jsx.
 // Personal facts supplied by KC. Official technical sources checked 2026-10-10.
-// Proposed metadata is kept here until editorial approval; no publication date.
-export const draftMetadata = {
-  status: 'draft',
-  slug: 'learning-hermes-building-ai-automation-around-the-clock',
-  title: 'Learning Hermes: Building AI Automation That Runs Around the Clock.',
-  seoTitle: 'Learning Hermes: AI Automation Around the Clock — Ka Lun Chan',
-  description: 'My first steps with Hermes on a Docker VPS: planning a content research assistant, separating code from AI, and learning what reliable scheduled work requires.',
-  topics: ['Learning', 'AI'],
-  keywords: ['Hermes Agent', 'scheduled AI automation', 'Docker VPS', 'content research assistant', 'AI workflow reliability'],
-  minutes: 8,
-  related: [
-    { to: '/writing/connect-hermes-agent-hostinger-vps-vs-code/', label: 'Managing the Hermes VPS through VS Code and SSH' },
-    { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'From shell scripts to AI agents' },
-    { to: '/writing/why-i-build-my-own-developer-tools/', label: 'Why I build my own developer tools' },
-    { to: '/writing/scheduling-ai-work-hermes-chatgpt-claude/', label: 'Comparing ways to schedule AI work' },
-  ],
-};
-
+// Proposed metadata is kept in meta/ until editorial approval; no publication date.
 export const toc = [
   ['why-hermes', 'Taking the work beyond my computer'],
   ['research-assistant', 'A research assistant I want to build'],

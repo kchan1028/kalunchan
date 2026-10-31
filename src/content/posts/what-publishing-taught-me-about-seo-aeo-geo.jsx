@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import { postBySlug } from '../writing';
 import { ArrowRight } from '../../components/Icons';
 
 // Facts about the publishing role come from profile.js (id: 'publishing') and the
@@ -30,8 +29,7 @@ export const toc = [
   ['sources', 'Sources'],
 ];
 
-export default function Body() {
-  const { sources } = postBySlug['what-publishing-taught-me-about-seo-aeo-geo'];
+export default function Body({ metadata: { sources } }) {
   return (
     <>
       <section id="engineering-lens" aria-labelledby="engineering-lens-h">

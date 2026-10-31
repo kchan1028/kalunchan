@@ -14,15 +14,14 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WRITING = os.path.join(ROOT, 'src/content/writing.js')
 POSTS = os.path.join(ROOT, 'src/content/posts')
-APP = os.path.join(ROOT, 'src/App.jsx')
+APP = os.path.join(ROOT, 'src/pageRoutes.js')
 
 src = open(WRITING, encoding='utf-8').read()
 slugs = re.findall(r"^\s{4}slug: '([^']+)',", src, re.M)
-entries = re.split(r"\n  \{\n\s+slug: '", src)[1:]
 related = {}
-for e in entries:
-    slug = e.split("'", 1)[0]
-    m = re.search(r"related: \[(.*?)\n\s{4}\],", e, re.S)
+for slug in slugs:
+    meta = open(os.path.join(POSTS, 'meta', slug + '.js'), encoding='utf-8').read()
+    m = re.search(r"related: \[(.*?)\n\s{2}\],", meta, re.S)
     related[slug] = re.findall(r"to: '([^']+)'", m.group(1)) if m else []
 # Reading paths and chapters on /writing/ both link every slug they list.
 journey_slugs = []
@@ -31,7 +30,7 @@ for name in ('journeys', 'chapters'):
     journey_slugs += re.findall(r"^\s{6}'([^']+)',", block, re.M)
 
 # Routes outside /writing/ that links may point at.
-routes = set(re.findall(r'path="([^"]+)"', open(APP, encoding='utf-8').read()))
+routes = set(re.findall(r"path: '([^']+)'", open(APP, encoding='utf-8').read()))
 case_slugs = re.findall(r"slug: '([^']+)'", open(os.path.join(ROOT, 'src/content/work.js'), encoding='utf-8').read())
 project_slugs = re.findall(r"slug: '([^']+)'", open(os.path.join(ROOT, 'src/content/projects.js'), encoding='utf-8').read())
 
