@@ -13,12 +13,12 @@ const baseEnv = {
   CONTACT_TO: 'inbox@forms.example.test',
 };
 
-function setup({ env = {}, send } = {}) {
+function setup({ env = {}, send, store = memoryStore() } = {}) {
   const sent = [];
   const handle = createHandler({
     env: { ...baseEnv, ...env },
     now: () => NOW,
-    store: memoryStore(),
+    store,
     send: send ?? (async (email) => { sent.push(email); }),
   });
   let ip = 0;
@@ -103,7 +103,8 @@ test('an email failure reports an error and the same submission can be retried',
 test('a duplicate submission sends one email', async () => {
   const { sent, post } = setup();
   const body = contact();
-  const [first, second] = await Promise.all([post('/contact', body), post('/contact', body)]);
+  const first = await post('/contact', body);
+  const second = await post('/contact', body);
   assert.equal(first.statusCode, 200);
   assert.equal(second.statusCode, 200);
   assert.equal(sent.length, 1);
@@ -189,4 +190,50 @@ test('a missing sender or inbox fails safely instead of guessing an address', as
   const response = await post('/contact', contact());
   assert.equal(response.statusCode, 500);
   assert.equal(json(response).error, 'not_configured');
+});
+
+
+test('an in-progress retry cannot report success if the original send fails', async () => {
+  let rejectSend, started;
+  const sending = new Promise((resolve) => { started = resolve; });
+  let fail = true;
+  const { post } = setup({ send: () => {
+    if (!fail) return Promise.resolve();
+    started();
+    return new Promise((_, reject) => { rejectSend = reject; });
+  } });
+  const body = contact();
+  const first = post('/contact', body);
+  await sending;
+  const retry = await post('/contact', body);
+  assert.equal(retry.statusCode, 409);
+  assert.deepEqual(json(retry), { ok: false, error: 'send_pending' });
+  rejectSend(new Error('Send failed'));
+  assert.equal((await first).statusCode, 502);
+  fail = false;
+  assert.equal((await post('/contact', body)).statusCode, 200);
+  assert.deepEqual(json(await post('/contact', body)), { ok: true, duplicate: true });
+});
+
+
+test('a completion-store failure keeps the claim pending without sending twice', async () => {
+  const store = memoryStore();
+  store.complete = async () => { throw new Error('Store unavailable'); };
+  const { sent, post } = setup({ store });
+  const body = contact();
+  const first = await post('/contact', body);
+  assert.equal(first.statusCode, 503);
+  assert.equal(json(first).ok, false);
+  const retry = await post('/contact', body);
+  assert.equal(retry.statusCode, 409);
+  assert.equal(sent.length, 1);
+});
+
+test('expired submission records can be reclaimed without waiting for cleanup', async () => {
+  const store = memoryStore();
+  assert.equal(await store.claim('expired', 1, NOW), 'claimed');
+  assert.equal(await store.claim('expired', 1, NOW + 500), 'pending');
+  await store.complete('expired');
+  assert.equal(await store.claim('expired', 1, NOW + 500), 'sent');
+  assert.equal(await store.claim('expired', 1, NOW + 1000), 'claimed');
 });

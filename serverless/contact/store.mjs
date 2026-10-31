@@ -16,10 +16,13 @@ export function memoryStore() {
       return { allowed: true };
     },
     async claim(id, ttlSeconds, now = Date.now()) {
-      const expiresAt = claims.get(id);
-      if (expiresAt && expiresAt > now) return false;
-      claims.set(id, now + ttlSeconds * 1000);
-      return true;
+      const entry = claims.get(id);
+      if (entry && entry.expiresAt > now) return entry.status;
+      claims.set(id, { status: 'pending', expiresAt: now + ttlSeconds * 1000 });
+      return 'claimed';
+    },
+    async complete(id) {
+      claims.get(id).status = 'sent';
     },
     async release(id) {
       claims.delete(id);
@@ -57,14 +60,29 @@ export function dynamoStore(tableName, region) {
       try {
         await db.send(new sdk.PutItemCommand({
           TableName: tableName,
-          Item: { pk: { S: `submission#${id}` }, expiresAt: { N: String(Math.floor(now / 1000) + ttlSeconds) } },
-          ConditionExpression: 'attribute_not_exists(pk)',
+          Item: { pk: { S: `submission#${id}` }, expiresAt: { N: String(Math.floor(now / 1000) + ttlSeconds) }, deliveryStatus: { S: 'pending' } },
+          ConditionExpression: 'attribute_not_exists(pk) OR expiresAt <= :now',
+          ExpressionAttributeValues: { ':now': { N: String(Math.floor(now / 1000)) } },
         }));
-        return true;
+        return 'claimed';
       } catch (error) {
-        if (isConditionFailure(error)) return false;
+        if (isConditionFailure(error)) {
+          const result = await db.send(new sdk.GetItemCommand({
+            TableName: tableName, Key: { pk: { S: `submission#${id}` } }, ConsistentRead: true,
+          }));
+          // Older records have no delivery state. Never infer a successful send from those.
+          return result.Item?.deliveryStatus?.S === 'sent' ? 'sent' : 'pending';
+        }
         throw error;
       }
+    },
+    async complete(id) {
+      const { sdk, db } = await client();
+      await db.send(new sdk.UpdateItemCommand({
+        TableName: tableName, Key: { pk: { S: `submission#${id}` } },
+        UpdateExpression: 'SET deliveryStatus = :sent',
+        ExpressionAttributeValues: { ':sent': { S: 'sent' } },
+      }));
     },
     async release(id) {
       const { sdk, db } = await client();

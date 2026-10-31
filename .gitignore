@@ -41,3 +41,8 @@ yarn-error.log*
 
 # owner fact sheet: names employers and dates, never committed (repo is public)
 /facts.md
+
+# browser test artifacts
+/playwright-report
+/test-results
+__pycache__/
