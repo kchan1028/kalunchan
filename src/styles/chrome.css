@@ -190,6 +190,17 @@ html[data-page='enter'] .site-header::after {
   max-height: min(70vh, 40rem);
 }
 
+.site-search__close {
+  align-self: flex-end;
+  min-height: 44px;
+  padding: var(--s2) var(--s4);
+  color: var(--ink);
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
 .site-search__input {
   width: 100%;
   padding: var(--s4);

@@ -87,9 +87,13 @@ export function createHandler({ send, store, env = process.env, now = () => Date
 
     // The page sends a random id per form fill, so a double click or a retry after a lost response sends once.
     const submissionId = cleanSubmissionId(input.submissionId);
-    if (submissionId && !(await store.claim(`${FORM}#${submissionId}`, 86_400, now()))) {
-      log('duplicate');
-      return reply(200, { ok: true, duplicate: true });
+    if (submissionId) {
+      const state = await store.claim(`${FORM}#${submissionId}`, 86_400, now());
+      if (state === 'sent') {
+        log('duplicate');
+        return reply(200, { ok: true, duplicate: true });
+      }
+      if (state === 'pending') return reply(409, { ok: false, error: 'send_pending' });
     }
 
     const to = isValidEmail(env.CONTACT_TO ?? '') ? env.CONTACT_TO : null;
@@ -106,6 +110,15 @@ export function createHandler({ send, store, env = process.env, now = () => Date
       log('send_failed', error?.name);
       if (submissionId) await store.release(`${FORM}#${submissionId}`);
       return reply(502, { ok: false, error: 'send_failed' });
+    }
+    // Do not release a claim if recording success fails: SES may already have accepted the email.
+    if (submissionId) {
+      try {
+        await store.complete(`${FORM}#${submissionId}`);
+      } catch (error) {
+        log('completion_failed', error?.name);
+        return reply(503, { ok: false, error: 'send_pending' });
+      }
     }
     log('sent');
     return reply(200, { ok: true });
