@@ -254,6 +254,9 @@ Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number
 ### Layer Stack (home)
 At 1360×800 and larger, the home layer map stays pinned beside the evidence while the page scrolls normally. Its layers tilt apart in CSS 3D, light up in turn with their proof, and close flat again. A click selects a layer until the scroll reaches the next one. Smaller screens and reduced motion keep the flat map, which is the one exception to the flat rule and only ever opens while scrolling.
 
+### Live Sites Strip (home)
+The home opening ends on a row of six screenshots in 1px ink frames with square corners, each opening the live site in a new tab, with the domain in blue mono below. The row scrolls sideways and bleeds off the right edge. It sits below the rows the pinned layer map spans.
+
 ### Print-In Motion
 Below the fold, blue fields wipe in from the left, and figures, images and plain section heads wipe in from the top, once each. The title block's head rule draws across on load, and a 2px blue line on the header rule tracks scroll progress. Everything is visible without JavaScript or under reduced motion.
 

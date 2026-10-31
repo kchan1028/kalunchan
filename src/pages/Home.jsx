@@ -5,6 +5,7 @@ import PressedType from '../components/PressedType';
 import { Impact, CareerTimeline, CaseStudies, LeadershipFlow } from '../components/HomeSections';
 import { homeIntro, headlineNumbers, person, proofPoints, roleIntent } from '../content/profile';
 import { projects } from '../content/projects';
+import { builtSites } from '../content/home';
 import { ArrowRight } from '../components/Icons';
 
 // The first screen answers who, what level and the one result that matters. The rest of the evidence follows it.
@@ -67,6 +68,17 @@ export default function Home() {
           <Link to={item.to}><span className="mono">{item.no}</span><span>{item.label}</span></Link>
         </li>)}</ol>
       </div>
+      </div>
+      <div className="opening__work">
+        <p id="built-sites" className="label">Live sites I’ve built</p>
+        <ul aria-labelledby="built-sites">{builtSites.map((s) => <li key={s.url}>
+          <a href={s.url} target="_blank" rel="noopener">
+            <img src={s.src} alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async" />
+            <strong>{s.name}</strong>
+            <span>{s.type}</span>
+            <span className="mono">{s.domain}</span>
+          </a>
+        </li>)}</ul>
       </div>
     </div>
   </section>
