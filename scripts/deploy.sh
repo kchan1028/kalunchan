@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Production deploy: validate → build → verify → sync build/ to S3 → purge Cloudflare.
+# Production deploy: validate → build → verify → sync build/ to S3 → update security headers → purge Cloudflare.
 #
 # Fails closed: S3 is only touched after validation, the production build and the
 # audit of the exact files being uploaded have all passed. Any failing command
@@ -195,7 +195,25 @@ fi
 
 [ "$dry_run" = true ] || s3_done=true
 
-# ---------- 4. Purge Cloudflare ----------
+# ---------- 4. Security headers ----------
+# The CSP allows the inline script by hash, so it has to match the HTML just uploaded. Before the purge,
+# so cached pages are only dropped once the new policy is in place.
+if [ "$cf_purge" = true ]; then
+  stage="Security headers"
+  step "Updating security headers"
+  if [ "$dry_run" = true ]; then
+    quiet node scripts/cloudflare-security-headers.mjs --enforce
+    ok "Dry run: would write the rule with the CSP enforced"
+  else
+    quiet node scripts/cloudflare-security-headers.mjs --apply --enforce || {
+      echo "The site is uploaded, but its CSP wasn't updated and the cache wasn't purged. Check that the token has Zone · Transform Rules · Edit, then run npm run deploy again." >&2
+      false
+    }
+    ok "Security headers updated"
+  fi
+fi
+
+# ---------- 5. Purge Cloudflare ----------
 if [ "$cf_purge" = true ]; then
   stage="Cloudflare cache purge"
   step "Purging Cloudflare cache"
@@ -215,7 +233,7 @@ else
   echo "  Cloudflare purge skipped: set CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN to enable it."
 fi
 
-# ---------- 5. IndexNow ----------
+# ---------- 6. IndexNow ----------
 # After the purge, so search engines that fetch right away get the new pages. A failure here doesn't undo
 # the deploy: the next deploy submits whatever was missed.
 step "Notifying IndexNow of new and updated pages"

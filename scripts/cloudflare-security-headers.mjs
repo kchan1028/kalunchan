@@ -7,6 +7,8 @@
 //         npm run headers -- --apply      # write it, CSP as Content-Security-Policy-Report-Only
 //         npm run headers -- --apply --enforce   # once the browser console shows no CSP reports
 //
+// npm run deploy runs it with --apply --enforce, so the inline script hash always matches the uploaded HTML.
+//
 // Needs CLOUDFLARE_ZONE_ID and a token with Zone · Transform Rules · Edit on kalunchan.dev
 // (CLOUDFLARE_RULES_API_TOKEN, else CLOUDFLARE_API_TOKEN). Safe to re-run: only this rule is replaced; other
 // response header rules in the zone are kept.
