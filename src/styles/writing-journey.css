@@ -113,6 +113,8 @@
   --nav-h: 44px;
   position: relative;
   margin-top: var(--s8);
+  /* html reserves the header plus --s5; the journey's first element sticks right under the header. */
+  scroll-margin-top: calc(-1 * var(--s5));
 }
 
 .jrny__field {
@@ -169,6 +171,28 @@
 
 .jrny__progress {
   display: none;
+}
+
+/* The act links need a little more room on the narrowest phones. */
+@media (max-width: 359px) {
+  .jrny__nav-links {
+    gap: var(--s1);
+    padding-inline: var(--s3);
+  }
+}
+
+/* GSAP leaves undrawn lines as inline transforms on anything not scrolled to yet. */
+@media print {
+  .jrny__nav {
+    position: static;
+  }
+
+  .jrny-post__rule,
+  .jrny-post__link,
+  .jrny-fig__line,
+  .jrny-fig__fill {
+    transform: none !important;
+  }
 }
 
 .jrny-act {
@@ -273,7 +297,10 @@
   margin-top: var(--s1);
 }
 
+/* Stays above the last row, which can still be sliding down over it as it scrolls in. */
 .jrny-act__more {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -437,6 +464,15 @@
     --col: calc((var(--sheet) - 2 * var(--gutter) - 11 * var(--col-gap)) / 12);
     --field-w: calc(var(--bleed) + var(--gutter) + 5 * var(--col) + 4.5 * var(--col-gap));
     margin-top: var(--s7);
+  }
+
+  /* 100vw counts a visible scrollbar and 100cqw doesn't, so where supported the field lines up with the sheet exactly. */
+  @supports (width: 1cqw) {
+    .jrny {
+      container-type: inline-size;
+      --sheet: min(100cqw, var(--max));
+      --bleed: calc((100cqw - var(--sheet)) / 2);
+    }
   }
 
   .jrny__field {

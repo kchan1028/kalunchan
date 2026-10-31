@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Link } from 'react-router';
+import { useRealNavigationType } from '../components/usePageTransition';
 import { posts, postBySlug, startHere, journeys, chapters, topics } from '../content/writing';
 import TitleBlock from '../components/TitleBlock';
 import WritingJourney from '../components/WritingJourney';
@@ -13,14 +15,47 @@ const CHAPTER_VISIBLE = 3;
 // Newest posts shown before the archive folds. The fold only happens after hydration, so without JS every row is visible.
 const ARCHIVE_VISIBLE = 15;
 
+// The archive's filter and fold, kept for the tab so Back from a post returns to the same list.
+const ARCHIVE_KEY = 'writing-archive';
+function readArchive() {
+  try {
+    return JSON.parse(sessionStorage.getItem(ARCHIVE_KEY));
+  } catch {
+    return null;
+  }
+}
+function saveArchive(state) {
+  try {
+    sessionStorage.setItem(ARCHIVE_KEY, JSON.stringify(state));
+  } catch {
+    // Private windows can refuse storage; the list still works, it just won't survive Back.
+  }
+}
+
 export default function Writing() {
   const start = startHere.map((s) => postBySlug[s]);
   const [topic, setTopic] = useState(null);
   const [folded, setFolded] = useState(false);
-  useEffect(() => setFolded(true), []);
+  const navigationType = useRealNavigationType();
+  // Runs before the browser restores scroll on Back, so the page is back to its full height by then.
+  useEffect(() => {
+    const saved = navigationType === 'POP' ? readArchive() : null;
+    setTopic(saved?.topic ?? null);
+    setFolded(!saved?.expanded);
+  }, []);
   const matches = (p) => !topic || p.topics.includes(topic);
   const shownCount = posts.filter(matches).length;
   const isFolded = folded && !topic;
+  const chooseTopic = (t) => {
+    setTopic(t);
+    saveArchive({ topic: t, expanded: !folded });
+  };
+  // The button removes itself, so focus moves to the first row it revealed.
+  const showAll = () => {
+    flushSync(() => setFolded(false));
+    saveArchive({ topic, expanded: true });
+    document.querySelectorAll('#writing-index > li')[ARCHIVE_VISIBLE]?.querySelector('a')?.focus();
+  };
   return (
     <>
       <TitleBlock section="650" title="Writing" cells={[{ k: 'Posts', v: `${posts.length}` }, { k: 'Chapters', v: `${chapters.length}` }]} />
@@ -137,10 +172,10 @@ export default function Writing() {
         <p className="writing-section__lead">Everything, newest first.</p>
         <div className="writing-filter" role="group" aria-label="Filter posts by topic">
           {[null, ...topics].map((t) => (
-            <button key={t || 'all'} type="button" aria-pressed={topic === t} onClick={() => setTopic(t)}>{t || 'All topics'}</button>
+            <button key={t || 'all'} type="button" aria-pressed={topic === t} onClick={() => chooseTopic(t)}>{t || 'All topics'}</button>
           ))}
         </div>
-        <p className="writing-filter__count label" role="status">{topic ? `${shownCount} of ${posts.length} posts in ${topic}` : `${posts.length} posts`}</p>
+        <p className="writing-filter__count label" role="status">{topic ? `${shownCount} of ${posts.length} posts in ${topic}` : isFolded ? `Showing ${ARCHIVE_VISIBLE} of ${posts.length} posts` : `${posts.length} posts`}</p>
         <ol id="writing-index" className="case-index writing-archive" data-coord="650 · Index">
           {posts.map((p, i) => (
             <li key={p.slug} hidden={!matches(p) || (isFolded && i >= ARCHIVE_VISIBLE)}>
@@ -160,7 +195,7 @@ export default function Writing() {
           ))}
         </ol>
         {isFolded && (
-          <button type="button" className="action writing-archive__more" onClick={() => setFolded(false)}>Show all {posts.length} posts</button>
+          <button type="button" className="action writing-archive__more" onClick={showAll}>Show all {posts.length} posts</button>
         )}
       </section>
       <aside className="sheet writing-next" aria-labelledby="writing-next-title">
