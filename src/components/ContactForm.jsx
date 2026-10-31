@@ -29,12 +29,14 @@ export default function ContactForm({ variant = 'general' }) {
   const sentRef = useRef(null);
   const meta = useRef({ startedAt: '', submissionId: '' });
   const again = useRef(false);
+  const started = useRef(false);
   const [enhanced, setEnhanced] = useState(false);
   const [status, setStatus] = useState('idle');
   const [errors, setErrors] = useState({});
   const [count, setCount] = useState(0);
 
   const resetMeta = () => {
+    started.current = false;
     meta.current = { startedAt: String(Date.now()), submissionId: newSubmissionId() };
   };
 
@@ -61,6 +63,12 @@ export default function ContactForm({ variant = 'general' }) {
   useEffect(() => {
     if (Object.keys(errors).length) summaryRef.current?.focus();
   }, [errors]);
+
+  const onFocus = (event) => {
+    if (!lead || started.current || !event.target.matches('input:not([type="hidden"]), select, textarea') || event.target.name === 'website') return;
+    started.current = true;
+    track('hiring_form_start', 'leadership');
+  };
 
   const onInput = (event) => {
     if (event.target.name === 'message') setCount(event.target.value.length);
@@ -143,8 +151,8 @@ export default function ContactForm({ variant = 'general' }) {
   );
 
   return (
-    <form ref={formRef} className="cform" action={contactEndpoint} method="post" noValidate={enhanced} onSubmit={onSubmit} onInput={onInput} aria-labelledby={`${idp}-form-title`}>
-      <h3 id={`${idp}-form-title`} className="cform__title">{lead ? 'Tell me about the role' : 'Send a note'}</h3>
+    <form ref={formRef} className="cform" action={contactEndpoint} method="post" noValidate={enhanced} onSubmit={onSubmit} onInput={onInput} onFocus={onFocus} aria-labelledby={`${idp}-form-title`}>
+      <h3 id={`${idp}-form-title`} className="cform__title">{lead ? 'Start a conversation' : 'Send a note'}</h3>
       <p id={`${notice}-sent`} className="cform__notice" tabIndex={-1}>Thanks. Your message is on its way. {responseTime}</p>
       <p id={`${notice}-not-sent`} className="cform__notice cform__notice--error" tabIndex={-1}>Your message didn’t go through. Check every field is filled in and try again, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
 
@@ -228,7 +236,7 @@ export default function ContactForm({ variant = 'general' }) {
       )}
       <p className="cform__hint">I use what you send only to reply. <Link to="/privacy/">How I handle your message</Link>.</p>
       <button className="action cform__submit" type="submit" disabled={sending} aria-busy={sending || undefined}>
-        {sending ? 'Sending…' : <>{lead ? 'Send' : 'Send message'} <ArrowRight /></>}
+        {sending ? 'Sending…' : <>{lead ? 'Send your enquiry' : 'Send message'} <ArrowRight /></>}
       </button>
     </form>
   );

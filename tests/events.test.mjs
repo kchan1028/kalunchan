@@ -55,3 +55,15 @@ test('refuses other origins, other methods and bad events without writing', asyn
   assert.equal(bad.res.status, 400);
   assert.equal(bad.points.length, 0);
 });
+
+
+test('hiring events accept only fixed targets without form values', async () => {
+  for (const [event, target] of [['hiring_cta_click', '/contact/#leadership'], ['hiring_form_start', 'leadership']]) {
+    const data = body({ e: event, p: '/contact/', t: target, email: 'ignored@example.test', name: 'Ignored' });
+    const { res, points } = await call(data);
+    assert.equal(res.status, 204);
+    assert.deepEqual(points, [{ indexes: [event], blobs: [event, '/contact/', target] }]);
+    assert.equal(parseEvent(body({ e: event, t: 'visitor@example.test' })), null);
+  }
+  assert.equal(parseEvent(body({ e: 'hiring_form_start', t: 'leadership' })), null, 'starts only belong to the contact page');
+});

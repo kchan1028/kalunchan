@@ -4,10 +4,11 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { useRealNavigationType } from './usePageTransition';
 import { availability, person } from '../content/profile';
 import { outcomes } from '../content/engineeringLeadership';
-import { ArrowOut, ArrowRight } from './Icons';
+import { ArrowOut } from './Icons';
 import Coordinate from './Coordinate';
 import PressedType from './PressedType';
 import SiteSearch from './SiteSearch';
+import HiringContactLink from './HiringContactLink';
 
 const bayAreaTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' });
 
@@ -119,10 +120,10 @@ function Colophon() {
           <div className="colophon__routes">
             {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
             <div className="colophon__actions">
-              <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
-                {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />
+              <HiringContactLink />
+              <a className="action action--quiet" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
+                Message me on LinkedIn <ArrowOut />
               </a>
-              <Link className="action action--quiet" to="/engineering-leadership/">For hiring teams <ArrowRight /></Link>
             </div>
             <ul className="colophon__links">
               {person.email && (

@@ -59,9 +59,9 @@ export default function Contact() {
       <TitleBlock section="700" title="Contact" as="p" cells={[{ k: 'Best route', v: 'LinkedIn' }]} />
 
       <header ref={heroRef} className="sheet grid contact-hero" data-coord="700 · Contact">
-        <h1 id="contact-title" className="contact-hero__title display">Let’s talk about what you’re trying to build.</h1>
+        <h1 id="contact-title" className="contact-hero__title display">Tell me about your team or opportunity.</h1>
         <div className="contact-hero__copy">
-          <p className="contact-hero__lead">I’m always interested in a good engineering problem: scaling an engineering organization, modernizing a complex platform, fixing slow delivery, building a new product, or bringing in experienced technical leadership.</p>
+          <p className="contact-hero__lead">If your team is growing, delivery is slowing or a platform needs modernizing, I’d like to hear about it. Share what you need and we can discuss where I can help.</p>
           <div className="contact-hero__actions">
             <a className="action" href="#leadership">{paths.leadership.title} <ArrowDown /></a>
             <a className="action action--quiet" href="#consulting">{paths.consulting.title} <ArrowDown /></a>

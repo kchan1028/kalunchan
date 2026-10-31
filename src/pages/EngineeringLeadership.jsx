@@ -2,15 +2,15 @@ import { Link } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
-  opportunityStatement, resumeRequest, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
+  opportunityStatement, resumeRequest, currentWork, recommendations, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
+import HiringContactLink from '../components/HiringContactLink';
 import TitleBlock from '../components/TitleBlock';
 import FocusPicker, { useFocus } from '../components/FocusPicker';
 import { track } from '../track';
 import { ArrowOut, ArrowRight } from '../components/Icons';
 
 const onResume = () => track('resume_request', resumeRequest);
-const onLinkedIn = () => track('linkedin_click', person.linkedin);
 
 const featured = featuredSlugs.map((slug) => posts.find((p) => p.slug === slug)).filter(Boolean);
 
@@ -56,14 +56,13 @@ export default function EngineeringLeadership() {
           ))}
         </ul>
         <p className="hire-brief__actions">
-          <Link to={resumeRequest} className="action" onClick={onResume}>Request my résumé <ArrowRight /></Link>
-          <Link to={resumeRequest} className="action action--quiet">Contact me <ArrowRight /></Link>
-          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>LinkedIn <ArrowOut /></a>
+          <HiringContactLink />
+          <Link to="/experience/" className="action action--quiet">See my experience <ArrowRight /></Link>
         </p>
       </section>
       <div className="sheet grid page-lead hire-lead">
         <p className="page-lead__claim">
-          I connect engineering execution, architecture, security and the business, and I’m looking for a senior engineering leadership role to do it.
+          I’m most useful when a team is growing, delivery is slowing or a platform needs modernizing while people still depend on it.
         </p>
         <p className="page-lead__aside body-copy">
           Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader. As co-founder and CTO he built a startup from the ground up to 400,000+ users and an acquisition, then served as CTO of a media publishing platform. Earlier he was VP of Operations for a voice services company. He now leads architecture and delivery for government and startup clients through Yippify, and he still writes code.
@@ -77,7 +76,7 @@ export default function EngineeringLeadership() {
         <div className="sheet grid">
           <p className="open-to__roles">{opportunityStatement}</p>
           <div className="open-to__side">
-            <Link className="action" to={resumeRequest}>Talk about a role <ArrowRight /></Link>
+            <HiringContactLink />
           </div>
         </div>
       </aside>
@@ -112,7 +111,47 @@ export default function EngineeringLeadership() {
         </dl>
         <p className="hire-section__foot">
           <Link to={resumeRequest} className="action" onClick={onResume}>Request my résumé <ArrowRight /></Link>
-          <a href={person.linkedin} className="action action--quiet" rel="me noopener" target="_blank" onClick={onLinkedIn}>LinkedIn profile <ArrowOut /></a>
+          <a href={`${person.linkedin}details/recommendations/`} className="action action--quiet" rel="me noopener" target="_blank" onClick={() => track('linkedin_click', `${person.linkedin}details/recommendations/`)}>Read LinkedIn recommendations <ArrowOut /></a>
+        </p>
+      </section>
+
+
+      <section id="recommendations" className="sheet grid hire-section" aria-labelledby="recommendations-h" data-coord="091-3 · Recommendations">
+        <div className="hire-section__head">
+          <h2 id="recommendations-h" className="h2">From people I’ve worked with</h2>
+          <p className="body-copy">Excerpts from LinkedIn recommendations.</p>
+        </div>
+        <ul className="hire-recommendations">
+          {recommendations.map((recommendation) => (
+            <li key={recommendation.name}>
+              <figure>
+                <blockquote><p>“{recommendation.quote}”</p></blockquote>
+                <figcaption>{recommendation.name}<span>{recommendation.role}</span></figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        <p className="hire-section__foot">
+          <a href={`${person.linkedin}details/recommendations/`} className="link-arrow" rel="me noopener" target="_blank" onClick={() => track('linkedin_click', `${person.linkedin}details/recommendations/`)}><span>Read the full recommendations on LinkedIn</span> <ArrowOut /></a>
+        </p>
+      </section>
+
+      <section id="current-work" className="sheet grid hire-section" aria-labelledby="current-work-h" data-coord="091-2 · Current work">
+        <div className="hire-section__head">
+          <h2 id="current-work-h" className="h2">Current work through Yippify</h2>
+          <p className="body-copy">Public-sector application delivery, alongside work with startups and founders.</p>
+        </div>
+        <dl className="hire-summary">
+          {currentWork.map((item) => (
+            <div key={item.k}>
+              <dt className="label">{item.k}</dt>
+              <dd>{item.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="hire-section__foot">
+          <Link to="/writing/building-public-sector-applications/" className="link-arrow"><span>The engineering behind public-sector delivery</span> <ArrowRight /></Link>
+          <Link to="/writing/modernizing-public-sector-applications/" className="link-arrow"><span>How I approach modernization</span> <ArrowRight /></Link>
         </p>
       </section>
 

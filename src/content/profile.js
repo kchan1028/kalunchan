@@ -32,8 +32,11 @@ export const entity =
 export const homeIntro =
   'Ka Lun Chan (KC) is an engineering leader in the San Francisco Bay Area. He co-founded a communications company and grew it to 400,000+ users on three continents. After the acquisition he stayed on with the company. Today he leads government technology work through Yippify.';
 
+export const homeFit =
+  'I help growing companies strengthen engineering delivery, make technical decisions and develop engineers into leaders. I stay close to the architecture and the work.';
+
 // One line of role intent under the home headline, linking to /engineering-leadership/ (POSITIONING.md §0).
-export const roleIntent = 'Open to engineering leadership opportunities that bring together technical direction, team growth and hands-on delivery, remote or in the Bay Area';
+export const roleIntent = 'Open to engineering leadership opportunities, remote across the US or in the Bay Area';
 
 // Verified proof points shown under the home positioning line, each linking to its evidence.
 export const proofPoints = [
