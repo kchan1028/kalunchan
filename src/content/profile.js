@@ -28,21 +28,6 @@ export const isPlaceholder = (value) => typeof value === 'string' && value.inclu
 export const entity =
   'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist who has worked across every layer of a business, from an IT helpdesk to software architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, and led its team of 30+. He now leads government technology work through Yippify.';
 
-// The homepage says the same thing in its own words, so / and /about/ don't repeat each other.
-export const homeIntro =
-  'Ka Lun Chan (KC) is an engineering leader in the San Francisco Bay Area. He co-founded a communications company and grew it to 400,000+ users on three continents. After the acquisition he stayed on with the company. Today he leads government technology work through Yippify.';
-
-// One line of role intent under the home headline, linking to /engineering-leadership/ (POSITIONING.md §0).
-export const roleIntent = 'Open to engineering leadership opportunities that bring together technical direction, team growth and hands-on delivery, remote or in the Bay Area';
-
-// Verified proof points shown under the home positioning line, each linking to its evidence.
-export const proofPoints = [
-  { figure: '2,000+', text: 'collocations, carrier capacity planning', to: '/work/carrier-capacity/' },
-  { figure: '8M+', text: 'VoIP minutes a month, server farm and expansion', to: '/experience/#voice' },
-  { figure: '+50%', text: 'organic and social traffic as publishing CTO', to: '/work/publishing-distribution/' },
-  { figure: '~30%', text: 'lower AWS costs on a re-platform', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
-];
-
 export const headlineNumbers = [
   { figure: 'Still hands-on', text: 'at every layer of a company, from network operations to CTO' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },

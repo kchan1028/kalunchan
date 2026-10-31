@@ -108,7 +108,7 @@
 .talk--form .talk__direct { margin-top: var(--s5); }
 
 /* Contact form: hairline fields on the sheet, the same square edges as every other action. */
-.cform { --cform-error: #b42318; max-width: 42rem; margin-top: var(--s7); padding-top: var(--s5); border-top: 3px solid var(--rule); }
+.cform { --cform-error: light-dark(#b42318, #ff9a8b); max-width: 42rem; margin-top: var(--s7); padding-top: var(--s5); border-top: 3px solid var(--rule); }
 .cform__title { font-size: var(--t-h3); font-stretch: 88%; line-height: 1.2; }
 .cform__title:focus { outline: none; }
 .cform__lead { margin-top: var(--s3); color: var(--ink-2); }

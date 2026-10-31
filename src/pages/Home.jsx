@@ -1,90 +1,114 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
-import { nav } from '../components/Layout';
-import ExperienceMap from '../components/ExperienceMap';
 import PressedType from '../components/PressedType';
-import { Impact, CareerTimeline, CaseStudies, LeadershipFlow } from '../components/HomeSections';
-import { homeIntro, headlineNumbers, person, proofPoints, roleIntent } from '../content/profile';
-import { projects } from '../content/projects';
-import { builtSites } from '../content/home';
-import { ArrowRight } from '../components/Icons';
+import { ArrowDown, ArrowOut, ArrowRight, BikeIcon } from '../components/Icons';
+import { track } from '../track';
+import { availability, availabilityLabel } from '../content/availability';
+import { cycling } from '../content/community';
+import { caseTiles, heroHeadline, resume, skills } from '../content/portfolio';
+import { person } from '../content/profile';
 
-// The first screen answers who, what level and the one result that matters. The rest of the evidence follows it.
-const leadNumber = headlineNumbers.find((n) => n.figure === '400,000+');
+function ProfileLinks() {
+  return (
+    <ul className="tile__links">
+      <li><a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">LinkedIn <ArrowOut /></a></li>
+      <li><a href={person.github} rel="me noopener" target="_blank">GitHub <ArrowOut /></a></li>
+    </ul>
+  );
+}
+
+function CaseTile({ tile }) {
+  return (
+    <article className="tile tile--case" aria-labelledby={`case-${tile.id}`}>
+      <p className="label">{tile.where}</p>
+      <h2 id={`case-${tile.id}`} className="h3"><Link to={tile.to} className="tile__cover">{tile.title}</Link></h2>
+      <dl className="tile__facts">
+        <div className="tile__result"><dt className="label">Result</dt><dd>{tile.figure && <strong className="tile__figure">{tile.figure}</strong>}{tile.result}</dd></div>
+        <div><dt className="label">Problem</dt><dd>{tile.problem}</dd></div>
+        <div><dt className="label">My role</dt><dd>{tile.role}</dd></div>
+        <div><dt className="label">Stack</dt><dd>{tile.stack}</dd></div>
+      </dl>
+      <p className="tile__more" aria-hidden="true">Read more <ArrowRight /></p>
+    </article>
+  );
+}
+
+// The easter egg: a rider laps the bottom of the photo. Reduced motion skips the ride; the lap count still goes up.
+function LapButton() {
+  const [laps, setLaps] = useState(0);
+  const [riding, setRiding] = useState(false);
+  return (
+    <>
+      <span className="tile__track" aria-hidden="true">
+        {riding && <span className="tile__rider" onAnimationEnd={() => setRiding(false)}><BikeIcon /></span>}
+      </span>
+      <p className="tile__lap">
+        <button type="button" onClick={() => { setLaps((n) => n + 1); setRiding(true); }}>Ride a lap</button>
+        <span role="status">{laps > 0 && `${laps} ${laps === 1 ? 'lap' : 'laps'} done`}</span>
+      </p>
+    </>
+  );
+}
 
 export default function Home() {
-  return <>
-  <section className="opening" aria-labelledby="thesis">
-    <div className="opening__sheet sheet">
-      <div className="opening__stamp" data-coord="000 · Overview">
-        <p className="opening__name">Ka Lun Chan <span>(KC)</span></p>
-        <p className="opening__cell"><span className="label">Engineering practice</span></p>
-      </div>
-      <div className="opening__text">
-        <h1 id="thesis" className="opening__thesis display"><PressedType text={person.thesis} /></h1>
-        <p className="opening__intent">
-          <Link to="/engineering-leadership/" className="link-arrow"><span>{roleIntent}</span> <ArrowRight /></Link>
-        </p>
-        <p className="opening__lead">
-          <strong><PressedType text={leadNumber.figure} /></strong>
-          <span>{leadNumber.text}</span>
-        </p>
-        <p className="opening__actions">
-          <Link to="/engineering-leadership/" className="action">For hiring teams <ArrowRight /></Link>
-          <Link to="/contact/#start" className="action action--quiet">Start a conversation <ArrowRight /></Link>
-        </p>
-      </div>
-      <div className="opening__figure"><ExperienceMap /></div>
-      <div className="opening__more">
-      <div className="opening__more-text">
-        <p className="opening__entity">{homeIntro}</p>
-        <p className="opening__story">
-          <Link to="/writing/building-a-startup-from-idea-to-acquisition/" className="link-arrow">
-            <span>Founder story: from an idea to an acquisition</span> <ArrowRight />
-          </Link>
-        </p>
-        <p className="opening__level">I have made technology work at scale, first on carrier networks and a data center I cabled by hand, now in the cloud. Every system had to perform at a cost the business could carry. I’m still hands-on.</p>
-        <p className="opening__story">
-          <Link to="/about/" className="link-arrow">
-            <span>Every layer of a company, one chapter at a time</span> <ArrowRight />
-          </Link>
-        </p>
-        <p className="opening__actions">
-          <Link to="/experience/" className="action action--quiet">Experience <ArrowRight /></Link>
-          <Link to="/leadership/" className="action action--quiet">Leadership <ArrowRight /></Link>
-        </p>
-        <p className="opening__shipped">
-          <span className="label">Recently shipped</span>
-          {projects.map((p) => <Link key={p.slug} to={`/projects/${p.slug}/`}>{p.name}</Link>)}
-        </p>
-      </div>
-      <div className="opening__more-proof">
-        <ul className="opening__facts" aria-label="Headline numbers">{headlineNumbers.filter((n) => n !== leadNumber).map((n) => <li key={n.figure}>
-          <strong>{n.figure}</strong> {n.text}
-        </li>)}</ul>
-        <ul className="opening__proof" aria-label="Proof points">
-          {proofPoints.map((p) => <li key={p.figure}><Link to={p.to}><strong>{p.figure}</strong> {p.text}</Link></li>)}
-        </ul>
-        <ol className="contents-list">{nav.map((item) => <li key={item.to}>
-          <Link to={item.to}><span className="mono">{item.no}</span><span>{item.label}</span></Link>
-        </li>)}</ol>
-      </div>
-      </div>
-      <div className="opening__work">
-        <p id="built-sites" className="label">Live sites I’ve built</p>
-        <ul aria-labelledby="built-sites">{builtSites.map((s) => <li key={s.url}>
-          <a href={s.url} target="_blank" rel="noopener">
-            <img src={s.src} alt={s.alt} width={s.width} height={s.height} loading="lazy" decoding="async" />
-            <strong>{s.name}</strong>
-            <span>{s.type}</span>
-            <span className="mono">{s.domain}</span>
-          </a>
-        </li>)}</ul>
-      </div>
+  return (
+    <div className="sheet bento">
+      <section className="tile tile--hero on-blue" aria-labelledby="thesis">
+        <p className="tile__name">{person.name} <span>({person.short})</span></p>
+        <h1 id="thesis" className="tile__headline display"><PressedType text={heroHeadline} /></h1>
+        <div className="tile__hero-foot">
+          <p className="tile__location">{availability.location}</p>
+          {availability.show && <p className="badge">{availabilityLabel(availability)}</p>}
+          {availability.show && availability.timing && <p className="tile__location">{availability.timing}</p>}
+          <p><Link to="/engineering-leadership/" className="action">For hiring teams <ArrowRight /></Link></p>
+        </div>
+      </section>
+
+      <section className="tile tile--resume" aria-labelledby="resume-title">
+        <h2 id="resume-title" className="h3">Résumé</h2>
+        {resume.pdf
+          ? <p><a className="action" href={resume.pdf} download>Download PDF <ArrowDown /></a></p>
+          : <>
+            <p>Send your name and email, and I’ll reply with it.</p>
+            <p><Link className="action" to={resume.request}>Request résumé <ArrowRight /></Link></p>
+          </>}
+        <ProfileLinks />
+      </section>
+
+      {caseTiles.map((tile) => <CaseTile key={tile.id} tile={tile} />)}
+
+      <section className="tile tile--skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" className="h3">Skills and stack</h2>
+        <dl className="tile__facts tile__facts--rows">
+          {skills.map((s) => <div key={s.area}><dt className="label">{s.area}</dt><dd>{s.items}</dd></div>)}
+        </dl>
+        <p><Link to="/expertise/" className="link-arrow"><span>Full expertise</span> <ArrowRight /></Link></p>
+      </section>
+
+      <section className="tile tile--personal" aria-labelledby="personal-title">
+        <div className="tile__photo">
+          <img
+            src="/images/community/berkeley-hills-road-race-960.webp"
+            srcSet="/images/community/berkeley-hills-road-race-640.webp 640w, /images/community/berkeley-hills-road-race-960.webp 960w"
+            sizes="(max-width: 639px) 92vw, 46vw"
+            width="1920" height="1080" loading="lazy" decoding="async"
+            alt="A line of cyclists follows a tree-lined road at the Berkeley Hills Road Race"
+          />
+          <LapButton />
+        </div>
+        <div className="tile__personal-text">
+          <h2 id="personal-title" className="h3">Away from work, I’m usually on a bike</h2>
+          <p>I help organize the <a href={cycling.omnium} rel="noopener" target="_blank">Berkeley Omnium</a>, a nonprofit race weekend that pairs the Berkeley Hills Road Race with the Berkeley Streets Criterium. All proceeds support six East Bay NICA teams.</p>
+          <p><Link to="/community/" className="link-arrow"><span>Why I help run it</span> <ArrowRight /></Link></p>
+        </div>
+      </section>
+
+      <section className="tile tile--contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" className="h3">Contact</h2>
+        {person.email && <p className="tile__email"><a href={`mailto:${person.email}`}>{person.email}</a></p>}
+        <p><Link to="/contact/#leadership" className="link-arrow"><span>Send a message</span> <ArrowRight /></Link></p>
+        <ProfileLinks />
+      </section>
     </div>
-  </section>
-  <Impact />
-  <CareerTimeline />
-  <CaseStudies />
-  <LeadershipFlow />
-  </>;
+  );
 }

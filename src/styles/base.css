@@ -46,6 +46,34 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Dark theme: each color token resolves against the element's color-scheme. Browsers without light-dark() keep the
+   light values above and hide the toggle. Blue fields and the colophon stay on the light values, so their inks are the
+   same in both themes. A surface that paints var(--blue) as a field and isn't .on-blue needs to join this list. */
+@supports (color: light-dark(#000, #fff)) {
+  :root {
+    color-scheme: light dark;
+    --paper: light-dark(#f4f5f2, #101315);
+    --paper-sunk: light-dark(#e9ebe6, #1a1e22);
+    --ink: light-dark(#14171a, #eef0ec);
+    --ink-2: light-dark(#454c54, #c2c8ce);
+    --ink-3: light-dark(#5f6770, #a0a8b0);
+    --rule: light-dark(#14171a, #868e96);
+    --rule-soft: light-dark(#c7ccd1, #363c42);
+    --blue: light-dark(#1d4fd8, #8fb0ff);
+    --blue-deep: light-dark(#173fb0, #a9c2ff);
+    --on-blue: light-dark(#ffffff, #0b1220);
+    --on-blue-2: light-dark(#cdd9ff, #1c2a4a);
+  }
+
+  :root[data-theme='light'] { color-scheme: light; }
+  :root[data-theme='dark'] { color-scheme: dark; }
+  .on-blue, .colophon, .jrny__nav { color-scheme: light; }
+}
+
+@supports not (color: light-dark(#000, #fff)) {
+  .theme-toggle { display: none; }
+}
+
 *,
 *::before,
 *::after {
@@ -386,8 +414,6 @@ svg {
   .on-blue[data-sw='in'] { animation: sw-wipe-x 1000ms var(--ease-out); }
   figure[data-sw='in'], img[data-sw='in'] { animation: sw-wipe-y 1000ms var(--ease-out); }
   h2[data-sw='in'] { animation: sw-wipe-y 800ms var(--ease-out), sw-rise 800ms var(--ease-out); }
-
-  .opening__figure { animation: sw-wipe-x 1100ms var(--ease-out); }
 
   /* Title block: the head rule draws across, then the cells print in. */
   .title-block__row { position: relative; }

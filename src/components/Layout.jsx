@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { useRealNavigationType } from './usePageTransition';
-import { availability, person } from '../content/profile';
+import { person } from '../content/profile';
 import { outcomes } from '../content/engineeringLeadership';
 import { ArrowOut, ArrowRight } from './Icons';
 import Coordinate from './Coordinate';
 import PressedType from './PressedType';
 import SiteSearch from './SiteSearch';
+import ThemeToggle from './ThemeToggle';
 
 const bayAreaTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' });
 
@@ -56,6 +57,7 @@ function Header() {
         <Coordinate />
         <LocalTime />
         <SiteSearch />
+        <ThemeToggle />
         <button
           type="button"
           className="contents-toggle"
@@ -91,16 +93,18 @@ function Colophon() {
   return (
     <footer id="contact" className="colophon" data-coord="Contact">
       <div className="sheet">
-        <ul className="colophon__proof" aria-label="Headline outcomes">
-          {outcomes.map((o) => (
-            <li key={o.figure}>
-              <Link to={o.to}>
-                <strong className="colophon__figure"><PressedType text={o.figure} onScroll /></strong>
-                <span>{o.text}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {!isHome && (
+          <ul className="colophon__proof" aria-label="Headline outcomes">
+            {outcomes.map((o) => (
+              <li key={o.figure}>
+                <Link to={o.to}>
+                  <strong className="colophon__figure"><PressedType text={o.figure} onScroll /></strong>
+                  <span>{o.text}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="grid colophon__grid">
           {isAbout ? (
             <div className="colophon__story">
@@ -117,7 +121,6 @@ function Colophon() {
             </h2>
           )}
           <div className="colophon__routes">
-            {isHome && <p className="colophon__availability"><strong>{availability.ask}</strong> {availability.text}</p>}
             <div className="colophon__actions">
               <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
                 {isAbout ? 'Talk with KC' : 'Message me on LinkedIn'} <ArrowOut />

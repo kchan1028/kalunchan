@@ -110,3 +110,24 @@ test('contact pending and failed responses preserve the submission for retry', a
   expect(new Set(submissions.map((body) => body.submissionId)).size).toBe(1);
   expect(submissions[0].submissionId).toBeTruthy();
 });
+
+test('the theme toggle applies on the next load and survives a reload', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('/');
+  const toggle = page.getByRole('button', { name: 'Dark theme' });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.getByRole('button', { name: 'Dark theme' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(16, 19, 21)');
+});
+
+test('home shows the availability badge, and the lap button reports with reduced motion on', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect(page.locator('.badge')).toHaveText('Open to engineering leadership opportunities · Updated Oct 2026');
+  await page.getByRole('button', { name: 'Ride a lap' }).click();
+  await expect(page.getByRole('status')).toHaveText('1 lap done');
+});
