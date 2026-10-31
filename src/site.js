@@ -7,7 +7,11 @@ import { posts as postIndex } from './content/writing';
 
 // site.js only runs during prerendering (and in dev), so it can read every post's full metadata up front.
 const postMeta = import.meta.glob('./content/posts/meta/*.js');
-const posts = await Promise.all(postIndex.map(async (p) => ({ ...p, ...(await postMeta[`./content/posts/meta/${p.slug}.js`]()).metadata })));
+const posts = await Promise.all(postIndex.map(async (p) => {
+  const load = postMeta[`./content/posts/meta/${p.slug}.js`];
+  if (!load) throw new Error(`Post "${p.slug}" needs src/content/posts/meta/${p.slug}.js`);
+  return { ...p, ...(await load()).metadata };
+}));
 
 export const ORIGIN = 'https://kalunchan.dev';
 // First commit of this site. ProfilePage dateCreated and the /about/ Article datePublished.

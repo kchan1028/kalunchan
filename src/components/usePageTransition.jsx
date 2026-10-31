@@ -1,16 +1,14 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router';
+import { loadRoute, reloadPage, routeReady } from '../pageRoutes';
 
 // <Routes location> tells everything inside it that each navigation is a POP, so App passes the real type down.
 export const NavigationTypeContext = createContext('POP');
 export const useRealNavigationType = () => useContext(NavigationTypeContext);
-import { loadRoute, routeReady } from '../pageRoutes';
 
 // Leave and enter in chrome.css fit inside these, delays included. Timers rather than animationend, so a missed event can't strand a navigation.
 const LEAVE_MS = 180;
 const ENTER_MS = 480;
-// A chunk that won't load usually means a deploy replaced it, so fetch the page fresh.
-const reloadPage = () => window.location.reload();
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Links to another page fade the current page out and the next one in, swapping routes while nothing is visible.
