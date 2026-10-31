@@ -1,0 +1,573 @@
+/* ---------- /writing/: three ways in ---------- */
+.writing-doors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s4) var(--s6);
+  margin-top: var(--s6);
+}
+
+.writing-library {
+  margin-top: var(--s9);
+  padding-top: var(--s4);
+  border-top: 3px solid var(--rule);
+  scroll-margin-top: calc(var(--header-h) + var(--s4));
+}
+
+.writing-library .h2 {
+  font-size: var(--t-h2);
+  font-weight: 750;
+  font-stretch: 72%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.writing-library .writing-jump {
+  margin-top: var(--s5);
+}
+
+/* The archive: the topic filter, then rows tighter than the case-study index so seventy posts stay browsable. */
+.writing-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+
+.writing-filter button {
+  appearance: none;
+  min-height: 44px;
+  padding: 0 var(--s3);
+  background: none;
+  border: 1px solid var(--rule-soft);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-small);
+  font-weight: 600;
+  font-stretch: 92%;
+  cursor: pointer;
+  transition: background 180ms var(--ease-out), color 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.writing-filter button:hover {
+  border-color: var(--ink);
+}
+
+.writing-filter button[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.writing-filter__count {
+  margin-top: var(--s3);
+}
+
+.writing-section > .writing-archive {
+  margin-top: var(--s4);
+}
+
+.writing-archive .case-index__row {
+  grid-template-columns: 64px minmax(0, 1fr) 200px 24px;
+  gap: var(--s5);
+  padding-block: var(--s4);
+}
+
+.writing-archive .case-index__no {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.writing-archive .case-index__body {
+  gap: var(--s1);
+}
+
+.writing-archive .case-index__title {
+  font-size: var(--t-h3);
+  font-stretch: 80%;
+  line-height: 1.15;
+  max-width: 44ch;
+}
+
+.writing-archive .case-index__summary {
+  font-size: var(--t-small);
+  line-height: 1.5;
+}
+
+.writing-archive .case-index__meta {
+  padding-top: 0.25em;
+}
+
+.writing-archive li[hidden] {
+  display: none;
+}
+
+.writing-archive__more {
+  margin-top: var(--s5);
+}
+
+/* ---------- /writing/: the journey ----------
+   Default: a plain document with a slim sticky blue strip of acts, the page's one field.
+   Roomy screens below: one pinned blue field, with each act's copy passing through it. */
+.jrny {
+  --nav-h: 44px;
+  position: relative;
+  margin-top: var(--s8);
+}
+
+.jrny__field {
+  display: none;
+}
+
+.jrny__nav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 3;
+  height: var(--nav-h);
+  background: var(--blue);
+  color: var(--on-blue);
+}
+
+.jrny__nav :focus-visible {
+  outline-color: var(--on-blue);
+  outline-offset: -3px;
+}
+
+.jrny__nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s2);
+  height: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.jrny__nav a {
+  display: flex;
+  align-items: center;
+  flex: none;
+  padding-inline: 2px;
+  color: var(--on-blue-2);
+  font-size: var(--t-small);
+  font-weight: 600;
+  font-stretch: 86%;
+  text-decoration: none;
+  transition: color 180ms var(--ease-out);
+}
+
+.jrny__nav a:hover,
+.jrny__nav a[aria-current] {
+  color: var(--on-blue);
+}
+
+.jrny__nav a[aria-current] {
+  box-shadow: inset 0 -3px 0 var(--on-blue);
+}
+
+.jrny__progress {
+  display: none;
+}
+
+.jrny-act {
+  display: grid;
+  gap: var(--s5);
+  padding-block: var(--s7);
+  /* html already reserves the header plus --s5, so this lands an act's top edge just under the strip. */
+  scroll-margin-top: calc(var(--nav-h) - var(--s5));
+}
+
+.jrny-act + .jrny-act {
+  padding-top: var(--s5);
+}
+
+.jrny-panel {
+  position: relative;
+}
+
+.jrny-panel__no {
+  display: none;
+}
+
+.jrny-panel__title {
+  font-size: var(--t-h2);
+  font-weight: 800;
+  font-stretch: 68%;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.jrny-panel__principle {
+  margin-top: var(--s3);
+  font-size: var(--t-lead);
+  font-weight: 560;
+  font-stretch: 90%;
+  line-height: 1.3;
+  max-width: 34ch;
+  text-wrap: pretty;
+}
+
+.jrny-panel__proof {
+  margin-top: var(--s3);
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 52ch;
+}
+
+.jrny-fig {
+  display: none;
+}
+
+.jrny-act__posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jrny-post {
+  position: relative;
+}
+
+.jrny-post__rule {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: var(--rule);
+  transform-origin: left;
+}
+
+.jrny-post__link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  padding-block: var(--s4);
+  text-decoration: none;
+}
+
+.jrny-post__title {
+  font-size: var(--t-h3);
+  font-weight: 750;
+  font-stretch: 80%;
+  line-height: 1.12;
+  text-wrap: balance;
+  max-width: 30ch;
+  transition: color 180ms var(--ease-out);
+}
+
+.jrny-post__link:hover .jrny-post__title {
+  color: var(--blue);
+}
+
+.jrny-post__teaser {
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 58ch;
+}
+
+.jrny-post__link .label {
+  margin-top: var(--s1);
+}
+
+.jrny-act__more {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s3) var(--s5);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--rule);
+  font-size: var(--t-small);
+}
+
+.jrny-act__more ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--s4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jrny-act__more a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+/* Long teasers would double the page on a phone: keep them to two lines there. */
+@media (max-width: 599px) {
+  .jrny-post__teaser,
+  .writing-chapter__anchor-teaser,
+  .writing-start .case-index__summary {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 899px) {
+  .jrny {
+    margin-top: var(--s6);
+  }
+
+  .jrny-act__more a,
+  .writing-jump a {
+    min-height: 44px;
+  }
+
+  .writing-path__steps a,
+  .writing-chapter__list a {
+    display: inline-block;
+    padding-block: var(--s2);
+  }
+
+  .writing-path__steps li + li,
+  .writing-chapter__list li + li {
+    margin-top: 0;
+  }
+
+  .writing-archive .case-index__row {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    grid-template-areas:
+      'body arrow'
+      'meta meta';
+    gap: var(--s2) var(--s3);
+    padding-block: var(--s4);
+  }
+
+  .writing-archive .case-index__no {
+    display: none;
+  }
+}
+
+@media (min-width: 760px) {
+  .jrny-fig {
+    display: block;
+    margin-top: var(--s5);
+    font-size: var(--t-small);
+  }
+
+  .jrny-fig__cap {
+    font-weight: 600;
+    font-stretch: 90%;
+    line-height: 1.35;
+    max-width: 44ch;
+  }
+
+  .jrny-fig .mono {
+    margin-right: var(--s2);
+    color: var(--ink-3);
+  }
+
+  .jrny-fig__steps {
+    position: relative;
+    margin-top: var(--s2);
+  }
+
+  .jrny-fig__steps ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .jrny-fig__line {
+    position: absolute;
+    left: 4px;
+    top: 0.7em;
+    bottom: 0.7em;
+    width: 1px;
+    background: var(--ink);
+    transform-origin: top;
+  }
+
+  .jrny-fig li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--s3);
+    padding-block: 2px;
+    line-height: 1.35;
+  }
+
+  .jrny-fig__node {
+    flex: none;
+    width: 9px;
+    height: 9px;
+    padding: 1.5px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+
+  .jrny-fig__fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--ink);
+  }
+}
+
+@media (min-width: 900px) {
+  .jrny-act {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+  }
+
+  .jrny-panel {
+    grid-column: 1 / 6;
+  }
+
+  .jrny-act__body {
+    grid-column: 7 / 13;
+  }
+}
+
+/* One pinned field. Width runs from the viewport edge to the gap after column five of the sheet. */
+@media screen and (min-width: 68.75rem) and (min-height: 42.5rem) and (prefers-reduced-motion: no-preference) {
+  .jrny {
+    --nav-h: 48px;
+    --pin-h: calc(100svh - var(--header-h));
+    --sheet: min(100vw, var(--max));
+    --bleed: calc((100vw - var(--sheet)) / 2);
+    --col: calc((var(--sheet) - 2 * var(--gutter) - 11 * var(--col-gap)) / 12);
+    --field-w: calc(var(--bleed) + var(--gutter) + 5 * var(--col) + 4.5 * var(--col-gap));
+    margin-top: var(--s7);
+  }
+
+  .jrny__field {
+    display: block;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 0;
+    width: var(--field-w);
+    height: var(--pin-h);
+    margin-bottom: calc(-1 * var(--pin-h));
+  }
+
+  .jrny__nav {
+    width: var(--field-w);
+    margin-bottom: calc(-1 * var(--nav-h));
+    border-bottom: 1px solid var(--on-blue-rule);
+  }
+
+  .jrny__nav-links {
+    justify-content: flex-start;
+    gap: var(--s4);
+    margin: 0;
+    max-width: none;
+    padding-left: calc(var(--bleed) + var(--gutter));
+    padding-right: var(--s5);
+  }
+
+  [data-gsap='on'] .jrny__progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: var(--on-blue);
+    transform-origin: left;
+  }
+
+  .jrny-act,
+  .jrny-act + .jrny-act {
+    position: relative;
+    z-index: 1;
+    min-height: 125svh;
+    padding-block: 0;
+    scroll-margin-top: calc(-1 * var(--s5));
+  }
+
+  .jrny-panel {
+    position: sticky;
+    top: var(--header-h);
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    height: var(--pin-h);
+    padding: calc(var(--nav-h) + var(--s6)) var(--s5) var(--s6) 0;
+    overflow: hidden;
+    /* Same blue as the field behind it, so it reads as one field; the copy keeps its contrast if the field ever isn't there. */
+    background: var(--blue);
+    color: var(--on-blue);
+  }
+
+  .jrny-panel ::selection {
+    background: var(--on-blue);
+    color: var(--blue);
+  }
+
+  .jrny-panel__no {
+    display: block;
+    position: absolute;
+    right: var(--s5);
+    bottom: var(--s5);
+    font-size: clamp(9rem, 22svh, 15rem);
+    font-weight: 800;
+    font-stretch: 62%;
+    line-height: 0.8;
+    color: var(--on-blue-rule);
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+  }
+
+  .jrny-panel__title {
+    font-size: clamp(2.5rem, 1.2rem + 3.2vw, 4.25rem);
+    max-width: 8em;
+  }
+
+  .jrny-panel__principle {
+    margin-top: var(--s4);
+  }
+
+  .jrny-panel__proof {
+    color: var(--on-blue-2);
+    max-width: 46ch;
+  }
+
+  .jrny-fig {
+    margin-top: auto;
+    padding-top: var(--s4);
+    max-width: 70%;
+  }
+
+  .jrny-fig .mono {
+    color: var(--on-blue-2);
+  }
+
+  .jrny-fig__line {
+    background: var(--on-blue);
+  }
+
+  .jrny-fig__node {
+    border-color: var(--on-blue);
+    background: var(--blue);
+  }
+
+  .jrny-fig__fill {
+    background: var(--on-blue);
+  }
+
+  .jrny-act__body {
+    align-self: start;
+    padding-block: var(--s8);
+  }
+
+  .jrny-post__link {
+    padding-block: var(--s5);
+  }
+
+  .jrny-post--lead .jrny-post__title {
+    font-size: clamp(1.75rem, 1.2rem + 1.2vw, 2.5rem);
+    font-weight: 800;
+    font-stretch: 70%;
+    line-height: 1.02;
+    max-width: 24ch;
+  }
+}

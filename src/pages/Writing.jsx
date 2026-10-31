@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { posts, postBySlug, startHere, journeys, chapters } from '../content/writing';
+import { posts, postBySlug, startHere, journeys, chapters, topics } from '../content/writing';
 import TitleBlock from '../components/TitleBlock';
+import WritingJourney from '../components/WritingJourney';
 import { ArrowRight } from '../components/Icons';
 
 const minutesOf = (slugs) => slugs.reduce((n, s) => n + postBySlug[s].minutes, 0);
@@ -8,9 +10,17 @@ const PostLink = ({ p }) => <Link to={`/writing/${p.slug}/`}>{p.shortTitle || p.
 
 // Shown first in each chapter; the rest sit behind a toggle.
 const CHAPTER_VISIBLE = 3;
+// Newest posts shown before the archive folds. The fold only happens after hydration, so without JS every row is visible.
+const ARCHIVE_VISIBLE = 15;
 
 export default function Writing() {
   const start = startHere.map((s) => postBySlug[s]);
+  const [topic, setTopic] = useState(null);
+  const [folded, setFolded] = useState(false);
+  useEffect(() => setFolded(true), []);
+  const matches = (p) => !topic || p.topics.includes(topic);
+  const shownCount = posts.filter(matches).length;
+  const isFolded = folded && !topic;
   return (
     <>
       <TitleBlock section="650" title="Writing" cells={[{ k: 'Posts', v: `${posts.length}` }, { k: 'Chapters', v: `${chapters.length}` }]} />
@@ -22,12 +32,24 @@ export default function Writing() {
           Some of it is about work, and a lot of it isn’t. Usually I write because I wanted to understand how something works, or because I learned something on the bike that I don’t want to forget.
         </p>
       </div>
-      <nav className="sheet writing-jump" aria-label="On this page">
-        <a href="#start-here">Start here</a>
-        <a href="#paths">Reading paths</a>
-        <a href="#chapters">Chapters</a>
-        <a href="#all-posts">All posts</a>
-      </nav>
+      <div className="sheet writing-doors">
+        <a href="#journey" className="action">Take the journey <ArrowRight /></a>
+        <a href="#path-hiring" className="link-arrow"><span>Hiring an engineering leader</span> <ArrowRight /></a>
+        <a href="#all-posts" className="link-arrow"><span>Browse all {posts.length} posts</span> <ArrowRight /></a>
+      </div>
+
+      <WritingJourney />
+
+      <div id="library" className="sheet writing-library" data-coord="650-6 · Library">
+        <h2 className="h2">The library</h2>
+        <p className="writing-section__lead">The same posts, for browsing: a short list to start with, reading paths, chapters and the full archive.</p>
+        <nav className="writing-jump" aria-label="In the library">
+          <a href="#start-here">Start here</a>
+          <a href="#paths">Reading paths</a>
+          <a href="#chapters">Chapters</a>
+          <a href="#all-posts">All posts</a>
+        </nav>
+      </div>
 
       <section id="start-here" className="sheet writing-section" aria-labelledby="start-here-h">
         <h2 id="start-here-h" className="h3">Start here</h2>
@@ -113,14 +135,20 @@ export default function Writing() {
       <section id="all-posts" className="sheet writing-section" aria-labelledby="all-posts-h">
         <h2 id="all-posts-h" className="h3">All posts</h2>
         <p className="writing-section__lead">Everything, newest first.</p>
-        <ol id="writing-index" className="case-index" data-coord="650 · Index">
-          {posts.map((p) => (
-            <li key={p.slug}>
+        <div className="writing-filter" role="group" aria-label="Filter posts by topic">
+          {[null, ...topics].map((t) => (
+            <button key={t || 'all'} type="button" aria-pressed={topic === t} onClick={() => setTopic(t)}>{t || 'All topics'}</button>
+          ))}
+        </div>
+        <p className="writing-filter__count label" role="status">{topic ? `${shownCount} of ${posts.length} posts in ${topic}` : `${posts.length} posts`}</p>
+        <ol id="writing-index" className="case-index writing-archive" data-coord="650 · Index">
+          {posts.map((p, i) => (
+            <li key={p.slug} hidden={!matches(p) || (isFolded && i >= ARCHIVE_VISIBLE)}>
               <Link to={`/writing/${p.slug}/`} className="case-index__row">
                 <span className="case-index__no">{p.no}</span>
                 <span className="case-index__body">
                   <span className="case-index__title">{p.title}</span>
-                  <span className="case-index__summary">{p.summary}</span>
+                  <span className="case-index__summary">{p.teaser || p.description}</span>
                 </span>
                 <span className="case-index__meta">
                   <span className="label">{p.minutes} min read</span>
@@ -131,6 +159,9 @@ export default function Writing() {
             </li>
           ))}
         </ol>
+        {isFolded && (
+          <button type="button" className="action writing-archive__more" onClick={() => setFolded(false)}>Show all {posts.length} posts</button>
+        )}
       </section>
       <aside className="sheet writing-next" aria-labelledby="writing-next-title">
         <h2 id="writing-next-title" className="h3">Working through one of these problems?</h2>
