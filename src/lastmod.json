@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-10-31",
-    "hash": "7281aa2d997cac96"
+    "hash": "5b18dd72b0913cb7"
   },
   "/about/": {
     "date": "2026-10-30",
@@ -17,7 +17,7 @@
   },
   "/projects/": {
     "date": "2026-10-31",
-    "hash": "9e605f74246801bc"
+    "hash": "baec33962963b519"
   },
   "/expertise/": {
     "date": "2026-10-18",
@@ -37,7 +37,7 @@
   },
   "/contact/": {
     "date": "2026-10-31",
-    "hash": "964c94dbe21c8433"
+    "hash": "baeae609f231739d"
   },
   "/projects/fedpath/": {
     "date": "2026-10-12",
@@ -68,11 +68,11 @@
     "hash": "82351e7806fa8128"
   },
   "/privacy/": {
-    "date": "2026-10-29",
-    "hash": "0f3fb49a51909226"
+    "date": "2026-10-31",
+    "hash": "aad4572bb35772c1"
   },
   "/engineering-leadership/": {
     "date": "2026-10-31",
-    "hash": "550f174973abdf96"
+    "hash": "760d8900b0d6dba6"
   }
 }

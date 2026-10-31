@@ -229,11 +229,6 @@
   }
 }
 
-/* ---------- Bands ---------- */
-.home-band {
-  padding-top: var(--s10);
-}
-
 .band-head {
   row-gap: var(--s4);
   margin-bottom: var(--s7);
@@ -262,9 +257,6 @@
 }
 
 @media (max-width: 899px) {
-  .home-band {
-    padding-top: var(--s9);
-  }
 
   .band-head__no,
   .band-head__title,
@@ -554,30 +546,6 @@
   }
 }
 
-/* ---------- Operating style ---------- */
-.home-practice .grid {
-  row-gap: var(--s6);
-}
-
-.home-practice__lead {
-  grid-column: 3 / 7;
-  display: flex;
-  flex-direction: column;
-  gap: var(--s4);
-  align-items: flex-start;
-}
-
-.home-practice .contents-list {
-  grid-column: 8 / 13;
-}
-
-@media (max-width: 899px) {
-  .home-practice__lead,
-  .home-practice .contents-list {
-    grid-column: 1 / -1;
-  }
-}
-
 /* Fig. 000-1: the experience map. Six layer tabs stacked business-to-wire; one panel below. */
 .emap {
   display: flex;
@@ -591,29 +559,6 @@
    larger browser text setting falls back too. --open (0 to 1, set on scroll) tilts the layers apart; flat when it
    isn't set. Smaller screens keep the flat map above the evidence. */
 @media (min-width: 85rem) and (min-height: 50rem) {
-  .opening__figure {
-    grid-row: 1 / 4;
-    overflow-x: clip;
-  }
-
-  .opening__more {
-    grid-column: 1 / 8;
-    grid-template-columns: minmax(0, 1fr);
-    padding-block: var(--s6);
-  }
-
-  .opening__more-text,
-  .opening__more-proof {
-    grid-column: auto;
-  }
-
-  .opening__figure .emap {
-    position: sticky;
-    top: var(--header-h);
-    align-self: flex-start;
-    width: 100%;
-    height: min(calc(100svh - var(--header-h)), 940px);
-  }
 
   .emap__layers {
     transform-style: preserve-3d;
@@ -632,10 +577,6 @@
   }
 
   @media (max-height: 56.25rem) {
-    .opening__figure .emap {
-      gap: var(--s3);
-      padding-block: var(--s3);
-    }
 
     .emap__foot {
       display: none;
@@ -778,30 +719,6 @@
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
-}
-
-/* ---------- Home sections below the hero ---------- */
-.home-section {
-  margin-top: var(--s8);
-  padding-top: var(--s6);
-  border-top: 1px solid var(--rule);
-}
-
-.home-section__head {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: var(--s4) var(--s7);
-  align-items: end;
-  margin-bottom: var(--s6);
-}
-
-.home-section__head h2 {
-  max-width: 22ch;
-}
-
-.home-section__head p {
-  color: var(--ink-2);
-  max-width: 48ch;
 }
 
 /* 001 · Impact: a ruled grid of verified figures, each a link to its evidence. */
@@ -1128,10 +1045,6 @@
 }
 
 @media (max-width: 899px) {
-  .home-section__head {
-    grid-template-columns: 1fr;
-    gap: var(--s3);
-  }
   .impact {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

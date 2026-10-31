@@ -248,6 +248,11 @@ White orthogonal linework on the blue field. Tiers are named (tier rule under ea
 ### Decision Table
 Options listed as ruled rows (state, option, note). Rejected options stay visible in ink tertiary at 500 weight; the chosen option is struck forward with ink hairlines above and below, a paper-sunk band, and its state word in blue 700.
 
+Above the tables, "Make these calls yourself first" hides each decision's notes and reasoning and turns its options into plain ruled buttons. Picking one opens the normal table with "your pick" added to that row's state word and a short line saying whether it matched. There's no score and nothing is called wrong. The tables are open by default, so scanning and crawling are unaffected, and the button appears only after hydration.
+
+### Reading Path Progress
+Opt-in: a line above the paths on `/writing/` offers "Remember what I've read", and nothing is stored until the reader presses it. After that, reaching the end of a post marks it as read in this browser's local storage, and each path adds "2 of 5 read" to its label, a quiet "Read" beside finished posts, and a link to continue with the first unread one. "Forget what I've read" clears the list and turns it off. All of it appears only after hydration, and `/privacy/` must keep describing it.
+
 ### Site Search
 A Search button in the header, or Cmd/Ctrl+K, opens a modal with a square-cornered panel under a heavy top rule. Typing filters pages, projects, case studies and posts by title, summary and topic, not full post text. Results are ruled rows; the current row gets a sunk fill and an ink bar, with no blue. No animation. The button stays hidden until hydration, since it needs JavaScript, and the index loads as its own chunk on first open.
 

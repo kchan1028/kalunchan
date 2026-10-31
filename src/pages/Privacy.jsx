@@ -3,9 +3,9 @@ import TitleBlock from '../components/TitleBlock';
 import { person } from '../content/profile';
 
 // Privacy notice (CalOPPA, GDPR Art. 13, PIPEDA openness). Every statement here must match what the code does:
-// serverless/contact (form, hashed IP, logs), serverless/events (click counts), the Cloudflare edge, Cloudflare Web Analytics and Google Analytics (index.html). Change the
+// serverless/contact (form, hashed IP, logs), serverless/events (click counts), components/ReadProgress (local storage), the Cloudflare edge, Cloudflare Web Analytics and Google Analytics (index.html). Change the
 // effective date whenever the practices described here change. The phrase is allowed in scripts/audit-seo.py.
-export const PRIVACY_EFFECTIVE = 'Effective 29 October 2026';
+export const PRIVACY_EFFECTIVE = 'Effective 31 October 2026';
 const OPERATOR = 'Yippify';
 
 export default function Privacy() {
@@ -34,10 +34,11 @@ export default function Privacy() {
           <ul className="ticks">
             <li>Page views and page speed, through Cloudflare Web Analytics. It sets no cookies, stores nothing in your browser, and doesn’t identify you.</li>
             <li>Visits and how people move through the site, through Google Analytics. It sets first-party cookies (named <code>_ga</code>) that recognize a returning browser, and records the pages you view, roughly where you are, your device and browser, and the site that sent you. It isn’t loaded for visitors in the European Union, the wider European Economic Area, the United Kingdom, Gibraltar, Jersey, Guernsey or the Isle of Man, or if your browser sends Global Privacy Control.</li>
-            <li>A count each time someone requests my résumé, opens my LinkedIn profile from this site, or sends the contact form. Each count records only which link or form was used and on which page, with no cookie, IP address, identifier or anything you typed.</li>
+            <li>A count each time someone uses a hiring contact link, starts the hiring form, requests my résumé, opens my LinkedIn profile from this site, or sends the contact form. Each count records only which link or form was used and on which page, with no cookie, IP address, identifier or anything you typed.</li>
             <li>Standard request details such as IP address, browser and the page requested, which Cloudflare and Amazon Web Services handle to deliver the site and protect it from abuse.</li>
           </ul>
           <p>Apart from the Google Analytics cookies, which aren’t set for visitors in those places, this site sets no cookies and doesn’t use advertising or cross-site tracking. Cloudflare may set a strictly necessary security cookie if it needs to check that a visitor isn’t a bot.</p>
+          <p>If you press “Remember what I’ve read” on the <Link to="/writing/">Writing</Link> page, your browser keeps a list of the posts you finish, in its local storage, so the reading paths can show your progress. Nothing is stored until you press it, and the list never leaves your browser, so I can’t see it. Use “Forget what I’ve read” on that page to clear it and turn it off, or clear this site’s data in your browser.</p>
 
           <h2 className="h3">Why</h2>
           <ul className="ticks">

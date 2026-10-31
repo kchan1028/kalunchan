@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import HiringContactLink from '../components/HiringContactLink';
 import PressedType from '../components/PressedType';
 import { ArrowDown, ArrowOut, ArrowRight, BikeIcon } from '../components/Icons';
 import { track } from '../track';
@@ -58,9 +59,9 @@ export default function Home() {
         <h1 id="thesis" className="tile__headline display"><PressedType text={heroHeadline} /></h1>
         <div className="tile__hero-foot">
           <p className="tile__location">{availability.location}</p>
-          {availability.show && <p className="badge">{availabilityLabel(availability)}</p>}
+          {availability.show && <Link to="/engineering-leadership/" className="badge">{availabilityLabel(availability)} <ArrowRight /></Link>}
           {availability.show && availability.timing && <p className="tile__location">{availability.timing}</p>}
-          <p><Link to="/engineering-leadership/" className="action">For hiring teams <ArrowRight /></Link></p>
+          <p><HiringContactLink /></p>
         </div>
       </section>
 

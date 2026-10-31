@@ -26,7 +26,7 @@ Builds check page modification metadata without rewriting `src/lastmod.json`. Af
 ## Deploying
 
 ```sh
-npm run deploy             # validate → production build → verify → S3 sync → Cloudflare purge
+npm run deploy             # validate → production build → verify → S3 sync → security headers → Cloudflare purge
 npm run deploy -- --dry-run  # same checks, then show what would change in S3 without writing
 ```
 
@@ -40,9 +40,10 @@ The deploy runs these steps in order and stops at the first failure:
    - hashed `assets/`, cached for a year as immutable;
    - images and icons, cached for a day;
    - HTML, sitemap, robots.txt and the manifest, revalidated on every request.
-6. **Purge Cloudflare:** if `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` are set, purges everything in the zone once the upload has finished. A dry run skips the purge.
+6. **Update security headers:** if the Cloudflare variables are set, rewrites the response header rule with the CSP enforced, so the inline script hash matches the HTML just uploaded. A dry run only prints the rule.
+7. **Purge Cloudflare:** if `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` are set, purges everything in the zone once the upload has finished. A dry run skips the purge.
 
-If any step from 1 to 4 fails, S3 is never touched. If only the purge fails, the site is already deployed: purge from the dashboard (**Caching → Configuration → Purge Everything**) or run the deploy again.
+If any step from 1 to 4 fails, S3 is never touched. If the headers step fails, the site is uploaded but its CSP and cache are out of date: fix the token and run the deploy again. If only the purge fails, the site is already deployed: purge from the dashboard (**Caching → Configuration → Purge Everything**) or run the deploy again.
 
 **Setup:** copy `.env.example` to `.env` (gitignored) and fill it in, or export the same variables:
 
@@ -56,6 +57,7 @@ If any step from 1 to 4 fails, S3 is never touched. If only the purge fails, the
 | `DEPLOY_ASSET_RETENTION_DAYS` | no | Default `8`, matching Cloudflare's browser cache TTL. With delete on, old JS/CSS bundles and the fonts they load are kept for this many days after the deploy that dropped them, so pages still cached by Cloudflare or a browser keep their styles. Use `0` once Cloudflare respects origin headers. The drop dates are recorded in `.deploy/` (gitignored). If that folder is lost, bundles are just kept for another full period. |
 | `CLOUDFLARE_ZONE_ID` | no | The kalunchan.dev zone ID, from the dashboard's **Overview** page. Set both Cloudflare variables or neither. |
 | `CLOUDFLARE_API_TOKEN` | no | A user API token (**My Profile → API Tokens**) with only **Zone · Cache Purge · Purge** on kalunchan.dev. It's a secret, so keep it in `.env` only. |
+| `CLOUDFLARE_RULES_API_TOKEN` | with Cloudflare | A token with **Zone · Transform Rules · Edit** on kalunchan.dev, used to write the security headers. Without it, the deploy tries `CLOUDFLARE_API_TOKEN`, which then needs that permission too. |
 
 **Requirements:**
 - AWS CLI v2, signed in for that profile (for SSO profiles, run `aws sso login --profile <name>`).

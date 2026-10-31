@@ -1,4 +1,4 @@
-// Anonymous counts for three events: resume_request, linkedin_click and contact_submit (serverless/events/worker.mjs,
+// Anonymous hiring CTA, form-start, résumé, LinkedIn and submission counts (serverless/events/worker.mjs,
 // answering at kalunchan.dev/e). Sends the event name, the page path and the link target, or for contact_submit the
 // form sent (leadership or consulting): no cookies, storage, identifiers or form contents. Production only.
 export function track(event, target = '') {

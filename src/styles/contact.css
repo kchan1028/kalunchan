@@ -94,6 +94,7 @@
 .contact-path__side { grid-column: 7 / -1; }
 .contact-path__side.contact-path__links { margin-top: 0; }
 .contact-path .cform { margin-top: 0; }
+.contact-path--last { padding-bottom: var(--s10); }
 
 .talk { padding-bottom: var(--s10); row-gap: var(--s7); align-items: end; }
 .talk__intro { grid-column: 1 / 7; }

@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router';
 import { projects, projectBySlug } from '../content/projects';
 import TitleBlock from '../components/TitleBlock';
 import ProjectShot from '../components/ProjectShot';
+import DecisionList from '../components/DecisionList';
 import NotFound from './NotFound';
 import { ArrowLeft, ArrowOut, ArrowRight } from '../components/Icons';
 
@@ -101,24 +102,7 @@ export default function Project() {
 
       <section id="decisions" className="sheet grid case__decisions" aria-labelledby="dec-h" data-coord={`${p.no}-3 · Decisions`}>
         <h2 id="dec-h" className="case__h label">Key decisions</h2>
-        <div className="case__decision-list">
-          {p.decisions.map((d, i) => (
-            <div key={d.question} className="decision">
-              <h3 className="decision__q h3">
-                {d.question} <span className="decision__no mono">{`${p.no}-3.${i + 1}`}</span>
-              </h3>
-              <ul className="decision__options">
-                {d.options.map((o) => (
-                  <li key={o.label} className={o.chosen ? 'is-chosen' : 'is-rejected'}>
-                    <span className="decision__state label">{o.chosen ? 'Chosen' : 'Rejected'}</span>
-                    <span className="decision__label">{o.label}</span>
-                    <span className="decision__note">{o.note}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        <DecisionList decisions={p.decisions} no={p.no} />
       </section>
 
       <section id="outcome" className="sheet grid case__outcome" aria-labelledby="out-h" data-coord={`${p.no}-4 · Outcome`}>

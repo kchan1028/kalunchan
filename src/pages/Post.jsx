@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import { ArrowLeft, ArrowRight } from '../components/Icons';
 import { hireLink } from '../content/engineeringLeadership';
 import { ContinueReading, WhereThisFits } from '../components/ReadNext';
+import { ReadMarker } from '../components/ReadProgress';
 
 export default function Post() {
   const { slug } = useParams();
@@ -67,6 +68,7 @@ export default function Post() {
         </nav>
         <div className="post__prose">
           {Body && <Body metadata={metadata} />}
+          {Body && <ReadMarker slug={slug} />}
           {metadata.faq && (
             <section id="short-answers" aria-labelledby="short-answers-h">
               <h2 id="short-answers-h" className="post__h2">Short answers</h2>

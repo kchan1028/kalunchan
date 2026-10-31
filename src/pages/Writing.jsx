@@ -5,6 +5,7 @@ import { useRealNavigationType } from '../components/usePageTransition';
 import { posts, postBySlug, startHere, journeys, chapters, topics } from '../content/writing';
 import TitleBlock from '../components/TitleBlock';
 import WritingJourney from '../components/WritingJourney';
+import { useReadPosts } from '../components/ReadProgress';
 import { ArrowRight } from '../components/Icons';
 
 const minutesOf = (slugs) => slugs.reduce((n, s) => n + postBySlug[s].minutes, 0);
@@ -36,6 +37,7 @@ export default function Writing() {
   const start = startHere.map((s) => postBySlug[s]);
   const [topic, setTopic] = useState(null);
   const [folded, setFolded] = useState(false);
+  const { ready, read, blocked, remember, forget } = useReadPosts();
   const navigationType = useRealNavigationType();
   // Runs before the browser restores scroll on Back, so the page is back to its full height by then.
   useEffect(() => {
@@ -112,17 +114,43 @@ export default function Writing() {
       <section id="paths" className="sheet writing-section" aria-labelledby="paths-h">
         <h2 id="paths-h" className="h3">Reading paths</h2>
         <p className="writing-section__lead">Short, ordered paths depending on why you’re here. Each post links to the next one in its path.</p>
+        {ready && (
+          <p className="writing-paths__memory">
+            {blocked ? (
+              'This browser isn’t letting the site remember anything, so progress can’t be shown here.'
+            ) : (
+              <>
+                {read ? 'This browser is keeping track of the posts you finish, and nothing is sent anywhere.' : 'Want to keep your place? This browser can track the posts you finish, and nothing is sent anywhere.'}{' '}
+                <button type="button" className="writing-paths__toggle" onClick={read ? forget : remember}>{read ? 'Forget what I’ve read' : 'Remember what I’ve read'}</button>
+              </>
+            )}
+          </p>
+        )}
         <div className="writing-paths">
-          {journeys.map((j) => (
-            <section key={j.id} id={`path-${j.id}`} className="writing-path" aria-labelledby={`path-${j.id}-h`}>
-              <h3 id={`path-${j.id}-h`} className="writing-path__title">{j.title}</h3>
-              <p className="label">{j.slugs.length} posts · {minutesOf(j.slugs)} min</p>
-              <p className="writing-path__lead">{j.lead}</p>
-              <ol className="writing-path__steps">
-                {j.slugs.map((s) => <li key={s}><PostLink p={postBySlug[s]} /></li>)}
-              </ol>
-            </section>
-          ))}
+          {journeys.map((j) => {
+            const done = j.slugs.filter((s) => read?.has(s)).length;
+            const next = done > 0 ? j.slugs.find((s) => !read.has(s)) : null;
+            return (
+              <section key={j.id} id={`path-${j.id}`} className="writing-path" aria-labelledby={`path-${j.id}-h`}>
+                <h3 id={`path-${j.id}-h`} className="writing-path__title">{j.title}</h3>
+                <p className="label">{j.slugs.length} posts · {minutesOf(j.slugs)} min{done > 0 && ` · ${done} of ${j.slugs.length} read`}</p>
+                <p className="writing-path__lead">{j.lead}</p>
+                <ol className="writing-path__steps">
+                  {j.slugs.map((s) => (
+                    <li key={s}>
+                      <PostLink p={postBySlug[s]} />
+                      {read?.has(s) && <span className="writing-path__read label">Read</span>}
+                    </li>
+                  ))}
+                </ol>
+                {next && (
+                  <p className="writing-path__next">
+                    <Link to={`/writing/${next}/`} className="link-arrow"><span>Continue: {postBySlug[next].shortTitle || postBySlug[next].title}</span> <ArrowRight /></Link>
+                  </p>
+                )}
+              </section>
+            );
+          })}
         </div>
       </section>
 
