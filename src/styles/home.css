@@ -59,7 +59,7 @@
 
 .opening__text {
   grid-column: 1 / 8;
-  padding-block: clamp(var(--s7), 7vh, var(--s9)) var(--s8);
+  padding-block: clamp(var(--s5), 4vh, var(--s7)) var(--s8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,8 +70,14 @@
   max-width: 11ch;
 }
 
-.opening__intent {
+.opening__fit {
   margin-top: var(--s5);
+  max-width: 56ch;
+  color: var(--ink-2);
+}
+
+.opening__intent {
+  margin-top: var(--s3);
   max-width: 56ch;
 }
 

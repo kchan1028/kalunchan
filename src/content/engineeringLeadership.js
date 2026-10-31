@@ -36,9 +36,21 @@ export const summary = [
   { k: 'Opportunity', v: 'Building teams and platforms at growing companies, with ownership of technical direction and delivery.' },
   { k: 'Most recent scope', v: 'Architecture, technical strategy and delivery for government, startup and founder clients through Yippify.' },
   { k: 'Executive roles', v: 'Co-founder and CTO through an acquisition, CTO of a media publishing platform, VP of Operations for a voice services company.' },
+  { k: 'Team leadership', v: 'Built and led a global team that grew to 30+ as co-founder and CTO. Mentored engineers into leads and led fully remote teams as a fractional CTO.' },
+  { k: 'Business ownership', v: 'Product, architecture and operations as co-founder and CTO. Technology, business and operations alongside the CEO and partners of a media publishing platform.' },
   { k: 'Core strengths', v: 'Engineering organization leadership, cloud platforms on AWS, architecture and modernization, public-sector and regulated systems, product engineering, security and reliability, practical AI adoption.' },
   { k: 'Location', v: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.' },
   { k: 'Résumé and history', v: 'Résumé on request. Employer names and dates are on LinkedIn.' },
+];
+
+
+// Current scope, not a claim about a single engagement or a newly measured outcome.
+// Sources: roles.yippify and the public-sector application and modernization articles.
+export const currentWork = [
+  { k: 'Context', v: 'Public-sector applications, including systems supporting small business certification programs, that need to keep working as rules and requirements change.' },
+  { k: 'My responsibility', v: 'Architecture, technical strategy and delivery for client teams through Yippify, with hands-on engineering where it reduces risk.' },
+  { k: 'Delivery approach', v: 'Small releases with product and QA in the planning loop. Security, accessibility and change documentation are part of the work before a release.' },
+  { k: 'Engineering contribution', v: 'Applications built, modernized and supported, with server-side authorization, audit evidence and Section 508 accessibility checks. The agency makes the authorization decision.' },
 ];
 
 // Each figure links to the page that shows the work behind it.

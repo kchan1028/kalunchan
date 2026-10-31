@@ -3,7 +3,8 @@ import { nav } from '../components/Layout';
 import ExperienceMap from '../components/ExperienceMap';
 import PressedType from '../components/PressedType';
 import { Impact, CareerTimeline, CaseStudies, LeadershipFlow } from '../components/HomeSections';
-import { homeIntro, headlineNumbers, person, proofPoints, roleIntent } from '../content/profile';
+import HiringContactLink from '../components/HiringContactLink';
+import { homeFit, homeIntro, headlineNumbers, person, proofPoints, roleIntent } from '../content/profile';
 import { projects } from '../content/projects';
 import { builtSites } from '../content/home';
 import { ArrowRight } from '../components/Icons';
@@ -21,16 +22,17 @@ export default function Home() {
       </div>
       <div className="opening__text">
         <h1 id="thesis" className="opening__thesis display"><PressedType text={person.thesis} /></h1>
+        <p className="opening__fit">{homeFit}</p>
+        <p className="opening__actions">
+          <HiringContactLink />
+          <Link to="/experience/" className="action action--quiet">See my experience <ArrowRight /></Link>
+        </p>
         <p className="opening__intent">
           <Link to="/engineering-leadership/" className="link-arrow"><span>{roleIntent}</span> <ArrowRight /></Link>
         </p>
         <p className="opening__lead">
           <strong><PressedType text={leadNumber.figure} /></strong>
           <span>{leadNumber.text}</span>
-        </p>
-        <p className="opening__actions">
-          <Link to="/engineering-leadership/" className="action">For hiring teams <ArrowRight /></Link>
-          <Link to="/contact/#start" className="action action--quiet">Start a conversation <ArrowRight /></Link>
         </p>
       </div>
       <div className="opening__figure"><ExperienceMap /></div>
