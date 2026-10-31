@@ -31,9 +31,9 @@ export default function Body() {
     <>
       <section id="seats" aria-labelledby="seats-h">
         <h2 id="seats-h" className="post__h2">Seven seats, one bill</h2>
-        <p>I have looked at infrastructure cost from more seats than most people get to sit in: as a network engineer at a carrier, as the person racking the servers, as a telecom engineer pricing a phone call, as a software developer and architect, as the infrastructure and DevOps engineer, as an engineering leader with a headcount budget, and as a founder whose own company paid the invoice. The view from each seat is different. The bill is the same bill.</p>
+        <p>I have looked at infrastructure cost from several seats: as a network engineer at a carrier, as the person racking the servers, as a telecom engineer pricing a phone call, as a software developer and architect, as the infrastructure and DevOps engineer, as an engineering leader with a headcount budget, and as a founder whose own company paid the invoice. The view from each seat is different. The bill is the same bill.</p>
         <p className="post__answer">Infrastructure cost is never one number. It is capital spent ahead of demand, recurring consumption, carrier and vendor charges, the engineers who run what was built, and the complexity that taxes every change afterwards. Having paid each of those from a different seat is why I do not evaluate a technical decision on whether it works. I evaluate it on what it costs to operate as the business grows.</p>
-        <p>This post is about what each layer taught me about money. The forecasting method is in <Link to="/writing/capacity-planning-carrier-networks-to-cloud/">capacity planning, from carrier networks to the cloud</Link>, and the architecture decisions have their own post on the hidden cost of software architecture, linked further down. I will not repeat either here.</p>
+        <p>The forecasting method is in <Link to="/writing/capacity-planning-carrier-networks-to-cloud/">capacity planning, from carrier networks to the cloud</Link>, and the architecture decisions have their own post on the hidden cost of software architecture, linked further down.</p>
       </section>
 
       <section id="carrier" aria-labelledby="carrier-h">
@@ -59,7 +59,7 @@ export default function Body() {
       <section id="cloud" aria-labelledby="cloud-h">
         <h2 id="cloud-h" className="post__h2">Cloud: capital became consumption</h2>
         <p>Moving from the data center to the cloud changed the shape of the cost without changing its nature. Capacity stopped being capital bought ahead of demand and became consumption billed behind it. That removes the dark hardware problem and introduces a subtler one: waste is the default state of a cloud account, because nothing stops an over-sized instance, an unused volume or a forgotten environment from running forever.</p>
-        <p>As CTO of a media publishing platform I led a re-platform onto AWS, and the infrastructure improvements that came with it contributed to AWS costs about 30% lower. Right-sizing instances that had been bought for a peak that never came back. Scaling the web tier on real traffic. Fixing queries and connection handling so the database could be the size it should have been. Caching pages that did not change between requests. Finding resources nobody owned. It is the data center discipline applied to an invoice, and none of it is clever. On client work through Yippify the toolkit is newer, ECS and Fargate, Lambda, RDS, Redis, S3 and CloudFront, with Terraform and GitHub Actions so every change is reviewed before it costs money, and the questions are the ones I asked about cabinets.</p>
+        <p>As CTO of a media publishing platform I led a re-platform onto AWS, and the infrastructure improvements that came with it helped bring AWS costs down about 30%. Right-sizing instances that had been bought for a peak that never came back. Scaling the web tier on real traffic. Fixing queries and connection handling so the database could be the size it should have been. Caching pages that did not change between requests. Finding resources nobody owned. It is the data center discipline applied to an invoice, and none of it is clever. On client work through Yippify the toolkit is newer, ECS and Fargate, Lambda, RDS, Redis, S3 and CloudFront, with Terraform and GitHub Actions so every change is reviewed before it costs money, and the questions are the ones I asked about cabinets.</p>
       </section>
 
       <section id="architecture" aria-labelledby="architecture-h">
@@ -84,7 +84,7 @@ export default function Body() {
         <h2 id="layers-h" className="post__h2">Every layer, on one page</h2>
         <p>Here is the whole stack as I have worked through it, with the capacity challenge and the cost consideration at each layer. The point of the figure is the breadth. Many engineering leaders know one or two of these layers deeply. I have paid the bill at all of them.</p>
         <StackLadder as="figure" no="684-1" />
-        <p>What visitors, clients and hiring managers should take from it is this. I understand how technology works, and I understand how technology decisions affect performance, reliability, scalability, operating cost and business outcomes, because I have been responsible for each of those from the physical network up to the company paying to run it.</p>
+        <p>I understand how technology works, and I understand how technology decisions affect performance, reliability, scalability, operating cost and business outcomes, because I have been responsible for each of those from the physical network up to the company paying to run it.</p>
       </section>
     </>
   );
@@ -96,8 +96,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">From the network layer to the business layer</h2>
       <div className="post__close-copy">
         <p className="lead">I have worked on capacity and operating cost across carrier networks, data centers, VoIP and cloud infrastructure, as well as running engineering teams and my own businesses.</p>
-        <p className="post__close-principle">I have paid the bill at every layer, and it changed which questions I ask first.</p>
-        <p>That is the judgment I bring to an engineering organization or a client engagement: whether it works, what it takes to run, and what it costs to grow.</p>
         <div className="post__close-actions">
           <Link to="/about/#stack" className="action">The layers, on the About page <ArrowRight /></Link>
         </div>

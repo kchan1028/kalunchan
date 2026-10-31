@@ -292,7 +292,6 @@ export default function Body() {
         <p>Two decades ago, I wrote Expect scripts because the machines in front of me weren’t designed to be automated. We taught software to act like a human operator: wait for this prompt, type this, look for that response, then type the next command.</p>
         <p>Then infrastructure got APIs. Then it became code. Then it became declarative, so you described the state you wanted and the tooling worked out how to get there. Each step made the machine’s interface more structured, and each one moved automation further from imitating a person at a keyboard.</p>
         <p>AI agents operate one level above that. They read the structured interfaces we spent years building and reason about the outcome someone asked for. At a much smaller scale, it’s the same reason I’ve started <Link to="/writing/why-i-build-my-own-developer-tools/">building little tools for the commands I keep looking up</Link>: once the interface is structured, the lookup can be too.</p>
-        <p className="post__pull">I started out writing software that pretended to be a human operator. Now we’re building AI systems that can reason about the work an operator does.</p>
         <p>Laid out end to end, the interfaces I’ve worked through look like this:</p>
         <ol className="post__steps">
           <li>Console</li>
@@ -307,11 +306,10 @@ export default function Body() {
           <li>AI-assisted operations</li>
           <li>Agentic operations, maybe</li>
         </ol>
-        <p>The objective at the bottom of that list is close to the one at the top: make systems reliable, repeatable, observable and recoverable, with less manual work each time.</p>
       </section>
 
       <section id="durable" aria-labelledby="durable-h">
-        <h2 id="durable-h" className="post__h2">Tools change. The system underneath them doesn’t change much.</h2>
+        <h2 id="durable-h" className="post__h2">What lasts is the system underneath the tools</h2>
         <p>Watching these tools come and go has made me careful about getting attached to any of them. Jenkins, Terraform, Kubernetes, GitHub Actions and whichever AI operations platform comes next are all ways of expressing intent to a system.</p>
         <p>What lasts is understanding the system underneath the tool:</p>
         <ul className="post__list">
@@ -336,9 +334,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Still automating the same thing</h2>
       <div className="post__close-copy">
-        <p className="lead">Compared with sitting in a NOC writing Expect and ksh scripts, modern DevOps can feel incredibly advanced. Some days it also feels strangely familiar.</p>
-        <p>I’m still learning the AI part, the same way I learned every layer before it. But the job hasn’t moved far from where I started:</p>
-        <p className="post__close-principle">Make this system do what I want, reliably, without a person doing every step by hand.</p>
+        <p className="lead">The job hasn’t moved far from where I started: make this system do what I want, reliably, without a person doing every step by hand.</p>
         <p>AI may be the next abstraction in that very long journey. I’d like it to be one we can review, test and roll back.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through your DevOps or AI operations plans <ArrowRight /></Link>

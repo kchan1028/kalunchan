@@ -45,7 +45,7 @@ export default function Body() {
         <p>A software date can usually slip. A race date mostly can’t, and that changes the conversation about scope.</p>
         <p>Some things must be in place for a safe, well-run race: the course, officials, marshals, registration and clear information for racers. Other things are improvements, and they can wait if they have to. Separating the two early protects the team. It stops nice-to-haves from eating the time that the essential work needs, and it lets people say “not this time” without feeling they’ve let the event down.</p>
         <p>A fixed date also means discussion has to end in a decision. On a volunteer team, input matters, because people commit to plans they helped shape. But input with no decision point stalls everything. I try to make sure people are heard, then that someone decides, and that the decision is <Link to="/leadership/#decisions">written down</Link> where everyone can find it.</p>
-        <p>Engineering releases with fixed dates need the same discipline: protect the must-have scope, make the cuts explicit, and ask <Link to="/writing/when-everything-is-a-priority/">what we’re willing to stop</Link> instead of asking the team to absorb everything.</p>
+        <p>A release with a fixed date calls for the same discipline: protect the must-have scope, make the cuts explicit, and ask <Link to="/writing/when-everything-is-a-priority/">what we’re willing to stop</Link> instead of asking the team to absorb everything.</p>
       </section>
 
       <section id="ready" aria-labelledby="ready-h">
@@ -59,7 +59,7 @@ export default function Body() {
         <h2 id="after-h" className="post__h2">The work continues after the finish</h2>
         <p>Race day is the visible part. Much of what makes it work happens earlier: preparation, coordination and follow-through that nobody sees from the finish line. That work deserves the same credit as race-day execution.</p>
         <p>After the finish, there’s still more to do. We thank volunteers, sponsors and partners, review what to change next time, and close the commitments we made. It’s easy to skip when everyone is tired. It’s also a big part of why people come back.</p>
-        <p>Engineering teams have their own version: the post-launch review, the cleanup work, the thank-you to the team that unblocked you. A release is one delivery. The relationships behind it carry into the next one.</p>
+        <p>Engineering teams have their own version: the post-launch review, the cleanup work, the thank-you to the team that unblocked you.</p>
       </section>
     </>
   );
@@ -72,7 +72,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Organizing Berkeley Omnium with this team has made me more careful about what I ask of people, and more deliberate about how ownership is shared and how credit is given. None of it is mine alone. The race happens because a lot of people choose, again, to give it their time.</p>
         <p>It has changed how I lead engineering teams, too. A delivery date matters, but it isn’t the whole job. The people who carried this release will carry the next one, and how they were treated shapes what they’ll be willing to give.</p>
-        <p className="post__close-principle">I want people to feel that their time was respected and that they would be willing to work together on the next event.</p>
         <div className="post__close-actions">
           <a href={cycling.omnium} className="action">Visit berkeleyomnium.com <ArrowOut /></a>
           <Link to={cyclingPost} className="link-arrow"><span>What cycling taught me about engineering leadership</span> <ArrowRight /></Link>

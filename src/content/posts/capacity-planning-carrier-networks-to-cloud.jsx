@@ -77,7 +77,7 @@ export default function Body() {
 
       <section id="forecast" aria-labelledby="forecast-h">
         <h2 id="forecast-h" className="post__h2">Forecasting from what you measure</h2>
-        <p>The approach we settled on was simple and it has not changed since: plan from measured utilization, not from hope. We pulled interface statistics from the network over SNMP and kept the history, and I worked on a forecasting program in R that projected each link’s trend far enough ahead to order before the lead time ran out. The history mattered more than the latest reading. Traffic has a busy hour, a weekly shape and seasonal swings, and a link that looks comfortable on a quiet afternoon can be the first one to saturate when the busy hour comes around. The <Link to="/writing/data-driven-engineering-network-voip-publishing/#capacity">data-driven engineering post</Link> has more on the program itself. Where the data said growth was, that is where the next circuit or line card went. Where it said nothing was happening, nothing was ordered, however loudly someone wanted a bigger box.</p>
+        <p>The approach we settled on was simple and it has not changed since: plan from measured utilization. We pulled interface statistics from the network over SNMP and kept the history, and I worked on a forecasting program in R that projected each link’s trend far enough ahead to order before the lead time ran out. The history mattered more than the latest reading. Traffic has a busy hour, a weekly shape and seasonal swings, and a link that looks comfortable on a quiet afternoon can be the first one to saturate when the busy hour comes around. The <Link to="/writing/data-driven-engineering-network-voip-publishing/#capacity">data-driven engineering post</Link> has more on the program itself. Where the data said growth was, that is where the next circuit or line card went. Where it said nothing was happening, nothing was ordered, however loudly someone wanted a bigger box.</p>
         <p>Two habits came out of that. The first is to know the bottleneck. Every system has one resource that fills first, and the forecast only matters for that resource. On a router it might be a specific uplink, not the chassis. On a web platform it is usually the database, not the web tier. The second is headroom as policy. You decide in advance what utilization triggers an order and what utilization is an incident, and you write it down, so the decision is not made at two in the morning. I described the operational side of that network in the <Link to="/work/carrier-capacity/">carrier capacity case study</Link>.</p>
       </section>
 
@@ -93,7 +93,6 @@ export default function Body() {
         <h2 id="geo-h" className="post__h2">Routing media by where the caller is</h2>
         <p>At the company I co-founded, our users were in South America, Asia and Africa and our platform started in one data center. Distance was the problem. Audio that crosses an ocean twice arrives late and arrives damaged, and no amount of server capacity fixes latency.</p>
         <p>The improvement that mattered most was choosing the media path by where the caller was. We used the source IP address to estimate the caller’s location and steered the audio through the geographically appropriate media path, instead of hairpinning every call through a single site. Call quality went up for distant users, because the audio travelled a shorter path, and the cost of carrying that audio went down, because we stopped paying to haul it across the world and back. Geolocation is an estimate, so the routing needed a sensible fallback for the cases where it was wrong, but as a single decision it changed both the quality customers felt and the bandwidth bill at once.</p>
-        <p>That is the pattern I keep seeing. The best capacity decisions avoid consuming capacity in the first place.</p>
       </section>
 
       <section id="to-cloud" aria-labelledby="to-cloud-h">
@@ -105,7 +104,7 @@ export default function Body() {
       <section id="cloud-cost" aria-labelledby="cloud-cost-h">
         <h2 id="cloud-cost-h" className="post__h2">Cloud capacity is a bill</h2>
         <p>The cloud removed the loading dock and added an invoice. Capacity became something you could have in minutes, and waste became something you paid for every month without anyone having to notice. Most of the cost optimization work I have done since is the carrier discipline applied to that invoice: measure what is used, plan from the data, and stop paying for what is not.</p>
-        <p>As CTO of a media publishing platform, I led a re-platform of a portfolio of titles from WordPress to Ruby on Rails and a move of the hosting to AWS, and the infrastructure improvements that came with that move contributed to AWS costs roughly 30% lower. No single trick did it. It was the unglamorous list: right-sizing instances that had been provisioned for a traffic peak that never recurred, scaling the web tier on actual demand instead of a guess, fixing database queries and connection handling so the database did not need to be twice the size it should be, caching pages that did not change between requests, and finding resources that nobody was using and nobody remembered creating.</p>
+        <p>As CTO of a media publishing platform, I led a re-platform of a portfolio of titles from WordPress to Ruby on Rails and a move of the hosting to AWS, and the infrastructure improvements that came with that move helped bring AWS costs down roughly 30%. No single trick did it. It was the unglamorous list: right-sizing instances that had been provisioned for a traffic peak that never recurred, scaling the web tier on actual demand instead of a guess, fixing database queries and connection handling so the database did not need to be twice the size it should be, caching pages that did not change between requests, and finding resources that nobody was using and nobody remembered creating.</p>
         <p>On <Link to="/experience/#yippify">client work through Yippify</Link>, the same questions come up with a newer toolkit: ECS and Fargate for services that should scale with load, Lambda for work that happens rarely, RDS PostgreSQL sized for the real query load rather than the feared one, Redis in front of the queries that repeat, S3 and CloudFront for everything that does not need a server at all, and Terraform so that every one of those choices is reviewed before it costs money. Managed services win most of these decisions for a small team, because the operational cost of self-hosting is paid in engineers, which are more expensive than instances. They lose some of them at scale, where the managed premium stops being small. The job is knowing which side of that line a workload is on this year, and checking again next year.</p>
       </section>
 
@@ -132,7 +131,7 @@ export default function Body() {
       <section id="differences" aria-labelledby="differences-h">
         <h2 id="differences-h" className="post__h2">What changed, and what didn’t</h2>
         <Compare />
-        <p>The bottom row is the one I would keep if I had to throw the rest away. The unit of capacity changed, the lead time collapsed, and the cost of over-provisioning turned from sunk hardware into a recurring bill, which is both better and more dangerous. The method did not change. Measure first, plan from data, decide the headroom in advance, and know which resource fills first.</p>
+        <p>The bottom row is the one I would keep if I had to throw the rest away. The unit of capacity changed, the lead time collapsed, and the cost of over-provisioning turned from sunk hardware into a recurring bill, which is both better and more dangerous.</p>
       </section>
 
       <section id="leadership" aria-labelledby="leadership-h">
@@ -144,7 +143,7 @@ export default function Body() {
       <section id="questions" aria-labelledby="questions-h">
         <h2 id="questions-h" className="post__h2">The questions I ask</h2>
         <p>Before I size anything, physical or cloud, I want answers to a short list. What resource fills first, and what does it cost at the next step up. What is the real lead time, including the people. What utilization triggers action, and who decides. What demand are we planning for: measured growth, a launch we believe in, or a number from a pitch deck. What would we stop paying for if we were honest about usage. And what would it cost to be wrong in each direction, because those costs are never symmetric.</p>
-        <p>I learned those questions when the answer was a purchase order and a technician in a truck. They work just as well when the answer is a line in a Terraform plan. The difference is that in the cloud, nobody stops you from being wrong. They just send the bill.</p>
+        <p>I learned those questions when the answer was a purchase order and a technician in a truck. They work just as well when the answer is a line in a Terraform plan. In the cloud the same mistake shows up as a line on the monthly invoice.</p>
       </section>
     </>
   );
@@ -157,7 +156,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Working with carrier hardware, VoIP servers and cloud accounts taught me to measure demand and plan for the resource likely to run out first. Capacity planning means understanding demand, finding the bottleneck before customers do, protecting reliability and spending at the right time. Buying more is only one of the possible answers.</p>
         <p className="post__close-principle">I want the team to agree on headroom while there is time to act, rather than work it out during an outage.</p>
-        <p>That is how I approach scaling a system and controlling what it costs to run, whether the constraint is a line card or a monthly invoice.</p>
         <div className="post__close-actions">
           <Link to="/writing/hidden-cost-of-software-architecture/" className="action">Next: the hidden cost of scaling too early <ArrowRight /></Link>
         </div>

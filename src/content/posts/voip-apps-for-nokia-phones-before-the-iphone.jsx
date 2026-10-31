@@ -59,7 +59,7 @@ export default function Body() {
         <h2 id="customers-h" className="post__h2">Building for people who weren’t buying an iPhone</h2>
         <p>The industry spent those years staring at the iPhone, and I understand why. It became our future too, since we later shipped on iPhone and Android. But in the years this story covers, our customers were asking different questions. Could the phone they already had connect where they lived? Would the call reach their mother, and would she be able to hear them? Would it cost less than the calling card from the corner store?</p>
         <p>A Symbian app on the phone a customer already owned answered more of those questions than a beautiful app on a phone they would never buy. That was the product decision, and I still think it was right. It also meant resisting the pull to treat “developing markets” as one thing. Data prices, Wi-Fi, handset models and the carriers’ attitude to VoIP differed in each country, and sometimes in each city.</p>
-        <p>I’ve written about how those customers changed my <Link to="/writing/building-a-startup-from-idea-to-acquisition/#customers">assumptions about who a user is</Link>. The Nokia work was the same lesson applied to hardware. The newest device is the one the engineers want. The right device is the one the customer has.</p>
+        <p>I’ve written about how those customers changed my <Link to="/writing/building-a-startup-from-idea-to-acquisition/#customers">assumptions about who a user is</Link>. The Nokia work was the same lesson applied to hardware. We built for the Nokia because that is what the customer already owned.</p>
       </section>
 
       <section id="fun" aria-labelledby="fun-h">
@@ -70,17 +70,16 @@ export default function Body() {
 
       <section id="lessons" aria-labelledby="lessons-h">
         <h2 id="lessons-h" className="post__h2">What it taught me</h2>
-        <p>Build for your actual customers. The newest technology is rarely the most appropriate one, and the gap between what engineers find exciting and what customers can use is where products quietly fail.</p>
         <p>Constraints shape architecture, and that is useful. Limited memory, a slow processor, a small battery and a bad network forced deliberate decisions about codecs, keepalives, buffers and what to store. Those decisions were better for having been forced.</p>
         <p>Understand the whole system. The app on the phone was the smallest piece. Signaling, media, routing, billing, carriers and the operations team that kept it running were the product. A great client on a bad backend is a bad product, and the reverse is true too.</p>
         <p>Problems outlast technology. Nobody needs a Symbian app today, and calling home is close to free. The question underneath, what does this person need and what will work where they are, is the same one I ask about a <Link to="/projects/fedpath/">federal contracting tool</Link> or a government service now.</p>
-        <p>Keep learning. My career has gone through networking, Linux, telecom, backend development, mobile, cloud infrastructure and leading teams. Symbian C++ was one more thing to learn, and the next tool will be too. I made that point about <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">DevOps from Expect scripts to AI agents</Link>, and it holds here.</p>
+        <p>Symbian C++ was one more thing to learn, and the next tool will be too. I made that point about <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">DevOps from Expect scripts to AI agents</Link>, and it holds here.</p>
       </section>
 
       <section id="then-and-now" aria-labelledby="then-and-now-h">
         <h2 id="then-and-now-h" className="post__h2">Then and now</h2>
         <p>If I were building the same thing today, I would write it in Swift and Kotlin or a cross-platform framework, with a garbage collector, hot reload and a crash reporter catching what I missed in the field. The network would be LTE or 5G nearly everywhere our customers live. The audio would go over WebRTC, with NAT traversal and echo cancellation solved by people who spent a decade on it. And I would build most of it with an AI assistant in the terminal, drafting the signaling layer while I thought about the product.</p>
-        <p>Every one of those is a real improvement, and none of them removes the engineering. Battery still drains. Networks still drop. Audio still goes one way when a NAT binding expires. A billing record still has to be right to the second. The tools took care of the parts that used to take weeks. The parts that need judgment, about who the customer is and what the system has to survive, are the same parts they always were.</p>
+        <p>Every one of those is a real improvement, and none of them removes the engineering. Battery still drains. Networks still drop. Audio still goes one way when a NAT binding expires. A billing record still has to be right to the second. The tools took care of the parts that used to take weeks.</p>
       </section>
     </>
   );
@@ -93,7 +92,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Looking back, writing VoIP apps for Nokia phones was one of the most enjoyable stretches of my engineering career.</p>
         <p className="post__close-principle">We were trying to make an affordable call home available to the people who needed it, on the phones they already had.</p>
-        <p>The technology has changed almost completely since then. The satisfaction of solving a real problem for a real person with software has not changed at all.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
         </div>

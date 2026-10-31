@@ -48,7 +48,7 @@ export default function Body() {
 
       <section id="hasnt-changed" aria-labelledby="hasnt-changed-h">
         <h2 id="hasnt-changed-h" className="post__h2">What hasn’t changed</h2>
-        <p className="post__answer">Pixels were never the hardest part. Knowing what the person is trying to do, on which device, with how much patience, was the hard part when I drew the screens myself, and it’s still the hard part when an assistant draws them. AI makes the drawing cheap and leaves the knowing to me.</p>
+        <p className="post__answer">Pixels were never the hardest part. Knowing what the person is trying to do, on which device, with how much patience, was the hard part when I drew the screens myself, and it’s still the hard part when an assistant draws them.</p>
         <p>It doesn’t know your user. It has read a great deal about users in general, and nothing about the reseller who runs a business from your dashboard, or the resident filling in a form they didn’t ask for. Everything it knows about them comes from what I tell it, so the work moves from drawing to explaining.</p>
         <p>Experience still shows up as noticing. I see the form that breaks at a narrow width, the name field that won’t fit a real name, the contrast that fails for someone my age, and the empty state nobody designed, before they ship. The assistant will happily produce all of those if I let it. Reviewing its screens is the same job as reviewing its code: the mistakes look plausible, and the reason I catch them is that I’ve shipped the real version and taken the call.</p>
         <p>A good-looking product is still not a business. The smog check site exists to produce a phone call, <Link to="/projects/fedpath/">FedPath</Link> exists to produce a bid or no-bid decision, and a publishing platform exists to be found and read. If a screen is beautiful and the action doesn’t happen, the screen failed.</p>
@@ -58,7 +58,6 @@ export default function Body() {
       <section id="still-designing" aria-labelledby="still-designing-h">
         <h2 id="still-designing-h" className="post__h2">Why I still design screens</h2>
         <p>I lead engineering teams now and I could leave the screens to other people. I still like being the person who notices the button nobody can find. Designing with an assistant means I spend less time pushing boxes around and more time on the question that mattered from the start: who is this for, and what happens when they try to use it?</p>
-        <p>That question doesn’t get easier with better tools. It gets easier with every customer you have watched get stuck, and I’ve watched a lot of them.</p>
       </section>
     </>
   );
@@ -70,7 +69,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Review the design with its users in mind.</h2>
       <div className="post__close-copy">
         <p className="lead">An assistant can draw a layout in a minute. It still can’t tell you who will use it, on what phone, with how much patience, or what they do when it fails.</p>
-        <p className="post__close-principle">Build for the person using the system. Then give the assistant that person, in detail.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/writing/building-software-before-and-after-ai/" className="link-arrow"><span>The engineering half of this story</span> <ArrowRight /></Link>

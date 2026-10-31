@@ -281,7 +281,7 @@ export const practices = [
     no: '108',
     id: 'cross-functional',
     title: 'Work across product, QA and leadership',
-    claim: 'Engineering is one voice at the table. I translate between the tradeoffs and the business.',
+    claim: 'I translate between the tradeoffs and the business.',
     body:
       'Product gets honest options with costs attached. QA is in planning, not only at the end. Executives get risk in plain language, early.',
     signals: ['Roadmap changes cost negotiation, not surprise', 'Quality is planned, not inspected in'],

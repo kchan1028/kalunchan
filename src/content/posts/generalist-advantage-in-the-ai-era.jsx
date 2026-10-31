@@ -74,7 +74,6 @@ export default function Body() {
         <h2 id="building-again-h" className="post__h2">Why I’m enjoying building again</h2>
         <p>For a long time an idea had a price. To try a product, I had to find the time to build all of it myself, or find the people and the money to build it with me. Most ideas stayed ideas.</p>
         <p>AI lowered that price. I can try something quickly and find out whether it deserves more of my time. Because I’ve done a bit of everything, I can carry an idea further on my own than I used to: past the code, into hosting, security, a landing page and a rough idea of whether the numbers work. Lately that has meant <Link to="/writing/building-an-ai-job-search-agent-with-hermes/">a job-search agent on Hermes</Link>, <a href="https://getsurgeiq.com">SurgeIQ</a> for cycling stats, and a lot of work on this site.</p>
-        <p>I still get things wrong. I still hand the hard parts to people who know them better. But the distance from “I wonder if…” to something I can show people is short again, and I’m enjoying that more than I expected to.</p>
       </section>
     </>
   );
@@ -86,7 +85,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Knowing how the pieces fit</h2>
       <div className="post__close-copy">
         <p className="lead">AI helps me explore unfamiliar areas and try an implementation sooner. My background helps me spot where I need to investigate further or bring in a specialist.</p>
-        <p className="post__close-principle">I am comfortable following a problem across several layers, and asking for help when it reaches beyond what I understand.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/about/" className="link-arrow"><span>More about my background</span> <ArrowRight /></Link>

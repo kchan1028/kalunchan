@@ -49,7 +49,7 @@ export const metadata = {
     },
     {
       q: 'Will AI replace programming skills?',
-      a: 'AI can handle much of the typing and lookup in programming. Engineers still need to understand system behavior, investigate failures and weigh security, reliability and cost. As implementation gets easier, those decisions account for more of the work I need to do myself.',
+      a: 'AI can handle much of the typing and lookup in programming. Engineers still need to understand system behavior, investigate failures and weigh security, reliability and cost. As implementation gets easier, those decisions account for more of my own work.',
     },
     {
       q: 'Will developers forget the fundamentals because of AI?',

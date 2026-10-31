@@ -92,7 +92,7 @@ export default function Body({ metadata: { sources } }) {
         <h2 id="risk-h" className="post__h2">How deep is deep enough?</h2>
         <p className="post__answer">How deeply developers should verify AI-generated code depends on the risk of the change. A copy change may only need to run and look right. Code that touches money, permissions, personal data or a production database needs the developer to understand how it fits the system, how it fails and how it will be operated. Every change doesn’t need every level, and I’d rather decide the depth before accepting the code than after something breaks.</p>
         <p>A button label, a layout tweak or an internal report can stop at the first two levels. A new API endpoint usually needs the third. A financial calculation, an authentication flow, a permission rule or a database migration needs all five, whoever or whatever wrote it. I went into matching review effort to the type of change in <Link to="/writing/code-review-in-the-ai-era/#risk">code review in the AI era</Link>, and the same thinking applies here from the author’s side: the person accepting generated code should know which level the change needs before they call it done.</p>
-        <p>Going deeper than the risk requires has a cost too. If a copy change gets the same scrutiny as a migration, the team slows down for no benefit and people learn to treat review as ceremony. I’m not aiming for the most verification possible. I want enough confidence for what’s at stake.</p>
+        <p>Going deeper than the risk requires has a cost too. If a copy change gets the same scrutiny as a migration, the team slows down for no benefit and people learn to treat review as ceremony.</p>
       </section>
 
       <section id="cost" aria-labelledby="cost-h">
@@ -128,13 +128,12 @@ export default function Body({ metadata: { sources } }) {
           <li>Are junior engineers building judgment, or only producing output?</li>
           <li>Can the team operate and debug what it ships?</li>
         </ul>
-        <p>I push back on unnecessary complexity a lot, and I wrote about why in <Link to="/writing/what-engineering-leadership-actually-does/#simpler">what engineering leadership actually does</Link>. AI raises the stakes. It costs almost nothing to generate an elaborate implementation with extra configuration, abstraction layers and options nobody asked for, and every bit of it still has to be understood, tested and maintained by people. A simpler solution is easier to verify at every level in the table above. Being able to generate more software doesn’t mean we should build more software.</p>
+        <p>I push back on unnecessary complexity a lot, and I wrote about why in <Link to="/writing/what-engineering-leadership-actually-does/#simpler">what engineering leadership actually does</Link>. AI raises the stakes. It costs almost nothing to generate an elaborate implementation with extra configuration, abstraction layers and options nobody asked for, and every bit of it still has to be understood, tested and maintained by people. A simpler solution is easier to verify at every level in the table above.</p>
       </section>
 
       <section id="learning" aria-labelledby="learning-h">
         <h2 id="learning-h" className="post__h2">I’m still adjusting too</h2>
         <p>I don’t have this worked out. I’m still finding where the depth should sit for different kinds of work, and the right answer isn’t always obvious until after a change has been running for a while. I expect it to keep shifting as the tools improve and as I learn which of my checks actually catch problems.</p>
-        <p>These are my views from my own work and the teams I’ve led. Other teams, with different systems and different risks, may reasonably land somewhere else.</p>
       </section>
 
       <section id="sources" aria-labelledby="sources-h">
@@ -156,7 +155,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">What happens after the code is generated</h2>
       <div className="post__close-copy">
         <p className="lead">AI has changed how quickly we can turn an idea into working software, and I’m genuinely excited about that. What interests me more and more is what comes after: whether we can explain the code, test it, maintain it, recognize when it’s wrong, and trust it when something unexpected happens. The tools will keep changing, as they always have.</p>
-        <p className="post__close-principle">I don’t think the future belongs to the developers who generate the most code. I think it belongs to the ones who understand what they’re building and know how to verify it.</p>
+        <p className="post__close-principle">The habit I want on my teams is simple: nobody accepts code they can’t explain, however it was produced.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

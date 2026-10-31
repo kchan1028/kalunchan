@@ -74,7 +74,7 @@ export default function Body() {
         <h2 id="good-hire-fails-h" className="post__h2">Hiring the right person doesn’t guarantee anything either</h2>
         <p>Excellent engineers struggle in badly run organizations all the time. Requirements change weekly. Tickets are a sentence long. Nobody has written down an architectural decision in years, so the reasons for everything live in two people’s heads. Developers are expected to know the whole system on day one. Feedback arrives once a year, if at all. Onboarding is a laptop, a Slack invite and a backlog.</p>
         <p>Put a great hire into that and they’ll produce roughly what everyone else produces there. Then someone will wonder what went wrong in the interview. Nothing went wrong in the interview. I’ve seen enough of this to believe that leadership quality explains more of an engineer’s output than most hiring processes do, which is why I spend so much time on <Link to="/writing/good-teams-dont-expect-everyone-to-know-everything/">clear tickets, small pull requests and recorded decisions</Link>, and why <Link to="/writing/when-everything-is-a-priority/">constant priority changes</Link> worry me more than any single hire.</p>
-        <p>The question I keep asking is uncomfortable. Do we spend anything like the effort helping a new engineer succeed that we spent deciding whether to hire them? For most teams I’ve seen, including some of mine, the honest answer is no.</p>
+        <p>I keep asking whether we spend anything like the effort helping a new engineer succeed that we spent deciding whether to hire them. For most teams I’ve seen, including some of mine, the honest answer is no.</p>
       </section>
 
       <section id="managing" aria-labelledby="managing-h">
@@ -86,9 +86,9 @@ export default function Body() {
 
       <section id="team" aria-labelledby="team-h">
         <h2 id="team-h" className="post__h2">A team is not a pile of talented individuals</h2>
-        <p>Put five brilliant engineers in a room and you have five brilliant engineers. You don’t have a team yet. A team needs trust, people who say what they don’t know, people who pick up the unglamorous ticket because it’s blocking someone else, and a habit of helping that doesn’t show up in anyone’s performance review.</p>
+        <p>Strong individuals don’t automatically make a team. A team needs trust, people who say what they don’t know, people who pick up the unglamorous ticket because it’s blocking someone else, and a habit of helping that doesn’t show up in anyone’s performance review.</p>
         <p>So when I hire, I try to ask what this person adds to the group rather than whether they’re the strongest individual in the pipeline. Sometimes the strongest individual is also the best addition. Sometimes the best addition is the person who will make the two quiet engineers you already have more effective.</p>
-        <p>This is where “culture fit” tends to go wrong. It gets used to mean people who think like us, went to the same kinds of schools, and laugh at the same jokes. That makes a team comfortable and worse at its job. The teams I’ve been proudest of had people from different countries, different first languages and different ideas about how to build things, and they argued more than a homogeneous team would have. The arguments were the point. What they shared was a willingness to be wrong in front of each other.</p>
+        <p>This is where “culture fit” tends to go wrong. It gets used to mean people who think like us, went to the same kinds of schools, and laugh at the same jokes. That makes a team comfortable and worse at its job. The teams I’ve been proudest of had people from different countries, different first languages and different ideas about how to build things, and they argued more than a homogeneous team would have. Those arguments were useful. What they shared was a willingness to be wrong in front of each other.</p>
       </section>
 
       <section id="two-way" aria-labelledby="two-way-h">
@@ -106,7 +106,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Supporting the person after hiring</h2>
       <div className="post__close-copy">
-        <p className="lead">Resumes, interviews, coding tests, references and scenario questions are all imperfect signals, and I don’t think a perfect process exists. What I can do is remember that each one is partial, look at the whole person instead of one measurement, and stay honest about the times I’ve still been wrong.</p>
+        <p className="lead">Resumes, interviews, coding tests, references and scenario questions are all imperfect signals, and I don’t think a perfect process exists. I look at the whole person instead of one measurement, and stay honest about the times I’ve still been wrong.</p>
         <p className="post__close-principle">After investing time in hiring someone, I want to make sure they get clear expectations, useful feedback and a colleague with time to help them learn the system.</p>
         <p>That gives the person a fair chance to do the work we hired them for. It also gives me better information when something is not going well.</p>
         <div className="post__close-actions">

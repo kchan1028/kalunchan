@@ -50,9 +50,9 @@ export default function Body() {
 
       <section id="time" aria-labelledby="time-h">
         <h2 id="time-h" className="post__h2">Leadership changes where the hours go</h2>
-        <p>As the company grew, my hours moved. Hiring and mentoring. Architecture decisions, written down so they outlived the meeting. Planning, and saying no to good ideas so the team could finish the important ones. Delivery, which mostly means noticing early that something is slipping. Talking to the board and to customers. Operational responsibility for a platform people depended on. Business decisions where the technically correct answer was the wrong one. Later, as a VP of Operations and as CTO of a media publisher, the share of my week spent in an editor shrank further.</p>
-        <p>That is correct. A leader who is still the best individual contributor on the team and spends the week proving it is a very expensive engineer and an absent manager. The work that only the leader can do, setting direction, growing people and connecting engineering to the business, does not get done by anyone else.</p>
-        <p>So when I say I still write code, I do not mean I write it instead of leading. I mean I never stopped building things, and I made sure the building happened somewhere it did not sit in my team’s way.</p>
+        <p>As the company grew, my hours moved to hiring and mentoring, architecture decisions written down so they outlived the meeting, and planning that meant saying no to good ideas so the team could finish the important ones. They also went to delivery, which mostly means noticing early that something is slipping, to talking to the board and to customers, to operational responsibility for a platform people depended on, and to business decisions where the technically correct answer was the wrong one. Later, as a VP of Operations and as CTO of a media publisher, the share of my week spent in an editor shrank further.</p>
+        <p>A leader who is still the best individual contributor on the team and spends the week proving it is a very expensive engineer and an absent manager. The work that only the leader can do, setting direction, growing people and connecting engineering to the business, does not get done by anyone else.</p>
+        <p>I write code alongside leading, in places where it does not sit in my team’s way.</p>
       </section>
 
       <section id="still-building" aria-labelledby="still-building-h">
@@ -64,9 +64,7 @@ export default function Body() {
       <section id="better-leader" aria-labelledby="better-leader-h">
         <h2 id="better-leader-h" className="post__h2">What staying technical buys a leader</h2>
         <p>It makes me a better judge of estimates. When an engineer says a change will take three weeks, I can usually see where the hidden work is: the migration, the edge case in the old data, the test that has to be rewritten. That lets me ask a useful question instead of a skeptical one.</p>
-        <p>It makes technical debt concrete. Debt is a financing decision, and I am a better lender when I have felt the interest myself, in my own codebases, at eleven at night.</p>
         <p>It keeps architecture tradeoffs honest. I have written <Link to="/writing/hidden-cost-of-software-architecture/">about what every extra service costs</Link>, and I believe it more because I have to run the services I build.</p>
-        <p>It keeps me humble about debugging. Every time I lose an evening to a problem that turns out to be one character in a config file, I remember what my engineers deal with, and I stop asking why something is taking so long.</p>
         <p>It keeps developer productivity real. When I set up a pipeline for my own project and the build takes nine minutes, I understand in my body why a team’s velocity is limited by its slowest feedback loop. And it keeps me close to infrastructure costs and security, because on my own projects the bill and the breach would both be mine.</p>
       </section>
 
@@ -74,7 +72,7 @@ export default function Body() {
         <h2 id="bottleneck-h" className="post__h2">What it must not turn into</h2>
         <p>There is a failure mode for technical leaders, and I have seen it from both sides. The leader who reviews every line, overrides the team’s design because they would have done it differently, and becomes the single point of failure for every decision. The team learns to wait for approval instead of thinking. Velocity drops, the best engineers leave, and the leader concludes the team needs more supervision.</p>
         <Engaged />
-        <p>The point of staying technical is to understand the work well enough to support it, not to do it for people. Good leaders build an environment where engineers make decisions without them, and step in only where the decision is theirs to make. I think of it the way I think about <Link to="/mentorship/">mentoring</Link>: if the team cannot run without me, I have built a dependency, not a team.</p>
+        <p>Staying technical lets me understand the work well enough to support it. Good leaders build an environment where engineers make decisions without them, and step in only where the decision is theirs to make. I think of it the way I think about <Link to="/mentorship/">mentoring</Link>: if the team cannot run without me, I have built a dependency, not a team.</p>
       </section>
 
       <section id="ai" aria-labelledby="ai-h">

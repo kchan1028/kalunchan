@@ -28,7 +28,7 @@ export const careerStages = [
     id: 'founder', name: 'Startup founder', role: 'Co-founder and CTO, global communications platform',
     tech: 'A multi-tier web and mobile platform, a data center cabled by hand, then cloud regions on three continents',
     did: '400,000+ users across South America, Asia and Africa, with revenue in under four months. Growth reached multimillion-dollar levels, then an acquisition.',
-    lesson: 'Build for the person using the system, not for the engineers building it.',
+    lesson: 'Build for the person using the system.',
     to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story: from an idea to an acquisition',
   },
   {
@@ -49,7 +49,7 @@ export const careerStages = [
     id: 'cloud-ai', name: 'Cloud & AI', role: 'Consultant, Yippify',
     tech: 'AWS with ECS and Fargate, Lambda, RDS, Terraform, GitHub Actions; LLM document processing; an AI assistant in the terminal',
     did: 'Public-sector applications built to security authorization and accessibility requirements. FedPath and Useful Little Tools shipped with AI assistance.',
-    lesson: 'Capacity became a bill, and the tools keep changing. Keep learning.',
+    lesson: 'Capacity became a bill, and the tools keep changing.',
     to: '/writing/building-software-before-and-after-ai/', label: 'Building software before and after AI',
   },
 ];

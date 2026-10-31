@@ -58,7 +58,7 @@ export default function Body() {
       <section id="why" aria-labelledby="why-h">
         <h2 id="why-h" className="post__h2">Learning on a real product</h2>
         <p>Throughout my career I have learned new technology by building something real with it, and I wanted to learn AI agents the same way. I had already been experimenting with Claude Code, Codex, Hermes Agent and scheduled jobs, which I wrote about in <Link to="/writing/ai-agents-reliable-in-production/">making AI agents reliable in production</Link>. Experiments show an agent finishing a task once. They don’t show what happens when the data source is down, a document contradicts itself, or a model gets something wrong that a customer was relying on.</p>
-        <p>To learn that part, I needed real data, real users and a workflow complicated enough to break. <a href="https://gofedpath.com">FedPath</a> is the product I built for it. It helps small businesses find U.S. federal contracts and decide whether to bid on them, and it is in private beta. This post covers why I picked that problem, which parts of FedPath use AI, which parts deliberately don’t, and what building it with coding agents has changed about how I work.</p>
+        <p>To learn that part, I needed real data, real users and a workflow complicated enough to break. <a href="https://gofedpath.com">FedPath</a> is the product I built for it. It helps small businesses find U.S. federal contracts and decide whether to bid on them, and it is in private beta.</p>
       </section>
 
       <section id="problem" aria-labelledby="problem-h">
@@ -71,7 +71,7 @@ export default function Body() {
       <section id="map" aria-labelledby="map-h">
         <h2 id="map-h" className="post__h2">Which parts are agentic</h2>
         <p className="post__answer">FedPath has no autonomous agent inside the product today. Opportunity monitoring and change detection are scheduled automation, fit and compliance run on fixed rules, and one model writes labelled summaries of public notices. The agentic engineering is in how I build it: Claude Code and Codex working inside requirements, review and testing.</p>
-        <p>That surprised me a little when I first laid it out, so it is worth being precise about the terms. Automation runs fixed steps on a schedule. AI processing uses a model for one step, like summarizing a document. An agent decides what to do next toward a goal: which tools to call, what to read, and when it is finished. Using an AI coding agent to build an application doesn’t make the application agentic.</p>
+        <p>It is worth being precise about the terms. Automation runs fixed steps on a schedule. AI processing uses a model for one step, like summarizing a document. An agent decides what to do next toward a goal: which tools to call, what to read, and when it is finished. Using an AI coding agent to build an application doesn’t make the application agentic.</p>
         <PartsMap />
         <p>Writing that table was useful in itself. Each row has different failure modes, different costs and a different way to test it, and treating them all as “the AI part” would have hidden that.</p>
       </section>
@@ -112,7 +112,7 @@ export default function Body() {
       <section id="learning" aria-labelledby="learning-h">
         <h2 id="learning-h" className="post__h2">Still learning</h2>
         <p>Not every idea has worked. Some screens turned out too complicated and had to be simplified. Some agent-written implementations needed redesigning once I understood the problem better. A few features that sounded impressive turned out to give users very little. That is the reason to learn on a real product. A demo can’t tell you a feature isn’t worth having.</p>
-        <p>I don’t know everything about agentic engineering, and I don’t know exactly where FedPath goes from here. What I do know is that the hard parts so far have been the familiar ones: deciding what to build, protecting people’s data, testing what matters and knowing when the simpler tool is the right one.</p>
+        <p>The hard parts so far have been the familiar ones: deciding what to build, protecting people’s data, testing what matters and knowing when the simpler tool is the right one.</p>
       </section>
     </>
   );
@@ -124,7 +124,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Use a model where it saves real work</h2>
       <div className="post__close-copy">
         <p className="lead">FedPath gave me a place to learn agentic engineering where a mistake costs someone else their time.</p>
-        <p className="post__close-principle">Write the rule as code wherever you can, use a model where it saves a person real work at an acceptable risk, and leave the decision with the person.</p>
         <div className="post__close-actions">
           <Link to="/projects/fedpath/" className="action">Read the FedPath case study <ArrowRight /></Link>
         </div>

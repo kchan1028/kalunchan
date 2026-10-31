@@ -13,7 +13,7 @@ export const toc = [
   ['urgent', 'Urgent vs. important'],
   ['stable-goal', 'A stable goal'],
   ['carryover', 'Why work doesn’t finish'],
-  ['finish', 'Finish more, start less'],
+  ['finish', 'Limit work in progress'],
   ['consequences', 'Owning the consequences'],
   ['five-things', 'Five things I make clear'],
   ['agility', 'Agility vs. instability'],
@@ -30,11 +30,9 @@ export default function Body() {
     <>
       <section id="not-the-problem" aria-labelledby="not-the-problem-h">
         <h2 id="not-the-problem-h" className="post__h2">Changing priorities isn’t the problem</h2>
-        <p>Priorities change. That’s normal. Customers change their minds. A major deal suddenly needs something. Production breaks. Leadership learns something new. A competitor moves. An assumption we made three months ago turns out to be wrong.</p>
-        <p>A good engineering organization needs to be able to respond to all of that.</p>
+        <p>Customers change their minds, a major deal suddenly needs something, production breaks, leadership learns something new, a competitor moves, or an assumption we made three months ago turns out to be wrong. A good engineering organization needs to be able to respond to all of that.</p>
         <p className="post__answer">Changing priorities becomes a problem when nobody acknowledges what the change costs.</p>
         <p>As an engineer, a co-founder and CTO, and an engineering leader, I’ve seen teams fall into the same cycle. Something is the top priority on Monday. Something else replaces it on Wednesday. By Friday, everyone is asking why the first thing isn’t finished.</p>
-        <p>At that point the problem is the system around the team. Engineering velocity is just where it shows up.</p>
       </section>
 
       <section id="cost" aria-labelledby="cost-h">
@@ -106,7 +104,7 @@ export default function Body() {
           <li>Did a previous assumption turn out to be wrong?</li>
           <li>Or did something simply become more interesting than what we’re doing now?</li>
         </ul>
-        <p>Changing priorities because the business learned something important is healthy. Changing priorities because the organization can’t maintain focus is not.</p>
+        <p>A priority change is healthy when the business has learned something important, and a warning sign when the organization can’t maintain focus.</p>
       </section>
 
       <section id="context" aria-labelledby="context-h">
@@ -146,7 +144,7 @@ export default function Body() {
         <h2 id="stable-goal-h" className="post__h2">Give people a stable goal, even when the path changes</h2>
         <p>Teams can handle a surprising amount of tactical change when the strategic direction stays clear. Say the goal for the quarter is this:</p>
         <p className="post__answer">Reduce the time it takes a new customer to reach their first successful transaction.</p>
-        <p>Along the way, the team might discover that the original feature isn’t the right solution. That’s fine. Changing the implementation because we learned something isn’t failure. The work might move from feature A, to an onboarding improvement, to an API change, to automation. The implementation changed. The goal didn’t.</p>
+        <p>Along the way, the team might discover that the original feature isn’t the right solution. That’s fine. Changing the implementation because we learned something isn’t failure. The work might move from feature A, to an onboarding improvement, to an API change, to automation, while the goal stays the same.</p>
         <p>That’s very different from this:</p>
         <ul className="post__list">
           <li>Monday: onboarding.</li>
@@ -171,14 +169,12 @@ export default function Body() {
         <p>Those are very different problems, with very different fixes.</p>
         <p className="post__answer">If priority changes are responsible for a meaningful share of unfinished work, better estimation won’t fix delivery. The organization needs to improve how it makes decisions.</p>
         <p>I go through each of those causes, and what fixes it, in <Link to="/writing/what-sprint-carryover-is-telling-you/">what sprint carryover is actually telling an engineering team</Link>.</p>
-        <p>Slow or unpredictable delivery is one of the problems I help companies with through <a href={person.yippify}>Yippify</a>, and the reasons work doesn’t finish are where I start, before anyone talks about estimates or velocity.</p>
       </section>
 
       <section id="finish" aria-labelledby="finish-h">
-        <h2 id="finish-h" className="post__h2">Finish more. Start less.</h2>
+        <h2 id="finish-h" className="post__h2">Limit work in progress</h2>
         <p>One of the simplest ways to improve delivery is also one of the hardest: stop starting things.</p>
-        <p>When something new becomes important, first ask whether the team can finish something already close to done. Waiting two days to finish the current work is often much cheaper than abandoning it immediately. Emergencies are different, of course. But most business requests aren’t emergencies.</p>
-        <p>Reducing work in progress creates the thing organizations need most: finished work. Finished work can reach customers, earn revenue and produce feedback. Half-finished work mostly produces status meetings.</p>
+        <p>When something new becomes important, first ask whether the team can finish something already close to done. Waiting two days to finish the current work is often much cheaper than abandoning it immediately. Emergencies are different, of course. But most business requests aren’t emergencies, and half-finished work mostly produces status meetings.</p>
         <p>It’s the same logic behind how I <Link to="/leadership/#execution">improve execution with small, safe changes</Link>. Smaller pieces of work finish sooner, and work that finishes sooner is cheaper to pause or redirect when priorities do change.</p>
       </section>
 
@@ -202,7 +198,7 @@ export default function Body() {
         <p>In practice, these are the five things I try to make clear every time:</p>
         <ol className="post__steps">
           <li>Why are we changing? There should be a reason people can understand.</li>
-          <li>What is the new priority? Not one of twelve priorities. The priority.</li>
+          <li>What is the new priority? Name one, not a list of twelve.</li>
           <li>What are we stopping or delaying? New work has a cost.</li>
           <li>What happens to work already in progress? Finish it, pause it intentionally, reduce its scope, or cancel it.</li>
           <li>Which expectations need to change? Dates, scope, capacity or commitments need to reflect the new decision.</li>
@@ -211,7 +207,7 @@ export default function Body() {
 
       <section id="agility" aria-labelledby="agility-h">
         <h2 id="agility-h" className="post__h2">Agility isn’t constantly changing your mind</h2>
-        <p>Engineering organizations should be adaptable. I want teams that can respond quickly when the business learns something important. But adaptability and instability aren’t the same thing.</p>
+        <p>Engineering organizations should be adaptable. I want teams that can respond quickly when the business learns something important.</p>
         <p className="post__answer">An agile team changes direction quickly because it has clear ownership, small increments of work, good architecture and strong communication. A team that changes direction every few days because nobody can decide what matters stays busy and gets very little done.</p>
         <p>Architecture plays a bigger part than people expect. Clear boundaries let one part of a system change without touching everything around it, which is much of what I look for when I decide <Link to="/writing/should-it-be-a-microservice/">whether something should actually be a microservice</Link>.</p>
       </section>
@@ -224,7 +220,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Agree on what stops when priorities change</h2>
       <div className="post__close-copy">
-        <p className="lead">There will always be another customer request, another production problem, another executive idea, and another technology everyone suddenly wants to explore. The goal is an organization that can respond to all of it without losing its ability to finish things.</p>
+        <p className="lead">Customer requests, production problems, executive ideas and new technology will keep arriving. The goal is an organization that can respond to all of it without losing its ability to finish things.</p>
         <p>When a new priority arrives, I ask what we are willing to stop and explain what that means for the existing work.</p>
         <p className="post__close-principle">The decision belongs to the business, with the cost and revised dates visible to everyone involved.</p>
         <div className="post__close-actions">

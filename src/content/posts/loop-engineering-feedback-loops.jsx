@@ -15,7 +15,6 @@ export const toc = [
   ['humans', 'What humans still own'],
   ['workflow', 'A practical workflow'],
   ['leaders', 'What this means for leaders'],
-  ['perspective', 'My perspective'],
 ];
 
 // ---------- Fig. 707-1: the loop, split into the inner loop an agent can run and the outer loop people own ----------
@@ -135,7 +134,7 @@ export default function Body() {
         <p>It isn’t an official methodology. There’s no manifesto or certification. I use the term as a practical name for something good teams already do, which matters more now that an agent can run the build and test steps dozens of times an hour.</p>
         <Loop />
         <p>Asking an agent to write code and accepting what comes back is one pass through the middle of that loop, with nothing at either end. Nobody checked the problem going in, and nobody checked the result coming out. Loop engineering puts both ends back and makes each step produce a signal you can act on.</p>
-        <p>The important part is the quality of that signal. An agent that iterates ten times against a weak test suite gets very good at passing weak tests. More iterations don’t make software better. Better feedback does.</p>
+        <p>The important part is the quality of that signal. An agent that iterates ten times against a weak test suite gets very good at passing weak tests.</p>
       </section>
 
       <section id="decades" aria-labelledby="decades-h">
@@ -166,7 +165,7 @@ export default function Body() {
 
       <section id="three" aria-labelledby="three-h">
         <h2 id="three-h" className="post__h2">Vibe coding, agentic engineering and loop engineering</h2>
-        <p>I compared the first two in <Link to="/writing/vibe-coding-vs-agentic-engineering/">vibe coding vs. agentic engineering</Link>. Loop engineering is the third piece, and it isn’t a separate method so much as the part that makes the second one work.</p>
+        <p>I compared the first two in <Link to="/writing/vibe-coding-vs-agentic-engineering/">vibe coding vs. agentic engineering</Link>. Loop engineering is the third piece, and it’s the part that makes the second one work.</p>
         <Approaches />
         <p>Agentic engineering asks who does the work. Loop engineering asks how we’ll know the work is right, at every step, and what happens when it isn’t.</p>
       </section>
@@ -254,12 +253,6 @@ export default function Body() {
           <li>Customer outcomes, whether the feature solved the problem it was built for</li>
         </ul>
         <p>The first three come from <a href="https://dora.dev/guides/dora-metrics/" rel="noopener" target="_blank">DORA’s delivery metrics</a>. All of them describe how well the loop works, which is why they’re harder to game than activity counts. More on how I run teams in <Link to="/leadership/">how I run engineering</Link>.</p>
-      </section>
-
-      <section id="perspective" aria-labelledby="perspective-h">
-        <h2 id="perspective-h" className="post__h2">My perspective</h2>
-        <p>Over the course of my career, I’ve watched the tools change many times: languages, frameworks, infrastructure models, cloud platforms, and now AI coding agents.</p>
-        <p>The basic problem hasn’t changed. We still need to understand what we’re building, why we’re building it, and whether it works. AI makes each trip around the loop faster. Engineering judgment decides whether those trips are heading somewhere useful.</p>
       </section>
     </>
   );

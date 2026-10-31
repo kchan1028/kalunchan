@@ -55,7 +55,7 @@ export default function Body() {
       <section id="security" aria-labelledby="security-h">
         <h2 id="security-h" className="post__h2">Security as an operations job</h2>
         <p>My security education happened on the same network. The ACLs on the routers were my first security policy, and when the carrier launched a managed firewall and VPN service on NetScreen, I was one of the first three people supporting it in a brand-new Security Operations Center. Later I flew to the East Coast to train the Technical Assistance Center that would support it after us. I wrote the full version of that story in <Link to="/writing/network-security-before-devsecops/">network security long before DevSecOps</Link>, so here is only what it changed in me.</p>
-        <p>I learned that security work is mostly operations. Change requests, troubleshooting a tunnel that is up in one direction, reading a rule set in order with the implicit deny at the bottom, writing it down so the next shift can do it. And I learned that a security control that blocks legitimate traffic is an outage, which is a lesson I find myself repeating to people configuring cloud permissions twenty-something years later.</p>
+        <p>I learned that security work is mostly operations. Change requests, troubleshooting a tunnel that is up in one direction, reading a rule set in order with the implicit deny at the bottom, writing it down so the next shift can do it. And I learned that a security control that blocks legitimate traffic is an outage, which is a lesson I find myself repeating to people configuring cloud permissions today.</p>
         <p>Teaching the TAC taught me something else: if I could not explain how to troubleshoot it, I did not understand it as well as I thought.</p>
       </section>
 
@@ -80,7 +80,7 @@ export default function Body() {
 
       <section id="agents" aria-labelledby="agents-h">
         <h2 id="agents-h" className="post__h2">AI agents are a network problem too</h2>
-        <p>Lately I have been experimenting with AI agents: Hermes Agent on a VPS I administer, Claude Code and OpenAI’s Codex in the terminal, and OmniRoute as a gateway in front of several model providers. The newest part of my career turns out to be the most familiar.</p>
+        <p>Lately I have been experimenting with AI agents: Hermes Agent on a VPS I administer, Claude Code and OpenAI’s Codex in the terminal, and OmniRoute as a gateway in front of several model providers.</p>
         <p>An agent calls a model over the network, with a credential, through a gateway, with a timeout. It calls tools, which are other services with their own permissions. It keeps state somewhere and runs on a schedule on a machine that has to stay up. Every one of those is a thing I learned to worry about on a carrier network. The model is new. The authentication, the authorization, the latency, the retries, the logs, the cost of every request and the boundary around what the agent may touch are not. I wrote about the <Link to="/writing/omniroute-hermes-agent-docker/">gateway</Link> and the <Link to="/writing/scheduling-ai-work-hermes-chatgpt-claude/">scheduling</Link> separately; the short version is that an agent is a distributed system with a very good text parser in the middle.</p>
       </section>
 
@@ -97,11 +97,9 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">The tools changed. The fundamentals mostly did not.</h2>
+      <h2 id="closing-h" className="post__close-title h2">Walk the path</h2>
       <div className="post__close-copy">
-        <p className="lead">From Cisco routers and physical servers to cloud infrastructure and AI agents, the work kept moving up the stack.</p>
-        <p className="post__close-principle">Walk the path a request takes before you trust it, whether it crosses a router or an AI agent.</p>
-        <p>Those habits came from the network, and they are still how I engineer systems that are reliable, secure and maintainable.</p>
+        <p className="lead">Follow the route a request takes before you trust it, whether it crosses a router or an AI agent.</p>
         <div className="post__close-actions">
           <Link to="/writing/why-i-still-write-code/" className="action">Part 2: Why I still write code <ArrowRight /></Link>
         </div>

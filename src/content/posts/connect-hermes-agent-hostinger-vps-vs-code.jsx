@@ -126,7 +126,7 @@ docker logs -f CONTAINER_NAME     # follow live; Ctrl+C to stop`}</Code>
         <Code title="VPS">{`docker exec -it CONTAINER_NAME /bin/sh
 # or, if the image has it:
 docker exec -it CONTAINER_NAME /bin/bash`}</Code>
-        <p>Inside, you are in the agent’s environment, with the <code>hermes</code> command on the path. Two things to find out while you are there: where its configuration lives, by default the <code>.hermes</code> directory in the container user’s home, and which paths are volumes. This matters more than anything else in this guide.</p>
+        <p>Inside, you are in the agent’s environment, with the <code>hermes</code> command on the path. Two things to find out while you are there: where its configuration lives, by default the <code>.hermes</code> directory in the container user’s home, and which paths are volumes.</p>
         <Code title="VPS">{`docker inspect CONTAINER_NAME --format '{{json .Mounts}}'`}</Code>
         <p>Paths listed there survive a container restart or recreate. Anything you change elsewhere inside the container is gone the next time the template updates or the container is rebuilt. Put your configuration, skills and data on a mounted path, and if the config directory is not mounted, mount it before you spend an evening configuring the agent.</p>
       </section>
@@ -157,7 +157,7 @@ hermes config check                               # validates what you have`}</C
 
       <section id="troubleshooting" aria-labelledby="troubleshooting-h">
         <h2 id="troubleshooting-h" className="post__h2">Common problems</h2>
-        <p><strong>Permission denied (publickey,password).</strong> The server rejected both methods. Nine times out of ten the public key is not in the right file, or permissions are wrong: the home directory must not be group-writable, <code>~/.ssh</code> must be 700, and <code>authorized_keys</code> must be 600, all owned by the user you log in as. Check which key the client offered with <code>ssh -v hermes</code>; if it is offering the wrong one, <code>IdentitiesOnly yes</code> with the right <code>IdentityFile</code> fixes it. If you pasted the key through the browser terminal, confirm it is one line with no breaks.</p>
+        <p><strong>Permission denied (publickey,password).</strong> The server rejected both methods. Usually the public key is not in the right file, or permissions are wrong: the home directory must not be group-writable, <code>~/.ssh</code> must be 700, and <code>authorized_keys</code> must be 600, all owned by the user you log in as. Check which key the client offered with <code>ssh -v hermes</code>; if it is offering the wrong one, <code>IdentitiesOnly yes</code> with the right <code>IdentityFile</code> fixes it. If you pasted the key through the browser terminal, confirm it is one line with no breaks.</p>
         <p><strong>Wrong private key.</strong> If you have several keys, <code>ssh-add -l</code> on the laptop shows what the agent holds, and the SSH config pins the one to use. The public key on the server must match that private key, which <code>ssh-keygen -y -f ~/.ssh/id_ed25519</code> will print for comparison.</p>
         <p><strong>VS Code connects, then hangs.</strong> Usually the VS Code server failed to install on the VPS, often from a full disk or a missing <code>tar</code>. Check free space with <code>df -h</code> and read the Remote-SSH output panel.</p>
         <p><strong>Container not running.</strong> <code>docker ps -a</code> shows exited containers too. <code>docker logs CONTAINER_NAME</code> says why. <code>docker start CONTAINER_NAME</code> brings it back, and if it exits again immediately, the log holds a configuration error.</p>
@@ -179,10 +179,9 @@ hermes config check                               # validates what you have`}</C
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">A server you can reach is a server you can learn on</h2>
+      <h2 id="closing-h" className="post__close-title h2">Where this leaves the setup</h2>
       <div className="post__close-copy">
-        <p className="lead">With key-based access and a non-root account in place, I can use VS Code to inspect the container and understand where it stores its data and configuration.</p>
-        <p className="post__close-principle">That gives me a workspace for learning how the agent runs and troubleshooting it when something goes wrong.</p>
+        <p className="lead">With key-based access and a non-root account in place, I can use VS Code to inspect the container and understand where it stores its data and configuration. That gives me a workspace for learning how the agent runs and troubleshooting it when something goes wrong.</p>
         <p>Next in the series: the first scheduled runs of the job-search agent, and what broke.</p>
         <div className="post__close-actions">
           <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>

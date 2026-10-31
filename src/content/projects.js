@@ -110,7 +110,7 @@ export const projects = [
     domain: ['Community leadership', 'Event promotion', 'Web & search'],
     title: 'Berkeley Omnium: a digital home for a community race weekend',
     claim:
-      'Two races got one fast, modern home. It makes the case for local racing.',
+      'Two races got one fast, modern home.',
     summary:
       'A modern event website for the Berkeley Hills Road Race and Berkeley Streets Criterium. Each race has its own landing page, and video shows what the racing is like.',
     problem:
@@ -142,7 +142,7 @@ export const projects = [
         question: 'How should the site show what racing here is like?',
         options: [
           { label: 'Schedules and a photo gallery', note: 'Complete, but it undersells the racing to new riders.' },
-          { label: 'Lead with video and live social channels', note: 'The racing sells itself, and the site stays current between editions.', chosen: true },
+          { label: 'Lead with video and live social channels', note: 'The site stays current between editions.', chosen: true },
         ],
       },
     ],
@@ -154,7 +154,7 @@ export const projects = [
     capabilities: ['Event website & landing pages', 'Video & social integration', 'Structured data', 'SEO', 'Responsive design', 'Partnerships & promotion'],
     lessons: [
       'A volunteer-run event needs a site that works for sponsors as hard as it works for racers.',
-      'Running a race weekend takes the same skills as shipping software. Know your audience and get feedback fast.',
+      'Running a race weekend takes the same skills as shipping software.',
     ],
     alt: {
       desktop: 'Berkeley Omnium home page: the headline Where champions race over video of a pack of cyclists on a hillside road',
@@ -179,7 +179,7 @@ export const projects = [
     where: 'Family-owned local business',
     role: 'Redesign, build & search',
     domain: ['Small-business modernization', 'Local SEO', 'Mobile-first UX'],
-    title: 'Union City Smog Check: a local business site built to convert',
+    title: 'Union City Smog Check: a local business site that gets drivers to call',
     claim:
       'A family-owned smog station got a fast, mobile-first site that answers drivers’ questions and gets them to call or drive over.',
     summary:

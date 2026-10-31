@@ -56,12 +56,11 @@ export default function Body() {
       <section id="ai" aria-labelledby="ai-h">
         <h2 id="ai-h" className="post__h2">AI made lookups easier, and showed me something else</h2>
         <p>I use AI coding assistants regularly now. They’re useful when I need syntax, want to explore a library I haven’t used, or want to understand how a framework handles something. Describing what I’m trying to do is faster than reading five documentation pages. The same idea reaches past code: I <Link to="/writing/connect-strava-to-claude-mcp/">connected my Strava data to Claude</Link> mostly so I could ask training questions in plain language instead of exporting spreadsheets.</p>
-        <p>But I noticed something. A lot of the time I don’t want an assistant to write code for me, and I don’t want a conversation at all. I want to remember a command. Find a Git commit, inspect a Docker container, check a regex, remind myself how a JOIN behaves. Open something, find it, get back to work.</p>
+        <p>A lot of the time I don’t want an assistant to write code for me, and I don’t want a conversation at all. I want to remember a command. Find a Git commit, inspect a Docker container, check a regex, remind myself how a JOIN behaves. Open something, find it, get back to work.</p>
       </section>
 
       <section id="repeat-searches" aria-labelledby="repeat-searches-h">
         <h2 id="repeat-searches-h" className="post__h2">The things I kept searching for</h2>
-        <p>So I started paying attention to what I looked up over and over.</p>
         <p>Git was the obvious one. I’ve used it for years and there are still commands I don’t use often enough to keep. Finding which commit introduced a change. Checking where a branch diverged. Pulling something back out of the reflog. I know Git can do all of these. I just don’t remember the incantation.</p>
         <p>Docker was the same. I use it most weeks, and I still don’t memorize every combination of flags. SQL, regular expressions and JWTs went on the same list.</p>
         <p>Every one of these was the same small problem. I know what I want to do, and I need help remembering how. More bookmarks weren’t going to fix that, so I built something.</p>
@@ -82,7 +81,7 @@ export default function Body() {
 
       <section id="building-teaches" aria-labelledby="building-teaches-h">
         <h2 id="building-teaches-h" className="post__h2">Building the tool teaches me the thing</h2>
-        <p>That part surprised me. To build a tool that explains something, I have to understand it well enough to make it useful.</p>
+        <p>To build a tool that explains something, I have to understand it well enough to make it useful.</p>
         <p>Take joins. Reading a description of <code>INNER</code>, <code>LEFT</code> and <code>FULL OUTER JOIN</code> is easy. Building a visualizer forces harder questions. What happens to the unmatched rows? What does the result actually look like? How do you show the difference without a wall of text? The same is true for Kafka partitions and consumer groups, or for database execution plans. Building the tool makes me organize what I know, and now and then I find that something I thought I understood has more to it than I remembered. That’s part of the fun.</p>
       </section>
 

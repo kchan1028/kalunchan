@@ -76,8 +76,7 @@ export default function Body() {
         <p>When I built a VoIP platform, a single call crossed signaling, media, business logic and billing, and each of those failed independently. I wrote about the lessons in <Link to="/writing/open-source-voip-distributed-systems-lessons/">what open-source VoIP taught me about distributed systems</Link>. An agent is the same shape with a model in the middle.</p>
         <p>The model API will time out, rate-limit you and occasionally return something malformed. Every call needs a timeout and a bounded retry with exponential backoff, and the retries need a ceiling, because an agent that retries forever is an agent that spends forever. Tools will fail too, and the agent needs to know which failures are worth retrying and which mean stop.</p>
         <p>Idempotency matters more than people expect. If a run dies halfway and the scheduler starts it again, will it send the report twice, apply the label twice, or, worse, submit the application twice? Every action with a side effect needs a key so a repeat changes nothing, the same discipline that kept a replayed billing event from charging a caller twice.</p>
-        <p>Schedulers miss runs. A VPS reboots, a cloud schedule starts late, a desktop task skips because the laptop was asleep. A missed run has to be detected, by something other than me noticing on Friday that Monday’s report never came. State has to live somewhere durable, so the next run knows what the last one did. And observability is not optional: what ran, how long it took, what it called, what it cost, and whether the result passed whatever check I defined. A green status on a run means the process exited. It does not mean the task succeeded, and I have learned to read the transcript before I believe the light.</p>
-        <p>Recovery deserves its own design. When a run fails halfway, the next run should be able to tell what finished and what didn’t, and continue from there rather than start over and repeat the side effects. That means writing progress down as the agent goes, the same reason a billing system keeps a record per call instead of trusting a process to remember.</p>
+        <p>Schedulers miss runs. A VPS reboots, a cloud schedule starts late, a desktop task skips because the laptop was asleep. A missed run has to be detected, by something other than me noticing on Friday that Monday’s report never came. State has to live somewhere durable and be written as the agent goes, so the next run knows what finished and can continue instead of repeating side effects, the same reason a billing system keeps a record per call. And observability is not optional: what ran, how long it took, what it called, what it cost, and whether the result passed whatever check I defined. A green status on a run means the process exited. It does not mean the task succeeded, and I have learned to read the transcript before I believe the light.</p>
       </section>
 
       <section id="evaluation" aria-labelledby="evaluation-h">
@@ -120,9 +119,9 @@ export default function Body() {
 
       <section id="readiness" aria-labelledby="readiness-h">
         <h2 id="readiness-h" className="post__h2">How I would decide it is ready</h2>
-        <p>As an engineering leader, the question I care about is whether I would let the agent run unattended with my name on the result. Impressive is a lower bar. These are the questions I would ask a team before saying yes.</p>
+        <p>As an engineering leader, the question I care about is whether I would let the agent run unattended with my name on the result. These are the questions I would ask a team before saying yes.</p>
         <Readiness />
-        <p>Behind those sit the usual production commitments: a reliability target that someone agreed to, monitoring that pages a person, an incident process that includes “turn the agent off”, and a cost budget reviewed like any other line item. If a team cannot answer them, the agent is still a demo, however good the demo is.</p>
+        <p>Behind those sit the usual production commitments: a reliability target that someone agreed to, monitoring that pages a person, an incident process that includes “turn the agent off”, and a cost budget reviewed like any other line item.</p>
       </section>
     </>
   );

@@ -247,7 +247,7 @@ export default function Body() {
         <p>Adding a process is easy. It feels responsible, and nobody gets blamed for being careful. Removing one takes judgment, because someone remembers why it was added and removing it feels like accepting risk. That is why process tends to pile up, and why someone with authority has to own taking it away.</p>
         <p>Before adding a process, I want to agree on the problem, its current cost and how we will judge whether the additional work helps.</p>
         <p>I also look for a fix that avoids adding another recurring obligation. A clearer owner or a one-time change to the tooling may be enough.</p>
-        <p>An engineering leader answers for reliability and for speed at the same time, so they are the person who has to weigh one against the other. Protecting reliability with controls nobody questions is easy. So is protecting speed by removing everything. The job is keeping the controls that earn their cost and having the discipline to drop the rest.</p>
+        <p>An engineering leader answers for reliability and for speed at the same time, so they are the person who has to weigh one against the other. The job is keeping the controls that earn their cost and dropping the rest.</p>
       </section>
     </>
   );
@@ -259,7 +259,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Good process makes people more effective</h2>
       <div className="post__close-copy">
         <p className="lead">Good process makes an organization more predictable without making the people in it less effective. People can see who owns what and how the work gets done, which gives leadership confidence and lets teams work on their own without someone checking each step. When a process stops doing those things, leadership should have the discipline to change it or remove it, even if it was a good idea when it started.</p>
-        <p className="post__close-principle">I want the team to know which decisions it can make on its own and when someone else needs to be involved. A process should make that easier to understand.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through your team’s process <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

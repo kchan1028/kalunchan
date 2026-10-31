@@ -199,7 +199,7 @@ export default function Body() {
         <h2 id="routers-and-acls-h" className="post__h2">Before cloud security, there were routers and ACLs</h2>
         <p>The words today are Zero Trust, DevSecOps, identity and access management, infrastructure as code, automated scanning. My first security work had none of those words in it. It was an access control list on a Cisco router in a carrier network, and the question it answered was older than any of them: which traffic is allowed to reach which thing.</p>
         <p className="post__answer">An access control list (ACL) is an ordered set of permit and deny rules that a router checks against each packet: source address, destination address, protocol and port. It is applied to an interface in one direction, inbound or outbound, the first matching rule wins, and anything that matches nothing is dropped. In a carrier network, ACLs protected the network itself: who could reach a router’s management interface, which neighbours were trusted, what a customer’s traffic was allowed to do once it entered our side.</p>
-        <p>What I learned quickly is that network security was never about blocking traffic. The network existed to carry traffic. Every rule had two ways to fail. It could let through something it should have stopped, which you might not find out about for a long time. Or it could block something legitimate, which you found out about in minutes, because a customer’s application stopped working and the ticket came to us. A rule that drops a customer’s real traffic is an outage with a security label on it.</p>
+        <p>Network security meant letting the right traffic through and stopping the rest. The network existed to carry traffic. Every rule had two ways to fail. It could let through something it should have stopped, which you might not find out about for a long time. Or it could block something legitimate, which you found out about in minutes, because a customer’s application stopped working and the ticket came to us. A rule that drops a customer’s real traffic is an outage with a security label on it.</p>
         <p>So the actual skill was understanding which systems needed to talk to each other, writing rules that allowed exactly that, and knowing where to look when something that should connect didn’t. An ACL was a frequent suspect in connectivity troubleshooting, and reading one carefully, in order, with the implicit deny at the bottom in mind, became a habit I never lost.</p>
       </section>
 
@@ -234,7 +234,7 @@ export default function Body() {
 
       <section id="tac" aria-labelledby="tac-h">
         <h2 id="tac-h" className="post__h2">Flying east to train the TAC</h2>
-        <p>As the service grew, I travelled to the East Coast to train the Technical Assistance Center, the team that would take customer calls and troubleshoot the service after us. It is one of the experiences I remember most clearly from those years, and the reason has little to do with firewalls.</p>
+        <p>As the service grew, I travelled to the East Coast to train the Technical Assistance Center, the team that would take customer calls and troubleshoot the service after us.</p>
         <p>Up to that point I had been learning the technology. Now I had to explain it to engineers who would be on the phone with customers without me in the room. That is a different skill. The questions they asked found every gap in my understanding and every gap in our documentation. Things I did by feel had to become steps someone else could follow at three in the morning: what to check first, how to read a log, what a healthy tunnel looks like, when to stop and escalate. I had to turn how I troubleshoot into something repeatable, and watching other engineers get confident with it was more satisfying than fixing the problem myself.</p>
         <p>I did not have the words for it then, but that trip was the start of how I think about <Link to="/mentorship/">mentoring engineers</Link>: understanding a system is one skill, and being able to teach someone else to troubleshoot it is another. A support organization that depends on the two or three people who were there at the beginning is a single point of failure, and I have spent most of my career since trying not to be one.</p>
       </section>
@@ -260,7 +260,7 @@ export default function Body() {
         <h2 id="every-layer-h" className="post__h2">Security at every layer of a company</h2>
         <p>Good security comes from decisions made at every layer, by the people who work there, and most of them do not have security in their title. The figure below walks the stack from the network up to the organization. For each layer it lists what typically goes wrong and the controls that usually answer it, which is general practice, and where I have worked in that layer myself, which is first-hand. I have kept the two apart on purpose.</p>
         <Layers />
-        <p>Two things stand out when you read it as a whole. The technical controls get most of the attention and the organizational ones decide whether the technical ones exist. A team with no named owner for security does not have a firewall problem. It has a priority problem, and the firewall configuration is where it shows up.</p>
+        <p>The technical controls get most of the attention, and the organizational ones decide whether the technical ones exist. A team with no named owner for security has a priority problem, and the firewall configuration is where it shows up.</p>
       </section>
 
       <section id="responsibility" aria-labelledby="responsibility-h">
@@ -277,7 +277,6 @@ export default function Body() {
         <p>Operational knowledge matters as much as the tool. A firewall is only as good as the people who configure it, read its logs and troubleshoot it at the wrong hour. The same is true of IAM, and of every scanner in a pipeline.</p>
         <p>Documentation and training are engineering work. The trip to train the TAC taught me that a system nobody else can support is not finished, and I have treated runbooks and hand-over as part of done ever since.</p>
         <p>Security belongs in the engineering decision, not after it. The cheapest place to find a security problem is the design review. The most expensive is the week before launch, which is where it ends up when nobody owns it earlier.</p>
-        <p>The tools changed completely. The fundamentals did not. Router ACLs became security groups and IAM policies. Physical firewalls became policies as code. Zones became VPCs and tenants. Reading a rule in order, with the default deny in mind, and asking who it will accidentally block, is the same job it was on a Cisco router in a carrier network.</p>
       </section>
     </>
   );
@@ -289,7 +288,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">The security habits I still use</h2>
       <div className="post__close-copy">
         <p className="lead">My security experience started with Cisco ACLs in a carrier network and a chair in a brand-new Security Operations Center, and it never stopped.</p>
-        <p className="post__close-principle">Security is part of every layer I have worked in, from the router to the application, the cloud account and the roadmap conversation.</p>
         <p>Those early years are why I treat security as an engineering decision, test every rule with the traffic it is supposed to allow, and make sure the system can be supported by people who weren’t there at the beginning.</p>
         <div className="post__close-actions">
           <Link to="/expertise/#security" className="action">Security engineering, role by role <ArrowRight /></Link>

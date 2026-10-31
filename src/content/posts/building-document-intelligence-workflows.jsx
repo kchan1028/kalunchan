@@ -77,7 +77,7 @@ export default function Body() {
       <section id="review" aria-labelledby="review-h">
         <h2 id="review-h" className="post__h2">Human review is part of the design</h2>
         <p>The goal is usually to take the re-keying out of a person’s day while keeping their judgment in the process. So the review experience deserves as much design as the model. A reviewer should see each extracted value next to the passage it came from, so checking it takes seconds instead of a search through the document. Correcting a value should be as fast as accepting it. Every correction should be recorded, because those corrections are the best evaluation data the system will ever get.</p>
-        <p>Exceptions need an owner and a queue that someone actually works, with an agreed time to clear it. Approval fatigue is real: a reviewer who accepts fifty suggestions in a row without reading them has stopped being a control. When that happens, the fix is better validation or a narrower scope for automation. I wrote more about designing approvals in <Link to="/writing/ai-agents-reliable-in-production/#oversight">where people stay in the loop</Link>.</p>
+        <p>Exceptions need an owner and a queue that someone actually works, with an agreed time to clear it. A reviewer who accepts fifty suggestions in a row without reading them has stopped being a control, and the fix is better validation or a narrower scope for automation. I wrote more about designing approvals in <Link to="/writing/ai-agents-reliable-in-production/#oversight">where people stay in the loop</Link>.</p>
       </section>
 
       <section id="integration" aria-labelledby="integration-h">
@@ -102,7 +102,7 @@ export default function Body() {
       <section id="when" aria-labelledby="when-h">
         <h2 id="when-h" className="post__h2">When AI helps, and when plain code is better</h2>
         <p>AI is useful when documents vary in layout and wording, when the information is buried in prose, and when a reasonable first draft saves a person real time. Conventional code is better for fixed forms, known layouts, normalization, arithmetic and business rules, because it is predictable, cheaper to run and straightforward to test. A rule that can be written down should usually be code, even if a model could also apply it.</p>
-        <p>The systems I trust combine the two: code for everything that can be specified, a model for the reading that can’t, validation between them, and a person for the uncertain cases and the decisions that matter. That design is less exciting than the demo. It is also the one a business can depend on, and that is the standard I hold AI work to.</p>
+        <p>The systems I trust combine the two: code for everything that can be specified, a model for the reading that can’t, validation between them, and a person for the uncertain cases and the decisions that matter. That design is less exciting than the demo, but it is the one a business can depend on.</p>
       </section>
     </>
   );
@@ -113,8 +113,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Know which values to trust</h2>
       <div className="post__close-copy">
-        <p className="lead">Getting text out of a document is a solved problem for most formats. Knowing which values a business can act on is the work.</p>
-        <p className="post__close-principle">The model reads the document. Validation, review and the audit trail decide whether the business can rely on what it read.</p>
+        <p className="lead">Getting text out of a document is a solved problem for most formats.</p>
+        <p className="post__close-principle">The model reads the document, and validation, review and the audit trail decide what the business can rely on.</p>
         <div className="post__close-actions">
           <Link to="/writing/ai-agents-reliable-in-production/" className="action">Making AI agents reliable in production <ArrowRight /></Link>
         </div>

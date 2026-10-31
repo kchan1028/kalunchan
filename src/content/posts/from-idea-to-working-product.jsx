@@ -77,12 +77,12 @@ export default function Body() {
         <h2 id="learning-h" className="post__h2">Learning by building</h2>
         <p>The three projects sit at different distances from what I already know. FedPath draws on public-sector work, so I started with a decent sense of the domain and still misjudged the data. VeloWise draws on leading engineering teams, so I knew the questions well and had to learn how messy the exports that answer them are.</p>
         <p>Trading Research Lab is the one where I’m learning the domain while building the system, and the mistakes are more basic. I’ve had to learn why a backtest needs data it wasn’t tuned on, why a result from one stock says little about a portfolio, and how easy it is to measure the wrong thing. My own benchmark check once showed a 63% overlap between the lab’s picks and simple momentum. The cause was uneven sampling dates in the measurement, not anything the strategy did.</p>
-        <p>Building forces a kind of understanding that reading doesn’t. To make a system behave, I have to decide what it does when data is missing, when two signals disagree, or when the honest answer is “we don’t know yet.” On all three projects, those decisions are where I’ve learned the most.</p>
+        <p>To make a system behave, I have to decide what it does when data is missing, when two signals disagree, or when the honest answer is “we don’t know yet.” On all three projects, those decisions are where I’ve learned the most.</p>
       </section>
 
       <section id="enjoy" aria-labelledby="enjoy-h">
         <h2 id="enjoy-h" className="post__h2">Why I still enjoy it</h2>
-        <p>I’ve worked as an engineer, a <Link to="/writing/building-a-startup-from-idea-to-acquisition/">founder</Link>, a CTO and an engineering leader, and I still like being close to the work of building a product. These projects remind me how much effort sits between an idea and something useful: decisions nobody sees, an edge case hiding in the thousandth record, and features that work and still need to change. They also keep me close to the problems engineers and product teams deal with every day.</p>
+        <p>I’ve worked as an engineer, a <Link to="/writing/building-a-startup-from-idea-to-acquisition/">founder</Link>, a CTO and an engineering leader, and I still like being close to the work of building a product. A lot of effort sits between an idea and something useful: decisions nobody sees, an edge case hiding in the thousandth record, and features that work and still need to change. They also keep me close to the problems engineers and product teams deal with every day.</p>
         <p>None of the three is finished. FedPath is in private beta. VeloWise keeps changing as I find better ways to explain a sprint. Trading Research Lab may end up showing me that simple strategies are hard to beat, and that would be worth learning too.</p>
       </section>
     </>
@@ -94,8 +94,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What keeps me building</h2>
       <div className="post__close-copy">
-        <p className="lead">I’m not building these to show how much technology I can use. I enjoy solving problems, learning something new, and watching an idea turn into something that helps someone.</p>
-        <p className="post__close-principle">Each project starts with an idea, and the part I enjoy most is working out what the product should actually do.</p>
+        <p className="lead">I build these because I like working out what a product should actually do.</p>
         <div className="post__close-actions">
           <Link to="/projects/" className="action">See the projects <ArrowRight /></Link>
           <Link to="/contact/" className="link-arrow"><span>Tell me what you’re building</span> <ArrowRight /></Link>

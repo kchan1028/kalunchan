@@ -184,7 +184,7 @@ export default function Body() {
 
       <section id="how" aria-labelledby="how-h">
         <h2 id="how-h" className="post__h2">How I balance speed and quality</h2>
-        <p>I don’t think there is a universal formula. These are the five principles I try to follow.</p>
+        <p>There is no universal formula, so here are the five principles I use.</p>
 
         <h3 className="post__h3">1. Start with the business impact</h3>
         <p>Before deciding how much engineering effort a piece of work deserves, find out why it matters:</p>
@@ -221,7 +221,7 @@ export default function Body() {
 
       <section id="ai" aria-labelledby="ai-h">
         <h2 id="ai-h" className="post__h2">What AI changes about speed and quality</h2>
-        <p>AI-assisted development makes this more interesting. I can now build things in a few hours that used to take me days or even weeks. That is exciting, and it comes with a new risk.</p>
+        <p>AI-assisted development makes this more interesting. I can now build things in a few hours that used to take me days or even weeks. That comes with a new risk.</p>
         <p className="post__answer">AI has made code much cheaper to generate. It hasn’t made code cheaper to understand, validate or maintain, so engineering judgment matters more with AI in the loop, and teams can now create technical debt faster than ever.</p>
         <p>You can generate an entire feature quickly. Someone still has to ask whether it handles the edge cases, follows your security model, avoids unnecessary complexity, solves the actual business problem, and will make sense to whoever reads it six months from now.</p>
         <p>If a team measures productivity by how much code it produces, AI will make those numbers look fantastic, and they may say little about value delivered. I wrote about that gap in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>. The better use is shorter feedback loops: faster tests, quicker exploration of options, less repetitive work.</p>
@@ -244,8 +244,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The goal is sustainable speed</h2>
       <div className="post__close-copy">
-        <p className="lead">I’ve seen teams move incredibly fast for a few weeks and spend months fixing what they shipped. I’ve also seen teams design for so long that the opportunity passed. Sustainable speed means delivering business value quickly without making the next delivery harder. Sometimes that means shipping something imperfect. Sometimes it means slowing down for a critical risk, saying no to complexity, or challenging a deadline because a failure would cost too much. I don’t think that call ever gets easy, however many times you make it. Experience helps you see which tradeoffs are worth making.</p>
-        <p className="post__close-principle">I want the team to ship at a pace it can maintain, with enough room to fix problems and keep the next release manageable.</p>
+        <p className="lead">I’ve seen teams move incredibly fast for a few weeks and spend months fixing what they shipped. I’ve also seen teams design for so long that the opportunity passed. Sustainable speed means delivering business value quickly without making the next delivery harder. Sometimes that means shipping something imperfect. Sometimes it means slowing down for a critical risk, saying no to complexity, or challenging a deadline because a failure would cost too much.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through a delivery tradeoff <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

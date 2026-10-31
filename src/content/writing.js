@@ -738,7 +738,7 @@ export const posts = [
     no: '677',
     title: 'I Used to Design Every Screen Myself',
     description:
-      'A founder who designed his own signup forms, dashboards and phone menus on how AI changed UX and UI work, what it still can’t know about your users, and why.',
+      'I designed my own signup forms, dashboards and phone menus. Here is how AI changed UX and UI work and what it still can’t know about your users.',
     summary:
       'Being the designer by default at a bootstrapped startup, the assumptions that turned customers away, what readers, residents and drivers taught later, how I design with an AI assistant now, and the five things that haven’t changed about building for the person using the system.',
     topics: ['Learning', 'AI', 'Founder story'],

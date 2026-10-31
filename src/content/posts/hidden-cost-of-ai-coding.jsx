@@ -253,7 +253,7 @@ export default function Body() {
 
       <section id="reviews" aria-labelledby="reviews-h">
         <h2 id="reviews-h" className="post__h2">The hidden cost of endless AI reviews</h2>
-        <p>Ask an AI agent to review code and it will find something. Another test. A refactor. A helper function. An edge case that can’t happen in your system. Apply the suggestions, ask again, and you’ll get a new list. It never runs out, because “could this be better?” always has an answer.</p>
+        <p>Ask an AI agent to review code and it will find something: another test, a refactor, a helper function, an edge case that can’t happen in your system. Apply the suggestions, ask again, and you’ll get a new list. It never runs out, because “could this be better?” always has an answer.</p>
         <p className="post__answer">More AI reviews don’t always mean better software. Each round costs tokens and time, and the suggestions often add code that someone has to maintain. Software is good enough when it meets the written acceptance criteria, the risky paths are tested, a person who owns it has read it, and the next suggestion wouldn’t change anything for the user.</p>
         <p>That last test matters most. Complexity should earn its place, and I’ve written about <Link to="/writing/hidden-cost-of-software-architecture/">what that complexity costs to run</Link>. A layer the AI suggested still has to be run and maintained by someone on the team.</p>
         <LoopVsPath />
@@ -286,7 +286,6 @@ export default function Body() {
 
       <section id="judgment" aria-labelledby="judgment-h">
         <h2 id="judgment-h" className="post__h2">AI makes engineering judgment more valuable</h2>
-        <p>The most expensive code is code that works and solves the wrong problem. AI makes that code faster to write, so the person who can stop it before it is written matters more.</p>
         <p className="post__answer">Experienced engineers save money with AI mostly by what they don’t ask it to build. They notice an unclear requirement, unneeded complexity, or the wrong architecture before the agent spends hours implementing it.</p>
         <p>In the login example, an experienced engineer would ask questions before any code exists. I would check whether our existing identity provider can handle login, whether text-message resets require another vendor, and whether a module in the current app is enough instead of <Link to="/writing/should-it-be-a-microservice/">a separate service</Link>. Those decisions can remove days of work before we start prompting for an implementation.</p>
         <p>The same judgment shows up after the code is written. An experienced engineer can read an AI’s confident explanation and see that it’s wrong, mostly because they have been wrong in production before. It is also why I care about <Link to="/writing/engineering-work-nobody-needed/">not building work nobody needed</Link>.</p>
@@ -311,7 +310,6 @@ export default function Body() {
 
       <section id="literacy" aria-labelledby="literacy-h">
         <h2 id="literacy-h" className="post__h2">AI literacy vs. domain expertise</h2>
-        <p>Knowing how to run Claude Code, Codex or another agent is a real skill, and it is mostly a skill of steering. Deciding where to go takes knowledge of the field.</p>
         <p className="post__answer">Being good at operating AI coding agents doesn’t make someone a software architect, a marketing strategist or a product leader. AI literacy is knowing how to get output from the tool. Domain expertise is knowing whether the output is right, and what to ask for in the first place.</p>
         <p>Strong teams need both, and they don’t need everyone to have all of it. A good team knows who has the expertise and brings them in early, which is what <Link to="/writing/good-teams-dont-expect-everyone-to-know-everything/">good teams do with knowledge in general</Link>. With AI in the loop, skipping that step costs more, because the wrong work gets built faster.</p>
       </section>
@@ -325,7 +323,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">What AI changes, and what it doesn’t</h2>
       <div className="post__close-copy">
         <p className="lead">AI doesn’t automatically make someone a better engineer, marketer or business strategist. It makes them faster at executing decisions, including bad ones.</p>
-        <p className="post__close-principle">Every engineer can have an AI agent. The advantage comes from a team that knows how to use AI without wasting time, money or engineering judgment.</p>
+        <p className="post__close-principle">Teams get the savings when someone owns the definition of done and the retry limits.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about your team’s AI workflow <ArrowRight /></Link>
           <Link to="/mentorship/" className="link-arrow"><span>How I mentor engineers</span> <ArrowRight /></Link>

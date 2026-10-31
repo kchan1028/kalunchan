@@ -117,7 +117,7 @@ export default function Body() {
       <section id="operations" aria-labelledby="operations-h">
         <h2 id="operations-h" className="post__h2">Performance and operations cover the whole path</h2>
         <p>Slow APIs are rarely slow because of the framework. The usual causes are an N+1 query, a response carrying fields nobody reads, a screen that makes twenty requests where one would do, missing caching, a connection pool that runs dry, or a downstream call with no timeout. Rewriting the service in a faster framework keeps all of those.</p>
-        <p>Run the API as a production service. Track request rate, error rate and latency per endpoint. Write structured logs with a request ID that travels into downstream calls and traces. Make health checks reflect whether the service can do its job. Set rate limits per consumer, and deploy so old and new versions can run side by side during a rollout. When a partner calls at 4 p.m. on a Friday, that’s what lets support answer in minutes.</p>
+        <p>Run the API as a production service. Track request rate, error rate and latency per endpoint. Write structured logs with a request ID that travels into downstream calls and traces. Make health checks reflect whether the service can do its job. Set rate limits per consumer, and deploy so old and new versions can run side by side during a rollout. That is what lets support trace a partner’s failing call from the request ID.</p>
       </section>
 
       <section id="cost" aria-labelledby="cost-h">
@@ -147,9 +147,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Keeping the API dependable</h2>
       <div className="post__close-copy">
-        <p className="lead">Consumers rarely care which framework an API runs on. They care whether it keeps doing what it promised.</p>
+        <p className="lead">Consumers care whether the API keeps its promises, so I put ownership, authorization, retries and compatibility ahead of framework choice.</p>
         <p className="post__close-principle">Consumers need to be able to upgrade on their own schedule, with compatibility they can test and changes they can plan for.</p>
-        <p>Get the ownership, the authorization, the retries and the compatibility right, and the choice of framework becomes one of the easier decisions.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an API design <ArrowRight /></Link>
         </div>

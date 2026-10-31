@@ -71,7 +71,7 @@ export default function Body() {
 
       <section id="trust" aria-labelledby="trust-h">
         <h2 id="trust-h" className="post__h2">When a meeting replaces trust</h2>
-        <p>Some meetings exist because a leader doesn’t have confidence that the work is moving. That’s understandable. If the last project surprised them, they want to see the next problem coming. A recurring meeting is still an expensive way to get that visibility, because it pulls the whole team in so that one person can feel informed. Engineers notice when the check-ins grow after every missed date and never shrink after a run of good ones.</p>
+        <p>Some meetings exist because a leader doesn’t have confidence that the work is moving. If the last project surprised them, they want to see the next problem coming. A recurring meeting is still an expensive way to get that visibility, because it pulls the whole team in so that one person can feel informed. Engineers notice when the check-ins grow after every missed date and never shrink after a run of good ones.</p>
         <p>I don’t think every status meeting signals a lack of trust. A new team, a new leader, a high-stakes launch or a rough patch can all justify closer check-ins for a while. A good standup also helps the team coordinate with itself, which has little to do with oversight. I’ve written about how <Link to="/writing/when-to-add-engineering-process/#trust">process can build trust</Link> and how trust should earn autonomy, so I’ll keep to the part that’s specific to meetings.</p>
         <p>Where possible, visibility should come from the work: clear owners, honest written updates sent before anyone asks, a board that reflects what’s actually happening, and demos of working software. When those exist, the meeting can get shorter or go away, and that change tells the team their reliability was noticed. When oversight stays heavy no matter how a team performs, people learn that the meeting is about control, and some of their energy goes into preparing for it instead of into the work.</p>
       </section>
@@ -129,8 +129,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Information, trust and time</h2>
       <div className="post__close-copy">
-        <p className="lead">I don’t measure engineering leadership by how few meetings a team has. People need the information, the trust and the time to do their jobs, and my part is making sure they have all three. Sometimes that takes a meeting, and sometimes it takes fixing the reason a meeting keeps getting scheduled.</p>
-        <p className="post__close-principle">And sometimes the most useful thing I can do is stop interrupting the people doing the work.</p>
+        <p className="lead">I don’t measure engineering leadership by how few meetings a team has. Sometimes a team needs a meeting, and sometimes it needs the reason a meeting keeps getting scheduled fixed.</p>
+        <p className="post__close-principle">Sometimes the most useful thing I can do is stop interrupting the people doing the work.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through your team’s calendar <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>
