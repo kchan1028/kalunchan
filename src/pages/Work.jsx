@@ -3,6 +3,8 @@ import { cases } from '../content/work';
 import { projects } from '../content/projects';
 import TitleBlock from '../components/TitleBlock';
 import ProjectShot from '../components/ProjectShot';
+import ProjectShowcase from '../components/ProjectShowcase';
+import { showcase } from '../content/showcase';
 import { ArrowOut, ArrowRight } from '../components/Icons';
 
 const chosen = (p) => p.decisions[0].options.find((o) => o.chosen).label;
@@ -14,7 +16,7 @@ export default function Work() {
         section="300"
         title="Projects"
         cells={[
-          { k: 'Shipped', v: `${projects.length}` },
+          { k: 'Shipped', v: `${showcase.length}` },
           { k: 'Case studies', v: `${cases.length}` },
         ]}
       />
@@ -23,9 +25,11 @@ export default function Work() {
           I find the problem, build the product, and stay with it until it works for the people using it.
         </p>
         <p className="page-lead__aside body-copy">
-          Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.
+          Six live sites come first, so you can watch them run. Three of them get the full story below: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.
         </p>
       </div>
+
+      <ProjectShowcase />
 
       <section className="sheet shipped" aria-labelledby="shipped-h" data-coord="310 · Shipped">
         <header className="shipped__head">

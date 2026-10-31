@@ -260,6 +260,9 @@ At 1360×800 and larger, the home layer map stays pinned beside the evidence whi
 ### Live Sites Strip (home)
 The home opening ends on a row of six screenshots in 1px ink frames with square corners, each opening the live site in a new tab, with the domain in blue mono below. The row scrolls sideways and bleeds off the right edge. It sits below the rows the pinned layer map spans.
 
+### Project Showcase (projects)
+Six recorded previews of the live sites sit in a sideways row of ruled frames that snaps card by card and bleeds off the right edge. The front card sits at full strength and the others at 62%, with a 2px blue line and a counter tracking position. With a mouse, hovering or keyboard-focusing a card plays its clip and zooms it 2.5%. Touch devices play only the front card once a swipe settles, with a pause button. Posters are real images in the page, so reduced motion, data saver and failed videos all show the same stills. Clips come from `scripts/record-project-previews.mjs`, and each ends by dissolving into its first frame, which is also its poster.
+
 ### Print-In Motion
 Below the fold, blue fields wipe in from the left, and figures, images and plain section heads wipe in from the top, once each. The title block's head rule draws across on load, and a 2px blue line on the header rule tracks scroll progress. Everything is visible without JavaScript or under reduced motion.
 
