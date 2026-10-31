@@ -573,6 +573,39 @@
   font-variant-numeric: tabular-nums;
 }
 
+.writing-path__read {
+  margin-left: var(--s2);
+  color: var(--ink-3);
+}
+
+.writing-path__next {
+  margin-top: var(--s4);
+}
+
+.writing-paths__memory {
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
+.writing-paths__toggle {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+/* Out of the flow, so it adds no space to the end of a post. */
+.read-marker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
 .writing-chapters {
   margin-top: var(--s5);
   border-bottom: 1px solid var(--rule);
