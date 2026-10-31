@@ -66,6 +66,16 @@ export const careerStages = [
 
 // 003 · Case-study previews: the same five-step flow for each. Outcomes are
 // the ones already published; qualitative where no figure is confirmed.
+// Thumbnail strip under the homepage hero. Each card links to the live site.
+export const builtSites = [
+  { name: 'VeloWise', type: 'Engineering delivery intelligence', url: 'https://getvelowise.com/', domain: 'getvelowise.com', src: '/images/projects/velowise-desktop-1200.webp', alt: 'VeloWise product visual: the headline “See beyond velocity. Understand delivery.” above a chart of work moving from requirements to release.', width: 1200, height: 630 },
+  { name: 'FedPath', type: 'Government contracting platform', url: 'https://gofedpath.com/', domain: 'gofedpath.com', src: '/images/projects/fedpath-desktop-640.webp', alt: 'FedPath home page on desktop, headed “Find government contracts worth pursuing, before you spend hours analyzing them.”', width: 640, height: 400 },
+  { name: 'SurgeIQ', type: 'Cycling training insights', url: 'https://getsurgeiq.com/', domain: 'getsurgeiq.com', src: '/images/projects/surgeiq-desktop-1440.webp', alt: 'SurgeIQ home page on desktop: the headline “Your cycling stats. Free.” beside a watts-per-kilogram demo.', width: 1440, height: 900 },
+  { name: 'Useful Little Tools', type: 'Small-tools playground', url: 'https://usefullittletools.app/', domain: 'usefullittletools.app', src: '/images/projects/tools-desktop-1440.webp', alt: 'Useful Little Tools home page on desktop: the headline “Small developer tools for problems you shouldn’t have to solve twice” and a tool search box.', width: 1440, height: 900 },
+  { name: 'Union City Smog Check', type: 'Local business website', url: 'https://unioncitysmogcheck.com/', domain: 'unioncitysmogcheck.com', src: '/images/projects/smog-desktop-640.webp', alt: 'Union City Smog Check home page on desktop, with the headline and a photo of the station.', width: 640, height: 400 },
+  { name: 'Berkeley Omnium', type: 'Community and event website', url: 'https://berkeleyomnium.com/', domain: 'berkeleyomnium.com', src: '/images/projects/omnium-desktop-640.webp', alt: 'Berkeley Omnium home page on desktop, with the headline over race footage.', width: 640, height: 400 },
+];
+
 export const caseStudies = [
   {
     id: 'snmp', name: 'SNMP capacity forecasting with R', where: 'Carrier network',
