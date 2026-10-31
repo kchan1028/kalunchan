@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
+import { useRealNavigationType } from './usePageTransition';
 import { availability, person } from '../content/profile';
 import { outcomes } from '../content/engineeringLeadership';
 import { ArrowOut, ArrowRight } from './Icons';
@@ -189,7 +190,13 @@ function useDocumentTitle() {
 
 function useScrollReset() {
   const { pathname, hash } = useLocation();
+  const navigationType = useRealNavigationType();
+  const firstRender = useRef(true);
   useEffect(() => {
+    // Back, forward and same-page anchors: the browser restores or moves the scroll itself. Only the first load still lands here.
+    const isFirst = firstRender.current;
+    firstRender.current = false;
+    if (navigationType === 'POP' && !isFirst) return undefined;
     if (!hash) {
       window.scrollTo(0, 0);
       return;

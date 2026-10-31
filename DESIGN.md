@@ -262,6 +262,9 @@ At 1360×800 and larger, the home layer map stays pinned beside the evidence whi
 ### Live Sites Strip (home)
 The home opening ends on a row of six screenshots in 1px ink frames with square corners, each opening the live site in a new tab, with the domain in blue mono below. The row scrolls sideways and bleeds off the right edge. It sits below the rows the pinned layer map spans.
 
+### Writing Journey (/writing/)
+Five acts through the writing under the page's one blue field. At 1100×680 and larger, the field stays pinned on the left (CSS sticky) with a strip of act links at its top; each act's title, principle, proof and figure pass through it while the articles scroll beside them. GSAP ScrollTrigger, loaded only in this layout, adds scroll-linked detail: figure lines draw and their squares fill, the large act number drifts up to 60px each way, article rows rule in. Titles press in once rather than following the scroll. Smaller screens, short screens and reduced motion get a plain document with a slim sticky blue strip of act links instead, and never download GSAP. Figures reuse text from figures in the linked posts, keep their figure numbers, and are hidden below 760px. The nine chapters and every existing anchor live in the library below.
+
 ### Print-In Motion
 Below the fold, blue fields wipe in from the left, and figures, images and plain section heads wipe in from the top, once each. The title block's head rule draws across on load, and a 2px blue line on the header rule tracks scroll progress. Everything is visible without JavaScript or under reduced motion.
 
