@@ -150,7 +150,7 @@ Density is that of a technical manual, not a brochure: generous vertical bands (
 A near-monochrome printed palette (paper, ink, grey rules) with one saturated carrier blue used as a field, not a tint.
 
 ### Primary
-- **Carrier Blue** (`carrier-blue`): the single field per page (home schematic, the current tenure, the open-to panel, the lead case row, the lead capability row, the case-study architecture figure). Also allowed as a small marker: the header coordinate's square, the current nav number chip, the career line's "now" bar and axis end, the chosen decision's state word, link hover on contents rows, focus outlines and text selection.
+- **Carrier Blue** (`carrier-blue`): the single field per page (home schematic, the current tenure, the open-to panel, the lead case row, the lead capability row, the case-study architecture figure). Also allowed as a small marker: the header coordinate's square, the current nav number chip, the career line's "now" bar and axis end, the chosen decision's state word, the hiring focus rule, link hover on contents rows, focus outlines and text selection.
 - **Carrier Blue Deep** (`carrier-blue-deep`): text inside a white-filled accent node on a blue field, where plain blue would read too light.
 
 ### Neutral
@@ -250,6 +250,9 @@ Options listed as ruled rows (state, option, note). Rejected options stay visibl
 
 ### Contents List
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
+
+### Hiring Focus (engineering leadership)
+Ruled buttons above Business impact ask what the reader is hiring for. Choosing one moves the matching results, problems and posts to the top of their sections with a heavier blue rule, and nothing is hidden. The choice lives in `?for=`, so a focused link can be sent to someone; the prerendered page and the canonical URL stay in the default order. No animation: only the order and the rule change.
 
 ### Layer Stack (home)
 At 1360×800 and larger, the home layer map stays pinned beside the evidence while the page scrolls normally. Its layers tilt apart in CSS 3D, light up in turn with their proof, and close flat again. A click selects a layer until the scroll reaches the next one. Smaller screens and reduced motion keep the flat map, which is the one exception to the flat rule and only ever opens while scrolling.
