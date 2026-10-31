@@ -1,7 +1,7 @@
 export const metadata = {
   seoTitle: 'Talking to AI in a Terminal Feels Like DOS Again — Ka Lun Chan',
   dek:
-    'We spent two decades moving away from the command line, and I am back at a prompt, describing what I want in ordinary language to an AI assistant. The interface is familiar. The conversation is not.',
+    'We spent two decades moving away from the command line, and I am back at a prompt, describing what I want in ordinary language to an AI assistant. The interface is familiar, but I describe intent and approve the commands.',
   related: [
     { to: '/writing/from-dos-to-ai-thirty-years-of-technology/', label: 'From DOS to AI: one decade at a time' },
     { to: '/writing/devops-from-expect-scripts-to-ai-agents/', label: 'DevOps from Expect scripts to AI agents' },

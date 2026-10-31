@@ -44,7 +44,7 @@ export default function Body() {
         <h2 id="not-a-rewrite-h" className="post__h2">Modernizing is more than replacing the technology</h2>
         <p>When someone first describes a modernization project, it usually sounds like a technology problem. The framework is old, the interface is hard to use on a phone, deployments are painful, and the plan is to rebuild it on something current. Working on public-sector applications, including systems behind public-sector small business certification programs, taught me that the technology is the easiest part to replace. The hard part is everything the old system does that nobody wrote down.</p>
         <p className="post__answer">Modernizing a public-sector application means replacing or improving its technology while preserving the business rules, data, integrations, security controls and accessibility that people and the agency depend on, without interrupting the service. Most of the work is understanding what the existing system really does, changing it in steps small enough to verify and approve, and leaving the agency with something its own team can operate.</p>
-        <p>I wrote about <Link to="/writing/building-public-sector-applications/">what building public-sector applications taught me</Link> in general. This post is narrower. It is about what changes when the job is to modernize a system people are already using.</p>
+        <p>I wrote about <Link to="/writing/building-public-sector-applications/">what building public-sector applications taught me</Link> in general.</p>
       </section>
 
       <section id="rules" aria-labelledby="rules-h">
@@ -94,7 +94,7 @@ export default function Body() {
       <section id="people" aria-labelledby="people-h">
         <h2 id="people-h" className="post__h2">Who feels the change</h2>
         <p>It is easy to talk about modernization in terms of frameworks and hosting. The people who notice it are a small business owner partway through an application, a reviewer with a queue to clear, and the agency staff who answer questions when something is confusing. A change that makes the code cleaner but moves a reviewer’s most-used action, or renames a status a business owner has been watching for weeks, has a cost the backlog doesn’t show.</p>
-        <p>So I want those users in the plan. They should help confirm behaviour, hear about a change to their workflow before it ships, and be watched for closely after each release. I judge a modernization by whether the people using the service can do what they came to do more easily than before, without the service ever going away. The new stack is how we get there.</p>
+        <p>So I want those users in the plan. They should help confirm behaviour, hear about a change to their workflow before it ships, and be watched for closely after each release. I judge a modernization by whether the people using the service can do what they came to do more easily than before, without the service ever going away.</p>
       </section>
 
       <section id="starting" aria-labelledby="starting-h">
@@ -112,7 +112,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Replace it one piece at a time</h2>
       <div className="post__close-copy">
         <p className="lead">Modernizing a public-sector application is mostly understanding what the old system does and changing it in steps small enough for everyone involved to check.</p>
-        <p className="post__close-principle">Preserve the rules people depend on, move one journey at a time, and leave a system the agency’s team can run.</p>
         <div className="post__close-actions">
           <Link to="/writing/building-public-sector-applications/" className="action">What building public-sector applications taught me <ArrowRight /></Link>
         </div>

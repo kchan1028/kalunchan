@@ -82,7 +82,7 @@ export default function Body() {
     <>
       <section id="familiar" aria-labelledby="familiar-h">
         <h2 id="familiar-h" className="post__h2">The familiar part</h2>
-        <p>Most of my working day now happens in a terminal window, talking to an AI assistant. Claude Code is the one I use most; OpenAI’s Codex CLI does the same job from the same kind of window. A prompt, something typed, text coming back, and then a file changes or a command runs. The first time I noticed how comfortable that felt, I realized why. It is where I started.</p>
+        <p>Most of my working day now happens in a terminal window, talking to an AI assistant. Claude Code is the one I use most; OpenAI’s Codex CLI does the same job from the same kind of window. A prompt, something typed, text coming back, and then a file changes or a command runs. That is why it felt so comfortable the first time I noticed: it is where I started.</p>
         <p>My first computers ran DOS, a story I told in <Link to="/writing/from-dos-to-ai-thirty-years-of-technology/">from DOS to AI</Link>. A blinking cursor, a drive letter, and the understanding that nothing would happen until I typed something correct. Later it was Unix shells, router consoles and a Network Operations Center, where the screen was still text and the work was still typed. We spent the next two decades building graphical interfaces so people would never have to do that. And here I am, back at a prompt, with the satisfaction of making something happen without clicking through a single menu.</p>
         <p className="post__answer">Talking to an AI assistant in a terminal feels like the command line of the DOS and early Unix years because the shape is identical: a prompt, typed instructions, text output, and real effects on the machine. What is different is the language. The old prompt needed exact syntax. The new one accepts intent.</p>
         <Prompts />
@@ -112,13 +112,12 @@ export default function Body() {
         <h2 id="leadership-h" className="post__h2">What it means for the people I lead</h2>
         <p>A more approachable interface is good news for anyone starting out. The command line used to gate the work behind months of memorization, and now a new engineer can be useful in a terminal in their first week. I welcome that without reservation.</p>
         <p>It also moves the bar rather than lowering it. When execution is nearly free, the scarce things are knowing what you want, saying it clearly, and recognizing when what you got is wrong. Reviewing a change the assistant made is the same discipline as reviewing a pull request from a fast colleague who has not been with the company long: trust the work, check the work, and check harder when it touches production. Verifying results, by running the tests, reading the output and looking at the system afterwards, is not a step the assistant can take for you, because it is the step that decides whether you believe the assistant. I wrote about keeping that line in <Link to="/writing/building-software-before-and-after-ai/#hasnt-changed">what hasn’t changed about building software</Link>, and I hold the people I lead to it as much as I hold myself.</p>
-        <p>Faster execution makes clear intent and sound judgment more valuable. That is the whole leadership lesson, and it would have been true of a very fast junior engineer too.</p>
       </section>
 
       <section id="reflection" aria-labelledby="reflection-h">
         <h2 id="reflection-h" className="post__h2">Same prompt, different conversation</h2>
         <p>So the interface feels familiar, and I think the feeling is honest. A prompt and a cursor, text in and text out, a machine that does what the words say. I learned computing that way, kept networks running that way, and automated operations that way with scripts that typed on my behalf.</p>
-        <p>What changed is who the words are for. In DOS and in every shell since, I spoke the machine’s language and the machine did exactly what I said. Now I speak my own language and the assistant works out what I meant, then asks me to confirm what it is about to do. The prompt is the same. The conversation is not. I was never more at home in an interface, and I have never had to pay closer attention to what I say in one.</p>
+        <p>What changed is who the words are for. In DOS and in every shell since, I spoke the machine’s language and the machine did exactly what I said. Now I speak my own language and the assistant works out what I meant, then asks me to confirm what it is about to do. The prompt looks the same, but I now describe intent and approve the commands. I was never more at home in an interface, and I have never had to pay closer attention to what I say in one.</p>
       </section>
     </>
   );
@@ -131,7 +130,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Decades after DOS, I am back at a prompt. The difference is that I describe what I want and read what the assistant proposes before it runs.</p>
         <p className="post__close-principle">Approachable interfaces help people start. Understanding the system, reviewing the change and verifying the result are still the job.</p>
-        <p>That is the habit I carry from the console port to the AI terminal, and the one I ask of every engineer I work with.</p>
         <div className="post__close-actions">
           <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>
         </div>

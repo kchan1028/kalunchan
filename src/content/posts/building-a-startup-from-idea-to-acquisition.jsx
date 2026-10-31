@@ -203,7 +203,7 @@ export default function Body() {
         <p>The company built a global communications platform: VoIP and cloud telecom services for underserved and underbanked communities, including many immigrants who were often poorly served by traditional financial systems. Some customers used the service directly. Others reached it through local businesses that resold it in their own communities and ran on our hosted platform.</p>
         <p>I was a co-founder and the CTO. The platform grew past 400,000 users across South America, Asia and Africa, handled millions of dollars in transactions, and grew revenue to multimillion-dollar levels. In 2013 the company was acquired. I stayed on board after the deal closed, and my part of the story ran until 2024.</p>
         <p>I came into it from networks, not startups. I’d kept a nationwide carrier network running and then run operations for a voice service. I knew a lot about how networks fail. I knew much less about building a company, hiring a team, or deciding which problems were worth solving first.</p>
-        <p>From the outside, the story fits on one line: idea, growth, acquisition. From the inside it was a long run of decisions made with incomplete information, some of them wrong, and a slow change in what my job was. Those are the parts I want to write down.</p>
+        <p>From the outside, the story fits on one line: idea, growth, acquisition. What I want to write down is what that line leaves out: a long run of decisions made with incomplete information, some of them wrong, and a slow change in what my job was.</p>
         <Journey />
       </section>
 
@@ -224,11 +224,7 @@ export default function Body() {
           </ol>
           <figcaption><span className="mono">Fig. 656-2</span> Building it ourselves: an empty rack with the servers still in their boxes, the servers racked, then the back of the racks cabled and running.</figcaption>
         </figure>
-        <p>All of this is happening at once, and all of it is yours:</p>
-        <ul className="post__many">
-          {['Product', 'Engineering', 'Architecture', 'Infrastructure', 'Customers', 'Operations', 'Production problems', 'Business decisions', 'Hiring', 'Priorities'].map((t) => <li key={t}>{t}</li>)}
-        </ul>
-        <p>Nobody hands you a priority list. You decide which of those gets your attention today, knowing the rest will still be there tomorrow.</p>
+        <p>All of it is yours at once, and nobody hands you a priority list. You decide what gets your attention today, knowing the rest will still be there tomorrow.</p>
 
         <h3 className="post__h3">Start with the problem, not the architecture</h3>
         <p>My instinct as an engineer was to start with the system: how it should be structured, how it would scale, what it should be built on. Those questions matter. They just aren’t the first questions. Early on, I didn’t know which parts of the product would matter, which customers would stay, or what they’d use it for. An architecture designed before you know those things is mostly a guess with a diagram attached.</p>
@@ -239,7 +235,6 @@ export default function Body() {
         <p className="post__pull">What is the simplest architecture that solves today’s problem without making tomorrow unnecessarily difficult?</p>
         <p>I didn’t always answer that well. Some things I built more elaborately than the stage called for, and some I built so quickly that we were paying for them long after. But asking the question every time was better than defaulting to either extreme.</p>
         <p>The first data center is a good example of when it worked. We planned it deliberately and kept the tiers clean: web, application and data as separate layers. That wasn’t because we expected to leave. Clean layers were cheap to build and easy to reason about. Later, when we did move to cloud regions on three continents, those tiers moved as units. The care we took early is what made the later change possible.</p>
-        <Note label="Lesson">0→1 engineering is mostly making reasonable decisions with incomplete information, and keeping the expensive ones easy to revisit.</Note>
       </section>
 
       <section id="customers" aria-labelledby="customers-h">
@@ -249,7 +244,7 @@ export default function Body() {
         <p>Assumptions like that are rarely decided on purpose. They creep into a signup form, a payment flow, a fraud rule or a support script because that’s how the people building it live. Then they turn real customers away, and nobody notices, because the customers who were turned away aren’t in the data.</p>
         <p>The reseller channel added a second kind of customer: businesses that sold our service in their own communities and ran on our hosted platform. They needed tools to run their own business, and they needed the platform to keep working for customers who trusted them, not us. Building for both at once taught me that “the user” is rarely one person.</p>
         <p className="post__pull">Build for the person using the system, not for the engineers building it.</p>
-        <p>That sounds obvious. In practice it means questioning defaults you didn’t know you had, and paying more attention to what customers actually do than to what you assumed they would do.</p>
+        <p>In practice that means questioning defaults you didn’t know you had, and paying more attention to what customers actually do than to what you assumed they would do.</p>
       </section>
 
       <section id="business" aria-labelledby="business-h">
@@ -269,7 +264,6 @@ export default function Body() {
         <p>Reliability becomes part of the product. When software handles real transactions for people who may not have much margin, a bug isn’t an engineering inconvenience. A failed payment or a wrong balance is someone’s money. A dropped call is a conversation that didn’t happen.</p>
         <p>Voice made that sharper. Real-time traffic can’t hide behind a cache, and our users were spread across South America, Asia and Africa. Every session from the far side of an ocean paid for the distance in latency and call quality. Users feel geography before they notice any new feature.</p>
         <p>That pushed one of the biggest technical decisions we made: leaving the single data center we’d planned so carefully, and running the full application in cloud regions on three continents, with each user routed to the nearest one. A small engineering team that also owned operations did it with no downtime window, because users were active in every time zone. I’ve written up <Link to="/work/three-continent-platform/">that move from one data center to three continents</Link> as a case study.</p>
-        <Note label="Decision">Plan the first data center deliberately, then leave it when the business outgrows it: one architecture, run in cloud regions on three continents, with users routed by geography.</Note>
         <p>My years in network operations helped here. Most outages aren’t dramatic. They’re a full disk, an expired certificate, a config change nobody reviewed, or a dependency that got slow. What I had to learn was how to build that knowledge into the system and the team, instead of keeping it in my head.</p>
         <figure className="post__photo">
           <img {...photo('founder-router-and-servers')} sizes="(max-width: 599px) 92vw, 416px" width="1280" height="1707" loading="lazy" decoding="async" alt="Racks of Dell and HP servers with a Cisco 7604 router, a laptop resting on top and a monitor on a lower shelf" />
@@ -372,7 +366,7 @@ export default function Body() {
       <section id="acquisition" aria-labelledby="acquisition-h">
         <h2 id="acquisition-h" className="post__h2">The acquisition</h2>
         <p>In 2013, the company was acquired.</p>
-        <p>I’m proud of that. It was real validation that what we built had value to someone else, and it mattered to the people who had bet on us. But I’d be telling the story wrong if I made it sound like the destination we were always heading for. For most of those years the acquisition was one possible outcome among many, and several of the others were much worse.</p>
+        <p>I’m proud of that. It was real validation that what we built had value to someone else, and it mattered to the people who had bet on us. But it wasn’t a destination we were always heading for. For most of those years the acquisition was one possible outcome among many, and several of the others were much worse.</p>
         <p>From the outside, startup stories tend to look like the first line below. From the inside, they look like the second.</p>
         <figure className="paths">
           <figcaption className="journey__cap">
@@ -391,9 +385,8 @@ export default function Body() {
             </ol>
           </div>
         </figure>
-        <p>The second line is closer to how it felt. Most days the outcome was far away, and the next problem was right in front of us.</p>
+        <p>Most days the outcome was far away, and the next problem was right in front of us.</p>
         <p>I stayed on board after the deal closed. An acquisition changes who owns a company. It doesn’t change what customers need from the platform the next morning.</p>
-        <p>The deal mattered. What I learned getting there, and after it, has mattered more.</p>
       </section>
 
       <section id="what-changed" aria-labelledby="what-changed-h">
@@ -445,7 +438,7 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">What I took from it</h2>
       <div className="post__close-copy">
         <p className="lead">As the company grew, my responsibility expanded from making the product work to helping other people build, operate and improve it.</p>
-        <p className="post__close-principle">As the company grew, I had to give other people enough context and ownership to make decisions without waiting for me.</p>
+        <p className="post__close-principle">That meant giving them enough context and ownership to make decisions without waiting for me.</p>
         <p>If you’re at 0→1, or somewhere between 1 and 10 and watching the old ways break, I’m happy to compare notes.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about building or scaling a team <ArrowRight /></Link>

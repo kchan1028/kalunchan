@@ -81,7 +81,7 @@ export default function Body() {
         <p>I like fast-paced environments. I co-founded a startup where we had revenue in under four months, and the pace was a large part of why I loved it. Decisions were made in a hallway conversation, a problem found in the morning was fixed by the afternoon, and the distance between an idea and a customer using it was short. I have worked in growing companies and larger organizations since, and the teams I enjoyed most always had that same quality: they moved.</p>
         <p>Over the years I have learned to separate that from something that looks similar from the outside and feels completely different on the inside. In a fast-paced team, decisions are quick and direction is stable. In a team whose priorities change constantly, decisions are quick and direction is not. The first team moves fast toward something. The second team moves fast, full stop.</p>
         <p className="post__answer">A fast-paced engineering team decides quickly and ships often toward a goal that holds long enough to reach. Constantly changing priorities replace the goal every few days, so the team keeps starting and rarely finishes. Speed comes from short feedback loops and clear direction; it does not come from changing direction often.</p>
-        <p>Everyone in the room usually agrees with that sentence. The difficulty is noticing which one you are in, because both feel busy, and busy feels like progress.</p>
+        <p>The hard part is noticing which one you are in, because both feel busy, and busy feels like progress.</p>
       </section>
 
       <section id="agile" aria-labelledby="agile-h">
@@ -102,13 +102,13 @@ export default function Body() {
         <h2 id="switching-h" className="post__h2">What context switching actually costs</h2>
         <p>Here is an illustrative week, the kind I think most engineers will recognize. Monday, an engineer starts a reporting feature and spends the morning loading the data model into their head. Tuesday, it is paused for an integration a customer asked for. Wednesday, a production issue takes the afternoon. Thursday, the reporting feature is back, but someone has merged a schema change in the meantime, so the morning goes to rebasing and re-reading. Friday, the integration is deprioritized. Five days of effort, and nothing shipped.</p>
         <Week />
-        <p>The visible cost is the unfinished work. The less visible costs are worse. Every restart pays to reload context. Every pause leaves a branch that drifts away from main and gets harder to merge. Every re-plan is a meeting. Half-finished work is also inventory: it has cost money and delivered nothing, and the more of it a team carries, the more it costs to keep track of. And people notice. Engineers who never finish anything stop believing the plan, and a team that does not believe the plan stops raising problems early, because what would be the point. Being busy is not the same as being productive, and starting more work does not mean delivering more value. Engineering capacity is finite, so every new start is paid for by something that is now not finishing.</p>
+        <p>The visible cost is the unfinished work. The less visible costs are worse. Every restart pays to reload context. Every pause leaves a branch that drifts away from main and gets harder to merge. Every re-plan is a meeting. Half-finished work is also inventory: it has cost money and delivered nothing, and the more of it a team carries, the more it costs to keep track of. And people notice. Engineers who never finish anything stop believing the plan, and a team that does not believe the plan stops raising problems early, because what would be the point. Engineering capacity is finite, so every new start is paid for by something that is now not finishing.</p>
       </section>
 
       <section id="urgent" aria-labelledby="urgent-h">
         <h2 id="urgent-h" className="post__h2">Real emergencies and loud requests</h2>
         <p>Some things are urgent. Customers cannot use the product. Data is wrong. Revenue is being lost by the hour. A security problem is open. Those should interrupt anything, and a team that cannot drop everything for them has a different problem.</p>
-        <p>Most requests that arrive marked urgent are important to someone, often for a good reason, and arrived loudly while nothing was on fire. When everything is urgent, nothing is, because the word stops carrying information. I try to sort requests by asking what happens if this waits until we finish what is in flight. If the honest answer is “a customer is blocked”, it goes now. If it is “someone will be disappointed”, it goes into planning, with a date. I wrote about how to ask why a priority changed, and how to tell a strategic shift from a stream of interruptions, in <Link to="/writing/when-everything-is-a-priority/">when everything is a priority</Link>; I will not repeat it here.</p>
+        <p>Most requests that arrive marked urgent are important to someone, often for a good reason, and arrived loudly while nothing was on fire. Calling everything urgent leaves the word with no information. I try to sort requests by asking what happens if this waits until we finish what is in flight. If the honest answer is “a customer is blocked”, it goes now. If it is “someone will be disappointed”, it goes into planning, with a date. I wrote about how to ask why a priority changed, and how to tell a strategic shift from a stream of interruptions, in <Link to="/writing/when-everything-is-a-priority/">when everything is a priority</Link>; I will not repeat it here.</p>
       </section>
 
       <section id="tradeoffs" aria-labelledby="tradeoffs-h">
@@ -116,7 +116,7 @@ export default function Body() {
         <p>The worst thing an engineering leader can do with a new priority is say yes and add it to the pile. It feels supportive, and it hurts the team, because it now carries more than it can finish, and the business believes it is getting everything it asked for. The gap shows up weeks later as a missed date nobody saw coming.</p>
         <p>I ask the requester to choose what should stop so the team can take on the new priority:</p>
         <p className="post__pull">If this becomes our highest priority, what should we stop working on?</p>
-        <p>That question does two things. It treats the request as legitimate, which it usually is. And it puts the cost on the table where the person who owns the business decision can see it. Sometimes the answer is to stop something, and that is fine; the business decided with the facts. Sometimes, seeing the cost, the requester decides it can wait two weeks, and that is fine too. What it prevents is the silent version, where everything is accepted and the team absorbs the impossible. As CTO and in operations roles, I learned that executives almost always prefer to make the tradeoff themselves than to discover later that engineering made it for them. Making tradeoffs visible is part of what I mean by <Link to="/leadership/#cross-functional">working across product and leadership</Link>.</p>
+        <p>It treats the request as legitimate, which it usually is, and it puts the cost on the table where the person who owns the business decision can see it. Sometimes the answer is to stop something, and that is fine; the business decided with the facts. Sometimes, seeing the cost, the requester decides it can wait two weeks, and that is fine too. What it prevents is the silent version, where everything is accepted and the team absorbs the impossible. As CTO and in operations roles, I learned that executives almost always prefer to make the tradeoff themselves than to discover later that engineering made it for them. Making tradeoffs visible is part of what I mean by <Link to="/leadership/#cross-functional">working across product and leadership</Link>.</p>
       </section>
 
       <section id="finish" aria-labelledby="finish-h">
@@ -135,7 +135,7 @@ export default function Body() {
       <section id="learned" aria-labelledby="learned-h">
         <h2 id="learned-h" className="post__h2">What I have learned</h2>
         <p>I have been on both sides of this. As a founder, I was sometimes the person changing the priorities, because a customer called or an opportunity appeared, and I learned the hard way what it did to the people building things. As a CTO and engineering leader, I have been the person explaining to the business why a team that was working hard was not delivering, and more often than not the answer was that it had been asked to start too many things.</p>
-        <p>The balance I aim for has three parts. The business needs flexibility, because markets and customers do change, and a team that cannot respond is a liability. Engineering needs discipline, because finishing is what turns effort into value. And the team needs to see that the two are being balanced honestly, by a leader who will say what something costs and then support whatever the business decides. A fast-paced company still needs clear direction. That direction is the thing that lets a team go fast.</p>
+        <p>The team needs to see the balance handled honestly, by a leader who will say what something costs and then support whatever the business decides. A fast-paced company still needs clear direction. That direction is the thing that lets a team go fast.</p>
       </section>
     </>
   );
@@ -146,9 +146,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Fast toward something</h2>
       <div className="post__close-copy">
-        <p className="lead">A fast-paced engineering team moves quickly toward a clear goal.</p>
-        <p className="post__close-principle">A team with constantly changing priorities may move quickly all day without getting anywhere.</p>
-        <p>Make every priority change a visible tradeoff, finish before starting, and choose a process that fits how often the business really changes its mind.</p>
+        <p className="lead">Make every priority change a visible tradeoff, finish before starting, and choose a process that fits how often the business really changes its mind.</p>
         <div className="post__close-actions">
           <Link to="/leadership/" className="action">How I run engineering <ArrowRight /></Link>
         </div>

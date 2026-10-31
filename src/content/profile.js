@@ -5,7 +5,6 @@ export const person = {
   name: 'Ka Lun Chan',
   short: 'KC',
   role: 'Engineering leader',
-  thesis: 'I build products and the teams that scale them.',
   level:
     'Engineering leader across carrier networks, SaaS, media platforms and government technology. I co-founded a SaaS company and ran engineering through its acquisition. Today I lead architecture and delivery for public-sector and startup clients.',
   linkedin: 'https://www.linkedin.com/in/kchan1288/',
@@ -21,7 +20,7 @@ export const person = {
   email: null,
 };
 
-// Entity summary, headline numbers and call to action (POSITIONING.md).
+// Entity summary and headline numbers (POSITIONING.md).
 // Values still set to a REPLACE_WITH_ placeholder are left out of the site until filled in.
 export const isPlaceholder = (value) => typeof value === 'string' && value.includes('REPLACE_WITH_');
 
@@ -29,17 +28,12 @@ export const entity =
   'Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader and generalist who has worked across every layer of a business, from an IT helpdesk to software architecture. As co-founder and CTO, he built a startup from the ground up to 400,000+ users and an acquisition, and led its team of 30+. He now leads government technology work through Yippify.';
 
 export const headlineNumbers = [
-  { figure: 'Still hands-on', text: 'at every layer of a company, from network operations to CTO' },
+  { figure: 'Still hands-on', text: 'from network operations to CTO' },
   { figure: '400,000+', text: 'users scaled as co-founder and CTO, through an acquisition' },
   { figure: '30+', text: 'in the team I built as co-founder and CTO' },
 ];
 
 export const updated = '[REPLACE_WITH_MONTH YEAR]';
-
-export const availability = {
-  ask: 'Need an engineering leader who has done the work?',
-  text: `From helpdesk calls and data center cabling to product, SEO and an acquisition, I’ve worked every layer of a company. Tell me what you’re building.${isPlaceholder(updated) ? '' : ` Updated ${updated}.`}`,
-};
 
 // One row per tenure, newest first. Five-part impact story:
 // problem → responsibility → decisions → execution → outcome.

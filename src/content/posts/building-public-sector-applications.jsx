@@ -14,7 +14,7 @@ import { ArrowRight } from '../../components/Icons';
 // integrations section describes what we designed for, not a specific incident.
 
 export const toc = [
-  ['different', 'The technology was familiar. Everything around it changed.'],
+  ['different', 'What changed around the software'],
   ['programs', 'Applications that support public-sector programs'],
   ['form', 'A form is rarely just a form'],
   ['fedramp', 'FedRAMP: implementing a control and proving it works'],
@@ -140,7 +140,7 @@ export default function Body() {
   return (
     <>
       <section id="different" aria-labelledby="different-h">
-        <h2 id="different-h" className="post__h2">The technology was familiar. Everything around it changed.</h2>
+        <h2 id="different-h" className="post__h2">What changed around the software</h2>
         <p>After working in software, telecom, startups and engineering leadership, I assumed I had met most of the ways building and running software can be hard. Then I started working on public-sector applications, and it was a different experience, though not because the technology was harder. We were still building web applications, designing APIs, working with databases, deploying infrastructure and troubleshooting production, with the same kinds of frameworks, databases and cloud services I had used elsewhere.</p>
         <p>What changed was everything surrounding the software: the security requirements, accessibility, documentation, change management, operational controls, the authorization process, and even how we were allowed to word a message to a user. Building software for the public sector is not only delivering features. You also have to demonstrate that the software is secure, accessible, maintainable and operated according to the requirements that apply to it, and that changed how I approach engineering.</p>
         <p className="post__answer">Building public-sector applications teaches an engineer that quality has more dimensions than working code. Security has to be demonstrable, accessibility has to be designed in, communication has to be understandable, changes have to be traceable, operations have to be documented, and risk has to be evaluated continuously. None of those is unique to government, and government is where they stop being optional.</p>
@@ -169,7 +169,7 @@ export default function Body() {
       <section id="ato" aria-labelledby="ato-h">
         <h2 id="ato-h" className="post__h2">Authority to Operate: what production-ready means</h2>
         <p>In commercial software, deploying usually comes down to whether the organization believes the system is ready. In government environments the decision is formal. An Authorizing Official evaluates the system’s risk and decides whether to grant an Authority to Operate, an ATO. The engineering team does not make that decision. It contributes to it, by implementing controls, maintaining documentation, addressing findings and providing technical evidence: system security plans, control assessments, risk assessments, plans of action (POA&Ms) for open findings, configuration management, vulnerability management, continuous monitoring, incident response procedures and contingency plans.</p>
-        <p>What struck me was how closely that work sits on top of ordinary engineering. A deployment pipeline is no longer only a way to ship code. It is the record of what changed, when and by whom. Logging is no longer only for troubleshooting. It supports auditability, security investigations and continuous monitoring. Infrastructure configuration is no longer only a DevOps concern. It is part of the system’s documented security posture. Production readiness means more than the application working. It means the organization can show that the risks are understood and managed, and the engineering has to produce that showing as a by-product of doing the work well.</p>
+        <p>What struck me was how closely that work sits on top of ordinary engineering. A deployment pipeline is also the record of what changed, when and by whom. Logging supports auditability, security investigations and continuous monitoring as well as troubleshooting, and infrastructure configuration is part of the system’s documented security posture. Production readiness means more than the application working. It means the organization can show that the risks are understood and managed, and the engineering has to produce that showing as a by-product of doing the work well.</p>
       </section>
 
       <section id="section-508" aria-labelledby="section-508-h">
@@ -189,7 +189,7 @@ export default function Body() {
         <p>Government security requirements reach into architecture, and access control is the clearest case. A typical application starts with a few roles. A government system may need permissions by program responsibility, organizational boundary and specific action: who can view an application, who can edit it, who can approve or reject it, who can open a sensitive document, who can export, and what happens when someone’s responsibilities change. Those decisions land in backend authorization, API design, database access and frontend behaviour at the same time.</p>
         <p>Authentication tells the system who is signed in. Authorization decides what that person may do with this application, this document and this field, and it is where most of the design work sits. The data is the reason it matters. A certification application can hold ownership details, financial statements, tax returns and personal information about the owners, and a business owner who uploads those is trusting that only the people who need them will see them.</p>
         <p>Hiding a button in the interface does not stop anyone from calling the API. Authorization is enforced on the server, on every request, against the specific record, the point I made in <Link to="/writing/api-architecture-lessons/#security">API architecture lessons</Link>. Every endpoint is a front door, and the frontend is only one of the clients that can knock on it. Least privilege applies to the system as much as to people: a reviewer sees the applications assigned to their program, a service account reads the storage it needs and nothing else, and access to production data is the exception, with a record of who asked and why.</p>
-        <p>Audit logging asks its own questions: which actions must be recorded, what each record captures, and how the records are protected from the people they describe. A useful entry says who did what to which record, when, and what changed, and it lives where the person acting cannot edit it. Those records are also security evidence. When an assessor asks how you know only authorized people changed an application’s status, the answer should be a query someone can run. Security requirements are never isolated tasks on a backlog. They shape the system.</p>
+        <p>Audit logging asks its own questions: which actions must be recorded, what each record captures, and how the records are protected from the people they describe. A useful entry says who did what to which record, when, and what changed, and it lives where the person acting cannot edit it. Those records are also security evidence. When an assessor asks how you know only authorized people changed an application’s status, the answer should be a query someone can run.</p>
       </section>
 
       <section id="integrations" aria-labelledby="integrations-h">
@@ -204,7 +204,7 @@ export default function Body() {
           <li>Record what the other system returned and when. Months later a reviewer may need to know why an application showed what it did, and “the other system said so” only helps if you kept what it said.</li>
           <li>Tell the user plainly when a dependency is down, what it means for them, and that their work is saved.</li>
         </ul>
-        <p>Testing follows the same assumption. Contract tests against recorded responses catch changes in the shape of the data. Test environments for external systems often differ from production in data and availability, so the plan has to say what can be tested where and what will only be confirmed after release. Defensive programming here is an honest reading of the situation: the other system will change, and it won’t always tell you first.</p>
+        <p>Testing follows the same assumption. Contract tests against recorded responses catch changes in the shape of the data. Test environments for external systems often differ from production in data and availability, so the plan has to say what can be tested where and what will only be confirmed after release. The other system will change, and it won’t always tell you first.</p>
       </section>
 
       <section id="monitoring" aria-labelledby="monitoring-h">
@@ -222,7 +222,7 @@ export default function Body() {
 
       <section id="leadership" aria-labelledby="leadership-h">
         <h2 id="leadership-h" className="post__h2">What it taught me about leadership</h2>
-        <p>Most of my career was spent where speed and flexibility were essential, and startups still need to deliver fast with little. Government work adds accountability, accessibility, security and operational control. I have learned the two are not opposites. You can build efficiently with strong engineering discipline, and it takes planning: security requirements identified early, accessibility in the acceptance criteria, documentation that evolves with the system, testing that covers the non-functional requirements as well as the functional ones, and a team that understands why each requirement exists.</p>
+        <p>Most of my career was spent where speed and flexibility were essential, and startups still need to deliver fast with little. Government work adds accountability, accessibility, security and operational control. You can build efficiently with strong engineering discipline if you plan for it: security requirements identified early, accessibility in the acceptance criteria, documentation that evolves with the system, testing that covers the non-functional requirements as well as the functional ones, and a team that understands why each requirement exists.</p>
         <p>As an engineering leader I see my job as helping developers work within those constraints, which means explaining what problem a process solves rather than announcing another process. Engineers who understand the purpose implement the requirement well and find the ways to make the workflow lighter. The ones who were only told to comply do the minimum and resent it, and the system is worse for it. I wrote about how I try to run that conversation in <Link to="/leadership/">how I run engineering</Link>.</p>
         <p>A few habits did more than anything else to keep delivery steady in that environment:</p>
         <ul className="post__list">
@@ -253,7 +253,6 @@ export default function Body() {
           <li>On an enterprise platform, before estimating a “small” change, map which workflows, reports and records it touches.</li>
           <li>In a regulated environment, plan the evidence with the feature and let the pipeline produce it, so compliance is a by-product of delivery rather than a project at the end.</li>
         </ul>
-        <p>Writing the code is one part of the job. The rest is making the system secure, maintainable, reliable and understandable, and suited to the people who depend on it. Government work made that harder to forget, and it is what I will carry into whatever I build next.</p>
       </section>
     </>
   );
@@ -266,7 +265,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Public-sector applications made me more deliberate about security evidence, accessibility and the records we keep of a change. Those requirements affect how the team builds the software from the start.</p>
         <p className="post__close-principle">Plan for the evidence from the first sprint, and make sure the team knows why each control exists.</p>
-        <p>That is how I lead engineering in regulated environments, and the same discipline, at the right level of rigor, makes commercial software better too.</p>
         <div className="post__close-actions">
           <Link to="/writing/modernizing-public-sector-applications/" className="action">Modernizing public-sector applications <ArrowRight /></Link>
         </div>

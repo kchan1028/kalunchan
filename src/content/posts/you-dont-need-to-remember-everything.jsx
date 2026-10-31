@@ -63,9 +63,9 @@ export default function Body() {
     <>
       <section id="still-look-things-up" aria-labelledby="still-look-things-up-h">
         <h2 id="still-look-things-up-h" className="post__h2">I still look things up, every week</h2>
-        <p>I’ve worked with Python and Django, Ruby on Rails, React and Next.js, SQL databases, Git, AWS, Docker, Kafka, APIs, authentication and distributed systems. I’ve been a co-founder and CTO, led teams, and reviewed more pull requests than I could count. I still open the docs for things I’ve done hundreds of times.</p>
+        <p>I’ve been a co-founder and CTO, led teams, and reviewed more pull requests than I could count. I still open the docs for things I’ve done hundreds of times.</p>
         <p>Earlier in my career, I treated that as a gap I needed to close. If a senior engineer had to search for how to rebase onto a different branch, what did that say about them? It took me years to see it the other way around. The engineers I trusted most looked things up constantly. They just knew exactly what to look for, and they could tell quickly when the answer they found was wrong.</p>
-        <p>Here’s a fairly honest list of things I’ve looked up recently, next to the things I didn’t need to.</p>
+        <p>Here are things I’ve looked up recently, next to the things I didn’t need to.</p>
         <figure className="post__figure">
           <table className="post__table">
             <caption>
@@ -105,7 +105,6 @@ export default function Body() {
         <p>If you forget syntax, you find out immediately. The code doesn’t compile, the command errors, the test fails. You look it up and move on in a few minutes.</p>
         <p>If you don’t understand the system, you often don’t find out at all, at least not right away. The code runs. The tests pass. Then it meets real traffic, real data or a real failure, and it behaves in a way you didn’t predict.</p>
         <p>A pattern I’ve run into more than once is a Kafka consumer group that keeps rebalancing under load. Messages get processed twice, lag climbs, and the logs fill up with partition reassignments. I don’t keep the exact property names in my head. But I know that if a consumer takes too long between polls, the group decides it’s dead and hands its partitions to someone else. That gives me the right question to ask. From there, finding <code>max.poll.interval.ms</code> and <code>max.poll.records</code> takes a minute, and so does checking whether offsets are committed before or after the work is done.</p>
-        <p>Understanding tells you where to look. Search tells you the exact words. You need both, but only one of them is hard to replace.</p>
       </section>
 
       <section id="fundamentals" aria-labelledby="fundamentals-h">
@@ -142,7 +141,7 @@ export default function Body() {
       <section id="senior-engineers" aria-labelledby="senior-engineers-h">
         <h2 id="senior-engineers-h" className="post__h2">What senior software engineers need to know keeps growing</h2>
         <p>Early on, I thought seniority meant knowing more about the code. It does, but that turned out to be the smaller part.</p>
-        <p>As you move into senior, staff and leadership roles, the list of things you need to understand gets wider, not narrower:</p>
+        <p>As you move into senior, staff and leadership roles, the list of things you need to understand gets wider:</p>
         <dl className="post__terms">
           <div><dt>Architecture</dt><dd>How the pieces fit, what it will cost to change them later, and <Link to="/writing/should-it-be-a-microservice/">whether a piece should be its own service at all</Link>.</dd></div>
           <div><dt>Security</dt><dd>Threat models, data exposure, and who can do what.</dd></div>
@@ -172,16 +171,15 @@ export default function Body() {
           <li>Decide whether it fits the system. Code that works in isolation can still be wrong for your architecture, your team or your security model.</li>
         </ul>
         <p>I’ve seen generated code that looked clean and would pass a quick review: a Django view that ran one query per row once real data showed up, a JWT check that never validated the audience claim, a Kafka consumer that committed offsets before the work was done. Each one would have worked in a demo. Each one is the kind of thing you only catch if you already understand how the system behaves. I wrote more about that risk in <Link to="/writing/from-aol-to-ai-lowering-the-barrier/#fundamentals">whether developers will forget the fundamentals</Link> as AI lowers the barrier to building software.</p>
-        <p className="post__pull">So I think AI makes understanding more important. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
+        <p className="post__pull">I think AI makes understanding more important. When information gets easier to retrieve, the scarce skill is knowing what to do with it: which answer to trust, which to question, and which to throw away.</p>
       </section>
 
       <section id="small-tools" aria-labelledby="small-tools-h">
         <h2 id="small-tools-h" className="post__h2">Why I build small tools</h2>
-        <p>There’s a thought I have a lot. I keep looking this up. Or I keep working this out by hand, drawing the same diagram on a whiteboard, or explaining the same idea to someone new.</p>
-        <p>At some point I stop and ask: <em>why don’t I just build a small tool for this?</em></p>
+        <p>When I keep looking something up, working it out by hand, drawing the same diagram on a whiteboard, or explaining the same idea to someone new, I eventually ask: <em>why don’t I just build a small tool for this?</em></p>
         <p>That habit is a big part of why I build side projects like <a href={ult.url}>Useful Little Tools</a>, a collection of small, focused browser tools. Some started because I needed a quick answer and didn’t want to open a spreadsheet again. Others started because I wanted to understand something properly, and building it was the fastest way to find the gaps in what I thought I knew. The longer story of how I got from bookmarks to building them is in <Link to="/writing/why-i-build-my-own-developer-tools/">why I build my own developer tools</Link>.</p>
         <p>Small tools are a good way to learn because they’re honest. You can’t hand-wave a calculation you have to implement. You find out quickly which edge cases you forgot, which formula you only half remembered, and what you assumed without checking.</p>
-        <p>They pay off three ways. I learn something while building them. I have something to reuse the next time the problem comes up. And now and then someone else hits the same problem, finds the tool, and saves themselves twenty minutes. For larger systems I write up the decisions instead, like the case studies on my <Link to="/projects/">projects</Link> page.</p>
+        <p>I learn something while building them, I have something to reuse the next time the problem comes up, and now and then someone else finds the tool and saves themselves twenty minutes. For larger systems I write up the decisions instead, like the case studies on my <Link to="/projects/">projects</Link> page.</p>
       </section>
 
       <section id="keep-learning" aria-labelledby="keep-learning-h">
@@ -193,7 +191,7 @@ export default function Body() {
           <li>Write down anything I’ve looked up twice, because if I searched for it twice, I’ll search for it a third time. A short note saves that time.</li>
           <li>Read the source when it matters. Frameworks are just code. Seeing how Django builds a query or how a client library retries teaches more than most articles, including this one.</li>
           <li>Explain it to someone else. <Link to="/mentorship/">Mentoring</Link> is one of the best ways I know to find out what I don’t really understand.</li>
-          <li>Build something small (see above).</li>
+          <li>Build something small.</li>
           <li>Stay curious outside my lane. Some of my most useful lessons came from support tickets, sales calls and budget reviews, not code.</li>
         </ol>
       </section>
@@ -206,14 +204,8 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What I’d tell a newer engineer</h2>
       <div className="post__close-copy">
-        <p className="lead">What makes a strong engineer is mostly this:</p>
-        <ol className="post__close-list">
-          <li>Understanding the fundamentals.</li>
-          <li>Knowing how to find what you need.</li>
-          <li>Recognizing when something doesn’t look right.</li>
-          <li>Continuing to learn.</li>
-        </ol>
-        <p>I still look things up. I expect I always will. The difference is that I no longer read it as a sign I’m behind. It’s part of the job. So is the learning, and that part is never finished.</p>
+        <p className="lead">Learn the fundamentals, know how to find what you need, and pay attention when something doesn’t look right.</p>
+        <p>I still look things up, and I expect I always will. I just no longer read it as a sign I’m behind.</p>
       </div>
     </>
   );

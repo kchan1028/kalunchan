@@ -291,7 +291,7 @@ export default function Body({ metadata: { sources } }) {
             { q: 'How has my climbing volume changed over the last six weeks?' },
           ]}
         />
-        <p>This guide shows the three ways to connect it (in Claude, from Strava, or in Claude Code), what happens when you ask a question, and the questions I think are worth asking. It also covers the limits, because a few of them change how much you should trust an answer.</p>
+        <p>This guide shows the three ways to connect it (in Claude, from Strava, or in Claude Code), what happens when you ask a question, and the questions I think are worth asking. A few of the limits change how much you should trust an answer, so I cover those too.</p>
       </section>
 
       <section id="what-is-it" aria-labelledby="what-is-it-h">
@@ -401,7 +401,7 @@ export default function Body({ metadata: { sources } }) {
         />
         <p>Every time you ask a training question, five things happen. Pick an example to see how the tool calls change with the question:</p>
         <Flow />
-        <p>Claude asks for what each question needs, when it needs it, and it can ask again when you follow up. The connection stays available for the whole conversation, so the next question can build on the last one. It’s a small, concrete example of what makes MCP interesting, which I come back to <a href="#learning-mcp">at the end</a>.</p>
+        <p>Claude asks for what each question needs, when it needs it, and it can ask again when you follow up. It’s a small, concrete example of what makes MCP interesting, which I come back to <a href="#learning-mcp">at the end</a>.</p>
       </section>
 
       <section id="questions" aria-labelledby="questions-h">

@@ -250,7 +250,7 @@ export default function Body() {
       <section id="slow" aria-labelledby="slow-h">
         <h2 id="slow-h" className="post__h2">The goal isn’t to learn everything faster</h2>
         <p>AI makes information so easy to get that it’s tempting to jump from one subject to the next without staying long enough to understand any of them. I’ve felt that pull. There’s always another interesting tool.</p>
-        <p>Reading more doesn’t mean remembering more. Sometimes the most useful thing I can do is stop asking questions and think. Or write a small piece of code myself, explain a concept with no help, or come back the next day to see whether I still understand it. I don’t try to <Link to="/writing/you-dont-need-to-remember-everything/">remember everything</Link>, but I do want to understand what I use.</p>
+        <p>Reading more doesn’t mean remembering more. Sometimes the most useful thing I can do is stop asking questions and think, write a small piece of code myself, explain a concept with no help, or come back the next day to see whether I still understand it. I don’t try to <Link to="/writing/you-dont-need-to-remember-everything/">remember everything</Link>, but I do want to understand what I use.</p>
         <p className="post__answer">AI can speed up learning, but I still have to do the learning. I try to put my effort into the parts that build understanding and let AI take the rest.</p>
       </section>
     </>
@@ -263,7 +263,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">AI should make us better engineers</h2>
       <div className="post__close-copy">
         <p className="lead">I’m probably learning new technologies faster now than at any other point in my career. It takes less time to find an explanation, try it and get feedback on what I misunderstood. I use the full path for unfamiliar or complex subjects and the faster one when I know the fundamentals, and on both I stay responsible for understanding the result. That matters most for engineers early in their careers. Generating code keeps getting easier. Understanding systems, spotting risks, making sound architecture decisions and solving unfamiliar problems are still worth a great deal.</p>
-        <p className="post__close-principle">I want AI to help me think better, learn faster and build things I couldn’t have built as quickly before.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re learning <ArrowRight /></Link>
           <Link to="/writing/why-i-still-write-code/" className="link-arrow"><span>Why I still write code</span> <ArrowRight /></Link>

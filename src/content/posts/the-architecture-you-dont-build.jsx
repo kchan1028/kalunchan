@@ -18,7 +18,7 @@ export default function Body() {
       <h2 id="before-design-h" className="post__h2">Just because we can build it</h2>
       <p>I enjoy the technical part of architecture. Figuring out how systems fit together, where the boundaries belong, and how something will behave under load is interesting work. It’s easy to keep going once a design starts taking shape.</p>
       <p>That enthusiasm needs a check. A new service can be well designed, thoroughly tested, and entirely unnecessary. We can do excellent implementation work on a decision we should have questioned earlier.</p>
-      <p>My background includes carrier networks and VoIP infrastructure, building and scaling SaaS applications, monoliths, microservices, and AWS. Across those environments, the business needed different things from the technology. A call in progress has constraints that a report someone reads tomorrow morning doesn’t. Treating both as the same kind of architecture problem wastes effort and can make the important requirements harder to meet.</p>
+      <p>I’ve worked on carrier VoIP infrastructure and on SaaS applications, and the business needed very different things from the technology in each. A call in progress has constraints that a report someone reads tomorrow morning doesn’t. Treating both as the same kind of architecture problem wastes effort and can make the important requirements harder to meet.</p>
       <p className="post__answer">Good architecture solves the business problem with the least complexity necessary to meet its requirements. Reliability, security and recovery belong in those requirements. So does the team’s ability to keep the system running.</p>
       <p>Before discussing tools, I want to know who needs the result, how quickly they need it, and what happens when it’s late or wrong. Those answers often remove whole parts of a proposed design.</p>
     </section>
@@ -81,9 +81,8 @@ export function Closing() {
   return <>
     <h2 id="closing-h" className="post__close-title h2">What does the technology need to do?</h2>
     <div className="post__close-copy">
-      <p className="lead">Early in my career, I was interested in what technology could do. Over time, I’ve become more interested in what technology actually needs to do.</p>
+      <p className="lead">These days I ask whether the technology needs to do the job at all before I ask how to build it.</p>
       <p>I still enjoy building systems. I also want the engineers who inherit them to spend their time improving the product, with an architecture they can understand and operate. Every component we add needs to earn the attention it will keep asking for.</p>
-      <p className="post__close-principle">Sometimes the best architecture is the one we decided we didn’t need to build.</p>
     </div>
   </>;
 }

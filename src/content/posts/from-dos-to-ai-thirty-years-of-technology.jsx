@@ -115,27 +115,26 @@ export default function Body() {
         <h2 id="cloud-h" className="post__h2">Cloud changed how we paid for infrastructure</h2>
         <p>The way we built and ran software changed too. Early in my career, deploying infrastructure meant physically installing servers, configuring switches, routers and firewalls, and maintaining the equipment in a data center. I have done that work, including <Link to="/writing/building-a-startup-from-idea-to-acquisition/#zero-to-one">racking and cabling the servers for my own company</Link>, and I remember how many things could go wrong between the loading dock and a working service.</p>
         <p>Cloud services were already emerging in the previous decade, and became a much larger part of how we built systems in the 2010s. We could rent computing capacity without buying and installing the machines first. Infrastructure as code, containers and delivery pipelines developed alongside that shift. They solved different problems, but together they reduced much of the setup and deployment work.</p>
-        <p>The underlying problems did not go away. You still need networking, security, monitoring, and an understanding of how your applications talk to each other. What changed is the tooling and the amount of automation around those problems. When I look at modern DevOps practice I think of the <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">shell and Expect scripts I wrote to automate network deployments</Link> years ago. Different tools, same goal: make systems reliable and take the repetitive work off people.</p>
+        <p>The underlying problems did not go away. You still need networking, security, monitoring, and an understanding of how your applications talk to each other. What changed is the tooling and the amount of automation around those problems. When I look at modern DevOps practice I think of the <Link to="/writing/devops-from-expect-scripts-to-ai-agents/">shell and Expect scripts I wrote to automate network deployments</Link> years ago. The goal then and now was making systems reliable and taking repetitive work off people.</p>
       </section>
 
       <section id="ai" aria-labelledby="ai-h">
         <h2 id="ai-h" className="post__h2">AI is making software easier to create</h2>
         <p>Since the DOS days I have gone from writing software to building systems and leading engineering teams. Now I can describe what I want to build and an AI assistant will draft code, explain an unfamiliar system or help me troubleshoot. For some tasks, work that took days takes hours. For others, checking and correcting the output takes longer than I expected.</p>
         <p>That makes software creation accessible to people who might never have started with a programming language. They can try an idea and get something working. Turning that experiment into a service people depend on still requires understanding the data, security, failure cases and cost. The assistant can help investigate those things, but someone has to check the answers. I wrote about how it changed my own work in <Link to="/writing/building-software-before-and-after-ai/">building software before and after AI</Link>.</p>
-        <p>I see a connection to the earlier shifts. AOL made getting online easier. Open source let a small team build on software it could not have written alone. Faster networks, cheaper computing and cloud services reduced the cost of trying an idea. AI lowers another barrier: the amount of implementation work needed to get started. As that work gets easier, I spend more of my time deciding what is worth building and whether the result is sound.</p>
+        <p>AI lowers another barrier: the amount of implementation work needed to get started. As that work gets easier, I spend more of my time deciding what is worth building and whether the result is sound.</p>
       </section>
 
       <section id="decades" aria-labelledby="decades-h">
         <h2 id="decades-h" className="post__h2">The changes overlapped</h2>
         <Decades />
-        <p>The decades are a rough way to organize my memories. These technologies overlapped, and adoption varied depending on where you lived and what you could afford. Each generation lowered some barrier to entry while leaving other problems for us to solve. A small team could attempt more than it could before, and people found uses for the tools that their creators had not planned.</p>
+        <p>These technologies overlapped, and adoption varied depending on where you lived and what you could afford. Each generation lowered some barrier to entry while leaving other problems for us to solve. A small team could attempt more than it could before, and people found uses for the tools that their creators had not planned.</p>
       </section>
 
       <section id="keep-learning" aria-labelledby="keep-learning-h">
         <h2 id="keep-learning-h" className="post__h2">Use the assistant to learn the system</h2>
         <p>My concern is what happens when a developer can produce working code without understanding much of it. I learned by reading manuals, troubleshooting networks and following failures through systems I had to keep running. Those experiences gave me something to compare a proposed solution against. If an assistant handles every difficult step, a newer engineer may miss the chance to build that understanding.</p>
         <p>I think AI can help with that learning if we use it deliberately. Ask it to explain why the code works, follow the request through the system, and check the explanation against documentation and experiments. Try changing an assumption and see what breaks. A passing test is useful, but I still want the engineer to explain what it proves and what it leaves unchecked. I have gone from DOS to cloud infrastructure and AI, and understanding how systems behave has remained useful through every change.</p>
-        <p>I still enjoy learning a new tool and finding out whether it helps with a real problem. AI gives more people a chance to do that, including people whose ideas I would never have thought of. I cannot predict what they will build. That is part of what makes me curious to keep working with it.</p>
       </section>
     </>
   );
@@ -148,7 +147,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">When I was dialing into BBSs, I could not have pictured the voice platforms or cloud systems I would later build. I expect my view of AI is just as incomplete.</p>
         <p className="post__close-principle">For now, I want to use it to understand unfamiliar systems and try ideas that used to take too much time.</p>
-        <p>I will keep checking the work as I go. Having better tools makes that easier in some ways, and gives me more to learn in others.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
         </div>

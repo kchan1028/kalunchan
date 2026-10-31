@@ -90,7 +90,6 @@ export default function Body() {
 
       <section id="boundaries" aria-labelledby="boundaries-h">
         <h2 id="boundaries-h" className="post__h2">A phone call crossed several system boundaries</h2>
-        <p>Each component in a VoIP platform has a different job, and each one fails differently.</p>
         <p>OpenSIPS handles SIP signaling: the messages that set up, change and end a call. It decides where a call request should go and passes it along. The audio doesn’t flow through it. The media path, carried over RTP, is a separate stream that can take a different route, which is why a call can be set up perfectly and still have one-way audio.</p>
         <p>Users behind home and office NAT routers added another piece. MediaProxy relayed their audio, so for many calls the media went through a relay we operated. That made the relay a capacity concern, because it carried the full audio of every relayed call, and another place a call could fail while signaling looked fine.</p>
         <p>Asterisk handles the call itself. Its dialplan decides what happens step by step, and it can terminate and process media for features like prompts and recordings. When the dialplan needs a business decision, it can run an AGI script. With plain AGI, Asterisk starts the script as a local process and talks to it over standard input and output. That script is where Python could check an account, look up a rate or choose a route from backend data.</p>
@@ -186,8 +185,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Boundaries and failure first, tools second</h2>
       <div className="post__close-copy">
         <p className="lead">VoIP taught me to look at a system through what crosses its boundaries and what happens when one of them fails.</p>
-        <p className="post__close-principle">I pick the tools last, after I know who owns each piece and how the system gets back up when one fails.</p>
-        <p>That order still shapes my architecture decisions. The tools are much better now, and I use them gladly, once those questions have answers.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an architecture decision <ArrowRight /></Link>
         </div>

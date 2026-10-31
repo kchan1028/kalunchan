@@ -41,7 +41,7 @@ export default function Body() {
 
       <section id="one-person-fast" aria-labelledby="one-person-fast-h">
         <h2 id="one-person-fast-h" className="post__h2">Fast for one person, slow for the team</h2>
-        <p>The developer who ships the whole feature in one PR feels productive, and in a narrow sense they were. Then two reviewers lose an afternoon to it, QA can’t tell which behaviors to test, the release slips while someone untangles a conflict, and a bug that would have been obvious in a small change goes out with everything else. Add it up and the fast path was the slow one. Individual coding speed is easy to see and easy to celebrate. Team throughput is what the business actually gets.</p>
+        <p>The developer who ships the whole feature in one PR feels productive, and in a narrow sense they were. Then two reviewers lose an afternoon to it, QA can’t tell which behaviors to test, the release slips while someone untangles a conflict, and a bug that would have been obvious in a small change goes out with everything else. Add it up and the fast path was the slow one.</p>
       </section>
 
       <section id="not-bureaucracy" aria-labelledby="not-bureaucracy-h">
@@ -52,7 +52,7 @@ export default function Body() {
       <section id="whose-job" aria-labelledby="whose-job-h">
         <h2 id="whose-job-h" className="post__h2">Whose job this is</h2>
         <p>Both of ours. Product managers define increments that are small and still valuable, which is harder than writing one big requirement and far more useful. Engineering leaders help the team cut the implementation into changes they can review and ship. Neither gets to hand a developer a paragraph and hope. It’s the same reason <Link to="/writing/good-teams-dont-expect-everyone-to-know-everything/">good teams don’t expect everyone to know everything</Link>: shape the work so nobody has to.</p>
-        <p>Smaller stories and smaller pull requests solve related but different problems. Stories are about planning, prioritization and delivery. PRs are about review, collaboration and getting the code right. One story often needs several PRs, and that’s fine. What I’m after is less complexity per step and a shorter distance between writing something and finding out whether it works.</p>
+        <p>Smaller stories and smaller pull requests solve related but different problems. Stories are about planning, prioritization and delivery. PRs are about review, collaboration and getting the code right. One story often needs several PRs, and that’s fine.</p>
       </section>
     </>
   );

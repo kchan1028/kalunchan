@@ -98,7 +98,6 @@ export default function Body() {
 
       <section id="reading" aria-labelledby="reading-h">
         <h2 id="reading-h" className="post__h2">Reading carryover by cause</h2>
-        <p>Side by side, the six causes point to very different fixes.</p>
         <figure className="post__figure">
           <table className="post__table">
             <caption>
@@ -142,7 +141,6 @@ export default function Body() {
         <h2 id="not-a-metric-h" className="post__h2">Carryover isn’t a performance metric</h2>
         <p className="post__answer">Sprint carryover shouldn’t be used to judge individual engineers or to compare teams. It reflects planning, dependencies, interruptions and decisions as much as effort. Once it becomes a target, teams learn to commit to less and pad estimates until the number looks fine.</p>
         <p>Comparing carryover across teams is especially misleading. Teams estimate differently, carry different amounts of support work, and depend on different parts of the organization. The team with more carryover might be the one doing the harder, more uncertain work.</p>
-        <p>Used well, carryover is a diagnostic for a team and its leaders. Used as a scorecard, it stops telling you anything true.</p>
       </section>
 
       <section id="wrong-fixes" aria-labelledby="wrong-fixes-h">
@@ -154,7 +152,7 @@ export default function Body() {
           <div><dt>Make sprints longer</dt><dd>Bigger batches take longer to finish and cost more to redirect when something changes.</dd></div>
           <div><dt>Push the team harder</dt><dd>Longer hours mean more lost context, more mistakes and more rework. It might clear one sprint. It won’t change the pattern.</dd></div>
         </dl>
-        <p>This is why the cause matters more than the number. The wrong fix can make the number look better while delivery stays exactly the same.</p>
+        <p>The wrong fix can make the number look better while delivery stays exactly the same.</p>
       </section>
 
       <section id="reporting" aria-labelledby="reporting-h">
@@ -163,7 +161,7 @@ export default function Body() {
         <p>Compare that with this:</p>
         <p className="post__pull">“Five items carried over: two because priorities changed mid-sprint, two because of incident load, and one we underestimated.”</p>
         <p>Now leadership can see which problems are theirs to solve. Two of the five came from decisions above the team. Two came from reliability. Only one is an estimation problem. That’s a much more useful conversation, and a much fairer one.</p>
-        <p>It’s also the first thing I’d want to look at if a company brought me in through <a href={person.yippify}>Yippify</a> to help with unpredictable delivery. Before estimates, before velocity, before any process change: what is the carryover telling us?</p>
+        <p>If a company brought me in through <a href={person.yippify}>Yippify</a> to help with unpredictable delivery, carryover is the first thing I’d look at.</p>
       </section>
 
       <section id="reduce" aria-labelledby="reduce-h">
@@ -188,8 +186,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">The question I ask about carryover</h2>
       <div className="post__close-copy">
-        <p className="lead">Carryover is one of the most honest signals an engineering team produces. Sprint after sprint, it shows where the system around the team is getting in the way. I start by investigating what blocked completion and who can help remove it.</p>
-        <p>The answers point to different owners and different fixes, which is what makes them useful.</p>
+        <p className="lead">Carryover is one of the more honest signals an engineering team produces. Sprint after sprint, it shows where the system around the team is getting in the way. I start by investigating what blocked completion and who can help remove it.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through what your carryover is telling you <ArrowRight /></Link>
           <a href={person.yippify} className="link-arrow"><span>Work with me through Yippify</span> <ArrowOut /></a>

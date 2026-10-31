@@ -42,13 +42,13 @@ export default function Body() {
 
       <section id="first-revenue" aria-labelledby="first-revenue-h">
         <h2 id="first-revenue-h" className="post__h2">The first revenue is a different kind of excitement</h2>
-        <p>Building a product is one challenge. Getting someone to pay for it is another one entirely. You can believe for months that you’ve built something valuable. The first time a customer hands over money for it, the belief stops being yours alone. No launch since has felt quite like that.</p>
+        <p>Getting someone to pay for a product is a different challenge from building it. You can believe for months that you’ve built something valuable. The first time a customer hands over money for it, the belief stops being yours alone. No launch since has felt quite like that.</p>
         <p>It also doesn’t end anything. After the first paying customer you need the second, then the hundredth. You need to improve the product, control expenses, keep the infrastructure up, support the people paying you, and get all of it to where the business sustains itself. Revenue changed how I thought about engineering. A technical decision stopped being about elegance or performance alone. It affected operating cost, whether customers stayed, and whether the company could keep going. Our users were in South America, Asia and Africa, many in communities the big carriers didn’t serve well, and a dropped call wasn’t an abstraction to them.</p>
       </section>
 
       <section id="profitable" aria-labelledby="profitable-h">
         <h2 id="profitable-h" className="post__h2">Profitable doesn’t mean finished</h2>
-        <p>Profitability felt like a finish line and turned out to be a checkpoint. More customers brought more expectations. More traffic brought more infrastructure, and eventually a move out of the data center I had cabled by hand and into the cloud, so users could be served from a region near them at lower cost. Growth brought organizational problems rather than technical ones, and what had worked when the company was small stopped working as it grew.</p>
+        <p>More customers brought more expectations. More traffic brought more infrastructure, and eventually a move out of the data center I had cabled by hand and into the cloud, so users could be served from a region near them at lower cost. Growth brought organizational problems rather than technical ones, and what had worked when the company was small stopped working as it grew.</p>
         <p>The founder’s job changes there, whether or not the founder notices. It stops being doing everything yourself and becomes building the systems, processes and team that run without you in the room. That was harder for me than racking servers ever was, and it’s what I think about most when I <Link to="/mentorship/">mentor engineers who are becoming leads</Link>.</p>
       </section>
 
@@ -61,7 +61,6 @@ export default function Body() {
       <section id="as-a-leader" aria-labelledby="as-a-leader-h">
         <h2 id="as-a-leader-h" className="post__h2">What it changed in me as an engineering leader</h2>
         <p>Because I’ve been the network engineer, the sysadmin, the developer, the designer, the product manager and the person reading the invoices, I understand what each of those teams means when they tell me something is hard. I’ve also learned, usually by paying for it, that engineering decisions have financial consequences, that technology exists to solve a customer’s problem rather than to be admired, and that the most sophisticated solution is often wrong for the company you actually have. Limited resources force you to prioritize, and that discipline is worth keeping when the resources arrive. The <Link to="/writing/software-architecture-lessons-from-different-systems/">architecture lessons that survived</Link> and <Link to="/writing/open-source-voip-distributed-systems-lessons/">what the VoIP platform taught me about distributed systems</Link> have their own posts.</p>
-        <p>The one I hold onto most: a good leader doesn’t need to know everything, but they need to understand how the pieces fit together. A sustainable business matters more than impressive technology. I learned both by being the entire org chart for a while.</p>
       </section>
     </>
   );
@@ -72,8 +71,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Worth more than it paid</h2>
       <div className="post__close-copy">
-        <p className="lead">Not every startup makes its founders wealthy. But building something from nothing, learning as you go, and watching customers pay for something you made is something money doesn’t easily replace.</p>
-        <p className="post__close-principle">I’d do it again, and I’d still price the first server before telling anyone.</p>
+        <p className="lead">I’d do it again, and I’d still price the first server before telling anyone.</p>
         <div className="post__close-actions">
           <Link to="/writing/building-a-startup-from-idea-to-acquisition/" className="action">Read the full founder story <ArrowRight /></Link>
           <Link to="/contact/" className="link-arrow"><span>Talk about building a company or a team</span> <ArrowRight /></Link>

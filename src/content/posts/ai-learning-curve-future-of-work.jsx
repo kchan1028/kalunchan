@@ -62,7 +62,7 @@ export default function Body({ metadata: { sources } }) {
       <section id="access" aria-labelledby="access-h">
         <h2 id="access-h" className="post__h2">Access isn’t the same as knowing how</h2>
         <p>I’ve spent a lot of this year experimenting with AI, and I think it’s great. It writes code, drafts documents, sketches screens and answers questions in fields I don’t work in. Some days it feels like I have a small team sitting in my terminal.</p>
-        <p>What I keep noticing is how different the results are from one person to the next. Two people can use the same tool, on the same subscription, on the same kind of task, and get very different outcomes. One ships something useful. The other spends the afternoon going in circles with a confident assistant.</p>
+        <p>What I keep noticing is how different the results are from one person to the next. Two people can use the same tool, on the same subscription, on the same kind of task, and get very different outcomes. One gets something useful out of it, and the other spends the afternoon going in circles with a confident assistant.</p>
         <p>That shouldn’t surprise anyone who has been in this industry for a while. Every technology I’ve learned had a learning curve. On a carrier network I had to learn router access lists and shell scripting, and neither came easily. Moving a publishing platform onto AWS meant learning a new way to think about capacity and cost. Nobody handed me a login and expected me to be good at it the next day.</p>
         <p>AI takes practice too. Companies need to give people time to learn how to use it, alongside access to the tools.</p>
       </section>
@@ -92,7 +92,7 @@ export default function Body({ metadata: { sources } }) {
           <li>What did we learn, and what do we change next?</li>
         </ul>
         <p>AI can help with all of that: running automated usability checks, clustering feedback, flagging drop-off points. It can’t be the user, though. <a href="https://www.nngroup.com/articles/synthetic-users/" rel="noopener" target="_blank">Nielsen Norman Group</a> found that AI-generated “synthetic users” are useful for generating hypotheses but tend to be overly favorable, and recommends against using them in place of research with real people.</p>
-        <p>The value moves toward knowing whether the experience works, and that takes the same skill it always did: understanding the person on the other side.</p>
+        <p>The value moves toward knowing whether the experience works for the person on the other side.</p>
       </section>
 
       <section id="engineers" aria-labelledby="engineers-h">
@@ -102,7 +102,7 @@ export default function Body({ metadata: { sources } }) {
         <p>I also use AI to generate and run tests, investigate failures and review pull requests. When it writes both the implementation and the tests, I check whether they share a mistaken assumption.</p>
         <SharedAssumption />
         <p>Passing tests feel like proof. They’re only proof that the code does what the tests expect. If the same misunderstanding produced both, nothing in the pipeline compares the code with what the customer asked for. The fix is a human who understands the requirement writing or reviewing the important test cases, especially the edge cases and failure paths.</p>
-        <p>Developers sense this. In <a href="https://survey.stackoverflow.co/2025/ai" rel="noopener" target="_blank">Stack Overflow’s developer survey</a>, the top frustration with AI tools was “solutions that are almost right, but not quite,” picked by 66% of respondents. In <a href="https://survey.stackoverflow.co/2026/ai" rel="noopener" target="_blank">the latest edition</a>, 48% said they trust AI when the answer is easy to validate. Trust follows the ability to check.</p>
+        <p>Developers sense this. In <a href="https://survey.stackoverflow.co/2025/ai" rel="noopener" target="_blank">Stack Overflow’s developer survey</a>, the top frustration with AI tools was “solutions that are almost right, but not quite,” picked by 66% of respondents. In <a href="https://survey.stackoverflow.co/2026/ai" rel="noopener" target="_blank">the latest edition</a>, 48% said they trust AI when the answer is easy to validate.</p>
       </section>
 
       <section id="product" aria-labelledby="product-h">

@@ -87,7 +87,6 @@ export default function Body() {
         <Waves />
         <p>I see it in my own work. With an AI assistant in the terminal, I <Link to="/writing/building-software-before-and-after-ai/#today">build products like FedPath and Useful Little Tools</Link> faster than I could alone, and I <Link to="/writing/how-i-learn-faster-with-ai/">learn an unfamiliar technology</Link> in days instead of weeks.</p>
         <p>Someone who runs a clinic, manages construction projects or works in federal contracting may understand a workflow better than an outside software team. An assistant can help them test an idea before they can justify hiring developers. That first version may be fragile, but it gives them something concrete to evaluate and discuss.</p>
-        <p className="post__answer">The implementation may take less time, while the work of checking permissions, data handling and failure recovery still needs someone’s attention.</p>
       </section>
 
       <section id="fundamentals" aria-labelledby="fundamentals-h">
@@ -101,7 +100,7 @@ export default function Body() {
 
         <h3 className="post__h3">Use AI to understand the system</h3>
         <p>I want developers to use the assistant to explain unfamiliar code, compare approaches and investigate why a fix works. Then check that explanation against documentation or an experiment. Generating a change and understanding it are separate tasks; reviews need to make room for both. I can see how much this could have helped me when I was learning, though I would still have needed to do the work of checking my understanding.</p>
-        <p className="post__answer">AI can handle much of the typing and lookup in programming. Engineers still need to understand system behavior, investigate failures and weigh security, reliability and cost. As implementation gets easier, those decisions account for more of the work I need to do myself.</p>
+        <p className="post__answer">AI can handle much of the typing and lookup in programming. Engineers still need to understand system behavior, investigate failures and weigh security, reliability and cost. As implementation gets easier, those decisions account for more of my own work.</p>
       </section>
 
       <section id="next" aria-labelledby="next-h">
@@ -124,7 +123,6 @@ export default function Body() {
         <p>Keep hiring and developing junior engineers, and design their learning on purpose: debugging without the assistant, explaining their own code in review, owning small pieces end to end. I wrote about <Link to="/writing/why-i-enjoy-mentoring/">why mentoring matters to me</Link>, and it matters more now.</p>
         <p>Keep accountability with people. The engineer who opens the pull request owns the change, whoever drafted it, and “the AI wrote it” doesn’t answer a review question. I think <Link to="/writing/code-review-in-the-ai-era/">code review starts with the plan</Link>, before any code exists.</p>
         <p>Require understanding before merge. If nobody on the team can explain how a change works, it isn’t ready. Knowing <Link to="/writing/recognizing-ai-generated-code/">what AI-generated code tends to get wrong</Link> helps reviewers ask better questions.</p>
-        <p>Hold AI-generated code to the same security, reliability and maintainability standards as any other code. More code, faster, means more surface to protect and more to maintain.</p>
         <p>Hire for reasoning and problem-solving. Ask candidates how they would track down a failure or weigh a tradeoff, and pay less attention to what they’ve memorized. <Link to="/writing/why-hiring-good-engineers-is-so-hard/">Hiring is hard enough</Link> without testing the part AI already does well.</p>
         <p>Balance speed with quality by <Link to="/writing/speed-vs-quality-software-engineering/">matching review to the risk of each change</Link>. A copy change and a change to payments shouldn’t get the same scrutiny, whether a person or a model wrote them.</p>
       </section>
@@ -137,7 +135,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What I want to keep exploring</h2>
       <div className="post__close-copy">
-        <p className="lead">I could not have pictured my later work on voice platforms when I was dialing into BBSs. My view of what AI will make possible is probably just as incomplete. I want to keep trying it on real problems and see where it helps.</p>
+        <p className="lead">My view of what AI will make possible is probably incomplete. I want to keep trying it on real problems and see where it helps.</p>
         <p className="post__close-principle">As a leader, I also want the people using it to understand more of the system by the time they finish. That gives them a better starting point for whatever they build next.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>

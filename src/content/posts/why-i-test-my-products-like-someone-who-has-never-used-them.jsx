@@ -16,7 +16,7 @@ export const toc = [
   ['omnium', 'Berkeley Omnium, for every kind of rider'],
   ['working', 'Working and usable are different tests'],
   ['complexity', 'Why I push back on complexity'],
-  ['real-people', 'Before real people, not instead of them'],
+  ['real-people', 'Walkthroughs come before real users'],
 ];
 
 // ---------- Fig. 722-1: the people I test as ----------
@@ -86,12 +86,12 @@ export default function Body() {
 
       <section id="complexity" aria-labelledby="complexity-h">
         <h2 id="complexity-h" className="post__h2">Why I push back on complexity</h2>
-        <p>Testing this way is a big part of why I challenge complexity in planning, reviews and design. When a simpler approach reaches the same goal, everyone gains. Users understand the product faster. Developers have less to build, QA has fewer complicated scenarios to test, and the team can ship earlier and hear from real users sooner. There’s also less to maintain afterward.</p>
+        <p>Testing this way is a big part of why I challenge complexity in planning, reviews and design. When a simpler approach reaches the same goal, users understand the product faster, and the team has less to build, test and maintain, so it can ship earlier and hear from real users sooner.</p>
         <p>Simpler still has to do the job. If a contractor needs a compliance matrix, removing it to make a screen look cleaner helps nobody. What I want to cut is the effort and confusion that don’t need to be there: the extra step that exists because it was easy to build, the setting nobody asked for, the label that only makes sense inside the team. I wrote more about that habit in <Link to="/writing/what-engineering-leadership-actually-does/#simpler">what engineering leadership actually does</Link>, and about the architecture version in <Link to="/writing/the-architecture-you-dont-build/">the architecture you don’t build</Link>.</p>
       </section>
 
       <section id="real-people" aria-labelledby="real-people-h">
-        <h2 id="real-people-h" className="post__h2">Before real people, not instead of them</h2>
+        <h2 id="real-people-h" className="post__h2">Walkthroughs come before real users</h2>
         <p>Different people reveal different problems, which is why I don’t test as one generic user. A beginner struggles with terminology. An experienced user gets frustrated by too many steps. A parent can’t find the information that applies to their child. A business owner understands an opportunity and still doesn’t know what action to take. The same product can be a completely different experience depending on who is using it.</p>
         <p className="post__answer">Imagined walkthroughs don’t replace usability testing with real users. When I pretend to be a first-time racer, I’m still guessing, and a real first-time racer will hit things I never thought of. The walkthroughs catch the obvious problems early, while they’re cheap to fix, so that time with real people goes to the problems nobody on the team could predict.</p>
       </section>
@@ -105,7 +105,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Why I keep testing</h2>
       <div className="post__close-copy">
         <p className="lead">Building software means more than making features work. People have to be able to understand what we built and use it without someone beside them. I don’t always get the design right the first time, and something that seems obvious to me regularly turns out to be confusing to someone else. Whenever I approach a product from a different perspective, I still find something I overlooked.</p>
-        <p className="post__close-principle">That’s why I keep testing, and the hardest part is still forgetting what I already know.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re building <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

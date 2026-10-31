@@ -44,8 +44,7 @@ export default function Body() {
       <section id="five-people" aria-labelledby="five-people-h">
         <h2 id="five-people-h" className="post__h2">A hypothetical five-person team considering twelve services</h2>
         <p>Picture a five-person team running a B2B SaaS product as a single application. The codebase is getting crowded, and someone proposes splitting it into a dozen services: accounts, billing, orders, notifications, reporting, search and six more.</p>
-        <p>After the split, their week changes.</p>
-        <p>A feature that touches orders and billing now means two pull requests in two repositories, an API contract change between them, and a deploy order someone has to remember. A security fix in the web framework becomes twelve upgrades, each with its own pipeline run. A slow checkout request crosses four services, so finding the cause needs distributed tracing that somebody has to set up and maintain.</p>
+        <p>After the split, their week changes. A feature that touches orders and billing now means two pull requests in two repositories, an API contract change between them, and a deploy order someone has to remember. A security fix in the web framework becomes twelve upgrades, each with its own pipeline run. A slow checkout request crosses four services, so finding the cause needs distributed tracing that somebody has to set up and maintain.</p>
         <p>On-call changes most. Five people now cover twelve services. Either everyone learns enough about all twelve to handle a page, or the rotation depends on whoever built the service that’s failing. When the engineer who knows billing goes on vacation, billing changes wait.</p>
         <p>Every hour spent on that work comes out of the same five people’s week. Features, customer support, infrastructure and production problems all draw on one pool of attention, and a small team feels each new obligation right away.</p>
         <p>The split could still be worth it. Suppose reporting jobs were slowing the customer-facing app and needed to scale on their own. Suppose a large customer required payment data to sit behind a separate security boundary. Suppose the company planned to double the team and form a second team around one domain. Each of those is a business reason to extract a service. If two or three of the twelve candidates had a reason like that, I’d extract those and keep the rest together.</p>
@@ -122,7 +121,7 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">The best architecture for a team is one it can run well on an ordinary week and still debug at two in the morning.</p>
         <p className="post__close-principle">Choose an architecture your team can sustain while it meets the business’s needs, and change it when the evidence supports the change.</p>
-        <p>That might mean a modular monolith for years, a few well-chosen services, or a gradual move to many. The answer should follow the team and the business, and it should be revisited as they grow.</p>
+        <p>That might mean a modular monolith for years, a few well-chosen services, or a gradual move to many.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an architecture decision <ArrowRight /></Link>
         </div>

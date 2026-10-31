@@ -14,7 +14,7 @@ export const raceFormats = [
     format: 'Road racing',
     setting: 'The Three Bears loop in Orinda',
     focus: 'Climbing, pacing, and tactics',
-    body: 'A long-standing part of Northern California road racing, the Berkeley Hills Road Race takes riders onto the Three Bears loop. Climbs change the shape of the field: staying with a group, saving energy, and choosing when to attack all matter.',
+    body: 'The Berkeley Hills Road Race takes riders onto the Three Bears loop. Climbs change the shape of the field: staying with a group, saving energy, and choosing when to attack all matter.',
     watch: 'Watch how the group changes over the climbs. A gap that looks small can become decisive when riders have to work together to close it.',
   },
   {
@@ -42,12 +42,12 @@ export const riderPathways = [
   {
     id: 'women',
     title: 'Women’s racing',
-    body: 'Women’s fields are part of the race weekend. The club’s wider work also includes mentorship and support for women’s cycling. A strong racing community needs both opportunities to compete and people who help riders find their place in the sport.',
+    body: 'Women’s fields are part of the race weekend. The club’s wider work also includes mentorship and support for women’s cycling.',
   },
 ];
 
 export const participation = [
   { title: 'Race or watch', body: 'Use the event website for the published race guide, categories, registration, and spectator information. Confirm the details there before planning your visit.' },
   { title: 'Volunteer', body: 'Ask the organizers where help is needed. Clear rider information, course support, and a welcoming race village all depend on people giving their time.' },
-  { title: 'Support the weekend', body: 'Sponsorship can include financial backing, equipment, or in-kind help. Discuss what the event needs with the organizers so your contribution supports the racing and its community purpose.' },
+  { title: 'Support the weekend', body: 'Sponsorship can include financial backing, equipment, or in-kind help. Discuss what the event needs with the organizers.' },
 ];

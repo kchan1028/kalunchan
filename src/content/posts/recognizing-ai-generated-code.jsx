@@ -282,7 +282,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">What I check before merging</h2>
       <div className="post__close-copy">
         <p className="lead">I care whether the code is correct, understandable, maintainable and secure, and whether it solves the problem we actually have.</p>
-        <p className="post__close-principle">AI is a tool, and a good one. Engineering judgment is still what decides what gets merged.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about how your team uses AI <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

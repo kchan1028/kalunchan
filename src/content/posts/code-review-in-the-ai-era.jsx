@@ -67,8 +67,7 @@ export default function Body() {
       <section id="wrong-question" aria-labelledby="wrong-question-h">
         <h2 id="wrong-question-h" className="post__h2">What the review needs to establish</h2>
         <p>For most of my career I’ve been reviewing code, designing systems, mentoring engineers, managing releases and dealing with whatever broke in production. Now AI can generate the code, review the pull request, write the tests and flag likely vulnerabilities. So I’ve been asking myself how much traditional code review we still need.</p>
-        <p>AI review is useful, but I also need to know whether the implementation does what we intended and works for the customer.</p>
-        <p>An AI review can tell me the code follows best practices, the implementation is efficient, the tests pass, there are no obvious vulnerabilities and the architecture looks reasonable. All of that can be true of a feature the customer can’t use. A technically correct implementation can still be the wrong solution, and a code review won’t tell you which one you have.</p>
+        <p>AI review is useful, but I also need to know whether the implementation does what we intended and works for the customer. An AI review can tell me the code follows best practices, the implementation is efficient, the tests pass, there are no obvious vulnerabilities and the architecture looks reasonable. All of that can be true of a feature the customer can’t use. A technically correct implementation can still be the wrong solution, and a code review won’t tell you which one you have.</p>
         <p>AI has also moved the bottleneck. Engineers used to spend most of their time writing the code. Now a team can produce code faster than it can confidently verify it. That makes review more important, and it makes reading every diff line by line a poor way to spend the time we have.</p>
         <p className="post__answer">Every change has to answer three questions: did we build it correctly, did we build the right thing, and can we operate it safely?</p>
         <Questions />
@@ -146,7 +145,7 @@ export default function Body() {
 
       <section id="production" aria-labelledby="production-h">
         <h2 id="production-h" className="post__h2">Review continues after deployment</h2>
-        <p>Most teams treat a merged pull request as the end of review. I think production is where we find out whether the engineering decision was right. Review after release means:</p>
+        <p>Most teams treat a merged pull request as the end of review. I think production is where we find out whether the engineering decision was right, because a successful deployment doesn’t mean a successful feature. Review after release means:</p>
         <ul className="post__list">
           <li>Verifying the deployment did what we expected</li>
           <li>Rolling out gradually behind a feature flag when the risk justifies it</li>
@@ -155,7 +154,6 @@ export default function Body() {
           <li>Reading customer feedback and support tickets</li>
           <li>Catching regressions early, with a rollback ready if we need it</li>
         </ul>
-        <p>A successful deployment doesn’t mean a successful feature.</p>
       </section>
 
       <section id="process" aria-labelledby="process-h">
@@ -169,7 +167,7 @@ export default function Body() {
           <li><strong>Release review.</strong> Deployment risk, monitoring, rollback plan and readiness.</li>
           <li><strong>Post-release validation.</strong> The feature does what we expected in production.</li>
         </ol>
-        <p>For a low-risk change, most of these stages take minutes, and some are a single question. For a change to permissions or billing, each one deserves real time. I’m not proposing six approval gates for every pull request. I want the right review effort at the right stage.</p>
+        <p>For a low-risk change, most of these stages take minutes, and some are a single question. For a change to permissions or billing, each one deserves real time.</p>
       </section>
 
       <section id="balance" aria-labelledby="balance-h">
@@ -178,7 +176,7 @@ export default function Body() {
         <p>With too much review, developers wait days for approval. Several engineers review a one-line change. Comments argue about style instead of outcomes. Review becomes the bottleneck and people lose momentum.</p>
         <p>With too little review, AI-generated code gets merged by people who don’t understand it. Security and data-integrity risks go unnoticed. Teams ship features that technically work and still fail users. Incidents go up and technical debt piles up. Endless AI review loops are their own version of this, and they cost more than people expect, as I covered in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>.</p>
         <p>To tell which problem you have, look at a few measures together: review turnaround time, change failure rate (one of the <a href="https://dora.dev/" rel="noopener" target="_blank">DORA</a> delivery metrics), escaped defects and customer-reported issues. Fast reviews with a rising failure rate mean you’re reviewing too little or reviewing the wrong things. Slow reviews with few escaped defects may mean you’re over-reviewing low-risk work. I wouldn’t use lines of code reviewed or number of approvals as a measure of quality. They measure activity.</p>
-        <p>As engineering leaders, our job is to make sure the team delivers the right solution, safely and reliably, and that doesn’t require another engineer to read every line. AI changes how we do that. We should automate the repetitive review and spend engineering expertise where it creates the most value. And developers still need to understand the systems they build, whether a person or an AI wrote the code.</p>
+        <p>Developers still need to understand the systems they build, whether a person or an AI wrote the code.</p>
       </section>
     </>
   );
@@ -189,9 +187,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Keep reviewing. Rethink what you review.</h2>
       <div className="post__close-copy">
-        <p className="lead">We shouldn’t stop reviewing code. We should rethink what we review, when we review it, and who or what does the reviewing.</p>
-        <p>AI can help us review code faster. Someone still has to decide whether we’re building the right thing, whether it works for the customer, and whether we’re ready to put it into production.</p>
-        <p className="post__close-principle">I expect code review to move toward better engineering judgment, supported by automation, from the plan to production. More people reading more code won’t get us there.</p>
+        <p className="lead">AI can help us review code faster. Someone still has to decide whether we’re building the right thing, whether it works for the customer, and whether we’re ready to put it into production.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about how your team reviews code <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

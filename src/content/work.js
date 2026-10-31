@@ -19,14 +19,14 @@ export const cases = [
     role: 'Co-Founder & CTO',
     domain: ['Cloud & infrastructure', 'Software architecture', 'Engineering leadership'],
     claim:
-      'Users on three continents got the same fast, reliable service, with no big-bang migration.',
+      'Users on three continents got the same service, with no big-bang migration.',
     summary:
       'Moving a founder-built platform out of a single data center and into the cloud. Each user’s traffic went to the nearest region.',
     problem:
       'The platform started in one data center. As the user base grew past 400,000 across South America, Asia and Africa, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
     context: [
       'I co-founded the company and ran engineering as CTO. The platform carried VoIP and cloud telecom services for underserved and underbanked communities, many of them immigrants, sold directly and through local resellers who ran their own businesses on our hosted platform. It was built on open-source VoIP with an in-house billing system, and it handled millions of dollars in transactions.',
-      'We built the first data center ourselves: racked the servers, ran the cabling, configured the routers and switches, and wrote the software. We planned it deliberately, with web, application and data as separate tiers. That was a choice for clarity, not a plan to leave, and it turned out to be what made leaving possible.',
+      'We built the first data center ourselves: racked the servers, ran the cabling, configured the routers and switches, and wrote the software. We planned it deliberately, with web, application and data as separate tiers for clarity, and that choice later made leaving possible.',
       'Real-time voice is the hard case for distance. Audio that crosses an ocean twice arrives late and arrives damaged, and no amount of server capacity fixes latency. A data center also buys capacity in large, lumpy steps, while a startup’s revenue grows in small, uneven ones.',
     ],
     constraints: [
@@ -324,7 +324,7 @@ export const cases = [
     ],
     lessons: [
       'Reliability is mostly process. Heroics do not scale to 2,000 sites.',
-      'Everything I know about systems thinking started here.',
+      'This is where I first learned to find the resource that fills first.',
     ],
     tradeoffs: [
       'Ordering ahead of lead times means paying for capacity before the demand arrives. Planning from measured trends kept that bet small and specific.',

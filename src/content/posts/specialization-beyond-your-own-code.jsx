@@ -92,7 +92,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Strong in one area, curious about the next</h2>
       <div className="post__close-copy">
         <p className="lead">I expect engineers to follow a problem beyond their own code, investigate the next part of the request and ask for help when they reach unfamiliar ground.</p>
-        <p className="post__close-principle">Be strong in your specialty, and curious enough about neighboring systems to investigate problems, ask useful questions and help deliver a working product.</p>
         <p>It’s the same argument I made in <Link to="/writing/you-dont-need-to-remember-everything/">you don’t need to remember everything</Link>: understanding how systems connect matters more than memorizing all of them.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about building a team that collaborates across layers <ArrowRight /></Link>

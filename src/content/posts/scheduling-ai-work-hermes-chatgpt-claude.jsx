@@ -61,7 +61,7 @@ export default function Body() {
     <>
       <section id="what-changes" aria-labelledby="what-changes-h">
         <h2 id="what-changes-h" className="post__h2">What changes when nobody is watching</h2>
-        <p>I have spent the last few weeks learning self-hosted agents by putting Hermes Agent on a Hostinger VPS, <Link to="/writing/connect-hermes-agent-hostinger-vps-vs-code/">reaching it from VS Code</Link> and designing a job-search agent to run on it. Somewhere in that I realized I was mostly learning about scheduling. The moment an AI task runs on a timer instead of in a conversation, almost every assumption I had about working with an assistant stops holding.</p>
+        <p>I have spent the last few weeks learning self-hosted agents by putting Hermes Agent on a Hostinger VPS, <Link to="/writing/connect-hermes-agent-hostinger-vps-vs-code/">reaching it from VS Code</Link> and designing a job-search agent to run on it. Somewhere in that I realized I was mostly learning about scheduling. The moment an AI task runs on a timer instead of in a conversation, several of my assumptions about working with an assistant stop holding.</p>
         <p className="post__answer">In a conversation, I supply the context, catch the mistakes, and decide what happens next, turn by turn. On a schedule, nobody does. The task has to carry its own instructions, find its own context, fail in a way someone will notice, and never take an action I would have stopped. Scheduling turns an assistant into a system, and systems need an owner for execution, context, credentials, uptime, logs and recovery.</p>
         <p>This post compares the five ways I could schedule one concrete job, and what each one makes me responsible for. I am still learning; nothing here reports a finished automation.</p>
       </section>
@@ -111,7 +111,7 @@ export default function Body() {
       <section id="recommendations" aria-labelledby="recommendations-h">
         <h2 id="recommendations-h" className="post__h2">Where I would start</h2>
         <p>If the job needs only the vendor's own tools and a reminder, ChatGPT scheduled tasks or Cowork scheduled tasks are the least work and the least to maintain, and the caps tell you when you have outgrown them. If the job lives in a repository, a Claude Code routine gives you unattended runs with a reviewable session each time, at the cost of a GitHub-shaped workflow and no local files. If you want to learn how these systems work, or you need custom tools, your own data on your own disk and control of every step, self-host with Hermes or plain cron, and accept that uptime, logs, retries and security are now yours.</p>
-        <p>Whichever you pick: write the instructions as if for a stranger, put the data where the run can read it, decide which account pays, keep every irreversible action behind a human approval, and read the first few runs in full. The convenience of managed scheduling is real. So is the control of running your own, and the maintenance that comes with it. For the research assistant I am starting on Hermes, because the point of this experiment is to learn what the managed versions are hiding from me, and I will report what it costs.</p>
+        <p>Whichever you pick: write the instructions as if for a stranger, put the data where the run can read it, decide which account pays, keep every irreversible action behind a human approval, and read the first few runs in full. For the research assistant I am starting on Hermes, because the point of this experiment is to learn what the managed versions are hiding from me, and I will report what it costs.</p>
       </section>
     </>
   );
@@ -123,7 +123,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">A schedule turns an assistant into a system</h2>
       <div className="post__close-copy">
         <p className="lead">Asking an AI once and running it every week use the same model. The difference is everything around the model that now needs an owner.</p>
-        <p className="post__close-principle">Write instructions that last and keep the data on disk. Name the account that pays, keep the plumbing deterministic, and put a human gate in front of anything irreversible.</p>
         <p>Next in the series: the research assistant's first scheduled runs, what it suggested, and what the first week cost.</p>
         <div className="post__close-actions">
           <Link to="/writing/#chapter-lab" className="action">More from the lab <ArrowRight /></Link>

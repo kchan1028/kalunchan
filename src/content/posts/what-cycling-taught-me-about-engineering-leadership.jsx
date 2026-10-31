@@ -28,7 +28,7 @@ export default function Body() {
         <p>Every ride can’t be an interval session. A rider who goes hard every day doesn’t get faster. They get tired, and they have nothing left on the day the effort matters. Training works because hard days are separated by easier ones.</p>
         <p>Engineering teams behave the same way. If every sprint is a deadline push, there’s no room for maintenance, learning or recovery. Then real urgency arrives, a production incident or a customer commitment, and the team has no reserve to respond with.</p>
         <p>It changed how I treat urgency: as something to spend deliberately. I plan around the unplanned work a team actually gets, which I wrote about in <Link to="/writing/when-everything-is-a-priority/#interruptions">separating interruptions from strategy</Link>, and I ask for a hard push only when the reason is clear and the push has an end.</p>
-        <p>The tension is real. Protecting capacity can become an excuse never to stretch. The question I ask is whether a hard effort is followed by recovery or has become the new baseline without anyone deciding it should.</p>
+        <p>Protecting capacity can become an excuse never to stretch. The question I ask is whether a hard effort is followed by recovery or has become the new baseline without anyone deciding it should.</p>
       </section>
 
       <section id="paceline" aria-labelledby="paceline-h">
@@ -84,7 +84,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">On the bike and at work, I try to set a pace people can hold, take a turn at the front when the work is hard, call out what’s coming, and make sure nobody gets dropped.</p>
         <p>I measure it by whether the group gets there, and whether more people are ready to lead the next ride.</p>
-        <p className="post__close-principle">Push when it matters, protect the team’s capacity the rest of the time, and keep handing the front to someone new.</p>
         <div className="post__close-actions">
           <Link to="/about/" className="action">More about how I work <ArrowRight /></Link>
         </div>

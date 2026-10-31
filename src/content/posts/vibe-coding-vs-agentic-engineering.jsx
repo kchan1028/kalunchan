@@ -152,13 +152,13 @@ export default function Body() {
         <p>Here’s a hypothetical feature from a multi-company SaaS product. A user can belong to several companies. Each company can have more than one business identifier, such as a tax ID and a government registration number. Each user has a role per company: owner, admin, member or read-only.</p>
         <p><strong>Vibe coding it.</strong> I prompt for “multi-company accounts with roles.” In minutes I have tables, a company switcher and role checks. It demos well. Then the questions arrive one at a time, each as a new prompt. Can one identifier belong to two companies? What happens to open sessions when a user is removed from a company? Does the API check the role, or only the UI? Each answer patches the last one. A week later the permission logic lives in four places, and nobody can say with confidence that a member of company A can’t read company B’s data.</p>
         <p><strong>Engineering it with agents.</strong> Before any code, I write the rules down. Who can see what, and which identifiers must be unique. What “switching companies” means for cached data and open tabs. I ask an agent to challenge that spec and list the cases I missed. We agree on one place where authorization is enforced, on the server, for every request. Then agents implement small pieces against that design, write tests for the risky paths (cross-company access, role changes, removed users), and run a first review. I review the authorization layer myself. Business users try it on a preview environment before it merges.</p>
-        <p>The second path takes longer to get to the first demo. It’s usually much faster to get to something I’d put in front of customers. I looked at the user’s side of this same kind of workflow in <Link to="/writing/code-review-in-the-ai-era/">code review doesn’t start with a pull request</Link>.</p>
+        <p>The second path takes longer to get to the first demo. It’s usually much faster to get to something I’d put in front of customers. More on how review fits into this in <Link to="/writing/code-review-in-the-ai-era/">code review doesn’t start with a pull request</Link>.</p>
       </section>
 
       <section id="compare" aria-labelledby="compare-h">
         <h2 id="compare-h" className="post__h2">The tradeoffs side by side</h2>
         <Compare />
-        <p>Vibe coding wins on speed to a first version and on cost when the code is disposable. Agentic engineering wins once the software has to be secure, maintained by a team, and changed for years. The mistake is using one where the other belongs.</p>
+        <p>Vibe coding wins on speed to a first version and on cost when the code is disposable. Agentic engineering wins once the software has to be secure, maintained by a team, and changed for years.</p>
       </section>
 
       <section id="review" aria-labelledby="review-h">
@@ -195,12 +195,12 @@ export default function Body() {
           <li>Features generated before anyone checked that customers want them</li>
           <li>AI-generated technical debt piling up faster than a team could ever write it by hand</li>
         </ul>
-        <p>More AI-generated code doesn’t mean more engineering productivity. Code is a liability someone has to read, secure, test and run. Just because AI can build something in a few minutes doesn’t mean we should build it. I went through the token and rework math in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>, and the bigger version of this problem in <Link to="/writing/engineering-work-nobody-needed/">the most expensive engineering work is work nobody needed</Link>.</p>
+        <p>More AI-generated code doesn’t mean more engineering productivity. Code is a liability someone has to read, secure, test and run. Building something in a few minutes doesn’t answer whether anyone needs it. I went through the token and rework math in <Link to="/writing/hidden-cost-of-ai-coding/">the hidden cost of AI coding</Link>, and the bigger version of this problem in <Link to="/writing/engineering-work-nobody-needed/">the most expensive engineering work is work nobody needed</Link>.</p>
       </section>
 
       <section id="judgment" aria-labelledby="judgment-h">
         <h2 id="judgment-h" className="post__h2">Judgment is worth more now</h2>
-        <p>When typing the code is no longer the slow part, the engineer’s job shifts toward everything around it. Developers increasingly need to understand the business problem, define acceptance criteria, evaluate architecture, spot security and operational risks, review AI-generated implementations, design a testing strategy, understand deployment and production, and make build-versus-buy decisions.</p>
+        <p>When typing the code is no longer the slow part, the engineer’s job shifts toward everything around it. Developers increasingly need to understand the business problem, define acceptance criteria, evaluate architecture, spot security and operational risks, review AI-generated implementations, and design a testing strategy.</p>
         <p>That’s why I think experienced generalists have an advantage with AI agents. Someone who has worked across product, development, infrastructure, security and operations knows which questions to ask at each stage, and notices when an agent’s confident answer doesn’t fit. Teams still need deep specialists. I wrote more about that balance in <Link to="/writing/generalist-advantage-in-the-ai-era/">why being a generalist is an advantage in the AI era</Link>.</p>
       </section>
 
@@ -237,7 +237,6 @@ export function Closing() {
       <div className="post__close-copy">
         <p className="lead">Vibe coding makes software development more accessible. Agentic engineering gives us a structured way to use AI to build and maintain production software. Neither one removes the need for engineering judgment.</p>
         <p>For a team maintaining production software, I care about whether we understand the changes, can recover from failure and can afford to operate what we build.</p>
-        <p className="post__close-principle">I use those questions to judge the workflow, regardless of which tool produced the code.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk about how your team works with AI agents <ArrowRight /></Link>
           <Link to="/leadership/" className="link-arrow"><span>How I run engineering</span> <ArrowRight /></Link>

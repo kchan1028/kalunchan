@@ -47,7 +47,6 @@ export default function Body() {
         <p>I raced a lot of Spartan races before cycling came along, and the first one humbled the gym version of me quickly. I was strong, and being strong turned out to be a small part of the job. An obstacle course asks you to run until you are tired, then carry something heavy up a hill, then climb a rope with wet hands, then run again. Strength that only works fresh, on a flat floor, with chalk, is a narrower thing than it felt like under a barbell.</p>
         <p>So the training changed. Grip work, carries, running, climbing, moving well when I was already spent. The strange part was learning to perform tired. In the gym, tired is a signal to stop. On a course, tired is the normal condition and the obstacle is still there. You learn to slow down instead of stopping, to look for a technique that costs less, and to accept that the plan you had at the start line will not survive the third obstacle.</p>
         <p>That turned out to be good preparation for founding a company. When I co-founded a <Link to="/writing/founding-a-startup-isnt-easy/">startup</Link>, I could not specialize. In one week I was the software developer, the network engineer, the Linux administrator, the infrastructure engineer, the product manager, and sometimes the field technician running cable in a data center. You do not get to pick the obstacle in front of you. You get to pick how you get over it, and whether you learn something you can use at the next one.</p>
-        <p>Being adaptable turned out to matter more than being exceptional at one thing. The exceptional thing was useful, and it was never the whole course.</p>
       </section>
 
       <section id="cycling" aria-labelledby="cycling-h">
@@ -56,13 +55,13 @@ export default function Body() {
         <p>What cycling added was structure. Performance on a bike depends on more things than I was used to counting: aerobic endurance, functional threshold power, the easy miles in zone 2, hard intervals near VO2 max, sprint power, recovery, nutrition, total volume, and then, on race day, tactics and the group around you. The first lesson from a coach was the one I least wanted to hear. Most of my rides should be easy, and easy meant boringly easy, the kind where you can hold a conversation the whole way. The hard days are hard because the easy days are easy, and the rider who goes medium every day gets good at going medium.</p>
         <p>That is the difference between training to feel exhausted and training for a specific adaptation. A session that leaves you wrecked feels productive. A session that targets one thing, at the right intensity, with enough recovery around it to absorb it, is productive. They are not the same ride, and for a long time I could only tell them apart by how I felt, which was the wrong instrument.</p>
         <p>Racing added patience. The rider with the highest threshold power often does not win. The rider who sat in the right wheel, conserved energy on the climb, read the move when it went, and had something left at the finish does. Positioning, timing and the willingness to work with riders you were trying to beat a lap ago are skills, and effort is only one input to them. I wrote about the judgment side of that in <Link to="/writing/what-cycling-taught-me-about-engineering-leadership/#pace">what cycling taught me about engineering leadership</Link>.</p>
-        <p>The engineering parallel is the one I needed most. The team working the longest hours is not the most productive. A team that goes from one emergency to the next looks busy and may not be going anywhere. Effort matters. Knowing where and when to apply it matters more, and deciding that is the leader’s job.</p>
+        <p>The engineering parallel is the one I needed most. The team working the longest hours is not the most productive. A team that goes from one emergency to the next looks busy and may not be going anywhere. Deciding where and when to apply effort is the leader’s job.</p>
       </section>
 
       <section id="recovery" aria-labelledby="recovery-h">
         <h2 id="recovery-h" className="post__h2">Recovery: the hardest lesson</h2>
         <p>When I was younger, recovery was what happened by accident between workouts. Rest days were a sign of weak planning. All three disciplines eventually corrected me, and cycling did it most clearly, with a coach who put rest weeks on the calendar on purpose and expected me to take them.</p>
-        <p>Fatigue builds up without telling you. A hard week feels fine. Three hard weeks feel fine until the fourth one, when the numbers go backwards and the mood goes with them. Sleep and food are training. Enough, absorbed, beats more. The adaptation happens while you rest. The session only orders it.</p>
+        <p>Fatigue builds up without telling you. A hard week feels fine. Three hard weeks feel fine until the fourth one, when the numbers go backwards and the mood goes with them. Sleep and food are training, and the adaptation happens while you rest.</p>
         <p>Teams accumulate fatigue the same way. Constant emergencies, overtime that becomes the schedule, and deadlines nobody believed in the first place do not produce a stronger team. They produce a tired one that eventually breaks, and the break is rarely at a convenient moment. I have written about <Link to="/writing/what-sprint-carryover-is-telling-you/">what sprint carryover is telling you</Link>, and a lot of it is this: the load is higher than the capacity, and no amount of pushing fixes that.</p>
         <p>Recovery is part of progress. I believe that now. It took me an embarrassingly long time, and a few injuries, to get there.</p>
       </section>
@@ -86,7 +85,6 @@ export default function Body() {
 
       <section id="three" aria-labelledby="three-h">
         <h2 id="three-h" className="post__h2">What all three taught me</h2>
-        <p>Strength training taught me consistency, patience, small progressive improvements, and that the fundamentals are not the beginner part. Spartan training taught me adaptability, resilience, the difference between strength and capability, and how to get through an obstacle I did not choose. Cycling taught me strategy, efficiency, teamwork, structured training, and when to push and when to sit in.</p>
         <p>The theme underneath is that working hard was never enough. Improvement needs a clear idea of what you are trying to change, an approach that produces that change, and the willingness to adjust when it is not working, which is usually sooner than pride would like.</p>
       </section>
 
@@ -98,7 +96,7 @@ export default function Body() {
 
       <section id="still-learning" aria-labelledby="still-learning-h">
         <h2 id="still-learning-h" className="post__h2">I’m still learning</h2>
-        <p>After all these years I still find a better exercise, change how I train on the bike, adjust what I expect from a season, or discover that something I was sure about a decade ago was only half right. Fitness is not something you finish. Neither is engineering, and neither is leading people. There is always something to improve.</p>
+        <p>After all these years I still find a better exercise, change how I train on the bike, adjust what I expect from a season, or discover that something I was sure about a decade ago was only half right. Fitness doesn’t finish, and I’m still adjusting how I train and how I lead.</p>
         <p>Sometimes the biggest improvement comes from learning when not to push harder. That one took me three sports, a collarbone and a few lost seasons to learn. I would like to say I have it down now. Ask me again after the next comeback.</p>
       </section>
     </>
@@ -110,8 +108,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">How I train now</h2>
       <div className="post__close-copy">
-        <p className="lead">I used to think getting better meant working harder. Three sports taught me it means training smarter, recovering on purpose, and coming back from the gaps.</p>
-        <p className="post__close-principle">I now leave recovery in the plan and resist trying to make up missed weeks all at once. Training with other people helps me judge when to push and when to ease off.</p>
+        <p className="lead">I now leave recovery in the plan and resist trying to make up missed weeks all at once. Training with other people helps me judge when to push and when to ease off.</p>
         <p>I try to plan engineering work with the same attention to capacity and recovery, although a team needs more conversation than a training schedule.</p>
         <div className="post__close-actions">
           <Link to="/mentorship/" className="action">How I mentor engineers and junior riders <ArrowRight /></Link>

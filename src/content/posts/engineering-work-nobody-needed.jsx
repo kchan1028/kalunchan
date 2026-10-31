@@ -129,7 +129,7 @@ export default function Body() {
           <li>Who owns the outcome after launch? Someone responsible for whether it worked, and for retiring it if it didn’t.</li>
           <li>What result would make us continue, change direction or stop? Decide before launch, while nobody is attached to the answer.</li>
         </ol>
-        <p>Thin answers don’t automatically mean no. They mean the first piece of work is finding out.</p>
+        <p>If the answers are thin, the first piece of work is finding out.</p>
       </section>
     </>
   );
@@ -141,7 +141,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">Protect capacity, measure outcomes</h2>
       <div className="post__close-copy">
         <p className="lead">Engineering capacity is one of the most constrained resources a company has, and every piece of work spends it twice: once to build, and again for as long as it lives in the system. So I judge work by the outcome it changed, and shipping on time is only part of that.</p>
-        <p className="post__close-principle">Before committing the team, I want a clear problem, evidence that it matters and a way to judge the result. If those are missing, the first task is to investigate them.</p>
         <div className="post__close-actions">
           <Link to="/leadership/" className="action">How I lead engineering teams <ArrowRight /></Link>
         </div>

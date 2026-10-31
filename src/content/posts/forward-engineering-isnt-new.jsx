@@ -111,15 +111,15 @@ export default function Body() {
         <h2 id="leadership-h" className="post__h2">What it asks of engineering leaders</h2>
         <p>If implementation gets cheaper, everything around it matters more, and most of that is a leader’s job.</p>
         <p>Clear requirements come first. A vague goal is a risk, and it is cheapest to fix in week one. I want every engineer able to say what problem their work solves and how we will know it worked, which is the practice I describe as <Link to="/leadership/#ambiguity">turning ambiguity into executable work</Link>.</p>
-        <p>Architecture decisions belong in writing: the options, the choice, and what we gave up. A decision record is forward engineering’s memory. It is also the thing that makes reverse engineering unnecessary for the next team, which is a gift worth giving.</p>
-        <p>Accountability needs a name. Every service, pipeline and scheduled job needs someone who owns it, who gets the alert, and who can say why it behaves the way it does. Code with no owner is a future archaeology project.</p>
+        <p>Architecture decisions belong in writing: the options, the choice, and what we gave up. A decision record is forward engineering’s memory. It is also the thing that makes reverse engineering unnecessary for the next team.</p>
+        <p>Accountability needs a name. Every service, pipeline and scheduled job needs someone who owns it, who gets the alert, and who can say why it behaves the way it does.</p>
         <p>Production reliability is the end of the chain and the part the customer sees. Fast delivery of a system that falls over is not delivery. Release gates, monitoring, rollback and a sustainable on-call rotation are part of done, not a phase after it.</p>
       </section>
 
       <section id="perspective" aria-labelledby="perspective-h">
         <h2 id="perspective-h" className="post__h2">What I have learned</h2>
         <p>I started on carrier networks, where every change was forward engineering with a technician on the phone and no undo button. I built a platform from a business idea to racked servers to working software, and then moved it to the cloud one region at a time. I have re-platformed systems, restructured a startup’s mobile app, network and voice platform, and modernized public services that could not go down. And I have led teams through all of it.</p>
-        <p>The tools changed constantly. The chain did not. The work still runs from need to requirement to design to code to production, and it still breaks at the handoffs. What I have come to value most is keeping the whole chain honest: requirements someone agreed to, designs someone wrote down, code someone reviewed, systems someone owns. That has been true with every generation of tools I have used, and I expect it to be true of the next one.</p>
+        <p>The work still runs from need to requirement to design to code to production, and it still breaks at the handoffs. What I have come to value most is keeping the whole chain honest: requirements someone agreed to, designs someone wrote down, code someone reviewed, systems someone owns. That has been true with every generation of tools I have used, and I expect it to be true of the next one.</p>
       </section>
     </>
   );
@@ -130,8 +130,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">Following a requirement through delivery</h2>
       <div className="post__close-copy">
-        <p className="lead">Forward engineering has always been the job: need, requirement, design, code, running system. What changes is how fast one step moves.</p>
-        <p className="post__close-principle">Speed at one step moves the bottleneck to the next. Clear requirements, written decisions, named owners and reliable production are what turn code into delivery.</p>
+        <p className="lead">Speed at one step moves the bottleneck to the next. Clear requirements, written decisions, named owners and reliable production are what turn code into delivery.</p>
         <p>I want a team to be able to trace a requirement through those decisions and check it against the running system.</p>
         <div className="post__close-actions">
           <Link to="/writing/modernizing-public-sector-applications/" className="action">Modernizing without a big-bang rewrite <ArrowRight /></Link>

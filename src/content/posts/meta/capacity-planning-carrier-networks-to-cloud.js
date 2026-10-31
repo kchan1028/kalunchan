@@ -57,7 +57,7 @@ export const metadata = {
     },
     {
       q: 'How did Ka Lun Chan reduce AWS costs?',
-      a: 'As CTO of a media publishing platform he led a re-platform onto AWS, and the infrastructure improvements that came with it contributed to AWS costs about 30% lower: right-sizing instances, scaling the web tier on real demand, fixing database queries and connection handling, caching unchanged pages, and removing resources nobody used.',
+      a: 'As CTO of a media publishing platform he led a re-platform onto AWS, and the infrastructure improvements that came with it helped bring AWS costs down about 30%: right-sizing instances, scaling the web tier on real demand, fixing database queries and connection handling, caching unchanged pages, and removing resources nobody used.',
     },
     {
       q: 'Why is engineering capacity part of capacity planning?',

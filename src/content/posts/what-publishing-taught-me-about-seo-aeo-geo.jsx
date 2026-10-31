@@ -79,7 +79,7 @@ export default function Body({ metadata: { sources } }) {
       <section id="consequences" aria-labelledby="consequences-h">
         <h2 id="consequences-h" className="post__h2">Why should a CTO care about SEO?</h2>
         <p className="post__answer">Because engineering decisions change how a company gets discovered. A routine change to URLs, rendering, templates or page speed can undo years of accumulated search value, and the people who would notice first often aren’t in engineering.</p>
-        <p>That was the lesson that stuck with me most. Search value builds up slowly: pages earn links, rankings and reader trust over years. It can be lost in a single release by a team that had no idea it was there.</p>
+        <p>Search value builds up slowly: pages earn links, rankings and reader trust over years. It can be lost in a single release by a team that had no idea it was there.</p>
         <p>These are the kinds of decisions I learned to look at twice:</p>
         <dl className="post__terms">
           <div><dt>Changing URL structures</dt><dd>A cleaner URL scheme looks like a harmless improvement. Without a <a href={google.siteMove}>careful redirect map</a>, every link and ranking the old URLs earned is thrown away.</dd></div>
@@ -101,7 +101,7 @@ export default function Body({ metadata: { sources } }) {
 
       <section id="measurement" aria-labelledby="measurement-h">
         <h2 id="measurement-h" className="post__h2">Traffic was never the real goal</h2>
-        <p>Once you can measure traffic, it’s tempting to treat it as the scoreboard. Publishing taught me that traffic tells you very little on its own.</p>
+        <p>Publishing taught me that traffic tells you very little on its own.</p>
         <p>The more useful questions were about the reader:</p>
         <ul className="post__list">
           <li>What did people search for before they arrived?</li>
@@ -148,7 +148,6 @@ export default function Body({ metadata: { sources } }) {
           <li>Link with meaning. Internal links that connect related topics show what a site knows about.</li>
           <li>Aim to be cited as well as ranked. A page that’s accurate, specific and clearly sourced is more likely to be used in an answer than one written only to rank.</li>
         </ul>
-        <p>Most of that list is good writing and good engineering, applied with AI readers in mind.</p>
       </section>
 
       <section id="seo-foundation" aria-labelledby="seo-foundation-h">

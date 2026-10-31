@@ -101,7 +101,6 @@ export default function Body() {
           <li>years of existing content</li>
         </ul>
         <p>A developer could make a technically reasonable decision and create a business problem without noticing. Changing URLs could hurt SEO. Changing how pages rendered could change what search engines saw. Replacing a CMS could disrupt the editors. One migration could break thousands of old links. Slow pages lost readers and search visibility, and eventually revenue.</p>
-        <p className="post__pull">The business runs through the software, so architecture shapes how the business operates.</p>
         <p>I wrote more about this side of the job in <Link to="/writing/what-publishing-taught-me-about-seo-aeo-geo/">what being a CTO in publishing taught me about SEO, AEO and GEO</Link>.</p>
       </section>
 
@@ -178,7 +177,6 @@ export default function Body() {
 
       <section id="full-circle" aria-labelledby="full-circle-h">
         <h2 id="full-circle-h" className="post__h2">The full circle</h2>
-        <p>VoIP taught me about distributed systems before I regularly used the term, and publishing showed me that architecture affects much more than engineering. Monoliths taught me the value of simplicity, microservices taught me that boundaries matter, and event-driven systems taught me that decoupling comes with an operational cost. Cloud infrastructure made distributed architectures dramatically easier to build.</p>
         <p>After years of racking our own hardware, <Link to="/work/three-continent-platform/">moving the platform out of our data center into cloud regions on three continents</Link> was one of the most fun projects I’ve worked on. We moved to lower our cost structure and to put the platform closer to users, with each user routed to the nearest region.</p>
         <p>Engineering leadership added the lesson I use most: every architectural decision creates a future operational obligation. Someone will have to deploy it, monitor it, debug it and eventually change it. And someone will probably get paged when it breaks.</p>
       </section>
@@ -186,8 +184,8 @@ export default function Body() {
       <section id="tradeoffs" aria-labelledby="tradeoffs-h">
         <h2 id="tradeoffs-h" className="post__h2">Architecture is about tradeoffs</h2>
         <p>Earlier in my career, I sometimes thought there was a best architecture. After working across enough systems, I don’t anymore. There are architectures that suit particular problems, teams and stages of a business.</p>
-        <p>A monolith isn’t automatically bad. Microservices aren’t automatically scalable. Kafka doesn’t automatically make a system usefully event-driven. Kubernetes doesn’t automatically make an application reliable. Another layer of abstraction doesn’t automatically improve anything.</p>
-        <p>Sometimes the right decision is to break a system apart, and sometimes it’s to keep it together. Sometimes asynchronous processing is the answer, and sometimes a database transaction is perfectly fine. Good architecture is mostly about understanding which of those you’re facing.</p>
+        <p>A monolith isn’t automatically bad. Microservices aren’t automatically scalable.</p>
+        <p>Sometimes the right decision is to break a system apart, and sometimes it’s to keep it together. Sometimes asynchronous processing is the answer, and sometimes a database transaction is perfectly fine.</p>
       </section>
     </>
   );

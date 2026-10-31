@@ -163,7 +163,6 @@ export default function Body() {
         <p>I’ve been building and running production software for my whole career: first in network operations, later as a co-founder and CTO, and now leading engineering teams and helping companies with architecture. Over that time, one conversation keeps coming back. Someone proposes pulling a piece of the system out into its own service. Sometimes it’s the right call. Often, nobody in the room can say what problem it solves.</p>
         <p>The reasons tend to sound like this. “It’ll be cleaner.” “That’s how bigger companies do it.” “We’ll need it eventually.” “The monolith is getting too big.” None of those are wrong, exactly. They just aren’t reasons on their own.</p>
         <p>Where I’ve landed is that a microservice should solve a real problem: an organizational one, a scaling one, a deployment one, a reliability one, or a domain-boundary one. It shouldn’t exist because microservices sound like what a serious engineering team is supposed to have.</p>
-        <p>Below is how I think through the decision, including the parts that only show up after a service has been running for a few years.</p>
       </section>
 
       <section id="when-to-use" aria-labelledby="when-to-use-h">
@@ -306,7 +305,6 @@ export default function Body() {
           <Diagram spec={extracted} id="extract-later" no="667-3" />
         </div>
         <p><Link to="/writing/modernizing-public-sector-applications/#incremental">Modernizing public-sector applications</Link> describes how a routing layer can let a team replace one workflow at a time. In that kind of project, I would compare a conventional stack on managed infrastructure with the extra operating work of a service mesh. The receiving team’s ability to support the system belongs in that decision.</p>
-        <p>So my default is to build the modular monolith well, keep the seams clean, and extract when a real reason shows up. Extraction is cheaper and safer at that point, because you’re working from evidence instead of guesses.</p>
       </section>
 
       <section id="framework" aria-labelledby="framework-h">
@@ -348,7 +346,7 @@ export default function Body() {
 
       <section id="five-years" aria-labelledby="five-years-h">
         <h2 id="five-years-h" className="post__h2">Creating a microservice is easy. Owning one for the next five years is the expensive part.</h2>
-        <p>I’ve seen this over and over. Spinning up a new service takes days. With a good template and AI tools, it might take an afternoon. The cost doesn’t show up in the first sprint. It shows up in year two, three and five, often after the people who created the service have moved on.</p>
+        <p>Spinning up a new service takes days. With a good template and AI tools, it might take an afternoon. The cost doesn’t show up in the first sprint. It shows up in year two, three and five, often after the people who created the service have moved on.</p>
         <p>Every service brings all of this with it, for as long as it exists:</p>
         <dl className="post__terms">
           <div><dt>CI/CD</dt><dd>A pipeline to build, test, scan and deploy it, and to fix when the runner or base image changes.</dd></div>
@@ -387,8 +385,6 @@ export function Closing() {
       <h2 id="closing-h" className="post__close-title h2">The principle I keep coming back to</h2>
       <div className="post__close-copy">
         <p className="lead">A separate service needs an owner, a deployment pipeline, monitoring and a stable contract. Those ongoing responsibilities belong in the decision.</p>
-        <p className="post__close-principle">I would extract it when a specific benefit, such as independent scaling or release ownership, justifies that work.</p>
-        <p>Until then, the code can stay in a module with a clear interface. We can return to the deployment decision when demand or ownership changes.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an architecture decision <ArrowRight /></Link>
         </div>

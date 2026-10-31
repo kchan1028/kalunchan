@@ -3,7 +3,7 @@ import { cycling } from '../../community';
 export const metadata = {
   seoTitle: '2027 Berkeley Omnium: New Website and Sponsors — Ka Lun Chan',
   dek:
-    'I spend most of my time building software and leading engineering teams. One of the projects I care about most happens away from a computer.',
+    'One of the projects I care about most happens away from a computer: the Berkeley Omnium, which now has a new website as we build toward 2027.',
   related: [
     { to: '/community/', label: 'Why I help organize Berkeley Omnium' },
     { to: '/projects/berkeley-omnium/', label: 'How the new Berkeley Omnium website was built' },

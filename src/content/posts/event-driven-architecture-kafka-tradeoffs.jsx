@@ -190,11 +190,9 @@ export default function Body() {
 export function Closing() {
   return (
     <>
-      <h2 id="closing-h" className="post__close-title h2">So, should systems react to events?</h2>
+      <h2 id="closing-h" className="post__close-title h2">When to react to events</h2>
       <div className="post__close-copy">
-        <p className="lead">Sometimes. Kafka is a tool for a specific kind of problem, and using it says nothing about how mature an architecture is.</p>
-        <p className="post__close-principle">Systems should react to events when asynchronous coordination brings a benefit worth having, and the organization can support the failure behavior and operating cost that come with it.</p>
-        <p>Where a user needs an answer now, call directly. Where the work is a reaction, publish the fact, and make sure someone owns what happens next.</p>
+        <p className="lead">Where a user needs an answer now, call directly. Where the work is a reaction, publish the fact, and make sure someone owns what happens next.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Talk through an event-driven design <ArrowRight /></Link>
         </div>

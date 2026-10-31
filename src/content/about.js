@@ -62,7 +62,7 @@ export const valueFit = [
 
 export const leadershipPractices = [
   { term: 'Turn ambiguity into executable work', text: 'before the team commits.' },
-  { term: 'Make architecture decisions in writing,', text: 'so the reasoning outlasts the meeting.' },
+  { term: 'Make architecture decisions in writing,', text: 'so new engineers can find the reasoning.' },
   { term: 'Balance delivery and technical debt', text: 'explicitly, instead of letting debt pile up unseen.' },
   { term: 'Improve execution with small, safe changes:', text: 'small pull requests reviewed within a day, frequent deploys, and rollbacks that are rare and fast.' },
   { term: 'Reduce delivery risk early,', text: 'and build systems the next team can own.' },
@@ -83,7 +83,7 @@ export const faq = [
   },
   {
     q: 'Is Ka Lun Chan a generalist or a specialist?',
-    a: 'He is a generalist with deep technical roots. His work has run from technical support and capacity planning to product and SEO, and he used that range to build a startup from the ground up to an acquisition as co-founder and CTO.',
+    a: 'He is a generalist. His work has run from technical support and capacity planning to product and SEO, and he used that range to build a startup from the ground up to an acquisition as co-founder and CTO.',
   },
   {
     q: 'What does Ka Lun Chan help companies with?',

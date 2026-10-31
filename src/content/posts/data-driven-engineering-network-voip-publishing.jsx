@@ -176,7 +176,7 @@ export default function Body() {
         <h2 id="three-systems-h" className="post__h2">Three systems that didn’t look alike</h2>
         <p>Early in my career I worked on carrier networks: routers, switches and the circuits between them. Later I built VoIP systems that routed telephone calls while trying to keep cost and call quality in balance. Then I ran the technology for a digital publishing business, where the raw material was website traffic, search rankings and advertising revenue. One of those moves packets, one connects calls, and one attracts readers and earns from their attention. Nobody would put them in the same category.</p>
         <p className="post__answer">Carrier capacity planning, VoIP call routing and publishing analytics are the same engineering problem with different data. Each one collects operational measurements, finds the pattern in them, forecasts or spots an opportunity, makes a decision with money attached, measures what happened, and adjusts. The measurements and acceptable tradeoffs differed, so each decision needed its own success criteria.</p>
-        <p>I did not see that at the time. Each job felt like learning a new field from the beginning. It took the third one to notice that the lessons from the first two had been quietly doing most of the work.</p>
+        <p>I did not see that at the time. Each job felt like learning a new field from the beginning. It took the third one to notice that the lessons from the first two had carried over more than I realized.</p>
       </section>
 
       <section id="capacity" aria-labelledby="capacity-h">
@@ -185,7 +185,7 @@ export default function Body() {
         <p>I worked on an R program that took network statistics collected over SNMP, the protocol that lets you read interface counters and other operational numbers off network equipment, and used them to analyze utilization on each connection and forecast when it would need more capacity. SNMP gave us visibility. The program’s job was to turn that visibility into a date.</p>
         <p>A hypothetical link shows why the obvious number was the wrong one. Say the connection carries 1 Gbps and its average utilization is 400 Mbps. That sounds comfortable. But if traffic reaches 850 Mbps every evening, and those peaks are higher each month, the average is hiding the problem. What we needed was the trend in the peaks, the growth rate, and the headroom left at the busy hour, which is what the R analysis produced: for each link, an estimate of when it would cross the threshold we had decided on in advance.</p>
         <PeakChart />
-        <p>The goal was an answer to a business question, when to invest in more capacity, with reliability on one side of it and spending on the other. That taught me something I have leaned on ever since. More data does not produce better decisions. Understanding what the data means, and what action it calls for, does.</p>
+        <p>The goal was an answer to a business question, when to invest in more capacity, with reliability on one side of it and spending on the other. That taught me something I have leaned on ever since. Knowing what the data means, and what action it calls for, mattered more than having more of it.</p>
       </section>
 
       <section id="voip" aria-labelledby="voip-h">
@@ -213,13 +213,12 @@ export default function Body() {
       <section id="data" aria-labelledby="data-h">
         <h2 id="data-h" className="post__h2">The hard part was never collecting the data</h2>
         <p>Collecting metrics is easy compared with deciding from them. A monitoring system gathers thousands of measurements. A VoIP platform writes a record for every call. A website tracks every interaction a visitor has. More dashboards do not make better decisions, and in each of these industries the most available metric was a trap. Average utilization hid the peaks that caused outages. The lowest carrier rate hid the calls that never connected. Page views hid the articles that lost money. Optimizing the wrong metric made the business worse while the chart went up.</p>
-        <p>So I try to understand the business objective before I decide what to measure. Are we cutting cost, improving reliability, growing revenue, improving the customer’s experience, or making room for growth? The answer decides which metrics matter and how to read them. A number without that context is decoration.</p>
+        <p>So I try to understand the business objective before I decide what to measure. Are we cutting cost, improving reliability, growing revenue, improving the customer’s experience, or making room for growth? The answer decides which metrics matter and how to read them. Without that context, a metric is just something to put on a chart.</p>
       </section>
 
       <section id="models" aria-labelledby="models-h">
         <h2 id="models-h" className="post__h2">Reality doesn’t follow the model</h2>
         <p>History helps predict the future and never guarantees it. Traffic patterns, calling behaviour and search algorithms all change, and a model that was right last year is wrong this year if the conditions underneath it moved, and nobody sends a notice. Forecasting is therefore a loop. On the network that meant comparing predicted utilization against what the links actually carried. In VoIP it meant checking that a routing choice was still delivering acceptable quality at the expected cost. In publishing it meant measuring whether the content changes produced the visibility, engagement or revenue we expected, or just the work.</p>
-        <p>A useful system also tells you afterwards whether its recommendation was right, and that second half is the part teams skip.</p>
       </section>
 
       <section id="cloud-ai" aria-labelledby="cloud-ai-h">
@@ -231,7 +230,7 @@ export default function Body() {
       <section id="leadership" aria-labelledby="leadership-h">
         <h2 id="leadership-h" className="post__h2">What it taught me about leading engineers</h2>
         <p>These experiences shaped how I run engineering teams more than any management book did. I do not believe engineering should be disconnected from business outcomes, and the three industries gave me a concrete test: when we build something, what problem does it solve, and how will we know whether it worked? A technically impressive system is not automatically a successful one. A network upgrade that adds capacity nobody needs is sound and wasteful. A routing algorithm that minimizes cost while ruining call quality is a failed optimization. A publishing platform that draws traffic and spends more than it earns is not a business.</p>
-        <p>Performance, reliability, scalability, complexity and cost are connected, and understanding how they connect is what lets an engineering team talk to the rest of the company. Instead of “we need more servers”, we can say what demand we are forecasting, what risk we are managing and what the investment buys. Instead of “we improved performance”, we can say what it did to customer experience or operating cost. That is the difference between implementing technology and understanding its effect on the business, and it is the thing I look for when I hire and the thing I try to teach. The way I frame it with my own teams is in <Link to="/leadership/">how I run engineering</Link>.</p>
+        <p>Performance, reliability, scalability, complexity and cost are connected, and understanding how they connect is what lets an engineering team talk to the rest of the company. Instead of “we need more servers”, we can say what demand we are forecasting, what risk we are managing and what the investment buys. The way I frame it with my own teams is in <Link to="/leadership/">how I run engineering</Link>.</p>
       </section>
     </>
   );
@@ -242,8 +241,7 @@ export function Closing() {
     <>
       <h2 id="closing-h" className="post__close-title h2">What I kept measuring</h2>
       <div className="post__close-copy">
-        <p className="lead">Carrier capacity, call routing and publishing had different business models. In each one, I needed to understand demand, find the constraint and check whether a change improved the result.</p>
-        <p className="post__close-principle">Decide with the data you have, then go back and check whether the decision was right.</p>
+        <p className="lead">Decide with the data you have, then go back and check whether the decision was right.</p>
         <p>Over the course of my career, using the information we have to make a system work better and create more value for the business has stayed one of my favorite problems to solve.</p>
         <div className="post__close-actions">
           <Link to="/contact/" className="action">Tell me what you’re measuring <ArrowRight /></Link>
