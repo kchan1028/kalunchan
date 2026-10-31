@@ -67,9 +67,11 @@ export default function ProjectShowcase() {
   const bar = useRef(null);
   const hoverTimer = useRef(0);
   const settleTimer = useRef(0);
+  const viewTimer = useRef(0);
   const frame = useRef(0);
   const [active, setActive] = useState(0);
   const [hovered, setHovered] = useState(null);
+  const [focused, setFocused] = useState(null);
   const [inView, setInView] = useState(false);
   const [settled, setSettled] = useState(true);
   const [paused, setPaused] = useState(false);
@@ -92,12 +94,18 @@ export default function ProjectShowcase() {
   }, []);
 
   useEffect(() => {
-    const seen = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0.5 });
+    // Coming into view waits a moment, so scrolling down the page past the row costs no video.
+    const seen = new IntersectionObserver(([entry]) => {
+      clearTimeout(viewTimer.current);
+      if (entry.isIntersecting) viewTimer.current = setTimeout(() => setInView(true), 300);
+      else setInView(false);
+    }, { threshold: 0.5 });
     seen.observe(track.current);
     return () => {
       seen.disconnect();
       clearTimeout(hoverTimer.current);
       clearTimeout(settleTimer.current);
+      clearTimeout(viewTimer.current);
       cancelAnimationFrame(frame.current);
     };
   }, []);
@@ -142,7 +150,7 @@ export default function ProjectShowcase() {
   };
 
   const playing = !inView ? null
-    : mode === 'hover' ? hovered
+    : mode === 'hover' ? hovered ?? focused
     : mode === 'swipe' && settled && !paused ? active
     : null;
 
@@ -150,7 +158,7 @@ export default function ProjectShowcase() {
     <section className="sheet showcase" aria-labelledby="showcase-h" data-coord="305 · Live">
       <header className="shipped__head">
         <h2 id="showcase-h" className="h2">Six live sites, recorded as they run</h2>
-        <p className="body-copy">Each preview is a short recording of the public site. Point at one to play it, or swipe through them on a phone. VeloWise is showing its built-in sample project.</p>
+        <p className="body-copy">Each preview is a short recording of the public site. VeloWise is showing its built-in sample project.</p>
       </header>
       <ol className="showcase__track" ref={track} onScroll={onScroll}>
         {showcase.map((item, i) => (
@@ -159,8 +167,8 @@ export default function ProjectShowcase() {
             className={`showcase__item${i === active ? ' is-active' : ''}`}
             onPointerEnter={(e) => e.pointerType === 'mouse' && hoverOn(i)}
             onPointerLeave={(e) => e.pointerType === 'mouse' && hoverOff()}
-            onFocus={(e) => e.target.matches(':focus-visible') && hoverOn(i)}
-            onBlur={hoverOff}
+            onFocus={(e) => e.target.matches(':focus-visible') && setFocused(i)}
+            onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setFocused(null)}
           >
             <div className="shot__frame showcase__frame">
               <div className="shot__bar" aria-hidden="true">
@@ -191,8 +199,9 @@ export default function ProjectShowcase() {
           <span className="visually-hidden">Project {active + 1} of {showcase.length}: {showcase[active].name}</span>
         </p>
         <div className="showcase__progress" ref={bar} aria-hidden="true"><span /></div>
+        {mode === 'hover' && <p className="showcase__hint">Hover or tab to a preview to play it</p>}
         {mode === 'swipe' && (
-          <button type="button" className="showcase__pause" aria-pressed={paused} onClick={() => setPaused((p) => !p)}>
+          <button type="button" className="showcase__pause" onClick={() => setPaused((p) => !p)}>
             {paused ? 'Play previews' : 'Pause previews'}
           </button>
         )}

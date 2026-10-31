@@ -10,4 +10,7 @@ const previews = {
   'Berkeley Omnium': { slug: 'omnium', caseStudy: '/projects/berkeley-omnium/', posterAlt: 'Berkeley Omnium home page with the race weekend headline over a photo of riders. The recording scrolls to the race options and the event numbers.' },
 };
 
-export const showcase = builtSites.map((site) => ({ ...site, ...previews[site.name] }));
+export const showcase = builtSites.map((site) => {
+  if (!previews[site.name]) throw new Error(`No preview for ${site.name}: record one and add it to src/content/showcase.js`);
+  return { ...site, ...previews[site.name] };
+});

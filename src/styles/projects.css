@@ -185,6 +185,12 @@
   transition: transform 180ms linear;
 }
 
+.showcase__hint {
+  flex: none;
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
 .showcase__pause,
 .showcase__arrows button {
   min-height: 44px;
@@ -242,7 +248,10 @@
   .showcase {
     --card: 86vw;
   }
+}
 
+/* Touch swipes the row. A mouse in a narrow window still needs the arrows, because the scrollbar is hidden. */
+@media (hover: none) {
   .showcase__arrows {
     display: none;
   }
