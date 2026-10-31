@@ -127,7 +127,7 @@ test('the theme toggle applies on the next load and survives a reload', async ({
 test('home shows the availability badge, and the lap button reports with reduced motion on', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await expect(page.locator('.badge')).toHaveText('Open to engineering leadership opportunities · Updated Oct 2026');
+  await expect(page.locator('.badge')).toHaveText('Open to engineering leadership opportunities');
   await page.getByRole('button', { name: 'Ride a lap' }).click();
   await expect(page.getByRole('status')).toHaveText('1 lap done');
 });

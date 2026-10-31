@@ -20,8 +20,6 @@ APPROVED_DATED_TEXT = {
 }
 # Owner-approved career years, shown only on the founder story; other pages stay undated.
 APPROVED_YEARS = {
-    # The availability badge's "Updated Oct 2026" (src/content/availability.js). Any month, so updating the badge needs no change here.
-    '/': r'(?<=Updated [A-Z][a-z]{2} )20\d{2}\b',
     '/writing/building-a-startup-from-idea-to-acquisition/': r'\b(?:2007|2013|2024)\b',
     # Owner-approved era and historical dates (Nokia, Symbian, iPhone) on the Nokia VoIP story.
     '/writing/voip-apps-for-nokia-phones-before-the-iphone/': r'\b(?:2003|2005|2006|2007|2008|2009|2010)\b',
