@@ -1,6 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router';
 import { loadRoute, reloadPage, routeReady } from '../pageRoutes';
+
+// <Routes location> tells everything inside it that each navigation is a POP, so App passes the real type down.
+export const NavigationTypeContext = createContext('POP');
+export const useRealNavigationType = () => useContext(NavigationTypeContext);
 
 // Leave and enter in chrome.css fit inside these, delays included. Timers rather than animationend, so a missed event can't strand a navigation.
 const LEAVE_MS = 180;

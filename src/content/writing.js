@@ -1253,6 +1253,68 @@ export const chapters = [
   },
 ].map((c) => ({ ...c, slugs: c.slugs.filter((s) => postBySlug[s]) }));
 
+// The five acts of the /writing/ journey: a reader-facing grouping of the chapters above, which stay the canonical
+// structure for post pages and deep links. Copy comes from the career stages and from figures in the linked posts.
+export const acts = [
+  {
+    id: 'leadership',
+    title: 'Engineering Leadership',
+    short: 'Leadership',
+    principle: stageById.leadership.lesson,
+    proof: stageById.leadership.did,
+    chapterIds: ['leadership'],
+    featured: ['what-engineering-leadership-actually-does', 'fast-paced-vs-changing-priorities', 'why-i-enjoy-mentoring'],
+    next: { to: '/leadership/', label: 'How I run engineering' },
+    figure: { no: 'Fig. 699-2', title: 'Pick the mode the moment calls for', steps: ['Guide', 'Demonstrate', 'Step aside'] },
+  },
+  {
+    id: 'architecture',
+    title: 'Software Architecture',
+    short: 'Architecture',
+    principle: stageById.architecture.lesson,
+    proof: 'Capacity planning and expansion across 2,000+ collocations. A publishing portfolio re-platformed from WordPress to Rails on AWS, with infrastructure improvements contributing to about 30% lower AWS costs.',
+    chapterIds: ['architecture', 'carrier', 'security', 'voip'],
+    featured: ['software-architecture-lessons-from-different-systems', 'the-architecture-you-dont-build', 'capacity-planning-carrier-networks-to-cloud'],
+    next: { to: '/work/', label: 'See the case studies' },
+    figure: { no: 'Fig. 697-0', title: 'Forward engineering is a chain, and it breaks at the handoffs', steps: ['Business need', 'Requirements', 'Design', 'Code', 'Running system'] },
+  },
+  {
+    id: 'founder',
+    title: 'Founder Stories',
+    short: 'Founder',
+    principle: stageById.founder.lesson,
+    proof: stageById.founder.did,
+    chapterIds: ['founder'],
+    featured: ['building-a-startup-from-idea-to-acquisition', 'founding-a-startup-isnt-easy', 'from-idea-to-working-product'],
+    next: { to: '/experience/', label: 'Experience, role by role' },
+    figure: { no: 'Fig. 656-1', title: 'From founding to acquisition, by stage', steps: ['Building the first product', 'Finding customers', 'Production', 'Growth', 'Scaling technology and people', 'Acquisition'] },
+  },
+  {
+    id: 'ai',
+    title: 'AI & Learning',
+    short: 'AI',
+    principle: stageById['cloud-ai'].lesson,
+    proof: stageById['cloud-ai'].did,
+    chapterIds: ['cloud-ai', 'lab'],
+    featured: ['ai-agents-reliable-in-production', 'hidden-cost-of-ai-coding', 'how-i-learn-faster-with-ai'],
+    next: { to: '/projects/fedpath/', label: 'FedPath: transparent scoring, no AI on solicitations' },
+    figure: { no: 'Fig. 700-2', title: 'The deliberate path', steps: ['Define', 'Plan', 'Generate', 'Verify', 'Deliver'] },
+  },
+  {
+    id: 'cycling',
+    title: 'Cycling & Community',
+    short: 'Cycling',
+    principle: 'Racing, organizing the Berkeley Omnium, and the small projects that came out of it.',
+    chapterIds: ['bike'],
+    featured: ['what-cycling-taught-me-about-engineering-leadership', 'organizing-berkeley-omnium-leadership-lessons', 'connect-strava-to-claude-mcp'],
+    next: { to: '/community/', label: 'Berkeley Omnium and the riders it supports' },
+  },
+].map((a) => ({
+  ...a,
+  posts: a.featured.map((s) => postBySlug[s]),
+  chapters: a.chapterIds.map((id) => chapters.find((c) => c.id === id)),
+}));
+
 export function chapterFor(slug) {
   const i = chapters.findIndex((c) => c.slugs.includes(slug));
   return i === -1 ? null : { ...chapters[i], no: String(i + 1).padStart(2, '0') };
