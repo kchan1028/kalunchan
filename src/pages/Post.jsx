@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { postBySlug, chapterFor } from '../content/writing';
 import { getBody, loadBody } from '../content/postBodies';
+import { reloadPage } from '../pageRoutes';
 import TitleBlock from '../components/TitleBlock';
 import PressedType from '../components/PressedType';
 import NotFound from './NotFound';
@@ -15,7 +16,7 @@ export default function Post() {
   const [, setLoaded] = useState(null);
   // On client-side navigation the body chunk may not be loaded yet; render once it arrives.
   useEffect(() => {
-    if (!getBody(slug)) loadBody(slug).then(setLoaded);
+    if (!getBody(slug)) loadBody(slug).then(setLoaded, reloadPage);
   }, [slug]);
   if (!post) return <NotFound />;
   const { default: Body, Closing, toc = [], metadata = {} } = getBody(slug) || {};

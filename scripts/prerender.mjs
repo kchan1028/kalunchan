@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // BUILD_DIR lets validation render into a scratch directory instead of build/.
 const out = path.resolve(root, process.env.BUILD_DIR || 'build');
-const { render, routes, headFor, llmsTxt, loadAllBodies, loadAllPages, pageFor } = await import(pathToFileURL(path.join(root, '.ssr/entry-server.js')).href);
+const { render, routes, headFor, llmsTxt, getBody, loadAllBodies, loadAllPages, pageFor } = await import(pathToFileURL(path.join(root, '.ssr/entry-server.js')).href);
 // Pages and post bodies are lazy chunks; load them all so render() stays synchronous.
 await Promise.all([loadAllPages(), loadAllBodies()]);
 
@@ -66,6 +66,8 @@ function modifiedFor(route, body) {
 
 const modified = {};
 function write(route, file) {
+  // Without this, a post with no body file ships as an empty article and passes the audits.
+  if (route.post && !getBody(route.post.slug)) throw new Error(`Post "${route.post.slug}" needs src/content/posts/${route.post.slug}.jsx`);
   const body = render(route.path);
   const date = modifiedFor(route, body);
   if (date) modified[route.path] = date;

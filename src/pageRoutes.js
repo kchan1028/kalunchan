@@ -28,6 +28,9 @@ export const pageRoutes = [
   { path: '*', page: 'NotFound' },
 ];
 
+// A chunk that won't load usually means a deploy replaced it, so fetch the page fresh.
+export const reloadPage = () => window.location.reload();
+
 export const pageFor = (pathname) => matchRoutes(pageRoutes, pathname)[0].route.page;
 const postSlugOf = (pathname) => pathname.match(/^\/writing\/([^/]+)\/?$/)?.[1];
 
