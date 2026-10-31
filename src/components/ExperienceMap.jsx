@@ -16,7 +16,7 @@ export default function ExperienceMap() {
     const figure = ref.current;
     const column = figure?.parentElement;
     if (!column) return undefined;
-    const roomy = matchMedia('(min-width: 1360px) and (min-height: 800px) and (prefers-reduced-motion: no-preference)');
+    const roomy = matchMedia('(min-width: 85rem) and (min-height: 50rem) and (prefers-reduced-motion: no-preference)');
     let frame = 0;
     let step = 0;
     const update = () => {
@@ -30,7 +30,8 @@ export default function ExperienceMap() {
       const p = Math.min(1, Math.max(0, -top / runway));
       figure.style.setProperty('--open', (Math.min(1, p / 0.16) * Math.min(1, (1 - p) / 0.14)).toFixed(3));
       const next = Math.min(experienceMap.length - 1, Math.max(0, Math.floor(((p - 0.16) / 0.7) * experienceMap.length)));
-      if (next !== step) {
+      // Changing layers hides the open panel, so hold still while a keyboard user is inside the map.
+      if (next !== step && !figure.querySelector(':focus-visible')) {
         step = next;
         setActive(next);
       }

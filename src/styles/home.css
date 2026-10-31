@@ -918,9 +918,10 @@
   }
 }
 
-/* Pinned stack, only where every layer's panel fits on screen (keep in step with ExperienceMap). --open (0 to 1, set
-   on scroll) tilts the layers apart; flat when it isn't set. Smaller screens keep the flat map above the evidence. */
-@media (min-width: 1360px) and (min-height: 800px) {
+/* Pinned stack, only where every layer's panel fits on screen (keep in step with ExperienceMap). Sized in rem so a
+   larger browser text setting falls back too. --open (0 to 1, set on scroll) tilts the layers apart; flat when it
+   isn't set. Smaller screens keep the flat map above the evidence. */
+@media (min-width: 85rem) and (min-height: 50rem) {
   .opening__figure {
     grid-row: 1 / 4;
     overflow-x: clip;
@@ -961,7 +962,7 @@
     margin-top: auto;
   }
 
-  @media (max-height: 900px) {
+  @media (max-height: 56.25rem) {
     .opening__figure .emap {
       gap: var(--s3);
       padding-block: var(--s3);
