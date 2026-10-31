@@ -1,5 +1,66 @@
 /* Experience, Leadership, Work, Case study, Expertise. */
 
+/* ---------- Focus picker: /experience/, /projects/, /engineering-leadership/ ---------- */
+.focus-picker {
+  border-top: 3px solid var(--rule);
+  padding-block: var(--s6);
+  row-gap: var(--s4);
+}
+
+.focus-picker__h {
+  grid-column: 1 / 5;
+  color: var(--ink);
+}
+
+.focus-picker__options {
+  grid-column: 6 / 13;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2) var(--col-gap);
+}
+
+.focus-picker__option {
+  min-height: 48px;
+  padding: var(--s3) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: color 180ms var(--ease-out);
+}
+
+.focus-picker__option:hover,
+.focus-picker__option[aria-pressed='true'] {
+  color: var(--blue);
+}
+
+.focus-picker__option[aria-pressed='true'] {
+  border-top-color: var(--blue);
+  box-shadow: inset 0 2px 0 var(--blue);
+}
+
+.focus-picker__status {
+  grid-column: 6 / 13;
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
+@media (max-width: 899px) {
+  .focus-picker__h,
+  .focus-picker__options,
+  .focus-picker__status {
+    grid-column: 1 / -1;
+  }
+
+  .focus-picker__options {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Experience ---------- */
 .tenure {
   border-top: 1px solid var(--rule);
@@ -8,6 +69,15 @@
 .tenure__grid {
   padding-block: var(--s8);
   row-gap: var(--s5);
+}
+
+/* A role outside the chosen focus keeps its heading, so the career still reads in order. Linking to it opens it. */
+.tenure--collapsed:not(:target) .tenure__spec {
+  display: none;
+}
+
+.tenure--collapsed:not(:target) .tenure__grid {
+  padding-block: var(--s5);
 }
 
 .tenure__head {

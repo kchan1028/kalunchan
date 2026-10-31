@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
   targetRoles, resumeRequest, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
+import FocusPicker, { useFocus } from '../components/FocusPicker';
 import { track } from '../track';
 import { ArrowOut, ArrowRight } from '../components/Icons';
 
@@ -25,28 +25,15 @@ const idOf = (p) => p.id;
 const slugOf = (p) => p.slug;
 
 export default function EngineeringLeadership() {
-  const { search, hash } = useLocation();
-  const navigate = useNavigate();
-  // The prerendered HTML has no query string, so ?for= applies only after hydration.
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => setHydrated(true), []);
-  const focus = hydrated ? focuses.find((f) => f.id === new URLSearchParams(search).get('for')) : undefined;
-  // Someone who arrived on a focused link hasn't reached the control yet, so the first screen says the page is arranged for them.
-  const [arrivedFocused] = useState(() => new URLSearchParams(search).has('for'));
-  const choose = (id) => {
-    const params = new URLSearchParams(search);
-    if (focus?.id === id) params.delete('for');
-    else params.set('for', id);
-    const next = params.toString();
-    navigate({ search: next ? `?${next}` : '', hash }, { replace: true, preventScrollReset: true });
-  };
+  const { focus, arrived, choose } = useFocus(focuses);
   const isMatch = (group, key) => (focus?.[group].includes(key) ? 'is-match' : undefined);
 
   return (
     <>
       <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
       <section className="sheet grid hire-brief" aria-labelledby="brief-h" data-coord="090 · Briefing">
-        {arrivedFocused && focus && (
+        {/* Someone who arrived on a focused link hasn't reached the picker yet, so the first screen says the page is arranged for them. */}
+        {arrived && focus && (
           <p className="hire-brief__focus">
             <span className="label">Evidence arranged for</span>
             <a href="#impact" className="link-arrow"><span>{focus.label}</span> <ArrowRight /></a>
@@ -129,19 +116,16 @@ export default function EngineeringLeadership() {
         </p>
       </section>
 
-      <section className="sheet grid hire-focus" aria-labelledby="focus-h" data-coord="091-1 · Hiring for">
-        <h2 id="focus-h" className="hire-focus__h label">What are you hiring for?</h2>
-        <div className="hire-focus__options" role="group" aria-labelledby="focus-h">
-          {focuses.map((f) => (
-            <button key={f.id} type="button" className="hire-focus__option" aria-pressed={focus?.id === f.id} onClick={() => choose(f.id)}>{f.label}</button>
-          ))}
-        </div>
-        <p className="hire-focus__status" role="status">
-          {focus
-            ? `Moved to the top: ${matchCount('result', impact, focus.impact, figureOf)}, ${matchCount('problem', problems, focus.problems, idOf)} and ${matchCount('post', featured, focus.writing, slugOf)}. Everything else is still below.`
-            : 'Pick one and the closest evidence moves to the top of each section below. Nothing is hidden.'}
-        </p>
-      </section>
+      <FocusPicker
+        title="What are you hiring for?"
+        options={focuses}
+        focus={focus}
+        choose={choose}
+        coord="091-1 · Hiring for"
+        status={focus
+          ? `Moved to the top: ${matchCount('result', impact, focus.impact, figureOf)}, ${matchCount('problem', problems, focus.problems, idOf)} and ${matchCount('post', featured, focus.writing, slugOf)}. Everything else is still below.`
+          : 'Pick one and the closest evidence moves to the top of each section below. Nothing is hidden.'}
+      />
 
       <section id="impact" className="sheet grid hire-section" aria-labelledby="impact-h" data-coord="092 · Business impact">
         <div className="hire-section__head">
