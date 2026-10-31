@@ -1,8 +1,9 @@
-import { Link } from 'react-router';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
-  targetRoles, resumeRequest, briefing, outcomes, paths, summary, impact, problems, principles, expertise, featuredSlugs,
+  targetRoles, resumeRequest, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import { track } from '../track';
@@ -13,11 +14,44 @@ const onLinkedIn = () => track('linkedin_click', person.linkedin);
 
 const featured = featuredSlugs.map((slug) => posts.find((p) => p.slug === slug)).filter(Boolean);
 
+// Matches first, otherwise in their written order. Nothing is removed.
+const matchesFirst = (items, keys, keyOf) => (keys ? [...items].sort((a, b) => keys.includes(keyOf(b)) - keys.includes(keyOf(a))) : items);
+const matchCount = (noun, items, keys, keyOf) => {
+  const n = items.filter((i) => keys.includes(keyOf(i))).length;
+  return `${n} ${noun}${n === 1 ? '' : 's'}`;
+};
+const figureOf = (i) => i.figure;
+const idOf = (p) => p.id;
+const slugOf = (p) => p.slug;
+
 export default function EngineeringLeadership() {
+  const { search, hash } = useLocation();
+  const navigate = useNavigate();
+  // The prerendered HTML has no query string, so ?for= applies only after hydration.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  const focus = hydrated ? focuses.find((f) => f.id === new URLSearchParams(search).get('for')) : undefined;
+  // Someone who arrived on a focused link hasn't reached the control yet, so the first screen says the page is arranged for them.
+  const [arrivedFocused] = useState(() => new URLSearchParams(search).has('for'));
+  const choose = (id) => {
+    const params = new URLSearchParams(search);
+    if (focus?.id === id) params.delete('for');
+    else params.set('for', id);
+    const next = params.toString();
+    navigate({ search: next ? `?${next}` : '', hash }, { replace: true, preventScrollReset: true });
+  };
+  const isMatch = (group, key) => (focus?.[group].includes(key) ? 'is-match' : undefined);
+
   return (
     <>
       <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
       <section className="sheet grid hire-brief" aria-labelledby="brief-h" data-coord="090 · Briefing">
+        {arrivedFocused && focus && (
+          <p className="hire-brief__focus">
+            <span className="label">Evidence arranged for</span>
+            <a href="#impact" className="link-arrow"><span>{focus.label}</span> <ArrowRight /></a>
+          </p>
+        )}
         <h2 id="brief-h" className="hire-brief__h label">Briefing</h2>
         <dl className="hire-brief__facts">
           {briefing.map((b) => (
@@ -95,6 +129,20 @@ export default function EngineeringLeadership() {
         </p>
       </section>
 
+      <section className="sheet grid hire-focus" aria-labelledby="focus-h" data-coord="091-1 · Hiring for">
+        <h2 id="focus-h" className="hire-focus__h label">What are you hiring for?</h2>
+        <div className="hire-focus__options" role="group" aria-labelledby="focus-h">
+          {focuses.map((f) => (
+            <button key={f.id} type="button" className="hire-focus__option" aria-pressed={focus?.id === f.id} onClick={() => choose(f.id)}>{f.label}</button>
+          ))}
+        </div>
+        <p className="hire-focus__status" role="status">
+          {focus
+            ? `Moved to the top: ${matchCount('result', impact, focus.impact, figureOf)}, ${matchCount('problem', problems, focus.problems, idOf)} and ${matchCount('post', featured, focus.writing, slugOf)}. Everything else is still below.`
+            : 'Pick one and the closest evidence moves to the top of each section below. Nothing is hidden.'}
+        </p>
+      </section>
+
       <section id="impact" className="sheet grid hire-section" aria-labelledby="impact-h" data-coord="092 · Business impact">
         <div className="hire-section__head">
           <p className="label">092</p>
@@ -102,8 +150,8 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Each result links to the work behind it.</p>
         </div>
         <ol className="hire-impact">
-          {impact.map((i) => (
-            <li key={i.title}>
+          {matchesFirst(impact, focus?.impact, figureOf).map((i) => (
+            <li key={i.title} className={isMatch('impact', i.figure)}>
               <p className="hire-impact__figure">{i.figure}</p>
               <h3 className="h3">{i.title}</h3>
               <p className="body-copy">{i.text}</p>
@@ -120,8 +168,8 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Companies rarely need more engineering in general. They need one of these fixed.</p>
         </div>
         <div className="hire-problems">
-          {problems.map((p) => (
-            <article key={p.id} id={p.id} aria-labelledby={`${p.id}-h`}>
+          {matchesFirst(problems, focus?.problems, idOf).map((p) => (
+            <article key={p.id} id={p.id} className={isMatch('problems', p.id)} aria-labelledby={`${p.id}-h`}>
               <h3 id={`${p.id}-h`} className="h3">{p.title}</h3>
               <p className="body-copy">{p.text}</p>
               <Link to={p.to} className="link-arrow"><span>{p.label}</span> <ArrowRight /></Link>
@@ -194,8 +242,8 @@ export default function EngineeringLeadership() {
           <p className="body-copy">Essays on decisions engineering leaders make every week. <Link to="/writing/">All writing</Link>.</p>
         </div>
         <ul className="hire-writing">
-          {featured.map((p) => (
-            <li key={p.slug}>
+          {matchesFirst(featured, focus?.writing, slugOf).map((p) => (
+            <li key={p.slug} className={isMatch('writing', p.slug)}>
               <h3 className="h3"><Link to={`/writing/${p.slug}/`}>{p.title}</Link></h3>
               <p className="body-copy">{p.description}</p>
             </li>

@@ -120,6 +120,15 @@ export const problems = [
   },
 ];
 
+// "What are you hiring for?": each focus names the items below it moves to the top of their sections. It only reorders
+// existing evidence, so add a focus when the page already has proof for it. Keys: impact figure, problem id, post slug.
+export const focuses = [
+  { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], problems: ['scaling-teams', 'slow-delivery'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'] },
+  { id: 'cloud', label: 'Cloud cost and infrastructure', impact: ['~30%', '8M+'], problems: ['cloud-costs', 'technical-debt'], writing: ['when-technical-debt-becomes-a-business-problem'] },
+  { id: 'regulated', label: 'Regulated or public-sector systems', impact: ['Public sector'], problems: ['security'], writing: ['building-public-sector-applications'] },
+  { id: 'growth', label: 'Product and company growth', impact: ['Acquired', '+50%'], problems: ['strategy-and-execution'], writing: ['speed-vs-quality-software-engineering'] },
+];
+
 export const principles = [
   { text: 'Engineering exists to solve business problems. I start from the outcome the business needs before choosing technology.', to: '/leadership/#ambiguity' },
   { text: 'Every technical decision is also a decision about cost, risk and who maintains it later, so I write the tradeoff down.', to: '/leadership/#decisions' },
