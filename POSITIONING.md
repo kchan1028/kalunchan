@@ -1,3 +1,5 @@
+Update (owner decision, 2026-10-31): describe current availability as engineering leadership opportunities, with an emphasis on building teams, technical direction and hands-on delivery. Avoid specific target job titles in public hiring copy. This supersedes the title-specific guidance below; historical career titles remain.
+
 <!--
 POSITIONING.md: removes job-seeking language from kalunchan.dev.
 This file overrides any conflicting wording in PROFILE.md and GENERALIST.md.

@@ -1,19 +1,19 @@
-// /engineering-leadership/: the recruiter and hiring-manager page. The one place on the site that names the
-// roles KC is open to (owner decision, recorded in POSITIONING.md). Every figure here already appears, with its
+// /engineering-leadership/: the recruiter and hiring-manager page. Describe opportunities by scope
+// rather than specific job titles. Every figure here already appears, with its
 // evidence, on /experience/, /about/ or a linked post. Keep employer names, career years and résumé files off
 // this page (scripts/audit-seo.py); the résumé is sent on request through the leadership form on /contact/.
 
-export const targetRoles = ['VP of Engineering', 'Director of Engineering', 'Head of Engineering'];
+export const opportunityStatement = 'Open to engineering leadership opportunities where I can build teams, shape technical direction and stay close to the work.';
 
 // The leadership form on /contact/. Every enquiry there gets the résumé in reply.
 export const resumeRequest = '/contact/#leadership';
 
 // Shared link into this page from case studies and Leadership-topic posts.
-export const hireLink = { to: '/engineering-leadership/', label: 'Hiring a VP or Director of Engineering? What I bring to the role' };
+export const hireLink = { to: '/engineering-leadership/', label: 'Looking for an engineering leader? What I bring to your team' };
 
 // Briefing block at the top of the page: the 60-second answer. Facts from facts.md (owner-confirmed 2026-10-28).
 export const briefing = [
-  { k: 'Target roles', v: 'VP or Director of Engineering. Head of Engineering or CTO where the company needs a hands-on technical executive.' },
+  { k: 'Opportunity', v: 'Engineering leadership that brings together technical direction, team growth and hands-on delivery.' },
   { k: 'Lane', v: 'Growth-stage and scale-up companies, and engineering leadership for GovTech and regulated platforms.' },
   { k: 'Location', v: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.' },
   { k: 'Org scope', v: 'Co-founder and CTO who built a team that grew to 30+. CTO of a media publishing platform. VP of Operations running software engineering, QA and network operations as one function.' },
@@ -33,7 +33,7 @@ export const paths = [
 ];
 
 export const summary = [
-  { k: 'Target roles', v: 'VP or Director of Engineering at growth-stage and scale-up companies. Head of Engineering or CTO where the company needs a hands-on technical executive.' },
+  { k: 'Opportunity', v: 'Building teams and platforms at growing companies, with ownership of technical direction and delivery.' },
   { k: 'Most recent scope', v: 'Architecture, technical strategy and delivery for government, startup and founder clients through Yippify.' },
   { k: 'Executive roles', v: 'Co-founder and CTO through an acquisition, CTO of a media publishing platform, VP of Operations for a voice services company.' },
   { k: 'Core strengths', v: 'Engineering organization leadership, cloud platforms on AWS, architecture and modernization, public-sector and regulated systems, product engineering, security and reliability, practical AI adoption.' },
