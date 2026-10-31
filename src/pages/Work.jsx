@@ -1,16 +1,12 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router';
 import { cases } from '../content/work';
-import { projects } from '../content/projects';
 import { focuses } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
-import ProjectShot from '../components/ProjectShot';
 import ProjectShowcase from '../components/ProjectShowcase';
 import { showcase } from '../content/showcase';
 import FocusPicker, { useFocus } from '../components/FocusPicker';
-import { ArrowOut, ArrowRight } from '../components/Icons';
-
-const chosen = (p) => p.decisions[0].options.find((o) => o.chosen).label;
+import { ArrowRight } from '../components/Icons';
 
 // Only focuses with a real case study behind them are offered here.
 const options = focuses.filter((f) => cases.some((c) => f.cases.includes(c.slug)));
@@ -18,59 +14,7 @@ const options = focuses.filter((f) => cases.some((c) => f.cases.includes(c.slug)
 export default function Work() {
   const { focus, choose } = useFocus(options);
   const shownCases = focus ? cases.filter((c) => focus.cases.includes(c.slug)) : cases;
-  const shipped = (
-    <Fragment key="shipped">
-      <ProjectShowcase />
-      <section className="sheet shipped" aria-labelledby="shipped-h" data-coord="310 · Shipped">
-        <header className="shipped__head">
-          <h2 id="shipped-h" className="h2">Shipped products and sites</h2>
-          <p className="body-copy">Live products for federal contracting, local cycling and a small business.</p>
-        </header>
-        <ol className="shipped__list">
-          {projects.map((p) => (
-            <li key={p.slug} className="shipped__item">
-              <ProjectShot project={p} sizes="(max-width: 899px) 92vw, (max-width: 1440px) 54vw, 760px" />
-              <div className="shipped__body">
-                <p className="shipped__kind label">
-                  <span className="mono">{p.no}</span> {p.kind}
-                </p>
-                <h3 className="shipped__name">
-                  <Link to={`/projects/${p.slug}/`}>{p.name}</Link>
-                </h3>
-                <p className="shipped__claim">{p.claim}</p>
-                <dl className="shipped__story">
-                  <div>
-                    <dt className="label">Problem</dt>
-                    <dd>{p.problemShort}</dd>
-                  </div>
-                  <div>
-                    <dt className="label">Built</dt>
-                    <dd>{p.built.map((b) => b.name).join(' · ')}</dd>
-                  </div>
-                  <div>
-                    <dt className="label">Decision</dt>
-                    <dd>{chosen(p)}</dd>
-                  </div>
-                  <div>
-                    <dt className="label">Outcome</dt>
-                    <dd>{p.outcome[0]}</dd>
-                  </div>
-                </dl>
-                <div className="shipped__actions">
-                  <a className="action" href={p.site} target="_blank" rel="noopener">
-                    Visit {p.domainLabel} <ArrowOut />
-                  </a>
-                  <Link className="link-arrow" to={`/projects/${p.slug}/`}>
-                    <span>How I built {p.name}</span> <ArrowRight />
-                  </Link>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-    </Fragment>
-  );
+  const shipped = <ProjectShowcase key="shipped" />;
   const caseStudies = (
     <Fragment key="cases">
       <section className="sheet cases" aria-labelledby="cases-h">
