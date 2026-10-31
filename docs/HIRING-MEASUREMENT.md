@@ -14,6 +14,6 @@ Do not send qualification notes or contact details to analytics. Judge the site 
 
 ## Content still requiring source material
 
-KC supplied the LinkedIn recommendation text and author roles on 31 October 2026. The hiring page features excerpts from Michael (Python Developer) and Kaitlyn Pratt (Creative Content Writer), with a link to the source recommendations. Only punctuation spacing was normalized in Michael’s excerpt. Do not infer surnames, employers or working relationships beyond what KC supplied.
+KC supplied the LinkedIn recommendation text and author roles on 31 October 2026. The hiring page features excerpts from Michael (Python Developer) and Kaitlyn (Creative Content Writer), with a link to the source recommendations. Only punctuation spacing was normalized in Michael’s excerpt. Do not infer surnames, employers or working relationships beyond what KC supplied.
 
 Further organizational scope (direct reports, managers managed, hiring responsibility and performance management) and a specific recent client outcome require KC's confirmation. Current public-sector material describes confirmed work and engineering responsibilities, not a newly claimed client result or authorization.

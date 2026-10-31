@@ -202,6 +202,58 @@
   gap: var(--s4) var(--s6);
 }
 
+/* The hiring path is intentionally short: positioning, proof, work, recommendations. */
+.opening__text--focused {
+  grid-column: 1 / 10;
+  padding-bottom: var(--s9);
+}
+
+.home-evidence,
+.home-recommendations {
+  padding-block: var(--s9);
+  border-top: 3px solid var(--rule);
+  row-gap: var(--s7);
+}
+
+.home-evidence__head,
+.home-recommendations__head {
+  grid-column: 1 / 5;
+}
+
+.home-evidence__head .body-copy { margin-top: var(--s3); color: var(--ink-2); }
+.home-evidence__list,
+.home-recommendations .hire-recommendations,
+.home-recommendations__link { grid-column: 6 / 13; }
+
+.home-evidence__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--col-gap); }
+.home-evidence__list li { border-top: 3px solid var(--rule); padding-top: var(--s4); }
+.home-evidence__list strong { display: block; color: var(--blue); font-size: var(--t-h2); font-weight: 800; font-stretch: 68%; line-height: 1; }
+.home-evidence__list .h3 { margin-top: var(--s3); }
+.home-evidence__list .body-copy { margin-block: var(--s3) var(--s4); }
+
+.home-work { padding-block: var(--s9); }
+.home-work__head { grid-column: 1 / 5; }
+.home-work__head p { margin-top: var(--s3); color: var(--on-blue-soft); }
+.home-work__list { grid-column: 6 / 13; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--col-gap); }
+.home-work__list li { border-top: 3px solid currentColor; padding-top: var(--s4); }
+.home-work__list .label { color: var(--on-blue-soft); }
+.home-work__list .h3 { margin-block: var(--s3); }
+.home-work__list a { color: inherit; }
+.home-work__list .link-arrow { margin-top: var(--s5); }
+.home-recommendations__link { margin-top: calc(-1 * var(--s4)); }
+
+@media (max-width: 760px) {
+  .opening__text--focused,
+  .home-evidence > *,
+  .home-recommendations > *,
+  .home-work .grid > * { grid-column: 1 / -1; }
+  .home-evidence__list,
+  .home-work__list { grid-template-columns: 1fr; gap: var(--s7); }
+  .home-evidence,
+  .home-recommendations,
+  .home-work { padding-block: var(--s8); }
+}
+
 .opening__open {
   margin-top: var(--s7);
   padding-top: var(--s3);

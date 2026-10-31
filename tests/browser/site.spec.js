@@ -138,7 +138,7 @@ test('hiring visitors can go straight from the opening to the short enquiry form
   await expect(page.locator('#recommendations blockquote')).toHaveCount(2);
   await expect(page.locator('#recommendations')).toContainText('Michael');
   await expect(page.locator('#recommendations')).toContainText('Python Developer');
-  await expect(page.locator('#recommendations')).toContainText('Kaitlyn Pratt');
+  await expect(page.locator('#recommendations')).toContainText('Kaitlyn');
   await expect(page.locator('#recommendations')).toContainText('Creative Content Writer');
   await page.locator('#recommendations').scrollIntoViewIfNeeded();
   await expect(page.locator('#recommendations h2')).not.toHaveAttribute('data-sw', 'wait');

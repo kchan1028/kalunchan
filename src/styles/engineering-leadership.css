@@ -1,4 +1,17 @@
 /* /engineering-leadership/: recruiter and hiring-manager page. Ruled rows on the shared 12-column sheet. */
+.hire-opening {
+  padding-block: var(--s8) var(--s9);
+  row-gap: var(--s6);
+}
+
+.hire-opening__copy { grid-column: 1 / 10; }
+.hire-opening__copy .display { max-width: 12ch; }
+.hire-opening__copy .body-copy { max-width: 50ch; margin-top: var(--s5); font-size: var(--t-lead); }
+.hire-opening__actions { grid-column: 1 / 13; display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); }
+
+@media (max-width: 760px) {
+  .hire-opening > * { grid-column: 1 / -1; }
+}
 /* Briefing: the 60-second answer, above the longer evidence. */
 .hire-brief {
   padding-block: var(--s6) var(--s8);
