@@ -8,6 +8,7 @@ import { ArrowOut } from './Icons';
 import Coordinate from './Coordinate';
 import PressedType from './PressedType';
 import SiteSearch from './SiteSearch';
+import ThemeToggle from './ThemeToggle';
 import HiringContactLink from './HiringContactLink';
 
 const bayAreaTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' });
@@ -57,6 +58,7 @@ function Header() {
         <Coordinate />
         <LocalTime />
         <SiteSearch />
+        <ThemeToggle />
         <button
           type="button"
           className="contents-toggle"

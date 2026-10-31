@@ -1,5 +1,7 @@
 Update (owner decision, 2026-10-31): describe current availability as engineering leadership opportunities, with an emphasis on building teams, technical direction and hands-on delivery. Avoid specific target job titles in public hiring copy. This supersedes the title-specific guidance below; historical career titles remain.
 
+Update (owner decision, 2026-10-31): the homepage is a recruiter-facing bento portfolio. Its one availability line is the badge in src/content/availability.js, which replaces `roleIntent`. Résumé stays on request until `resume.pdf` is set in src/content/portfolio.js; a public email stays undecided until `person.email` is set.
+
 <!--
 POSITIONING.md: removes job-seeking language from kalunchan.dev.
 This file overrides any conflicting wording in PROFILE.md and GENERALIST.md.

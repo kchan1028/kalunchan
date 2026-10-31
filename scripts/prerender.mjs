@@ -3,6 +3,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { availability, availabilityAgeDays, availabilityIsStale, STALE_AFTER_DAYS } from '../src/content/availability.js';
+
+if (availabilityIsStale(availability)) {
+  console.warn(`WARNING: availability.updated is ${availability.updated}, ${availabilityAgeDays(availability)} days old (limit ${STALE_AFTER_DAYS}). Update src/content/availability.js.`);
+}
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // BUILD_DIR lets validation render into a scratch directory instead of build/.

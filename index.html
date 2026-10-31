@@ -3,8 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f5f2" />
-    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f4f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101315" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // A saved theme applies before first paint. With none saved, base.css follows the system. Keep in step with ThemeToggle.jsx.
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+          document.documentElement.dataset.theme = savedTheme;
+          document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) {
+            meta.content = savedTheme === 'dark' ? '#101315' : '#f4f5f2';
+          });
+        }
+      } catch (e) {}
+    </script>
     <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
     <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/logo192.png?v=2" />

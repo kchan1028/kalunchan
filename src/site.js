@@ -23,7 +23,8 @@ const base = [
   {
     "path": "/",
     "title": "Ka Lun Chan (KC) \u2014 Engineering Leader, SF Bay Area",
-    "description": "Ka Lun Chan (KC): Bay Area engineering leader for growing companies. Co-founder and CTO who built a startup to 400k+ users and an acquisition."
+    "description": "Ka Lun Chan (KC): Bay Area engineering leader for growing companies. Co-founder and CTO who built a startup to 400k+ users and an acquisition.",
+    image: { path: '/images/og-home.jpg', width: 1200, height: 630, alt: 'Ka Lun Chan, engineering leader building products and the teams that scale them' }
   },
   {
     "path": "/about/",

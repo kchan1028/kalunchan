@@ -159,6 +159,24 @@ html[data-page='enter'] .site-header::after {
   display: none;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 180ms var(--ease-out);
+}
+
+.theme-toggle:hover {
+  color: var(--blue);
+}
+
 .search-toggle:hover {
   color: var(--blue);
 }
@@ -754,16 +772,6 @@ p.title-block__heading {
   flex-direction: column;
   gap: var(--s6);
   align-self: end;
-}
-
-.colophon__availability {
-  color: #b6bcc2;
-  max-width: 44ch;
-}
-
-.colophon__availability strong {
-  color: var(--paper);
-  font-weight: 650;
 }
 
 .colophon .action {

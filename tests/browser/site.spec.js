@@ -111,17 +111,37 @@ test('contact pending and failed responses preserve the submission for retry', a
   expect(submissions[0].submissionId).toBeTruthy();
 });
 
+test('the theme toggle applies on the next load and survives a reload', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('/');
+  const toggle = page.getByRole('button', { name: 'Dark theme' });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.getByRole('button', { name: 'Dark theme' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(16, 19, 21)');
+});
+
+test('home shows the availability badge, and the lap button reports with reduced motion on', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  await expect(page.locator('.badge')).toHaveText('Open to engineering leadership opportunities');
+  await page.getByRole('button', { name: 'Ride a lap' }).click();
+  await expect(page.getByRole('status')).toHaveText('1 lap done');
+});
 
 test('hiring visitors can go straight from the opening to the short enquiry form', async ({ page }, testInfo) => {
   await page.goto('/');
-  await expect(page.locator('.opening__fit')).toContainText('develop engineers into leaders');
+  await expect(page.locator('.tile--hero')).toContainText('Engineering leader building products');
   await page.evaluate(() => document.fonts.ready);
   await page.locator('#thesis').evaluate((node) => Promise.all(node.getAnimations({ subtree: true }).map((animation) => animation.finished)));
-  const primaryAction = page.locator('.opening__actions').first().getByRole('link', { name: 'Talk about your engineering team' });
+  const primaryAction = page.locator('.tile--hero').getByRole('link', { name: 'Talk about your engineering team' });
   const actionBounds = await primaryAction.boundingBox();
   expect(actionBounds.y + actionBounds.height).toBeLessThanOrEqual(page.viewportSize().height);
   await page.screenshot({ path: `/private/tmp/hiring-home-${testInfo.project.name}.png` });
-  await page.locator('.opening__actions').first().getByRole('link', { name: 'Talk about your engineering team' }).click();
+  await page.locator('.tile--hero').getByRole('link', { name: 'Talk about your engineering team' }).click();
   await expect(page).toHaveURL(/\/contact\/#leadership$/);
   const form = page.locator('form[aria-labelledby="lead-form-title"]');
   await expect(form).toBeVisible();

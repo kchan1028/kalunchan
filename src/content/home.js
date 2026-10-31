@@ -1,17 +1,7 @@
-// Homepage sections below the hero. Every fact here appears elsewhere on the
-// site with its source; nothing is stated only here. Employers unnamed, no years.
+// Career stages, built sites and the leadership flow, shown on /writing/, /projects/ and /leadership/. Every fact
+// here appears elsewhere on the site with its source. Employers unnamed, no years.
 
-// 001 · Impact: six verified accomplishments, each linking to its evidence.
-export const impact = [
-  { figure: 'Every layer', text: 'of a company, from the helpdesk and network operations to the boardroom', to: '/about/' },
-  { figure: 'Acquired', text: 'co-founded a communications company and led it to acquisition, then stayed on after the sale', to: '/writing/building-a-startup-from-idea-to-acquisition/#acquisition' },
-  { figure: '400,000+', text: 'users served from cloud regions on three continents', to: '/work/three-continent-platform/' },
-  { figure: '30+', text: 'people in the team I built as co-founder and CTO, and fully remote teams after it', to: '/experience/#communications' },
-  { figure: '~30%', text: 'lower AWS costs on a publishing re-platform, with traffic and engagement up 50%', to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost' },
-  { figure: 'Public sector', text: 'applications engineered to security authorization and Section 508 requirements', to: '/writing/building-public-sector-applications/' },
-];
-
-// 002 · Career timeline: seven stages in the order lived. Stages, not dates.
+// Career timeline: seven stages in the order lived. Stages, not dates.
 export const careerStages = [
   {
     id: 'carrier', name: 'Carrier networks', role: 'Member of technical staff, national broadband network',
@@ -64,9 +54,7 @@ export const careerStages = [
   },
 ];
 
-// 003 · Case-study previews: the same five-step flow for each. Outcomes are
-// the ones already published; qualitative where no figure is confirmed.
-// Thumbnail strip at the end of the homepage opening. Each card links to the live site.
+// Live sites, each linking out. Shown in the /projects/ showcase.
 export const builtSites = [
   { name: 'VeloWise', type: 'Engineering delivery intelligence', url: 'https://getvelowise.com/', domain: 'getvelowise.com', src: '/images/projects/velowise-desktop-1200.webp', alt: 'VeloWise product visual', width: 1200, height: 630 },
   { name: 'FedPath', type: 'Government contracting platform', url: 'https://gofedpath.com/', domain: 'gofedpath.com', src: '/images/projects/fedpath-desktop-640.webp', alt: 'FedPath home page', width: 640, height: 400 },
@@ -76,67 +64,7 @@ export const builtSites = [
   { name: 'Berkeley Omnium', type: 'Community and event website', url: 'https://berkeleyomnium.com/', domain: 'berkeleyomnium.com', src: '/images/projects/omnium-desktop-640.webp', alt: 'Berkeley Omnium home page', width: 640, height: 400 },
 ];
 
-export const caseStudies = [
-  {
-    id: 'snmp', name: 'SNMP capacity forecasting with R', where: 'Carrier network',
-    steps: [
-      'Links filled months before replacement hardware could arrive',
-      'Interface statistics over SNMP; the peaks, not the average, told the story',
-      'A headroom threshold decided in advance, per link',
-      'An R program forecasting when each link would cross it',
-      'Upgrades ordered ahead of lead times instead of after congestion',
-    ],
-    to: '/writing/data-driven-engineering-network-voip-publishing/#capacity', label: 'The data-to-decision loop',
-  },
-  {
-    id: 'voip', name: 'VoIP least-cost routing and voice quality', where: 'Communications platform',
-    steps: [
-      'The cheapest carrier route often failed to connect or sounded bad',
-      'Answer rates, call durations, completion and quality by route and destination',
-      'Balance cost against quality; choose media paths by caller location',
-      'Call statistics fed into routing; source-IP geolocation for the media path',
-      'Better call quality for distant users and less bandwidth paid for',
-    ],
-    to: '/writing/open-source-voip-distributed-systems-lessons/#routing', label: 'Routing as a business decision',
-  },
-  {
-    id: 'publishing', name: 'Publishing SEO and revenue analytics', where: 'Media publishing platform',
-    steps: [
-      'A portfolio of titles competing for audience against far larger publishers',
-      'Traffic sources and revenue per thousand views, page by page',
-      'Treat speed, structure and distribution as platform features',
-      'Re-platform from WordPress to Rails on AWS; structured, answerable pages',
-      'Organic traffic, social traffic and engagement each up 50%',
-    ],
-    to: '/work/publishing-distribution/', label: 'Case study: competing on distribution',
-  },
-  {
-    id: 'aws', name: 'AWS modernization and cost optimization', where: 'Media publishing platform',
-    steps: [
-      'Hosting sized for a peak that never came back, on a stack that was hard to change',
-      'Database load, and the pages that never changed',
-      'Right-size, scale on real demand, fix the database before buying a bigger one',
-      'Caching and query fixes, with Terraform-managed infrastructure',
-      'Infrastructure improvements contributed to about 30% lower AWS costs',
-    ],
-    to: '/writing/capacity-planning-carrier-networks-to-cloud/#cloud-cost', label: 'Cloud capacity is a bill',
-  },
-  {
-    id: 'federal', name: 'Public-sector application security, accessibility and compliance', where: 'Government technology, Yippify',
-    steps: [
-      'Applications that must prove they are secure and accessible',
-      'Which controls the platform inherits and which the application owns',
-      'Security, Section 508 and Plain Writing written into the acceptance criteria from the start',
-      'Server-side authorization and audit logs, with a pipeline that leaves evidence',
-      'Engineering evidence that supports the Authority to Operate',
-    ],
-    to: '/writing/building-public-sector-applications/', label: 'What building public-sector applications taught me',
-  },
-];
-
-export const caseSteps = ['Problem', 'Analysis', 'Decision', 'Implementation', 'Outcome'];
-
-// 004 · Leadership flow: six steps and a loop, each tied to a practice.
+// Leadership flow: six steps and a loop, each tied to a practice.
 export const leadershipFlow = [
   { name: 'Business goals', text: 'Start from the outcome the business needs, in its own words, and name the unknowns.', to: '/leadership/#ambiguity' },
   { name: 'Technical strategy', text: 'Architecture decisions in writing, with the options and what each costs to run.', to: '/leadership/#decisions' },
