@@ -7,6 +7,7 @@ import { outcomes } from '../content/engineeringLeadership';
 import { ArrowOut, ArrowRight } from './Icons';
 import Coordinate from './Coordinate';
 import PressedType from './PressedType';
+import SiteSearch from './SiteSearch';
 
 const bayAreaTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' });
 
@@ -54,6 +55,7 @@ function Header() {
         </Link>
         <Coordinate />
         <LocalTime />
+        <SiteSearch />
         <button
           type="button"
           className="contents-toggle"

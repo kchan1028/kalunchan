@@ -248,6 +248,9 @@ White orthogonal linework on the blue field. Tiers are named (tier rule under ea
 ### Decision Table
 Options listed as ruled rows (state, option, note). Rejected options stay visible in ink tertiary at 500 weight; the chosen option is struck forward with ink hairlines above and below, a paper-sunk band, and its state word in blue 700.
 
+### Site Search
+A Search button in the header, or Cmd/Ctrl+K, opens a modal with a square-cornered panel under a heavy top rule. Typing filters pages, projects, case studies and posts by title, summary and topic, not full post text. Results are ruled rows; the current row gets a sunk fill and an ink bar, with no blue. No animation. The button stays hidden until hydration, since it needs JavaScript, and the index loads as its own chunk on first open.
+
 ### Contents List
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
 
