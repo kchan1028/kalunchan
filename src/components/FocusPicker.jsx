@@ -9,7 +9,7 @@ export function useFocus(options) {
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => setHydrated(true), []);
   const focus = hydrated ? options.find((f) => f.id === new URLSearchParams(search).get('for')) : undefined;
-  const [arrived] = useState(() => new URLSearchParams(search).has('for'));
+  const [arrived] = useState(() => options.some((f) => f.id === new URLSearchParams(search).get('for')));
   const choose = (id) => {
     const params = new URLSearchParams(search);
     if (focus?.id === id) params.delete('for');
@@ -20,10 +20,11 @@ export function useFocus(options) {
   return { focus, arrived, choose };
 }
 
-export default function FocusPicker({ options, focus, choose, coord, status }) {
+// Hiring language belongs only on /engineering-leadership/ (POSITIONING.md §0), so each page sets its own title.
+export default function FocusPicker({ title, options, focus, choose, coord, status }) {
   return (
     <section className="sheet grid focus-picker" aria-labelledby="focus-h" data-coord={coord}>
-      <h2 id="focus-h" className="focus-picker__h label">What are you hiring for?</h2>
+      <h2 id="focus-h" className="focus-picker__h label">{title}</h2>
       <div className="focus-picker__options" role="group" aria-labelledby="focus-h">
         {options.map((f) => (
           <button key={f.id} type="button" className="focus-picker__option" aria-pressed={focus?.id === f.id} onClick={() => choose(f.id)}>{f.label}</button>

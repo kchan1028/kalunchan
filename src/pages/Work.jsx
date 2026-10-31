@@ -73,7 +73,11 @@ export default function Work() {
       <section className="sheet cases" aria-labelledby="cases-h">
         <header className="shipped__head">
           <h2 id="cases-h" className="h2">Architecture work and design examples</h2>
-          <p className="body-copy">Work on communications, publishing and carrier infrastructure, alongside illustrative designs for modernization, document processing and event-driven services.</p>
+          <p className="body-copy">
+            {focus
+              ? 'The work closest to what you picked. Illustrative designs are left out while a focus is on.'
+              : 'Work on communications, publishing and carrier infrastructure, alongside illustrative designs for modernization, document processing and event-driven services.'}
+          </p>
         </header>
       </section>
       <ol className="sheet case-index" data-coord="300 · Case studies">
@@ -111,16 +115,19 @@ export default function Work() {
           I find the problem, build the product, and stay with it until it works for the people using it.
         </p>
         <p className="page-lead__aside body-copy">
-          Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.
+          {focus
+            ? 'The closest case studies come first, then three shipped projects. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'
+            : 'Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.'}
         </p>
       </div>
       <FocusPicker
+        title="What are you looking for?"
         options={options}
         focus={focus}
         choose={choose}
-        coord="300-0 · Hiring for"
+        coord="300-0 · Focus"
         status={focus
-          ? `Showing ${shownCases.length} of ${cases.length} case studies first, then the shipped products.`
+          ? `Showing ${shownCases.length} of ${cases.length} case studies first, then the shipped products. Choose it again to show everything.`
           : 'Pick one to see the closest case studies first.'}
       />
       {focus ? [caseStudies, shipped] : [shipped, caseStudies]}

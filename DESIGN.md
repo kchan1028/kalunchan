@@ -251,8 +251,8 @@ Options listed as ruled rows (state, option, note). Rejected options stay visibl
 ### Contents List
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
 
-### Hiring Focus
-The same four focuses and the same `?for=` value work on three pages. On `/projects/`, the picker sits under the lead; choosing one lists the matching case studies ahead of the shipped products, with the first match taking the blue lead row, and only focuses with a real case study are offered. On `/experience/`, it sits above the progression figure; roles outside the focus collapse to their headings, so the career still reads in order and links to them still land.
+### Focus Picker
+The same four focuses and the same `?for=` value work on three pages. Only `/engineering-leadership/` asks "What are you hiring for?"; `/projects/` and `/experience/` ask "What are you looking for?", because the other pages carry no hiring language (POSITIONING.md). On `/projects/`, the picker sits under the lead; choosing one lists the matching case studies ahead of the shipped products, with the first match taking the blue lead row, and only focuses with a real case study are offered. On `/experience/`, it sits above the progression figure; roles outside the focus collapse to their headings, so the career still reads in order, and a link to a collapsed role opens it. Choosing the active focus again clears it, and the status line says so wherever content is hidden.
 
 On `/engineering-leadership/`, ruled buttons above Business impact ask what the reader is hiring for. Choosing one moves the matching results, problems and posts to the top of their sections with a heavier blue rule, and nothing is hidden. The choice lives in `?for=`, so a focused link can be sent to someone, and a reader arriving on one sees a line above the briefing naming the focus and linking down to the evidence. The prerendered page stays in the default order and the canonical URL doesn't change. No animation: only the order and the rule change.
 

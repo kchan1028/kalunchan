@@ -120,8 +120,8 @@ export const problems = [
   },
 ];
 
-// "What are you hiring for?": each focus names the evidence for it, here and on /projects/ and /experience/. It only
-// arranges existing evidence, so add a focus when the site already has proof for it. Illustrative case studies stay out.
+// The picker's focuses: each names the evidence for it, on this page and on /projects/ and /experience/. A focus arranges
+// or hides existing evidence and adds none, so add one only when the site already has proof. Illustrative case studies stay out.
 // Keys: impact figure, problem id, post slug, case study slug, role id.
 export const focuses = [
   { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], problems: ['scaling-teams', 'slow-delivery'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'], cases: ['three-continent-platform'], roles: ['communications', 'voice'] },

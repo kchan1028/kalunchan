@@ -71,12 +71,12 @@
   row-gap: var(--s5);
 }
 
-/* A role outside the chosen focus keeps its heading, so the career still reads in order and its anchor still lands. */
-.tenure--collapsed .tenure__spec {
+/* A role outside the chosen focus keeps its heading, so the career still reads in order. Linking to it opens it. */
+.tenure--collapsed:not(:target) .tenure__spec {
   display: none;
 }
 
-.tenure--collapsed .tenure__grid {
+.tenure--collapsed:not(:target) .tenure__grid {
   padding-block: var(--s5);
 }
 

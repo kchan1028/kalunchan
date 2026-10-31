@@ -124,12 +124,13 @@ export default function Experience() {
         </p>
       </div>
       <FocusPicker
+        title="What are you looking for?"
         options={focuses}
         focus={focus}
         choose={choose}
-        coord="200 · Hiring for"
+        coord="200 · Focus"
         status={focus
-          ? `Showing ${matching} of ${roles.length} roles in full. The others are collapsed to their headings.`
+          ? `Showing ${matching} of ${roles.length} roles in full. The others are collapsed to their headings. Choose it again to show everything.`
           : 'Pick one to keep the closest roles open and collapse the rest.'}
       />
       <Progression />
