@@ -76,7 +76,7 @@ export default function Work() {
           <p className="body-copy">
             {focus
               ? 'The work closest to what you picked. Illustrative designs are left out while a focus is on.'
-              : 'Work on communications, publishing and carrier infrastructure, alongside illustrative designs for modernization, document processing and event-driven services.'}
+              : 'Work on communications, publishing and carrier infrastructure, alongside an illustrative design for event-driven services.'}
           </p>
         </header>
       </section>
@@ -117,7 +117,7 @@ export default function Work() {
         <p className="page-lead__aside body-copy">
           {focus
             ? 'The closest case studies come first, then three shipped projects. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'
-            : 'Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come six systems from my engineering leadership work.'}
+            : 'Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come three systems from my engineering leadership work and one illustrative design.'}
         </p>
       </div>
       <FocusPicker
