@@ -4,8 +4,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--col-gap);
-  grid-template-rows: auto 1fr;
-  min-height: min(calc(100svh - var(--header-h)), 940px);
+  grid-template-rows: auto auto auto;
 }
 
 .opening__stamp {
@@ -103,6 +102,7 @@
 
 /* The evidence that used to crowd the first screen. */
 .opening__more {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--col-gap);
@@ -910,6 +910,68 @@
   gap: var(--s4);
   height: 100%;
   padding: var(--s5) var(--s6);
+}
+
+@media (min-width: 1100px) {
+  .opening__text {
+    min-height: calc(min(100svh - var(--header-h), 940px) - 118px);
+  }
+}
+
+/* Pinned stack, only where every layer's panel fits on screen (keep in step with ExperienceMap). Sized in rem so a
+   larger browser text setting falls back too. --open (0 to 1, set on scroll) tilts the layers apart; flat when it
+   isn't set. Smaller screens keep the flat map above the evidence. */
+@media (min-width: 85rem) and (min-height: 50rem) {
+  .opening__figure {
+    grid-row: 1 / 4;
+    overflow-x: clip;
+  }
+
+  .opening__more {
+    grid-column: 1 / 8;
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: var(--s6);
+  }
+
+  .opening__more-text,
+  .opening__more-proof {
+    grid-column: auto;
+  }
+
+  .opening__figure .emap {
+    position: sticky;
+    top: var(--header-h);
+    align-self: flex-start;
+    width: 100%;
+    height: min(calc(100svh - var(--header-h)), 940px);
+  }
+
+  .emap__layers {
+    transform-style: preserve-3d;
+    transform-origin: 50% 45%;
+    transform: perspective(1400px) rotateX(calc(var(--open, 0) * 52deg)) rotateZ(calc(var(--open, 0) * -9deg));
+    margin-block: calc(var(--open, 0) * 12px) calc(var(--open, 0) * 32px);
+  }
+
+  .emap__layer {
+    transform: translateZ(calc((3 - var(--l)) * var(--open, 0) * 30px));
+    transition: background-color 200ms var(--ease-out), border-color 200ms var(--ease-out), color 200ms var(--ease-out);
+  }
+
+  .emap__foot {
+    margin-top: auto;
+  }
+
+  @media (max-height: 56.25rem) {
+    .opening__figure .emap {
+      gap: var(--s3);
+      padding-block: var(--s3);
+    }
+
+    .emap__foot {
+      display: none;
+    }
+  }
 }
 
 .emap__caption {
