@@ -62,7 +62,7 @@ export const recommendations = [
     quote: 'He took the time to understand the business requirement as well as the technical details, ensuring we delivered the application the business needed.',
   },
   {
-    name: 'Kaitlyn Pratt',
+    name: 'Kaitlyn',
     role: 'Creative Content Writer',
     quote: 'He’s been my mentor and career coach for the past year and a half, and I’m truly grateful for all I’ve learned.',
   },
