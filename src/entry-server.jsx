@@ -5,7 +5,7 @@ import App from './App';
 import './styles/index.css';
 
 export { routes, headFor, llmsTxt } from './site';
-export { loadAllBodies } from './content/postBodies';
+export { getBody, loadAllBodies } from './content/postBodies';
 export { loadAllPages, pageFor } from './pageRoutes';
 
 export function render(url) {

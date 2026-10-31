@@ -66,12 +66,12 @@ The form on `/contact/` posts to a small Lambda that sends mail through Amazon S
 
 - `src/content/`: all copy. Update `profile.js` (roles), `work.js` (case studies) and `practice.js` (capabilities, leadership practices) here, not in page components.
 - `src/site.js`: per-route titles, descriptions, canonical URLs, Open Graph tags and JSON-LD.
-- `src/pageRoutes.js`: the route table. Each page is its own JS chunk, loaded before hydrating and before a page swap, so add new pages here.
+- `src/pageRoutes.js`: the route table. Each page is its own JS chunk, loaded before hydrating and before a page swap. A new page needs an entry here, and one in `base` in `src/site.js` to be prerendered and reach the sitemap.
 - `src/pages/`: one component per route. `src/components/`: title block, signal path, career line, diagram.
 - `src/styles/`: tokens in `base.css`, then shell (`chrome.css`), home, inner pages and diagram styles.
 - `scripts/prerender.mjs`: renders each route to static HTML after the build.
 
-Adding a post: add its list fields to `posts` in `src/content/writing.js`, its other fields to `src/content/posts/meta/<slug>.js` and its body to `src/content/posts/<slug>.jsx`. A missing meta file fails the build. See the comment at the top of `writing.js` for which field goes where.
+Adding a post: add its list fields to `posts` in `src/content/writing.js`, its other fields to `src/content/posts/meta/<slug>.js` and its body to `src/content/posts/<slug>.jsx`. A missing meta or body file fails the build. See the comment at the top of `writing.js` for which field goes where.
 
 Adding a case study: append an entry to `cases` in `src/content/work.js`. The route, sitemap entry, metadata and diagram are generated from it.
 
