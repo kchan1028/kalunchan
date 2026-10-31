@@ -42,9 +42,9 @@ export function WhereThisFits({ slug }) {
 }
 
 // Up to three posts to read next, plus curated links elsewhere on the site.
-export function ContinueReading({ slug }) {
-  const picks = continueReading(slug);
-  const elsewhere = elsewhereLinks(slug);
+export function ContinueReading({ slug, related }) {
+  const picks = continueReading(slug, related);
+  const elsewhere = elsewhereLinks(related);
   return (
     <nav className="sheet post__more" aria-labelledby="continue-h">
       <h2 id="continue-h" className="label">Continue reading</h2>

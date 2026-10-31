@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
 import App from './App';
-import { loadBody } from './content/postBodies';
+import { loadRoute } from './pageRoutes';
 import './styles/index.css';
 
 const container = document.getElementById('root');
@@ -14,9 +14,9 @@ const app = (
   </StrictMode>
 );
 
-// A prerendered post page hydrates only after its body chunk is in, so the first client render matches the HTML.
-const postSlug = window.location.pathname.match(/^\/writing\/([^/]+)\/?$/)?.[1];
-(postSlug ? loadBody(postSlug) : Promise.resolve()).finally(() => {
+// A prerendered page hydrates only after its chunks are in, so the first client render matches the HTML.
+// If they fail to load, it stays as readable static HTML whose links still work.
+loadRoute(window.location.pathname).then(() => {
   if (container.firstElementChild) hydrateRoot(container, app);
   else createRoot(container).render(app);
 });

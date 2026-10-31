@@ -5,6 +5,10 @@
 const loaders = import.meta.env.DEV
   ? import.meta.glob('./posts/*.jsx')
   : import.meta.glob(['./posts/*.jsx', '!./posts/why-i-built-fedpath.jsx', '!./posts/learning-hermes-building-ai-automation-around-the-clock.jsx']);
+// A post's own fields (dek, FAQ, related links; see writing.js) load with its body and arrive as `metadata`.
+const metaLoaders = import.meta.env.DEV
+  ? import.meta.glob('./posts/meta/*.js')
+  : import.meta.glob(['./posts/meta/*.js', '!./posts/meta/why-i-built-fedpath.js', '!./posts/meta/learning-hermes-building-ai-automation-around-the-clock.js']);
 const loaded = {};
 
 export const getBody = (slug) => loaded[slug];
@@ -12,7 +16,7 @@ export const getBody = (slug) => loaded[slug];
 export function loadBody(slug) {
   const load = loaders[`./posts/${slug}.jsx`];
   if (loaded[slug] || !load) return Promise.resolve(loaded[slug]);
-  return load().then((mod) => (loaded[slug] = mod));
+  return Promise.all([load(), metaLoaders[`./posts/meta/${slug}.js`]()]).then(([mod, meta]) => (loaded[slug] = { ...mod, metadata: meta.metadata }));
 }
 
 export const loadAllBodies = () => Promise.all(Object.keys(loaders).map((key) => loadBody(key.slice('./posts/'.length, -'.jsx'.length))));

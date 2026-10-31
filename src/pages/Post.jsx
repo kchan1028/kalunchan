@@ -18,9 +18,9 @@ export default function Post() {
     if (!getBody(slug)) loadBody(slug).then(setLoaded);
   }, [slug]);
   if (!post) return <NotFound />;
-  const { default: Body, Closing, toc = [] } = getBody(slug) || {};
+  const { default: Body, Closing, toc = [], metadata = {} } = getBody(slug) || {};
   const chapter = chapterFor(slug);
-  const contents = post.faq ? [...toc, ['short-answers', 'Short answers']] : toc;
+  const contents = metadata.faq ? [...toc, ['short-answers', 'Short answers']] : toc;
 
   return (
     <article className="post" aria-labelledby="post-title">
@@ -41,7 +41,7 @@ export default function Post() {
           </Link>
         </nav>
         <h1 id="post-title" className="post__title display"><PressedType key={slug} text={post.title} /></h1>
-        <p className="case__claim">{post.dek}</p>
+        <p className="case__claim">{metadata.dek}</p>
         <p className="case__domains label">
           By <Link to="/about/">Ka Lun Chan</Link>
           {chapter && (
@@ -65,12 +65,12 @@ export default function Post() {
           </ol>
         </nav>
         <div className="post__prose">
-          {Body && <Body />}
-          {post.faq && (
+          {Body && <Body metadata={metadata} />}
+          {metadata.faq && (
             <section id="short-answers" aria-labelledby="short-answers-h">
               <h2 id="short-answers-h" className="post__h2">Short answers</h2>
               <div className="post__faq">
-                {post.faq.map((f) => (
+                {metadata.faq.map((f) => (
                   <div key={f.q}>
                     <h3 className="post__h3">{f.q}</h3>
                     <p>{f.a}</p>
@@ -97,7 +97,7 @@ export default function Post() {
       )}
 
       <WhereThisFits slug={slug} />
-      <ContinueReading slug={slug} />
+      <ContinueReading slug={slug} related={metadata.related} />
     </article>
   );
 }

@@ -3,7 +3,11 @@ import { projects, shotSrc } from './content/projects';
 import { cycling } from './content/community';
 import { publishedFaq } from './content/about';
 import { entity, isPlaceholder } from './content/profile';
-import { posts } from './content/writing';
+import { posts as postIndex } from './content/writing';
+
+// site.js only runs during prerendering (and in dev), so it can read every post's full metadata up front.
+const postMeta = import.meta.glob('./content/posts/meta/*.js');
+const posts = await Promise.all(postIndex.map(async (p) => ({ ...p, ...(await postMeta[`./content/posts/meta/${p.slug}.js`]()).metadata })));
 
 export const ORIGIN = 'https://kalunchan.dev';
 // First commit of this site. ProfilePage dateCreated and the /about/ Article datePublished.

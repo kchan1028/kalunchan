@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { person } from '../profile';
-import { postBySlug } from '../writing';
 import { ArrowOut } from '../../components/Icons';
 
 // Strava MCP guide. Setup steps, requirements and limits follow the first-party
-// pages in `sources` (writing.js). Strava changes its menus, so re-check those
+// pages in `sources` (meta/). Strava changes its menus, so re-check those
 // pages before editing any step. Tool names come from Strava's listing in
 // Claude's connector directory.
 
@@ -277,8 +276,7 @@ function Flow() {
   );
 }
 
-export default function Body() {
-  const { sources } = postBySlug['connect-strava-to-claude-mcp'];
+export default function Body({ metadata: { sources } }) {
   return (
     <>
       <section id="curious" aria-labelledby="curious-h">

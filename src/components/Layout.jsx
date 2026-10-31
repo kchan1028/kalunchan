@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { track } from '../track';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router';
 import { availability, person } from '../content/profile';
 import { outcomes } from '../content/engineeringLeadership';
-import { headFor } from '../site';
 import { ArrowOut, ArrowRight } from './Icons';
 import Coordinate from './Coordinate';
 import PressedType from './PressedType';
@@ -157,14 +156,33 @@ function Colophon() {
   );
 }
 
+// Each page's head tags are written to /_head/ by scripts/prerender.mjs, so site.js and every post's metadata stay out of the client.
+const fetchHead = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(url))));
+const headTagsFor = import.meta.env.DEV
+  ? (pathname) => import('../site').then((site) => site.headFor(pathname))
+  : (pathname) => fetchHead(`/_head${pathname.replace(/\/$/, '') || '/index'}.json`).catch(() => fetchHead('/_head/404.json'));
+
 function useDocumentTitle() {
   const { pathname } = useLocation();
+  const landed = useRef(false);
   useEffect(() => {
-    const head = new DOMParser().parseFromString(headFor(pathname), 'text/html').head;
-    document.head.querySelectorAll(
-      'title, meta[name="description"], meta[name="robots"], link[rel="canonical"], meta[property^="og:"], meta[property^="article:"], meta[name^="twitter:"], script[type="application/ld+json"]'
-    ).forEach((element) => element.remove());
-    document.head.append(...Array.from(head.children));
+    // The prerendered head already belongs to the page it arrived with.
+    if (!landed.current && !import.meta.env.DEV) {
+      landed.current = true;
+      return undefined;
+    }
+    let live = true;
+    headTagsFor(pathname).then((tags) => {
+      if (!live) return;
+      const head = new DOMParser().parseFromString(tags, 'text/html').head;
+      document.head.querySelectorAll(
+        'title, meta[name="description"], meta[name="robots"], link[rel="canonical"], meta[property^="og:"], meta[property^="article:"], meta[name^="twitter:"], script[type="application/ld+json"]'
+      ).forEach((element) => element.remove());
+      document.head.append(...Array.from(head.children));
+    }, () => {});
+    return () => {
+      live = false;
+    };
   }, [pathname]);
 }
 
