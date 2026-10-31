@@ -54,6 +54,209 @@
   margin-right: var(--s2);
 }
 
+/* Live showcase: a sideways row of recorded previews that bleeds off the right edge. */
+.showcase {
+  --card: clamp(420px, 48vw, 680px);
+  padding-bottom: var(--s7);
+}
+
+.showcase__track {
+  display: flex;
+  gap: var(--col-gap);
+  margin: 0 calc(-1 * var(--gutter) - max(0px, (100vw - var(--max)) / 2)) 0 -4px;
+  /* The end padding lets the last card reach the same start position as the others. */
+  padding: 4px calc(100vw - var(--card) - var(--gutter) - max(0px, (100vw - var(--max)) / 2)) var(--s3) 4px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline-start: 4px;
+  scrollbar-width: none;
+}
+
+.showcase__track::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase__item {
+  flex: 0 0 var(--card);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.showcase__frame {
+  transition: opacity 320ms ease;
+}
+
+.showcase__item:not(.is-active):not(:hover):not(:focus-within) .showcase__frame {
+  opacity: 0.62;
+}
+
+.showcase__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1280 / 800;
+  overflow: hidden;
+  background: var(--paper-sunk);
+}
+
+.showcase__frame .showcase__media img,
+.showcase__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 500ms ease;
+}
+
+.showcase__media video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 500ms ease, opacity 240ms linear;
+}
+
+.showcase__media video.is-running {
+  opacity: 1;
+}
+
+.showcase__body {
+  padding-top: var(--s4);
+}
+
+.showcase__name {
+  font-size: var(--t-lead);
+  font-weight: 800;
+  font-stretch: 68%;
+  line-height: 1.05;
+}
+
+.showcase__type {
+  margin-top: var(--s2);
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
+.showcase__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s3);
+  font-size: var(--t-small);
+}
+
+.showcase__links > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-height: 24px;
+  color: var(--blue);
+}
+
+.showcase__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s4);
+  margin-top: var(--s4);
+}
+
+.showcase__count {
+  flex: none;
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
+.showcase__progress {
+  --progress: 0;
+  flex: 1 1 120px;
+  height: 2px;
+  background: var(--rule-soft);
+}
+
+.showcase__progress span {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+  transform: scaleX(calc(0.1667 + var(--progress) * 0.8333));
+  transform-origin: left;
+  transition: transform 180ms linear;
+}
+
+.showcase__hint {
+  flex: none;
+  color: var(--ink-2);
+  font-size: var(--t-small);
+}
+
+.showcase__pause,
+.showcase__arrows button {
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-small);
+  cursor: pointer;
+}
+
+.showcase__pause {
+  padding-inline: var(--s3);
+}
+
+.showcase__arrows {
+  display: flex;
+  gap: var(--s2);
+}
+
+.showcase__arrows button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+}
+
+.showcase__arrows button:hover:not([aria-disabled='true']) {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.showcase__arrows button[aria-disabled='true'] {
+  color: var(--ink-3);
+  border-color: var(--rule-soft);
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .showcase__item:hover .showcase__media img,
+  .showcase__item:hover .showcase__media video {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase__frame,
+  .showcase__frame .showcase__media img,
+  .showcase__media video,
+  .showcase__progress span {
+    transition: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .showcase {
+    --card: 86vw;
+  }
+}
+
+/* Touch swipes the row. A mouse in a narrow window still needs the arrows, because the scrollbar is hidden. */
+@media (hover: none) {
+  .showcase__arrows {
+    display: none;
+  }
+}
+
 /* Index */
 .shipped {
   padding-bottom: var(--s8);

@@ -5,6 +5,8 @@ import { projects } from '../content/projects';
 import { focuses } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import ProjectShot from '../components/ProjectShot';
+import ProjectShowcase from '../components/ProjectShowcase';
+import { showcase } from '../content/showcase';
 import FocusPicker, { useFocus } from '../components/FocusPicker';
 import { ArrowOut, ArrowRight } from '../components/Icons';
 
@@ -18,6 +20,7 @@ export default function Work() {
   const shownCases = focus ? cases.filter((c) => focus.cases.includes(c.slug)) : cases;
   const shipped = (
     <Fragment key="shipped">
+      <ProjectShowcase />
       <section className="sheet shipped" aria-labelledby="shipped-h" data-coord="310 · Shipped">
         <header className="shipped__head">
           <h2 id="shipped-h" className="h2">Shipped products and sites</h2>
@@ -106,7 +109,7 @@ export default function Work() {
         section="300"
         title="Projects"
         cells={[
-          { k: 'Shipped', v: `${projects.length}` },
+          { k: 'Shipped', v: `${showcase.length}` },
           { k: 'Case studies', v: `${cases.length}` },
         ]}
       />
@@ -116,8 +119,8 @@ export default function Work() {
         </p>
         <p className="page-lead__aside body-copy">
           {focus
-            ? 'The closest case studies come first, then three shipped projects. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'
-            : 'Three shipped projects come first. One helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come three systems from my engineering leadership work and one illustrative design.'}
+            ? 'The closest case studies come first, then six live sites. Three of them get the full story: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'
+            : 'Six live sites come first, so you can watch them run. Three of them get the full story below: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come three systems from my engineering leadership work and one illustrative design.'}
         </p>
       </div>
       <FocusPicker
