@@ -33,8 +33,7 @@ export default function Home() {
         </p>
       </div>
       <div className="opening__figure"><ExperienceMap /></div>
-    </div>
-    <div className="opening__more sheet">
+      <div className="opening__more">
       <div className="opening__more-text">
         <p className="opening__entity">{homeIntro}</p>
         <p className="opening__story">
@@ -67,6 +66,7 @@ export default function Home() {
         <ol className="contents-list">{nav.map((item) => <li key={item.to}>
           <Link to={item.to}><span className="mono">{item.no}</span><span>{item.label}</span></Link>
         </li>)}</ol>
+      </div>
       </div>
     </div>
   </section>
