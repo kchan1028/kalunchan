@@ -34,8 +34,8 @@ const base = [
   {
     path: '/engineering-leadership/',
     name: 'Engineering Leadership',
-    title: 'Engineering Leader for VP or Director Roles — Ka Lun Chan (KC)',
-    description: 'Ka Lun Chan (KC), Bay Area engineering leader and former co-founder and CTO, open to VP or Director of Engineering roles at scale-ups, remote or hybrid.',
+    title: 'Engineering Leadership for Growing Teams — Ka Lun Chan (KC)',
+    description: 'Ka Lun Chan (KC), Bay Area engineering leader and former co-founder and CTO, building teams, shaping technical direction and delivering software at growing companies. Open to remote or Bay Area opportunities.',
   },
   {
     "path": "/leadership/",
@@ -91,7 +91,7 @@ const base = [
     "path": "/contact/",
     name: "Contact",
     "title": "Contact Ka Lun Chan (KC) — Leadership Roles and Consulting",
-    "description": "Hiring a VP or Director of Engineering? Tell me about the role and I’ll reply with my résumé. Consulting projects go through Yippify."
+    "description": "Looking for an engineering leader? Tell me about the role and I’ll reply with my résumé. Consulting projects go through Yippify."
   },
   {
     path: '/privacy/',

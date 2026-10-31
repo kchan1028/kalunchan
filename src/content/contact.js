@@ -4,7 +4,7 @@
 export const paths = {
   leadership: {
     title: 'Leadership roles',
-    lead: 'Hiring a VP or Director of Engineering? Send the basics and I’ll reply with my résumé. Only your name and email are required.',
+    lead: 'Looking for an engineering leader? Send the basics and I’ll reply with my résumé. Only your name and email are required.',
   },
   consulting: {
     title: 'Consulting via Yippify',

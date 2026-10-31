@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-10-31",
-    "hash": "dea27c752ffddd54"
+    "hash": "60070f678d28bd6b"
   },
   "/about/": {
     "date": "2026-10-30",
@@ -36,8 +36,8 @@
     "hash": "d2ff5695766ed09a"
   },
   "/contact/": {
-    "date": "2026-10-28",
-    "hash": "997332fcc0f64aa7"
+    "date": "2026-10-31",
+    "hash": "964c94dbe21c8433"
   },
   "/projects/fedpath/": {
     "date": "2026-10-12",
@@ -52,20 +52,20 @@
     "hash": "d4c2bd3c29307a96"
   },
   "/work/three-continent-platform/": {
-    "date": "2026-10-30",
-    "hash": "8217175eeb06239f"
+    "date": "2026-10-31",
+    "hash": "48b60c21ec81f3bf"
   },
   "/work/publishing-distribution/": {
-    "date": "2026-10-28",
-    "hash": "d3f4575b855b59bf"
+    "date": "2026-10-31",
+    "hash": "0bdfb2f7ebb101c9"
   },
   "/work/event-driven-platform/": {
-    "date": "2026-10-28",
-    "hash": "e15f62604a9d89a4"
+    "date": "2026-10-31",
+    "hash": "7fc5629d7bc4d416"
   },
   "/work/carrier-capacity/": {
-    "date": "2026-10-28",
-    "hash": "bee6182bf7387459"
+    "date": "2026-10-31",
+    "hash": "82351e7806fa8128"
   },
   "/privacy/": {
     "date": "2026-10-29",
@@ -73,6 +73,6 @@
   },
   "/engineering-leadership/": {
     "date": "2026-10-31",
-    "hash": "b8672deaaeaf773d"
+    "hash": "550f174973abdf96"
   }
 }

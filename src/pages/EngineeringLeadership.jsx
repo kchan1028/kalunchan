@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
-  targetRoles, resumeRequest, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
+  opportunityStatement, resumeRequest, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import TitleBlock from '../components/TitleBlock';
 import FocusPicker, { useFocus } from '../components/FocusPicker';
@@ -30,7 +30,7 @@ export default function EngineeringLeadership() {
 
   return (
     <>
-      <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'VP or Director of Engineering' }, { k: 'Based', v: 'SF Bay Area' }]} />
+      <TitleBlock section="090" title="Engineering leadership" cells={[{ k: 'Open to', v: 'Engineering leadership opportunities' }, { k: 'Based', v: 'SF Bay Area' }]} />
       <section className="sheet grid hire-brief" aria-labelledby="brief-h" data-coord="090 · Briefing">
         {/* Someone who arrived on a focused link hasn't reached the picker yet, so the first screen says the page is arranged for them. */}
         {arrived && focus && (
@@ -75,7 +75,7 @@ export default function EngineeringLeadership() {
 
       <aside className="open-to on-blue" aria-label="Roles I’m open to" data-coord="090 · Open to">
         <div className="sheet grid">
-          <p className="open-to__roles">Open to conversations about {targetRoles.slice(0, -1).join(', ')} and {targetRoles.at(-1)} roles.</p>
+          <p className="open-to__roles">{opportunityStatement}</p>
           <div className="open-to__side">
             <Link className="action" to={resumeRequest}>Talk about a role <ArrowRight /></Link>
           </div>
