@@ -464,6 +464,8 @@
     --col: calc((var(--sheet) - 2 * var(--gutter) - 11 * var(--col-gap)) / 12);
     --field-w: calc(var(--bleed) + var(--gutter) + 5 * var(--col) + 4.5 * var(--col-gap));
     margin-top: var(--s7);
+    /* The field's negative margin lets it stick a full screen past the journey; clip it here. Unlike hidden, clip keeps sticky working. */
+    overflow: clip;
   }
 
   /* 100vw counts a visible scrollbar and 100cqw doesn't, so where supported the field lines up with the sheet exactly. */
