@@ -258,7 +258,7 @@ At 1360×800 and larger, the home layer map stays pinned beside the evidence whi
 Below the fold, blue fields wipe in from the left, and figures, images and plain section heads wipe in from the top, once each. The title block's head rule draws across on load, and a 2px blue line on the header rule tracks scroll progress. Everything is visible without JavaScript or under reduced motion.
 
 ### Page Transition
-Following a link to another page fades the page out over 180ms while a 2px blue loading line starts along the header rule. The page swaps while invisible, then fades in with a 14px rise as the line finishes and fades away, and the new title presses in as it arrives. The header never moves. Back, forward, redirects and same-page anchors skip it, and reduced motion swaps pages with no fade.
+Following a link to another page fades the page out over 180ms while a 2px blue loading line starts along the header rule. The page swaps while invisible, then fades in as the line finishes and fades away, and the new title presses in as it arrives. The header never moves. Back, forward, redirects and same-page anchors skip it, and reduced motion swaps pages with no fade.
 
 ### Colophon
 Every page closes on a solid ink band: three large proof figures that link to their evidence, a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It is the only dark surface.

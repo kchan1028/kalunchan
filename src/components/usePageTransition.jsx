@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router';
+import { loadBody } from '../content/postBodies';
 
 // Leave and enter in chrome.css fit inside these, delays included. Timers rather than animationend, so a missed event can't strand a navigation.
 const LEAVE_MS = 180;
@@ -18,7 +19,8 @@ export function usePageTransition() {
     latest.current = location;
   }, [location]);
 
-  if (phase !== 'leave' && location.key !== shown.key) {
+  // By identity, not key: native hash changes after a fresh load all share the key "default".
+  if (phase !== 'leave' && location !== shown) {
     const animate = navigationType === 'PUSH'
       && location.pathname !== shown.pathname
       && !matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -29,6 +31,9 @@ export function usePageTransition() {
   useEffect(() => {
     if (phase === 'idle') return undefined;
     document.documentElement.dataset.page = phase;
+    // A post's body is its own chunk: start it now so it's there when the page fades in. Post.jsx retries if this fails.
+    const postSlug = phase === 'leave' && latest.current.pathname.match(/^\/writing\/([^/]+)\/?$/)?.[1];
+    if (postSlug) loadBody(postSlug).catch(() => {});
     const id = setTimeout(() => {
       if (phase === 'enter') {
         setPhase('idle');
