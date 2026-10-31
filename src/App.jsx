@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router';
 import Layout from './components/Layout';
+import { usePageTransition } from './components/usePageTransition';
 import Home from './pages/Home';
 import Leadership from './pages/Leadership';
 import EngineeringLeadership from './pages/EngineeringLeadership';
@@ -18,8 +19,9 @@ import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
 
 export default function App() {
+  const shown = usePageTransition();
   return (
-    <Routes>
+    <Routes location={shown}>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />

@@ -4,6 +4,45 @@ body {
   overflow-x: clip;
 }
 
+/* ---------- Page transition (usePageTransition): the page fades out and the next fades in while a loading line
+   runs along the header rule. Opacity only: moving main would shift its fixed elements and throw off anchor scrolling.
+   Only runs when motion is allowed. Leave and enter must stay within LEAVE_MS and ENTER_MS. ---------- */
+html[data-page='leave'] main,
+html[data-page='leave'] .colophon {
+  animation: page-leave 180ms ease-in both;
+}
+
+html[data-page='enter'] main,
+html[data-page='enter'] .colophon {
+  animation: page-enter 460ms var(--ease-out) both;
+}
+
+html[data-page] .site-header::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--blue);
+  transform-origin: left;
+}
+
+html[data-page='leave'] .site-header::after {
+  animation: page-line-leave 180ms var(--ease-out) both;
+}
+
+html[data-page='enter'] .site-header::after {
+  animation: page-line-enter 460ms var(--ease-out) both;
+}
+
+@keyframes page-leave { to { opacity: 0; } }
+@keyframes page-enter { from { opacity: 0; } }
+@keyframes page-line-leave { from { transform: scaleX(0); } to { transform: scaleX(0.6); } }
+@keyframes page-line-enter {
+  from { transform: scaleX(0.6); }
+  70% { transform: scaleX(1); opacity: 1; }
+  to { transform: scaleX(1); opacity: 0; }
+}
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
