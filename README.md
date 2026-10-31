@@ -11,12 +11,17 @@ npm install
 npm run dev       # local dev server
 npm run build     # client build → SSR build → prerender every route into build/
 npm run preview   # serve build/ locally
+npm run metadata:update # explicitly refresh tracked page modification metadata
+npx playwright install chromium # install the browser once after npm install
+npm test          # unit tests and desktop/mobile browser regressions
 npm run audit:seo # validate the built pages, links, metadata, privacy, backlinks and JS size budgets
 ```
 
 `npm run build` writes `build/<route>/index.html` for every route, plus `404.html` and `sitemap.xml`. The live site sits on an S3 website endpoint behind Cloudflare, which serves directory `index.html` files.
 
-`npm run validate` builds into `.validate/` (leaving `build/` alone) and runs the SEO audit against it.
+`npm run validate` runs the unit and browser suites, builds into `.validate/` (leaving `build/` alone), and runs the SEO and writing audits. Pull requests and pushes to main run the same checks in GitHub Actions. CI renders contact forms with a placeholder endpoint; browser tests intercept a separate local endpoint and never send real email.
+
+Builds check page modification metadata without rewriting `src/lastmod.json`. After changing page content, run `npm run metadata:update`, review the diff and commit the metadata alongside the content. Validation fails if it is stale.
 
 ## Deploying
 

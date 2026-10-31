@@ -75,3 +75,9 @@ With `CLOUDFLARE_DNS_API_TOKEN` (Zone · DNS · Edit) in `.env` it publishes the
 - [ ] DNS records live and `npm run contact:email-dns` reports DKIM and MAIL FROM `SUCCESS`.
 - [ ] A real test message reaches the `CONTACT_TO` inbox, not spam, and **Show original** in Gmail shows SPF, DKIM and DMARC `PASS`.
 - [ ] `npm run contact:deploy`, then `npm run deploy`, then send a message from https://kalunchan.dev/contact/.
+
+## Submission retries
+
+Submission IDs are claimed as pending before sending. A completed send is marked sent only after SES accepts the message. Retries of pending submissions return HTTP 409, while retries of sent submissions return success without sending another email. A send failure releases the claim so the same submission can be retried.
+
+If sending succeeds but recording completion fails, the claim remains pending to avoid sending the message twice. This is an uncertain outcome requiring investigation; the endpoint does not claim success. Records expire after one day. Deploy the updated Lambda role along with the code: DynamoDB duplicate checks now also require GetItem permission. Without a DynamoDB table, these guarantees apply only within one warm Lambda instance.

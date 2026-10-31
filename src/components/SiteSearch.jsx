@@ -58,6 +58,7 @@ function SearchDialog({ onClose }) {
       onClick={(e) => e.target === dialogRef.current && dialogRef.current.close()}
     >
       <div className="site-search__panel">
+        <button type="button" className="site-search__close" onClick={() => dialogRef.current.close()}>Close search</button>
         <input
           ref={inputRef}
           className="site-search__input"

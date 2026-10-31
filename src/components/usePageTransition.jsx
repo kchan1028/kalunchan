@@ -28,7 +28,7 @@ export function usePageTransition() {
 
   // By identity, not key: native hash changes after a fresh load all share the key "default".
   const changed = phase !== 'leave' && location !== shown;
-  const waiting = changed && !routeReady(location.pathname);
+  const waiting = location !== shown && !routeReady(location.pathname);
   if (changed && !waiting) {
     const animate = navigationType === 'PUSH'
       && location.pathname !== shown.pathname
@@ -59,15 +59,34 @@ export function usePageTransition() {
 
   useEffect(() => {
     if (phase === 'idle') return undefined;
-    const id = setTimeout(() => {
+    let live = true;
+    const id = setTimeout(async () => {
       if (phase === 'enter') {
         setPhase('idle');
         return;
       }
-      setShown(latest.current);
+      // A second click can change the destination while the first page is leaving.
+      // Keep the current page mounted until the latest destination is ready.
+      try {
+        while (live) {
+          const destination = latest.current;
+          await loadRoute(destination.pathname);
+          if (!live) return;
+          if (destination !== latest.current) continue;
+          setShown(destination);
+          break;
+        }
+      } catch {
+        if (live) reloadPage();
+        return;
+      }
+      if (!live) return;
       setPhase('enter');
     }, phase === 'leave' ? LEAVE_MS : ENTER_MS);
-    return () => clearTimeout(id);
+    return () => {
+      live = false;
+      clearTimeout(id);
+    };
   }, [phase]);
 
   return shown;

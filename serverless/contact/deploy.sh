@@ -72,7 +72,7 @@ aws iam put-role-policy --role-name "$ROLE" --policy-name ses-send --policy-docu
   "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"ses:SendEmail\",\"Resource\":[\"$IDENTITY/$FROM_ADDRESS\",\"$IDENTITY/$CONTACT_TO\",\"$IDENTITY/${FROM_ADDRESS#*@}\",\"$IDENTITY/${CONTACT_TO#*@}\"]}]}"
 if [ -n "$RATE_LIMIT_TABLE" ]; then
   aws iam put-role-policy --role-name "$ROLE" --policy-name rate-limit-table --policy-document \
-    "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"dynamodb:UpdateItem\",\"dynamodb:PutItem\",\"dynamodb:DeleteItem\"],\"Resource\":\"arn:aws:dynamodb:$REGION:$ACCOUNT:table/$RATE_LIMIT_TABLE\"}]}"
+    "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"dynamodb:GetItem\",\"dynamodb:UpdateItem\",\"dynamodb:PutItem\",\"dynamodb:DeleteItem\"],\"Resource\":\"arn:aws:dynamodb:$REGION:$ACCOUNT:table/$RATE_LIMIT_TABLE\"}]}"
 fi
 echo "  $ROLE"
 

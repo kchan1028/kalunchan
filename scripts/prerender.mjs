@@ -88,7 +88,13 @@ function write(route, file) {
 
 for (const r of routes) write(r, path.join(r.path, 'index.html'));
 write({ path: '/404' }, '404.html');
-if (lastmodChanged) fs.writeFileSync(lastmodFile, `${JSON.stringify(lastmod, null, 2)}\n`);
+if (lastmodChanged) {
+  if (process.env.UPDATE_LASTMOD === '1') {
+    fs.writeFileSync(lastmodFile, `${JSON.stringify(lastmod, null, 2)}\n`);
+  } else {
+    throw new Error('Page content has changed. Run npm run metadata:update and commit src/lastmod.json.');
+  }
+}
 
 fs.writeFileSync(
   path.join(out, 'sitemap.xml'),
