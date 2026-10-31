@@ -14,8 +14,9 @@ export default function Post() {
   const post = postBySlug[slug];
   const [, setLoaded] = useState(null);
   // On client-side navigation the body chunk may not be loaded yet; render once it arrives.
+  // A chunk that won't load usually means a deploy replaced it, so fetch the page fresh.
   useEffect(() => {
-    if (!getBody(slug)) loadBody(slug).then(setLoaded);
+    if (!getBody(slug)) loadBody(slug).then(setLoaded, () => window.location.reload());
   }, [slug]);
   if (!post) return <NotFound />;
   const { default: Body, Closing, toc = [], metadata = {} } = getBody(slug) || {};
