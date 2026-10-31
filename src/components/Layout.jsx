@@ -157,10 +157,11 @@ function Colophon() {
 }
 
 // Each page's head tags are written to /_head/ by scripts/prerender.mjs, so site.js and every post's metadata stay out of the client.
-const fetchHead = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(url))));
+// A URL with no file is a 404 page; any other failure (a dropped connection) leaves the current head in place.
+const fetchHead = (url) => fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(r)));
 const headTagsFor = import.meta.env.DEV
   ? (pathname) => import('../site').then((site) => site.headFor(pathname))
-  : (pathname) => fetchHead(`/_head${pathname.replace(/\/$/, '') || '/index'}.json`).catch(() => fetchHead('/_head/404.json'));
+  : (pathname) => fetchHead(`/_head${pathname.replace(/\/$/, '') || '/index'}.json`).catch((failure) => (failure.status === 404 ? fetchHead('/_head/404.json') : Promise.reject(failure)));
 
 function useDocumentTitle() {
   const { pathname } = useLocation();

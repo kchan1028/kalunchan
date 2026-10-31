@@ -1,4 +1,5 @@
-"""Audit prerendered SEO, link integrity, and the site's privacy constraints."""
+"""Audit prerendered SEO, link integrity, the site's privacy constraints, and JS size."""
+import gzip
 import json
 import os
 import re
@@ -194,6 +195,20 @@ community = pages[ROOT / 'community/index.html']
 graph = community.structured[0]['@graph']
 assert {'WebPage', 'Thing', 'SportsOrganization', 'BreadcrumbList'} <= {v['@type'] for v in graph}
 assert 'six East Bay NICA teams' in ' '.join(community.text)
+# JS budgets, gzipped. Every page shares the main chunk, and a page's HTML lists every chunk it needs. A static import
+# of site.js, a page or a post body from shared code fails here. Raise these only for something every reader needs.
+MAIN_CHUNK_GZIP = 100_000
+PAGE_JS_GZIP = 150_000
+gzipped = {f.name: len(gzip.compress(f.read_bytes(), 9)) for f in (ROOT / 'assets').glob('*.js')}
+main_chunk = next(f for f in gzipped if f.startswith('index-'))
+assert gzipped[main_chunk] <= MAIN_CHUNK_GZIP, f'Main chunk is {gzipped[main_chunk]} bytes gzipped, over {MAIN_CHUNK_GZIP}'
+page_js = 0
+for path in pages:
+    chunks = set(re.findall(r'(?:src|href)="/assets/([^"]+\.js)"', path.read_text()))
+    total = sum(gzipped[c] for c in chunks)
+    assert total <= PAGE_JS_GZIP, f'{path} loads {total} bytes of JS gzipped, over {PAGE_JS_GZIP}: {sorted(chunks, key=gzipped.get)[-3:]}'
+    page_js = max(page_js, total)
+print(f'PASS: JS budgets: main chunk {gzipped[main_chunk]}, largest page {page_js} bytes gzipped')
 print(f'PASS: {len(pages)} pages, {link_count} internal links/anchors, {len(urls)} canonical sitemap URLs.')
 print('PASS: metadata, heading hierarchy, JSON-LD, images, privacy, and permanent followed backlinks.')
 print(json.dumps(backlinks, indent=2))
