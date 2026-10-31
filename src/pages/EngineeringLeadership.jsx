@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { person, roles } from '../content/profile';
 import { posts } from '../content/writing';
 import {
-  opportunityStatement, resumeRequest, currentWork, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
+  opportunityStatement, resumeRequest, currentWork, recommendations, briefing, outcomes, paths, summary, impact, problems, focuses, principles, expertise, featuredSlugs,
 } from '../content/engineeringLeadership';
 import HiringContactLink from '../components/HiringContactLink';
 import TitleBlock from '../components/TitleBlock';
@@ -115,6 +115,26 @@ export default function EngineeringLeadership() {
         </p>
       </section>
 
+
+      <section id="recommendations" className="sheet grid hire-section" aria-labelledby="recommendations-h" data-coord="091-3 · Recommendations">
+        <div className="hire-section__head">
+          <h2 id="recommendations-h" className="h2">From people I’ve worked with</h2>
+          <p className="body-copy">Excerpts from LinkedIn recommendations.</p>
+        </div>
+        <ul className="hire-recommendations">
+          {recommendations.map((recommendation) => (
+            <li key={recommendation.name}>
+              <figure>
+                <blockquote><p>“{recommendation.quote}”</p></blockquote>
+                <figcaption>{recommendation.name}<span>{recommendation.role}</span></figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        <p className="hire-section__foot">
+          <a href={`${person.linkedin}details/recommendations/`} className="link-arrow" rel="me noopener" target="_blank" onClick={() => track('linkedin_click', `${person.linkedin}details/recommendations/`)}><span>Read the full recommendations on LinkedIn</span> <ArrowOut /></a>
+        </p>
+      </section>
 
       <section id="current-work" className="sheet grid hire-section" aria-labelledby="current-work-h" data-coord="091-2 · Current work">
         <div className="hire-section__head">

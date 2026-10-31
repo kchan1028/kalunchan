@@ -53,6 +53,21 @@ export const currentWork = [
   { k: 'Engineering contribution', v: 'Applications built, modernized and supported, with server-side authorization, audit evidence and Section 508 accessibility checks. The agency makes the authorization decision.' },
 ];
 
+// LinkedIn excerpts and attributions supplied by KC on 2026-10-31.
+// Michael's excerpt only normalizes spaces around punctuation; the words are unchanged.
+export const recommendations = [
+  {
+    name: 'Michael',
+    role: 'Python Developer',
+    quote: 'He took the time to understand the business requirement as well as the technical details, ensuring we delivered the application the business needed.',
+  },
+  {
+    name: 'Kaitlyn Pratt',
+    role: 'Creative Content Writer',
+    quote: 'He’s been my mentor and career coach for the past year and a half, and I’m truly grateful for all I’ve learned.',
+  },
+];
+
 // Each figure links to the page that shows the work behind it.
 export const impact = [
   {

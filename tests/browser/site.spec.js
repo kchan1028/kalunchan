@@ -135,6 +135,16 @@ test('hiring visitors can go straight from the opening to the short enquiry form
   await page.goto('/engineering-leadership/');
   await expect(page.getByRole('heading', { name: 'Current work through Yippify' })).toBeVisible();
   await expect(page.locator('#summary')).toContainText('Team leadership');
+  await expect(page.locator('#recommendations blockquote')).toHaveCount(2);
+  await expect(page.locator('#recommendations')).toContainText('Michael');
+  await expect(page.locator('#recommendations')).toContainText('Python Developer');
+  await expect(page.locator('#recommendations')).toContainText('Kaitlyn Pratt');
+  await expect(page.locator('#recommendations')).toContainText('Creative Content Writer');
+  await page.locator('#recommendations').scrollIntoViewIfNeeded();
+  await expect(page.locator('#recommendations h2')).not.toHaveAttribute('data-sw', 'wait');
+  await page.locator('#recommendations').evaluate((node) => Promise.all(node.getAnimations({ subtree: true }).map((animation) => animation.finished)));
+  await page.screenshot({ path: `/private/tmp/hiring-recommendations-${testInfo.project.name}.png` });
+
   await expect(page.getByRole('link', { name: 'Read LinkedIn recommendations' })).toHaveAttribute('href', 'https://www.linkedin.com/in/kchan1288/details/recommendations/');
   await expect(page.locator('#current-work')).toContainText('The agency makes the authorization decision.');
   await page.locator('#current-work').scrollIntoViewIfNeeded();
