@@ -200,7 +200,8 @@ assert 'six East Bay NICA teams' in ' '.join(community.text)
 MAIN_CHUNK_GZIP = 100_000
 PAGE_JS_GZIP = 150_000
 gzipped = {f.name: len(gzip.compress(f.read_bytes(), 9)) for f in (ROOT / 'assets').glob('*.js')}
-main_chunk = next(f for f in gzipped if f.startswith('index-'))
+# The entry script in the template, not a name match: lazy chunks can be called index-* too (GSAP's core is).
+main_chunk = re.search(r'<script[^>]*type="module"[^>]*src="/assets/([^"]+\.js)"', (ROOT / 'index.html').read_text()).group(1)
 assert gzipped[main_chunk] <= MAIN_CHUNK_GZIP, f'Main chunk is {gzipped[main_chunk]} bytes gzipped, over {MAIN_CHUNK_GZIP}'
 page_js = 0
 for path in pages:
