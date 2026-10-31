@@ -360,8 +360,10 @@ svg {
     animation-delay: calc(var(--i) * 70ms);
   }
 
-  .pressed[data-wait] .pressed__ink {
-    opacity: 0;
+  @media screen {
+    .pressed[data-wait] .pressed__ink {
+      opacity: 0;
+    }
   }
 
   .contents-list li a > span:last-child {
@@ -375,8 +377,11 @@ svg {
 
 /* Scroll visuals (useScrollVisuals in Layout): only below-the-fold elements wait; no JS or reduced motion shows everything. */
 @media (prefers-reduced-motion: no-preference) {
-  .on-blue[data-sw='wait'] { clip-path: inset(0 100% 0 0); }
-  figure[data-sw='wait'], img[data-sw='wait'], h2[data-sw='wait'] { clip-path: inset(0 0 100% 0); }
+  /* Screen only: printing or saving a PDF must show everything, scrolled to or not. */
+  @media screen {
+    .on-blue[data-sw='wait'] { clip-path: inset(0 100% 0 0); }
+    figure[data-sw='wait'], img[data-sw='wait'], h2[data-sw='wait'] { clip-path: inset(0 0 100% 0); }
+  }
 
   .on-blue[data-sw='in'] { animation: sw-wipe-x 1000ms var(--ease-out); }
   figure[data-sw='in'], img[data-sw='in'] { animation: sw-wipe-y 1000ms var(--ease-out); }

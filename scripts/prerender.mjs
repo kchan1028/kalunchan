@@ -30,6 +30,7 @@ const bodyChunk = (slug) => manifest[`src/content/posts/${slug}.jsx`]?.file;
 
 // lastmod for every page that isn't a post (posts keep their own dates): the date its <main> content last
 // changed, tracked by content hash in src/lastmod.json. Commit that file; a date moves only on a genuine edit.
+// The hash covers the visible text, so markup that only decorates it (animation spans, classes) moves no dates.
 const lastmodFile = path.join(root, 'src', 'lastmod.json');
 const lastmod = JSON.parse(fs.readFileSync(lastmodFile, 'utf8'));
 const today = new Date().toISOString().slice(0, 10);
@@ -38,7 +39,8 @@ function modifiedFor(route, body) {
   if (route.post) return route.post.modified;
   if (route.canonical || !routes.includes(route)) return undefined;
   const main = body.match(/<main[\s\S]*<\/main>/)?.[0] ?? body;
-  const hash = createHash('sha256').update(main).digest('hex').slice(0, 16);
+  const text = main.replace(/<!--[\s\S]*?-->|<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const hash = createHash('sha256').update(text).digest('hex').slice(0, 16);
   const prev = lastmod[route.path];
   if (prev?.hash !== hash) {
     // A seeded entry (date, no hash yet) keeps its date the first time it is hashed.
