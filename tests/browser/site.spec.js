@@ -37,9 +37,17 @@ test('a second destination waits for its chunk during an exit transition', async
   // Preload the first destination so the exit animation starts immediately.
   await page.evaluate(() => import('/src/pageRoutes.js').then((routes) => routes.loadRoute('/about/')));
   await page.getByRole('button', { name: 'Contents', exact: true }).click();
-  await page.locator('.site-nav a[href="/about/"]').click();
-  await expect(page.locator('html')).toHaveAttribute('data-page', 'leave');
-  await page.locator('.site-nav a[href="/experience/"]').click();
+  // Both clicks run in the page: under load, a Playwright click can land after the 180ms exit has already finished.
+  const phase = await page.evaluate(async () => {
+    document.querySelector('.site-nav a[href="/about/"]').click();
+    for (let frame = 0; frame < 60 && !document.documentElement.dataset.page; frame += 1) {
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+    }
+    const during = document.documentElement.dataset.page;
+    document.querySelector('.site-nav a[href="/experience/"]').click();
+    return during;
+  });
+  expect(phase).toBe('leave');
   await requestSeen;
   // Wait past the exit timer while the second chunk is still blocked.
   await page.waitForTimeout(250);
