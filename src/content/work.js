@@ -5,6 +5,7 @@
 // Diagram spec: `tiers` are drawn left→right on wide screens and top→bottom on
 // narrow ones. `edges` connect node ids; `accent` marks the path the decision
 // section is about.
+import { platformDiagram } from './platformDiagram';
 
 export const cases = [
   {
@@ -37,16 +38,7 @@ export const cases = [
     ],
     approach:
       'Keep one architecture and run it in three places. Each region carries the full web and application tier, users resolve to the nearest healthy region, and data replicates back to a primary. Regions went live one at a time, so every step could be rolled back.',
-    diagram: {
-      label: 'Geo-routed regional deployment',
-      tiers: [
-        { name: 'Users', nodes: [{ id: 'sa', label: 'South America' }, { id: 'af', label: 'Africa' }, { id: 'as', label: 'Asia' }] },
-        { name: 'Edge', nodes: [{ id: 'geo', label: 'Geo-location routing', sub: 'nearest healthy region' }] },
-        { name: 'Regions', nodes: [{ id: 'rna', label: 'Region NA', sub: 'web · app tier' }, { id: 'reu', label: 'Region EU', sub: 'web · app tier' }, { id: 'ras', label: 'Region APAC', sub: 'web · app tier' }] },
-        { name: 'Data', nodes: [{ id: 'db', label: 'Primary data', sub: 'replicated' }] },
-      ],
-      edges: [['sa', 'geo'], ['af', 'geo'], ['as', 'geo'], ['geo', 'rna', null, true], ['geo', 'reu'], ['geo', 'ras'], ['rna', 'db', null, true], ['reu', 'db'], ['ras', 'db']],
-    },
+    diagram: platformDiagram,
     decisions: [
       {
         question: 'How should distant users reach the platform?',

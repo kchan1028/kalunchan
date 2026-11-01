@@ -213,7 +213,7 @@ A near-monochrome printed palette (paper, ink, grey rules) with one saturated ca
 - **Colophon Muted** (`colophon-muted`): secondary text in the ink colophon; colophon hairlines are paper at 22% opacity.
 
 ### Dark Printing
-Each light token above has a dark counterpart (the `dark-` tokens), resolved with `light-dark()` on the same CSS variable. Paper becomes a near-black stock, ink becomes a warm off-white, and rules soften. Dark Blue is a much lighter periwinkle because it only ever appears on dark stock as a small mark or a figure, with Dark On Blue as the text on those marks. Blue fields, the colophon and the writing journey's act strip hold their light values in both printings, so a field is the same saturated carrier blue with white linework either way. Browsers without `light-dark()` get the light printing and no toggle.
+Each light token above has a dark counterpart (the `dark-` tokens), resolved with `light-dark()` on the same CSS variable. Paper becomes a near-black stock, ink becomes a warm off-white, and rules soften. Dark Blue is a much lighter periwinkle because it only ever appears on dark stock as a small mark or a figure, with Dark On Blue as the text on those marks. Blue fields, the colophon, the résumé tile and the writing journey's act strip hold their light values in both printings, so a field is the same saturated carrier blue with white linework either way. Browsers without `light-dark()` get the light printing and no toggle.
 
 ### Named Rules
 **The Reverse Printing Rule.** Dark is the same manual on different stock. New colours are added as `light-dark()` tokens, never as per-theme overrides, and any new surface that paints blue as a field joins the list that stays on light values.
@@ -247,7 +247,7 @@ Each light token above has a dark counterpart (the `dark-` tokens), resolved wit
 ### Named Rules
 **The Measuring Type Rule.** Martian Mono sets only numbers, years, figure numbers ("Fig. 000-1") and the header coordinate. Words that name a field are set as Archivo labels. Prose, headings and buttons are never mono.
 
-**The No Eyebrow Rule.** Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. The one exception is the case tile on the cover sheet, whose label above the title names where the work happened. No uppercase tracking anywhere.
+**The No Eyebrow Rule.** Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. The one exception is the case tile on the cover sheet, whose lines above the title name the role and where the work happened. No uppercase tracking anywhere.
 
 ## Layout
 
@@ -255,9 +255,9 @@ A 12-column grid (column gap clamp(16px → 28px)) inside a sheet capped at 1440
 
 Inner pages open with a ruled title block: a 3px ink head rule, a 1px ink foot rule, and cells separated by 1px ink verticals (section number, title, meta cells, issue). Content bands follow with 112–160px of space above; band heads put the section number in a two-column margin rail (columns 1–2, over a 1px ink rule), the title in columns 3–9 and an aside in 10–12. Page claims and reading content start at column 3.
 
-The home is a bento grid with 12px gaps instead of the 12-column grid: one column on phones, two from 640px, four from 1100px. At four columns the hero takes three with the résumé tile beside it, case studies and skills take two each, and the personal tile takes three with contact beside it. Every tile has an explicit placement at every width.
+The home is a bento grid with 12px gaps: one column on phones, two from 640px, twelve from 1100px. At twelve columns the hero takes nine with the résumé tile beside it, the three lead case studies take four each, the two compact case studies take six each, and skills and the personal tile take five and seven. On phones the first case study comes straight after the hero, before the résumé. Every tile has an explicit placement at every width.
 
-Breakpoints as built: below 640px the bento is one column, and below 1100px it is two; below 900px the grid collapses to one column, the nav becomes a full-screen "Contents" list, the title block wraps and the margin rail disappears; 900–1099px shortens the coordinate; below 760px schematics switch to their vertical drawing; below 600px the coordinate drops its section name and captions stack. From 1400px the header coordinate is hidden, and from 1560px the Bay Area local time appears.
+Breakpoints as built: below 640px the bento is one column, and below 1100px it is two; from 1280px the schematic appears in the hero; below 1400px the nav becomes a full-screen "Contents" list; below 900px the grid collapses to one column, the title block wraps and the margin rail disappears; 900–1099px shortens the coordinate; below 760px schematics switch to their vertical drawing; below 600px the coordinate drops its section name and captions stack. Below 370px the header drops the coordinate and the word "Contents", keeping the menu's bars and its accessible name. From 1400px the header coordinate is hidden, and from 1560px the Bay Area local time appears.
 
 Spacing steps are 4, 8, 12, 16, 24, 32, 48, 72, 112, 160px (`s1`–`s10`); row padding sits at 12–16px, band gaps at 112–160px.
 
@@ -290,10 +290,10 @@ Solid, square and plain, like a stamped instruction.
 ### Navigation
 - Header: wordmark (Archivo 800, 75% width), then the coordinate and local time where the width allows them, the Search button, the theme toggle, then numbered links ("100 Leadership") with the number in mono ink-tertiary and the word in Archivo 600. Current page: number set in a small blue chip and a 3px ink bar on the header rule.
 - Theme toggle: a bare 44px sun or moon icon in ink that turns blue on hover. It follows the system until pressed, then remembers the choice in local storage and applies it before first paint.
-- Below 900px: a "Contents" toggle opens a full-screen paper sheet of 72px-tall ruled rows in condensed 800 at 2rem.
+- Below 1400px: a "Contents" toggle opens a full-screen paper sheet of 72px-tall ruled rows in condensed 800 at 2rem.
 
 ### Header Coordinate (signature)
-Locked at the header's left, after the wordmark: a 7px blue square, then the mono coordinate of the section nearest the top of the viewport ("000 · Overview", "300-2 · Architecture"), read from each section's coordinate attribute. Truncates at 34ch; the section name hides below 600px, leaving the number.
+Locked at the header's left, after the wordmark: a 7px blue square, then the mono coordinate of the section nearest the top of the viewport ("000 · Overview" on the home, "300-2 · Architecture"), read from each section's coordinate attribute. Truncates at 34ch; the section name hides below 600px, leaving the number.
 
 ### Title Block (signature)
 The ruled head of every page: section number in condensed 800 (2.25rem), page title in the headline style, then meta cells and the issue, each cell a label word over its value. Wraps to rows under soft rules below 900px.
@@ -305,7 +305,7 @@ Page titles, the home headline and band heads press into place word by word alon
 The one region that matters now on each page, a solid carrier-blue rectangle with white text and linework, soft-blue labels and 32%-white hairlines. Carries a figure caption (mono "Fig." number, Archivo title, key) when it holds a drawing.
 
 ### Schematic Diagram (signature)
-White orthogonal linework on the blue field. Tiers are named (tier rule under each name); nodes are square-cornered boxes with a 1.25px white stroke; edges carry arrowheads; the decision path is accented at 3px, and its nodes fill white with deep-blue text. One spec is drawn twice: horizontal (tiers left to right) at 760px and above, vertical (tiers top to bottom, max 420px wide) below.
+White orthogonal linework on the blue field. Tiers are named (tier rule under each name); nodes are square-cornered boxes with a 1.25px white stroke; edges carry arrowheads; the decision path is accented at 3px, and its nodes fill white with deep-blue text. One spec is drawn twice: horizontal (tiers left to right) at 760px and above, vertical (tiers top to bottom, max 420px wide) below. The stacked version in the home hero keeps the vertical drawing at every width and drops sub-labels. Its wiring draws once on load, then the critical path, and it is static under reduced motion.
 ### Decision Table
 Options listed as ruled rows (state, option, note). Rejected options stay visible in ink tertiary at 500 weight; the chosen option is struck forward with ink hairlines above and below, a paper-sunk band, and its state word in blue 700.
 
@@ -327,12 +327,13 @@ On `/engineering-leadership/`, ruled buttons above Business impact ask what the 
 
 ### Bento Tiles (home, signature)
 The cover sheet's only container, and it stays on the home. A tile is a square-cornered rectangle with a 1px soft rule, 24px padding and no fill of its own.
-- **Hero:** the page's one blue field, holding the name, the headline, location, the availability badge (a 1px white outline that fills white on hover) and the primary action in white.
-- **Résumé:** the one inverted tile, ink ground with paper text and a paper action. It reverses with the theme, so it reads light on dark stock.
-- **Case study:** the title link covers the whole tile, so it is one target and one tab stop. Label, title, then Result (with a blue tile figure when one is confirmed), Problem, My role and Stack as field rows. Hover and focus rise 3px with the case tile lift and underline the title.
+- **Hero:** the page's one blue field, holding the name, the headline, one confirmed proof line, the primary action in white with LinkedIn beside it, availability as a plain text link, and a short location. From 1280px the right column carries the stacked schematic behind a white hairline.
+- **Résumé:** the one inverted tile, ink ground with paper text and a paper action sitting at the tile's foot. It holds its ink in both printings, so the blue field stays the brightest thing on the page, with a paper hairline at 22% to separate it from dark stock.
+- **Case study:** the title link covers the whole tile, so it is one target and one tab stop. Role in bold over where the work happened, then the title and result. Lead tiles have a confirmed figure in blue and one line on the problem; compact tiles state the outcome only. The foot says where the link goes: "Read the case study" or "Read the post". Hover and focus rise 3px with the case tile lift and underline the title.
 - **Skills:** paper-sunk ground with labelled rows.
 - **Personal:** a photo running edge to edge with a "Ride a lap" button; pressing it sends a small rider along the bottom of the photo and counts laps. Reduced motion skips the ride and still counts.
-- **Contact:** plain tile with the message link and profile links.
+
+Contact is left to the hero and the colophon, so no tile repeats it.
 
 ### Project Shot
 A desktop screenshot in a ruled frame with the phone view laid over its corner. The phone frame is the one rounded, shadowed object in the manual, because it draws a device.
@@ -368,7 +369,7 @@ Every page closes on a solid ink band: three large proof figures that link to th
 ### Don't:
 - **Don't** use rounded corners, shadows or cards, outside the phone frame, the case tile lift and the home's bento tiles.
 - **Don't** bring bento tiles to any page but the home.
-- **Don't** put eyebrows or kickers above headings, or use uppercase tracked labels. The case tile's label is the only exception.
+- **Don't** put eyebrows or kickers above headings, or use uppercase tracked labels. The case tile's role lines are the only exception.
 - **Don't** set words, prose, headings or buttons in mono.
 - **Don't** use blue as a tint, gradient or second field on the same page.
 - **Don't** use hero-then-card-grid-then-CTA composition on inner pages, or logo walls or dark neon anywhere.

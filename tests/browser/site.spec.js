@@ -57,7 +57,7 @@ test('back and forward restore the previous scroll position', async ({ page }) =
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(800);
   // Click without Playwright scrolling the footer into view and changing the position under test.
   const before = await page.evaluate(() => window.scrollY);
-  await page.locator('.colophon').getByRole('link', { name: 'Talk about your engineering team' }).evaluate((link) => link.click());
+  await page.locator('.colophon').getByRole('link', { name: 'Start a conversation' }).evaluate((link) => link.click());
   await expect(page.locator('#contact-title')).toContainText('Tell me about your team or opportunity.');
   await page.goBack();
   await expect(page).toHaveURL(/\/about\/$/);
@@ -76,7 +76,7 @@ test('reduced motion navigation skips transition phases', async ({ page }) => {
       if (document.documentElement.dataset.page) window.transitionPhases.push(document.documentElement.dataset.page);
     }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-page'] });
   });
-  await page.locator('.colophon').getByRole('link', { name: 'Talk about your engineering team' }).click();
+  await page.locator('.colophon').getByRole('link', { name: 'Start a conversation' }).click();
   await expect(page.locator('#contact-title')).toContainText('Tell me about your team or opportunity.');
   expect(await page.evaluate(() => window.transitionPhases)).toEqual([]);
 });
@@ -137,12 +137,13 @@ test('hiring visitors can go straight from the opening to the short enquiry form
   await expect(page.locator('.tile--hero')).toContainText('Engineering leader building products');
   await page.evaluate(() => document.fonts.ready);
   await page.locator('#thesis').evaluate((node) => Promise.all(node.getAnimations({ subtree: true }).map((animation) => animation.finished)));
-  const primaryAction = page.locator('.tile--hero').getByRole('link', { name: 'Talk about your engineering team' });
+  const primaryAction = page.locator('.tile--hero').getByRole('link', { name: 'Start a conversation' });
   const actionBounds = await primaryAction.boundingBox();
   expect(actionBounds.y + actionBounds.height).toBeLessThanOrEqual(page.viewportSize().height);
   await page.screenshot({ path: `/private/tmp/hiring-home-${testInfo.project.name}.png` });
-  await page.locator('.tile--hero').getByRole('link', { name: 'Talk about your engineering team' }).click();
+  await page.locator('.tile--hero').getByRole('link', { name: 'Start a conversation' }).click();
   await expect(page).toHaveURL(/\/contact\/#leadership$/);
+  await expect(page.locator('#leadership')).toBeFocused();
   const form = page.locator('form[aria-labelledby="lead-form-title"]');
   await expect(form).toBeVisible();
   await expect(form.getByLabel('Name', { exact: true })).toHaveAttribute('required', '');

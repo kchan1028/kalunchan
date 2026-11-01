@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T13:20:43Z",
+  "generatedAt": "2026-11-01T13:43:11Z",
   "title": "Design System: Ka Lun Chan, Engineering Practice",
   "extensions": {
     "colorMeta": {
@@ -404,6 +404,11 @@
         "purpose": "Below: coordinate shows number only; captions stack."
       },
       {
+        "name": "narrow-header",
+        "value": "370px",
+        "purpose": "Below: header drops the coordinate and the word Contents."
+      },
+      {
         "name": "bento-two",
         "value": "640px",
         "purpose": "At and above: home bento has two columns; below: one."
@@ -416,17 +421,22 @@
       {
         "name": "desktop",
         "value": "900px",
-        "purpose": "Below: single column, Contents toggle, title block wraps, margin rail hidden."
+        "purpose": "Below: single column, title block wraps, margin rail hidden."
       },
       {
         "name": "wide",
         "value": "1100px",
-        "purpose": "900-1099px: coordinate label shortened to 16ch. At and above: home bento has four columns."
+        "purpose": "900-1099px: coordinate label shortened to 16ch. At and above: home bento has twelve columns."
       },
       {
-        "name": "coordinate-hidden",
+        "name": "hero-schematic",
+        "value": "1280px",
+        "purpose": "At and above: the stacked schematic shows in the home hero."
+      },
+      {
+        "name": "nav-full",
         "value": "1400px",
-        "purpose": "At and above: header coordinate is hidden."
+        "purpose": "At and above: full nav, coordinate hidden. Below: Contents toggle."
       },
       {
         "name": "sheet-max",
@@ -519,21 +529,21 @@
       "refersTo": "tile-hero",
       "description": "The home page's one blue field: name, headline, availability badge and primary action.",
       "html": "<section class=\"ds-tile-hero\"><p class=\"ds-tile-name\">Ka Lun Chan <span>(KC)</span></p><h1 class=\"ds-tile-headline\">Engineering leader building products and the teams that scale them.</h1><a class=\"ds-badge\" href=\"#\">Open to engineering leadership opportunities</a></section>",
-      "css": ".ds-tile-hero{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;background:#1d4fd8;border-color:#1d4fd8;color:#fff}.ds-tile-name{margin:0;font-size:1.25rem;font-weight:700;font-stretch:88%}.ds-tile-name span{font-weight:400;color:#cdd9ff}.ds-tile-headline{margin:0;max-width:17ch;font-size:clamp(2.5rem,1.5rem + 4.2vw,5.25rem);font-weight:800;font-stretch:68%;line-height:.94;letter-spacing:-.015em}.ds-badge{align-self:flex-start;padding:8px 12px;border:1px solid #fff;color:#fff;font-size:.9375rem;font-weight:600;font-stretch:92%;text-decoration:none}.ds-badge:hover{background:#fff;color:#1d4fd8}.ds-badge:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+      "css": ".ds-tile-hero{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;background:#1d4fd8;border-color:#1d4fd8;color:#fff}.ds-tile-name{margin:0;font-size:1.25rem;font-weight:700;font-stretch:88%}.ds-tile-name span{font-weight:400;color:#cdd9ff}.ds-tile-headline{margin:0;max-width:17ch;font-size:clamp(2.5rem,1.5rem + 4.2vw,5.25rem);font-weight:800;font-stretch:68%;line-height:.94;letter-spacing:-.015em}.ds-badge{align-self:flex-start;padding-block:12px;color:#fff;font-weight:600;font-stretch:92%}.ds-badge:focus-visible{outline:2px solid #fff;outline-offset:3px}"
     },
     {
       "name": "Bento Case Tile",
       "kind": "card",
       "refersTo": "tile",
       "description": "A case study on the home: the whole tile is one link, with the result first and a rise on hover.",
-      "html": "<article class=\"ds-tile-case\"><p class=\"ds-tile-label\">Global communications platform</p><h2 class=\"ds-tile-title\"><a href=\"#\">From one data center to three continents</a></h2><p class=\"ds-tile-label\">Result</p><strong class=\"ds-tile-figure\">400,000+</strong><p class=\"ds-tile-result\">users and an acquisition.</p></article>",
+      "html": "<article class=\"ds-tile-case\"><p class=\"ds-tile-label\"><strong>Co-founder and CTO</strong><br>Global communications platform</p><h2 class=\"ds-tile-title\"><a href=\"#\">From one data center to three continents</a></h2><strong class=\"ds-tile-figure\">400,000+</strong><p class=\"ds-tile-result\">users and an acquisition.</p></article>",
       "css": ".ds-tile-case{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;gap:8px;background:var(--paper,#f4f5f2);color:var(--ink,#14171a);transition:transform 220ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1),border-color 220ms cubic-bezier(.16,1,.3,1)}.ds-tile-case:hover,.ds-tile-case:focus-within{transform:translateY(-3px);border-color:var(--ink-3,#5f6770);box-shadow:0 10px 24px -14px rgb(20 23 26 / .45)}.ds-tile-label{margin:0;font-size:.8125rem;font-weight:600;font-stretch:86%;color:var(--ink-3,#5f6770)}.ds-tile-title{margin:0;font-size:1.5rem;font-weight:700;font-stretch:88%;line-height:1.2}.ds-tile-title a{color:inherit;text-decoration:none}.ds-tile-case:hover .ds-tile-title a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-tile-title a:focus-visible{outline:2px solid var(--blue,#1d4fd8);outline-offset:2px}.ds-tile-figure{font-size:clamp(2.5rem,1.4rem + 4vw,4.75rem);font-weight:800;font-stretch:68%;line-height:.95;letter-spacing:-.015em;color:var(--blue,#1d4fd8)}.ds-tile-result{margin:0;font-weight:600}"
     },
     {
       "name": "Bento Resume Tile",
       "kind": "card",
       "refersTo": "tile-resume",
-      "description": "The one inverted tile: ink ground with a paper action. It reverses with the theme.",
+      "description": "The one inverted tile: ink ground with a paper action. It holds its ink in both printings.",
       "html": "<section class=\"ds-tile-resume\"><h2>Résumé</h2><p>Send your name and email, and I’ll reply with it.</p><a class=\"ds-tile-action\" href=\"#\">Request résumé</a></section>",
       "css": ".ds-tile-resume{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;background:var(--ink,#14171a);border-color:var(--ink,#14171a);color:var(--paper,#f4f5f2)}.ds-tile-resume h2,.ds-tile-resume p{margin:0}.ds-tile-resume h2{font-size:1.5rem;font-weight:700;font-stretch:88%}.ds-tile-action{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:var(--paper,#f4f5f2);color:var(--ink,#14171a);font-weight:600;font-stretch:92%;text-decoration:none;white-space:nowrap}.ds-tile-action:hover{background:var(--blue,#1d4fd8);color:var(--on-blue,#fff)}.ds-tile-action:focus-visible{outline:2px solid var(--paper,#f4f5f2);outline-offset:3px}"
     },
@@ -582,7 +592,7 @@
       },
       {
         "name": "The No Eyebrow Rule",
-        "body": "Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. The one exception is the case tile on the cover sheet, whose label above the title names where the work happened. No uppercase tracking anywhere.",
+        "body": "Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. The one exception is the case tile on the cover sheet, whose lines above the title name the role and where the work happened. No uppercase tracking anywhere.",
         "section": "typography"
       },
       {
@@ -605,7 +615,7 @@
     "donts": [
       "Don't use rounded corners, shadows or cards, outside the phone frame, the case tile lift and the home's bento tiles.",
       "Don't bring bento tiles to any page but the home.",
-      "Don't put eyebrows or kickers above headings, or use uppercase tracked labels. The case tile's label is the only exception.",
+      "Don't put eyebrows or kickers above headings, or use uppercase tracked labels. The case tile's role lines are the only exception.",
       "Don't set words, prose, headings or buttons in mono.",
       "Don't use blue as a tint, gradient or second field on the same page.",
       "Don't use hero-then-card-grid-then-CTA composition on inner pages, or logo walls or dark neon anywhere.",

@@ -201,7 +201,15 @@ function useScrollReset() {
     }
     let id;
     try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
-    const frame = window.requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView());
+    const frame = window.requestAnimationFrame(() => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.scrollIntoView();
+      // Arriving from another page: keyboard users continue from the section, not the top of the page.
+      if (isFirst) return;
+      if (!target.matches('a, button, input, select, textarea, [tabindex]')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
     return () => window.cancelAnimationFrame(frame);
   }, [pathname, hash]);
 }
