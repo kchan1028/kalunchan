@@ -17,7 +17,7 @@ export const outcomes = [
 
 export const summary = [
   { k: 'Opportunity', v: 'Building teams and platforms at growing companies, with ownership of technical direction and delivery.' },
-  { k: 'Most recent scope', v: 'Architecture, technical strategy and delivery for government, startup and founder clients through Yippify.' },
+  { k: 'Current scope', v: 'Architecture, technical strategy and delivery for government, startup and founder clients through Yippify.' },
   { k: 'Executive roles', v: 'Co-founder and CTO through an acquisition, CTO of a media publishing platform, VP of Operations for a voice services company.' },
   { k: 'Team leadership', v: 'Built and led a global team that grew to 30+ as co-founder and CTO. Mentored engineers into leads and led fully remote teams as a fractional CTO.' },
   { k: 'Business ownership', v: 'Product, architecture and operations as co-founder and CTO. Technology, business and operations alongside the CEO and partners of a media publishing platform.' },

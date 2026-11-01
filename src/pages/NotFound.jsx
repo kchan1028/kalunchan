@@ -7,10 +7,13 @@ export default function NotFound() {
     <>
       <TitleBlock section="404" title="Section not found" />
       <div className="sheet grid page-lead not-found">
-        <p className="page-lead__claim">This page isn’t in the manual. It may have moved during the redesign.</p>
+        <p className="page-lead__claim">This page isn’t in the manual. It may have moved.</p>
         <ul className="contents-list not-found__list">
           <li>
             <Link to="/"><span className="mono">000</span><span>Overview</span></Link>
+          </li>
+          <li>
+            <Link to="/engineering-leadership/"><span className="mono">090</span><span>Engineering leadership</span></Link>
           </li>
           {nav.map((n) => (
             <li key={n.to}>

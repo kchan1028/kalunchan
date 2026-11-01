@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { ArrowRight } from './Icons';
 import { person } from '../content/profile';
-import { responseTime } from '../content/contact';
+import { leadershipResponseTime, responseTime } from '../content/contact';
 import { CONTACT_LIMITS, CONTACT_SOURCES, CONTACT_TOPICS, validateContact } from '../../serverless/contact/contact.mjs';
 import { track } from '../track';
 
@@ -130,7 +130,7 @@ export default function ContactForm({ variant = 'general' }) {
     return (
       <div className="cform cform--sent">
         <h3 className="cform__title" tabIndex={-1} ref={sentRef}>Thanks. Your message is on its way.</h3>
-        <p className="cform__lead">{responseTime}</p>
+        <p className="cform__lead">{lead ? leadershipResponseTime : responseTime}</p>
         <p className="cform__lead">If you’re waiting for a reply, check your spam folder, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
         <button className="link-arrow cform__again" type="button" onClick={sendAnother}><span>Send another message</span> <ArrowRight /></button>
       </div>
@@ -153,7 +153,7 @@ export default function ContactForm({ variant = 'general' }) {
   return (
     <form ref={formRef} className="cform" action={contactEndpoint} method="post" noValidate={enhanced} onSubmit={onSubmit} onInput={onInput} onFocus={onFocus} aria-labelledby={`${idp}-form-title`}>
       <h3 id={`${idp}-form-title`} className="cform__title">{lead ? 'Start a conversation' : 'Send a note'}</h3>
-      <p id={`${notice}-sent`} className="cform__notice" tabIndex={-1}>Thanks. Your message is on its way. {responseTime}</p>
+      <p id={`${notice}-sent`} className="cform__notice" tabIndex={-1}>Thanks. Your message is on its way. {lead ? leadershipResponseTime : responseTime}</p>
       <p id={`${notice}-not-sent`} className="cform__notice cform__notice--error" tabIndex={-1}>Your message didn’t go through. Check every field is filled in and try again, or <a href={person.linkedin} target="_blank" rel="me noopener">message me on LinkedIn</a>{person.email && <> or email <a href={`mailto:${person.email}`}>{person.email}</a></>}.</p>
 
       {errorCount > 0 && (

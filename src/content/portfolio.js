@@ -45,7 +45,7 @@ export const caseTiles = [
   },
   {
     id: 'yippify',
-    level: 'Consultant',
+    level: 'Consultant, current role',
     where: 'Yippify',
     title: 'Engineering and product ownership for public-sector and startup teams',
     to: '/writing/building-public-sector-applications/',

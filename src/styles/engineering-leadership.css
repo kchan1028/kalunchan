@@ -404,3 +404,95 @@
     gap: var(--s1);
   }
 }
+
+/* Print: a page a recruiter can forward. Chrome and actions go; a contact line replaces them. */
+.hire-print-contact {
+  display: none;
+}
+
+@media print {
+  .hire-print-contact {
+    display: block;
+    margin-top: var(--s2);
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .hire-opening {
+    padding-block: var(--s3);
+    row-gap: var(--s2);
+  }
+
+  .hire-opening__copy .display {
+    max-width: none;
+    font-size: 1.5rem;
+  }
+
+  .hire-opening__copy .body-copy {
+    max-width: none;
+    margin-top: var(--s1);
+    font-size: 0.875rem;
+  }
+
+  .hire-opening__actions,
+  .hire-section__foot,
+  .hire-impact .link-arrow,
+  #impact .hire-section__head .body-copy {
+    display: none;
+  }
+
+  .hire-section {
+    border-top-width: 1px;
+    padding-block: var(--s3);
+    row-gap: var(--s2);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+
+  .hire-section .h2 {
+    font-size: 1.25rem;
+  }
+
+  .hire-section .body-copy,
+  .hire-recommendations blockquote {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .hire-section__head,
+  .hire-section__head ~ * {
+    grid-column: 1 / -1;
+  }
+
+  .hire-summary > div {
+    grid-template-columns: 120px 1fr;
+    gap: var(--s3);
+    padding: var(--s1) 0;
+  }
+
+  .hire-impact,
+  .hire-recommendations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s3);
+  }
+
+  .hire-impact li,
+  .hire-recommendations li {
+    padding-block: var(--s2) 0;
+  }
+
+  .hire-impact__figure {
+    font-size: 1.5rem;
+  }
+
+  .hire-impact .h3 {
+    font-size: 0.9375rem;
+  }
+
+  .hire-summary > div,
+  .hire-impact > li,
+  .hire-recommendations > li {
+    break-inside: avoid;
+  }
+}

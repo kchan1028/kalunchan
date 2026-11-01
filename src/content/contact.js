@@ -4,7 +4,7 @@
 export const paths = {
   leadership: {
     title: 'Leadership roles',
-    lead: 'Looking for an engineering leader? Tell me about your team or opportunity. I’ll reply by email with my résumé. Only your name and email are required.',
+    lead: 'Looking for an engineering leader? Tell me about your team or opportunity. I’ll reply by email with my résumé within 2 business days. Only your name and email are required.',
   },
   consulting: {
     title: 'Consulting via Yippify',
@@ -15,3 +15,4 @@ export const paths = {
 
 // Reply channel shown next to the form and on the sent screen.
 export const responseTime = 'Replies go to the email address you provide.';
+export const leadershipResponseTime = 'I’ll reply within 2 business days, to the email address you provided.';
