@@ -12,16 +12,16 @@ Vite + React with static prerendering per route (user decision; migrating off Cr
 
 ## Purpose
 
-kalunchan.dev is the personal site of Ka Lun Chan (KC): an engineering leader with 20+ years across telecom networks, SaaS, media platforms, government technology, and consulting. It sells KC's engineering leadership and credibility. Yippify (KC's consultancy) sells the company's ability to deliver software; the two sites complement each other and must not compete.
+kalunchan.dev is the personal site of Ka Lun Chan (KC): an engineering leader whose work spans telecom networks, SaaS, media platforms, government technology, and consulting. It sells KC's engineering leadership and credibility. Yippify (KC's consultancy) sells the company's ability to deliver software; the two sites complement each other and must not compete.
 
-Core message: "I build teams, systems, and products that deliver." An engineering leader who can understand the business problem, design the system, lead the team, and still go deep technically.
+Core message (KC, 2026-11-01): "Engineering leader building products and the teams that scale them." An engineering leader who can understand the business problem, design the system, lead the team, and still go deep technically. The live wording is `heroHeadline` in `src/content/portfolio.js`.
 
 ## Users
 
-- **Primary:** hiring managers, executive recruiters and founders evaluating KC for Director of Engineering, Head of Engineering, VP Engineering, Engineering Manager, or Staff/Principal-level leadership. They scan for ~30 seconds: who, what level, what problems, what built, what impact, how deep, how to contact.
+- **Primary:** hiring managers, recruiters and founders evaluating KC for engineering leadership: building teams, technical direction and hands-on delivery. Describe the opportunity by scope, not by target job title (KC, 2026-11-01; POSITIONING.md). They scan for ~30 seconds: who, what level, what problems, what built, what impact, how deep, how to contact.
 - **Secondary:** technical leaders going deeper into architecture decisions, case studies, and operating style; prospective consulting clients who continue to Yippify.
 
-Primary action: contact (LinkedIn first). Consulting work routes to Yippify.
+Primary action: the leadership path on `/contact/`, with LinkedIn secondary (KC, 2026-11-01). Consulting work routes to Yippify.
 
 ## Evidence (confirmed, from the previous site)
 
@@ -39,7 +39,9 @@ Primary action: contact (LinkedIn first). Consulting work routes to Yippify.
 
 ## Open / to verify
 
-Case-study specifics beyond the evidence above (government technology programs, AI/RAG/document processing work, Django/Rails/Next.js platforms, Kafka event-driven systems, AWS cost work) are drafted from the owner's brief and must be verified by KC. No invented numbers: anything unconfirmed stays qualitative. Public contact email is undecided.
+Case-study specifics beyond the evidence above (government technology programs, AI/RAG/document processing work, Django/Rails/Next.js platforms, Kafka event-driven systems, AWS cost work) are verified by KC (2026-11-01). No invented numbers: anything unconfirmed stays qualitative.
+
+Still undecided: a public contact email, and whether to publish a résumé file. Until `person.email` and `resume.pdf` are set in `src/content/`, the résumé is on request.
 
 ## Voice
 
