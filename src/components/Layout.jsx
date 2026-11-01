@@ -27,12 +27,11 @@ function LocalTime() {
 
 export const nav = [
   { to: '/about/', no: '050', label: 'About' },
+  { to: '/engineering-leadership/', no: '090', label: 'Summary' },
   { to: '/leadership/', no: '100', label: 'Leadership' },
   { to: '/experience/', no: '200', label: 'Experience' },
   { to: '/projects/', no: '300', label: 'Projects' },
   { to: '/expertise/', no: '400', label: 'Expertise' },
-  { to: '/community/', no: '500', label: 'Community' },
-  { to: '/mentorship/', no: '600', label: 'Mentorship' },
   { to: '/writing/', no: '650', label: 'Writing' },
   { to: '/contact/', no: '700', label: 'Contact' },
 ];

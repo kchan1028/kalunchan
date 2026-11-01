@@ -12,9 +12,6 @@ export default function NotFound() {
           <li>
             <Link to="/"><span className="mono">000</span><span>Overview</span></Link>
           </li>
-          <li>
-            <Link to="/engineering-leadership/"><span className="mono">090</span><span>Engineering leadership</span></Link>
-          </li>
           {nav.map((n) => (
             <li key={n.to}>
               <Link to={n.to}><span className="mono">{n.no}</span><span>{n.label}</span></Link>

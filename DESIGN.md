@@ -176,7 +176,7 @@ components:
 
 **Creative North Star: "The Engineering Practice Manual"**
 
-The site is set as a Bell System Practices document: every inner page is a numbered section of one manual (050 About, 100 Leadership, 200 Experience, 300 Projects, 400 Expertise, 500 Community, 600 Mentorship, 650 Writing, 700 Contact), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.
+The site is set as a Bell System Practices document: every inner page is a numbered section of one manual (050 About, 090 Summary, 100 Leadership, 200 Experience, 300 Projects, 400 Expertise, 650 Writing, 700 Contact, with 500 Community and 600 Mentorship linked from About), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.
 
 The homepage is the manual's cover sheet: a one-page summary laid out as a bento grid of ruled tiles, so someone scanning for 30 seconds gets who, what level, what was built and how to make contact without opening a section. It has no title block. The inner pages keep the manual's form, and tiles stay on the cover sheet.
 
