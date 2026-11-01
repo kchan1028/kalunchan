@@ -31,7 +31,7 @@ function Role({ r, index, collapsed }) {
           <p className="tenure__era label">{r.era}</p>
         </header>
         <dl className="tenure__spec">
-          {parts.map(([k, label]) => (
+          {parts.filter(([k]) => r[k]).map(([k, label]) => (
             <div key={k} className={`tenure__part tenure__part--${k}`}>
               <dt className="label">{label}</dt>
               <dd>
@@ -79,10 +79,10 @@ function Role({ r, index, collapsed }) {
   );
 }
 
-// Fig. 200-1: five roles, oldest first, with scale, what KC owned, and whether he
+// Fig. 200-1: the leadership roles, oldest first, with scale, what KC owned, and whether he
 // did the work himself or led it. Each column links to the role below.
 function Progression() {
-  const ordered = [...roles].reverse();
+  const ordered = roles.filter((r) => r.inProgression !== false).reverse();
   return (
     <figure className="sheet prog" aria-labelledby="prog-cap" data-coord="200-0 · Progression">
       <figcaption id="prog-cap" className="prog__cap">
@@ -139,7 +139,7 @@ export default function Experience() {
           <Role key={r.id} r={r} index={i} collapsed={focus && !focus.roles.includes(r.id)} />
         ))}
       </div>
-      <section className="sheet grid earlier" aria-labelledby="earlier-h" data-coord="200-6 · Earlier">
+      <section className="sheet grid earlier" aria-labelledby="earlier-h" data-coord={`200-${roles.length + 1} · Earlier`}>
         <h2 id="earlier-h" className="earlier__h label">Earlier</h2>
         <ul className="earlier__list">
           {earlier.map((e) => (

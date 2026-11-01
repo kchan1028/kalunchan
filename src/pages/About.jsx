@@ -8,7 +8,7 @@ import { entity, isPlaceholder, person, updated } from '../content/profile';
 import { cycling } from '../content/community';
 import {
   careerChapters, independence, mentoringProgression,
-  keyTakeaways, currentWork, delivered, valueFit, leadershipPractices, problems, publishedFaq, sources,
+  keyTakeaways, currentWork, valueFit, leadershipPractices, problems, publishedFaq, sources,
 } from '../content/about';
 
 const workUrl = Object.fromEntries([['Yippify', person.yippify], ...person.products.map((p) => [p.name, p.url])]);
@@ -81,8 +81,7 @@ export default function About() {
 
     <Qa id="delivered" coord="Delivered" q="What has Ka Lun Chan delivered?">
       <p>His record includes scaling a product to 400,000+ users and an acquisition, and infrastructure work across 2,000+ carrier sites.</p>
-      <ul className="spec-list">{delivered.map((d) => <li key={d.term}><strong>{d.term}</strong> {d.text}</li>)}</ul>
-      <p>Employer names and dates are on <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>his LinkedIn profile</a>.</p>
+      <p>The full record, role by role, is on the <Link to="/experience/">Experience page</Link>. Employer names and dates are on <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>his LinkedIn profile</a>.</p>
     </Qa>
 
     <Qa id="value" coord="Where he adds value" q="Where does Ka Lun Chan add the most value?">

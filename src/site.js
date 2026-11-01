@@ -48,7 +48,7 @@ const base = [
     "path": "/experience/",
     name: "Experience",
     "title": "Engineering Leadership Experience \u2014 Ka Lun Chan",
-    "description": "Co-founder and CTO through an acquisition, media CTO, VP of Operations and carrier network engineering: the problems, decisions and results behind each role."
+    "description": "Co-founder and CTO through an acquisition, media CTO, fractional CTO, VP of Operations and carrier network engineering: the problems, decisions and results behind each role."
   },
   {
     "path": "/projects/",
