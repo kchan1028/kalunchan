@@ -27,7 +27,7 @@ export const careerStages = [
   {
     id: 'founder', name: 'Startup founder', role: 'Co-founder and CTO, global communications platform',
     tech: 'A multi-tier web and mobile platform, a data center cabled by hand, then cloud regions on three continents',
-    did: '400,000+ users across South America, Asia and Africa, with revenue in under four months. Growth reached multimillion-dollar levels, then an acquisition.',
+    did: '400,000+ users across North America, South America, Asia and Europe, with revenue in under four months. Growth reached multimillion-dollar levels, then an acquisition.',
     lesson: 'Build for the person using the system.',
     to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story: from an idea to an acquisition',
   },

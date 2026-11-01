@@ -122,11 +122,11 @@ export const roles = [
     org: 'Global communications platform',
     title: 'Co-Founder & CTO',
     era: 'SaaS, founder',
-    scale: '400k+ users · 3 continents · acquired',
+    scale: '400k+ users · 4 continents · acquired',
     owned: 'Product, network, platform and a team of 30+, from first line of code to acquisition',
     mode: 'Built, then led',
     problem:
-      'Build a service from nothing, then keep it fast for users spread across South America, Asia and Africa.',
+      'Build a service from nothing, then keep it fast for users spread across North America, South America, Asia and Europe.',
     responsibility:
       'Co-founded the company. Built the network and the multi-tier web and mobile application, and led engineering from first line of code to acquisition.',
     decisions: [

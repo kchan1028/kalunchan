@@ -4,7 +4,7 @@ import { ArrowRight } from '../../components/Icons';
 // Reflective companion to the chronological founder story. Facts used here are
 // the owner-confirmed ones already on that post (friends-and-family funding,
 // open-source VoIP platform, the author racking and configuring the hardware, users in
-// South America, Asia and Africa). The company stays unnamed and no years,
+// North America, South America, Asia and Europe). The company stays unnamed and no years,
 // revenue figures or specific incidents are given.
 
 export const toc = [
@@ -43,7 +43,7 @@ export default function Body() {
       <section id="first-revenue" aria-labelledby="first-revenue-h">
         <h2 id="first-revenue-h" className="post__h2">The first revenue is a different kind of excitement</h2>
         <p>Getting someone to pay for a product is a different challenge from building it. You can believe for months that you’ve built something valuable. The first time a customer hands over money for it, the belief stops being yours alone. No launch since has felt quite like that.</p>
-        <p>It also doesn’t end anything. After the first paying customer you need the second, then the hundredth. You need to improve the product, control expenses, keep the infrastructure up, support the people paying you, and get all of it to where the business sustains itself. Revenue changed how I thought about engineering. A technical decision stopped being about elegance or performance alone. It affected operating cost, whether customers stayed, and whether the company could keep going. Our users were in South America, Asia and Africa, many in communities the big carriers didn’t serve well, and a dropped call wasn’t an abstraction to them.</p>
+        <p>It also doesn’t end anything. After the first paying customer you need the second, then the hundredth. You need to improve the product, control expenses, keep the infrastructure up, support the people paying you, and get all of it to where the business sustains itself. Revenue changed how I thought about engineering. A technical decision stopped being about elegance or performance alone. It affected operating cost, whether customers stayed, and whether the company could keep going. Our users were in North America, South America, Asia and Europe, many in communities the big carriers didn’t serve well, and a dropped call wasn’t an abstraction to them.</p>
       </section>
 
       <section id="profitable" aria-labelledby="profitable-h">

@@ -1,11 +1,11 @@
 {
   "/": {
     "date": "2026-11-01",
-    "hash": "14c2d44ceaed743c"
+    "hash": "7cfed382622e776b"
   },
   "/about/": {
     "date": "2026-11-01",
-    "hash": "9a53a740bb95ba07"
+    "hash": "978140b6d419e057"
   },
   "/leadership/": {
     "date": "2026-11-01",
@@ -13,7 +13,7 @@
   },
   "/experience/": {
     "date": "2026-11-01",
-    "hash": "3789793f187cb914"
+    "hash": "b23a777ddf73f02b"
   },
   "/projects/": {
     "date": "2026-11-01",
@@ -32,8 +32,8 @@
     "hash": "56cae188c13ab83a"
   },
   "/writing/": {
-    "date": "2026-10-31",
-    "hash": "ecab5d29d200efa2"
+    "date": "2026-11-01",
+    "hash": "8f19a87da0882220"
   },
   "/contact/": {
     "date": "2026-11-01",
@@ -53,7 +53,7 @@
   },
   "/work/three-continent-platform/": {
     "date": "2026-11-01",
-    "hash": "cf8141d72c84a0eb"
+    "hash": "dbfea31cb0b634c2"
   },
   "/work/publishing-distribution/": {
     "date": "2026-10-31",
@@ -73,6 +73,6 @@
   },
   "/engineering-leadership/": {
     "date": "2026-11-01",
-    "hash": "52f5353a4729b917"
+    "hash": "f21df5121788ac9d"
   }
 }

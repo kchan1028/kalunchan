@@ -91,7 +91,7 @@ export default function Body() {
 
       <section id="geo" aria-labelledby="geo-h">
         <h2 id="geo-h" className="post__h2">Routing media by where the caller is</h2>
-        <p>At the company I co-founded, our users were in South America, Asia and Africa and our platform started in one data center. Distance was the problem. Audio that crosses an ocean twice arrives late and arrives damaged, and no amount of server capacity fixes latency.</p>
+        <p>At the company I co-founded, our users were in North America, South America, Asia and Europe and our platform started in one data center. Distance was the problem. Audio that crosses an ocean twice arrives late and arrives damaged, and no amount of server capacity fixes latency.</p>
         <p>The improvement that mattered most was choosing the media path by where the caller was. We used the source IP address to estimate the caller’s location and steered the audio through the geographically appropriate media path, instead of hairpinning every call through a single site. Call quality went up for distant users, because the audio travelled a shorter path, and the cost of carrying that audio went down, because we stopped paying to haul it across the world and back. Geolocation is an estimate, so the routing needed a sensible fallback for the cases where it was wrong, but as a single decision it changed both the quality customers felt and the bandwidth bill at once.</p>
       </section>
 

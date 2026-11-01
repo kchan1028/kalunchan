@@ -39,7 +39,7 @@ export const metadata = {
   faq: [
     {
       q: 'Why build VoIP apps for Nokia phones instead of the iPhone?',
-      a: 'Because our customers carried Nokias. The service made international calls cheaper for immigrants calling family in South America, Asia and Africa, and in those years the iPhone was expensive, sold in few countries and could not run VoIP over cellular. A Symbian app on the phone a customer already owned reached far more of them.',
+      a: 'Because our customers carried Nokias. The service made international calls cheaper for immigrants calling family overseas, and in those years the iPhone was expensive, sold in few countries and could not run VoIP over cellular. A Symbian app on the phone a customer already owned reached far more of them.',
     },
     {
       q: 'What was it like to develop apps for Nokia phones in C++?',

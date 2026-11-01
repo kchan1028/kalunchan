@@ -293,7 +293,7 @@ export default function Body() {
           <li><strong>Cross-module side effects go through in-process events</strong> where it makes sense, so the code is already shaped like something that could be split.</li>
           <li><strong>Every module has a named owner,</strong> even when one team owns several.</li>
         </ol>
-        <p>Scale alone isn’t a reason to split, either. When I was <Link to="/work/three-continent-platform/">co-founder and CTO of a platform that grew past 400,000 users</Link> across South America, Asia and Africa, the answer wasn’t to break the application up. We kept one architecture and ran the full application tier in three regions, routing users to the nearest one. The hard problem was distance, and splitting the code wouldn’t have fixed it.</p>
+        <p>Scale alone isn’t a reason to split, either. When I was <Link to="/work/three-continent-platform/">co-founder and CTO of a platform that grew past 400,000 users</Link> across North America, South America, Asia and Europe, the answer wasn’t to break the application up. We kept one architecture and ran the full application tier in three regions, routing users to the nearest one. The hard problem was distance, and splitting the code wouldn’t have fixed it.</p>
       </section>
 
       <section id="extract-later" aria-labelledby="extract-later-h">

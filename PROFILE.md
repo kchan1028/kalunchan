@@ -11,13 +11,13 @@ Before publishing, replace every [BRACKETED] note and every REPLACE_WITH_ value.
 
 ## 1a. Entity paragraph (place directly under the H1)
 
-Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
+Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across four continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
 
 ## 1b. Headline numbers (a short row or list under the paragraph)
 
 - 20+ years in software
 - 400,000+ users scaled as co-founder and CTO
-- Acquired, with users across 3 continents
+- Acquired, with users across 4 continents
 
 ## 1c. Availability line (near the "Let's talk" call to action)
 
@@ -42,12 +42,12 @@ Use the Person object from section 4 on every page (in the shared layout), so ev
 
 *Updated [REPLACE_WITH_MONTH YEAR]*
 
-Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across three continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
+Ka Lun Chan (KC) is a San Francisco Bay Area engineering leader with 20+ years in software. He co-founded a global communications platform as CTO, scaled it to 400,000+ users across four continents before its acquisition, and now consults through Yippify. He is seeking a VP, Head or Director of Engineering role at a company scaling its team and platform.
 
 ## Key takeaways
 
 - 20+ years in software development, from technical support and carrier networks to co-founder and CTO.
-- Scaled a communications platform to 400,000+ users on three continents, through to acquisition.
+- Scaled a communications platform to 400,000+ users on four continents, through to acquisition.
 - Hands-on in Python, Django, Rails, React, Next.js, PostgreSQL and AWS.
 - Leads by removing single points of failure: written architecture decisions, small safe changes, and growing engineers into leaders.
 - Open to Director, Head or VP of Engineering, Engineering Manager, and Staff or Principal roles, plus consulting through Yippify.
@@ -74,7 +74,7 @@ His record includes scaling a product to 400,000+ users and an acquisition, and 
 - **Fractional CTO and technical advisor, startups and growth companies:** between the acquisition and Yippify, served as interim head of engineering for a startup shipping iOS and Android apps, a web platform and REST APIs on AWS; built a wholesale VoIP platform on Asterisk and OpenSIPS; and led a fully remote team building on Go, React, Next.js and AWS Lambda.
 - **Software engineer, no-code machine-learning platform:** built the customer-facing product, React and Next.js over a Flask back end, with the ML research team, turning research algorithms into a tool non-technical users could run.
 - **Chief Technology Officer, media publishing platform:** grew organic traffic, social traffic and social engagement by 50% each. Re-platformed the titles from WordPress to Ruby on Rails and moved hosting to AWS, where infrastructure improvements contributed to about 30% lower AWS costs. Worked with the CEO on business and operations, including the partners across the affiliated publishing network.
-- **Co-Founder & CTO, global communications platform:** scaled to 400,000+ users across three continents, grew revenue to multimillion-dollar levels, and led through to acquisition, including the technical due diligence. Built and led a global team of 30+ engineers, VoIP specialists and designers, and held a board seat. Shipped the mobile VoIP app on Nokia, iPhone and Android.
+- **Co-Founder & CTO, global communications platform:** scaled to 400,000+ users across four continents, grew revenue to multimillion-dollar levels, and led through to acquisition, including the technical due diligence. Built and led a global team of 30+ engineers, VoIP specialists and designers, and held a board seat. Shipped the mobile VoIP app on Nokia, iPhone and Android.
 - **VP of Operations, voice services:** ran software engineering, QA and network operations. Restructured engineering and the server farm behind 8M+ VoIP minutes a month, rebuilt the engineering team, and planned capacity expansion ahead of demand. Delivered a mobile VoIP app for Nokia phones.
 - **Member of Technical Staff, national broadband network:** integrated and expanded carrier infrastructure across 2,000+ collocations. Wrote Cisco router access control lists, was one of the first three people supporting the new NetScreen-based managed firewall and VPN service in the Security Operations Center, and travelled to the East Coast to train the Technical Assistance Center.
 - **Earlier:** technical support roles in broadband and technical services.
@@ -150,7 +150,7 @@ Ka Lun Chan (KC) is a software engineering leader based in the San Francisco Bay
 He is open to Director of Engineering, Head of Engineering, VP Engineering, Engineering Manager and Staff or Principal roles. He also takes technical consulting projects through Yippify.
 
 **What has Ka Lun Chan built?**
-As co-founder and CTO, he scaled a global communications platform to 400,000+ users across three continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools.
+As co-founder and CTO, he scaled a global communications platform to 400,000+ users across four continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools.
 
 **What technologies does Ka Lun Chan work with?**
 His main stack is Python, Django, Rails, React, Next.js and PostgreSQL on AWS. His experience also covers distributed systems, cloud infrastructure and AI/ML products.
@@ -240,7 +240,7 @@ The fastest route is a message on LinkedIn at linkedin.com/in/kchan1288. For con
         {
           "@type": "Question",
           "name": "What has Ka Lun Chan built?",
-          "acceptedAnswer": { "@type": "Answer", "text": "As co-founder and CTO, he scaled a global communications platform to 400,000+ users across three continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools." }
+          "acceptedAnswer": { "@type": "Answer", "text": "As co-founder and CTO, he scaled a global communications platform to 400,000+ users across four continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools." }
         },
         {
           "@type": "Question",

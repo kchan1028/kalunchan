@@ -26,7 +26,7 @@ const stages = [
   { title: 'Building the first product', tag: '0→1', text: 'Servers, network and software, built from scratch. Revenue in less than four months.' },
   { title: 'Finding customers', text: 'Learning what the market actually needed, which wasn’t always what we’d built.', loop: 'Back to building, more than once' },
   { title: 'Production', text: 'Software became something people depended on. Reliability became part of the product.', loop: 'Fix, learn, fix again' },
-  { title: 'Growth', text: 'Users across three continents. The first data center stopped being enough.', loop: 'Rebuilt: one site to cloud regions' },
+  { title: 'Growth', text: 'Users across four continents. The first data center stopped being enough.', loop: 'Rebuilt: one site to cloud regions' },
   { title: 'Scaling technology and people', tag: '1→10', text: 'Repeatable deploys, clear ownership, and technical debt managed on purpose.' },
   { title: 'Engineering leadership', text: 'Moving from solving problems myself to building teams that solve them.' },
   { title: 'Acquisition', year: '2013', text: '400,000+ users and multimillion-dollar growth. A real result, and not the end.', accent: true },
@@ -201,7 +201,7 @@ export default function Body() {
         <h2 id="no-playbook-h" className="post__h2">There was no playbook</h2>
         <p>In 2007 I co-founded a company with an idea and not much else. There was no engineering organization to join, no platform to inherit, no team waiting for direction, and no playbook for what came next. We had to figure most of it out as we went.</p>
         <p>The company built a global communications platform: VoIP and cloud telecom services for underserved and underbanked communities, including many immigrants who were often poorly served by traditional financial systems. Some customers used the service directly. Others reached it through local businesses that resold it in their own communities and ran on our hosted platform.</p>
-        <p>I was a co-founder and the CTO. The platform grew past 400,000 users across South America, Asia and Africa, handled millions of dollars in transactions, and grew revenue to multimillion-dollar levels. In 2013 the company was acquired. I stayed on board after the deal closed, and my part of the story ran until 2024.</p>
+        <p>I was a co-founder and the CTO. The platform grew past 400,000 users across North America, South America, Asia and Europe, handled millions of dollars in transactions, and grew revenue to multimillion-dollar levels. In 2013 the company was acquired. I stayed on board after the deal closed, and my part of the story ran until 2024.</p>
         <p>I came into it from networks, not startups. I’d kept a nationwide carrier network running and then run operations for a voice service. I knew a lot about how networks fail. I knew much less about building a company, hiring a team, or deciding which problems were worth solving first.</p>
         <p>From the outside, the story fits on one line: idea, growth, acquisition. What I want to write down is what that line leaves out: a long run of decisions made with incomplete information, some of them wrong, and a slow change in what my job was.</p>
         <Journey />
@@ -262,7 +262,7 @@ export default function Body() {
           <div><dt>Production incidents</dt><dd>When it breaks, do we learn something, or just fix it?</dd></div>
         </dl>
         <p>Reliability becomes part of the product. When software handles real transactions for people who may not have much margin, a bug isn’t an engineering inconvenience. A failed payment or a wrong balance is someone’s money. A dropped call is a conversation that didn’t happen.</p>
-        <p>Voice made that sharper. Real-time traffic can’t hide behind a cache, and our users were spread across South America, Asia and Africa. Every session from the far side of an ocean paid for the distance in latency and call quality. Users feel geography before they notice any new feature.</p>
+        <p>Voice made that sharper. Real-time traffic can’t hide behind a cache, and our users were spread across North America, South America, Asia and Europe. Every session from the far side of an ocean paid for the distance in latency and call quality. Users feel geography before they notice any new feature.</p>
         <p>That pushed one of the biggest technical decisions we made: leaving the single data center we’d planned so carefully, and running the full application in cloud regions on three continents, with each user routed to the nearest one. A small engineering team that also owned operations did it with no downtime window, because users were active in every time zone. I’ve written up <Link to="/work/three-continent-platform/">that move from one data center to three continents</Link> as a case study.</p>
         <p>My years in network operations helped here. Most outages aren’t dramatic. They’re a full disk, an expired certificate, a config change nobody reviewed, or a dependency that got slow. What I had to learn was how to build that knowledge into the system and the team, instead of keeping it in my head.</p>
         <figure className="post__photo">
