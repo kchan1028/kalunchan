@@ -352,7 +352,7 @@ Following a link to another page fades the page out over 180ms while a 2px blue 
 Printing drops the header, colophon and skip link, forces the light printing, and shows anything still waiting to wipe in. `/engineering-leadership/` also hides its actions and adds a contact line, so it forwards as a clean document.
 
 ### Colophon
-Every page closes on a solid ink band: three large proof figures that link to their evidence (left off the home, `/engineering-leadership/` and `/contact/`, which already lead with the ask), a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It keeps its light-printing values in both themes, so on dark stock it sits one barely lighter step off the page ground and is set apart mostly by its spacing. Apart from the résumé tile, it is the only inverted surface.
+Every page closes on a solid ink band: three large proof figures that link to their evidence (left off the home, `/engineering-leadership/` and `/contact/`, which already lead with the ask), a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It keeps its light-printing values in both themes, so on dark stock it sits one barely lighter step off the page ground, and a paper hairline at 22% marks where it starts. Apart from the résumé tile, it is the only inverted surface.
 
 ## Do's and Don'ts
 

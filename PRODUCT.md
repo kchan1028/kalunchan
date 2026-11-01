@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Vite + React with static prerendering per route (user decision; migrating off Create React App so every route ships as crawlable HTML).
+Vite + React with static prerendering per route (user decision, so every route ships as crawlable HTML).
 
 ## Purpose
 
