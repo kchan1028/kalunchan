@@ -95,7 +95,7 @@ export const impact = [
 // or hides existing evidence and adds none, so add one only when the site already has proof. Illustrative case studies stay out.
 // Keys: impact figure, post slug, case study slug, role id.
 export const focuses = [
-  { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'], cases: ['three-continent-platform'], roles: ['communications', 'voice'] },
+  { id: 'team', label: 'Scaling an engineering team', impact: ['30+', '8M+'], writing: ['hidden-cost-of-too-many-meetings', 'why-writing-good-user-stories-is-hard', 'speed-vs-quality-software-engineering'], cases: ['three-continent-platform'], roles: ['fractional', 'communications', 'voice'] },
   { id: 'cloud', label: 'Cloud cost and infrastructure', impact: ['~30%', '8M+'], writing: ['when-technical-debt-becomes-a-business-problem'], cases: ['three-continent-platform', 'carrier-capacity'], roles: ['publishing', 'communications', 'voice', 'carrier'] },
   { id: 'regulated', label: 'Regulated or public-sector systems', impact: ['Public sector'], writing: ['building-public-sector-applications'], cases: [], roles: ['yippify', 'carrier'] },
   { id: 'growth', label: 'Product and company growth', impact: ['Acquired', '+50%'], writing: ['speed-vs-quality-software-engineering'], cases: ['three-continent-platform', 'publishing-distribution'], roles: ['publishing', 'communications'] },

@@ -71,6 +71,28 @@ export const roles = [
     ],
   },
   {
+    id: 'fractional',
+    org: 'Startups and growth companies',
+    title: 'Fractional CTO and technical advisor',
+    era: 'Fractional and interim leadership',
+    scale: 'Interim head of engineering · fully remote team',
+    owned: 'Engineering leadership as interim head of engineering and fractional CTO',
+    mode: 'Led and hands-on',
+    responsibility:
+      'Between the acquisition and Yippify: interim head of engineering for a startup shipping iOS and Android apps, a web platform and REST APIs on AWS; built a wholesale VoIP platform on Asterisk and OpenSIPS; and led a fully remote team building on Go, React, Next.js and AWS Lambda.',
+    cases: [],
+  },
+  {
+    id: 'ml-platform',
+    org: 'No-code machine-learning platform',
+    title: 'Software Engineer',
+    era: 'Product engineering',
+    responsibility:
+      'Built the customer-facing product, React and Next.js over a Flask back end, with the ML research team, turning research algorithms into a tool non-technical users could run.',
+    inProgression: false,
+    cases: [],
+  },
+  {
     id: 'publishing',
     org: 'Media publishing platform',
     title: 'Chief Technology Officer',
