@@ -64,7 +64,7 @@ export default function Work() {
         <p className="page-lead__aside body-copy">
           {focus
             ? 'The closest case studies come first, then six live sites. Three of them get the full story: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'
-            : 'Six live sites come first, so you can watch them run. Three of them get the full story below: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date. After them come three systems from my engineering leadership work and one illustrative design.'}
+            : 'Three systems from my engineering leadership work and one illustrative design come first. After them come six live sites you can watch run. Three of those get the full story: one helps small businesses chase federal contracts, one is the home of a community race weekend, and one brought a family-owned business up to date.'}
         </p>
       </div>
       <FocusPicker
@@ -74,10 +74,11 @@ export default function Work() {
         choose={choose}
         coord="300-0 · Focus"
         status={focus
-          ? `Showing ${shownCases.length} of ${cases.length} case studies first, then the shipped products. Choose it again to show everything.`
-          : 'Pick one to see the closest case studies first.'}
+          ? `Showing ${shownCases.length} of ${cases.length} case studies, then the shipped products. Choose it again to show everything.`
+          : 'Pick one to show only the closest case studies.'}
       />
-      {focus ? [caseStudies, shipped] : [shipped, caseStudies]}
+      {caseStudies}
+      {shipped}
     </>
   );
 }
