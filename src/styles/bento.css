@@ -1,4 +1,4 @@
-/* Home: the bento grid. One column on phones, two on tablets, four on desktop. Square corners and hairlines, like the
+/* Home: the bento grid. One column on phones, two on tablets, twelve on desktop. Square corners and hairlines, like the
    rest of the site. The hero is the page's blue field. Every tile has an explicit placement at every width. */
 
 .bento {
@@ -19,27 +19,18 @@
   border: 1px solid var(--rule-soft);
 }
 
-.tile__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s5);
-  margin-top: auto;
-}
-
-.tile__links a {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s2);
-  min-height: 44px;
-  font-weight: 600;
-  font-stretch: 92%;
-}
-
 /* Hero */
 .tile--hero {
-  gap: var(--s5);
   background: var(--blue);
   border-color: var(--blue);
+}
+
+.tile__hero-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s5);
+  min-width: 0;
 }
 
 .tile__name {
@@ -59,50 +50,71 @@
   max-width: 17ch;
 }
 
+.tile__proof {
+  max-width: 38ch;
+  font-size: var(--t-lead);
+  font-stretch: 96%;
+  line-height: 1.35;
+}
+
 .tile__hero-foot {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s4) var(--s5);
+  flex-direction: column;
+  gap: var(--s2);
   margin-top: auto;
 }
 
-.tile__location {
-  flex-basis: 100%;
-  max-width: 44ch;
+.tile__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s5);
+  margin-bottom: var(--s2);
 }
 
-.badge {
+.tile__linkedin {
   display: inline-flex;
   align-items: center;
   gap: var(--s2);
-  min-height: 44px;
-  text-decoration: none;
-  padding: var(--s2) var(--s3);
-  border: 1px solid var(--on-blue);
-  font-size: var(--t-small);
+  min-height: 48px;
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
+/* Inline, so the arrow stays with the last word when the line wraps. */
+.badge {
+  display: inline-block;
+  padding-block: var(--s3);
   font-weight: 600;
   font-stretch: 92%;
   line-height: 1.35;
 }
 
-.tile--hero .action {
-  padding-block: var(--s2);
-  line-height: 1.25;
+.badge svg {
+  display: inline;
+  margin-left: var(--s1);
+  vertical-align: -0.12em;
 }
 
-@media (hover: hover) {
-  .badge:hover {
-    background: var(--on-blue);
-    color: var(--blue);
-  }
+.tile__location {
+  max-width: 44ch;
+  font-size: var(--t-small);
+  color: var(--on-blue-2);
 }
 
-/* Résumé */
+.tile__hero-figure {
+  display: none;
+}
+
+/* Résumé: holds its ink in both themes (base.css), so the blue field stays the brightest thing on the page. */
 .tile--resume {
   background: var(--ink);
   color: var(--paper);
-  border-color: var(--ink);
+  border-color: rgb(244 245 242 / 0.22);
+}
+
+.tile__resume-action {
+  margin-top: auto;
 }
 
 .tile--resume .action {
@@ -116,10 +128,6 @@
   background: var(--blue);
   border-color: var(--blue);
   color: var(--on-blue);
-}
-
-.tile--resume a:not(.action) {
-  text-decoration-color: currentColor;
 }
 
 .tile--resume :focus-visible {
@@ -152,9 +160,25 @@
   text-underline-offset: 0.22em;
 }
 
+.tile__role {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--t-small);
+  font-stretch: 92%;
+  line-height: 1.35;
+}
+
+.tile__role strong {
+  font-weight: 700;
+}
+
+.tile__role span {
+  color: var(--ink-3);
+}
+
 .tile__figure {
   display: block;
-  margin-block: var(--s1) var(--s2);
+  margin-bottom: var(--s2);
   font-size: var(--t-h1);
   font-stretch: 68%;
   font-weight: 800;
@@ -163,20 +187,16 @@
   color: var(--blue);
 }
 
-.tile__facts {
-  display: grid;
-  gap: var(--s3);
+.tile__result {
   font-size: var(--t-small);
+  font-weight: 600;
   line-height: 1.5;
 }
 
-.tile__facts dd {
+.tile__problem {
+  font-size: var(--t-small);
+  line-height: 1.5;
   color: var(--ink-2);
-}
-
-.tile__result dd {
-  color: var(--ink);
-  font-weight: 600;
 }
 
 .tile__more {
@@ -184,6 +204,7 @@
   align-items: center;
   gap: var(--s2);
   margin-top: auto;
+  padding-top: var(--s2);
   font-weight: 600;
   font-stretch: 92%;
 }
@@ -203,6 +224,17 @@
 
 .tile--skills > p:last-child {
   margin-top: auto;
+}
+
+.tile__facts {
+  display: grid;
+  gap: var(--s3);
+  font-size: var(--t-small);
+  line-height: 1.5;
+}
+
+.tile__facts dd {
+  color: var(--ink-2);
 }
 
 .tile__facts--rows > div {
@@ -302,12 +334,6 @@
   color: var(--ink-2);
 }
 
-/* Contact */
-.tile__email {
-  overflow-wrap: anywhere;
-  font-weight: 600;
-}
-
 /* Hover lift: only for tiles that are one link, and only when motion is allowed. */
 @media (prefers-reduced-motion: no-preference) {
   .tile--case {
@@ -322,6 +348,12 @@
   }
 }
 
+/* Phones: the first proof comes straight after the hero, then the résumé. */
+@media (max-width: 639px) {
+  .tile--hero { order: -2; }
+  .tile--platform { order: -1; }
+}
+
 @media (min-width: 640px) {
   .bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -329,8 +361,9 @@
 
   .tile--hero,
   .tile--resume,
-  .tile--personal,
-  .tile--contact {
+  .tile--platform,
+  .tile--skills,
+  .tile--personal {
     grid-column: span 2;
   }
 
@@ -339,40 +372,40 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     gap: 0;
   }
-
-  .tile--contact .tile__links,
-  .tile--resume .tile__links {
-    margin-top: 0;
-  }
 }
 
 @media (min-width: 1100px) {
   .bento {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
-  .tile--hero,
-  .tile--personal {
-    grid-column: span 3;
-  }
-
-  .tile--resume,
-  .tile--contact {
-    grid-column: span 1;
-  }
-
-  .tile--case,
-  .tile--skills {
-    grid-column: span 2;
-  }
-
-  .tile--resume .tile__links,
-  .tile--contact .tile__links {
-    margin-top: auto;
-  }
+  .tile--hero { grid-column: span 9; }
+  .tile--resume { grid-column: span 3; }
+  .tile--platform,
+  .tile--publishing,
+  .tile--carrier { grid-column: span 4; }
+  .tile--yippify,
+  .tile--nokia { grid-column: span 6; }
+  .tile--skills { grid-column: span 5; }
+  .tile--personal { grid-column: span 7; }
 
   .tile--skills .tile__facts--rows > div {
     grid-template-columns: 6rem minmax(0, 1fr);
     column-gap: var(--s3);
+  }
+}
+
+/* The schematic has room beside the headline from here up. Below this it stays on the case study page. */
+@media (min-width: 1280px) {
+  .tile--hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(320px, 38%, 400px);
+    gap: var(--s5);
+  }
+
+  .tile__hero-figure {
+    display: block;
+    padding-left: var(--s5);
+    border-left: 1px solid var(--on-blue-rule);
   }
 }

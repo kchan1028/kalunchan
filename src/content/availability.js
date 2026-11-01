@@ -5,7 +5,7 @@
 export const availability = {
   show: true,
   role: 'engineering leadership opportunities',
-  location: 'San Francisco Bay Area. Remote across the US, or hybrid and on-site in the Bay Area.',
+  location: 'San Francisco Bay Area, remote across the US.',
   timing: null,
   updated: '2026-10',
 };

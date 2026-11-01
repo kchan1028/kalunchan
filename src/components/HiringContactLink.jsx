@@ -7,7 +7,7 @@ import { ArrowRight } from './Icons';
 export default function HiringContactLink({ className = 'action' }) {
   return (
     <Link to={resumeRequest} className={className} onClick={() => track('hiring_cta_click', resumeRequest)}>
-      Talk about your engineering team <ArrowRight />
+      Start a conversation <ArrowRight />
     </Link>
   );
 }

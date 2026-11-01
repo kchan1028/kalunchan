@@ -651,6 +651,31 @@ p.title-block__heading {
   }
 }
 
+/* The narrowest phones: the header drops the coordinate and shows the menu's bars, keeping its name for screen readers. */
+@media (max-width: 369px) {
+  .site-header__bar .wordmark {
+    margin-right: auto;
+  }
+
+  .site-header__bar .coordinate {
+    display: none;
+  }
+
+  .contents-toggle {
+    gap: 0;
+    padding-left: var(--s3);
+  }
+
+  .contents-toggle > span:first-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
 /* ---------- Colophon ---------- */
 .colophon {
   margin-top: var(--s9);

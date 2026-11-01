@@ -50,8 +50,7 @@ function layoutH(spec) {
   return { W, H: top + inner + 20, tiers, pos, size, subSize, dir: 'h' };
 }
 
-function layoutV(spec) {
-  const W = 360;
+function layoutV(spec, W = 360) {
   const size = 13;
   const subSize = 10.5;
   const hgap = 12;
@@ -129,7 +128,7 @@ function Drawing({ L, spec, id, className }) {
         ))}
       {spec.edges.map(([a, b, label, accent]) => (
         <g key={`${a}-${b}`}>
-          <path className={`dg-edge${accent ? ' is-accent' : ''}`} d={edgePath(L, a, b)} markerEnd={`url(#${id}-arrow)`} />
+          <path className={`dg-edge${accent ? ' is-accent' : ''}`} d={edgePath(L, a, b)} pathLength="1" markerEnd={`url(#${id}-arrow)`} />
           {label && (
             <text className="dg-edge-label" {...midpoint(L, a, b)}>
               {label}
@@ -166,10 +165,13 @@ function Drawing({ L, spec, id, className }) {
   );
 }
 
-export default function Diagram({ spec, id, no }) {
+// `stacked` keeps the top→bottom drawing at every width, for a narrow column on a wide screen.
+export default function Diagram({ spec, id, no, stacked = false }) {
   const names = Object.fromEntries(spec.tiers.flatMap((t) => t.nodes.map((n) => [n.id, n.label])));
+  // Too small for sub-labels; the full drawing with them stays on the case study page.
+  const labelsOnly = { ...spec, tiers: spec.tiers.map((t) => ({ ...t, nodes: t.nodes.map(({ sub, ...n }) => n) })) };
   return (
-    <figure className="diagram">
+    <figure className={stacked ? 'diagram diagram--stacked' : 'diagram'}>
       <figcaption className="diagram__caption">
         <span className="mono">Fig. {no}</span>
         <span>{spec.label}</span>
@@ -177,8 +179,8 @@ export default function Diagram({ spec, id, no }) {
           <span className="diagram__key-mark" aria-hidden="true" /> {spec.key || 'Critical path'}
         </span>
       </figcaption>
-      <Drawing L={layoutH(spec)} spec={spec} id={`${id}-h`} className="dg--h" />
-      <Drawing L={layoutV(spec)} spec={spec} id={`${id}-v`} className="dg--v" />
+      {!stacked && <Drawing L={layoutH(spec)} spec={spec} id={`${id}-h`} className="dg--h" />}
+      <Drawing L={stacked ? layoutV(labelsOnly, 320) : layoutV(spec)} spec={spec} id={`${id}-v`} className="dg--v" />
       <ul className="visually-hidden">
         {spec.edges.map(([a, b, label]) => (
           <li key={`${a}-${b}`}>

@@ -67,7 +67,7 @@
 
   :root[data-theme='light'] { color-scheme: light; }
   :root[data-theme='dark'] { color-scheme: dark; }
-  .on-blue, .colophon, .jrny__nav { color-scheme: light; }
+  .on-blue, .colophon, .jrny__nav, .tile--resume { color-scheme: light; }
 }
 
 @supports not (color: light-dark(#000, #fff)) {
@@ -288,11 +288,12 @@ svg {
   align-items: center;
   gap: var(--s3);
   min-height: 48px;
-  padding: 0 var(--s5);
+  padding: var(--s2) var(--s5);
   background: var(--ink);
   color: var(--paper);
   font-weight: 600;
   font-stretch: 92%;
+  line-height: 1.25;
   text-decoration: none;
   border: 1px solid var(--ink);
   transition: background 180ms var(--ease-out), color 180ms var(--ease-out);

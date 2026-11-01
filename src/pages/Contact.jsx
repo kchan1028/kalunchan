@@ -10,13 +10,13 @@ const onLinkedIn = () => track('linkedin_click', person.linkedin);
 
 export default function Contact() {
   return <article className="contact" aria-labelledby="contact-title">
-    <TitleBlock section="700" title="Contact" as="p" cells={[{ k: 'Best route', v: 'LinkedIn or the form below' }]} />
+    <TitleBlock section="700" title="Contact" as="p" cells={[{ k: 'Best route', v: 'The form below or LinkedIn' }]} />
     <header className="sheet grid contact-hero" data-coord="700 · Contact">
       <h1 id="contact-title" className="contact-hero__title display">Tell me about your team or opportunity.</h1>
       <div className="contact-hero__copy">
         <p className="contact-hero__lead">Share what you need, what stage the team is in, and where delivery or technical direction could be stronger.</p>
         <div className="contact-hero__actions">
-          <a className="action" href="#leadership">Start an enquiry <ArrowDown /></a>
+          <a className="action" href="#leadership">Start a conversation <ArrowDown /></a>
           <a className="action action--quiet" href={person.linkedin} target="_blank" rel="me noopener" onClick={onLinkedIn}>Message me on LinkedIn <ArrowOut /></a>
         </div>
       </div>

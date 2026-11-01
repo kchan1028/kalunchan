@@ -68,6 +68,45 @@
   }
 }
 
+/* Stacked: the top→bottom drawing in a narrow column. The wiring draws once on load, then the critical path. */
+.diagram--stacked {
+  gap: var(--s4);
+}
+
+.diagram--stacked .diagram__caption {
+  grid-template-columns: auto 1fr;
+}
+
+.diagram--stacked .diagram__key {
+  grid-column: 1 / -1;
+}
+
+.diagram--stacked .dg--v {
+  display: block;
+  max-width: none;
+}
+
+.diagram--stacked .dg-edge.is-accent {
+  stroke-width: 2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .diagram--stacked .dg-edge {
+    stroke-dasharray: 1;
+    animation: dg-draw 900ms var(--ease-out) 200ms backwards;
+  }
+
+  .diagram--stacked .dg-edge.is-accent {
+    animation-duration: 1100ms;
+    animation-delay: 700ms;
+  }
+}
+
+@keyframes dg-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
 .dg-tier {
   font-size: 12px;
   font-weight: 600;
