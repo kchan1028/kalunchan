@@ -240,7 +240,7 @@ Each light token above has a dark counterpart (the `dark-` tokens), resolved wit
 - **Subtitle** (700, clamp(1.25rem → 1.5rem), 1.2, width 88%): row and item titles.
 - **Page claim** (560, clamp(1.5rem → 2.375rem), 1.18, width 84%, max 34ch): the one plain claim that leads a page.
 - **Lead** (400, clamp(1.1875rem → 1.5rem), 1.45, width 96%, max 38ch).
-- **Body** (400, 1.0625rem, 1.6, max 66ch, ink secondary).
+- **Body** (400, 1.0625rem, 1.6, max 54ch, about 70 characters, ink secondary).
 - **Label** (600, 0.8125rem, +0.01em, width 86%, ink tertiary, sentence case): words that name a field ("Section", "Issue", "Contact", "Open to").
 - **Mono** (450, 0.75rem, +0.02em, width 87.5%, tabular figures): section numbers, years, figure numbers, the coordinate.
 

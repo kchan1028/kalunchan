@@ -42,6 +42,8 @@
   --t-body: 1.0625rem;
   --t-small: 0.9375rem;
   --t-mono: 0.75rem;
+  /* About 70 characters of Archivo. Its digit, which sets the ch unit, is wider than its average letter. */
+  --measure: 54ch;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -278,7 +280,7 @@ svg {
 }
 
 .body-copy {
-  max-width: 66ch;
+  max-width: var(--measure);
   color: var(--ink-2);
 }
 
