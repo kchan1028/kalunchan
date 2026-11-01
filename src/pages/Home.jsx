@@ -68,7 +68,7 @@ export default function Home() {
         {resume.pdf
           ? <p className="tile__resume-action"><a className="action" href={resume.pdf} download>Download PDF <ArrowDown /></a></p>
           : <>
-            <p>Send your name and email, and I’ll reply with it.</p>
+            <p>Send your name and email, and I’ll reply with it within 2 business days.</p>
             <p className="tile__resume-action"><Link className="action" to={resume.request}>Request résumé <ArrowRight /></Link></p>
           </>}
       </section>

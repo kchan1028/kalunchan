@@ -42,7 +42,7 @@ const base = [
     "path": "/leadership/",
     name: "Leadership",
     "title": "How I Lead Engineering Teams \u2014 Ka Lun Chan",
-    "description": "My engineering leadership operating manual: eight practices for architecture decisions, technical debt, delivery and growing engineers, and the signals I watch."
+    "description": "My engineering leadership operating manual: nine practices for architecture decisions, technical debt, delivery and growing engineers, and the signals I watch."
   },
   {
     "path": "/experience/",

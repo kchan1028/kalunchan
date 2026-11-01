@@ -950,3 +950,28 @@ p.title-block__heading {
     gap: var(--s3);
   }
 }
+
+/* ---------- Print: paper, ink and content only, whatever the theme or scroll position ---------- */
+@media print {
+  :root,
+  :root[data-theme='dark'] {
+    color-scheme: light !important;
+  }
+
+  .site-header,
+  .colophon,
+  .skip {
+    display: none;
+  }
+
+  [data-sw] {
+    animation: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  a {
+    color: inherit;
+  }
+}

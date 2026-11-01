@@ -27,7 +27,7 @@ function Role({ r, index, collapsed }) {
       <div className="sheet grid tenure__grid">
         <header className="tenure__head">
           <h2 id={`${r.id}-h`} className="tenure__org h3">{r.org}</h2>
-          <p className="tenure__title">{r.title}</p>
+          <p className="tenure__title">{r.title}{r.current && ', current role'}</p>
           <p className="tenure__era label">{r.era}</p>
         </header>
         <dl className="tenure__spec">
@@ -120,7 +120,7 @@ export default function Experience() {
           One through-line: keep the system up while the business grows around it. The systems changed, from carrier networks to SaaS, media and public services. The job didn’t.
         </p>
         <p className="page-lead__aside body-copy">
-          For full career history, visit <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced. Hiring for a senior engineering role? <Link to="/engineering-leadership/">Start with the summary for hiring teams</Link>.
+          Employer names, dates and my full career history are on <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>my LinkedIn profile</a>. Each role reads the same way: the problem I was handed, what I owned, the decisions that mattered, how we executed, and what it produced. Hiring for a senior engineering role? <Link to="/engineering-leadership/">Start with the summary for hiring teams</Link>.
         </p>
       </div>
       <FocusPicker

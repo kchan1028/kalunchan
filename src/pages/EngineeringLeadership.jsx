@@ -16,6 +16,7 @@ export default function EngineeringLeadership() {
       <div className="hire-opening__copy">
         <p className="display">I build products and the teams that scale them.</p>
         <p className="body-copy">I lead technical direction and delivery, stay close to the architecture, and help engineers grow into leaders.</p>
+        <p className="hire-print-contact">{person.name} ({person.short}). {person.linkedin} · kalunchan.dev/contact/</p>
       </div>
       <div className="hire-opening__actions">
         <HiringContactLink />
@@ -26,7 +27,7 @@ export default function EngineeringLeadership() {
     <section id="summary" className="sheet grid hire-section" aria-labelledby="summary-h" data-coord="091 · At a glance">
       <div className="hire-section__head"><h2 id="summary-h" className="h2">At a glance</h2></div>
       <dl className="hire-summary">
-        {summary.slice(0, 5).map((item) => <div key={item.k}><dt className="label">{item.k}</dt><dd>{item.v}</dd></div>)}
+        {summary.map((item) => <div key={item.k}><dt className="label">{item.k}</dt><dd>{item.v}</dd></div>)}
       </dl>
       <p className="hire-section__foot">
         <Link to={resumeRequest} className="action" onClick={onResume}>Request my résumé <ArrowRight /></Link>

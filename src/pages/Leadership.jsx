@@ -64,10 +64,10 @@ export default function Leadership() {
         <div className="sheet grid">
           <p className="open-to__roles">Working with teams through Yippify on engineering leadership, architecture and delivery.</p>
           <div className="open-to__side">
-            <a className="action" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
-              Start a conversation <ArrowOut />
+            <Link to="/engineering-leadership/" className="action">Hiring for a leadership role? <ArrowRight /></Link>
+            <a className="link-arrow" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
+              <span>Message me on LinkedIn</span> <ArrowOut />
             </a>
-            <Link to="/engineering-leadership/" className="link-arrow"><span>Hiring for a leadership role?</span> <ArrowRight /></Link>
           </div>
         </div>
       </aside>

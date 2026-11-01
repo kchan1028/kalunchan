@@ -219,7 +219,7 @@ Each light token above has a dark counterpart (the `dark-` tokens), resolved wit
 **The Reverse Printing Rule.** Dark is the same manual on different stock. New colours are added as `light-dark()` tokens, never as per-theme overrides, and any new surface that paints blue as a field joins the list that stays on light values.
 
 
-**The One Field Rule.** Each page carries exactly one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.
+**The One Field Rule.** Each page carries at most one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. `/engineering-leadership/` currently has none. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.
 
 **The Printed Ground Rule.** No gradients, tints or translucent panels on paper. Colour arrives as a solid field or not at all.
 
@@ -321,9 +321,7 @@ A Search button in the header, or Cmd/Ctrl+K, opens a modal with a square-corner
 Ruled rows at 48px minimum height, Archivo 600 entry, dotted leader, mono number at the right; hover turns entry and number blue.
 
 ### Focus Picker
-The same four focuses and the same `?for=` value work on three pages. Only `/engineering-leadership/` asks "What are you hiring for?"; `/projects/` and `/experience/` ask "What are you looking for?", because the other pages carry no hiring language (POSITIONING.md). On `/projects/`, the picker sits under the lead; choosing one lists the matching case studies ahead of the shipped products, with the first match taking the blue lead row, and only focuses with a real case study are offered. On `/experience/`, it sits above the progression figure; roles outside the focus collapse to their headings, so the career still reads in order, and a link to a collapsed role opens it. Choosing the active focus again clears it, and the status line says so wherever content is hidden.
-
-On `/engineering-leadership/`, ruled buttons above Business impact ask what the reader is hiring for. Choosing one moves the matching results, problems and posts to the top of their sections with a heavier blue rule, and nothing is hidden. The choice lives in `?for=`, so a focused link can be sent to someone, and a reader arriving on one sees a line above the briefing naming the focus and linking down to the evidence. The prerendered page stays in the default order and the canonical URL doesn't change. No animation: only the order and the rule change.
+The same four focuses and the same `?for=` value work on two pages, `/projects/` and `/experience/`, which ask "What are you looking for?". On `/projects/`, the picker sits under the lead; choosing one lists the matching case studies ahead of the shipped products, with the first match taking the blue lead row, and only focuses with a real case study are offered. On `/experience/`, it sits above the progression figure; roles outside the focus collapse to their headings, so the career still reads in order, and a link to a collapsed role opens it. Choosing the active focus again clears it, and the status line says so wherever content is hidden.
 
 ### Bento Tiles (home, signature)
 The cover sheet's only container, and it stays on the home. A tile is a square-cornered rectangle with a 1px soft rule, 24px padding and no fill of its own.
@@ -350,13 +348,16 @@ Below the fold, blue fields wipe in from the left, and figures, images and plain
 ### Page Transition
 Following a link to another page fades the page out over 180ms while a 2px blue loading line starts along the header rule. The page swaps while invisible, then fades in as the line finishes and fades away, and the new title presses in as it arrives. The header never moves. Back, forward, redirects and same-page anchors skip it, and reduced motion swaps pages with no fade.
 
+### Print
+Printing drops the header, colophon and skip link, forces the light printing, and shows anything still waiting to wipe in. `/engineering-leadership/` also hides its actions and adds a contact line, so it forwards as a clean document.
+
 ### Colophon
 Every page closes on a solid ink band: three large proof figures that link to their evidence (left off the home, `/engineering-leadership/` and `/contact/`, which already lead with the ask), a condensed title-style ask, the primary action in paper, ruled contact links with muted notes, and a mono base line with issue and year. It keeps its light-printing values in both themes, so on dark stock it sits one barely lighter step off the page ground and is set apart mostly by its spacing. Apart from the résumé tile, it is the only inverted surface.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** give each page exactly one carrier-blue field, on the region that matters now.
+- **Do** give each page at most one carrier-blue field, on the region that matters now.
 - **Do** separate content with rules: 3px ink for heads, 1px ink for structure, 1px soft for rows.
 - **Do** set section numbers, years, figure numbers and the coordinate in Martian Mono (0.75rem, tabular).
 - **Do** set field-label words as Archivo labels (0.8125rem, 600, 86% width, sentence case).

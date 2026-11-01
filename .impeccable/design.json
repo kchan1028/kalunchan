@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T13:43:11Z",
+  "generatedAt": "2026-11-01T14:03:53Z",
   "title": "Design System: Ka Lun Chan, Engineering Practice",
   "extensions": {
     "colorMeta": {
@@ -577,7 +577,7 @@
       },
       {
         "name": "The One Field Rule",
-        "body": "Each page carries exactly one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.",
+        "body": "Each page carries at most one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. `/engineering-leadership/` currently has none. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.",
         "section": "colors"
       },
       {
@@ -602,7 +602,7 @@
       }
     ],
     "dos": [
-      "Do give each page exactly one carrier-blue field, on the region that matters now.",
+      "Do give each page at most one carrier-blue field, on the region that matters now.",
       "Do separate content with rules: 3px ink for heads, 1px ink for structure, 1px soft for rows.",
       "Do set section numbers, years, figure numbers and the coordinate in Martian Mono (0.75rem, tabular).",
       "Do set field-label words as Archivo labels (0.8125rem, 600, 86% width, sentence case).",

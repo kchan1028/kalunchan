@@ -41,6 +41,7 @@ export const roles = [
   {
     id: 'yippify',
     org: 'Yippify',
+    current: true,
     title: 'Consultant',
     era: 'Consulting & government technology',
     scale: 'Public sector, startups, founders',
