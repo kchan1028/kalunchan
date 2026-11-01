@@ -65,12 +65,13 @@ export default function Home() {
 
       <section className="tile tile--resume" aria-labelledby="resume-title">
         <h2 id="resume-title" className="h3">Résumé</h2>
-        {resume.pdf
-          ? <p className="tile__resume-action"><a className="action" href={resume.pdf} download>Download PDF <ArrowDown /></a></p>
-          : <>
-            <p>Send your name and email, and I’ll reply with it within 2 business days.</p>
-            <p className="tile__resume-action"><Link className="action" to={resume.request}>Request résumé <ArrowRight /></Link></p>
-          </>}
+        {!resume.pdf && <p>Send your name and email, and I’ll reply with it within 2 business days.</p>}
+        <p><Link to="/experience/" className="link-arrow"><span>Full career record</span> <ArrowRight /></Link></p>
+        <p className="tile__resume-action">
+          {resume.pdf
+            ? <a className="action" href={resume.pdf} download>Download PDF <ArrowDown /></a>
+            : <Link className="action" to={resume.request}>Request résumé <ArrowRight /></Link>}
+        </p>
       </section>
 
       {caseTiles.map((tile) => <CaseTile key={tile.id} tile={tile} />)}
