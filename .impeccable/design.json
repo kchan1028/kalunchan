@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-26T00:00:00Z",
+  "generatedAt": "2026-11-01T13:20:43Z",
   "title": "Design System: Ka Lun Chan, Engineering Practice",
   "extensions": {
     "colorMeta": {
@@ -168,12 +168,177 @@
           "#e9ebe6",
           "#f4f5f2"
         ]
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Dark Paper",
+        "canonical": "#101315",
+        "tonalRamp": [
+          "#090c0d",
+          "#212527",
+          "#3d4043",
+          "#5a5e61",
+          "#7d8183",
+          "#a1a5a8",
+          "#c7cbce",
+          "#ebeff2"
+        ]
+      },
+      "dark-paper-sunk": {
+        "role": "neutral",
+        "displayName": "Dark Paper Sunk",
+        "canonical": "#1a1e22",
+        "tonalRamp": [
+          "#080c0f",
+          "#202529",
+          "#3c4045",
+          "#595e63",
+          "#7c8186",
+          "#a0a5ab",
+          "#c6cbd1",
+          "#eaeff5"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "canonical": "#eef0ec",
+        "tonalRamp": [
+          "#0a0c09",
+          "#232522",
+          "#3f403d",
+          "#5d5e5b",
+          "#7f817d",
+          "#a3a5a1",
+          "#c9cbc7",
+          "#edefeb"
+        ]
+      },
+      "dark-ink-secondary": {
+        "role": "neutral",
+        "displayName": "Dark Ink Secondary",
+        "canonical": "#c2c8ce",
+        "tonalRamp": [
+          "#080c10",
+          "#202529",
+          "#3b4045",
+          "#595e63",
+          "#7b8186",
+          "#a0a5ab",
+          "#c5cbd1",
+          "#e9eff5"
+        ]
+      },
+      "dark-ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Dark Ink Tertiary",
+        "canonical": "#a0a8b0",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252b",
+          "#3a4147",
+          "#575f66",
+          "#7a8189",
+          "#9ea6ae",
+          "#c3ccd4",
+          "#e7f0f8"
+        ]
+      },
+      "dark-rule": {
+        "role": "neutral",
+        "displayName": "Dark Rule",
+        "canonical": "#868e96",
+        "tonalRamp": [
+          "#060c11",
+          "#1e252b",
+          "#3a4148",
+          "#575f66",
+          "#798189",
+          "#9da6ae",
+          "#c3ccd4",
+          "#e7f0f8"
+        ]
+      },
+      "dark-rule-soft": {
+        "role": "neutral",
+        "displayName": "Dark Rule Soft",
+        "canonical": "#363c42",
+        "tonalRamp": [
+          "#070c11",
+          "#1f252a",
+          "#3a4047",
+          "#585e65",
+          "#7a8188",
+          "#9ea5ad",
+          "#c4cbd3",
+          "#e8eff7"
+        ]
+      },
+      "dark-blue": {
+        "role": "primary",
+        "displayName": "Dark Blue",
+        "canonical": "#8fb0ff",
+        "tonalRamp": [
+          "#02003c",
+          "#091a5d",
+          "#223a7e",
+          "#3e59a1",
+          "#5f7dc8",
+          "#82a2f0",
+          "#a6c8ff",
+          "#dceeff"
+        ]
+      },
+      "dark-blue-deep": {
+        "role": "primary",
+        "displayName": "Dark Blue Deep",
+        "canonical": "#a9c2ff",
+        "tonalRamp": [
+          "#020230",
+          "#101f4f",
+          "#2a3c6f",
+          "#475b91",
+          "#687eb7",
+          "#8ba3de",
+          "#b0c9ff",
+          "#dceeff"
+        ]
+      },
+      "dark-on-blue": {
+        "role": "neutral",
+        "displayName": "Dark On Blue",
+        "canonical": "#0b1220",
+        "tonalRamp": [
+          "#050b18",
+          "#1c2433",
+          "#374050",
+          "#555e70",
+          "#778193",
+          "#9ba5b9",
+          "#c0cbdf",
+          "#e4efff"
+        ]
+      },
+      "dark-on-blue-soft": {
+        "role": "neutral",
+        "displayName": "Dark On Blue Soft",
+        "canonical": "#1c2a4a",
+        "tonalRamp": [
+          "#020825",
+          "#152242",
+          "#303f61",
+          "#4c5d81",
+          "#6e80a6",
+          "#92a5cc",
+          "#b7cbf4",
+          "#dbefff"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Home thesis only; condensed heavy Archivo."
+        "purpose": "The display size scale; the home headline overrides it with the hero tile size."
       },
       "headline": {
         "displayName": "Headline",
@@ -202,19 +367,34 @@
       "mono": {
         "displayName": "Mono",
         "purpose": "Martian Mono for section numbers, years, figure numbers and the header coordinate only."
+      },
+      "hero-tile": {
+        "displayName": "Hero Tile",
+        "purpose": "The home headline, the display style resized to fit its tile."
       }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "case-tile-lift",
+        "value": "0 10px 24px -14px rgb(20 23 26 / 0.45)",
+        "purpose": "Home case tile on hover or focus, with a 3px rise, only when motion is allowed."
+      },
+      {
+        "name": "phone-frame",
+        "value": "0 1px 0 var(--rule), 0 18px 40px -18px rgb(20 23 26 / 0.45)",
+        "purpose": "The phone view laid over a project screenshot."
+      }
+    ],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "All state transitions (160-240ms): link underline, action fill, arrow nudge, schematic focus."
+        "purpose": "All state transitions (160-240ms): link underline, action fill, arrow nudge, case tile lift, schematic focus."
       },
       {
         "name": "reduced-motion",
         "value": "transition/animation 0.01ms",
-        "purpose": "Under prefers-reduced-motion everything is static, including the signal path draw."
+        "purpose": "Under prefers-reduced-motion everything is static: no case tile lift, no rider lap, no page fade."
       }
     ],
     "breakpoints": [
@@ -222,6 +402,11 @@
         "name": "coordinate-short",
         "value": "600px",
         "purpose": "Below: coordinate shows number only; captions stack."
+      },
+      {
+        "name": "bento-two",
+        "value": "640px",
+        "purpose": "At and above: home bento has two columns; below: one."
       },
       {
         "name": "diagram-horizontal",
@@ -236,12 +421,22 @@
       {
         "name": "wide",
         "value": "1100px",
-        "purpose": "900-1099px: coordinate label shortened to 16ch."
+        "purpose": "900-1099px: coordinate label shortened to 16ch. At and above: home bento has four columns."
+      },
+      {
+        "name": "coordinate-hidden",
+        "value": "1400px",
+        "purpose": "At and above: header coordinate is hidden."
       },
       {
         "name": "sheet-max",
         "value": "1440px",
         "purpose": "Sheet maximum width."
+      },
+      {
+        "name": "local-time",
+        "value": "1560px",
+        "purpose": "At and above: Bay Area local time shows in the header."
       }
     ]
   },
@@ -275,7 +470,7 @@
       "kind": "nav",
       "refersTo": "nav-link",
       "description": "Sticky ruled header: wordmark, blue-square coordinate, numbered section links; current number in a blue chip.",
-      "html": "<header class=\"ds-header\"><span class=\"ds-wordmark\">Ka Lun Chan</span><span class=\"ds-coord\"><i></i>300-2 &middot; Architecture</span><nav><a class=\"ds-nav\" href=\"#\"><span class=\"ds-no\">100</span>Leadership</a><a class=\"ds-nav\" href=\"#\" aria-current=\"page\"><span class=\"ds-no\">300</span>Work</a></nav></header>",
+      "html": "<header class=\"ds-header\"><span class=\"ds-wordmark\">Ka Lun Chan</span><span class=\"ds-coord\"><i></i>300-2 &middot; Architecture</span><nav><a class=\"ds-nav\" href=\"#\"><span class=\"ds-no\">100</span>Leadership</a><a class=\"ds-nav\" href=\"#\" aria-current=\"page\"><span class=\"ds-no\">300</span>Projects</a></nav></header>",
       "css": ".ds-header{display:flex;align-items:center;gap:24px;height:56px;padding:0 24px;background:#f4f5f2;border-bottom:1px solid #14171a;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;color:#14171a}.ds-wordmark{font-weight:800;font-stretch:75%;font-size:1.25rem}.ds-coord{display:flex;align-items:center;gap:8px;margin-right:auto;padding-left:12px;border-left:1px solid #c7ccd1;color:#454c54;font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;font-stretch:87.5%}.ds-coord i{width:7px;height:7px;background:#1d4fd8}.ds-header nav{display:flex;gap:4px}.ds-nav{position:relative;display:inline-flex;align-items:center;gap:8px;height:56px;padding:0 12px;font-weight:600;font-stretch:90%;font-size:.9375rem;text-decoration:none;color:inherit}.ds-no{font-family:'Martian Mono Variable','Martian Mono',ui-monospace,monospace;font-size:.75rem;color:#5f6770;padding:2px 5px;transition:color 160ms}.ds-nav:hover .ds-no{color:#14171a}.ds-nav[aria-current=page] .ds-no{background:#1d4fd8;color:#fff}.ds-nav[aria-current=page]::after{content:'';position:absolute;left:12px;right:12px;bottom:-1px;height:3px;background:#14171a}.ds-nav:focus-visible{outline:2px solid #1d4fd8;outline-offset:-2px}"
     },
     {
@@ -317,21 +512,59 @@
       "description": "The dark ink close on every page: ask, paper action, ruled routes.",
       "html": "<footer class=\"ds-col\"><h2>Need a system shipped? Let&rsquo;s talk.</h2><a class=\"ds-col-a\" href=\"#\">Message me on LinkedIn</a></footer>",
       "css": ".ds-col{background:#14171a;color:#f4f5f2;padding:56px 24px;font-family:'Archivo Variable','Archivo',system-ui,sans-serif}.ds-col h2{margin:0 0 32px;font-size:2.75rem;font-weight:750;font-stretch:72%;line-height:.98;max-width:16ch}.ds-col-a{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:#f4f5f2;color:#14171a;border:1px solid #f4f5f2;font-weight:600;font-stretch:92%;text-decoration:none;transition:background 180ms,color 180ms}.ds-col-a:hover{background:#1d4fd8;border-color:#1d4fd8;color:#fff}.ds-col-a:focus-visible{outline:2px solid #f4f5f2;outline-offset:3px}"
+    },
+    {
+      "name": "Bento Hero Tile",
+      "kind": "card",
+      "refersTo": "tile-hero",
+      "description": "The home page's one blue field: name, headline, availability badge and primary action.",
+      "html": "<section class=\"ds-tile-hero\"><p class=\"ds-tile-name\">Ka Lun Chan <span>(KC)</span></p><h1 class=\"ds-tile-headline\">Engineering leader building products and the teams that scale them.</h1><a class=\"ds-badge\" href=\"#\">Open to engineering leadership opportunities</a></section>",
+      "css": ".ds-tile-hero{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;background:#1d4fd8;border-color:#1d4fd8;color:#fff}.ds-tile-name{margin:0;font-size:1.25rem;font-weight:700;font-stretch:88%}.ds-tile-name span{font-weight:400;color:#cdd9ff}.ds-tile-headline{margin:0;max-width:17ch;font-size:clamp(2.5rem,1.5rem + 4.2vw,5.25rem);font-weight:800;font-stretch:68%;line-height:.94;letter-spacing:-.015em}.ds-badge{align-self:flex-start;padding:8px 12px;border:1px solid #fff;color:#fff;font-size:.9375rem;font-weight:600;font-stretch:92%;text-decoration:none}.ds-badge:hover{background:#fff;color:#1d4fd8}.ds-badge:focus-visible{outline:2px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Bento Case Tile",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "A case study on the home: the whole tile is one link, with the result first and a rise on hover.",
+      "html": "<article class=\"ds-tile-case\"><p class=\"ds-tile-label\">Global communications platform</p><h2 class=\"ds-tile-title\"><a href=\"#\">From one data center to three continents</a></h2><p class=\"ds-tile-label\">Result</p><strong class=\"ds-tile-figure\">400,000+</strong><p class=\"ds-tile-result\">users and an acquisition.</p></article>",
+      "css": ".ds-tile-case{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;gap:8px;background:var(--paper,#f4f5f2);color:var(--ink,#14171a);transition:transform 220ms cubic-bezier(.16,1,.3,1),box-shadow 220ms cubic-bezier(.16,1,.3,1),border-color 220ms cubic-bezier(.16,1,.3,1)}.ds-tile-case:hover,.ds-tile-case:focus-within{transform:translateY(-3px);border-color:var(--ink-3,#5f6770);box-shadow:0 10px 24px -14px rgb(20 23 26 / .45)}.ds-tile-label{margin:0;font-size:.8125rem;font-weight:600;font-stretch:86%;color:var(--ink-3,#5f6770)}.ds-tile-title{margin:0;font-size:1.5rem;font-weight:700;font-stretch:88%;line-height:1.2}.ds-tile-title a{color:inherit;text-decoration:none}.ds-tile-case:hover .ds-tile-title a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}.ds-tile-title a:focus-visible{outline:2px solid var(--blue,#1d4fd8);outline-offset:2px}.ds-tile-figure{font-size:clamp(2.5rem,1.4rem + 4vw,4.75rem);font-weight:800;font-stretch:68%;line-height:.95;letter-spacing:-.015em;color:var(--blue,#1d4fd8)}.ds-tile-result{margin:0;font-weight:600}"
+    },
+    {
+      "name": "Bento Resume Tile",
+      "kind": "card",
+      "refersTo": "tile-resume",
+      "description": "The one inverted tile: ink ground with a paper action. It reverses with the theme.",
+      "html": "<section class=\"ds-tile-resume\"><h2>Résumé</h2><p>Send your name and email, and I’ll reply with it.</p><a class=\"ds-tile-action\" href=\"#\">Request résumé</a></section>",
+      "css": ".ds-tile-resume{display:flex;flex-direction:column;gap:16px;padding:24px;border:1px solid var(--rule-soft,#c7ccd1);border-radius:0;font-family:'Archivo Variable','Archivo',system-ui,sans-serif;background:var(--ink,#14171a);border-color:var(--ink,#14171a);color:var(--paper,#f4f5f2)}.ds-tile-resume h2,.ds-tile-resume p{margin:0}.ds-tile-resume h2{font-size:1.5rem;font-weight:700;font-stretch:88%}.ds-tile-action{align-self:flex-start;display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:var(--paper,#f4f5f2);color:var(--ink,#14171a);font-weight:600;font-stretch:92%;text-decoration:none;white-space:nowrap}.ds-tile-action:hover{background:var(--blue,#1d4fd8);color:var(--on-blue,#fff)}.ds-tile-action:focus-visible{outline:2px solid var(--paper,#f4f5f2);outline-offset:3px}"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "nav-link",
+      "description": "Header icon button that follows the system until pressed, then remembers the choice.",
+      "html": "<button class=\"ds-theme-toggle\" type=\"button\" aria-label=\"Dark theme\" aria-pressed=\"false\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z\"/></svg></button>",
+      "css": ".ds-theme-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0;background:none;border:0;color:var(--ink,#14171a);cursor:pointer;transition:color 180ms cubic-bezier(.16,1,.3,1)}.ds-theme-toggle:hover{color:var(--blue,#1d4fd8)}.ds-theme-toggle:focus-visible{outline:2px solid var(--blue,#1d4fd8);outline-offset:3px}"
     }
   ],
   "narrative": {
     "northStar": "The Engineering Practice Manual",
-    "overview": "**Creative North Star: \"The Engineering Practice Manual\"**\n\nThe site is set as a Bell System Practices document: every page is a numbered section of one manual (000 Overview, 100 Leadership, 200 Experience, 300 Work, 400 Expertise), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.\n\nDensity is that of a technical manual, not a brochure: generous vertical bands (112–160px between them) holding tight, ruled content inside. Structure is carried by lines and type, never by boxes, shadows or rounded containers. Display type is condensed and heavy Archivo, set close; body copy is normal-width Archivo at a readable measure. The page ends in a dark ink colophon that turns the manual over to contact.",
+    "overview": "The site is set as a Bell System Practices document: every inner page is a numbered section of one manual (050 About, 100 Leadership, 200 Experience, 300 Projects, 400 Expertise, 500 Community, 600 Mentorship, 650 Writing, 700 Contact), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.\n\nThe homepage is the manual's cover sheet: a one-page summary laid out as a bento grid of ruled tiles, so someone scanning for 30 seconds gets who, what level, what was built and how to make contact without opening a section. It has no title block. The inner pages keep the manual's form, and tiles stay on the cover sheet.\n\nThe whole manual also prints in reverse. The theme follows the system until the reader chooses with the header toggle, and dark stock swaps the paper and ink through the same tokens rather than restyling anything.\n\nDensity is that of a technical manual, not a brochure: generous vertical bands (112–160px between them) holding tight, ruled content inside. Outside the cover sheet, structure is carried by lines and type, never by boxes, shadows or rounded containers. Display type is condensed and heavy Archivo, set close; body copy is normal-width Archivo at a readable measure. The page ends in a dark ink colophon that turns the manual over to contact.",
     "keyCharacteristics": [
       "One carrier-blue field per page, on the region that matters now.",
-      "Ruled title blocks and hairline rules as the only structure.",
+      "A bento cover sheet on the home; ruled title blocks and hairline rules as the only structure everywhere else.",
+      "Light and dark printings of the same tokens, following the system until the reader chooses.",
       "Condensed heavy Archivo display over normal-width Archivo body.",
       "Martian Mono for numbers only: section numbers, years, figure numbers, the header coordinate.",
       "Orthogonal schematics in white on blue, horizontal on wide screens and vertical on narrow ones.",
-      "Square corners, no shadows, no cards.",
+      "Square corners, no shadows, no cards, apart from the named exceptions in Elevation & Depth and Shapes.",
       "A dark ink colophon closes every page."
     ],
     "rules": [
+      {
+        "name": "The Reverse Printing Rule",
+        "body": "Dark is the same manual on different stock. New colours are added as `light-dark()` tokens, never as per-theme overrides, and any new surface that paints blue as a field joins the list that stays on light values.",
+        "section": "colors"
+      },
       {
         "name": "The One Field Rule",
         "body": "Each page carries exactly one carrier-blue field, placed on the region that matters now. A second blue field on the same page is a defect. Small blue marks (coordinate square, current-nav chip, now marker, chosen state, focus) do not count as fields and stay small.",
@@ -349,12 +582,12 @@
       },
       {
         "name": "The No Eyebrow Rule",
-        "body": "Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. No uppercase tracking anywhere.",
+        "body": "Nothing sits above a heading as a kicker or eyebrow. A section may carry its number in the margin rail (mono) and a label word inside a title block cell; neither is a tagline. The one exception is the case tile on the cover sheet, whose label above the title names where the work happened. No uppercase tracking anywhere.",
         "section": "typography"
       },
       {
         "name": "The Ruled Not Raised Rule",
-        "body": "If something needs separating, draw a line. Never a shadow, never a floating card.",
+        "body": "If something needs separating, draw a line. Outside the two entries above, never a shadow, never a floating card.",
         "section": "elevation"
       }
     ],
@@ -366,15 +599,17 @@
       "Do set display and headings in condensed heavy Archivo (68–72% width, 750–800 weight, tight leading).",
       "Do give every new section a coordinate so the header can report it.",
       "Do draw every new schematic from one spec that lays out horizontally at 760px and above and vertically below.",
-      "Do end every page on the ink colophon."
+      "Do end every page on the ink colophon.",
+      "Do add new colours as `light-dark()` tokens and check every new surface in both printings."
     ],
     "donts": [
-      "Don't use rounded corners, shadows or cards.",
-      "Don't put eyebrows or kickers above headings, or use uppercase tracked labels.",
+      "Don't use rounded corners, shadows or cards, outside the phone frame, the case tile lift and the home's bento tiles.",
+      "Don't bring bento tiles to any page but the home.",
+      "Don't put eyebrows or kickers above headings, or use uppercase tracked labels. The case tile's label is the only exception.",
       "Don't set words, prose, headings or buttons in mono.",
       "Don't use blue as a tint, gradient or second field on the same page.",
-      "Don't use hero-then-card-grid-then-CTA composition, logo walls or dark neon.",
-      "Don't introduce a second dark surface besides the colophon."
+      "Don't use hero-then-card-grid-then-CTA composition on inner pages, or logo walls or dark neon anywhere.",
+      "Don't add another inverted surface besides the colophon and the résumé tile."
     ]
   }
 }
