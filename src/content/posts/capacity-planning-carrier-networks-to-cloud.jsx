@@ -97,7 +97,7 @@ export default function Body() {
 
       <section id="to-cloud" aria-labelledby="to-cloud-h">
         <h2 id="to-cloud-h" className="post__h2">Leaving the data center</h2>
-        <p>Over time we moved that platform out of the data center I had cabled by hand and into cloud regions on three continents. Two things drove it. Users were far from the servers, and regions near them were the only real fix. And capacity in a data center is bought in large, lumpy steps, while a startup’s revenue grows in small, uneven ones. We needed capacity that followed revenue instead of leading it by a rack at a time.</p>
+        <p>Over time we moved that platform out of the data center I had cabled by hand and into cloud regions on three continents. Two things drove it. Many users were far from the servers, and regions near them were the only real fix. And capacity in a data center is bought in large, lumpy steps, while a startup’s revenue grows in small, uneven ones. We needed capacity that followed revenue instead of leading it by a rack at a time.</p>
         <p>The move happened one region at a time, with customers on the phone throughout and a way back at every step. The <Link to="/work/three-continent-platform/">three-continent case study</Link> walks through the decisions. For this post the point is narrower: the migration was a capacity planning decision as much as an architecture one, and the business case was latency and cost structure, not fashion.</p>
       </section>
 
