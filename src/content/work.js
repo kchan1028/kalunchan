@@ -75,6 +75,7 @@ export const cases = [
     outcome: [
       '400k+ users served across South America, Asia and Africa',
       'Lower network latency and better quality for distant users',
+      'A move to the cloud with zero downtime',
       'A lower cost structure: capacity followed revenue, and audio stopped crossing the world and back',
       'Multimillion-dollar growth and a successful acquisition',
     ],

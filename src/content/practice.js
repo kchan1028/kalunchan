@@ -81,7 +81,7 @@ export const capabilities = [
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
     ],
-    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
+    depth: { carrier: 1, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'gov',
@@ -159,7 +159,7 @@ export const capabilities = [
       { to: '/writing/building-public-sector-applications/#architecture', label: 'Public-sector applications: authorization, least privilege and audit logging' },
       { to: '/writing/modernizing-public-sector-applications/#requirements', label: 'Modernizing public-sector applications: security, accessibility and audit from the first slice' },
     ],
-    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
+    depth: { carrier: 1, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'capacity',
@@ -181,7 +181,7 @@ export const capabilities = [
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
       { to: '/work/three-continent-platform/', label: 'Case study: one data center to three continents' },
     ],
-    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 2 },
+    depth: { carrier: 1, voice: 2, communications: 2, publishing: 2, yippify: 2 },
   },
   {
     id: 'data',
@@ -200,7 +200,7 @@ export const capabilities = [
       { to: '/writing/digital-publishing-seo-adsense-affiliate-ai-search/', label: 'The publishing revenue engine, from an engineer’s seat' },
       { to: '/work/carrier-capacity/', label: 'Case study: capacity planning across 2,000+ collocations' },
     ],
-    depth: { carrier: 2, voice: 2, communications: 2, publishing: 2, yippify: 1 },
+    depth: { carrier: 1, voice: 2, communications: 2, publishing: 2, yippify: 1 },
   },
 ];
 
