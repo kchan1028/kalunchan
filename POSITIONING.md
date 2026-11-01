@@ -1,4 +1,4 @@
-Update (owner decision, 2026-11-01): /engineering-leadership/ is in the site nav under the neutral label "Summary", so no hiring language appears in the nav. Community and Mentorship left the nav and stay linked from /about/.
+Update (owner decision, 2026-11-01): /engineering-leadership/ is in the site nav under the neutral label "Summary", so no hiring language appears in the nav. Community and Mentorship left the nav and are linked from the colophon on every page and from /about/.
 
 Update (owner decision, 2026-10-31): describe current availability as engineering leadership opportunities, with an emphasis on building teams, technical direction and hands-on delivery. Avoid specific target job titles in public hiring copy. This supersedes the title-specific guidance below; historical career titles remain.
 

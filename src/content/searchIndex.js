@@ -20,7 +20,7 @@ const entry = ({ to, title, kind, tags = [], text = [], snippet = '' }) => ({
 const entries = [
   // The hiring page is "Summary" in the nav; it's listed by its page title below.
   ...nav.filter((n) => n.to !== '/engineering-leadership/').map((n) => entry({ to: n.to, title: n.label, kind: 'Page' })),
-  // Linked from /about/ rather than the nav, and still searchable.
+  // Linked from the colophon rather than the nav, and still searchable.
   entry({ to: '/community/', title: 'Community', kind: 'Page' }),
   entry({ to: '/mentorship/', title: 'Mentorship', kind: 'Page' }),
   entry({ to: '/engineering-leadership/', title: 'Engineering leadership', kind: 'Page' }),

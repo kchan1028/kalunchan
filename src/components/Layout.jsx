@@ -133,6 +133,14 @@ function Colophon() {
                 <a href={person.yippify} rel="noopener" target="_blank">Yippify</a>
                 <span className="colophon__note">For a team to deliver your software</span>
               </li>
+              <li>
+                <Link to="/mentorship/">Mentorship</Link>
+                <span className="colophon__note">Mentoring engineers</span>
+              </li>
+              <li>
+                <Link to="/community/">Community</Link>
+                <span className="colophon__note">The racing and the community behind it</span>
+              </li>
               {!isHiringJourney && person.products.map((p) => (
                 <li key={p.url}>
                   <a href={p.url} rel="noopener" target="_blank">{p.name}</a>
