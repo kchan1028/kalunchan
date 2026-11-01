@@ -680,6 +680,7 @@ p.title-block__heading {
 .colophon {
   margin-top: var(--s9);
   background: var(--ink);
+  border-top: 1px solid rgb(244 245 242 / 0.22);
   color: var(--paper);
   padding-block: var(--s9) var(--s5);
 }
