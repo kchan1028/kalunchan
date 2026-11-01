@@ -19,7 +19,7 @@ export const caseTiles = [
     more: 'Read the case study',
     figure: '400,000+',
     result: 'users and an acquisition. The move to the cloud had zero downtime.',
-    problem: 'Users across North America, South America, Asia and Europe were paying for the distance to one data center in latency and call quality.',
+    problem: 'With one data center in North America, users in South America, Asia and Europe were paying for the distance in latency and call quality.',
   },
   {
     id: 'publishing',
