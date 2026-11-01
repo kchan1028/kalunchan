@@ -62,7 +62,7 @@ export const impact = [
   {
     figure: 'Acquired',
     title: 'Built a company through an acquisition',
-    text: '400,000+ users across South America, Asia and Africa, millions of dollars in transactions, and multimillion-dollar revenue. I led the technical due diligence and stayed on with the company after the sale.',
+    text: '400,000+ users across North America, South America, Asia and Europe, millions of dollars in transactions, and multimillion-dollar revenue. I led the technical due diligence and stayed on with the company after the sale.',
     to: '/writing/building-a-startup-from-idea-to-acquisition/', label: 'Founder story',
   },
   {

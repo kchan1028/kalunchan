@@ -20,11 +20,11 @@ export const cases = [
     role: 'Co-Founder & CTO',
     domain: ['Cloud & infrastructure', 'Software architecture', 'Engineering leadership'],
     claim:
-      'Users on three continents got the same service, with no big-bang migration.',
+      'Users on four continents got the same service, with no big-bang migration.',
     summary:
       'Moving a founder-built platform out of a single data center and into the cloud. Each user’s traffic went to the nearest region.',
     problem:
-      'The platform started in one data center. As the user base grew past 400,000 across South America, Asia and Africa, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
+      'The platform started in one data center. As the user base grew past 400,000 across North America, South America, Asia and Europe, distance itself became the problem: every session from the far side of an ocean paid for it in latency and quality.',
     context: [
       'I co-founded the company and ran engineering as CTO. The platform carried VoIP and cloud telecom services for underserved and underbanked communities, many of them immigrants, sold directly and through local resellers who ran their own businesses on our hosted platform. It was built on open-source VoIP with an in-house billing system, and it handled millions of dollars in transactions.',
       'We built the first data center ourselves: racked the servers, ran the cabling, configured the routers and switches, and wrote the software. We planned it deliberately, with web, application and data as separate tiers for clarity, and that choice later made leaving possible.',
@@ -73,7 +73,7 @@ export const cases = [
     ],
     technology: ['Multi-tier web & mobile application', 'Open-source VoIP (Asterisk, OpenSIPS, MediaProxy)', 'In-house billing system', 'Least-cost routing', 'Data center design', 'Cloud regions (NA / EU / Asia)', 'Geo-location DNS routing', 'Data replication'],
     outcome: [
-      '400k+ users served across South America, Asia and Africa',
+      '400k+ users served across North America, South America, Asia and Europe',
       'Lower network latency and better quality for distant users',
       'A move to the cloud with zero downtime',
       'A lower cost structure: capacity followed revenue, and audio stopped crossing the world and back',

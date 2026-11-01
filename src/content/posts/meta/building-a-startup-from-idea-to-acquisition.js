@@ -45,7 +45,7 @@ export const metadata = {
     },
     {
       q: 'What did Ka Lun Chan build as a co-founder and CTO?',
-      a: 'Ka Lun Chan (KC) co-founded a global communications company in 2007 and served as its CTO. He and the team built the servers, network and software from scratch, including the voice network and the multi-tier web and mobile application, and were bringing in revenue in less than four months. The platform served underserved and immigrant communities, grew past 400,000 users across South America, Asia and Africa, handled millions of dollars in transactions, and was acquired in 2013.',
+      a: 'Ka Lun Chan (KC) co-founded a global communications company in 2007 and served as its CTO. He and the team built the servers, network and software from scratch, including the voice network and the multi-tier web and mobile application, and were bringing in revenue in less than four months. The platform served underserved and immigrant communities, grew past 400,000 users across North America, South America, Asia and Europe, handled millions of dollars in transactions, and was acquired in 2013.',
     },
   ],
 };

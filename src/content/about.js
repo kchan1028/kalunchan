@@ -28,7 +28,7 @@ import { isPlaceholder } from './profile';
 // JSON-LD, so visible and structured answers stay identical.
 export const keyTakeaways = [
   'A career in software development that runs from technical support and carrier networks to co-founder and CTO.',
-  'Scaled a communications platform to 400,000+ users on three continents, through to acquisition.',
+  'Scaled a communications platform to 400,000+ users on four continents, through to acquisition.',
   'Hands-on in Python, Django, Rails, React, Next.js, PostgreSQL and AWS.',
   'Leads by removing single points of failure, in systems and in teams.',
   'Leads architecture and delivery for clients through Yippify, including government technology.',
@@ -81,7 +81,7 @@ export const faq = [
   },
   {
     q: 'What has Ka Lun Chan built?',
-    a: 'As co-founder and CTO, he scaled a global communications platform to 400,000+ users across three continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools.',
+    a: 'As co-founder and CTO, he scaled a global communications platform to 400,000+ users across four continents through to acquisition. Earlier, he integrated carrier infrastructure across 2,000+ collocations for a national broadband network. He also built VeloWise, SurgeIQ and Useful Little Tools.',
   },
   {
     q: 'What technologies does Ka Lun Chan work with?',
@@ -154,7 +154,7 @@ export const experienceMap = [
     { text: 'How I run engineering, from written decisions to mentoring', to: '/leadership/' },
   ] },
   { id: 'business', name: 'Product & business', sub: 'startups · SaaS · acquisition · revenue', claim: 'Responsible for product decisions, revenue and operating cost.', examples: [
-    { text: 'Co-founded a communications platform that reached 400k+ users on three continents and was acquired', to: '/writing/building-a-startup-from-idea-to-acquisition/' },
+    { text: 'Co-founded a communications platform that reached 400k+ users on four continents and was acquired', to: '/writing/building-a-startup-from-idea-to-acquisition/' },
     { text: 'Publishing: traffic and engagement up 50%, with SEO run as a business', to: '/writing/digital-publishing-seo-adsense-affiliate-ai-search/' },
     { text: 'Six startups helped from idea to working product; FedPath, VeloWise, SurgeIQ and Useful Little Tools shipped', to: '/writing/building-startups-technical-leadership/' },
   ] },
@@ -190,7 +190,7 @@ export const arcChapters = [
   { id: 'support', name: 'Technical support', role: 'Support engineer', top: 6, bottom: 6 },
   { id: 'carrier', name: 'Carrier network', role: 'Member of technical staff', top: 3, bottom: 6, scale: '2,000+ collocations · first three in the SOC' },
   { id: 'voice', name: 'Voice services', role: 'VP of Operations', top: 2, bottom: 6, scale: 'Nokia mobile VoIP app · 8M+ minutes/mo' },
-  { id: 'founder', name: 'Communications platform', role: 'Co-founder & CTO', top: 0, bottom: 6, scale: '400k+ users · 3 continents · acquired' },
+  { id: 'founder', name: 'Communications platform', role: 'Co-founder & CTO', top: 0, bottom: 6, scale: '400k+ users · 4 continents · acquired' },
   { id: 'publishing', name: 'Media publishing', role: 'CTO', top: 0, bottom: 6, scale: '+50% organic & social traffic' },
   { id: 'now', name: 'Yippify', role: 'Consultant', top: 0, bottom: 6, now: true, scale: 'Government & startup clients' },
 ];
