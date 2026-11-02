@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'when-your-best-engineer-becomes-a-bottleneck',
+    title: 'When Your Best Engineer Becomes a Bottleneck',
+    shortTitle: 'When your best engineer is the bottleneck',
+    description:
+      'How capable engineers and leaders become bottlenecks without meaning to, the signs to look for, and how mentoring and shared ownership spread judgment.',
+    teaser:
+      'Being the person everyone depends on feels good, which is why it is hard to spot in yourself. What I look for, and how I try to hand over judgment as well as knowledge.',
+    summary:
+      'How dependency grows from good intentions; why being needed makes the pattern hard to see; three signs to check; what the organization has to make room for; four questions that move someone from asking for answers to making recommendations; pairing, shadowing and leading with support; what documentation can and cannot transfer; boundaries and escalation points; avoiding a new single point of dependency.',
+    topics: ['Leadership', 'Engineering judgment'],
+    minutes: 6,
+    no: '723',
+    published: '2026-11-02',
+    modified: '2026-11-02',
+  },
+  {
     slug: 'why-i-test-my-products-like-someone-who-has-never-used-them',
     title: 'Why I Test My Products Like Someone Who Has Never Used Them',
     shortTitle: 'Testing like a first-time user',

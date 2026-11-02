@@ -498,6 +498,7 @@ const llmsPosts = [
   'when-technical-debt-becomes-a-business-problem',
   'patch-mitigate-or-retire-vulnerability-triage',
   'why-i-test-my-products-like-someone-who-has-never-used-them',
+  'when-your-best-engineer-becomes-a-bottleneck',
   'ai-agents-reliable-in-production',
 ];
 
