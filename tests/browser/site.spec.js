@@ -23,6 +23,19 @@ test('search supports keyboard selection and an explicit close action', async ({
   await expect(page.getByRole('button', { name: 'Search this site' })).toBeFocused();
 });
 
+test('search opened during a page transition stays open after the swap', async ({ page }) => {
+  await page.goto('/');
+  let dialog = await openSearch(page);
+  await dialog.getByRole('combobox').fill('technical debt');
+  const link = dialog.getByRole('option').first().getByRole('link');
+  const destination = await link.getAttribute('href');
+  await dialog.getByRole('combobox').press('Enter');
+  await expect(page).toHaveURL(new RegExp(destination));
+  dialog = await openSearch(page);
+  await expect(page.locator('html')).not.toHaveAttribute('data-page', /./);
+  await expect(dialog).toBeVisible();
+});
+
 test('a second destination waits for its chunk during an exit transition', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('button', { name: 'Search this site' }).waitFor();

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { SearchIcon } from './Icons';
+import { useRealPathname } from './usePageTransition';
 
 const MAX_RESULTS = 20;
 
@@ -98,7 +99,7 @@ function SearchDialog({ onClose }) {
 
 // The toggle needs JavaScript, so it stays hidden until hydration. The index is its own chunk, loaded on first open.
 export default function SiteSearch() {
-  const { pathname } = useLocation();
+  const pathname = useRealPathname();
   const [hint, setHint] = useState(null);
   const [open, setOpen] = useState(false);
 
