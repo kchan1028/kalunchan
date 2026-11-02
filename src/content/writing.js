@@ -7,16 +7,16 @@ import { careerStages } from './home';
 export const posts = [
   {
     slug: 'claude-environments-when-worth-using',
-    title: 'Claude Environments: What They Are and When They’re Worth the Cost',
-    shortTitle: 'When Claude environments are worth it',
+    title: 'Claude Code Environments vs This Computer: When to Use Each',
+    shortTitle: 'Claude Code environments vs this computer',
     description:
-      '“Claude environment” can mean several things. How Claude Code, Cowork and Projects differ, what they cost, and when ordinary chat is enough.',
+      'What a Claude Code cloud environment is, what carries over from your machine, and when to run work there instead of on this computer.',
     teaser:
-      'Claude doesn’t have one product called an environment. How I separate the options, what each one costs, and how I decide whether a task needs more than chat.',
+      'A Claude Code cloud environment runs your session on a remote VM. What it gives you, what stays behind on your machine, and how to choose between the two.',
     summary:
-      'What “environment” means across Claude Code, Cowork and the three kinds of project; what an environment adds to a chat; local versus cloud and what persists; subscription allowances, usage credits, API billing and infrastructure charges; setup, permissions and sensitive data; when to use one and when chat is enough; what an environment can’t fix; a brief comparison with OpenAI Codex and ChatGPT Work; a worked example and a decision checklist.',
+      'What a Claude Code environment is and what a cloud environment configures; how a cloud session differs from running on this computer; why to use each; how a different environment can produce a misleading green check; what it costs; moving work between the two; a worked example and a decision checklist.',
     topics: ['AI', 'Engineering judgment'],
-    minutes: 9,
+    minutes: 6,
     no: '724',
     published: '2026-11-02',
     modified: '2026-11-02',

@@ -3,7 +3,7 @@ export const metadata = {
   dek:
     'The moment an AI task runs on a timer instead of in a conversation, every assumption about working with an assistant stops holding. A content research assistant for Useful Little Tools is my test case, and five ways to schedule it are the comparison.',
   related: [
-    { to: '/writing/claude-environments-when-worth-using/', label: 'Claude environments: when they’re worth the cost' },
+    { to: '/writing/claude-environments-when-worth-using/', label: 'Claude Code environments vs this computer' },
     { to: '/writing/building-an-ai-job-search-agent-with-hermes/', label: 'Building my own AI job search agent with Hermes' },
     { to: '/writing/connect-hermes-agent-hostinger-vps-vs-code/', label: 'Connecting the Hermes VPS to VS Code' },
     { to: '/writing/devops-from-expect-scripts-to-ai-agents/#guardrails', label: 'Don’t hand AI the production keys' },

@@ -1,7 +1,7 @@
 export const metadata = {
-  seoTitle: 'Claude Environments: When They’re Worth the Cost',
+  seoTitle: 'Claude Code Environments vs This Computer',
   dek:
-    'Claude doesn’t have one product called an environment. I separate the options, compare what each one costs, and explain how I decide whether a task needs more than chat.',
+    'A Claude Code cloud environment runs your session on a remote VM instead of your machine. What it is, what follows you there, and when it beats running on this computer.',
   related: [
     { to: '/writing/loop-engineering-feedback-loops/', label: 'Loop engineering: the feedback loop matters more than the code' },
     { to: '/writing/hidden-cost-of-ai-coding/', label: 'AI coding can cost more than a human engineer' },
@@ -10,12 +10,12 @@ export const metadata = {
     { to: '/writing/scheduling-ai-work-hermes-chatgpt-claude/', label: 'Scheduling AI work: Hermes, ChatGPT and Claude' },
   ],
   keywords: [
-    'Claude environments',
+    'Claude Code environments',
     'Claude Code cloud environment',
-    'Claude Cowork vs Claude Code',
+    'Claude Code cloud vs local',
+    'Claude Code cloud sessions',
+    'Claude Code setup script',
     'Claude Code cost',
-    'Claude Projects vs Cowork',
-    'Claude Code vs Codex environments',
   ],
   about: [
     { '@type': 'Thing', name: 'AI coding agents' },
@@ -23,23 +23,23 @@ export const metadata = {
   ],
   mentions: [
     { '@type': 'SoftwareApplication', name: 'Claude Code', url: 'https://code.claude.com/docs/en/claude-code-on-the-web' },
-    { '@type': 'SoftwareApplication', name: 'Claude Cowork', url: 'https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork' },
-    { '@type': 'Thing', name: 'Claude Projects', url: 'https://support.claude.com/en/articles/9517075-what-are-projects' },
-    { '@type': 'SoftwareApplication', name: 'OpenAI Codex', url: 'https://learn.chatgpt.com/docs/environments/modes' },
-    { '@type': 'SoftwareApplication', name: 'ChatGPT Work', url: 'https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex' },
   ],
   faq: [
     {
-      q: 'Is “Claude environment” an official product?',
-      a: 'No. Claude Code has cloud environments and Local, Cloud, SSH and WSL options. Cowork and claude.ai use other terms, and “project” means different things across them.',
+      q: 'What is a Claude Code cloud environment?',
+      a: 'A saved configuration for network access, environment variables, network secrets and a setup script. Cloud sessions start from it and run on a remote VM, managed by Anthropic by default, instead of your machine.',
+    },
+    {
+      q: 'Why use a cloud environment instead of this computer?',
+      a: 'When the work should keep running with your laptop closed, when you want several tasks running without sharing one machine, or when you want Claude away from the credentials on your computer.',
+    },
+    {
+      q: 'When should Claude Code stay on this computer?',
+      a: 'When the work depends on something only your machine has, such as gitignored settings, a local database, a VPN or a signed-in browser, or when it needs macOS or more resources than the VM provides.',
     },
     {
       q: 'Do Claude Code cloud sessions cost extra?',
       a: 'Anthropic lists no separate charge for the cloud VM. Sessions count toward your plan’s usage limits, shared with your other Claude usage.',
-    },
-    {
-      q: 'When is ordinary chat enough?',
-      a: 'When the work ends in text you can judge by reading, such as brainstorming, explaining a concept or drafting a standalone article.',
     },
   ],
 };

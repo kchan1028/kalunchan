@@ -17,8 +17,8 @@ APPROVED_DATED_TEXT = {
     '/privacy/': ['Effective 31 October 2026', '31 October 2026'],
     # Token prices change; the pricing table must say when they were checked.
     '/writing/hidden-cost-of-ai-coding/': ['as of October 2026'],
-    # Same reason, plus the date a product change took effect.
-    '/writing/claude-environments-when-worth-using/': ['November 2, 2026', 'October 6, 2026'],
+    # Same reason.
+    '/writing/claude-environments-when-worth-using/': ['November 2, 2026'],
 }
 # Owner-approved career years, shown only on the founder story; other pages stay undated.
 APPROVED_YEARS = {
