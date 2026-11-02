@@ -64,11 +64,15 @@ export const caseTiles = [
   },
 ];
 
+export const skillsIntro = 'Engineering leadership, software architecture, and secure cloud delivery.';
+
 export const skills = [
-  { area: 'Leadership', items: 'Engineering strategy, team building, mentoring, delivery management' },
-  { area: 'Cloud', items: 'AWS (ECS, Fargate, RDS, Lambda), Terraform, Docker, CI/CD' },
-  { area: 'Software', items: 'Python and Django, Ruby on Rails, React and Next.js, Node.js, PostgreSQL, Kafka' },
-  { area: 'Security', items: 'Authentication and authorization, FedRAMP-aligned environments, Authority to Operate evidence' },
+  { area: 'Leadership', items: 'Engineering strategy, team building, mentoring, and delivery' },
+  { area: 'Architecture & design', items: 'System architecture, API design, and microservices' },
+  { area: 'Software', items: 'Python/Django, Ruby on Rails, React/Next.js, Node.js, and LAMP' },
+  { area: 'Databases & data', items: 'PostgreSQL, MySQL, Snowflake, and Kafka' },
+  { area: 'Cloud & delivery', items: 'AWS, Terraform, Docker, and CI/CD' },
+  { area: 'Security', items: 'Authentication, authorization, FedRAMP-aligned environments, and ATO evidence' },
   { area: 'Accessibility', items: 'Section 508' },
-  { area: 'AI', items: 'LLM integrations and RAG, evaluation and human review' },
+  { area: 'Applied AI', items: 'LLM integration, RAG, evaluation, and human review' },
 ];

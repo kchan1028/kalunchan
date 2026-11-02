@@ -8,7 +8,7 @@ import { track } from '../track';
 import { availability, availabilityLabel } from '../content/availability';
 import { cycling } from '../content/community';
 import { platformDiagram } from '../content/platformDiagram';
-import { caseTiles, heroHeadline, heroNow, heroProof, resume, skills } from '../content/portfolio';
+import { caseTiles, heroHeadline, heroNow, heroProof, resume, skills, skillsIntro } from '../content/portfolio';
 import { person } from '../content/profile';
 
 function CaseTile({ tile }) {
@@ -77,12 +77,13 @@ export default function Home() {
 
       {caseTiles.map((tile) => <CaseTile key={tile.id} tile={tile} />)}
 
-      <section className="tile tile--skills" aria-labelledby="skills-title" data-coord="020 · Skills and stack">
-        <h2 id="skills-title" className="h3">Skills and stack</h2>
+      <section className="tile tile--skills" aria-labelledby="skills-title" data-coord="020 · Engineering expertise">
+        <h2 id="skills-title" className="h3">Engineering expertise</h2>
+        <p className="tile__intro">{skillsIntro}</p>
         <dl className="tile__facts tile__facts--rows">
           {skills.map((s) => <div key={s.area}><dt className="label">{s.area}</dt><dd>{s.items}</dd></div>)}
         </dl>
-        <p><Link to="/expertise/" className="link-arrow"><span>Full expertise</span> <ArrowRight /></Link></p>
+        <p><Link to="/expertise/" className="link-arrow"><span>Explore my experience</span> <ArrowRight /></Link></p>
       </section>
 
       <section className="tile tile--personal" aria-labelledby="personal-title" data-coord="030 · Away from work">

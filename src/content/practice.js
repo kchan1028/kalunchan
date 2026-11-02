@@ -39,7 +39,7 @@ export const capabilities = [
       'Front-end architecture and performance',
       'Accessible, testable interfaces',
     ],
-    stack: ['React', 'Next.js', 'TypeScript', 'Python', 'Django', 'Ruby on Rails'],
+    stack: ['React', 'Next.js', 'TypeScript', 'Python', 'Django', 'Ruby on Rails', 'Node.js', 'LAMP (Linux, Apache, MySQL, and PHP)'],
     evidence: [
       { to: '/projects/fedpath/', label: 'FedPath: a federal contracting product' },
       { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: a small-business site' },
@@ -194,7 +194,7 @@ export const capabilities = [
       'Publishing analytics: traffic sources, rankings, engagement and revenue per thousand views deciding which content to invest in',
       'Cloud monitoring and cost data driving right-sizing and scaling decisions',
     ],
-    stack: ['R', 'SNMP / Cacti', 'SQL', 'Python', 'Google Analytics', 'Search Console', 'AWS cost and monitoring data'],
+    stack: ['R', 'SNMP / Cacti', 'SQL', 'Python', 'Snowflake', 'Google Analytics', 'Search Console', 'AWS cost and monitoring data'],
     evidence: [
       { to: '/writing/data-driven-engineering-network-voip-publishing/', label: 'Different industries, same engineering problems: the data-to-decision loop' },
       { to: '/writing/digital-publishing-seo-adsense-affiliate-ai-search/', label: 'The publishing revenue engine, from an engineer’s seat' },
