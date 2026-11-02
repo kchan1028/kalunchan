@@ -989,6 +989,12 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* Prose to read and copy, not code: wrap it instead of scrolling sideways. */
+.post__code--wrap pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .post__prose .post__code code {
   font: inherit;
   background: none;

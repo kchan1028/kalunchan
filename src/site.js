@@ -500,6 +500,7 @@ const llmsPosts = [
   'why-i-test-my-products-like-someone-who-has-never-used-them',
   'when-your-best-engineer-becomes-a-bottleneck',
   'claude-environments-when-worth-using',
+  'use-ai-to-learn-without-offloading',
   'ai-agents-reliable-in-production',
 ];
 

@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'use-ai-to-learn-without-offloading',
+    title: 'How to Use AI to Learn a Skill Instead of Offloading the Work',
+    shortTitle: 'Using AI to learn instead of offloading',
+    description:
+      'Learn a skill with AI: attempt it first, ask for the smallest hint, then redo it with the chat closed. Includes a tutor prompt and when offloading is fine.',
+    teaser:
+      'The chat window offers the same fast answer whether you need finished work or a new skill. How to tell which job you have, and a practice loop for the skills you want to own.',
+    summary:
+      'Telling a learning task from a delivery task; why a good result can hide a missing skill; a six-step practice loop that ends with a blank-page retry and a changed problem; a copyable tutor prompt and its limits; hypothetical examples in debugging, writing and reading a profit and loss statement; using worked examples when you lack the prerequisites; when offloading is the right call.',
+    topics: ['AI', 'Learning', 'Engineering judgment'],
+    minutes: 7,
+    no: '725',
+    published: '2026-11-02',
+    modified: '2026-11-02',
+  },
+  {
     slug: 'claude-environments-when-worth-using',
     title: 'Claude Code Environments vs This Computer: When to Use Each',
     shortTitle: 'Claude Code environments vs this computer',
