@@ -232,6 +232,10 @@
   margin-top: auto;
 }
 
+.tile__intro {
+  color: var(--ink-2);
+}
+
 .tile__facts {
   display: grid;
   gap: var(--s3);
@@ -246,6 +250,12 @@
 .tile__facts--rows > div {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  row-gap: 2px;
+}
+
+.tile--skills .tile__facts dt {
+  font-size: 0.875rem;
+  color: var(--ink-2);
 }
 
 /* Personal: the photo runs edge to edge, and the rider's track sits along its bottom. */
@@ -378,6 +388,12 @@
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     gap: 0;
   }
+
+  .tile--skills .tile__facts--rows > div {
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    column-gap: var(--s3);
+    align-items: baseline;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -394,11 +410,6 @@
   .tile--nokia { grid-column: span 6; }
   .tile--skills { grid-column: span 5; }
   .tile--personal { grid-column: span 7; }
-
-  .tile--skills .tile__facts--rows > div {
-    grid-template-columns: 6rem minmax(0, 1fr);
-    column-gap: var(--s3);
-  }
 }
 
 /* The schematic has room beside the headline from here up. Below this it stays on the case study page. */
@@ -413,5 +424,10 @@
     display: block;
     padding-left: var(--s5);
     border-left: 1px solid var(--on-blue-rule);
+  }
+
+  /* The column beside the schematic is narrow, so on short screens the headline's size follows the height to keep the actions above the fold. */
+  .tile__headline {
+    font-size: clamp(3.5rem, min(1.5rem + 4.2vw, 10vh), 5.25rem);
   }
 }
