@@ -28,7 +28,7 @@ function LocalTime() {
 export const nav = [
   { to: '/about/', no: '050', label: 'About' },
   { to: '/engineering-leadership/', no: '090', label: 'Summary' },
-  { to: '/leadership/', no: '100', label: 'How I lead' },
+  { to: '/leadership/', no: '100', label: 'Leadership' },
   { to: '/experience/', no: '200', label: 'Experience' },
   { to: '/projects/', no: '300', label: 'Projects' },
   { to: '/expertise/', no: '400', label: 'Expertise' },
