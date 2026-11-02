@@ -3,6 +3,7 @@ export const metadata = {
   dek:
     'AI can make software much cheaper to build. Used badly, it can cost more than doing the work by hand. The difference is the experience and judgment of the person directing it.',
   related: [
+    { to: '/writing/claude-environments-when-worth-using/', label: 'Claude environments: when they’re worth the cost' },
     { to: '/writing/building-software-before-and-after-ai/', label: 'How I build software now that AI is in the loop' },
     { to: '/writing/ai-agents-reliable-in-production/', label: 'What it takes to make AI agents reliable in production' },
     { to: '/writing/why-i-enjoy-mentoring/', label: 'Why I enjoy mentoring' },

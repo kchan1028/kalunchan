@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'claude-environments-when-worth-using',
+    title: 'Claude Environments: What They Are and When They’re Worth the Cost',
+    shortTitle: 'When Claude environments are worth it',
+    description:
+      '“Claude environment” can mean several things. How Claude Code, Cowork and Projects differ, what they cost, and when ordinary chat is enough.',
+    teaser:
+      'Claude doesn’t have one product called an environment. How I separate the options, what each one costs, and how I decide whether a task needs more than chat.',
+    summary:
+      'What “environment” means across Claude Code, Cowork and the three kinds of project; what an environment adds to a chat; local versus cloud and what persists; subscription allowances, usage credits, API billing and infrastructure charges; setup, permissions and sensitive data; when to use one and when chat is enough; what an environment can’t fix; a brief comparison with OpenAI Codex and ChatGPT Work; a worked example and a decision checklist.',
+    topics: ['AI', 'Engineering judgment'],
+    minutes: 9,
+    no: '724',
+    published: '2026-11-02',
+    modified: '2026-11-02',
+  },
+  {
     slug: 'when-your-best-engineer-becomes-a-bottleneck',
     title: 'When Your Best Engineer Becomes a Bottleneck',
     shortTitle: 'When your best engineer is the bottleneck',
@@ -149,23 +165,6 @@ export const posts = [
     published: '2026-10-19',
     modified: '2026-10-19',
   },
-  // Hidden draft: dev server only until KC approves publishing.
-  ...(import.meta.env.DEV ? [{
-    slug: 'why-i-built-fedpath',
-    title: 'Why I Built FedPath: Learning Agentic Engineering on a Real Product',
-    shortTitle: 'Why I built FedPath',
-    description:
-      'Why I built FedPath (gofedpath.com) for small businesses pursuing federal contracts, which parts use AI, which use plain rules, and what coding agents changed.',
-    teaser:
-      'I wanted to learn agentic engineering on a product with real data and real consequences. The most useful lesson so far is how little of FedPath needs an agent.',
-    summary:
-      'Why I chose to learn AI agents by building a real product; why federal contracting, from public-sector certification work and running a business; the difference between automation, AI processing and an agent, mapped onto every part of FedPath; why fit and compliance run on fixed rules; the one place a model earns its keep; the opportunity-investigating agent I haven’t built and what it would need; building the product with Claude Code and Codex; and why the core tools are free.',
-    topics: ['AI', 'Engineering judgment', 'Architecture'],
-    minutes: 8,
-    no: '714',
-    published: '2026-10-18',
-    modified: '2026-10-18',
-  }] : []),
   {
     slug: 'building-document-intelligence-workflows',
     title: 'Building Document Intelligence Is More Than Extracting Text With AI',
@@ -483,16 +482,6 @@ export const posts = [
     published: '2026-10-11',
     modified: '2026-10-11',
   },
-  ...(import.meta.env.DEV ? [{
-    slug: 'learning-hermes-building-ai-automation-around-the-clock',
-    title: 'Learning Hermes: Building AI Automation That Runs Around the Clock.',
-    description: 'My first steps with Hermes on a Docker VPS: planning a content research assistant, separating code from AI, and learning what reliable scheduled work requires.',
-    topics: ['Learning', 'AI'],
-    minutes: 8,
-    no: '694',
-    shortTitle: 'Learning Hermes: automation around the clock',
-    summary: 'A content research assistant I am planning for Useful Little Tools: what code and AI each handle, what unattended work requires, and how I will test scheduling, failures, recovery and usage.',
-  }] : []),
   {
     slug: 'scheduling-ai-work-hermes-chatgpt-claude',
     no: '693',
@@ -1187,7 +1176,6 @@ export const chapters = [
       'building-startups-technical-leadership',
       'from-idea-to-working-product',
       'ux-ui-design-before-and-after-ai',
-      ...(import.meta.env.DEV ? ['why-i-built-fedpath'] : []),
   ]),
   chapter('architecture', [
       'software-architecture-lessons-from-different-systems',
@@ -1228,6 +1216,7 @@ export const chapters = [
       'modernizing-public-sector-applications',
       'building-document-intelligence-workflows',
       'ai-generated-code-verification-depth',
+      'claude-environments-when-worth-using',
       'hidden-cost-of-ai-coding',
       'recognizing-ai-generated-code',
       'code-review-in-the-ai-era',
@@ -1246,7 +1235,6 @@ export const chapters = [
     slugs: [
       'why-i-build-my-own-developer-tools',
       'talking-to-ai-in-a-terminal',
-      ...(import.meta.env.DEV ? ['learning-hermes-building-ai-automation-around-the-clock'] : []),
       'connect-hermes-agent-hostinger-vps-vs-code',
       'omniroute-hermes-agent-docker',
       'building-an-ai-job-search-agent-with-hermes',

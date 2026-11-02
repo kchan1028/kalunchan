@@ -499,6 +499,7 @@ const llmsPosts = [
   'patch-mitigate-or-retire-vulnerability-triage',
   'why-i-test-my-products-like-someone-who-has-never-used-them',
   'when-your-best-engineer-becomes-a-bottleneck',
+  'claude-environments-when-worth-using',
   'ai-agents-reliable-in-production',
 ];
 
