@@ -6,6 +6,10 @@ import { loadRoute, reloadPage, routeReady } from '../pageRoutes';
 export const NavigationTypeContext = createContext('POP');
 export const useRealNavigationType = () => useContext(NavigationTypeContext);
 
+// useLocation inside <Routes location> reports the page on screen, which trails the URL by the leave transition.
+export const RealPathnameContext = createContext(null);
+export const useRealPathname = () => useContext(RealPathnameContext);
+
 // Leave and enter in chrome.css fit inside these, delays included. Timers rather than animationend, so a missed event can't strand a navigation.
 const LEAVE_MS = 180;
 const ENTER_MS = 480;
