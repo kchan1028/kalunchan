@@ -77,8 +77,12 @@ test('back and forward restore the previous scroll position', async ({ page }) =
   await page.evaluate(() => window.scrollTo(0, 900));
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(800);
   // Click without Playwright scrolling the footer into view and changing the position under test.
-  const before = await page.evaluate(() => window.scrollY);
-  await page.locator('.colophon').getByRole('link', { name: 'Start a conversation' }).evaluate((link) => link.click());
+  // Read the position in the same task as the click: a late font swap resizes the page and scroll anchoring moves scrollY, so a separate read can go stale.
+  const before = await page.locator('.colophon').getByRole('link', { name: 'Start a conversation' }).evaluate((link) => {
+    const position = window.scrollY;
+    link.click();
+    return position;
+  });
   await expect(page.locator('#contact-title')).toContainText('Tell me about your team or opportunity.');
   await page.goBack();
   await expect(page).toHaveURL(/\/about\/$/);
