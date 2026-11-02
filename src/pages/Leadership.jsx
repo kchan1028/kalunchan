@@ -64,7 +64,7 @@ export default function Leadership() {
         <div className="sheet grid">
           <p className="open-to__roles">Working with teams through Yippify on engineering leadership, architecture and delivery.</p>
           <div className="open-to__side">
-            <Link to="/engineering-leadership/" className="action">Hiring for a leadership role? <ArrowRight /></Link>
+            <Link to="/engineering-leadership/" className="action">Summary for hiring teams <ArrowRight /></Link>
             <a className="link-arrow" href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)} rel="me noopener" target="_blank">
               <span>Message me on LinkedIn</span> <ArrowOut />
             </a>
@@ -105,6 +105,11 @@ export default function Leadership() {
               {p.read && (
                 <p className="practice__read">
                   <Link to={p.read.to} className="link-arrow"><span>{p.read.label}</span> <ArrowRight /></Link>
+                </p>
+              )}
+              {p.also && (
+                <p className="practice__read">
+                  <Link to={p.also.to} className="link-arrow"><span>{p.also.label}</span> <ArrowRight /></Link>
                 </p>
               )}
             </div>

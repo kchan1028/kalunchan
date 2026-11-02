@@ -61,7 +61,7 @@ export const roles = [
     execution:
       'Small stacked pull requests, iterative releases stakeholders can see every sprint, and QA and product in the same planning loop as engineering. On public-sector work, engineering that supports security authorization: FedRAMP-aligned environments, evidence for the Authority to Operate, Section 508 accessibility and Plain Writing in the acceptance criteria.',
     outcome:
-      'Mobile and web applications delivered for government, startup and entrepreneur clients.',
+      'Applications built, modernized and supported for government, startup and founder clients, with server-side authorization, audit evidence and Section 508 accessibility checks.',
     cases: [],
     story: [
       { to: '/writing/building-startups-technical-leadership/', label: 'Startup story: six engagements, from hybrid mobile to wholesale VoIP and virtual tours', kind: 'Startup story' },

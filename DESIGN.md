@@ -176,7 +176,7 @@ components:
 
 **Creative North Star: "The Engineering Practice Manual"**
 
-The site is set as a Bell System Practices document: every inner page is a numbered section of one manual (050 About, 090 Summary, 100 Leadership, 200 Experience, 300 Projects, 400 Expertise, 650 Writing, 700 Contact, with 500 Community and 600 Mentorship linked from the colophon), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.
+The site is set as a Bell System Practices document: every inner page is a numbered section of one manual (050 About, 090 Summary, 100 How I lead, 200 Experience, 300 Projects, 400 Expertise, 650 Writing, 700 Contact, with 500 Community and 600 Mentorship linked from the colophon), headed by a ruled title block, organised by hairline rules, and annotated with figure numbers and years in a small monospace. The ground is cool offset paper; the ink is near-black; colour is almost absent until the page reaches the one region that matters now, which is printed as a solid carrier-blue field with white linework.
 
 The homepage is the manual's cover sheet: a one-page summary laid out as a bento grid of ruled tiles, so someone scanning for 30 seconds gets who, what level, what was built and how to make contact without opening a section. It has no title block. The inner pages keep the manual's form, and tiles stay on the cover sheet.
 
@@ -288,7 +288,7 @@ Solid, square and plain, like a stamped instruction.
 - **Text link with arrow:** Archivo 600, soft underline that darkens on hover, arrow slides 4px right. The secondary action beside every primary.
 
 ### Navigation
-- Header: wordmark (Archivo 800, 75% width), then the coordinate and local time where the width allows them, the Search button, the theme toggle, then numbered links ("100 Leadership") with the number in mono ink-tertiary and the word in Archivo 600. Current page: number set in a small blue chip and a 3px ink bar on the header rule.
+- Header: wordmark (Archivo 800, 75% width), then the coordinate and local time where the width allows them, the Search button, the theme toggle, then numbered links ("100 How I lead") with the number in mono ink-tertiary and the word in Archivo 600. Current page: number set in a small blue chip and a 3px ink bar on the header rule.
 - Theme toggle: a bare 44px sun or moon icon in ink that turns blue on hover. It follows the system until pressed, then remembers the choice in local storage and applies it before first paint.
 - Below 1400px: a "Contents" toggle opens a full-screen paper sheet of 72px-tall ruled rows in condensed 800 at 2rem.
 
@@ -325,7 +325,7 @@ The same four focuses and the same `?for=` value work on two pages, `/projects/`
 
 ### Bento Tiles (home, signature)
 The cover sheet's only container, and it stays on the home. A tile is a square-cornered rectangle with a 1px soft rule, 24px padding and no fill of its own.
-- **Hero:** the page's one blue field, holding the name, the headline, one confirmed proof line, the primary action in white with LinkedIn beside it, availability as a plain text link, and a short location. From 1280px the right column carries the stacked schematic behind a white hairline.
+- **Hero:** the page's one blue field, holding the name, the headline, one confirmed proof line, a short line naming the current work, the primary action in white with LinkedIn beside it, availability as a plain text link, and a short location. From 1280px the right column carries the stacked schematic behind a white hairline.
 - **Résumé:** the one inverted tile, ink ground with paper text and a link to the career record, and a paper action sitting at the tile's foot. It holds its ink in both printings, so the blue field stays the brightest thing on the page, with a paper hairline at 22% to separate it from dark stock.
 - **Case study:** the title link covers the whole tile, so it is one target and one tab stop. Role in bold over where the work happened, then the title and result. Lead tiles have a confirmed figure in blue and one line on the problem; compact tiles state the outcome only. The foot says where the link goes: "Read the case study" or "Read the post". Hover and focus rise 3px with the case tile lift and underline the title.
 - **Skills:** paper-sunk ground with labelled rows.

@@ -7,7 +7,7 @@
 export const resumeRequest = '/contact/#leadership';
 
 // Shared link into this page from case studies and Leadership-topic posts.
-export const hireLink = { to: '/engineering-leadership/', label: 'Looking for an engineering leader? What I bring to your team' };
+export const hireLink = { to: '/engineering-leadership/', label: 'Summary for hiring teams' };
 
 export const outcomes = [
   { figure: '400,000+', text: 'users and an acquisition, as co-founder and CTO', to: '/writing/building-a-startup-from-idea-to-acquisition/' },
@@ -73,7 +73,7 @@ export const impact = [
   },
   {
     figure: '+50%',
-    title: 'Product and audience growth',
+    title: 'Audience growth',
     text: 'As publishing CTO, organic traffic, social traffic and social engagement each grew 50%, with page speed and structured content treated as platform features.',
     to: '/work/publishing-distribution/', label: 'Publishing case study',
   },

@@ -276,6 +276,7 @@ export const practices = [
       'I delegate real ownership with context, review for judgement as well as syntax, and create room for engineers to lead a decision end to end.',
     signals: ['Engineers run their own design reviews', 'Promotions come from inside the team'],
     read: { to: '/writing/building-a-startup-from-idea-to-acquisition/#delegation', label: 'Learning to delegate as a technical founder' },
+    also: { to: '/mentorship/', label: 'More on mentoring engineers' },
   },
   {
     no: '108',
