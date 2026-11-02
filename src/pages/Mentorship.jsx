@@ -333,7 +333,7 @@ export default function Mentorship() {
           <p className="lead">I enjoy the point where someone can take on work they once needed help with. We can talk through their reasoning as colleagues, and I can learn from the choices they make.</p>
           <p className="body-copy">On a team or a bike, I try to give people enough room to reach that point. I’m still available, but they no longer have to wait for me before they start.</p>
           <div className="close__actions">
-            <Link className="action" to="/leadership/">How I lead <ArrowRight /></Link>
+            <Link className="action" to="/leadership/">Leadership <ArrowRight /></Link>
             <Link className="link-arrow" to="/experience/"><span>My experience</span> <ArrowRight /></Link>
             <Link className="link-arrow" to="/contact/?topic=mentorship#start"><span>Talk about mentorship</span> <ArrowRight /></Link>
           </div>
