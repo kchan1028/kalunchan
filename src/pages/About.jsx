@@ -120,7 +120,6 @@ export default function About() {
 
     <Qa id="engagements" coord="Engagements" q="How do engagements work?">
       <p>KC works with companies through Yippify, on scoped projects or ongoing engineering leadership. Each engagement starts by agreeing on the problem, the constraints and what a useful outcome looks like, then moves in small steps with working software early.</p>
-      <p>For market context, GoFractional reports a median fractional CTO rate of $200 an hour, with the middle 50% between $175 and $250. That figure is from September 2026 and comes from a small sample: 14 job posts and 787 candidate profiles over 90 days.</p>
     </Qa>
 
     <Qa id="based" coord="Location" q="Where is he based?">
@@ -129,7 +128,7 @@ export default function About() {
     </Qa>
 
     <Qa id="work-with" coord="Contact" q="How can you work with Ka Lun Chan?">
-      <p>The fastest way to reach KC is a LinkedIn message at <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>linkedin.com/in/kchan1288</a>. For consulting projects, contact <a href={person.yippify}>Yippify</a>. His code is on GitHub at <a href={person.github}>github.com/kchan1028</a>.</p>
+      <p>The best way to reach KC is the <Link to="/contact/">contact form</Link>, or a LinkedIn message at <a href={person.linkedin} onClick={() => track('linkedin_click', person.linkedin)}>linkedin.com/in/kchan1288</a>. For consulting projects, contact <a href={person.yippify}>Yippify</a>. His code is on GitHub at <a href={person.github}>github.com/kchan1028</a>.</p>
     </Qa>
 
     <header className="sheet about-words" data-coord="050 · Career story">
@@ -230,7 +229,7 @@ export default function About() {
             <p>Leadership needs to know what is blocked and why a timeline changed. That should take one clear conversation. Nobody should have to decode a backlog to find out.</p>
             <p>When delivery and production feedback are connected, teams spot problems earlier and executives hear about them while there’s still time to choose.</p>
             <Link to="/leadership/" className="link-arrow">How I run engineering <ArrowRight /></Link>
-            <Link to="/engineering-leadership/" className="link-arrow">Hiring an engineering leader? Start here <ArrowRight /></Link>
+            <Link to="/engineering-leadership/" className="link-arrow">Summary for hiring teams <ArrowRight /></Link>
           </div>
         </div>
       </div>

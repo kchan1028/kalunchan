@@ -1,27 +1,27 @@
 {
   "/": {
-    "date": "2026-11-01",
-    "hash": "923a517c27f33bb3"
+    "date": "2026-11-02",
+    "hash": "b24cdf6717e04911"
   },
   "/about/": {
-    "date": "2026-11-01",
-    "hash": "978140b6d419e057"
+    "date": "2026-11-02",
+    "hash": "bb79300d584fa294"
   },
   "/leadership/": {
-    "date": "2026-11-01",
-    "hash": "a1f007643c3c282b"
+    "date": "2026-11-02",
+    "hash": "5154fa28ecf71259"
   },
   "/experience/": {
-    "date": "2026-11-01",
-    "hash": "b23a777ddf73f02b"
+    "date": "2026-11-02",
+    "hash": "61f71ddd8952e0b0"
   },
   "/projects/": {
     "date": "2026-11-01",
     "hash": "11fc4e817a966218"
   },
   "/expertise/": {
-    "date": "2026-11-01",
-    "hash": "2805ecf7a22405d7"
+    "date": "2026-11-02",
+    "hash": "1d2e2183b52161af"
   },
   "/community/": {
     "date": "2026-10-31",
@@ -36,8 +36,8 @@
     "hash": "8f19a87da0882220"
   },
   "/contact/": {
-    "date": "2026-11-01",
-    "hash": "02ae46a7ca59cdcc"
+    "date": "2026-11-02",
+    "hash": "981320764eac4978"
   },
   "/projects/fedpath/": {
     "date": "2026-10-12",
@@ -52,27 +52,27 @@
     "hash": "864ed8ac1fc4e1c1"
   },
   "/work/three-continent-platform/": {
-    "date": "2026-11-01",
-    "hash": "dbfea31cb0b634c2"
+    "date": "2026-11-02",
+    "hash": "ad6422869fcf28e0"
   },
   "/work/publishing-distribution/": {
-    "date": "2026-10-31",
-    "hash": "0bdfb2f7ebb101c9"
+    "date": "2026-11-02",
+    "hash": "a34371f36c53a6ce"
   },
   "/work/event-driven-platform/": {
-    "date": "2026-10-31",
-    "hash": "7fc5629d7bc4d416"
+    "date": "2026-11-02",
+    "hash": "cda5905acb3033c1"
   },
   "/work/carrier-capacity/": {
-    "date": "2026-10-31",
-    "hash": "b0ae8b0c33613832"
+    "date": "2026-11-02",
+    "hash": "b266af685933eb18"
   },
   "/privacy/": {
     "date": "2026-10-31",
     "hash": "aad4572bb35772c1"
   },
   "/engineering-leadership/": {
-    "date": "2026-11-01",
-    "hash": "f21df5121788ac9d"
+    "date": "2026-11-02",
+    "hash": "081e713b350a0fc2"
   }
 }

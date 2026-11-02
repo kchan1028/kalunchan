@@ -8,7 +8,7 @@ const depthLabel = ['Not a focus', 'Practiced', 'Led'];
 export default function Expertise() {
   return (
     <>
-      <TitleBlock section="400" title="Expertise" cells={[{ k: 'Areas', v: `${capabilities.length} capabilities` }, { k: 'Evidence', v: '5 roles' }]} />
+      <TitleBlock section="400" title="Expertise" cells={[{ k: 'Areas', v: `${capabilities.length} capabilities` }, { k: 'Evidence', v: `${eras.length} career stages` }]} />
       <div className="sheet grid page-lead">
         <p className="page-lead__claim">
           Each capability is mapped to the roles where I used it. Tools are listed last because they changed the most.
@@ -98,7 +98,7 @@ export default function Expertise() {
       </div>
       <div className="sheet expertise-next">
         <Link to="/projects/" className="link-arrow">
-          <span>See these capabilities applied in six case studies</span> <ArrowRight />
+          <span>See these capabilities applied in the case studies</span> <ArrowRight />
         </Link>
       </div>
     </>

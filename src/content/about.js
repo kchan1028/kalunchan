@@ -105,7 +105,7 @@ export const faq = [
   },
   {
     q: 'How can I contact Ka Lun Chan?',
-    a: 'The fastest route is a message on LinkedIn at linkedin.com/in/kchan1288. For consulting projects, you can also reach him through Yippify at yippify.com.',
+    a: 'The best route is the form at kalunchan.dev/contact/, or a message on LinkedIn at linkedin.com/in/kchan1288. For consulting projects, you can also reach him through Yippify at yippify.com.',
   },
 ];
 
@@ -113,7 +113,6 @@ export const faq = [
 export const publishedFaq = faq.filter((item) => !isPlaceholder(item.a));
 
 export const sources = [
-  { label: 'GoFractional: Fractional CTO rates', url: 'https://www.gofractional.com/insights/rates/cto' },
   { label: 'Ka Lun Chan on LinkedIn', url: 'https://www.linkedin.com/in/kchan1288/' },
   { label: 'kchan1028 on GitHub', url: 'https://github.com/kchan1028' },
   { label: 'Yippify', url: 'https://yippify.com/' },

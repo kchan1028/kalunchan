@@ -8,7 +8,7 @@ import { track } from '../track';
 import { availability, availabilityLabel } from '../content/availability';
 import { cycling } from '../content/community';
 import { platformDiagram } from '../content/platformDiagram';
-import { caseTiles, heroHeadline, heroProof, resume, skills } from '../content/portfolio';
+import { caseTiles, heroHeadline, heroNow, heroProof, resume, skills } from '../content/portfolio';
 import { person } from '../content/profile';
 
 function CaseTile({ tile }) {
@@ -48,6 +48,7 @@ export default function Home() {
           <p className="tile__name">{person.name} <span>({person.short})</span></p>
           <h1 id="thesis" className="tile__headline display"><PressedType text={heroHeadline} /></h1>
           <p className="tile__proof">{heroProof}</p>
+          <p className="tile__now">{heroNow}</p>
           <div className="tile__hero-foot">
             <p className="tile__actions">
               <HiringContactLink />
@@ -66,7 +67,7 @@ export default function Home() {
       <section className="tile tile--resume" aria-labelledby="resume-title">
         <h2 id="resume-title" className="h3">Résumé</h2>
         {!resume.pdf && <p>Send your name and email, and I’ll reply with it within 2 business days.</p>}
-        <p><Link to="/experience/" className="link-arrow"><span>Full career record</span> <ArrowRight /></Link></p>
+        <p><Link to="/experience/" className="link-arrow"><span>Role by role</span> <ArrowRight /></Link></p>
         <p className="tile__resume-action">
           {resume.pdf
             ? <a className="action" href={resume.pdf} download>Download PDF <ArrowDown /></a>

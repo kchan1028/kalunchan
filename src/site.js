@@ -54,7 +54,7 @@ const base = [
     "path": "/projects/",
     name: "Projects",
     "title": "Projects & Case Studies \u2014 Ka Lun Chan",
-    "description": "Products and sites I’ve shipped, including FedPath, Berkeley Omnium and Union City Smog Check, plus case studies in cloud, platforms and AI.",
+    "description": "Products and sites I’ve shipped, including FedPath, Berkeley Omnium and Union City Smog Check, plus case studies in cloud, platforms and carrier networks.",
     image: { path: '/images/projects/fedpath-og.jpg', width: 1200, height: 630, alt: 'FedPath home page, one of the products on Ka Lun Chan’s projects page' }
   },
   {
@@ -67,7 +67,7 @@ const base = [
     "path": "/expertise/",
     name: "Expertise",
     "title": "Technical Expertise: Architecture, Cloud & AI \u2014 Ka Lun Chan",
-    "description": "Seven capabilities, from engineering leadership and software architecture to AWS, government technology and AI, mapped to the roles where each was earned."
+    "description": "Ten capabilities, from engineering leadership and software architecture to AWS, government technology and AI, mapped to the roles where each was earned."
   },
   {
     "path": "/community/",

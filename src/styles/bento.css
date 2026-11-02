@@ -57,6 +57,12 @@
   line-height: 1.35;
 }
 
+.tile__now {
+  margin-top: calc(var(--s3) - var(--s5));
+  font-weight: 600;
+  font-stretch: 92%;
+}
+
 .tile__hero-foot {
   display: flex;
   flex-direction: column;

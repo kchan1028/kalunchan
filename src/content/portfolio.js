@@ -3,6 +3,7 @@
 import { resumeRequest } from './engineeringLeadership';
 
 export const heroHeadline = 'Engineering leader building products and the teams that scale them.';
+export const heroNow = 'Now: consulting through Yippify.';
 export const heroProof = 'As co-founder and CTO, I took a communications platform to 400,000+ users and an acquisition.';
 
 // Set `pdf` to a file in /public (for example '/ka-lun-chan-resume.pdf') to turn the button into a download.

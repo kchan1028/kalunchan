@@ -22,7 +22,7 @@ export default function Contact() {
       </div>
       <nav className="contact-hero__still" aria-label="Still evaluating">
         <p className="label">Still evaluating?</p>
-        <ul><li><Link to="/engineering-leadership/">Leadership profile</Link></li><li><Link to="/experience/">Experience</Link></li><li><Link to="/projects/">Projects</Link></li></ul>
+        <ul><li><Link to="/engineering-leadership/">Summary for hiring teams</Link></li><li><Link to="/experience/">Experience</Link></li><li><Link to="/projects/">Projects</Link></li></ul>
       </nav>
     </header>
 
