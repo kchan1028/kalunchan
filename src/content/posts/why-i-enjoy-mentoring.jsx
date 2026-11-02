@@ -88,7 +88,7 @@ export default function Body() {
 
       <section id="independent" aria-labelledby="independent-h">
         <h2 id="independent-h" className="post__h2">The goal is independence</h2>
-        <p>The point of mentoring is not to become the person everyone has to ask. If an engineer needs me for every decision, I have built a dependency, and I have also built myself a very tiring job.</p>
+        <p>The point of mentoring is not to become the person everyone has to ask. If an engineer needs me for every decision, I have built a dependency, and I have also built myself a very tiring job. I wrote separately about <Link to="/writing/when-your-best-engineer-becomes-a-bottleneck/">how that dependency forms and how to hand the work over</Link>.</p>
         <p>What I am trying to grow is judgment. Knowledge is the easy part to share; documentation does that. Judgment is knowing which of three reasonable designs fits this team and this business, when a shortcut is fine and when it will hurt, and when to raise a concern even though it is awkward. That only develops by making decisions, so mentoring means handing decisions over, a little at a time, and being there when they turn out differently than expected.</p>
         <p>The best signal that it is working is a little deflating: people stop coming to you. The engineer who used to ask what to do starts telling you what they did and why. Then, if you are lucky, they start explaining it to someone newer. That is the moment I care about most. I describe the stages I try to move people through on the <Link to="/mentorship/">Mentorship page</Link>, from asking what to do to teaching someone else.</p>
       </section>
