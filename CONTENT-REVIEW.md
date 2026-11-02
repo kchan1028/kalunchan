@@ -38,8 +38,6 @@ Screenshots in `public/images/projects/` were captured from the live sites; re-c
 
 ## Elsewhere
 
-- Learning article draft: `src/content/posts/learning-hermes-building-ai-automation-around-the-clock.jsx`. Proposed title, meta description, Learning/AI topics, and related links are in `draftMetadata`. Body and table of contents follow the existing JSX post format. Personal facts are from KC's brief; technical claims link to official documentation checked October 10, 2026. Review the voice and planned workflow before enabling production registration. It is visible without a draft label in the development Writing page and Learning path. The registry includes it only when import.meta.env.DEV is true, so production builds exclude its route and sitemap entry. No publication date is assigned.
-
 - Colophon location: "San Francisco Bay Area" (inferred from the cycling team).
 - Public email: none is shown. Set `person.email` in `profile.js` to add one.
 - Leadership practices (101–108) and "Signals I watch" are written in your voice from the brief. Edit them freely.
