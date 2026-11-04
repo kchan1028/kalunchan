@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'git-bundle-workflow-single-integrator',
+    title: 'One GitHub Account, Four Developers: A Git Bundle Workflow for a Single Integrator',
+    shortTitle: 'A Git bundle workflow for one integrator',
+    description:
+      'A runbook for teams where only one person can push to GitHub: exchange commits as Git bundles, review and merge safely, and keep authorship intact.',
+    teaser:
+      'When only one person can push to GitHub, the other developers can still ship. The bundle-based setup I’d use for three developers and an integrator, with every command.',
+    summary:
+      'Assumptions and approvals; preparing and sharing a baseline bundle; commit identity; one branch per task and a tracker; bundles vs patch files; commands to submit, verify and import; updated baselines; a review checklist; merging, conflicts, duplicate detection and reverts; a handoff template, cadence and acceptance messages; moving to GitHub accounts or an internal Git server; a first-day checklist.',
+    topics: ['Delivery', 'Engineering judgment'],
+    minutes: 11,
+    no: '726',
+    published: '2026-11-04',
+    modified: '2026-11-04',
+  },
+  {
     slug: 'use-ai-to-learn-without-offloading',
     title: 'How to Use AI to Learn a Skill Instead of Offloading the Work',
     shortTitle: 'Using AI to learn instead of offloading',
@@ -1213,6 +1229,7 @@ export const chapters = [
       'you-dont-need-to-remember-everything',
       'specialization-beyond-your-own-code',
       'smaller-user-stories-and-pull-requests',
+      'git-bundle-workflow-single-integrator',
       'why-writing-good-user-stories-is-hard',
       'what-sprint-carryover-is-telling-you',
       'when-everything-is-a-priority',
