@@ -6,6 +6,7 @@ export const metadata = {
     { to: '/writing/recognizing-ai-generated-code/', label: 'I can recognize AI-generated code. Here’s why.' },
     { to: '/writing/ai-generated-code-verification-depth/', label: 'AI can write the code. But can we verify it?' },
     { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller user stories and pull requests' },
+    { to: '/writing/git-bundle-workflow-single-integrator/', label: 'Reviewing contributions when only one person can push' },
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
     { to: '/writing/hidden-cost-of-ai-coding/', label: 'The hidden cost of AI coding' },
     { to: '/writing/ai-learning-curve-future-of-work/', label: 'AI is great, but not everyone is ready to use it yet' },

@@ -501,6 +501,7 @@ const llmsPosts = [
   'when-your-best-engineer-becomes-a-bottleneck',
   'claude-environments-when-worth-using',
   'use-ai-to-learn-without-offloading',
+  'git-bundle-workflow-single-integrator',
   'ai-agents-reliable-in-production',
 ];
 

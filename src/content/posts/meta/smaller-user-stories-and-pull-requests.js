@@ -9,6 +9,7 @@ export const metadata = {
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
     { to: '/leadership/#execution', label: 'How I improve execution with small, safe changes' },
     { to: '/writing/forward-engineering-isnt-new/', label: 'Agile as forward engineering in small slices' },
+    { to: '/writing/git-bundle-workflow-single-integrator/', label: 'A Git bundle workflow when only one person can push' },
   ],
   keywords: [
     'smaller pull requests',
