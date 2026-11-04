@@ -407,7 +407,8 @@
   .tile--publishing,
   .tile--carrier { grid-column: span 4; }
   .tile--yippify,
-  .tile--nokia { grid-column: span 6; }
+  .tile--nokia,
+  .tile--soc { grid-column: span 4; }
   .tile--skills { grid-column: span 5; }
   .tile--personal { grid-column: span 7; }
 
