@@ -18,6 +18,41 @@ export const toc = [
   ['habit', 'A lightweight team habit'],
 ];
 
+// Fig. 727-1: the invented example on a ten-day sprint. Columns are working days, so spacing is proportional to time.
+// The article doesn't say which day the platform team's date slipped, so that event spans days 4 and 5.
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+const timeline = [
+  { from: 2, to: 2, when: 'Day 2, Tuesday', tag: 'Risk raised', text: 'Priya names the risk, an owner and action due Wednesday, and a trigger for Monday.' },
+  { from: 3, to: 3, when: 'Day 3, Wednesday', tag: 'Checkpoint', text: 'Contract agreed and a stub working, so the checkout side keeps moving.' },
+  { from: 4, to: 5, when: 'Later in week one', tag: 'Now an issue', text: 'An incident pulls the platform team away. Staging slips to late in week two.' },
+  { from: 6, to: 6, when: 'Day 6, Monday', tag: 'Trigger, then decision', text: 'No endpoint. The product owner agrees format checks now and verification next sprint.', key: true },
+  { from: 7, to: 10, when: 'Days 7 to 10', tag: 'Agreed scope', text: 'The rest of the sprint goes to the updated goal.' },
+];
+
+function RiskTimeline() {
+  return (
+    <figure className="post__figure risktl" aria-labelledby="risktl-cap">
+      <p id="risktl-cap" className="risktl__cap"><span className="mono">Fig. 727-1</span> The delayed API example, day by day. The fallback was agreed on day 2, so day 6 only needed a decision</p>
+      <div className="risktl__days" aria-hidden="true">
+        <span className="risktl__week mono" style={{ gridColumn: '1 / 6' }}>Week 1</span>
+        <span className="risktl__week mono" style={{ gridColumn: '6 / 11' }}>Week 2</span>
+        {days.map((d, i) => <span key={i} className="risktl__day mono" style={{ gridColumn: i + 1 }}>{d}</span>)}
+      </div>
+      <ol className="risktl__events">
+        {timeline.map((e) => (
+          <li key={e.tag} className={e.key ? 'risktl__event is-key' : 'risktl__event'} style={{ '--from': e.from, '--to': e.to + 1 }}>
+            <span className="risktl__bar" aria-hidden="true" />
+            <span className="risktl__when mono">{e.when}</span>
+            <span className="risktl__tag">{e.tag}</span>
+            <span className="risktl__text">{e.text}</span>
+          </li>
+        ))}
+      </ol>
+      <figcaption className="post__figcaption">An invented example. Days are working days, and each bar marks when its event happened.</figcaption>
+    </figure>
+  );
+}
+
 export default function Body() {
   return (
     <>
@@ -86,6 +121,7 @@ export default function Body() {
         <p className="post__pull">“There is a risk that address verification won’t make the sprint because the platform team hasn’t confirmed the API contract or a staging date. This could affect the sprint goal. I’ll agree the contract with their lead and build against a stub by Wednesday. If the staging endpoint isn’t live by Monday of week two, we’ll ask the product owner whether to ship saved addresses with format checks only and add verification next sprint.”</p>
         <p>By Wednesday, Priya has a confirmed contract and a working stub, so the checkout side keeps moving. The platform team’s date slips anyway: an incident pulled their engineers away, and staging is now expected late in week two. Monday arrives with no endpoint, and the trigger fires.</p>
         <p>The team brings the product owner a decision instead of a surprise. Saved addresses with format checks give customers most of the value now, and verification can follow once the API is live. The product owner agrees, the sprint goal is updated to match, and the verification story moves to the next sprint with the contract already settled. Nobody spends the last two days of the sprint hoping the endpoint shows up.</p>
+        <RiskTimeline />
       </section>
 
       <section id="habit" aria-labelledby="habit-h">
