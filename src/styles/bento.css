@@ -410,6 +410,18 @@
   .tile--nokia { grid-column: span 6; }
   .tile--skills { grid-column: span 5; }
   .tile--personal { grid-column: span 7; }
+
+  /* The skills list sets this row's height, so the photo stacks over the text and fills the space left, instead of cropping to a tall sliver. */
+  .tile--personal {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(16rem, 1fr) auto;
+  }
+
+  .tile--personal .tile__photo img {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
 }
 
 /* The schematic has room beside the headline from here up. Below this it stays on the case study page. */
