@@ -1005,6 +1005,14 @@
   white-space: nowrap;
 }
 
+/* A long command or ref kept on one line pushes the page sideways on phones; let it break there instead. */
+@media (max-width: 40rem) {
+  .post__tok {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* Fig. 688-1: the authorization cycle as a walk-through. Six step tabs across on wide screens, three or two on phones; one panel below. */
 .rmf__tabs {
   display: grid;
