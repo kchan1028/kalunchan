@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'prototype-and-validate-before-you-build',
+    title: 'Prototype and Validate Before You Build: An Eight-Stage Workflow',
+    shortTitle: 'Prototype and validate before you build',
+    description:
+      'A workflow that tests UX prototypes with real users before production code, then runs UAT on working software, with deliverables, approvers and checklists.',
+    teaser:
+      'A lot of rework comes from building the right code for the wrong workflow. Eight stages that test the design on a prototype first and keep UAT for what only working software can show.',
+    summary:
+      'Why prototyping before production development reduces rework; an eight-stage workflow in two phases with one scope gate; the difference between prototype validation and UAT, and the risks that need working software; activities, deliverables, participants, approvers, entry criteria and a checklist for each stage, from requirements and user flows through prototyping, user testing, scope agreement, development, UAT and release; when to run a technical spike; and how to scale the process down for small changes.',
+    topics: ['Delivery', 'Engineering judgment'],
+    minutes: 13,
+    no: '728',
+    published: '2026-11-04',
+    modified: '2026-11-04',
+  },
+  {
     slug: 'sprint-risk-when-to-raise-it',
     title: 'Sprint Risk: When to Raise It and What to Do Next',
     shortTitle: 'Sprint risk: when to raise it',

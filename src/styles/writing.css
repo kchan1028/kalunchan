@@ -1852,3 +1852,40 @@
   .lanes__text { grid-column: 2; }
   .lanes__step.has-loop .lanes__loop, .lanes__loop { grid-column: 2; }
 }
+
+/* Fig. 728-1: eight stages in two phases, with the scope gate between them. Each stage reads as number, name and the
+   question it settles; loop and side-path notes sit in a third column. Below 40rem the notes drop under the question. */
+.stageflow { container-type: inline-size; }
+.stageflow p { max-width: none; }
+.stageflow__cap { font-weight: 600; font-stretch: 90%; padding-bottom: var(--s3); }
+.stageflow__cap .mono { color: var(--ink-3); margin-right: var(--s2); }
+.stageflow__title { padding-block: var(--s2); border-top: 3px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 0.8125rem; font-weight: 600; font-stretch: 86%; color: var(--ink-3); }
+.stageflow__list { list-style: none; margin: 0; padding: 0; }
+.stageflow__stage { display: grid; grid-template-columns: 2.5rem minmax(0, 1.4fr) minmax(0, 1fr); column-gap: var(--s4); row-gap: 2px; padding-block: var(--s3); border-bottom: 1px solid var(--rule-soft); }
+.stageflow__no { grid-column: 1; grid-row: 1 / span 2; color: var(--ink-3); padding-top: 3px; }
+.stageflow__name { grid-column: 2; grid-row: 1; font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.stageflow__q { grid-column: 2; grid-row: 2; font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); max-width: 48ch; }
+.stageflow__note { grid-column: 3; grid-row: 1 / span 2; align-self: start; padding-left: var(--s3); border-left: 3px solid var(--blue); font-size: var(--t-small); line-height: 1.45; color: var(--blue); font-weight: 560; }
+.stageflow__note.is-spike { border-left-style: dashed; }
+.stageflow__gate { margin-block: var(--s5) var(--s4); padding-block: var(--s3); border-top: 3px solid var(--blue); border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 650; font-stretch: 92%; }
+.stageflow__gate .mono { margin-right: var(--s2); font-weight: 400; }
+
+/* Fig. 728-2 and 728-3: comparison tables that scroll sideways on narrow screens instead of crushing the columns. */
+.twotests__scroll { overflow-x: auto; }
+.twotests__scroll .twotests { min-width: 34rem; }
+.twotests__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* Post 728: one reference block per stage. */
+.stage + .stage { margin-top: var(--s7); }
+.stage__terms .stage__wide { grid-column: 1 / -1; }
+.stage__check-h { margin-top: var(--s5); font-size: 0.8125rem; font-weight: 600; font-stretch: 86%; color: var(--ink-3); }
+.stage__check-h + .stage__check { margin-top: var(--s2); }
+
+@container (max-width: 36rem) {
+  .stageflow__stage { grid-template-columns: 2rem minmax(0, 1fr); column-gap: var(--s3); }
+  .stageflow__note { grid-column: 2; grid-row: 3; margin-top: var(--s2); }
+}
+
+@media (max-width: 40rem) {
+  .stage__terms { grid-template-columns: minmax(0, 1fr); }
+}

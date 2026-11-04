@@ -8,6 +8,7 @@ export const metadata = {
     { to: '/writing/berkeley-omnium-new-website-next-generation/', label: 'The new Berkeley Omnium site' },
     { to: '/projects/union-city-smog-check/', label: 'Union City Smog Check: call and directions first' },
     { to: '/writing/why-i-test-my-products-like-someone-who-has-never-used-them/', label: 'Why I test my products like someone who has never used them' },
+    { to: '/writing/prototype-and-validate-before-you-build/', label: 'A workflow for testing the design before building it' },
     { to: '/writing/modernizing-public-sector-applications/#requirements', label: 'Accessibility from the first slice of a modernization' },
   ],
   image: { path: '/images/writing/ux-before-and-after-ai-og.jpg', width: 1200, height: 630, alt: 'I used to design every screen myself. Then: signup forms, phone menus, a reseller dashboard, the support line as a usability lab. Now: a direction, a layout, a phone in hand. The person using it is still the point.' },
