@@ -6,6 +6,7 @@ export const metadata = {
     { to: '/writing/why-writing-good-user-stories-is-hard/', label: 'Why writing good user stories is so hard' },
     { to: '/writing/ux-ui-design-before-and-after-ai/', label: 'I used to design every screen myself' },
     { to: '/writing/what-engineering-leadership-actually-does/#simpler', label: 'Pushing for the simpler version' },
+    { to: '/writing/prototype-and-validate-before-you-build/', label: 'Prototype and validate before you build: an eight-stage workflow' },
     { to: '/writing/engineering-work-nobody-needed/', label: 'The most expensive engineering work is work nobody needed' },
     { to: '/projects/fedpath/', label: 'FedPath: from SAM.gov notice to bid decision' },
     { to: '/projects/berkeley-omnium/', label: 'Berkeley Omnium: a site with a path for every audience' },
