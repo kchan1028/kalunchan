@@ -487,7 +487,7 @@ export default function Body({ metadata: { sources } }) {
         <h2 id="mcp-vs-export-h" className="post__h2">Strava MCP vs exporting your data</h2>
         <p className="post__answer">Use MCP for questions and follow-ups about your current data. Use an export when you want a complete copy of your history to analyze in your own tools.</p>
         <figure className="post__figure">
-          <table className="post__table">
+          <table className="post__table post__compare">
             <caption>
               <span className="mono">Fig. 657-4</span> Exporting your data vs connecting with MCP
             </caption>
@@ -501,28 +501,28 @@ export default function Body({ metadata: { sources } }) {
             <tbody>
               <tr>
                 <th scope="row">What Claude sees</th>
-                <td data-label="Export">A snapshot from the day you exported</td>
-                <td data-label="MCP">Your current Strava data, read when it’s needed</td>
+                <td data-label="Export" data-col="Export:">A snapshot from the day you exported</td>
+                <td data-label="MCP" data-col="MCP:">Your current Strava data, read when it’s needed</td>
               </tr>
               <tr>
                 <th scope="row">How it gets there</th>
-                <td data-label="Export">You download it and upload it to a chat</td>
-                <td data-label="MCP">Claude requests it through the connector</td>
+                <td data-label="Export" data-col="Export:">You download it and upload it to a chat</td>
+                <td data-label="MCP" data-col="MCP:">Claude requests it through the connector</td>
               </tr>
               <tr>
                 <th scope="row">After your next ride</th>
-                <td data-label="Export">Out of date until you export again</td>
-                <td data-label="MCP">Already included</td>
+                <td data-label="Export" data-col="Export:">Out of date until you export again</td>
+                <td data-label="MCP" data-col="MCP:">Already included</td>
               </tr>
               <tr>
                 <th scope="row">Who can use it</th>
-                <td data-label="Export">Any Strava account, free or paid</td>
-                <td data-label="MCP">Paid subscribers</td>
+                <td data-label="Export" data-col="Export:">Any Strava account, free or paid</td>
+                <td data-label="MCP" data-col="MCP:">Paid subscribers</td>
               </tr>
               <tr>
                 <th scope="row">Best for</th>
-                <td data-label="Export">Deep offline analysis, spreadsheets, your own scripts</td>
-                <td data-label="MCP">Conversational questions and follow-ups</td>
+                <td data-label="Export" data-col="Export:">Deep offline analysis, spreadsheets, your own scripts</td>
+                <td data-label="MCP" data-col="MCP:">Conversational questions and follow-ups</td>
               </tr>
             </tbody>
           </table>
@@ -577,7 +577,7 @@ export default function Body({ metadata: { sources } }) {
         <h2 id="mcp-vs-api-h" className="post__h2">What’s the difference between Strava MCP and the Strava API?</h2>
         <p className="post__answer">The Strava API is for developers building applications. Strava MCP connects an AI assistant to your own Strava data so you can ask questions in plain language. MCP doesn’t replace the API for building apps.</p>
         <figure className="post__figure">
-          <table className="post__table">
+          <table className="post__table post__compare">
             <caption>
               <span className="mono">Fig. 657-5</span> The Strava API and Strava MCP side by side
             </caption>
@@ -591,28 +591,28 @@ export default function Body({ metadata: { sources } }) {
             <tbody>
               <tr>
                 <th scope="row">Built for</th>
-                <td data-label="Strava API">Developers building apps and services</td>
-                <td data-label="Strava MCP">Athletes asking an AI assistant about their own data</td>
+                <td data-label="Strava API" data-col="API:">Developers building apps and services</td>
+                <td data-label="Strava MCP" data-col="MCP:">Athletes asking an AI assistant about their own data</td>
               </tr>
               <tr>
                 <th scope="row">You handle</th>
-                <td data-label="Strava API">OAuth, tokens, endpoints, rate limits, storage, app logic and app review</td>
-                <td data-label="Strava MCP">Clicking Connect and approving access</td>
+                <td data-label="Strava API" data-col="API:">OAuth, tokens, endpoints, rate limits, storage, app logic and app review</td>
+                <td data-label="Strava MCP" data-col="MCP:">Clicking Connect and approving access</td>
               </tr>
               <tr>
                 <th scope="row">Who it serves</th>
-                <td data-label="Strava API">Your app’s users. Up to 10 without review on Strava’s Standard tier.</td>
-                <td data-label="Strava MCP">Just you</td>
+                <td data-label="Strava API" data-col="API:">Your app’s users. Up to 10 without review on Strava’s Standard tier.</td>
+                <td data-label="Strava MCP" data-col="MCP:">Just you</td>
               </tr>
               <tr>
                 <th scope="row">Subscription</th>
-                <td data-label="Strava API">Required for Standard tier developers</td>
-                <td data-label="Strava MCP">Required</td>
+                <td data-label="Strava API" data-col="API:">Required for Standard tier developers</td>
+                <td data-label="Strava MCP" data-col="MCP:">Required</td>
               </tr>
               <tr>
                 <th scope="row">Using it with AI</th>
-                <td data-label="Strava API">Restricted by Strava’s API Policy</td>
-                <td data-label="Strava MCP">The route Strava supports</td>
+                <td data-label="Strava API" data-col="API:">Restricted by Strava’s API Policy</td>
+                <td data-label="Strava MCP" data-col="MCP:">The route Strava supports</td>
               </tr>
             </tbody>
           </table>
