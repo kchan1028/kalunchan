@@ -88,6 +88,42 @@ function Comparison() {
   );
 }
 
+// Fig. 726-3: one round of the loop as lanes. Each step sits in the lane where it happens, so the zigzag
+// shows work crossing the handoff folder twice and reaching GitHub only through the integrator.
+const lanes = ['Developer', 'Handoff folder', 'Integrator', 'GitHub'];
+const round = [
+  { lane: 2, text: <>Pull <C>main</C>, tag <C>baseline-001</C>, scan for secrets, bundle it</> },
+  { lane: 1, text: <><C>baseline-001.bundle</C> and its checksum</> },
+  { lane: 0, text: <>Check the checksum, clone, branch <C>task/T-101</C> from the baseline</> },
+  { lane: 0, text: <>Bundle <C>baseline-001..task/T-101</C> and verify it</> },
+  { lane: 1, text: <><C>T-101-v1.bundle</C>, checksum and handoff note</> },
+  { lane: 2, text: <>Verify, fetch into <C>refs/contrib/</C>, review, merge <C>--no-ff</C>, test</>, loop: true },
+  { lane: 3, text: <><C>main</C> pushed</> },
+  { lane: 1, text: <><C>baseline-002.bundle</C>, tagged and bundled by the integrator</> },
+  { lane: 0, text: <>Fetch the new baseline. Accepted branches show as merged</> },
+];
+
+function RoundTrip() {
+  return (
+    <figure className="post__figure lanes" aria-labelledby="lanes-cap">
+      <p id="lanes-cap" className="lanes__cap"><span className="mono">Fig. 726-3</span> One integration round. Work crosses the handoff folder twice and reaches GitHub only through the integrator</p>
+      <div className="lanes__head" aria-hidden="true">
+        {lanes.map((l) => <span key={l} className="label">{l}</span>)}
+      </div>
+      <ol className="lanes__steps">
+        {round.map((s, i) => (
+          <li key={i} className={s.loop ? 'lanes__step has-loop' : 'lanes__step'} style={{ '--lane': s.lane + 1 }}>
+            <span className="lanes__no mono">{String(i + 1).padStart(2, '0')}</span>
+            <span className="lanes__lane label">{lanes[s.lane]}</span>
+            <span className="lanes__text">{s.text}</span>
+            {s.loop && <span className="lanes__loop">A conflict that isn’t obvious, or changes requested: <C>git merge --abort</C>, then the author rebases onto the next baseline and sends <C>T-101-v2</C>.</span>}
+          </li>
+        ))}
+      </ol>
+    </figure>
+  );
+}
+
 export default function Body({ metadata: { sources } }) {
   return (
     <>
@@ -151,6 +187,7 @@ git config user.email "you@company.example"`}</Code>
 
       <section id="exchange" aria-labelledby="exchange-h">
         <h2 id="exchange-h" className="post__h2">How do contributions move between developers and the integrator?</h2>
+        <RoundTrip />
         <h3 className="post__h3">Submitting a contribution</h3>
         <p>The developer checks exactly what is leaving their machine before creating anything:</p>
         <Code title="Developer: check what you’re sending">{`git switch task/T-101-password-reset

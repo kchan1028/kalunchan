@@ -1783,3 +1783,64 @@
 .elcost__scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .elcost td.is-better { color: var(--ink); font-weight: 560; }
 .elcost thead th:nth-child(3) { color: var(--blue); }
+
+/* Fig. 727-1: sprint timeline. Ten working-day columns, so bar position and length are proportional to time.
+   Each event gets its own row; below 40rem the ruler goes and each event reads as a dated list item. */
+.risktl__cap, .lanes__cap { font-weight: 600; font-stretch: 90%; padding-bottom: var(--s3); }
+.risktl__cap .mono, .lanes__cap .mono { color: var(--ink-3); margin-right: var(--s2); }
+.risktl__days, .risktl__event { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); column-gap: 2px; }
+.risktl__days { row-gap: var(--s1); padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); }
+.risktl__week { grid-row: 1; color: var(--ink); padding-left: var(--s1); border-left: 1px solid var(--rule); }
+.risktl__day { grid-row: 2; color: var(--ink-3); padding-left: var(--s1); }
+.risktl__events { list-style: none; margin: 0; padding: 0; }
+.risktl__event { row-gap: 2px; padding-block: var(--s3); border-bottom: 1px solid var(--rule-soft); }
+.risktl__bar { grid-column: var(--from) / var(--to); grid-row: 1; height: 6px; background: var(--ink-3); }
+.risktl__event.is-key .risktl__bar { background: var(--blue); }
+.risktl__when, .risktl__tag, .risktl__text { grid-column: var(--from) / -1; min-width: 0; }
+.risktl__event:nth-last-child(-n+2) .risktl__when,
+.risktl__event:nth-last-child(-n+2) .risktl__tag,
+.risktl__event:nth-last-child(-n+2) .risktl__text { grid-column: 1 / var(--to); justify-self: end; text-align: right; }
+.risktl__when { color: var(--ink-3); padding-top: var(--s1); }
+.risktl__tag { font-weight: 650; font-stretch: 92%; color: var(--ink); }
+.risktl__event.is-key .risktl__tag { color: var(--blue); }
+.risktl__text { font-size: var(--t-small); line-height: 1.45; color: var(--ink-2); max-width: 44ch; }
+
+@media (max-width: 40rem) {
+  .risktl__days { display: none; }
+  .risktl__events { border-top: 1px solid var(--rule); }
+  .risktl__event { display: block; padding-left: var(--s4); position: relative; }
+  .risktl__bar { position: absolute; left: 0; top: var(--s3); bottom: var(--s3); width: 4px; height: auto; }
+  .risktl__event .risktl__when, .risktl__event .risktl__tag, .risktl__event .risktl__text,
+  .risktl__event:nth-last-child(-n+2) .risktl__when,
+  .risktl__event:nth-last-child(-n+2) .risktl__tag,
+  .risktl__event:nth-last-child(-n+2) .risktl__text { display: block; text-align: left; }
+}
+
+/* Fig. 726-3: one integration round in four lanes. Each step sits in its lane; the faint rules mark the lanes.
+   Below 40rem the lanes collapse into a numbered list with the lane named on each step. */
+.lanes__head, .lanes__step { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lanes__head > *, .lanes__step > * { padding-inline: var(--s2) var(--s3); }
+.lanes__head { padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); }
+.lanes__head .label { color: var(--ink); }
+.lanes__steps { list-style: none; margin: 0; padding: 0; counter-reset: none;
+  background-image: linear-gradient(to right, var(--rule-soft) 1px, transparent 1px); background-size: 25% 100%; }
+.lanes__step { padding-block: var(--s2); align-items: start; }
+.lanes__no, .lanes__lane, .lanes__text, .lanes__loop { grid-column: var(--lane); }
+.lanes .post__tok { white-space: normal; overflow-wrap: anywhere; }
+.lanes__loop { position: relative; background: var(--paper); }
+.lanes__no { grid-row: 1; color: var(--ink-3); padding-top: var(--s1); box-shadow: inset 0 2px 0 var(--ink); }
+.lanes__lane { display: none; }
+.lanes__text { grid-row: 2; font-size: var(--t-small); line-height: 1.45; color: var(--ink); }
+.lanes__loop { grid-row: 3; margin-top: var(--s2); padding-left: var(--s3); border-left: 3px solid var(--blue); font-size: var(--t-small); line-height: 1.45; color: var(--blue); font-weight: 560; }
+.lanes__step.has-loop .lanes__loop { grid-column: 1 / span 3; }
+
+@media (max-width: 40rem) {
+  .lanes__head { display: none; }
+  .lanes__steps { background-image: none; border-top: 1px solid var(--rule); }
+  .lanes__step { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--s3); padding-block: var(--s3); border-bottom: 1px solid var(--rule-soft); }
+  .lanes__step > * { padding-inline: 0; }
+  .lanes__no { grid-column: 1; grid-row: 1 / span 3; box-shadow: none; padding-top: 2px; }
+  .lanes__lane { display: block; grid-column: 2; grid-row: 1; }
+  .lanes__text { grid-column: 2; }
+  .lanes__step.has-loop .lanes__loop, .lanes__loop { grid-column: 2; }
+}
