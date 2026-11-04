@@ -77,8 +77,8 @@ export default function Home() {
 
       {caseTiles.map((tile) => <CaseTile key={tile.id} tile={tile} />)}
 
-      <section className="tile tile--skills" aria-labelledby="skills-title" data-coord="020 · Engineering expertise">
-        <h2 id="skills-title" className="h3">Engineering expertise</h2>
+      <section className="tile tile--skills" aria-labelledby="skills-title" data-coord="020 · Engineering, product & design">
+        <h2 id="skills-title" className="h3">Engineering, product &amp; design</h2>
         <p className="tile__intro">{skillsIntro}</p>
         <dl className="tile__facts tile__facts--rows">
           {skills.map((s) => <div key={s.area}><dt className="label">{s.area}</dt><dd>{s.items}</dd></div>)}

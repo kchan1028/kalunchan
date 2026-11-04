@@ -64,11 +64,14 @@ export const caseTiles = [
   },
 ];
 
-export const skillsIntro = 'Engineering leadership, software architecture, and secure cloud delivery.';
+export const skillsIntro = 'Engineering leadership, product design, and hands-on delivery, from early concepts to production.';
 
 export const skills = [
+  { area: 'Product engineering', items: 'Turning customer needs into shipped products, from discovery and prototyping to launch and iteration' },
+  { area: 'UX/UI & product design', items: 'User flows, wireframes, prototyping, interaction design, and design systems' },
+  { area: 'Forward-deployed engineering', items: 'Working directly with client teams to build, integrate, and deploy software they can own after hand-over' },
   { area: 'Leadership', items: 'Engineering strategy, team building, mentoring, and delivery' },
-  { area: 'Architecture & design', items: 'System architecture, API design, and microservices' },
+  { area: 'Software architecture', items: 'System architecture, API design, and microservices' },
   { area: 'Software', items: 'Python/Django, Ruby on Rails, React/Next.js, Node.js, and LAMP' },
   { area: 'Databases & data', items: 'PostgreSQL, MySQL, Snowflake, and Kafka' },
   { area: 'Cloud & delivery', items: 'AWS, Terraform, Docker, and CI/CD' },
