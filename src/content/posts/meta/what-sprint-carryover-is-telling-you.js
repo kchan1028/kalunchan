@@ -3,6 +3,7 @@ export const metadata = {
   dek:
     'Carryover is a symptom, not a diagnosis. The same number can mean bad estimates, hidden dependencies, an unreliable system or a leadership team that keeps changing its mind, and each one needs a different fix.',
   related: [
+    { to: '/writing/sprint-risk-when-to-raise-it/', label: 'Catching sprint risk before it becomes carryover' },
     { to: '/writing/when-technical-debt-becomes-a-business-problem/', label: 'When technical debt becomes a business problem' },
     { to: '/writing/when-everything-is-a-priority/', label: 'Why “everything is urgent” means nothing gets finished' },
     { to: '/writing/smaller-user-stories-and-pull-requests/', label: 'Smaller stories, smaller pull requests, smaller releases' },

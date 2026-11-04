@@ -502,6 +502,7 @@ const llmsPosts = [
   'claude-environments-when-worth-using',
   'use-ai-to-learn-without-offloading',
   'git-bundle-workflow-single-integrator',
+  'sprint-risk-when-to-raise-it',
   'ai-agents-reliable-in-production',
 ];
 

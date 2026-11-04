@@ -6,6 +6,22 @@ import { careerStages } from './home';
 
 export const posts = [
   {
+    slug: 'sprint-risk-when-to-raise-it',
+    title: 'Sprint Risk: When to Raise It and What to Do Next',
+    shortTitle: 'Sprint risk: when to raise it',
+    description:
+      'How to spot sprint risk early, tell it apart from a blocker, raise it with a five-part template, and turn it into an owner, a checkpoint and a fallback.',
+    teaser:
+      'Most sprint surprises were visible to someone days earlier. When uncertainty is enough to speak up, how to say it so someone can act, and what happens next.',
+    summary:
+      'What sprint risk is and how it differs from an issue or a blocker; why the sprint goal is the reference point rather than individual tickets; six signals worth raising; why early visibility keeps options open and needs a blame-free response; a five-part template for communicating risk and where to raise it; assigning an owner, a mitigation, a checkpoint and an escalation trigger; a worked example of a delayed API dependency; a lightweight team habit; and a checklist for the next sprint.',
+    topics: ['Delivery', 'Leadership'],
+    minutes: 7,
+    no: '727',
+    published: '2026-11-04',
+    modified: '2026-11-04',
+  },
+  {
     slug: 'git-bundle-workflow-single-integrator',
     title: 'One GitHub Account, Four Developers: A Git Bundle Workflow for a Single Integrator',
     shortTitle: 'A Git bundle workflow for one integrator',
@@ -1231,6 +1247,7 @@ export const chapters = [
       'smaller-user-stories-and-pull-requests',
       'git-bundle-workflow-single-integrator',
       'why-writing-good-user-stories-is-hard',
+      'sprint-risk-when-to-raise-it',
       'what-sprint-carryover-is-telling-you',
       'when-everything-is-a-priority',
       'fast-paced-vs-changing-priorities',
