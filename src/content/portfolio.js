@@ -64,6 +64,16 @@ export const caseTiles = [
     figure: '8M',
     result: 'minutes a month on the reseller platform, up from 1 million after the restructure.',
   },
+  {
+    id: 'soc',
+    level: 'Member of Technical Staff',
+    where: 'Security Operations Center',
+    title: 'Training the TAC to support a new security service',
+    to: '/writing/training-tac-engineers-for-a-new-soc-service/',
+    more: 'Read the post',
+    figure: '20+',
+    result: 'TAC engineers trained to support a new managed security service, with escalations coming back to me.',
+  },
 ];
 
 export const skillsIntro = 'Engineering leadership, product design, and hands-on delivery, from early concepts to production.';
