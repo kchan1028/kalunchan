@@ -23,7 +23,7 @@ export const toc = [
 const stages = [
   { title: 'Learning it ourselves', text: 'One of the first three people supporting a new managed firewall and VPN service in the SOC. No runbook yet, so we wrote things down as we learned.' },
   { title: 'Preparing the training', text: 'My first course. A week of material and a PowerPoint deck built from nothing, turning troubleshooting I did by feel into steps.', accent: true },
-  { title: 'A week with the TAC', text: 'More than twenty TAC engineers in the room for a week, with different backgrounds.' },
+  { title: 'A week with the TAC', text: 'The TAC in the room for a week, with different backgrounds.' },
   { title: 'The TAC takes the calls', text: 'Customers call the TAC, and the TAC troubleshoots first, without anyone from the SOC in the room.' },
   { title: 'Escalations come back to me', text: 'The cases the TAC can’t close come to me. What keeps coming back shows where the training or the fundamentals fell short.', now: true },
 ];
@@ -55,7 +55,7 @@ export default function Body() {
   return (
     <>
       <section id="service" aria-labelledby="service-h">
-        <p>The first training course I ever built was for a service I had only just learned myself. I was one of the first three people supporting a new managed security service in a carrier’s Security Operations Center (SOC). As the service grew, the Technical Assistance Center (TAC) had to be able to support it without us. I helped train more than twenty TAC engineers to do that, and afterwards I supported their escalations.</p>
+        <p>The first training course I ever built was for a service I had only just learned myself. I was one of the first three people supporting a new managed security service in a carrier’s Security Operations Center (SOC). As the service grew, the Technical Assistance Center (TAC) had to be able to support it without us. I helped train the TAC to do that, and afterwards I supported their escalations.</p>
         <h2 id="service-h" className="post__h2">What was the SOC supporting?</h2>
         <p className="post__answer">The carrier sold managed firewalls and IPsec VPNs on NetScreen hardware to its business customers. Supporting the service meant taking change requests, maintaining security policy on each customer’s behalf, and troubleshooting connections that crossed networks we didn’t run. At first, three of us did all of it, without a runbook.</p>
         <p>I had no title for that work and I wasn’t running the SOC. I had never done security operations before. Most of what I knew about the service I had learned in the months before, from the documentation, from the devices in front of us and from customer tickets. I wrote about the technology and those first months in <Link to={security}>I Was Working on Network Security Long Before DevSecOps Was a Thing</Link>. This post is about what came after: handing the service to the people who would support it next.</p>
@@ -70,15 +70,15 @@ export default function Body() {
 
       <section id="week" aria-labelledby="week-h">
         <h2 id="week-h" className="post__h2">A week with the TAC</h2>
-        <p>I flew to the East Coast for a week of training with a group of more than twenty TAC engineers. They were the people who would answer the phone when a customer’s VPN went down at three in the morning, with nobody from the SOC on the line.</p>
+        <p>I flew to the East Coast for a week of training with the TAC. They were the people who would answer the phone when a customer’s VPN went down at three in the morning, with nobody from the SOC on the line.</p>
         <p>What they needed most was a way to troubleshoot the service. That meant how traffic moves between zones and policies, what network address translation does to an address, why both ends of an IPsec tunnel have to agree before it comes up, where the session table and logs show what really happened, and the order to rule things out in. A firewall gets blamed in nearly every ticket, so the method had to start with the whole path from client to server.</p>
         <p>Their questions found the gaps quickly, in my understanding as much as in our notes. Teaching the service made me learn it again, properly this time.</p>
       </section>
 
       <section id="patience" aria-labelledby="patience-h">
         <h2 id="patience-h" className="post__h2">What did training the TAC teach me?</h2>
-        <p className="post__answer">Be patient with people who don’t have the skill set or the fundamentals yet. A room of engineers rarely starts from the same place, and the people missing the basics are the ones the training most needs to reach.</p>
-        <p>Some engineers in the room had the networking background to follow a firewall policy the first time through. Others didn’t have those fundamentals yet, and a policy between zones makes little sense until you know how a packet is routed and what an address translation changes. Going faster would have suited the first group and left the second holding slides they couldn’t use on a real call.</p>
+        <p className="post__answer">Be patient with people who don’t have the skill set or the fundamentals yet. A room of trainees rarely starts from the same place, and the people missing the basics are the ones the training most needs to reach.</p>
+        <p>Some people in the room had the networking background to follow a firewall policy the first time through. Others didn’t have those fundamentals yet, and a policy between zones makes little sense until you know how a packet is routed and what an address translation changes. Going faster would have suited the first group and left the second holding slides they couldn’t use on a real call.</p>
         <p>Patience meant going back to how the network was supposed to work, as many times as it took, in a week that was already full. Usually the gap isn’t the trainee’s fault. The material assumed knowledge it never taught.</p>
       </section>
 

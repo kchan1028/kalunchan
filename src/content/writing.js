@@ -7,19 +7,19 @@ import { careerStages } from './home';
 export const posts = [
   {
     slug: 'training-tac-engineers-for-a-new-soc-service',
-    title: 'Training 20+ TAC Engineers on a Security Service I Was Still Learning',
+    title: 'Training the TAC on a Security Service I Was Still Learning',
     shortTitle: 'Training the TAC for a new SOC service',
     description:
-      'I helped train more than 20 TAC engineers to support a new managed security service I had only just learned. How I prepared the course, and why patience mattered most.',
+      'I helped train the TAC to support a new managed security service I had only just learned. How I prepared the course, and why patience mattered most.',
     teaser:
       'The first training course I built was for a service I had only just learned. Preparing a week of material, teaching people with different backgrounds, and taking the escalations afterwards.',
     summary:
-      'Helping train more than 20 Technical Assistance Center (TAC) engineers to support a new NetScreen managed firewall and VPN service from a carrier Security Operations Center (SOC): preparing a first training course and PowerPoint deck from notes written by the first three people on the service; a week of training; teaching a troubleshooting method across the whole path; patience with trainees missing the networking fundamentals; supporting escalations afterwards and what they say about the training; and a checklist for preparing a team to support something new. With a staged handoff figure.',
+      'Helping train a Technical Assistance Center (TAC) to support a new NetScreen managed firewall and VPN service from a carrier Security Operations Center (SOC): preparing a first training course and PowerPoint deck from notes written by the first three people on the service; a week of training; teaching a troubleshooting method across the whole path; patience with trainees missing the networking fundamentals; supporting escalations afterwards and what they say about the training; and a checklist for preparing a team to support something new. With a staged handoff figure.',
     topics: ['Security', 'Learning', 'Leadership'],
     minutes: 6,
     no: '729',
     published: '2026-11-04',
-    modified: '2026-11-04',
+    modified: '2026-11-05',
   },
   {
     slug: 'prototype-and-validate-before-you-build',
