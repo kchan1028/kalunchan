@@ -72,7 +72,7 @@ export const caseTiles = [
     to: '/writing/training-tac-engineers-for-a-new-soc-service/',
     more: 'Read the post',
     figure: '20+',
-    result: 'TAC engineers trained to support a new managed security service, with escalations coming back to me.',
+    result: 'TAC trained to support a new managed security service, with escalations coming back to me.',
   },
 ];
 

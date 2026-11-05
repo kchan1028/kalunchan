@@ -1,7 +1,7 @@
 export const metadata = {
   seoTitle: 'Training a TAC to Support a New SOC Service',
   dek:
-    'I helped train more than 20 TAC engineers to support a managed firewall and VPN service I had only just learned myself. Preparing the course was the hard part, patience was the lesson, and the escalations showed what the training had missed.',
+    'I helped train the TAC to support a managed firewall and VPN service I had only just learned myself. Preparing the course was the hard part, patience was the lesson, and the escalations showed what the training had missed.',
   related: [
     { to: '/writing/network-security-before-devsecops/', label: 'Network security before DevSecOps' },
     { to: '/writing/from-cisco-routers-to-ai-agents/', label: 'From Cisco routers to AI agents' },
@@ -32,7 +32,7 @@ export const metadata = {
       a: 'Start from the problems the team will be asked to solve. For each one, write what to check first, what healthy looks like and when to escalate. Teach the fundamentals those problems depend on before the product, use slides for diagrams and steps, and spend the rest of the time troubleshooting together.',
     },
     {
-      q: 'What is the most important lesson in training engineers on something new?',
+      q: 'What is the most important lesson in training a support team on something new?',
       a: 'Be patient with people who don’t have the skill set or the fundamentals yet. A group rarely starts from the same place, and going back to how the system is supposed to work is what lets everyone take the calls afterwards.',
     },
   ],
