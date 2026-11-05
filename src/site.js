@@ -504,6 +504,7 @@ const llmsPosts = [
   'git-bundle-workflow-single-integrator',
   'sprint-risk-when-to-raise-it',
   'prototype-and-validate-before-you-build',
+  'training-tac-engineers-for-a-new-soc-service',
   'ai-agents-reliable-in-production',
 ];
 
